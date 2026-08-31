@@ -403,7 +403,9 @@ StarterGui/
 | **R6** | **Completo** (2026-08-22) | Teleport dungeon, reserved server, 5 pisos kit+seed, exit=abandon | Run completa solo |
 | **R6.1** | **Completo** (2026-08-23) | Correr por defecto, toggle caminar U/botón móvil, animaciones y pisadas sincronizadas por material | Movimiento y audio calzan con cada apoyo |
 | **R6.2** | Pendiente | 2 slots de uso de ítems Z/X + reset de nivel debug en Studio | Ítems utilizables accesibles sin abrir inventario; QA puede repetir progresión desde nivel 1 |
+| **R6.5** | Pendiente | UI: barra de XP, mochila (B) y equipo (C) separados + stats | El jugador ve su progreso y su build sin ventanas apretadas |
 | **EST-01** | Pendiente | Equipamiento visible en avatar + 8 modelos iniciales del Paladín | Equipar cambia también la apariencia del personaje |
+| **EST-02** | Pendiente | Modelos 3D de los enemigos de la Helada (7 bases + 5 elites) | Cada piso tiene enemigos y mini-bosses reconocibles |
 | **R7** | Pendiente | Boss piso 5 + cofre + uniques + reward UI | Loop de botín cierra |
 | **R8** | Pendiente | 3 clases jugables (skills/talentos MVP) | Builds distintas |
 | **R9** | Pendiente | Party amigos (si entra), polish UI, balance medio a 20 | Demo estable |
@@ -546,6 +548,8 @@ Ver `HU/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º stub R
 | 2026-08-23 | **HU-R6.1 completa** — movimiento correr/caminar y pisadas por material implementados según reporte del equipo |
 | 2026-08-23 | **HU-R6.2 creada** — 2 slots genéricos de uso con `Z`/`X` y reset debug a nivel 1; se prioriza antes de R7 |
 | 2026-08-25 | **HU-ESTETICA-01 creada** — equipamiento visual R15 + creación de 8 modelos iniciales del Paladín; se prioriza antes de ampliar el contenido de R8 |
+| 2026-08-25 | **HU-R6.5 creada** — barra de XP en HUD, mochila (B) y equipo (C) separados + panel de stats |
+| 2026-08-25 | **HU-ESTETICA-02 creada** — modelos de enemigos de la Helada (diseñador, solo modelos); dev enlaza `modelId` en `EnemyConfig` |
 
 ---
 
@@ -553,10 +557,12 @@ Ver `HU/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º stub R
 
 1. **R0–R6.1 cerrados** (hub, combate, personaje, skills, cámara, inventario, economía, talentos, stacking, run dungeon y movimiento/pisadas) + **HU-ASSETS completa**.  
 2. Implementar **HU-R6.2**: 2 slots de uso `Z`/`X` y reset debug a nivel 1.  
-3. Implementar **EST-01 / HU-ESTETICA-01**: pipeline visual de equipamiento + set inicial del Paladín.  
-4. Después implementar **HU-R7**: boss del piso 5, cofre, uniques y UI de recompensa.  
-5. Criterio de hecho R7: *derrotar al boss y recibir una recompensa válida*.  
-6. No abrir R8 hasta que el loop completo (pueblo → run → boss → recompensa → pueblo) sea estable y el pipeline visual esté validado.
+3. Implementar **HU-R6.5**: barra de XP, mochila (B) y equipo (C) separados + panel de stats.  
+4. Implementar **EST-01 / HU-ESTETICA-01**: pipeline visual de equipamiento + set inicial del Paladín.  
+5. Implementar **EST-02 / HU-ESTETICA-02**: modelos de enemigos de la Helada (diseñador; dev enlaza `modelId`).  
+6. Después implementar **HU-R7**: boss del piso 5, cofre, uniques y UI de recompensa.  
+7. Criterio de hecho R7: *derrotar al boss y recibir una recompensa válida*.  
+8. No abrir R8 hasta que el loop completo (pueblo → run → boss → recompensa → pueblo) sea estable y el pipeline visual esté validado.
 
 ---
 
