@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)  
 **Épica:** Inventario / Input / Herramientas de QA  
 **Prioridad:** Alta  
-**Estado:** Lista para implementar  
+**Estado:** Completada (implementada; reporte equipo 2026-08-26)  
 **Fase GDD:** R6.2 (pulido posterior a R6.1 y previo a R7)  
 **Depende de:** HU-R5 (uso de ítems y pociones), HU-R5.1 (HUD/loadout), HU-R5.2 (stacking), HU-R6.1 (input/UI de movimiento)  
 **Alcance debug:** solo Studio/test; nunca producción
@@ -344,3 +344,4 @@ Remote de debug:
 | Fecha | Cambio |
 |-------|--------|
 | 2026-08-23 | Creación de HU-R6.2: dos slots genéricos de uso con Z/X y reset debug a nivel 1 |
+| 2026-08-26 | Marcada completada según reporte del equipo |

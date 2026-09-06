@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)  
 **Épica:** Mazmorra / Generación de pisos / R6.4  
 **Prioridad:** Alta  
-**Estado:** Lista para implementar  
+**Estado:** Completada (implementada; reporte equipo 2026-08-26)  
 **Tipo:** Mejora de contenido procedural (reemplaza la linealidad del layout)  
 **Fase GDD:** R6.4 (mejora posterior a R6.3; puede ejecutarse en paralelo con R7)  
 **Depende de:** HU-R6a (FloorService, EnemyService, EnemyConfig), HU-R6b (run lifecycle, DungeonHUD), HU-R6.3 (DungeonVariantConfig, generador parametrizado)  
@@ -293,3 +293,4 @@ La topología se combina con las variantes morfológicas de R6.3: cualquier vari
 | Fecha | Cambio |
 |-------|--------|
 | 2026-08-26 | Creación de HU-R6.4 por exclusión expresa de la topología ramificada en rc019 (R6.3); decisiones cerradas: sala central + ramas + conectores horizontales/diagonales, puerta sellada en la sala final de cada piso, progreso de limpieza persistente ante la muerte y feedback solo con mensaje en la puerta |
+| 2026-08-26 | Marcada completada según reporte del equipo |

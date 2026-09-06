@@ -1,7 +1,7 @@
 # Vandrheim — GDD MVP (Roblox Studio)
 
 > Documento vivo. **Fuente de verdad** para desarrollo en Roblox Studio.
-> Última actualización: 2026-08-25  
+> Última actualización: 2026-08-26  
 > Decisiones del cuestionario de arquitectura/diseño **integradas y cerradas**.
 
 ---
@@ -396,17 +396,23 @@ StarterGui/
 | **R2** | **Completo** (2026-08-12) | Creación nombre+clase, **2 slots**, select PJ, persistencia, stats por clase | Rejoin elige/mantiene PJ; stub slot 3 Robux |
 | **R3** | **Completo** (2026-08-12) | Skill framework 4 slots, maná/CD, 1 AoE suelo | Skills data-driven |
 | **R3.1** | **Completo** (2026-08-12) | Fix cámara WoW-like (LockCenter+GetMouseDelta, pitch 1:1, crosshair) | Cámara sin teleport de cursor |
+| **R3.2** | **Completo** (2026-08-26) | Fix targeting TAB (sin PlayerList) + colisión/distancia de cámara | TAB cicla enemigos y la cámara no atraviesa paredes |
+| **R3.3** | **Completo** (2026-08-26) | Indicador visual de target (contorno + flecha) | El target se identifica al instante entre enemigos iguales |
 | **R4** | **Completo** (2026-08-12) | Inventario + equip + BoE + rolls + rareza | Equip cambia stats |
 | **R5** | **Completo** (2026-08-12) | Vendors + oro + respec | Loop económico mínimo |
 | **R5.1** | **Completo** (2026-08-22) | Árbol de talentos WoW + spellbook + skills por nivel/talento | Build con progresión y loadout configurable |
 | **R5.2** | **Completo** (2026-08-22) | Stacking configurable: 20 pilas, cantidades visibles, uso/venta unitarios | Inventario agrupa unidades sin duplicar ni perder datos |
 | **R6** | **Completo** (2026-08-22) | Teleport dungeon, reserved server, 5 pisos kit+seed, exit=abandon | Run completa solo |
 | **R6.1** | **Completo** (2026-08-23) | Correr por defecto, toggle caminar U/botón móvil, animaciones y pisadas sincronizadas por material | Movimiento y audio calzan con cada apoyo |
-| **R6.2** | Pendiente | 2 slots de uso de ítems Z/X + reset de nivel debug en Studio | Ítems utilizables accesibles sin abrir inventario; QA puede repetir progresión desde nivel 1 |
-| **R6.5** | Pendiente | UI: barra de XP, mochila (B) y equipo (C) separados + stats | El jugador ve su progreso y su build sin ventanas apretadas |
-| **EST-01** | Pendiente | Equipamiento visible en avatar + 8 modelos iniciales del Paladín | Equipar cambia también la apariencia del personaje |
+| **R6.2** | **Completo** (2026-08-26) | 2 slots de uso de ítems Z/X + reset de nivel debug en Studio | Ítems utilizables accesibles sin abrir inventario; QA puede repetir progresión desde nivel 1 |
+| **R6.3** | **Completo** (2026-08-26) | Variantes de layout del dungeon (corredor/caverna/salón) | Cada run puede tener morfología distinta |
+| **R6.4** | **Completo** (2026-08-26) | Topología ramificada + puertas selladas | Los pisos se exploran, no se corren en línea recta |
+| **R6.5** | **Completo** (2026-08-26) | UI: barra de XP, mochila (B) y equipo (C) separados + stats | El jugador ve su progreso y su build sin ventanas apretadas |
+| **R6.6** | **Completo** (2026-08-26) | Animaciones de combate del jugador (auto-attack y skills) | Cada golpe/cast tiene su animación; base para pruebas |
+| **EST-01** | **Completo** (2026-08-26) | Equipamiento visible en avatar + 8 modelos iniciales del Paladín | Equipar cambia también la apariencia del personaje |
 | **EST-02** | Pendiente | Modelos 3D de los enemigos de la Helada (7 bases + 5 elites) | Cada piso tiene enemigos y mini-bosses reconocibles |
-| **R7** | Pendiente | Boss piso 5 + cofre + uniques + reward UI | Loop de botín cierra |
+| **EST-03** | Pendiente | Estructuras del pueblo nórdico: casas, caminos, límites, entradas y decoraciones | El hub se ve como un asentamiento nórdico coherente |
+| **R7** | **Completo** (2026-08-26) | Boss piso 5 + cofre + uniques + reward UI | Loop de botín cierra |
 | **R8** | Pendiente | 3 clases jugables (skills/talentos MVP) | Builds distintas |
 | **R9** | Pendiente | Party amigos (si entra), polish UI, balance medio a 20 | Demo estable |
 | **R10+** | Pendiente | Matchmaking, trade, más biomas/clases, cosméticos | Expansión |
@@ -550,19 +556,20 @@ Ver `HU/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º stub R
 | 2026-08-25 | **HU-ESTETICA-01 creada** — equipamiento visual R15 + creación de 8 modelos iniciales del Paladín; se prioriza antes de ampliar el contenido de R8 |
 | 2026-08-25 | **HU-R6.5 creada** — barra de XP en HUD, mochila (B) y equipo (C) separados + panel de stats |
 | 2026-08-25 | **HU-ESTETICA-02 creada** — modelos de enemigos de la Helada (diseñador, solo modelos); dev enlaza `modelId` en `EnemyConfig` |
+| 2026-08-25 | **HU-R6.6 creada** — animaciones de combate del jugador sobre el `AnimationRegistry` existente (auto-attack + casts); habilita fase de pruebas de animación |
+| 2026-08-25 | **HU-ESTETICA-03 creada** — estructuras del pueblo nórdico antiguo (diseñador, solo modelos); dev integra conservando NPCs/portal/dummy |
+| 2026-08-26 | **Implementadas según reporte del equipo:** R3.2, R3.3, R6.2, R6.3, R6.4, R6.5, R6.6, EST-01 y R7 |
+| 2026-08-26 | **Pendientes:** EST-02 (modelos de enemigos de la Helada) y EST-03 (estructuras del pueblo nórdico) |
 
 ---
 
 ## 20. Próximo paso de producción
 
-1. **R0–R6.1 cerrados** (hub, combate, personaje, skills, cámara, inventario, economía, talentos, stacking, run dungeon y movimiento/pisadas) + **HU-ASSETS completa**.  
-2. Implementar **HU-R6.2**: 2 slots de uso `Z`/`X` y reset debug a nivel 1.  
-3. Implementar **HU-R6.5**: barra de XP, mochila (B) y equipo (C) separados + panel de stats.  
-4. Implementar **EST-01 / HU-ESTETICA-01**: pipeline visual de equipamiento + set inicial del Paladín.  
-5. Implementar **EST-02 / HU-ESTETICA-02**: modelos de enemigos de la Helada (diseñador; dev enlaza `modelId`).  
-6. Después implementar **HU-R7**: boss del piso 5, cofre, uniques y UI de recompensa.  
-7. Criterio de hecho R7: *derrotar al boss y recibir una recompensa válida*.  
-8. No abrir R8 hasta que el loop completo (pueblo → run → boss → recompensa → pueblo) sea estable y el pipeline visual esté validado.
+1. **R0–R7 + R6.x + EST-01 cerrados** (gameplay completo: combate, progresión, inventario, dungeon con variantes/topología, boss, UI y animaciones de combate).  
+2. Implementar **EST-02 / HU-ESTETICA-02**: modelos de enemigos de la Helada (diseñador; dev enlaza `modelId`).  
+3. Implementar **EST-03 / HU-ESTETICA-03**: estructuras del pueblo nórdico (diseñador; dev integra en el hub).  
+4. Criterio de hecho EST: *cada piso tiene enemigos reconocibles y el hub se ve como un asentamiento nórdico*.  
+5. No abrir R8 hasta que el loop completo (pueblo → run → boss → recompensa → pueblo) sea estable y la estética MVP esté validada.
 
 ---
 

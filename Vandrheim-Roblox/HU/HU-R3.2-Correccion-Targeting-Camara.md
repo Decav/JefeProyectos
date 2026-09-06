@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)  
 **Épica:** Combate / Control / Cámara  
 **Prioridad:** Crítica  
-**Estado:** Lista para implementar  
+**Estado:** Completada (implementada; reporte equipo 2026-08-26)  
 **Tipo:** Corrección de regresión y comportamiento incompleto  
 **Fase GDD:** R3.2 (corrección posterior a R3.1; no amplía el alcance del MVP)  
 **Depende de:** HU-R1 (targeting TAB/click), HU-R3.1 (cámara WoW-like), HU-R0 (cámara 3ª y movimiento)  
@@ -331,3 +331,4 @@ La distancia debe seguir siendo data-driven y configurable en `ReplicatedStorage
 | Fecha | Cambio |
 |-------|--------|
 | 2026-08-25 | Creación de HU-R3.2 por desvío de TAB/PlayerList, selección inicial de target, distancia máxima y clipping de cámara |
+| 2026-08-26 | Marcada completada según reporte del equipo |

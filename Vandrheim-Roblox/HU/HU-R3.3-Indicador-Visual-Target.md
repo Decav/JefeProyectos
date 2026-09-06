@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)  
 **Épica:** Combate / Targeting / Feedback visual  
 **Prioridad:** Alta  
-**Estado:** Lista para implementar  
+**Estado:** Completada (implementada; reporte equipo 2026-08-26)  
 **Tipo:** Mejora de feedback visual de combate  
 **Fase GDD:** R3.3 (mejora posterior a R3.2; no amplía el alcance del MVP)  
 **Depende de:** HU-R1 (targeting TAB/click), HU-R3.2 (corrección de TAB y PlayerList), HU-R4 (TargetFrame existente)  
@@ -286,3 +286,4 @@ No se modifica `TargetingSystem`, `TargetState` ni `CombatService`. El `TargetFr
 | Fecha | Cambio |
 |-------|--------|
 | 2026-08-25 | Creación de HU-R3.3 por falta de identificación visual del enemigo targeteado; decisión cerrada: contorno + flecha fija hacia abajo |
+| 2026-08-26 | Marcada completada según reporte del equipo |

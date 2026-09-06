@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)  
 **Épica:** UI / HUD / Inventario  
 **Prioridad:** Alta  
-**Estado:** Lista para implementar  
+**Estado:** Completada (implementada; reporte equipo 2026-08-26)  
 **Tipo:** Mejora de interfaz (posterior a R6.4; no amplía reglas de juego)  
 **Fase GDD:** R6.5 (mejora de UI; puede ejecutarse en paralelo con EST-01/R7)  
 **Depende de:** HU-R4 (InventoryUI), HU-R5.2 (stacking/cantidades), HU-R6a (XP/leveling), HU-R6.2 (slots de uso Z/X)  
@@ -275,3 +275,4 @@ Ubicación: dentro de `EquipmentUI`, sección `StatsPanel`.
 | Fecha | Cambio |
 |-------|--------|
 | 2026-08-25 | Creación de HU-R6.5: barra de XP, mochila (B) y equipo (C) separados, casillas rediseñadas y panel de stats |
+| 2026-08-26 | Marcada completada según reporte del equipo |

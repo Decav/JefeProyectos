@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)  
 **Épica:** Mazmorra / Loot / R7  
 **Prioridad:** Crítica  
-**Estado:** Lista para implementar  
+**Estado:** Completada (implementada; reporte equipo 2026-08-26)  
 **Fase GDD:** R7  
 **Depende de:** HU-R6a (enemigos, loot, XP, respawn), HU-R6b (run de 5 pisos), HU-R4 (inventario/rareza/BoE), HU-R5 (oro/vendors), HU-R5.1 (skills), HU-R5.2 (stacking)
 
@@ -367,3 +367,4 @@ La tabla debe ser data-driven y permitir balance posterior:
 | Fecha | Cambio |
 |-------|--------|
 | 2026-08-22 | Creación de HU-R7: boss piso 5, cofre, uniques y recompensa; completa run solo después de reclamar el cofre |
+| 2026-08-26 | Marcada completada según reporte del equipo |

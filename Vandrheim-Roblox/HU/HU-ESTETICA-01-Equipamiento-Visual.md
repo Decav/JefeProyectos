@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)  
 **Épica:** Estética MVP / Equipamiento visual  
 **Prioridad:** Alta  
-**Estado:** Lista para implementar  
+**Estado:** Completada (implementada; reporte equipo 2026-08-26)  
 **Fase GDD:** Épica transversal `EST-01` (previa a R8; puede ejecutarse en paralelo con R6.2/R7)  
 **Depende de:** HU-R4 (inventario/equip), HU-ASSETS (estructura y política de assets), R15 del jugador  
 **No modifica:** stats, daño, loot, economía ni reglas de equipamiento de R4
@@ -342,3 +342,4 @@ Registrar los 8 modelos en `ASSETS_REGISTRY` con:
 | Fecha | Cambio |
 |-------|--------|
 | 2026-08-25 | Creación de HU-ESTETICA-01: modelos iniciales del Paladín + pipeline de equipamiento visual |
+| 2026-08-26 | Marcada completada según reporte del equipo |

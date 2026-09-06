@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)  
 **Épica:** Mazmorra / Generación de pisos / R6.3  
 **Prioridad:** Alta  
-**Estado:** Lista para implementar  
+**Estado:** Completada (implementada; reporte equipo 2026-08-26)  
 **Tipo:** Mejora de contenido procedural del dungeon  
 **Fase GDD:** R6.3 (mejora posterior a R6a/R6b; puede ejecutarse en paralelo con R7)  
 **Depende de:** HU-R6a (FloorService, EnemyConfig, EnemyService), HU-R6b (DungeonService, teleport data, run lifecycle), HU-R6.1 (HUD/movimiento)  
@@ -308,3 +308,4 @@ Se crea `ReplicatedStorage.Config.DungeonVariantConfig` (ModuleScript) con los p
 | Fecha | Cambio |
 |-------|--------|
 | 2026-08-25 | Creación de HU-R6.3 por falta de variedad morfológica en el dungeon; decisiones cerradas: morfología dentro del kit Helada, variante aleatoria por run, 3 variantes, densidad distinta por variante |
+| 2026-08-26 | Marcada completada según reporte del equipo |
