@@ -409,6 +409,7 @@ StarterGui/
 | **R6.4** | **Completo** (2026-08-26) | Topología ramificada + puertas selladas | Los pisos se exploran, no se corren en línea recta |
 | **R6.5** | **Completo** (2026-08-26) | UI: barra de XP, mochila (B) y equipo (C) separados + stats | El jugador ve su progreso y su build sin ventanas apretadas |
 | **R6.6** | **Completo** (2026-08-26) | Animaciones de combate del jugador (auto-attack y skills) | Cada golpe/cast tiene su animación; base para pruebas |
+| **R6.7** | Pendiente | Sistema de animaciones de enemigos por familia (idle/walk/attack/special) | Cada tipo de enemigo se anima según su cuerpo; reemplazo por config |
 | **EST-01** | **Completo** (2026-08-26) | Equipamiento visible en avatar + 8 modelos iniciales del Paladín | Equipar cambia también la apariencia del personaje |
 | **EST-02** | Pendiente | Modelos 3D de los enemigos de la Helada (7 bases + 5 elites) | Cada piso tiene enemigos y mini-bosses reconocibles |
 | **EST-03** | Pendiente | Estructuras del pueblo nórdico: casas, caminos, límites, entradas y decoraciones | El hub se ve como un asentamiento nórdico coherente |
@@ -560,16 +561,18 @@ Ver `HU/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º stub R
 | 2026-08-25 | **HU-ESTETICA-03 creada** — estructuras del pueblo nórdico antiguo (diseñador, solo modelos); dev integra conservando NPCs/portal/dummy |
 | 2026-08-26 | **Implementadas según reporte del equipo:** R3.2, R3.3, R6.2, R6.3, R6.4, R6.5, R6.6, EST-01 y R7 |
 | 2026-08-26 | **Pendientes:** EST-02 (modelos de enemigos de la Helada) y EST-03 (estructuras del pueblo nórdico) |
+| 2026-08-26 | **HU-R6.7 creada** — animaciones de enemigos por familia (idle/walk/attack/special); framework data-driven para reemplazar modelos/animaciones por config |
 
 ---
 
 ## 20. Próximo paso de producción
 
 1. **R0–R7 + R6.x + EST-01 cerrados** (gameplay completo: combate, progresión, inventario, dungeon con variantes/topología, boss, UI y animaciones de combate).  
-2. Implementar **EST-02 / HU-ESTETICA-02**: modelos de enemigos de la Helada (diseñador; dev enlaza `modelId`).  
-3. Implementar **EST-03 / HU-ESTETICA-03**: estructuras del pueblo nórdico (diseñador; dev integra en el hub).  
-4. Criterio de hecho EST: *cada piso tiene enemigos reconocibles y el hub se ve como un asentamiento nórdico*.  
-5. No abrir R8 hasta que el loop completo (pueblo → run → boss → recompensa → pueblo) sea estable y la estética MVP esté validada.
+2. Implementar **HU-R6.7**: framework de animaciones de enemigos por familia (deja el código listo para los modelos de EST-02).  
+3. Implementar **EST-02 / HU-ESTETICA-02**: modelos de enemigos de la Helada (diseñador; dev enlaza `modelId`).  
+4. Implementar **EST-03 / HU-ESTETICA-03**: estructuras del pueblo nórdico (diseñador; dev integra en el hub).  
+5. Criterio de hecho EST: *cada piso tiene enemigos reconocibles y el hub se ve como un asentamiento nórdico*.  
+6. No abrir R8 hasta que el loop completo (pueblo → run → boss → recompensa → pueblo) sea estable y la estética MVP esté validada.
 
 ---
 
