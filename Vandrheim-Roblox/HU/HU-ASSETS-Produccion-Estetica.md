@@ -187,7 +187,7 @@ IDs en **config data-driven** (`iconId`, `animationId`) — nunca hardcode.
 | Modelos/materiales | Tema Helada (dungeon) + pueblo (hub) |
 | UI | Estilizar las ventanas existentes; Scale + ratio; sin romper móvil |
 | Prioridad de integración | En paralelo con R5–R7; se integra por id en config |
-| VFX/SFX | Fuera (pendiente confirmación de capacidad) |
+| VFX/SFX | **VFX con partículas confirmado** (R8d/R9); SFX pendiente de confirmar capacidad |
 
 ---
 
@@ -204,3 +204,4 @@ IDs en **config data-driven** (`iconId`, `animationId`) — nunca hardcode.
 | 2026-08-12 | Creación HU-ASSETS tras confirmar capacidad del dev (modelos/materiales/UI/iluminación sí; animaciones solo librería) |
 | 2026-08-12 | Marcada completada según reporte del equipo |
 | 2026-08-25 | El equipamiento visible del avatar se separa como `HU-ESTETICA-01`; HU-ASSETS queda como base de assets/política general |
+| 2026-08-26 | VFX con partículas confirmado (ParticleEmitter/Beam/Trail): pasa a R8d/R9; SFX sigue pendiente |

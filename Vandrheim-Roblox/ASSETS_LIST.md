@@ -48,6 +48,6 @@ Icon_Skill_paladin_ret_holy_edge — Filo sagrado: hoja de energía dorada
 flameante en diagonal. 18. Icon_Skill_paladin_ret_divine_flames — Llamas
 divinas: llamas sagradas blancas/doradas ardiendo alrededor de una llama
 central. 19. Icon_Skill_paladin_ret_sentence — Sentencia: martillo de juicio
-dorado brillante con rayos de luz. 20. Icon_Skill_paladin_ret_execution —
-Ejecución divina: gran espada celestial descendiendo con rayo de luz y destellos
-explosivos.
+dorado brillante con rayos de luz. 20. Icon_Skill_paladin_ret_holy_ring —
+Anillo de luz sagrada: anillo de luz dorada expandiéndose en todas direcciones,
+burst sagrado.

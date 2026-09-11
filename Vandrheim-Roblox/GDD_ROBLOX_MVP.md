@@ -410,15 +410,23 @@ StarterGui/
 | **R6.5** | **Completo** (2026-08-26) | UI: barra de XP, mochila (B) y equipo (C) separados + stats | El jugador ve su progreso y su build sin ventanas apretadas |
 | **R6.6** | **Completo** (2026-08-26) | Animaciones de combate del jugador (auto-attack y skills) | Cada golpe/cast tiene su animación; base para pruebas |
 | **R6.7** | Pendiente | Sistema de animaciones de enemigos por familia (idle/walk/attack/special) | Cada tipo de enemigo se anima según su cuerpo; reemplazo por config |
+| **R6.8** | **Completo** (2026-08-26) | VFX básico de combate: proyectiles ranged, hits, números de daño y muerte de enemigos | El combate se siente contundente sin assets externos |
+| **R6.9** | **Completo** (2026-08-26) | AoE: zonas de suelo persistentes (daño en el tiempo) + SelfAoE alrededor del jugador | Consagración/Ira divina vs Torbellino se sienten distintas |
+| **R6.10** | Pendiente | Menú in-game (ESC): volver a selección de PJ funcional + placeholders volumen/gráficos/UI | Probar varias clases sin salir del juego |
 | **EST-01** | **Completo** (2026-08-26) | Equipamiento visible en avatar + 8 modelos iniciales del Paladín | Equipar cambia también la apariencia del personaje |
 | **EST-02** | Pendiente | Modelos 3D de los enemigos de la Helada (7 bases + 5 elites) | Cada piso tiene enemigos y mini-bosses reconocibles |
 | **EST-03** | Pendiente | Estructuras del pueblo nórdico: casas, caminos, límites, entradas y decoraciones | El hub se ve como un asentamiento nórdico coherente |
 | **R7** | **Completo** (2026-08-26) | Boss piso 5 + cofre + uniques + reward UI | Loop de botín cierra |
 | **R8** | Pendiente | 3 clases jugables (skills/talentos MVP) | Builds distintas |
+| **R8a** | Pendiente | Paladín completo: 10 skills + árboles finales (Protector/Castigo) + soporte MATKMult + **VFX de sus skills** | Paladín jugable de punta a punta con 2 builds |
+| **R8b** | Pendiente | Cazador completo (Asalto + Puntería) + VFX de sus skills | Cazador jugable con builds melee y ranged |
+| **R8c** | Pendiente | Clérigo completo (Misericordia + Cólera) + VFX de sus skills | Clérigo jugable con builds heal y dps |
+| **R8d** | Pendiente | Balance de números + assets (iconos 30) + QA a nivel 20 | Las 6 specs se sienten distintas y el arco a 20 funciona |
 | **R9** | Pendiente | Party amigos (si entra), polish UI, balance medio a 20 | Demo estable |
 | **R10+** | Pendiente | Matchmaking, trade, más biomas/clases, cosméticos | Expansión |
 
 > **R6 se ejecuta en 2 HUs:** `HU/HU-R6a-Dungeon-Preparacion.md` (enemigos, pisos, layout por seed, XP/leveling, respawn + arena de prueba) → `HU/HU-R6b-Dungeon-Core.md` (teleport + ReservedServer, run lifecycle, exit). Criterio R6: *run completa solo*.
+> **R8 se ejecuta en 4 HUs:** R8a (Paladín) → R8b (Cazador) → R8c (Clérigo) → R8d (balance + assets + QA). Criterio R8: *builds distintas*.
 
 HUs formales: `Vandrheim-Roblox/HU/` (`HU-R0`, `HU-R1`, `HU-R2`, …). Plantilla: `HU-TEMPLATE.md`.
 RCs (requerimientos técnicos por HU): plantilla en `RC-TEMPLATE.md`; numeración `rc001`, `rc002`, … (formato comentario Luau).
@@ -477,6 +485,7 @@ Ver `HU/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º stub R
 - **SFX movimiento:** `FootstepSystem` reutiliza sonidos existentes por material; R6.1 sincroniza su reproducción con las animaciones sin enviar un evento por cada pisada.
 - **Equipamiento visual:** `HU-ESTETICA-01` crea espada 1H, escudo, espadón 2H, casco, pecho, hombreras, piernas y guantes del Paladín, y los integra al avatar R15 desde `ItemConfig`.
 - **Cantidad R8:** límite 1 animación por skillType + variantes por spec solo si sobran sesiones (evitar 1 anim por skill).
+- **VFX:** básico sin assets (R6.8, R6.9 completas) + **partículas reales confirmadas** (dev); **VFX únicos por skill en cada HU de clase** (R8a/b/c); SFX en R9.
 - **Criterio de aceptación de assets:** incluidos en DoD de R8/R9 con registro y sin licencias pendientes.
 
 ---
@@ -562,6 +571,13 @@ Ver `HU/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º stub R
 | 2026-08-26 | **Implementadas según reporte del equipo:** R3.2, R3.3, R6.2, R6.3, R6.4, R6.5, R6.6, EST-01 y R7 |
 | 2026-08-26 | **Pendientes:** EST-02 (modelos de enemigos de la Helada) y EST-03 (estructuras del pueblo nórdico) |
 | 2026-08-26 | **HU-R6.7 creada** — animaciones de enemigos por familia (idle/walk/attack/special); framework data-driven para reemplazar modelos/animaciones por config |
+| 2026-08-26 | **HU-R6.8 creada** — VFX básico de combate (proyectiles ranged, hits, números de daño, muerte de enemigos); sin assets externos |
+| 2026-08-26 | **HU-R6.9 creada + SKILLS_CATALOG v2.1** — GroundAoE como zona persistente con daño por tick; SelfAoE alrededor del jugador; Torbellino → Self, Consagración/Ira divina → zona |
+| 2026-08-26 | **Decisiones R8:** R8 se divide en R8a (Paladín) / R8b (Cazador) / R8c (Clérigo) / R8d (balance + assets + QA); iconos Gemini de fondo negro = finales; balance R8 = números coherentes/funcionando, fino en R9; no se espera a R6.7–6.9 ni EST-02/03 para crear las HUs |
+| 2026-08-26 | **SKILLS_CATALOG v2.2 + árboles finales:** 6 specs aprobadas spec por spec (Castigo con Anillo de luz sagrada SelfAoE); HU-R8a creada |
+| 2026-08-26 | **HU-R8b y HU-R8c creadas** — Cazador (Asalto + Puntería) y Clérigo (Misericordia + Cólera) con árboles finales y VFX por skill; R8 completo en 4 HUs |
+| 2026-08-26 | **HU-R6.10 creada** — menú in-game (ESC) con "volver a selección de personaje" funcional; placeholders de volumen/gráficos/orden de UI |
+| 2026-08-26 | **R6.8 + R6.9 completas** (VFX básico y AoE zonas/Self) según reporte; **VFX con partículas confirmado** (dev: ParticleEmitter/Beam/Trail, client-side con autoridad server) → **VFX únicos por skill se integran en cada HU de clase (R8a/b/c)**; SFX/sonido en **R9** |
 
 ---
 
@@ -569,10 +585,12 @@ Ver `HU/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º stub R
 
 1. **R0–R7 + R6.x + EST-01 cerrados** (gameplay completo: combate, progresión, inventario, dungeon con variantes/topología, boss, UI y animaciones de combate).  
 2. Implementar **HU-R6.7**: framework de animaciones de enemigos por familia (deja el código listo para los modelos de EST-02).  
-3. Implementar **EST-02 / HU-ESTETICA-02**: modelos de enemigos de la Helada (diseñador; dev enlaza `modelId`).  
-4. Implementar **EST-03 / HU-ESTETICA-03**: estructuras del pueblo nórdico (diseñador; dev integra en el hub).  
-5. Criterio de hecho EST: *cada piso tiene enemigos reconocibles y el hub se ve como un asentamiento nórdico*.  
-6. No abrir R8 hasta que el loop completo (pueblo → run → boss → recompensa → pueblo) sea estable y la estética MVP esté validada.
+3. Implementar **HU-R6.8**: VFX básico de combate (hits, números de daño, proyectiles ranged, muerte).  
+4. Implementar **HU-R6.9**: AoE — zonas persistentes de suelo (DoT) + SelfAoE (SKILLS_CATALOG v2.1).  
+5. Implementar **EST-02 / HU-ESTETICA-02**: modelos de enemigos de la Helada (diseñador; dev enlaza `modelId`).  
+6. Implementar **EST-03 / HU-ESTETICA-03**: estructuras del pueblo nórdico (diseñador; dev integra en el hub).  
+7. Criterio de hecho EST: *cada piso tiene enemigos reconocibles y el hub se ve como un asentamiento nórdico*.  
+8. **R8 puede planificarse/crearse en paralelo** (R8a Paladín ya creada); la implementación de R8 comienza cuando el loop base esté estable, sin esperar a EST-02/03 para avanzar con las HUs.
 
 ---
 
@@ -583,4 +601,4 @@ Ver `HU/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º stub R
 - **Foco:** modelos, materiales, colores/paletas, UI (HUD/ventanas/iconos), iluminación por Place + selección/registro de animaciones de la Library (~6 por skillType).
 - **Fuente:** `ASSETS_POLICY.md` (§17). Placeholders hasta que existan los assets reales; reemplazo solo cambiando ids en config.
 - **Transversal:** corre en paralelo con R5–R7; no bloquea gameplay.
-- **Fuera:** crear/riggear animaciones, edición fina de meshes y crear paquetes nuevos de VFX/SFX; R6.1 integra los sonidos de pisadas ya existentes en `FootstepSystem`.
+- **Fuera:** crear/riggear animaciones, edición fina de meshes y crear paquetes nuevos de SFX; **VFX con partículas SÍ** (confirmado — ASSETS_POLICY §2/§6); R6.1 integra los sonidos de pisadas ya existentes en `FootstepSystem`.

@@ -26,6 +26,7 @@
 | Colores / paletas | Edición fina de meshes |
 | UI (ventanas, HUD, iconos) | — |
 | Iluminación (Lighting, atmosphere, fog) | — |
+| **VFX con partículas** (`ParticleEmitter`, `Beam`, `Trail`, `Attachment`, Tween de color/tamaño/transparencia/velocidad/duración) — confirmado 2026-08-26 | — |
 | **Buscar/seleccionar animaciones en la Library** | — |
 
 ---
@@ -78,7 +79,8 @@ ReplicatedStorage/
 | R4–R7 | Default o gratuitas de librería puntuales | Placeholders color+inicial; **HU-ASSETS puede adelantar UI/iconos/modelos en paralelo** |
 | **R6.1** | Animaciones R15 de caminar/correr de Library o default; registrar ids | Reutilizar SFX existentes de `FootstepSystem`, sincronizados por material y animación |
 | **R8** | De la **librería** por skillType (12–18): melee slash, ranged shot, cast mágico, cast AoE, heal, shield, buff — buscadas/registradas por el dev | Iconos reales de skills (30) |
-| R9 | Polish: feedback de hits, VFX básico (si se confirma), sonido | Iconos finales de ítems + UI polish |
+| **R8d** | — | Iconos reales de skills (30) + QA; **VFX únicos por skill integrados en cada HU de clase (R8a/b/c)** |
+| R9 | Polish: feedback de hits, **VFX real** (confirmado), sonido (SFX — pendiente de confirmar) | Iconos finales de ítems + UI polish |
 
 **Límite anti-scope-creep:** máximo **1 animación por skillType** + variantes por spec **solo si sobran sesiones** en R8. Nunca 1 animación por skill "porque queda lindo".
 
@@ -132,3 +134,4 @@ Se completa a medida que se incorporan assets reales (obligatorio en DoD de HU-A
 | 2026-08-12 | Capacidad del dev confirmada: modelos/materiales/UI/iluminación sí; animaciones NO (solo librería). Política ajustada |
 | 2026-08-12 | Iconos con IA (Gemini) habilitados: PNG 512×512 transparente; batch Paladín (armas/armaduras/pociones) en curso; catálogo completo en R8 |
 | 2026-08-23 | HU-R6.1 integra los sonidos existentes de `FootstepSystem` por material; no crea nuevos paquetes SFX ni envía eventos por cada pisada |
+| 2026-08-26 | **VFX con partículas confirmado** (ParticleEmitter/Beam/Trail, client-side con autoridad server). R6.8/R6.9 (VFX básico y zonas AoE) completas; **VFX únicos por skill en R8a/b/c (por clase)**; SFX/sonido → R9 |
