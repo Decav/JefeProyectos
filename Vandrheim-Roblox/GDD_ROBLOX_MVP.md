@@ -416,6 +416,8 @@ StarterGui/
 | **EST-01** | **Completo** (2026-08-26) | Equipamiento visible en avatar + 8 modelos iniciales del Paladín | Equipar cambia también la apariencia del personaje |
 | **EST-02** | Pendiente | Modelos 3D de los enemigos de la Helada (7 bases + 5 elites) | Cada piso tiene enemigos y mini-bosses reconocibles |
 | **EST-03** | Pendiente | Estructuras del pueblo nórdico: casas, caminos, límites, entradas y decoraciones | El hub se ve como un asentamiento nórdico coherente |
+| **EST-04** | Pendiente | Diseño completo de UI (dirección "Hearthbound Gold"): sistema visual + 12 pantallas (incl. móvil) + componentes/assets | La interfaz tiene identidad nórdica cálida y es implementable por el dev |
+| **EST-05** | Pendiente | Arco del Cazador: modelo 3D (diseñador) + integración como ítem (dev, pipeline EST-01) | Cazador equipa arco visible y funcional para pruebas |
 | **R7** | **Completo** (2026-08-26) | Boss piso 5 + cofre + uniques + reward UI | Loop de botín cierra |
 | **R8** | Pendiente | 3 clases jugables (skills/talentos MVP) | Builds distintas |
 | **R8a** | Pendiente | Paladín completo: 10 skills + árboles finales (Protector/Castigo) + soporte MATKMult + **VFX de sus skills** | Paladín jugable de punta a punta con 2 builds |
@@ -577,7 +579,11 @@ Ver `HU/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º stub R
 | 2026-08-26 | **SKILLS_CATALOG v2.2 + árboles finales:** 6 specs aprobadas spec por spec (Castigo con Anillo de luz sagrada SelfAoE); HU-R8a creada |
 | 2026-08-26 | **HU-R8b y HU-R8c creadas** — Cazador (Asalto + Puntería) y Clérigo (Misericordia + Cólera) con árboles finales y VFX por skill; R8 completo en 4 HUs |
 | 2026-08-26 | **HU-R6.10 creada** — menú in-game (ESC) con "volver a selección de personaje" funcional; placeholders de volumen/gráficos/orden de UI |
+| 2026-08-26 | **HU-ESTETICA-04 creada** — dirección de UI aprobada "Hearthbound Gold" (desde `Vandrheim-design.pen`); diseñador entrega sistema visual + 11 pantallas + assets; dev implementa después |
+| 2026-08-26 | **EST-04 completada (diseño):** 12 pantallas (incl. Mobile HUD), estados de nodos/botones, componentes exportables 9-slice y checklist de assets — verificado en `Vandrheim-design.pen` |
+| 2026-08-26 | **HU-ESTETICA-05 creada** — arco del Cazador (modelo diseñador + integración dev con EST-01); `Icon_Item_bow` agregado a ASSETS_LIST |
 | 2026-08-26 | **R6.8 + R6.9 completas** (VFX básico y AoE zonas/Self) según reporte; **VFX con partículas confirmado** (dev: ParticleEmitter/Beam/Trail, client-side con autoridad server) → **VFX únicos por skill se integran en cada HU de clase (R8a/b/c)**; SFX/sonido en **R9** |
+| 2026-08-26 | **HU-ESTETICA-06 creada** — revisión del diseño de UI sobre EST-04 (solapamientos corregidos, iconos de mini-menú, rediseño del panel de stats, modernización general de las 12 pantallas); diseñador ejecuta, PM verifica |
 
 ---
 

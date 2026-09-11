@@ -32,22 +32,29 @@ REGLAS TÉCNICAS (obligatorias para todas):
    brillante, brillo mágico.
 10. Icon_Item_potion_mana — Frasco igual con líquido azul brillante.
 
-HABILIDADES DEL PALADÍN (una por imagen, nómbrala así): 11.
-Icon_Skill_paladin_holy_strike — Golpe sagrado: espada de luz dorada golpeando
-en diagonal con destellos sagrados. 12. Icon_Skill_paladin_light_verdict —
-Veredicto de luz: rayo de fe dorado brillante lanzado hacia arriba, resplandor
-radiante. 13. Icon_Skill_paladin_prot_shield_bash — Embate de escudo: escudo de
-acero impactando de frente con ondas de choque y chispas. 14.
-Icon_Skill_paladin_prot_vow — Voto protector: símbolo de cruz dorada
-resplandeciente con aura de sanación cálida y partículas ascendentes. 15.
-Icon_Skill_paladin_prot_sacred_wall — Muro sagrado: escudo de energía dorada
-translúcida con runas brillantes, como barrera mágica. 16.
-Icon_Skill_paladin_prot_consecration — Consagración: círculo de runas sagradas
-en el suelo con llamas doradas, vista cenital. 17.
-Icon_Skill_paladin_ret_holy_edge — Filo sagrado: hoja de energía dorada
-flameante en diagonal. 18. Icon_Skill_paladin_ret_divine_flames — Llamas
-divinas: llamas sagradas blancas/doradas ardiendo alrededor de una llama
-central. 19. Icon_Skill_paladin_ret_sentence — Sentencia: martillo de juicio
-dorado brillante con rayos de luz. 20. Icon_Skill_paladin_ret_holy_ring —
-Anillo de luz sagrada: anillo de luz dorada expandiéndose en todas direcciones,
-burst sagrado.
+ÍTEM EXTRA (sin número para no chocar con las skills):
+Icon_Item_bow — Arco de cazador: arco curvo de madera oscura con cuerdas tensas, refuerzos de cuero y hierro frío.
+
+HABILIDADES DEL PALADÍN (una por imagen, nómbrala así):
+11. Icon_Skill_paladin_holy_strike — Golpe sagrado: espada de luz dorada golpeando en diagonal con destellos sagrados.
+12. Icon_Skill_paladin_light_verdict — Veredicto de luz: rayo de fe dorado brillante lanzado hacia arriba, resplandor radiante.
+13. Icon_Skill_paladin_prot_shield_bash — Embate de escudo: escudo de acero impactando de frente con ondas de choque y chispas.
+14. Icon_Skill_paladin_prot_vow — Voto protector: símbolo de cruz dorada resplandeciente con aura de sanación cálida y partículas ascendentes.
+15. Icon_Skill_paladin_prot_sacred_wall — Muro sagrado: escudo de energía dorada translúcida con runas brillantes, como barrera mágica.
+16. Icon_Skill_paladin_prot_consecration — Consagración: círculo de runas sagradas en el suelo con llamas doradas, vista cenital.
+17. Icon_Skill_paladin_ret_holy_edge — Filo sagrado: hoja de energía dorada flameante en diagonal.
+18. Icon_Skill_paladin_ret_divine_flames — Llamas divinas: llamas sagradas blancas/doradas ardiendo alrededor de una llama central.
+19. Icon_Skill_paladin_ret_sentence — Sentencia: martillo de juicio dorado brillante con rayos de luz.
+20. Icon_Skill_paladin_ret_holy_ring — Anillo de luz sagrada: anillo de luz dorada expandiéndose en todas direcciones, burst sagrado.
+
+HABILIDADES DEL CAZADOR (una por imagen, nómbrala así): 
+21. Icon_Skill_hunter_savage_cut — Corte salvaje: garra/hoja curva cortando en diagonal con estela de velocidad. 
+22. Icon_Skill_hunter_piercing_shot — Disparo perforante: flecha en vuelo con punta metálica brillante y estela de viento. 
+23. Icon_Skill_hunter_asm_ambush — Emboscada: hoja corta apareciendo desde la oscuridad con destello de acero. 
+24. Icon_Skill_hunter_asm_crimson — Filo carmesí: hoja teñida de rojo sangre con gotas y brillo. 
+25. Icon_Skill_hunter_asm_twin — Cortes gemelos: dos hojas cruzadas en X con chispas de acero. 
+26. Icon_Skill_hunter_asm_whirlwind — Torbellino: anillo de viento con hojas de acero girando alrededor del centro. 
+27. Icon_Skill_hunter_mm_heavy_arrow — Flecha pesada: flecha gruesa de acero con punta ancha, vista diagonal. 
+28. Icon_Skill_hunter_mm_trueshot — Tiro certero: flecha centrada en un blanco con impacto preciso y anillo de tensión. 
+29. Icon_Skill_hunter_mm_chain — Tiro en cadena: rayo de energía conectando dos objetivos con flechas. 
+30. Icon_Skill_hunter_mm_death — Disparo mortal: flecha espectral con brillo oscuro y destello letal.
