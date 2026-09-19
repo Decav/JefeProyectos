@@ -32,7 +32,7 @@ Esta HU agrega:
 1. **Set Cazador (cuero)** — 5 piezas: casco, pecho, hombreras, piernas, guantes.
 2. **Set Clérigo (tela)** — 5 piezas: casco, pecho, hombreras, piernas, guantes.
 3. **Varita del Clérigo** (arma 1H mágica).
-4. **Collar** (slot Neck) y **Anillo** (slot Ring) — 1 slot cada uno (GDD §3).
+4. **Collar** (slot `Necklace`) y **Anillo** (slot `Ring`) — 1 slot cada uno (GDD §3); **sin modelo visual** (decisión de producto: solo dato + icono).
 5. **Reglas de armas**: melee 1H equipable en cada mano (dual wield); armas 2H (espadón, arco) ocupan MainHand + OffHand y bloquean offhand; escudo solo OffHand; varita 1H sin dual (puede llevar escudo).
 6. **Obtención seed mínima**: las piezas caen en las LootTables del dungeon y se pueden comprar en vendors, para probarlas en juego.
 
@@ -74,8 +74,9 @@ Reglas de validación en `InventoryService` (server-authoritative):
 * **Desequipar un 2H**: libera `MainHand` y `OffHand` al mismo tiempo.
 * **Reemplazo**: si hay un 2H equipado, equipar cualquier 1H/escudo/varita es rechazado hasta desequipar el 2H. Si hay 1H en ambas manos, equipar un 2H es rechazado.
 * Las validaciones las aplica el servidor; el cliente solo envía intención (`RequestEquipItem`/`RequestUnequipItem` existentes). No se crean RemoteEvents nuevos.
-* Migración de templates existentes (templateIds reales): `sword_apprentice`, `sword_iron`, `sword_knight`, `sword_champion` → `OneHand`; `shield_guard` → `OffHand`; `hunter_bow` → `TwoHand`; `unique_frost_edge` → `OneHand`; `unique_frostbow` → `TwoHand`; `unique_glacial_wand` → `MainHandOnly`.
-* Contrato de equip: `RequestEquipItem { instanceId, preferredSlot? }` — `preferredSlot` (`"MainHand"`/`"OffHand"`) es opcional y habilita el dual wield; el servidor lo valida contra el `wieldType` y el estado actual. Sin `preferredSlot`, se usa el slot por defecto del template.
+* El campo `weaponAffinity` ya existe en `ItemConfig` (armas): espadas → specs Paladín/Cazador, `hunter_bow` → `Hunter_Assault`/`Hunter_Punteria` (verificado en código). Los templates nuevos de armas definen el suyo: `cleric_wand` → `Cleric_Misericordia`/`Cleric_Colera`.
+* Migración de templates existentes (templateIds reales verificados en `ItemConfig`): `sword_apprentice`, `sword_iron`, `sword_knight`, `sword_champion` → `OneHand`; `shield_guard` → `OffHand`; `hunter_bow` → `TwoHand`; `unique_frost_edge` → `OneHand`; `unique_frostbow` → `TwoHand`; `unique_glacial_wand` → `MainHandOnly`.
+* Contrato de equip: `RequestEquipItem { instanceId, preferredSlot? }` — **extensión del contrato actual** (hoy es `{ instanceId }`, rc015/rc022/`InventoryClient:475`): `preferredSlot` (`"MainHand"`/`"OffHand"`) es opcional y habilita el dual wield; el servidor lo valida contra el `wieldType` y el estado actual. Sin `preferredSlot`, se usa el slot por defecto del template.
 * Arma 2H: la instancia se guarda en `equipment["MainHand"]` y `equipment["OffHand"]` (misma `instanceId`); `recalculateStats` debe sumar la instancia **una sola vez** (dedupe por instanceId) para no duplicar stats; desequipar libera ambos slots y la serialización de la UI lo muestra como un solo ítem 2H.
 * Visual dual: `EquipmentVisualService` debe adjuntar la 1H equipada en `OffHand` a la mano izquierda (mapeo slot→mano o campo `offhandAttachTo` en el template), porque hoy `attachTo` apunta a `RightHand` para ambos slots.
 
@@ -95,9 +96,41 @@ Reglas de validación en `InventoryService` (server-authoritative):
 | Collar | `item_collar` | Necklace | MaxHP/DEF leve | 1 | Blanco/Verde |
 | Anillo | `item_ring` | Ring | ATK o CRIT leve | 1 | Blanco/Verde |
 
-* Cada template: `stackable=false`, `maxStack=1`, `bindState` BoE (se liga al equipar, R4), `iconId` e `iconId` de la lista de assets de `HU-ESTETICA-07`/`ASSETS_LIST`, `visualModelId` apuntando a los modelos del diseñador.
+* Cada template: `stackable=false`, `maxStack=1`, `bindState` BoE (se liga al equipar, R4), `iconId` e `iconId` de la lista de assets de `HU-ESTETICA-07`/`ASSETS_LIST`, `visualModelId` apuntando a los modelos del diseñador (solo armadura y varita; collar/anillo sin visual).
 * Rolls menores (R4) se aplican igual que al set actual; `unique=false`.
 * Los números de stats son seed orientativo; el balance final es R8d.
+
+#### **Seed aprobado (PM, 2026-09-15) — valores concretos para rc034**
+
+Sigue el patrón del equipo existente (`sword_*`: ATK 6/2 → 12/5; `chest_leather`: DEF 4/1; piezas Paladín: DEF 2/0 y guantes 1/0).
+
+| Template | levelReq | Rareza | Stats base/roll |
+|----------|----------|--------|-----------------|
+| `hunter_helmet` | 1 | Uncommon | DEF 2/0 |
+| `hunter_gloves` | 5 | Uncommon | DEF 1/0, CRIT 1/0 |
+| `hunter_legs` | 10 | Rare | DEF 3/1, CRIT 2/0 |
+| `hunter_shoulders` | 10 | Rare | DEF 2/0, ATK 2/1 |
+| `hunter_chest` | 15 | Rare | DEF 4/1, MDEF 2/0 |
+| `cleric_helmet` | 1 | Common | MDEF 2/0 |
+| `cleric_gloves` | 5 | Common | MDEF 1/0, MaxMP 5/0 |
+| `cleric_legs` | 10 | Uncommon | MDEF 3/1, MATK 1/0 |
+| `cleric_shoulders` | 10 | Uncommon | MDEF 2/0, MaxMP 10/0 |
+| `cleric_chest` | 15 | Uncommon | MDEF 4/1, MATK 2/1 |
+| `cleric_wand` | 1 | Common | MATK 6/2; `weaponAffinity` = Cleric_Misericordia, Cleric_Colera |
+| `item_collar` | 1 | Common | MaxHP 10/5, DEF 1/0 |
+| `item_ring` | 1 | Common | ATK 2/1, CRIT 1/0 |
+
+**Pesos de loot** (formato real de `LootTables`: `Entries { templateId, weight }`, pesos bajos ≤ 6 sin tocar `DropChance` de piso ni las tablas de boss):
+
+| Tabla | Entradas nuevas (templateId = weight) |
+|-------|----------------------------------------|
+| `floor_1` | hunter_helmet 6, cleric_helmet 6, cleric_wand 3, item_collar 3, item_ring 3 |
+| `floor_2` | hunter_gloves 5, cleric_gloves 5, cleric_wand 3, item_collar 3, item_ring 3 |
+| `floor_3` | hunter_legs 5, hunter_shoulders 4, cleric_legs 4, cleric_shoulders 4, cleric_wand 2, item_collar 2, item_ring 2 |
+| `floor_4` | hunter_chest 4, hunter_legs 4, hunter_shoulders 3, cleric_chest 3, cleric_legs 3, cleric_shoulders 3 |
+| `floor_5` | hunter_chest 5, cleric_chest 5, hunter_legs 3, cleric_legs 3, item_collar 2, item_ring 2 |
+
+Regla: cada pieza cae en los pisos acordes a su `levelReq` (lvl 1 → pisos 1–2; lvl 5 → 2–3; lvl 10 → 3–4; lvl 15 → 4–5); collar/anillo (lvl 1) aparecen en todos los pisos con peso bajo. Sin cambios en `floor_X_boss` ni en `uniquePool` del piso 5 (R7 intacto).
 
 #### **Obtención (loot/vendor seed mínimo)**
 
@@ -107,8 +140,8 @@ Reglas de validación en `InventoryService` (server-authoritative):
 
 #### **Integración visual**
 
-* `EquipmentVisualService` (EST-01) aplica los `visualModelId` nuevos con el mismo pipeline (Accessory R15 para armadura, HandModel para varita, accesorios para collar/anillo).
-* Collar y anillo: accesorios R15 discretos (cuello y mano/brazo) sin colisión ni interferencia con el Humanoid.
+* `EquipmentVisualService` (EST-01) aplica los `visualModelId` nuevos con el mismo pipeline (Accessory R15 para armadura, HandModel para varita).
+* **Collar y anillo no llevan modelo 3D** (decisión de producto 2026-09-15): se equipan como dato con su `iconId`; el avatar no cambia al equiparlos.
 * Si un modelo falta (pendiente del diseñador), el ítem conserva fallback/warning controlado (regla EST-01) y sigue siendo equipable como dato.
 
 #### **Seguridad y autoridad**
@@ -174,7 +207,7 @@ Reglas de validación en `InventoryService` (server-authoritative):
 * **GIVEN** el jugador tiene un collar y un anillo.
 * **WHEN** los equipa.
 * **THEN** cada uno ocupa su slot (`Necklace`, `Ring`), uno por personaje.
-* **AND** sus stats se aplican y los visuales aparecen en el avatar.
+* **AND** sus stats se aplican, sin modelo visual en el avatar (decisión de producto: solo dato + icono).
 
 #### **Escenario 9: Obtención por loot**
 
@@ -208,8 +241,8 @@ Reglas de validación en `InventoryService` (server-authoritative):
 
 ### **Comportamiento Visual e Interfaz (UI/UX) / Reglas de Negocio**
 
-* El equipo (R6.5) muestra los huecos de `Neck` y `Ring` junto a los existentes; la UI se mantiene escalable (Scale + UIAspectRatioConstraint) y usable en móvil.
-* Los visuales de los sets se reflejan en el avatar R15 (pipeline EST-01): cuero del Cazador, tela del Clérigo, varita en la mano derecha, collar y anillo como accesorios.
+* El equipo (R6.5) muestra los huecos de `Necklace` y `Ring` junto a los existentes; la UI se mantiene escalable (Scale + UIAspectRatioConstraint) y usable en móvil.
+* Los visuales de los sets se reflejan en el avatar R15 (pipeline EST-01): cuero del Cazador, tela del Clérigo, varita en la mano derecha. El collar y el anillo **no tienen visual** en el avatar.
 * El dual wield se ve como dos armas en ambas manos; el 2H como un arma grande en la mano derecha (sin IK de dos manos en esta HU, como EST-01).
 * Las reglas de armas son reglas de negocio server-side; la UI solo refleja rechazos con feedback breve ("No podés equipar eso", etc.).
 * Sin bonus numérico de dual wield ni penalización en esta HU: es solo equipamiento (balance en R8d).
@@ -222,8 +255,8 @@ Reglas de validación en `InventoryService` (server-authoritative):
 
 * Campo `wieldType` en `ItemConfig` + migración de templates existentes.
 * Reglas de equipamiento server-side: dual 1H, 2H bloquea offhand, escudo solo offhand, varita mainhand-only.
-* Slots `Neck` y `Ring` (1 cada uno) + huecos en la UI de equipo (R6.5).
-* 10 templates de armadura nuevos (5 Cazador + 5 Clérigo), varita, collar y anillo con stats seed, `levelReq`, rareza, BoE, iconId y visualModelId.
+* Slots `Necklace` y `Ring` (1 cada uno) + huecos en la UI de equipo (R6.5).
+* 10 templates de armadura nuevos (5 Cazador + 5 Clérigo), varita, collar y anillo con stats seed, `levelReq`, rareza, BoE e `iconId`; `visualModelId` solo para armadura y varita (collar/anillo sin visual).
 * Integración con `EquipmentVisualService` (visuales de EST-07 con fallback).
 * Entradas seed en LootTables (floor_1–5) y vendors (armaduras/armas) para obtener los ítems.
 * Regresión de equip, stats, inventario, vendores, respawn y avatar.
@@ -246,8 +279,9 @@ Reglas de validación en `InventoryService` (server-authoritative):
 * [ ] 2H ocupa MainHand+OffHand y bloquea offhand; desequipar libera ambos.
 * [ ] Escudo solo offhand; varita solo mainhand (offhand libre).
 * [ ] Los templates de collar y anillo usan los slots `Necklace` y `Ring` ya existentes (1 cada uno), sin crear slots nuevos.
-* [ ] Los 10 templates de armadura + varita + collar + anillo existen con stats seed, levelReq, rareza, BoE, iconId y visualModelId.
+* [ ] Los 10 templates de armadura + varita + collar + anillo existen con stats seed, levelReq, rareza, BoE e iconId (visualModelId solo armadura/varita).
 * [ ] Los sets completos equipan en el avatar R15 con los modelos de EST-07 (o fallback controlado si faltan).
+* [ ] Collar y anillo equipan como dato con su icono, sin modelo visual (decisión de producto).
 * [ ] Las piezas caen por loot (floor_1–5) y se compran en vendors sin romper el flujo R5/R5.2.
 * [ ] El cliente no puede forzar wieldType, slots ni duplicar joyería.
 * [ ] Sin errores rojos en equip → combate → respawn → rejoin.
@@ -262,7 +296,7 @@ Reglas de validación en `InventoryService` (server-authoritative):
 | Tema | Default |
 |------|---------|
 | Sets nuevos | Cazador (cuero) + Clérigo (tela), 5 piezas cada uno |
-| Joyería | 1 Collar (Neck) + 1 Anillo (Ring) por personaje |
+| Joyería | 1 Collar (`Necklace`) + 1 Anillo (`Ring`) por personaje, **sin visual** (dato + icono) |
 | Armas | `OneHand` dual · `TwoHand` bloquea offhand · `OffHand` solo escudo · `MainHandOnly` varita |
 | Varita | 1H mágica, MainHand-only, puede llevar escudo |
 | Obtención | Loot floor_1–5 + vendors (armaduras/armas), seed mínimo |
@@ -283,3 +317,5 @@ Reglas de validación en `InventoryService` (server-authoritative):
 | Fecha | Cambio |
 |-------|--------|
 | 2026-09-12 | Creación de HU-ITEMS-01: sets Cazador/Clérigo, varita, collar y anillo; reglas de armas 1H dual / 2H bloquea offhand; obtención seed por loot/vendor; decisiones cerradas con producto |
+| 2026-09-15 | Revisión PM: slot canónico `Necklace` confirmado en `ItemConfig.SLOTS` (9 slots, Ring/Necklace ya existen); templateIds de migración y `weaponAffinity` verificados en código; `preferredSlot` marcado como extensión del contrato de `RequestEquipItem`; **collar y anillo sin modelo visual** (decisión de producto: solo dato + icono) |
+| 2026-09-15 | **rc034 aprobado** con criterio de vendor confirmado (solo `vendor_gear`, sin NPC nuevo); **seed cerrado por el PM**: stats/rolls por pieza, levelReq/rareza por template y pesos de loot por piso (tablas en "Seed aprobado"); R8d afina balance |

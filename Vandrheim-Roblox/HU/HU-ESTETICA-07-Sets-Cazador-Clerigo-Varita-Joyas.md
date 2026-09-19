@@ -27,13 +27,13 @@
 
 `HU-ITEMS-01` amplía el catálogo con el set del Cazador (cuero), el set del Clérigo (tela), una varita, un collar y un anillo. Esta HU produce los **assets** de esos ítems siguiendo el pipeline de `HU-ESTETICA-01` y la `ASSETS_POLICY`:
 
-* **Modelos 3D** en `ReplicatedStorage/Assets/Models/Equipment/` (misma estructura que `Paladin/`).
-* **Iconos 2D** (512×512, fondo negro según el estándar aprobado) para los ítems nuevos y las skills del Clérigo pendientes de `ASSETS_LIST`.
+* **Modelos 3D** en `ReplicatedStorage/Assets/Models/Equipment/` (misma estructura que `Paladin/`) — **solo los que llevan visual en el avatar**: 10 piezas de sets + varita. **Collar y anillo no llevan modelo 3D** (decisión de producto 2026-09-15: son demasiado pequeños para mostrarse; equipan como dato + icono).
+* **Iconos 2D** (512×512, fondo negro según el estándar aprobado) para los 13 ítems nuevos y las skills del Clérigo pendientes de `ASSETS_LIST`.
 * **Registro obligatorio** en `ASSETS_REGISTRY` (fuente, autor, licencia).
 
 El dev luego enlaza cada asset por id en `ItemConfig` (HU-ITEMS-01) sin tocar código de gameplay. Mientras un modelo no exista, el ítem funciona con fallback (regla EST-01).
 
-**Criterio de hecho global:** existen los modelos R15 e iconos de los **13 ítems nuevos** (10 piezas de sets + varita + collar + anillo) y quedan registrados para que `HU-ITEMS-01` los referencie.
+**Criterio de hecho global:** existen los modelos R15 de los **11 ítems con visual** (10 piezas de sets + varita) y los **13 iconos** de los ítems nuevos, y quedan registrados para que `HU-ITEMS-01` los referencie. Collar y anillo quedan como dato + icono, sin modelo.
 
 ---
 
@@ -54,8 +54,8 @@ El dev luego enlaza cada asset por id en `ItemConfig` (HU-ITEMS-01) sin tocar c�
 | `cleric_legs` | Faldón/calzas de tela con cintas doradas | `BodySkin` — piernas/pies R15 |
 | `cleric_gloves` | Guantes de tela con puños dorados | `BodySkin` — brazos/manos R15 |
 | `cleric_wand` | Varita de madera clara con gema azul brillante y filigrana dorada | `HandModel` — `attachTo = RightHand` (patrón espadas) |
-| `item_collar` | Collar/collarín de metal dorado con gema azul | `Accessory`/`ModelAccessory` — `NeckAttachment` |
-| `item_ring` | Anillo de oro con gema pequeña | `Accessory` — `RightHandAttachment` (discreto) |
+
+Nota: **collar (`item_collar`) y anillo (`item_ring`) no llevan modelo 3D** (decisión de producto): solo icono + dato en `ItemConfig`; no se adjuntan al avatar.
 
 Reglas visuales (heredadas de EST-01 y ASSETS_POLICY):
 
@@ -65,6 +65,7 @@ Reglas visuales (heredadas de EST-01 y ASSETS_POLICY):
 * **Collar y anillo**: discretos pero visibles; no deforman ni chocan con el R15; siguen las animaciones.
 * Piezas `Anchored=false`, `CanCollide=false`, `Massless=true` cuando corresponda; sin interferir con el Humanoid.
 * Nombres estables, clonables, dentro de la carpeta de Assets (no dejar única copia en `Workspace.GFX`).
+* Collar y anillo: **sin modelo** — no se crean ni se registran modelos para ellos (solo iconos).
 
 #### **Estructura de assets**
 
@@ -76,7 +77,6 @@ ReplicatedStorage/
         Hunter/    -- hunter_helmet, hunter_chest, hunter_shoulders, hunter_legs, hunter_gloves
         Cleric/    -- cleric_helmet, cleric_chest, cleric_shoulders, cleric_legs, cleric_gloves
         Weapons/   -- cleric_wand
-        Jewellery/ -- item_collar, item_ring
 ```
 
 #### **Iconos 2D (ASSETS_LIST)**
@@ -127,7 +127,7 @@ Cada asset incorporado se anota en `ASSETS_REGISTRY`:
 
 * **GIVEN** el diseñador entrega los modelos.
 * **WHEN** se inspecciona `ReplicatedStorage.Assets.Models.Equipment`.
-* **THEN** existen `Hunter/`, `Cleric/`, `Weapons/cleric_wand` y `Jewellery/` con ids estables.
+* **THEN** existen `Hunter/`, `Cleric/` y `Weapons/cleric_wand` con ids estables.
 * **AND** no dependen de copias sueltas en `Workspace.GFX`.
 
 #### **Escenario 2: Set Cazador en R15**
@@ -151,12 +151,12 @@ Cada asset incorporado se anota en `ASSETS_REGISTRY`:
 * **THEN** la varita aparece en la mano derecha.
 * **AND** sigue la mano durante movimiento y animaciones existentes.
 
-#### **Escenario 5: Collar y anillo**
+#### **Escenario 5: Collar y anillo sin modelo visual**
 
 * **GIVEN** el jugador equipa collar y anillo.
-* **WHEN** se aplican los visuales.
-* **THEN** el collar aparece en el cuello y el anillo en la mano.
-* **AND** no quedan flotando, invertidos ni separados del avatar.
+* **WHEN** se aplica el equipamiento.
+* **THEN** no se adjunta ningún modelo 3D al avatar (decisión de producto: solo dato + icono).
+* **AND** stats e icono funcionan con normalidad en inventario y equipo.
 
 #### **Escenario 6: Iconos listos**
 
@@ -191,7 +191,7 @@ Cada asset incorporado se anota en `ASSETS_REGISTRY`:
 ### **Comportamiento Visual e Interfaz (UI/UX) / Reglas de Negocio**
 
 * Cada set tiene identidad propia: cuero del Cazador, tela del Clérigo, placas del Paladín.
-* La varita, el collar y el anillo son visibles pero discretos; no tapan al personaje ni la UI.
+* La varita es visible pero discreta; no tapa al personaje ni la UI. Collar y anillo no se muestran en el avatar (decisión de producto).
 * Los iconos mantienen el estándar aprobado (fondo negro, estilo pintado, paleta Vandrheim).
 * El dev no crea assets en esta HU: solo enlaza ids por config.
 * No se altera stats, rareza, loot, economía ni reglas de equipamiento.
@@ -204,9 +204,8 @@ Cada asset incorporado se anota en `ASSETS_REGISTRY`:
 
 * 10 modelos de armadura (5 Cazador + 5 Clérigo).
 * Modelo de varita (`cleric_wand`).
-* Modelos de collar (`item_collar`) y anillo (`item_ring`).
-* Organización en `Assets/Models/Equipment/{Hunter,Cleric,Weapons,Jewellery}`.
-* Iconos 2D de los 13 ítems nuevos + (recomendado) los 10 de skills del Clérigo.
+* Organización en `Assets/Models/Equipment/{Hunter,Cleric,Weapons}`.
+* Iconos 2D de los 13 ítems nuevos (incl. collar/anillo, que no llevan modelo) + (recomendado) los 10 de skills del Clérigo.
 * Actualización de `ASSETS_LIST.md` y registro en `ASSETS_REGISTRY`.
 * Prueba de compatibilidad R15 y con las animaciones actuales.
 
@@ -223,9 +222,10 @@ Cada asset incorporado se anota en `ASSETS_REGISTRY`:
 
 ### **Definition of Done (DoD)**
 
-* [ ] Los 13 modelos existen y están organizados en `Assets/Models/Equipment`.
+* [ ] Los 11 modelos existen y están organizados en `Assets/Models/Equipment`.
 * [ ] Los sets Cazador y Clérigo encajan en el R15 y se distinguen del Paladín.
-* [ ] La varita se une a la mano derecha; collar y anillo a sus zonas sin flotar.
+* [ ] La varita se une a la mano derecha.
+* [ ] Collar y anillo no requieren modelo 3D (decisión de producto): solo icono + dato.
 * [ ] Las piezas no tienen colisión ni afectan física, stats o daño.
 * [ ] Las animaciones actuales no separan las piezas.
 * [ ] Los iconos de los 13 ítems (y los 10 de skills del Clérigo si aplica) están listos con el estándar aprobado.
@@ -238,7 +238,7 @@ Cada asset incorporado se anota en `ASSETS_REGISTRY`:
 
 ### **Estimación (orientativa)**
 
-3–5 sesiones del diseñador: 13 modelos + ajuste R15 + 13–23 iconos + registro y pruebas de compatibilidad.
+2–4 sesiones del diseñador: 11 modelos + ajuste R15 + 13–23 iconos + registro y pruebas de compatibilidad.
 
 ---
 
@@ -247,3 +247,4 @@ Cada asset incorporado se anota en `ASSETS_REGISTRY`:
 | Fecha | Cambio |
 |-------|--------|
 | 2026-09-12 | Creación de HU-ESTETICA-07: modelos e iconos de sets Cazador/Clérigo, varita, collar y anillo; el dev los enlaza por config en HU-ITEMS-01 |
+| 2026-09-15 | Revisión PM: **collar y anillo fuera del alcance de modelos 3D** (decisión de producto: solo icono + dato); alcance pasa a 11 modelos (10 piezas + varita) + 13 iconos; se elimina la carpeta `Jewellery/` |

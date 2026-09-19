@@ -40,7 +40,7 @@
 | Animaciones default de Roblox | Base/placeholder (movimiento R15 automático) | Sin licencia pendiente (platform default) |
 | Producción propia (dev) | Modelos, materiales, UI, iconos, iluminación | Capacidad confirmada; no incluye animaciones |
 | Iconos generados (scripts/UI) | Placeholders "color + inicial", formas geométricas | Zero assets; reemplazables después |
-| **Iconos con IA (Gemini Imagen)** | Iconos de ítems/skills reales (R8) | **PNG 512×512 con fondo transparente** (dev confirmado 2026-08-12); revisión de producto antes de usarse; registro en ASSETS_REGISTRY |
+| **Iconos con IA (Gemini Imagen)** | Iconos de ítems/skills reales (R8) | **PNG 512×512 con fondo negro #000000 = finales** (decisión R8, 2026-08-26; sustituye al fondo transparente del 2026-08-12); revisión de producto antes de usarse; registro en ASSETS_REGISTRY |
 | Compra (futuro, presupuesto) | Paquetes premium de animación/iconos | Solo con decisión explícita de producto; registrar licencia |
 | **Prohibido** | Assets de terceros no permitidos, emojis en iconos, texturas de otros juegos, animaciones "de otro juego" | — |
 

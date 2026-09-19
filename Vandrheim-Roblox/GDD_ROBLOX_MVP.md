@@ -420,10 +420,10 @@ StarterGui/
 | **EST-05** | Pendiente | Arco del Cazador: modelo 3D (diseñador) + integración como ítem (dev, pipeline EST-01) | Cazador equipa arco visible y funcional para pruebas |
 | **R7** | **Completo** (2026-08-26) | Boss piso 5 + cofre + uniques + reward UI | Loop de botín cierra |
 | **R8** | Pendiente | 3 clases jugables (skills/talentos MVP) | Builds distintas |
-| **R8a** | Pendiente | Paladín completo: 10 skills + árboles finales (Protector/Castigo) + soporte MATKMult + **VFX de sus skills** | Paladín jugable de punta a punta con 2 builds |
-| **R8b** | Pendiente | Cazador completo (Asalto + Puntería) + VFX de sus skills | Cazador jugable con builds melee y ranged |
-| **R8c** | Pendiente | Clérigo completo (Misericordia + Cólera) + VFX de sus skills | Clérigo jugable con builds heal y dps |
-| **R8d** | Pendiente | Balance de números + assets (iconos 30) + QA a nivel 20 | Las 6 specs se sienten distintas y el arco a 20 funciona |
+| **R8a** | **Completo** (2026-09-11) | Paladín completo: 10 skills + árboles finales (Protector/Castigo) + soporte MATKMult + **VFX únicos client-side por skillId** | Paladín jugable de punta a punta con 2 builds |
+| **R8b** | **Completo** (2026-09-11) | Cazador completo (Asalto + Puntería) + VFX por skillId | Cazador jugable con builds melee y ranged; iconos finales pendientes de carga/registro |
+| **R8c** | **Completo** (2026-09-18) | Clérigo completo (Misericordia + Cólera) + VFX por skillId | Clérigo jugable con builds heal y dps; QA cerrado según reporte |
+| **R8d** | Pendiente | Balance de números + assets (iconos 30) + QA a nivel 20 — **HU-R8d no creada aún** | Las 6 specs se sienten distintas y el arco a 20 funciona |
 | **R9** | Pendiente | Party amigos (si entra), polish UI, balance medio a 20 | Demo estable |
 | **R10+** | Pendiente | Matchmaking, trade, más biomas/clases, cosméticos | Expansión |
 
@@ -583,7 +583,22 @@ Ver `HU/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º stub R
 | 2026-08-26 | **EST-04 completada (diseño):** 12 pantallas (incl. Mobile HUD), estados de nodos/botones, componentes exportables 9-slice y checklist de assets — verificado en `Vandrheim-design.pen` |
 | 2026-08-26 | **HU-ESTETICA-05 creada** — arco del Cazador (modelo diseñador + integración dev con EST-01); `Icon_Item_bow` agregado a ASSETS_LIST |
 | 2026-08-26 | **R6.8 + R6.9 completas** (VFX básico y AoE zonas/Self) según reporte; **VFX con partículas confirmado** (dev: ParticleEmitter/Beam/Trail, client-side con autoridad server) → **VFX únicos por skill se integran en cada HU de clase (R8a/b/c)**; SFX/sonido en **R9** |
+| 2026-09-11 | **R8a completa** — Paladín: 10 skills, árboles finales Protector/Castigo, MATKMult, SelfAoE, zona persistente y VFX únicos client-side por skillId; QA local OK; familias de VFX sagrados reutilizables para R8c |
+| 2026-09-11 | **R8b completa** — Cazador: 10 skills, árboles finales Asalto/Puntería, Torbellino SelfAoE y VFX por skillId; iconos finales pendientes de carga/registro |
+| 2026-09-17 | **R8c en QA** — Clérigo: 10 skills, Misericordia/Cólera, árboles finales, MATKMult, Ira divina GroundAoE y VFX por skillId; pendiente QA manual de builds/respec/rejoin; iconos del Clérigo como placeholders reemplazables hasta assets finales |
+| 2026-09-18 | **R8c completa** — QA cerrado según reporte (builds/respec/rejoin OK); iconos de skills e ítems completos; quedan pendientes los **modelos e iconos de los 3 uniques del boss final** (frost_edge, frostbow, glacial_wand) y la **HU-R8d** |
+| 2026-09-18 | **HU-ESTETICA-18 creada** — modelos e iconos de los 3 uniques del boss final (Filo de la Escarcha, Arco del Vendaval Helado, Vara del Invierno): diseñador produce assets, dev enlaza `visualModelId`/iconos por config — sin tocar loot ni gameplay |
+| 2026-09-18 | **HU-ESTETICA-19 creada** — diseño a fondo del HUD de combate (números de daño/cura, indicador de target R3.3, AoE pre/activa R6.9, barra del boss R7, cooldowns, nivel, feedback de golpes) — solo diseñador, sin desarrollo |
 | 2026-08-26 | **HU-ESTETICA-06 creada** — revisión del diseño de UI sobre EST-04 (solapamientos corregidos, iconos de mini-menú, rediseño del panel de stats, modernización general de las 12 pantallas); diseñador ejecuta, PM verifica |
+| 2026-09-15 | **HU-ESTETICA-08/09/10 creadas** — diseño a fondo por panel en Pencil (solo diseñador, sin desarrollo, HUs independientes): 08 Panel de Talentos (árbol WoW con contenido real), 09 Grimorio (spellbook con estados y barra), 10 Ventana de Equipo y Stats (tecla C: 9 slots con equipo activo + desglose base/ítems/talentos + XP) |
+| 2026-09-15 | **HU-ESTETICA-11/12 creadas** — diseño a fondo de Mochila (20 slots, pilas xN, rarezas, tooltips, atajos Z/X, estados) y Vendor (3 NPCs reales de VendorConfig, precios por rareza, compra/venta por unidad, respec del instructor) — solo diseñador, sin desarrollo |
+| 2026-09-15 | **HU-ESTETICA-13 creada** — paquete de handoff de la UI para el dev: specs con valores exactos, mapeo de fuentes a Roblox (PlayfairDisplay/Inter/RobotoMono), assets exportables (9-slice, botones 3 estados, barras, iconos) y notas de adaptación (responsive, zona segura móvil, animaciones TweenService) |
+| 2026-09-15 | **HU-ESTETICA-14 creada (dev)** — implementación del reskin de UI en Roblox desde el diseño de Pencil + paquete EST-13: 10 áreas (HUD, mochila, equipo/stats, talentos, grimorio, vendors, menú, selección/creación, recompensa, mobile), fuentes mapeadas, assets, animaciones Tween y regresión — sin tocar la lógica |
+| 2026-09-15 | **HU-ESTETICA-15 creada (dev)** — reskin de las ventanas de vendor (subconjunto de EST-14): 3 ventanas independientes (consumibles/armero/instructor), referenciando el frame `BFPNI` del diseño de Pencil; precios y lógica intactos |
+| 2026-09-15 | **EST-15 completa** — reskin de vendors implementado según reporte del dev (3 ventanas, similar al diseño) |
+| 2026-09-15 | **HU-ESTETICA-16 creada (dev)** — reskin de la ventana de talentos, referenciando el frame `v1eO9E` del diseño (EST-08) y el paquete EST-13; árbol conectado, estados de nodo, tooltips y respec — sin tocar la lógica |
+| 2026-09-15 | **EST-16 completa** — reskin de la ventana de talentos implementado según reporte del dev (árbol conectado y estados, similar al diseño) |
+| 2026-09-15 | **HU-ESTETICA-17 creada (dev)** — reskin del grimorio, referenciando el frame `NXCBS` del diseño (EST-09) y el paquete EST-13; estados de skill, vista previa del loadout y tooltips — sin tocar la lógica |
 
 ---
 
