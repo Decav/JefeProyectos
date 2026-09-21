@@ -37,6 +37,23 @@ El HUD base (EST-04/06) está diseñado: player card, HP/MP/XP/oro, target frame
 
 **Criterio de hecho global:** existe en el `.pen` un conjunto de elementos de HUD de combate completo y realista — con un mockup de pelea (incluido el boss del piso 5) — listo para que el dev lo implemente sin rediseñar.
 
+### **Registro de revisión del PM (2026-09-20)**
+
+Feedback del producto sobre el frame `M2PQGw`. Regla: **solo lo confirmado se mantiene; todo lo demás se rediseña**.
+
+| Elemento | Estado |
+|----------|--------|
+| Player frame | **Confirmado — se mantiene** |
+| Target frame | **Confirmado — se mantiene** |
+| Números de daño normal, crítico y recibido | **Confirmados — se mantienen** |
+| Frame del boss (barra del Guardián de la Escarcha) | **Confirmado — se mantiene** |
+| Número de cura (heal) | **Cambio: a verde `#7BC47F`** (antes frío `#8FB7D6`) |
+| Indicador de target (R3.3) | **Cambio: flecha roja sólida `#D64545` fija sobre la cabeza del enemigo en target** (reemplaza retícula/anillo) |
+| Cursor de combate | **Cambio: crosshair discreto en latón `#C89445`, sin etiqueta ni caja** (reemplaza el pointer "AIM/CAST") |
+| **Todo lo demás del frame `M2PQGw`** (marcador de GroundAoE y zona activa, SelfAoE, player/boss markers, damage flash, skillbar de combate con cooldowns, panel de estados y etiquetas) | **No confirmado — requiere rediseño del diseñador**; el diseño actual no se acepta tal cual |
+
+> El PM no prescribe el nuevo diseño de los elementos no confirmados: **el diseñador propone y el PM valida** antes de cerrar.
+
 ---
 
 ### **Especificaciones Técnicas / Contratos de API (visual)**
@@ -45,12 +62,14 @@ El HUD base (EST-04/06) está diseñado: player card, HP/MP/XP/oro, target frame
 
 Coherentes con Hearthbound Gold (`Scale` + `UIAspectRatioConstraint` en implementación), integrados visualmente al HUD base:
 
-* **Números de daño/cura (flotantes):** estilo del HUD (Geist Mono mapeada); daño normal (pergamino), **crítico** (más grande, latón o rojo), cura (verde/frío `#8FB7D6`), daño recibido (rojo `#C45345`); alineación y tamaño por tipo; sin desorden (se diseñan 2–3 tamaños, no 10).
-* **Indicador de target (R3.3):** anillo/marcador bajo el enemigo seleccionado (estilo nórdico, latón `#C89445` o frío), distinto del anillo de SelfAoE; visible también sobre el objetivo de los marcadores de zona.
+* **Números de daño/cura (flotantes):** estilo del HUD (Geist Mono mapeada); daño normal (pergamino), **crítico** (más grande, latón o rojo), **cura (verde `#7BC47F`)**, daño recibido (rojo `#C45345`); alineación y tamaño por tipo; sin desorden (se diseñan 2–3 tamaños, no 10).
+* **Indicador de target (R3.3):** **flecha roja sólida (`#D64545`) fija sobre la cabeza del enemigo seleccionado**, apuntando hacia abajo (estilo R3.3, no un anillo en el suelo); aparece en combate sobre el objetivo; distinta del anillo de SelfAoE y del marcador de zona.
 * **Marcador de GroundAoE:** círculo de **pre-lanzamiento** (donde el jugador apunta, con radio visible) y la **zona activa persistente** (relleno semitransparente con borde, estilo de la skill: sagrada/íra).
 * **Barra del boss (R7):** frame superior con nombre del Guardián de la Escarcha, HP grande y distintivo (latón/rojo), visible solo en la pelea del piso 5; distinta del target normal.
 * **Cooldowns en la skillbar:** overlay oscuro con **cuenta regresiva** (número o barra) sobre el slot en recarga; el slot activo con resaltado al lanzar; coste de maná indicado (el coste ya está en el slot; se resalta al no alcanzar el maná).
 * **Feedback de golpes:** flash/borde rojo en el HUD al recibir daño (sutil), sin tapar la pantalla.
+* **Crosshair de combate:** discreto, en latón `#C89445`, sin etiqueta ni caja (rediseñado sobre el cursor "AIM/CAST" original); no compite con la acción.
+* **Micromenú del HUD (nuevo en esta HU):** menú compacto del HUD de combate para acciones rápidas (mochila, equipo, talentos, menú ESC) — referencias existentes en el `.pen`: `Mini Menu Showcase` (cNQRW) y `Modern menu states` (V3rSxL). Debe integrarse visualmente al mockup de pelea con estados **abierto/cerrado** y estilo Hearthbound Gold; no sustituye al menú ESC de R6.10.
 * **Notificación de nivel:** popup breve "¡Nivel 17!" con estilo del juego (al subir, R6a).
 * **Muerte de enemigo:** confirmación visual breve (ya hay VFX; el HUD no la repite — solo se aclara si el diseñador ve un hueco).
 * **Estados obligatorios:** pelea normal (mob), pelea de boss con barra + AoE activa + CD, crítico visible, cura visible, daño recibido, nivel arriba.
@@ -64,8 +83,9 @@ Diseñar **una escena de pelea realista** (lo que vería el jugador en el juego)
   * **Barra del boss** con nombre y HP (ej. al 60%).
   * **Zona de Consagración/Ira divina activa** en el suelo (GroundAoE persistente, ticks visibles) y/o **SelfAoE** (Anillo de luz sagrada/Torbellino) alrededor del jugador.
   * **Números flotantes:** daño del jugador al boss (normal + 1 crítico), **cura** (si el mockup lo permite), y daño recibido del jugador.
-  * **Skillbar** con 2 slots en cooldown (overlay + cuenta) y 1 slot resaltado al lanzar.
-  * **Indicador de target** sobre el boss.
+* **Skillbar** con 2 slots en cooldown (overlay + cuenta) y 1 slot resaltado al lanzar.
+* **Indicador de target** sobre el boss.
+* **Micromenú** del HUD visible (iconos de acciones rápidas) en uno de los estados del mockup.
 * **Mockups adicionales dentro de la misma pantalla (estados):**
   * **Pelea normal** (mob de piso 1–2): target frame normal, números pequeños, sin barra de boss.
   * **Pre-lanzamiento de GroundAoE**: círculo de puntería sobre el suelo con radio.
@@ -140,7 +160,8 @@ Diseñar **una escena de pelea realista** (lo que vería el jugador en el juego)
 * Barra del boss del piso 5 (R7).
 * Cooldowns con overlay/cuenta en la skillbar y resaltado de lanzamiento.
 * Feedback de daño recibido y notificación de nivel.
-* Mockup principal (pelea de boss) + estados (pelea normal, pre-lanzamiento, SelfAoE, nivel).
+* Micromenú del HUD (estados abierto/cerrado) integrado al combate, sobre las referencias `Mini Menu Showcase`/`Modern menu states`.
+* Mockup principal (pelea de boss) + estados (pelea normal, pre-lanzamiento, SelfAoE, nivel, micromenú).
 
 #### No incluye
 
@@ -157,6 +178,7 @@ Diseñar **una escena de pelea realista** (lo que vería el jugador en el juego)
 * [ ] Indicador de target, marcador de GroundAoE (pre y activa) y SelfAoE diseñados y diferenciados.
 * [ ] Barra del boss distintiva; cooldowns con overlay y cuenta regresiva.
 * [ ] Notificación de nivel y flash de daño recibido representados.
+* [ ] Micromenú del HUD diseñado con estados abierto/cerrado e integrado al combate (referencias `Mini Menu Showcase`/`Modern menu states`).
 * [ ] Fiel a R6.8/R6.9/R3.3/R7 sin inventar mecánicas.
 * [ ] Paleta y componentes de Hearthbound Gold respetados; no tapa la acción.
 * [ ] Reporte al PM con el detalle del diseño y pendientes.
@@ -174,3 +196,5 @@ Diseñar **una escena de pelea realista** (lo que vería el jugador en el juego)
 | Fecha | Cambio |
 |-------|--------|
 | 2026-09-18 | Creación de HU-ESTETICA-19: diseño a fondo del HUD de combate (números de daño/cura, indicador de target, AoE, barra del boss, cooldowns, nivel, feedback de golpes) — solo diseñador, sin desarrollo |
+| 2026-09-20 | Revisión de diseño (feedback del PM sobre el frame `M2PQGw`): **solo lo confirmado se mantiene** (player frame, target frame, números de daño normal/crítico/recibido, frame del boss); cambios explícitos: cura en **verde `#7BC47F`**, indicador de target como **flecha roja sólida sobre la cabeza del enemigo**, **crosshair de combate discreto en latón sin etiqueta**; **todo lo demás del frame queda no confirmado y requiere rediseño del diseñador** (el PM valida propuestas) |
+| 2026-09-20 | **Micromenú del HUD incorporado al alcance** — estados abierto/cerrado, referencias del `.pen`: `Mini Menu Showcase` (cNQRW) y `Modern menu states` (V3rSxL); se integra al mockup de pelea y a los estados |
