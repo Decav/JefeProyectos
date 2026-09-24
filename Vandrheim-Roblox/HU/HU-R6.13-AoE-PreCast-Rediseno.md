@@ -1,11 +1,11 @@
-## HU-R6.12: Rediseño del pre-cast de habilidades AoE (anillo púrpura + runa nórdica)
+## HU-R6.13: Rediseño del pre-cast de habilidades AoE (anillo púrpura + runa nórdica)
 
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Combate / AoE / Visual de apuntado
 **Prioridad:** Alta
 **Estado:** Lista para implementar
 **Tipo:** Cambio visual de gameplay (dev)
-**Fase GDD:** R6.12 (mejora del indicador de apuntado; sin cambios al cast ni al daño)
+**Fase GDD:** R6.13 (mejora del indicador de apuntado; sin cambios al cast ni al daño)
 **Depende de:** HU-R3 (SkillBarClient, modo AoE), HU-R6.9 (AoE zonas/Self), ASSETS_POLICY.md (assets y placeholders)
 **Componentes observados:** `StarterPlayer.StarterPlayerScripts.SkillBarClient` (`ensureAoEIndicator`), color de propuesta en `Vandrheim-design.pen` (nodo `u6eYDO` — `#B48ADE`)
 
@@ -178,12 +178,12 @@ El comportamiento no cambia: el indicador sigue la posición del mouse en el sue
 * [ ] El cast y la zona activa (VFX de skill) no cambian.
 * [ ] Si se incorpora textura real de runa, queda registrada en `ASSETS_REGISTRY`.
 * [ ] Se actualizan `PROJECT_ARCHITECTURE` y el registro de la HU/RC al cerrar.
-* [ ] Nota `R6.12 completo` en el GDD después de la verificación, no antes.
+* [ ] Nota `R6.13 completo` en el GDD después de la verificación, no antes.
 * [ ] El dev prepara el RC desde esta HU antes de programar (DEV_PROMPT).
 
 ---
 
-### **Decisiones por defecto R6.12**
+### **Decisiones por defecto R6.13**
 
 | Tema | Default |
 |------|---------|
@@ -207,4 +207,4 @@ El comportamiento no cambia: el indicador sigue la posición del mouse en el sue
 
 | Fecha | Cambio |
 |-------|--------|
-| 2026-09-20 | Creación de HU-R6.12: rediseño del pre-cast AoE — anillo púrpura `#B48ADE` (aprobado en Pencil, nodo `u6eYDO`) con runa nórdica central; reemplaza el indicador celeste |
+| 2026-09-20 | Creación de HU-R6.13: rediseño del pre-cast AoE — anillo púrpura `#B48ADE` (aprobado en Pencil, nodo `u6eYDO`) con runa nórdica central; reemplaza el indicador celeste |

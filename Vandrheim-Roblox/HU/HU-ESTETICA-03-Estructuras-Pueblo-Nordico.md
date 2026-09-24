@@ -1,9 +1,9 @@
 ## HU-ESTETICA-03: Estructuras del pueblo principal — temática nórdica antigua
 
-**Proyecto:** Vandrheim (Roblox MVP)  
-**Épica:** Assets / Modelos / EST-03  
-**Prioridad:** Alta  
-**Estado:** Lista para implementar  
+**Proyecto:** Vandrheim (Roblox MVP)
+**Épica:** Estética MVP / Hub
+**Prioridad:** — 
+**Estado:** **OBSOLETA — absorbida por `HU-ESTETICA-26` (pueblo completo)** (2026-09-22): esta HU queda reemplazada por la entrega integral del pueblo (5 casas sin interior + 3 con interior para NPCs comerciales, murallas, plaza, casa comunal). No implementar por separado.
 **Tipo:** Producción de estructuras y props (diseñador de assets)  
 **Fase GDD:** Épica transversal `EST-03` (paralela a R6.x/R7; no bloquea gameplay)  
 **Rol responsable:** Diseñador de assets — **exclusivamente modelos y estructuras visuales** (sin scripts, sin código, sin lógica)  

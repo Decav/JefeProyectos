@@ -114,6 +114,7 @@ Se completa a medida que se incorporan assets reales (obligatorio en DoD de HU-A
 |------------|------|---------------------------|--------|-------|----------|-------|
 | (ej. 123456789) | Animación | cast genérico mágico | Library | UsuarioX | Free (crédito) | 2026-XX-XX |
 | ... | | | | | | |
+| 89348168546122 | Icono | Icon_Skill_hunter_mm_venom (R8e) | Subida informada por el usuario | Por confirmar | Por confirmar | 2026-09-23 |
 
 ---
 

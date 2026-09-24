@@ -1,4 +1,4 @@
-## HU-ESTETICA-20: Iconos minimalistas del micromenú del HUD
+## HU-ESTETICA-23: Iconos minimalistas del micromenú del HUD
 
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Estética / UI / Iconos
@@ -134,7 +134,7 @@ Se mantiene el estándar técnico del proyecto: **512×512 con fondo negro sóli
 
 ---
 
-### **Decisiones por defecto EST-20**
+### **Decisiones por defecto EST-23**
 
 | Tema | Default |
 |------|---------|
@@ -157,4 +157,4 @@ Se mantiene el estándar técnico del proyecto: **512×512 con fondo negro sóli
 
 | Fecha | Cambio |
 |-------|--------|
-| 2026-09-20 | Creación de HU-ESTETICA-20: 6 iconos minimalistas del micromenú (fondo negro, silueta simple, paleta acotada) para el HUD de combate |
+| 2026-09-20 | Creación de HU-ESTETICA-23: 6 iconos minimalistas del micromenú (fondo negro, silueta simple, paleta acotada) para el HUD de combate |

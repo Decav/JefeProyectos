@@ -1,8 +1,8 @@
-# Vandrheim — Catálogo de Skills (diseño MVP — v2)
+# Vandrheim — Catálogo de Skills (diseño MVP — v2.3)
 
 > Documento de diseño canónico para skills. Complementa GDD §4 (clases/specs), §5 (combate) y §6 (progresión).
-> Última actualización: 2026-08-26 — **v2.2: árboles de talentos finales de las 6 specs (R8)**
-> Estado: **Borrador de diseño** — números orientativos; balance final en R8.
+> Última actualización: 2026-09-18 — **v2.3: SkillType DoT + Flecha venenosa para Puntería (R8e)**
+> Estado: **Borrador de diseño** — números orientativos; balance final en R8d.
 
 ---
 
@@ -19,6 +19,7 @@
    * **`GroundAoE` = zona persistente:** se lanza a un punto del suelo (elegido por el jugador, ≤ `maxCastRange`) y la zona **permanece** durante `zoneDuration`; aplica **daño por tick** (`tickInterval`) a los enemigos dentro (incluidos los que entran después). `damageBase`/`coefficient` son **por tick** (total = por tick × ticks).
    * **`SelfAoE` = alrededor del jugador:** sin elegir punto; el centro es el jugador al momento del cast y golpea **una vez** (burst) a los enemigos dentro de `aoeRadius`.
    * El maná y el cooldown se descuentan **una sola vez** al lanzar (no por tick).
+6. **`DoT` = daño en el tiempo single-target (v2.3, HU-R8e):** se lanza al objetivo seleccionado; recibe daño por tick (`tickInterval`) durante `duration` (sigue al objetivo). `damageBase`/`coefficient` **por tick**. **Sin stacks:** re-lanzar del mismo caster sobre el mismo objetivo **refresca la duración** (no acumula). Maná/CD se descuentan una vez por lanzamiento. Reutiliza el sistema de ticks de R6.9.
 6. **Cada skill:** coste de maná + cooldown; daño/cura server-side; cast en movimiento.
 7. **Afinidad de arma:** bonus, no hard-lock.
 8. **`threatMod`** en config desde día 1 (Protector > 1); sin efecto en solo; activo en party (R9).
@@ -88,7 +89,7 @@ Columnas: `tipo`, `stat`, `rango/radio`, `maná`, `CD`, `nivel/obtención`, `par
 
 | ID | Nombre | Tipo | Stat | Rango | Maná | CD | Obtención | Params | Threat |
 |----|--------|------|------|-------|------|----|-----------|--------|--------|
-| `hunter_mm_heavy_arrow` | Flecha pesada | Instant | ATK | 25 | 15 | 6 | lvl 1 | 16/1.2 | 1 |
+| `hunter_mm_venom` | Flecha venenosa | **DoT** | ATK | 25 | 15 | 10 | **lvl 1 (spec) — reemplaza "Flecha pesada" (v2.3/R8e)** | por tick 4/0.35 · 6 s · tick 1 s (6 ticks) | 1 |
 | `hunter_mm_trueshot` | Tiro certero | Instant | ATK | 30 | 20 | 8 | lvl 5 | 28/1.3 | 1 |
 | `hunter_mm_chain` | Tiro en cadena | Instant | ATK | 20 | 12 | 4 | **talento (rama Precisión, tier 2)** | 10/0.9 | 1 |
 | `hunter_mm_death` | Disparo mortal | Instant | ATK | 30 | 30 | 12 | **talento (rama Precisión, profundo)** | 50/1.6 | 1 |
@@ -250,3 +251,4 @@ Convención: rama → Nodo1 → Nodo2 → Capstone. Tier 2 exige ≥4 puntos + l
 | 2026-08-12 | **v2:** modelo 2 básicas + 2 nivel + 2 talento (30 skills); árbol WoW 3 ramas; ventana de habilidades |
 | 2026-08-26 | **v2.1:** GroundAoE = zona persistente con daño por tick; SelfAoE = burst alrededor del jugador (HU-R6.9); Torbellino → SelfAoE, Consagración e Ira divina → zona |
 | 2026-08-26 | **v2.2:** Castigo: Ejecución divina → **Anillo de luz sagrada** (SelfAoE); árboles de talentos finales de las 6 specs aprobados (R8) |
+| 2026-09-18 | **v2.3:** SkillType **DoT** (daño en el tiempo single-target, sin stacks, reusa ticks de R6.9); **Flecha venenosa** para Puntería (HU-R8e) **reemplaza "Flecha pesada"** como skill de nivel 1 — sin enmienda de árboles, 6 skills por spec y 30 total; números bajo bandas de R8d |

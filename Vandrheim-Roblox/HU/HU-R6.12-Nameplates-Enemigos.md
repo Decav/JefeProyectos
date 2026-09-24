@@ -1,4 +1,4 @@
-## HU-R6.11: Nameplates de enemigos (barra de vida sobre el enemigo, toggleable)
+## HU-R6.12: Nameplates de enemigos (barra de vida sobre el enemigo, toggleable)
 
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Combate / UI / R6.11
@@ -239,4 +239,4 @@ Esta HU agrega un **sistema de nameplates**:
 
 | Fecha | Cambio |
 |-------|--------|
-| 2026-09-20 | Creación de HU-R6.11: nameplates de enemigos con barra de vida toggleable, desactivación de la barra nativa de Roblox y estilo Hearthbound Gold |
+| 2026-09-20 | Creación de HU-R6.12: nameplates de enemigos con barra de vida toggleable, desactivación de la barra nativa de Roblox y estilo Hearthbound Gold |

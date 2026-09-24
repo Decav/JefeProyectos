@@ -54,7 +54,7 @@ HABILIDADES DEL CAZADOR (una por imagen, nómbrala así):
 24. Icon_Skill_hunter_asm_crimson — Filo carmesí: hoja teñida de rojo sangre con gotas y brillo. 
 25. Icon_Skill_hunter_asm_twin — Cortes gemelos: dos hojas cruzadas en X con chispas de acero. 
 26. Icon_Skill_hunter_asm_whirlwind — Torbellino: anillo de viento con hojas de acero girando alrededor del centro. 
-27. Icon_Skill_hunter_mm_heavy_arrow — Flecha pesada: flecha gruesa de acero con punta ancha, vista diagonal. 
+27. Icon_Skill_hunter_mm_venom — Flecha venenosa: flecha con punta envuelta en veneno verde burbujeante y estela tóxica, vista diagonal. (v2.3/R8e — reemplaza a Flecha pesada) 
 28. Icon_Skill_hunter_mm_trueshot — Tiro certero: flecha centrada en un blanco con impacto preciso y anillo de tensión. 
 29. Icon_Skill_hunter_mm_chain — Tiro en cadena: rayo de energía conectando dos objetivos con flechas. 
 30. Icon_Skill_hunter_mm_death — Disparo mortal: flecha espectral con brillo oscuro y destello letal.
