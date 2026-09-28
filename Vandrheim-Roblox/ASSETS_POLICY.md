@@ -35,10 +35,11 @@
 
 | Fuente | Uso | Regla |
 |--------|-----|-------|
-| **Roblox Library / Marketplace** | **Única fuente de animaciones** (gratis o compra) | Filtrar "Free" por defecto; registrar `rbxassetid` + autor + URL; crédito si aplica |
+| **Animaciones propias (Moon Animator)** | **Fuente principal de animaciones** — jugador y enemigos (capacidad confirmada por el PO 2026-09-22; se animaron jugador y casi todos los enemigos; nada viene de la toolbox) | Crear con Moon Animator; guardar `rbxassetid`; registrar en ASSETS_REGISTRY (fuente: producción propia); **excepción a la regla vieja "no crear animaciones"** |
+| **Roblox Library / Marketplace** | Referencia/fallback de animaciones (si hace falta un placeholder) | Filtrar "Free" por defecto; registrar `rbxassetid` + autor + URL; crédito si aplica |
 | Roblox Library (decals/sonidos) | Decals, sonidos gratuitos | Mismas reglas de registro |
 | Animaciones default de Roblox | Base/placeholder (movimiento R15 automático) | Sin licencia pendiente (platform default) |
-| Producción propia (dev) | Modelos, materiales, UI, iconos, iluminación | Capacidad confirmada; no incluye animaciones |
+| Producción propia (dev) | Modelos, materiales, UI, iconos, iluminación, **animaciones con Moon Animator** | Capacidad confirmada; incluye animaciones propias |
 | Iconos generados (scripts/UI) | Placeholders "color + inicial", formas geométricas | Zero assets; reemplazables después |
 | **Iconos con IA (Gemini Imagen)** | Iconos de ítems/skills reales (R8) | **PNG 512×512 con fondo negro #000000 = finales** (decisión R8, 2026-08-26; sustituye al fondo transparente del 2026-08-12); revisión de producto antes de usarse; registro en ASSETS_REGISTRY |
 | Compra (futuro, presupuesto) | Paquetes premium de animación/iconos | Solo con decisión explícita de producto; registrar licencia |

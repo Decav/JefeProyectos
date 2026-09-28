@@ -7,6 +7,7 @@
 **Tipo:** Bugfix (dev) — 4 bugs en una HU
 **Fase GDD:** R6.14 (no cambia reglas de juego)
 **Depende de:** HU-R5 (NPCs/ProximityPrompt), HU-R6.10 (menú), HU-ESTETICA-19/20 (HUD de combate), HU-R6a/R6b (dungeon), HU-R3.2/R3.3 (targeting), HU-PUBLICAR-02 (dungeon cross-place)
+**Nota de numeración:** este batch unifica los bugs que inicialmente eran R6.14/R6.15/R6.16/R6.17 individuales (HUs eliminadas); **no existen** HUs R6.15/16/17 — todo vive en esta HU-R6.14.
 **Componentes observados:** `Workspace.Hub` (NPCs/portal), `StarterGui.HUD`, `DungeonService`/`FloorService`, `TargetingSystem`/`TargetIndicatorConfig`, modelos de mini-bosses
 
 ---

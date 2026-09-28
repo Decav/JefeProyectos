@@ -61,7 +61,7 @@ Referencias calculadas (sin gear ni talentos): lvl 4 / 8 / 12 / 16 / 20 → Pala
 * lvl 1–5: un arma de su nivel aporta **+25–35%** del ATK/MATK base (espada aprendiz 6–8, varita 6, arco 7 — ya cumplen; validar).
 * lvl 15–16: arma Rare/Epic (campeón 12–17, uniques 25 + 10) aporta **+40–60%** sobre el poder base (los **uniques deben sentirse claramente superiores** a cualquier Rare del mismo nivel).
 * **Set completo** (5 piezas + joyería): aporta ~**+15–25% HP y +20–35% DEF/MDEF** vs sin equipo, y el **Cazador/Clérigo** quedan competitivos con el Paladín en su rol.
-* **Pociones (gap detectado):** `potion_hp`/`potion_mp` curan **30 fijos** (seed R5) — a lvl 16–20 eso es < 6% del MaxHP: **no escalan**. **Decisión PM:** pasar a **25% del máximo** (HP y MP) con precio de **15 oro** (VendorConfig + LootTables gold se revisan para no romper la economía: ingresos 3–50 por piso vs gastos 15/poción son coherentes). Alternativa descartada por ahora: pociones por tieres (R9 si hace falta).
+* **Pociones (decisión PM, actualizada 2026-09-22):** el **25% del máximo** queda como la poción **chica**; la variedad completa (chica/grande HP y MP + 3 buffs) se implementa en **HU-ITEMS-02** (la excepción aprobada del % en `InventoryService` aplica a ambas).
 
 #### **3. Metas de skills (SKILLS_CATALOG v2.2 — solo números, no mecánicas)**
 
@@ -89,11 +89,12 @@ Referencias calculadas (sin gear ni talentos): lvl 4 / 8 / 12 / 16 / 20 → Pala
 
 * Regla de oro: **ninguna spec debe poder matar al boss del piso 5 en < 45 s** con su build completa a lvl 20 (evita que una sola domine).
 
-#### **5. Reglas de ajuste (solo configs)**
+#### **5. Reglas de ajuste (solo configs — con 1 excepción aprobada)**
 
 * Se cambian **únicamente números** en: `SkillConfig`, `EnemyConfig`, `BossConfig`, `ItemConfig`, `TalentConfig` (si un % queda desalineado), `VendorConfig` (pociones), y `LootTables` si el oro/rareza lo requiere.
+* **Excepción aprobada por el PM (2026-09-22):** las pociones al 25% **no se pueden resolver solo con config** (hoy `InventoryService` aplica valores fijos `heal=30`/`mana=30`). Se aprueba un **cambio mínimo**: los templates pasan a `healPercent=0.25`/`manaPercent=0.25` en `ItemConfig` (config-driven) y la función de uso calcula el % sobre el máximo del jugador. Sin otra lógica tocada.
 * **No** se tocan: mecánicas, SkillType, framework, fórmulas de mitigación, remotes, UI, VFX, animaciones.
-* Cada cambio se anota: **SKILLS_CATALOG → v2.3** (números finales) y se registra en la tabla de resultados del RC.
+* Cada cambio se anota: **SKILLS_CATALOG → v2.4** (números finales; v2.3 quedó reservada para R8e/DoT — no se sobrescribe) y se registra en la tabla de resultados del RC.
 * El **fino final** (balance medio, ajustes por feedback) queda en **R9** — R8d deja números coherentes y verificados, no "perfectos".
 
 ---
@@ -153,7 +154,7 @@ Referencias calculadas (sin gear ni talentos): lvl 4 / 8 / 12 / 16 / 20 → Pala
 ### **Comportamiento Visual / Reglas de Negocio**
 
 * Es balance y QA: **no** hay cambios de UI, VFX, mecánicas ni animaciones.
-* Todas las métricas se registran (RC + SKILLS_CATALOG v2.3) para que R9 haga el fino sobre datos, no a ciegas.
+* Todas las métricas se registran (RC + SKILLS_CATALOG v2.4) para que R9 haga el fino sobre datos, no a ciegas.
 * Las decisiones de economía (precio de pociones) quedan documentadas como decisión de producto.
 
 ---
@@ -165,7 +166,7 @@ Referencias calculadas (sin gear ni talentos): lvl 4 / 8 / 12 / 16 / 20 → Pala
 * Ajuste de números en SkillConfig/EnemyConfig/BossConfig/ItemConfig/TalentConfig/VendorConfig/LootTables según metas.
 * Pociones al 25% del máximo (HP/MP) con precio 15 oro.
 * QA a nivel 20: run completa por las 6 specs con build conseguible (TTK/TTD/maná/boss/diferenciación).
-* Registro de resultados: SKILLS_CATALOG v2.3 + tabla de métricas en el RC.
+* Registro de resultados: SKILLS_CATALOG v2.4 + tabla de métricas en el RC.
 
 #### No incluye
 
@@ -184,8 +185,8 @@ Referencias calculadas (sin gear ni talentos): lvl 4 / 8 / 12 / 16 / 20 → Pala
 * [ ] Familias de skills dentro de sus metas (single/burst/zona/SelfAoE/cura/escudo/maná).
 * [ ] Diferenciación de specs verificada (sobrevivencia Protector, sostenimiento Misericordia, dps relativos).
 * [ ] Uniques claramente superiores a Rare/Epic del mismo nivel.
-* [ ] Todos los cambios son numéricos; sin regresión mecánica; sin errores rojos.
-* [ ] SKILLS_CATALOG v2.3 actualizado con números finales + tabla de métricas en el RC.
+* [ ] Todos los cambios son numéricos (más la excepción aprobada de pociones al 25%); sin regresión mecánica; sin errores rojos.
+* [ ] SKILLS_CATALOG v2.4 actualizado con números finales + tabla de métricas en el RC.
 * [ ] Nota `R8d completo` + cierre de R8 en GDD tras la verificación.
 * [ ] PROJECT_ARCHITECTURE / DATA_SCHEMA / registro HU/RC actualizados al cerrar.
 
@@ -214,3 +215,5 @@ Referencias calculadas (sin gear ni talentos): lvl 4 / 8 / 12 / 16 / 20 → Pala
 | Fecha | Cambio |
 |-------|--------|
 | 2026-09-18 | Creación de HU-R8d: balance de números + QA a nivel 20 (cierre de R8). Metas por piso (TTK/TTD), poder del jugador (curva ClassConfig + power budget de ítems), familias de skills, diferenciación de specs, pociones al 25% (decisión PM, precio 15) y reglas de ajuste solo numéricas; fino final en R9 |
+| 2026-09-22 | **Decisiones PM (feedback dev, rc051):** (1) **excepción aprobada** — pociones al 25% requieren un cambio mínimo en `InventoryService` (healPercent/manaPercent en config, cálculo del % sobre el máximo); (2) balance se registra en **SKILLS_CATALOG v2.4** (v2.3 queda para R8e/DoT) |
+| 2026-09-22 | **Decisión PO (pociones ampliada):** el 25% pasa a ser la poción **chica**; la variedad completa (chica/grande HP+MP y 3 buffs) se implementa en **HU-ITEMS-02** — R8d solo valida el % base y la economía |

@@ -31,6 +31,20 @@ controlled intensity, loop-friendly ending, no fade-out, no vocals, no lyrics,
 no spoken words, no modern pop structure, no imitation of existing games or
 artists.
 
+Music_Dungeon_Helada_Combat
+
+Original instrumental light combat soundtrack for dungeon encounters in a dark
+fantasy MMORPG. Fighting frost packs and mini-bosses: cold urgency without
+chaos, energetic and forward-moving but controlled. Driving low strings, sharp
+bowed ostinatos, rhythmic percussion with icy metallic accents, frosty wind
+bursts and distant war drums, with occasional crystalline chimes on heavy hits.
+Reinterpret the same subtle three-note Vandrheim motif in a fighting, aggressive
+way. Clearly more intense than exploration music, but deliberately less
+overwhelming than the final boss theme, which stays reserved. Comfortable to
+repeat during short fights. 96 BPM, 3–4 minutes, loop-friendly ending, no
+fade-out, no vocals, no lyrics, no spoken words, no modern drums, no imitation
+of existing games or artists.
+
 Music_Boss_Helada
 
 Original instrumental epic frozen boss battle soundtrack for a fantasy MMORPG.

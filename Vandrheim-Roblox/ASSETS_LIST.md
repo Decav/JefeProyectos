@@ -32,6 +32,13 @@ REGLAS TÉCNICAS (obligatorias para todas):
    brillante, brillo mágico.
 10. Icon_Item_potion_mana — Frasco igual con líquido azul brillante.
 
+POCIONES NUEVAS (HU-ITEMS-02 — una por imagen, nómbrala así; las chicas reusan los iconos existentes 9/10):
+11. Icon_Item_potion_hp_large — Frasco grande de vidrio con corcho y líquido rojo brillante, brillo mágico intenso, tamaño doble que la poción chica.
+12. Icon_Item_potion_mp_large — Frasco grande igual con líquido azul brillante intenso.
+13. Icon_Item_potion_buff_atk — Frasco con líquido naranja/dorado incandescente y un filo de espada en llamas como motivo, aura de furia.
+14. Icon_Item_potion_buff_def — Frasco con líquido gris/pizarra metálico y un escudo de hierro como motivo, aura de protección.
+15. Icon_Item_potion_buff_hp — Frasco con líquido rojo profundo y un corazón de runas doradas como motivo, aura de vitalidad.
+
 ÍTEM EXTRA (sin número para no chocar con las skills):
 Icon_Item_bow — Arco de cazador: arco curvo de madera oscura con cuerdas tensas, refuerzos de cuero y hierro frío.
 

@@ -1,8 +1,8 @@
-# Vandrheim — Catálogo de Skills (diseño MVP — v2.3)
+# Vandrheim — Catálogo de Skills (diseño MVP — v2.4)
 
 > Documento de diseño canónico para skills. Complementa GDD §4 (clases/specs), §5 (combate) y §6 (progresión).
-> Última actualización: 2026-09-18 — **v2.3: SkillType DoT + Flecha venenosa para Puntería (R8e)**
-> Estado: **Borrador de diseño** — números orientativos; balance final en R8d.
+> Última actualización: 2026-09-24 — **v2.4: balance numérico inicial R8d (rc051); se conserva v2.3/R8e DoT**
+> Estado: **Balance inicial aplicado en Hub; QA de seis runs pendiente** — los números se revisarán con métricas observadas.
 
 ---
 
@@ -56,9 +56,9 @@ Columnas: `tipo`, `stat`, `rango/radio`, `maná`, `CD`, `nivel/obtención`, `par
 | ID | Nombre | Tipo | Stat | Rango | Maná | CD | Obtención | Params | Threat |
 |----|--------|------|------|-------|------|----|-----------|--------|--------|
 | `paladin_prot_shield_bash` | Embate de escudo | Instant | ATK | 12 | 15 | 6 | lvl 1 | 14/1.0 | 3 |
-| `paladin_prot_vow` | Voto protector | Heal | — | self | 20 | 15 | lvl 5 | 25+1.2×MATK | 2 |
+| `paladin_prot_vow` | Voto protector | Heal | — | self | 20 | 15 | lvl 5 | 30+1.7×MATK | 2 |
 | `paladin_prot_sacred_wall` | Muro sagrado | Shield | — | self | 20 | 15 | **talento (rama Vida/Defensa, tier 2)** | absorb 30+1.5×MATK, 8 s | 2 |
-| `paladin_prot_consecration` | Consagración | GroundAoE (zona) | MATK | r8/cast≤20 | 20 | 12 | **talento (rama Amenaza, profundo)** | por tick 6/0.45 · zona 4 s · tick 0.5 s (8 ticks) | 3 |
+| `paladin_prot_consecration` | Consagración | GroundAoE (zona) | MATK | r8/cast≤20 | 20 | 12 | **talento (rama Amenaza, profundo)** | por tick 3.8/0.27 · zona 4 s · tick 0.5 s (8 ticks) | 3 |
 
 ### 3.3 Paladín — Castigo (2H/1H melee mágico)
 
@@ -67,7 +67,7 @@ Columnas: `tipo`, `stat`, `rango/radio`, `maná`, `CD`, `nivel/obtención`, `par
 | `paladin_ret_holy_edge` | Filo sagrado | Instant | ATK | 12 | 15 | 5 | lvl 1 | 14/1.1 | 1 |
 | `paladin_ret_divine_flames` | Llamas divinas | Instant | MATK | 12 | 15 | 6 | lvl 5 | 16/1.2 | 1 |
 | `paladin_ret_sentence` | Sentencia | Instant | MATK | 12 | 20 | 8 | **talento (rama Ataque, tier 2)** | 24/1.3 | 1 |
-| `paladin_ret_holy_ring` | Anillo de luz sagrada | SelfAoE | MATK | r6 (alrededor del jugador) | 25 | 10 | **talento (rama Ataque, profunda)** | burst 20/0.9 | 1 |
+| `paladin_ret_holy_ring` | Anillo de luz sagrada | SelfAoE | MATK | r6 (alrededor del jugador) | 25 | 10 | **talento (rama Ataque, profunda)** | burst 35/1.8 | 1 |
 
 ### 3.4 Cazador — Básicas
 
@@ -83,7 +83,7 @@ Columnas: `tipo`, `stat`, `rango/radio`, `maná`, `CD`, `nivel/obtención`, `par
 | `hunter_asm_ambush` | Emboscada | Instant | ATK | 12 | 15 | 5 | lvl 1 | 14/1.1 | 1 |
 | `hunter_asm_crimson` | Filo carmesí | Instant | ATK | 12 | 20 | 8 | lvl 5 | 26/1.3 | 1 |
 | `hunter_asm_twin` | Cortes gemelos | Instant | ATK | 12 | 15 | 4 | **talento (rama Ataque, tier 2)** | 10/0.9 | 1 |
-| `hunter_asm_whirlwind` | Torbellino | SelfAoE | ATK | r8 (alrededor del jugador) | 30 | 15 | **talento (rama Ataque, profundo)** | burst 30/1.2 | 1 |
+| `hunter_asm_whirlwind` | Torbellino | SelfAoE | ATK | r8 (alrededor del jugador) | 30 | 15 | **talento (rama Ataque, profundo)** | burst 30/1.35 | 1 |
 
 ### 3.6 Cazador — Puntería (ranged físico)
 
@@ -92,7 +92,7 @@ Columnas: `tipo`, `stat`, `rango/radio`, `maná`, `CD`, `nivel/obtención`, `par
 | `hunter_mm_venom` | Flecha venenosa | **DoT** | ATK | 25 | 15 | 10 | **lvl 1 (spec) — reemplaza "Flecha pesada" (v2.3/R8e)** | por tick 4/0.35 · 6 s · tick 1 s (6 ticks) | 1 |
 | `hunter_mm_trueshot` | Tiro certero | Instant | ATK | 30 | 20 | 8 | lvl 5 | 28/1.3 | 1 |
 | `hunter_mm_chain` | Tiro en cadena | Instant | ATK | 20 | 12 | 4 | **talento (rama Precisión, tier 2)** | 10/0.9 | 1 |
-| `hunter_mm_death` | Disparo mortal | Instant | ATK | 30 | 30 | 12 | **talento (rama Precisión, profundo)** | 50/1.6 | 1 |
+| `hunter_mm_death` | Disparo mortal | Instant | ATK | 30 | 30 | 12 | **talento (rama Precisión, profundo)** | 50/1.9 | 1 |
 
 ### 3.7 Clérigo — Básicas
 
@@ -105,9 +105,9 @@ Columnas: `tipo`, `stat`, `rango/radio`, `maná`, `CD`, `nivel/obtención`, `par
 
 | ID | Nombre | Tipo | Stat | Rango | Maná | CD | Obtención | Params | Threat |
 |----|--------|------|------|-------|------|----|-----------|--------|--------|
-| `cleric_hol_heal` | Sanación | Heal | — | self | 12 | 4 | lvl 1 | 20+1.2×MATK | 0 |
-| `cleric_hol_word` | Palabra de luz | Heal | — | self | 18 | 8 | lvl 5 | 35+1.5×MATK | 0 |
-| `cleric_hol_shield` | Escudo de fe | Shield | — | self | 20 | 15 | **talento (rama Vida, tier 2)** | absorb 30+1.2×MATK, 8 s | 0 |
+| `cleric_hol_heal` | Sanación | Heal | — | self | 12 | 4 | lvl 1 | 12+0.85×MATK | 0 |
+| `cleric_hol_word` | Palabra de luz | Heal | — | self | 18 | 8 | lvl 5 | 28+1.2×MATK | 0 |
+| `cleric_hol_shield` | Escudo de fe | Shield | — | self | 20 | 15 | **talento (rama Vida, tier 2)** | absorb 20+0.6×MATK, 8 s | 0 |
 | `cleric_hol_miracle` | Milagro | Heal | — | self | 30 | 20 | **talento (rama Vida, profundo)** | 80+2.0×MATK | 0 |
 
 ### 3.9 Clérigo — Cólera (ranged mágico)
@@ -116,8 +116,8 @@ Columnas: `tipo`, `stat`, `rango/radio`, `maná`, `CD`, `nivel/obtención`, `par
 |----|--------|------|------|-------|------|----|-----------|--------|--------|
 | `cleric_wrath_spear` | Lanza de luz | Instant | MATK | 20 | 15 | 5 | lvl 1 | 14/1.1 | 1 |
 | `cleric_wrath_mark` | Marca de castigo | Instant | MATK | 25 | 20 | 8 | lvl 5 | 26/1.3 | 1 |
-| `cleric_wrath_divine_ire` | Ira divina | GroundAoE (zona) | MATK | r8/cast≤20 | 20 | 12 | **talento (rama Ira, tier 2)** | por tick 4/0.35 · zona 4 s · tick 0.5 s (8 ticks) | 1 |
-| `cleric_wrath_annihilation` | Aniquilación | Instant | MATK | 25 | 30 | 12 | **talento (rama Ira, profundo)** | 50/1.6 | 1 |
+| `cleric_wrath_divine_ire` | Ira divina | GroundAoE (zona) | MATK | r8/cast≤20 | 20 | 12 | **talento (rama Ira, tier 2)** | por tick 2.1/0.22 · zona 4 s · tick 0.5 s (8 ticks) | 1 |
+| `cleric_wrath_annihilation` | Aniquilación | Instant | MATK | 25 | 30 | 12 | **talento (rama Ira, profundo)** | 50/1.9 | 1 |
 
 ---
 
@@ -252,3 +252,4 @@ Convención: rama → Nodo1 → Nodo2 → Capstone. Tier 2 exige ≥4 puntos + l
 | 2026-08-26 | **v2.1:** GroundAoE = zona persistente con daño por tick; SelfAoE = burst alrededor del jugador (HU-R6.9); Torbellino → SelfAoE, Consagración e Ira divina → zona |
 | 2026-08-26 | **v2.2:** Castigo: Ejecución divina → **Anillo de luz sagrada** (SelfAoE); árboles de talentos finales de las 6 specs aprobados (R8) |
 | 2026-09-18 | **v2.3:** SkillType **DoT** (daño en el tiempo single-target, sin stacks, reusa ticks de R6.9); **Flecha venenosa** para Puntería (HU-R8e) **reemplaza "Flecha pesada"** como skill de nivel 1 — sin enmienda de árboles, 6 skills por spec y 30 total; números bajo bandas de R8d |
+| 2026-09-24 | **v2.4:** primera pasada de cifras de balance R8d/rc051: curas/escudo, GroundAoE, SelfAoE y burst capstone; conserva IDs, tipos, cooldowns y DoT de R8e. Seis runs y cierre de balance pendientes de QA. |
