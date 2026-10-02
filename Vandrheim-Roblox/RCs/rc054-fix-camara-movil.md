@@ -3,7 +3,7 @@
           REQUERIMIENTO TÉCNICO: rc054 — FASE R6.15 (HU-R6.15)
 ================================================================================
 Proyecto: Vandrheim — RPG/MMO-like en 3ª persona (Roblox).
-Fuente: HU-R6.15 (HU/HU-R6.15-Fix-Camara-Movil.md) + GDD §12
+Fuente: HU-R6.15 (HU/fases/HU-R6.15-Fix-Camara-Movil.md) + GDD §12
   (arquitectura técnica) + HU-R3.1/rc005 (pitch y controles de cámara existentes).
 Estado: EN IMPLEMENTACIÓN (código editado en Hub; QA táctil, pruebas PC y sync Dungeon pendientes).
 Requisitos previos: HU-R3.1/rc005 (CameraController y CameraConfig).

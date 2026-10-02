@@ -201,7 +201,7 @@ MaxHP, MaxMP, ATK, MATK, DEF, MDEF, CRIT.
 - Comprar `qty` completa pilas existentes antes de crear otras; si no hay espacio para todas las unidades, la operación se rechaza completa.
 - Usar o vender descuenta **1 unidad por acción**; la entrada se elimina al llegar a cero.
 - La UI muestra la cantidad (`xN`) y `quantity` persiste; una entrada antigua sin cantidad se interpreta como `1`.
-- Detalle técnico y criterios: `HU/HU-R5.2-Inventario-Stacking.md`; implementación en nuevo `rc011`. No modifica `rc010`.
+- Detalle técnico y criterios: `HU/fases/HU-R5.2-Inventario-Stacking.md`; implementación en nuevo `rc011`. No modifica `rc010`.
 
 ### Bind
 
@@ -427,10 +427,10 @@ StarterGui/
 | **R9** | Pendiente | Party amigos (si entra), polish UI, balance medio a 20 | Demo estable |
 | **R10+** | Pendiente | Matchmaking, trade, más biomas/clases, cosméticos | Expansión |
 
-> **R6 se ejecuta en 2 HUs:** `HU/HU-R6a-Dungeon-Preparacion.md` (enemigos, pisos, layout por seed, XP/leveling, respawn + arena de prueba) → `HU/HU-R6b-Dungeon-Core.md` (teleport + ReservedServer, run lifecycle, exit). Criterio R6: *run completa solo*.
+> **R6 se ejecuta en 2 HUs:** `HU/fases/HU-R6a-Dungeon-Preparacion.md` (enemigos, pisos, layout por seed, XP/leveling, respawn + arena de prueba) → `HU/fases/HU-R6b-Dungeon-Core.md` (teleport + ReservedServer, run lifecycle, exit). Criterio R6: *run completa solo*.
 > **R8 se ejecuta en 4 HUs:** R8a (Paladín) → R8b (Cazador) → R8c (Clérigo) → R8d (balance + assets + QA). Criterio R8: *builds distintas*.
 
-HUs formales: `Vandrheim-Roblox/HU/` (`HU-R0`, `HU-R1`, `HU-R2`, …). Plantilla: `HU-TEMPLATE.md`.
+HUs formales: `Vandrheim-Roblox/HU/` organizadas por épica: `fases/` (`HU-R0`, `HU-R1`, …, fases de producción y bugfixes), `estetica/` (`HU-ESTETICA-*`), `items/` (`HU-ITEMS-*`), `assets/` (`HU-ASSETS`, `HU-SFX-*`) y `publicacion/` (`HU-PUBLICAR-*`). Plantilla: `HU-TEMPLATE.md`.
 RCs (requerimientos técnicos por HU): plantilla en `RC-TEMPLATE.md`; numeración `rc001`, `rc002`, … (formato comentario Luau).
 Prompt de implementación (dev): `DEV_PROMPT.md` — obliga a generar el RC desde la HU antes de codificar.
   
@@ -448,7 +448,7 @@ Prompt de implementación (dev): `DEV_PROMPT.md` — obliga a generar el RC desd
   
 ### Defaults cerrados R2 (registro)
 
-Ver `HU/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º stub Robux; create = nombre + clase; gate sin PJ activo; DataStore por UserId.  
+Ver `HU/fases/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º stub Robux; create = nombre + clase; gate sin PJ activo; DataStore por UserId.  
   
 **Nota producción:** R0 completo. R1 completo. Siguiente: **R2**.  
   
@@ -539,24 +539,24 @@ Ver `HU/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º stub R
 | 2026-08-12 | Creación GDD Roblox |
 | 2026-08-12 | Integración completa del cuestionario (33 decisiones) |
 | 2026-08-12 | Slots PJ: 2 gratis MVP; 3.º desbloqueable con Robux |
-| 2026-08-12 | **R0 completo** — documentado en `HU/HU-R0-Bootstrap-Experience.md` |
-| 2026-08-12 | **R1 completo** — documentado en `HU/HU-R1-Combate-Base-Dummy.md` (defaults combate base) |
-| 2026-08-12 | Producción pasa a **R2**; HU en `HU/HU-R2-Creacion-Personaje-Slots.md` |
+| 2026-08-12 | **R0 completo** — documentado en `HU/fases/HU-R0-Bootstrap-Experience.md` |
+| 2026-08-12 | **R1 completo** — documentado en `HU/fases/HU-R1-Combate-Base-Dummy.md` (defaults combate base) |
+| 2026-08-12 | Producción pasa a **R2**; HU en `HU/fases/HU-R2-Creacion-Personaje-Slots.md` |
 | 2026-08-12 | **R2 completo** — creación/slots/persistencia implementadas |
-| 2026-08-12 | Producción pasa a **R3**; HU en `HU/HU-R3-Skill-Framework.md` |
+| 2026-08-12 | Producción pasa a **R3**; HU en `HU/fases/HU-R3-Skill-Framework.md` |
 | 2026-08-12 | Catálogo de skills por clase/spec: `SKILLS_CATALOG.md` (42 skills, 6 tipos) |
 | 2026-08-12 | Fix cámara detectado en desarrollo: HU-R3.1 (decisión A: LockCenter + GetMouseDelta) |
 | 2026-08-12 | **R3 completo** — skill framework implementado (desde `SKILLS_CATALOG.md`) |
 | 2026-08-12 | **R3.1 completo** — fix cámara WoW-like implementado |
-| 2026-08-12 | Producción pasa a **R4**; HU en `HU/HU-R4-Inventario-Equip.md` |
+| 2026-08-12 | Producción pasa a **R4**; HU en `HU/fases/HU-R4-Inventario-Equip.md` |
 | 2026-08-12 | **Política de assets** creada: `ASSETS_POLICY.md` + sección §17 en GDD (placeholders hasta R8, gratis + desarrollo propio) |
 | 2026-08-12 | **R4 completo** — inventario/equip/BoE/rolls implementados |
-| 2026-08-12 | Producción pasa a **R5**; HU en `HU/HU-R5-Vendors-Talentos.md` |
+| 2026-08-12 | Producción pasa a **R5**; HU en `HU/fases/HU-R5-Vendors-Talentos.md` |
 | 2026-08-12 | **Épica de assets** en evaluación: consultar al dev si produce assets; si confirma → HU dedicada |
 | 2026-08-12 | Capacidad dev confirmada (modelos/materiales/UI/iluminación sí; animaciones solo librería) → **HU-ASSETS creada** |
 | 2026-08-12 | **R5 completo** — vendors/economía/talentos implementados |
 | 2026-08-12 | **HU-ASSETS completa** — producción estética (modelos/UI/iluminación + anims de librería) |
-| 2026-08-12 | Producción pasa a **R6**; HU en `HU/HU-R6a-Dungeon-Preparacion.md` + `HU/HU-R6b-Dungeon-Core.md` (split en 2; XP/respawn en R6a) |
+| 2026-08-12 | Producción pasa a **R6**; HU en `HU/fases/HU-R6a-Dungeon-Preparacion.md` + `HU/fases/HU-R6b-Dungeon-Core.md` (split en 2; XP/respawn en R6a) |
 | 2026-08-12 | **Talentos v2** (árbol WoW + spellbook): SKILLS_CATALOG v2 (30 skills, 2 básicas + 2 nivel + 2 talento) + HU-R5.1 — reemplaza el sistema de talentos de R5 |
 | 2026-08-22 | **HU-R5.1 completa** — árbol de talentos v2, skills aprendidas y spellbook implementados según reporte del equipo |
 | 2026-08-22 | **HU-R5.2 completa**: stacking configurable (pociones maxStack 20, 20 slots = 20 pilas, uso/venta de 1 unidad); `rc011` implementado, sin modificar `rc010` |
@@ -630,6 +630,21 @@ Ver `HU/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º stub R
 | 2026-09-22 | **Boss final rediseñado (decisión PO — Dirección C):** el Guardián de la Escarcha pasa a ser una **bestia colosal cuadrúpeda** (oso/mamut de hielo, 3–3.5× el jugador) — EST-30 actualizada (rig cuadrúpedo articulado) y EST-31 (animaciones: zarpazo/mordida/pisotón) |
 | 2026-09-22 | **Mini-épica de itemización (plan cerrado con el PO):** tiers blanco/verde/azul/morado Helada por clase; levelReq con progresión por pieza hasta verde (blanco 3/3/3/5/5, verde 8/8/8/10/10, azul 12, morado 16, uniques 14); swap de jefes (set Helada → boss final con %; uniques → Señor de la Escarcha); bonos de set 3 piezas (stat: Paladín DEF+ATK 50/50, Cazador CRIT, Clérigo MATK) y 4 piezas (mejora de habilidad por spec). **HUs creadas: EST-33 (assets), ITEMS-03 (sistema de bonos), ITEMS-04 (contenido/loot), ITEMS-05 (balance/QA)** |
 | 2026-09-22 | **ITEMS-03 decisiones cerradas (feedback dev):** contrato `setId` = `<clase>_<tier>` en ITEMS-03 (ITEMS-04 agrega templates después); bonos como defaults configurables (reset 15%/10 s · lifesteal 20% cap 15% MaxHP · DoT 10%/4 s · +1 target sin daño extra · rango +30% · Milagro AOE radio 10 centrado en aliado con fallback R6.16); tooltip X/5; re-evaluación incluye respec y carga inicial |
+| 2026-09-22 | **ITEMS-04 decisiones PM (feedback dev):** extensión aprobada del flujo de recompensa del boss final (35% pieza de tu clase / 65% azul u oro) + exclusión de `seedOnly` del pool genérico; tabla de stats seed por clase/slot/tier (blanco concreto, verde ×1.4, azul ×1.9, frost ×2.5; CRIT en fracción) |
+| 2026-09-22 | **ITEMS-04 decisiones PM (rc065):** Señor de la Escarcha con **drop automático al morir** (flujo de mini-jefes extendido con `uniqueChance`/`uniquePool`; sin cofre nuevo — el cofre es solo del boss final); fallback del cofre final = **40% pieza azul de tu clase + 25% oro (40–80)** |
+| 2026-09-22 | **Armas por tier (plan cerrado PO):** 5 familias (espada 1H, **espadón 2H nuevo**, arco, varita, escudo) con niveles blanco 1 · verde 5 · azul 9 · morado 16 · uniques 14; modelos nuevos solo azul/morado; moradas del cofre del boss final (35% arma o armadura); **único 2H nuevo (Espadón del Guardián de la Escarcha)** → 4 uniques del Señor de la Escarcha. **HUs: EST-34 (modelos/iconos) e ITEMS-06 (templates/loot)** |
+| 2026-09-22 | **HU-R6.23 creada** — cámara móvil: zoom con pinza (acercar/alejar) con los mismos límites que PC · **HU-R6.24 creada** — geometría de la dungeon: esfera de hielo de la Caverna Helada reemplazada (sin bloquear entradas ni escalar) y pasillos del Corredor más anchos para party |
+| 2026-09-22 | **HU-R6.25 creada** — fix UI: fila de cuenta ilegible en la Selección de PJ (tokens EST-13) · **HU-R6.26 creada** — fix UI party frame: actualización en tiempo real (nivel/HP/MP/spec/estado), spec como "Clase - Spec" y vida de miembros en verde |
+| 2026-09-22 | **Nuevo estándar de iconos (decisión PO):** a partir de ahora **todos los iconos se generan con FONDO TRANSPARENTE** (reemplaza al fondo negro de la decisión R8) — ASSETS_LIST y ASSETS_POLICY actualizadas; los iconos existentes con fondo negro no se regeneran salvo pedido |
+| 2026-09-22 | **Nueva épica ECONOMÍA (decisión PO):** comercio + subasta para promover el gasto de oro. **ECON-01** — tradeo directo entre jugadores (solo Hub, ítems+oro, confirmación doble, anti-dupe). **ECON-02** — subasta **CROSS-SERVER** (investigación cerrada: **MemoryStoreSortedMap** atómico compartido entre servidores = fuente de verdad + Datastore para buzón/historial + MessagingService solo notificaciones best effort; compra directa/buyout con fee 5 oro y corte 5%; pujas en fase posterior) · **TUTORIAL-01** — onboarding guiado (8 tarjetas no bloqueantes con highlights, 1.ª vez por personaje) + panel de ayuda permanente (tecla `?`/botón HUD) |
+| 2026-09-22 | **ECON-02 v2 (revisión del dev senior):** la v1 era insegura (UpdateAsync cubre una clave, no la operación completa) → **DataStore = fuente de verdad por clave + MemoryStore = solo índice de catálogo (reconstruible) + MessagingService = avisos best effort**; protocolo de operaciones con **operationId, pasos idempotentes y reconciliación**; expiración por `expiresAt` en DataStore (no por TTL del índice); **sin filtros en v1** (precio ascendente); **corte 5% pagado por el VENDEDOR** (comprador paga precio exacto); estimación 4–6 sesiones · **NUEVA HU-ECONOMIA-03 (PREREQUISITO bloqueante):** `DataService` usa GetAsync/SetAsync sin session lock (confirmado en Studio) → session lock por jugador + `UpdateAsync` atómico por clave con backoff; sin ella NO se implementa ECON-01/02 |
+| 2026-09-22 | **ECON-03 v2 (revisión del dev senior):** el lock separado no protege la clave del perfil → **lock DENTRO de la clave** (LockId verificado en cada `UpdateAsync`, patrón oficial); **contrato de escritura: solo el dueño escribe el perfil, los externos escriben `outbox_<userId>` y el dueño drena** (opId idempotente); migración de **TODOS** los puntos de escritura (inventario/vendedor/loot/XP/talentos/skills); carga fallida → perfil **notSaveable** (prohibido sobrescribir el real); teleport Hub→Dungeon con `handover` (no es doble login); resultados inciertos → verificación por opId; **ECON-03 NO hace atómico un trade entre perfiles → ECON-01 añade protocolo idempotente (retención→entrega→confirmación con opId)**; estimación 3–4 sesiones |
+| 2026-09-22 | **ECON-01 v2 (revisión del dev senior):** la v1 "retenía a A y entregaba a B" ignoraba que ambos ofrecen y permitía revertir tras entrega → **máquina de estados duradera**: OFFERING → LOCKED (reserva durable de AMBOS lados, punto de compromiso: DEBE completarse) → EXCHANGING (tramos idempotentes `legsDone`) → DELIVERED/CANCELLED; **cambio de oferta sube `offerVersion` y anula confirmaciones**; cancelación solo pre-compromiso; post-compromiso la **reconciliación COMPLETA (nunca revierte)**; validación hostil (NaN/inf/negativos/stacks/instancias/espacio/ítems `tradeLocked`); estimación 3–4 sesiones |
+| 2026-09-22 | **Armas — CORRECCIÓN 1 (PO, tras entrega del diseñador):** el diseñador replicó los uniques frost existentes (espada/arco/varita — réplicas DESCARTADAS, los originales EST-18 se mantienen) y NO produjo moradas normales ni blancas/verdes → **EST-34 corrige: 12 modelos nuevos** (2 blancas que reemplazan a espada 1H y escudo actuales ELIMINADOS · 5 verdes · 5 moradas NORMALES) + reuso de varita (cleric wand) y arco actuales como blancos + base de espadón entregado; **distinción morada NORMAL (16, cofre boss final, nunca uniques) vs unique frost (14, 4.º boss, mejores stats)** · **ITEMS-06 corrige: nombres GENÉRICOS en ReplicatedStorage** (sin prefijos de clase; renombrar hunter_bow/cleric_wand/sword_knight/shield_guard) + mapa de modelos + 17 templates |
+| 2026-09-22 | **Armas — CORRECCIÓN 1 REVISADA (aclaración del dev):** morado = rareza **ÉPICA** (UI "ÉPICA"), **tier interno `frost`** (igual que `paladin_helmet_frost`) → **los modelos `*_frost_segmented` del diseñador SON las épicas (correctos, se integran)**; épica genérica existente `sword_champion` → `sword_frost` con modelo nuevo; uniques = `unique_frost_*` (3 existentes + nuevo 2H, 14, mejores stats, NO sustituyen a las épicas); **solo faltan 7 modelos** (2 blancas: espada+escudo con actuales eliminados · 5 verdes) + 7 iconos · **ITEMS-06: 13 templates nuevos** con el mapa correcto |
+| 2026-09-22 | **ITEMS-06 — 4 dudas cerradas (revisión del dev):** (1) **Cofre final: 50% arma / 50% armadura** dentro del 35% épico de clase (Paladín: espada/espadón/escudo iguales · Cazador: arco · Clérigo: varita) — **extensión de LootService explícita** (ITEMS-04 enmendado); (2) **baseline de stats cerrado**: blancas reales (espada ATK 8/2, varita MATK 6/2) + espadón 2H ≈1.5× espada · multiplicadores ×1.4/×1.9/×2.5; único 2H ATK 32+afijos (supera épica 28); rarezas alineadas al tier (Common/Uncommon/Rare/Epic/Unique); (3) **pesos de loot por piso cerrados** (patrón ITEMS-01 ≤6; "azul 9+" = levelReq → pisos 3–5); (4) **conteo corregido: 17 templates nuevos** (2H×5 + arco×3 + varita×3 + escudo×4 + espada×2) + 4 renombres |
+| 2026-09-22 | **Ajuste de balance de armas (decisión PO, para el RC de ITEMS-06):** (1) **afinidad del espadón 2H y su único = Paladín (Protector/Castigo)** — hoy no configurada (con el bonus +10% el único 2H pasa a ~46,2 ATK); (2) **penalización de offhand: una 1H en `OffHand` aporta solo el 25% de su ATK** (75% de penalización; solo afecta ATK, el resto de stats completas; regla documentada en ITEMS-01) — valor inicial a validar en el RC: el 2H debe superar al dual 1H+1H (único+épica ≈ 41,9–44,6 vs 46,2 del espadón afinado) |
+| 2026-09-22 | **HU-R6.27 creada** — fix/mejoras UI: casillas de ítems con **fondo negro + hover de borde** (estilo micro menú; se elimina la iluminación lila en stats/equipo y bolsa), tipografía legible (tooltips de ítems, grimorio y talentos — los peores paneles), barra activa del grimorio con casillas adaptadas al icono (patrón skill bar del HUD), tooltips de skills con **rango real + daño/escalado**, y tooltips de vendedores con **levelReq real** (reportado por PO) |
 | 2026-09-22 | **Renumeración EST-20→23** (Iconos del micromenú, de otra sesión, chocaba con el reskin del HUD dev) + **HU-ESTETICA-24 creada** (iconos de las 3 clases) + **HU-ESTETICA-25 creada** (reskin de Selección y Creación de PJ) |
 | 2026-08-26 | **HU-ESTETICA-06 creada** — revisión del diseño de UI sobre EST-04 (solapamientos corregidos, iconos de mini-menú, rediseño del panel de stats, modernización general de las 12 pantallas); diseñador ejecuta, PM verifica |
 | 2026-09-15 | **HU-ESTETICA-08/09/10 creadas** — diseño a fondo por panel en Pencil (solo diseñador, sin desarrollo, HUs independientes): 08 Panel de Talentos (árbol WoW con contenido real), 09 Grimorio (spellbook con estados y barra), 10 Ventana de Equipo y Stats (tecla C: 9 slots con equipo activo + desglose base/ítems/talentos + XP) |
@@ -659,7 +674,7 @@ Ver `HU/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º stub R
 
 ## 21. Épica de assets (confirmada)
 
-> Estado: **CONFIRMADA** — HU-ASSETS (`HU/HU-ASSETS-Produccion-Estetica.md`). Capacidad del dev: modelos, materiales, colores, UI e iluminación **sí**; animaciones **solo de la Roblox Library** (no crea/riggea).
+> Estado: **CONFIRMADA** — HU-ASSETS (`HU/assets/HU-ASSETS-Produccion-Estetica.md`). Capacidad del dev: modelos, materiales, colores, UI e iluminación **sí**; animaciones **solo de la Roblox Library** (no crea/riggea).
 
 - **Foco:** modelos, materiales, colores/paletas, UI (HUD/ventanas/iconos), iluminación por Place + selección/registro de animaciones de la Library (~6 por skillType).
 - **Fuente:** `ASSETS_POLICY.md` (§17). Placeholders hasta que existan los assets reales; reemplazo solo cambiando ids en config.

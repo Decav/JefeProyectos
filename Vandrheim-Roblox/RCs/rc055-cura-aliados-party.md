@@ -3,7 +3,7 @@
           REQUERIMIENTO TÉCNICO: rc055 — FASE R6.16 (HU-R6.16)
 ================================================================================
 Proyecto: Vandrheim — RPG/MMO-like en 3ª persona (Roblox).
-Fuente: HU-R6.16 (HU/HU-R6.16-Cura-Aliados-Party.md) + GDD §§4, 5, 10 y 12
+Fuente: HU-R6.16 (HU/fases/HU-R6.16-Cura-Aliados-Party.md) + GDD §§4, 5, 10 y 12
   + SKILL_CATALOG §§1, 3.2 y 3.8 (skills y roles).
 Estado: ABIERTO (pendiente de implementación).
 Requisitos previos: HU-R9a/rc046 (party y party frames), HU-R3.2/R3.3

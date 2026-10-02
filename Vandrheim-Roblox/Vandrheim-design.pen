@@ -25282,21 +25282,6 @@
                   "fontWeight": "bold"
                 },
                 {
-                  "type": "text",
-                  "id": "glwQs",
-                  "x": 20,
-                  "y": 46,
-                  "name": "Account label",
-                  "fill": "#B5A79A",
-                  "textGrowth": "fixed-width",
-                  "width": 200,
-                  "content": "CUENTA · DIEGO",
-                  "lineHeight": 1.1,
-                  "fontFamily": "Geist Mono",
-                  "fontSize": 9,
-                  "fontWeight": "bold"
-                },
-                {
                   "type": "frame",
                   "id": "KcKpZ",
                   "x": 20,
@@ -25313,31 +25298,31 @@
                     {
                       "type": "frame",
                       "id": "r8bK2",
-                      "name": "Character slot icon 0 — PLACEHOLDER",
                       "x": 67,
                       "y": 23,
+                      "name": "Character slot icon 0 — PLACEHOLDER",
                       "width": 40,
                       "height": 40,
                       "fill": "#0E0D0C",
+                      "cornerRadius": 4,
                       "stroke": "#C89445",
                       "strokeWidth": 1,
-                      "cornerRadius": 4,
                       "layout": "none",
                       "children": [
                         {
                           "type": "text",
                           "id": "r8bK2-label",
-                          "name": "Character slot icon 0 label",
-                          "content": "ICON",
                           "x": 3,
                           "y": 13,
-                          "width": 34,
+                          "name": "Character slot icon 0 label",
+                          "fill": "#B5A79A",
                           "textGrowth": "fixed-width",
+                          "width": 34,
+                          "content": "ICON",
+                          "textAlign": "center",
                           "fontFamily": "Geist Mono",
                           "fontSize": 6,
-                          "fontWeight": "bold",
-                          "fill": "#B5A79A",
-                          "textAlign": "center"
+                          "fontWeight": "bold"
                         }
                       ]
                     },
@@ -25431,31 +25416,31 @@
                     {
                       "type": "frame",
                       "id": "RG6E6",
-                      "name": "Character slot icon 1 — PLACEHOLDER",
                       "x": 67,
                       "y": 23,
+                      "name": "Character slot icon 1 — PLACEHOLDER",
                       "width": 40,
                       "height": 40,
                       "fill": "#0E0D0C",
+                      "cornerRadius": 4,
                       "stroke": "#C89445",
                       "strokeWidth": 1,
-                      "cornerRadius": 4,
                       "layout": "none",
                       "children": [
                         {
                           "type": "text",
                           "id": "RG6E6-label",
-                          "name": "Character slot icon 1 label",
-                          "content": "ICON",
                           "x": 3,
                           "y": 13,
-                          "width": 34,
+                          "name": "Character slot icon 1 label",
+                          "fill": "#B5A79A",
                           "textGrowth": "fixed-width",
+                          "width": 34,
+                          "content": "ICON",
+                          "textAlign": "center",
                           "fontFamily": "Geist Mono",
                           "fontSize": 6,
-                          "fontWeight": "bold",
-                          "fill": "#B5A79A",
-                          "textAlign": "center"
+                          "fontWeight": "bold"
                         }
                       ]
                     },
@@ -25549,31 +25534,31 @@
                     {
                       "type": "frame",
                       "id": "F1Wvzb",
-                      "name": "Character slot icon 2 — PLACEHOLDER",
                       "x": 67,
                       "y": 23,
+                      "name": "Character slot icon 2 — PLACEHOLDER",
                       "width": 40,
                       "height": 40,
                       "fill": "#0E0D0C",
+                      "cornerRadius": 4,
                       "stroke": "#C89445",
                       "strokeWidth": 1,
-                      "cornerRadius": 4,
                       "layout": "none",
                       "children": [
                         {
                           "type": "text",
                           "id": "F1Wvzb-label",
-                          "name": "Character slot icon 2 label",
-                          "content": "ICON",
                           "x": 3,
                           "y": 13,
-                          "width": 34,
+                          "name": "Character slot icon 2 label",
+                          "fill": "#B5A79A",
                           "textGrowth": "fixed-width",
+                          "width": 34,
+                          "content": "ICON",
+                          "textAlign": "center",
                           "fontFamily": "Geist Mono",
                           "fontSize": 6,
-                          "fontWeight": "bold",
-                          "fill": "#B5A79A",
-                          "textAlign": "center"
+                          "fontWeight": "bold"
                         }
                       ]
                     },
@@ -25742,21 +25727,6 @@
                 },
                 {
                   "type": "text",
-                  "id": "I6o85",
-                  "x": 14,
-                  "y": 12,
-                  "name": "Name value",
-                  "fill": "#F4EDE0",
-                  "textGrowth": "fixed-width",
-                  "width": 220,
-                  "content": "EIRIK",
-                  "lineHeight": 1.1,
-                  "fontFamily": "Inter",
-                  "fontSize": 12,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
                   "id": "WlYxv",
                   "x": 20,
                   "y": 150,
@@ -25787,31 +25757,31 @@
                     {
                       "type": "frame",
                       "id": "mo1bS",
-                      "name": "Class icon 0 — PLACEHOLDER",
                       "x": 11,
                       "y": 13,
+                      "name": "Class icon 0 — PLACEHOLDER",
                       "width": 34,
                       "height": 34,
                       "fill": "#0E0D0C",
+                      "cornerRadius": 4,
                       "stroke": "#C89445",
                       "strokeWidth": 1,
-                      "cornerRadius": 4,
                       "layout": "none",
                       "children": [
                         {
                           "type": "text",
                           "id": "mo1bS-label",
-                          "name": "Class icon 0 label",
-                          "content": "ICON",
                           "x": 3,
                           "y": 10,
-                          "width": 28,
+                          "name": "Class icon 0 label",
+                          "fill": "#B5A79A",
                           "textGrowth": "fixed-width",
+                          "width": 28,
+                          "content": "ICON",
+                          "textAlign": "center",
                           "fontFamily": "Geist Mono",
                           "fontSize": 6,
-                          "fontWeight": "bold",
-                          "fill": "#B5A79A",
-                          "textAlign": "center"
+                          "fontWeight": "bold"
                         }
                       ]
                     },
@@ -25879,31 +25849,31 @@
                     {
                       "type": "frame",
                       "id": "NGn4W",
-                      "name": "Class icon 1 — PLACEHOLDER",
                       "x": 11,
                       "y": 13,
+                      "name": "Class icon 1 — PLACEHOLDER",
                       "width": 34,
                       "height": 34,
                       "fill": "#0E0D0C",
+                      "cornerRadius": 4,
                       "stroke": "#C89445",
                       "strokeWidth": 1,
-                      "cornerRadius": 4,
                       "layout": "none",
                       "children": [
                         {
                           "type": "text",
                           "id": "NGn4W-label",
-                          "name": "Class icon 1 label",
-                          "content": "ICON",
                           "x": 3,
                           "y": 10,
-                          "width": 28,
+                          "name": "Class icon 1 label",
+                          "fill": "#B5A79A",
                           "textGrowth": "fixed-width",
+                          "width": 28,
+                          "content": "ICON",
+                          "textAlign": "center",
                           "fontFamily": "Geist Mono",
                           "fontSize": 6,
-                          "fontWeight": "bold",
-                          "fill": "#B5A79A",
-                          "textAlign": "center"
+                          "fontWeight": "bold"
                         }
                       ]
                     },
@@ -25971,31 +25941,31 @@
                     {
                       "type": "frame",
                       "id": "dypzF",
-                      "name": "Class icon 2 — PLACEHOLDER",
                       "x": 11,
                       "y": 13,
+                      "name": "Class icon 2 — PLACEHOLDER",
                       "width": 34,
                       "height": 34,
                       "fill": "#0E0D0C",
+                      "cornerRadius": 4,
                       "stroke": "#C89445",
                       "strokeWidth": 1,
-                      "cornerRadius": 4,
                       "layout": "none",
                       "children": [
                         {
                           "type": "text",
                           "id": "dypzF-label",
-                          "name": "Class icon 2 label",
-                          "content": "ICON",
                           "x": 3,
                           "y": 10,
-                          "width": 28,
+                          "name": "Class icon 2 label",
+                          "fill": "#B5A79A",
                           "textGrowth": "fixed-width",
+                          "width": 28,
+                          "content": "ICON",
+                          "textAlign": "center",
                           "fontFamily": "Geist Mono",
                           "fontSize": 6,
-                          "fontWeight": "bold",
-                          "fill": "#B5A79A",
-                          "textAlign": "center"
+                          "fontWeight": "bold"
                         }
                       ]
                     },
@@ -26189,43 +26159,44 @@
                     {
                       "type": "frame",
                       "id": "IHsL6",
-                      "name": "Mobile select class icon — PLACEHOLDER",
                       "x": 7,
                       "y": 11,
+                      "name": "Mobile select class icon — PLACEHOLDER",
                       "width": 30,
                       "height": 30,
                       "fill": "#0E0D0C",
+                      "cornerRadius": 4,
                       "stroke": "#C89445",
                       "strokeWidth": 1,
-                      "cornerRadius": 4,
                       "layout": "none",
                       "children": [
                         {
                           "type": "text",
                           "id": "IHsL6-label",
-                          "name": "Mobile select class icon label",
-                          "content": "ICON",
                           "x": 3,
                           "y": 8,
-                          "width": 24,
+                          "name": "Mobile select class icon label",
+                          "fill": "#B5A79A",
                           "textGrowth": "fixed-width",
+                          "width": 24,
+                          "content": "ICON",
+                          "textAlign": "center",
                           "fontFamily": "Geist Mono",
                           "fontSize": 6,
-                          "fontWeight": "bold",
-                          "fill": "#B5A79A",
-                          "textAlign": "center"
+                          "fontWeight": "bold"
                         }
                       ]
                     },
                     {
                       "type": "text",
                       "id": "kSAuj",
-                      "x": 46,
+                      "x": 175,
                       "y": 10,
                       "name": "Mobile select character",
                       "fill": "#F4EDE0",
-                      "textGrowth": "fixed-width",
+                      "textGrowth": "fixed-width-height",
                       "width": 260,
+                      "height": 26,
                       "content": "EIRIK · PALADÍN\nCASTIGO · NIVEL 16",
                       "fontFamily": "Geist Mono",
                       "fontSize": 9,
@@ -26353,31 +26324,31 @@
                     {
                       "type": "frame",
                       "id": "omwdx",
-                      "name": "Mobile create class icon — PLACEHOLDER",
                       "x": 7,
                       "y": 4,
+                      "name": "Mobile create class icon — PLACEHOLDER",
                       "width": 22,
                       "height": 22,
                       "fill": "#0E0D0C",
+                      "cornerRadius": 4,
                       "stroke": "#C89445",
                       "strokeWidth": 1,
-                      "cornerRadius": 4,
                       "layout": "none",
                       "children": [
                         {
                           "type": "text",
                           "id": "omwdx-label",
-                          "name": "Mobile create class icon label",
-                          "content": "ICON",
                           "x": 3,
                           "y": 4,
-                          "width": 16,
+                          "name": "Mobile create class icon label",
+                          "fill": "#B5A79A",
                           "textGrowth": "fixed-width",
+                          "width": 16,
+                          "content": "ICON",
+                          "textAlign": "center",
                           "fontFamily": "Geist Mono",
                           "fontSize": 6,
-                          "fontWeight": "bold",
-                          "fill": "#B5A79A",
-                          "textAlign": "center"
+                          "fontWeight": "bold"
                         }
                       ]
                     },
@@ -26425,60 +26396,60 @@
                 {
                   "type": "frame",
                   "id": "mobile-invalid-clean",
-                  "name": "Mobile invalid name state",
                   "x": 882,
                   "y": 42,
+                  "name": "Mobile invalid name state",
                   "width": 180,
                   "height": 70,
                   "fill": "#3A2525",
+                  "cornerRadius": 6,
                   "stroke": "#B84E5B",
                   "strokeWidth": 1,
-                  "cornerRadius": 6,
                   "layout": "none",
                   "children": [
                     {
                       "type": "text",
                       "id": "mobile-invalid-title",
-                      "name": "Mobile invalid title",
-                      "content": "NOMBRE INVÁLIDO",
                       "x": 14,
                       "y": 14,
-                      "width": 150,
+                      "name": "Mobile invalid title",
+                      "fill": "#D68A78",
                       "textGrowth": "fixed-width",
+                      "width": 150,
+                      "content": "NOMBRE INVÁLIDO",
                       "fontFamily": "Geist Mono",
                       "fontSize": 9,
-                      "fontWeight": "bold",
-                      "fill": "#D68A78"
+                      "fontWeight": "bold"
                     }
                   ]
                 },
                 {
                   "type": "frame",
                   "id": "mobile-locked-clean",
-                  "name": "Mobile locked slot state",
                   "x": 882,
                   "y": 124,
+                  "name": "Mobile locked slot state",
                   "width": 180,
                   "height": 70,
                   "fill": "#171311",
+                  "cornerRadius": 6,
                   "stroke": "#52495D",
                   "strokeWidth": 1,
-                  "cornerRadius": 6,
                   "layout": "none",
                   "children": [
                     {
                       "type": "text",
                       "id": "mobile-locked-title",
-                      "name": "Mobile locked title",
-                      "content": "SLOT 3 · ROBUX",
                       "x": 14,
                       "y": 14,
-                      "width": 150,
+                      "name": "Mobile locked title",
+                      "fill": "#8B8178",
                       "textGrowth": "fixed-width",
+                      "width": 150,
+                      "content": "SLOT 3 · ROBUX",
                       "fontFamily": "Geist Mono",
                       "fontSize": 9,
-                      "fontWeight": "bold",
-                      "fill": "#8B8178"
+                      "fontWeight": "bold"
                     }
                   ]
                 }

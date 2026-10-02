@@ -54,15 +54,49 @@ Plan de itemización cerrado (PO 2026-09-22):
 
 * **Azul:** entradas en `floor_3`, `floor_4` y `floor_5` (pesos bajos, piezas de las 3 clases).
 * **Set Helada (morado):** el **cofre del boss final** (`floor_5_boss`) dropea **1 pieza del set Helada de la clase del jugador** (pieza aleatoria) con **% de chance** (seed ~35% — balance ITEMS-05); a veces no cae (rejugabilidad).
-* **Uniques → Señor de la Escarcha:** `floor_4_boss` pasa a tener el `uniquePool` (frost_edge/frostbow/glacial_wand) con su chance (el mismo mecanismo que tenía el piso 5); nivel de los uniques a **14**.
+* **Uniques → Señor de la Escarcha (decisión PM — drop automático, sin cofre nuevo):** el Señor de la Escarcha **dropea al morir** (como el resto de mini-bosses; el cofre queda reservado al boss final como premio de cierre de run). Se extiende el **flujo de loot de mini-jefes por muerte** para procesar `uniqueChance`/`uniquePool` (config `floor_4_boss` con el pool de los 3 uniques y su chance); nivel de los uniques a **14**.
+* **Fallback del cofre final (65% — mezcla ponderada, decisión PM):** **40% → pieza azul de la clase del jugador** (slot aleatorio) · **25% → oro (rango 40–80)**. Config-driven.
 * `floor_5_boss` pierde el `uniquePool` (ya no dropea armas; dropea el set).
 * Sin cambios al resto de loot (pociones, etc.).
 
-#### **3. Reglas**
+#### **2.1 Recompensa del jefe final (extensión aprobada del flujo de loot — decisión PM 2026-09-22)**
 
-* Todo data-driven (configs); sin tocar servicios de gameplay (el flujo de recompensa R4/R7 se reutiliza).
+* El `LootService` actual no sabe elegir piezas del set por clase ni manejar % con fallback. Se aprueba una **extensión mínima** (excepción documentada como la de pociones en R8d):
+  * Al abrir el cofre del boss final: **35%** → 1 pieza épica Helada **de la clase del jugador**; **65%** → recompensa alternativa (**pieza azul de su clase u oro** — config).
+  * **Enmendado por ITEMS-06 (2026-09-22):** dentro del 35% épico → **50% arma / 50% armadura** (slot aleatorio); armas épicas por clase: Paladín → espada/espadón/escudo (peso igual), Cazador → arco, Clérigo → varita. La extensión del servicio ahora cubre armas y armaduras.
+  * Sin tocar el resto del flujo de recompensa (R4/R7).
+* **Riesgo resuelto (seedOnly):** el selector de recompensas genérico debe **excluir los templates `seedOnly`** (los seed de ITEMS-03) del pool de equipo — los templates llevan el flag `seedOnly=true` y el selector lo respeta (config-driven).
+
+#### **3. Stats seed por clase/slot/tier (decisión PM — tabla concreta)**
+
+Valores **blanco** por clase/slot (base/roll, patrón del equipo existente); los tiers superiores usan **multiplicadores** sobre el valor blanco (redondeo a entero; CRIT a 0.01):
+
+| Clase | Slot | Stat principal (blanco) | Multiplicador verde | Multiplicador azul | Multiplicador frost |
+|-------|------|------------------------|--------------------|--------------------|--------------------|
+| Paladín | Casco / Hombreras / Piernas | DEF 2/0 · 2/0 · 2/0 | ×1.4 | ×1.9 | ×2.5 |
+| Paladín | Pecho | DEF 4/1 | ×1.4 | ×1.9 | ×2.5 |
+| Paladín | Guantes | DEF 1/0 | ×1.4 | ×1.9 | ×2.5 |
+| Cazador | Casco | DEF 2/0 | ×1.4 | ×1.9 | ×2.5 |
+| Cazador | Hombreras | DEF 2/0 + ATK 2/1 | ×1.4 | ×1.9 | ×2.5 |
+| Cazador | Piernas | DEF 3/1 + CRIT 0.02 | ×1.4 | ×1.9 | ×2.5 |
+| Cazador | Pecho | DEF 4/1 + MDEF 2/0 | ×1.4 | ×1.9 | ×2.5 |
+| Cazador | Guantes | DEF 1/0 + CRIT 0.01 | ×1.4 | ×1.9 | ×2.5 |
+| Clérigo | Casco | MDEF 2/0 | ×1.4 | ×1.9 | ×2.5 |
+| Clérigo | Hombreras | MDEF 2/0 + MaxMP 10/0 | ×1.4 | ×1.9 | ×2.5 |
+| Clérigo | Piernas | MDEF 3/1 + MATK 1/0 | ×1.4 | ×1.9 | ×2.5 |
+| Clérigo | Pecho | MDEF 4/1 + MATK 2/1 | ×1.4 | ×1.9 | ×2.5 |
+| Clérigo | Guantes | MDEF 1/0 + MaxMP 5/0 | ×1.4 | ×1.9 | ×2.5 |
+
+* **CRIT siempre en fracción (0.01 = 1%)** — alineado con el fix de escala de R6.22 (nada de +5 enteros).
+* Los multiplicadores mantienen la meta de ITEMS-05 (~15–25% de poder entre tiers: verde 1.4×, azul 1.9×, frost 2.5× — el salto lo confirma ITEMS-05).
+* El dev aplica los valores con la tabla (no inventa nada).
+
+#### **4. Reglas**
+
+* Todo data-driven (configs); la **única excepción aprobada** es la extensión mínima del flujo de recompensa del boss final (punto 2.1).
+* `seedOnly=true` excluido del pool de recompensas genérico.
 * Sync places (PUBLICAR-04): configs compartidos — dungeon por copia derivada.
-* Balance de números en ITEMS-05 (drops %, stats, precios).
+* Balance fino de números en ITEMS-05 (drops %, stats finales, precios).
 
 ---
 
@@ -90,8 +124,8 @@ Plan de itemización cerrado (PO 2026-09-22):
 #### **Escenario 4: Uniques del Señor de la Escarcha**
 
 * **GIVEN** el Señor de la Escarcha derrotado
-* **WHEN** se abre su cofre
-* **THEN** las armas únicas pueden caer (mismo mecanismo que tenía el piso 5) y su nivel es 14
+* **WHEN** muere (loot automático, sin cofre)
+* **THEN** las armas únicas pueden caer por el flujo de muerte con `uniqueChance`/`uniquePool` (misma chance que tenía el piso 5) y su nivel es 14
 
 #### **Escenario 5: levelReq correctos**
 
@@ -139,8 +173,9 @@ Plan de itemización cerrado (PO 2026-09-22):
 |------|---------|
 | levelReq | Blanco 3/3/3/5/5 · Verde 8/8/8/10/10 · Azul 12 · Morado 16 · Uniques 14 |
 | Azul | Piso 3+ (cualquier enemigo, pesos bajos) |
-| Set Helada | Boss final: 1 pieza de tu clase (aleatoria), % ~35% (ITEMS-05 afina) |
-| Uniques | Señor de la Escarcha (piso 4), lvl 14 |
+| Set Helada | Boss final: 35% pieza de tu clase (slot aleatorio) |
+| Fallback 65% | **40% pieza azul de tu clase + 25% oro (40–80)** |
+| Uniques | Señor de la Escarcha (piso 4) — **drop automático al morir** (flujo de mini-jefes extendido con uniqueChance/uniquePool), lvl 14 |
 
 ---
 
@@ -155,3 +190,6 @@ Plan de itemización cerrado (PO 2026-09-22):
 | Fecha | Cambio |
 |-------|--------|
 | 2026-09-22 | Creación de HU-ITEMS-04: itemización de contenido y loot — 60 templates por tier (blanco/verde/azul/frost), levelReq cerrados (progresión por pieza hasta verde), azul en piso 3+, set Helada del boss final (%) y uniques al Señor de la Escarcha (lvl 14) |
+| 2026-09-22 | **Enmendado por ITEMS-06 (cofre del boss final):** el 35% épico ahora puede ser **arma (50%) o armadura (50%)** de la clase; armas épicas por clase (Paladín: espada/espadón/escudo · Cazador: arco · Clérigo: varita); la extensión de LootService cubre armas y armaduras |
+| 2026-09-22 | **Decisiones PM (feedback dev):** (1) **extensión aprobada** del flujo de recompensa del boss final (35% → pieza del set de tu clase; 65% → azul/oro) y exclusión de `seedOnly` del pool genérico; (2) **tabla de stats seed por clase/slot/tier** (blanco concreto + multiplicadores verde ×1.4 / azul ×1.9 / frost ×2.5; CRIT en fracción) |
+| 2026-09-22 | **Decisiones PM (rc065):** Señor de la Escarcha con **drop automático al morir** (extensión del flujo de mini-jefes para `uniqueChance`/`uniquePool`; sin cofre nuevo — el cofre es solo del boss final); fallback del cofre final = **40% pieza azul de tu clase + 25% oro (40–80)** |

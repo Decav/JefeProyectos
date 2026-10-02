@@ -36,8 +36,8 @@
 ## 3. Contexto de fases (para ubicarte)
 
 - **Completas:** R0 (hub/places), R1 (dummy/combate), R2 (slots/persistencia), R3 (skills data-driven), R3.1 (cámara WoW-like).
-- **En curso:** R4 — Inventario + equip + BoE + rolls + rareza (`HU/HU-R4-Inventario-Equip.md`).
-- HUs formales: `Vandrheim-Roblox/HU/`. RCs: los genera el dev con `RC-TEMPLATE.md` (vía DEV_PROMPT).
+- **En curso:** R4 — Inventario + equip + BoE + rolls + rareza (`HU/fases/HU-R4-Inventario-Equip.md`).
+- HUs formales: `Vandrheim-Roblox/HU/` organizadas por épica (`fases/`, `estetica/`, `items/`, `assets/`, `publicacion/`). RCs: los genera el dev con `RC-TEMPLATE.md` (vía DEV_PROMPT).
 - Skills disponibles en R3: básicas + Spec A (debug level flag para QA de unlocks).
 
 ---

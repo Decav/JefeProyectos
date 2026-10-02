@@ -73,6 +73,7 @@ Reglas de validación en `InventoryService` (server-authoritative):
 * **Equipar varita** (`MainHandOnly`): solo en `MainHand`; `OffHand` queda libre para escudo.
 * **Desequipar un 2H**: libera `MainHand` y `OffHand` al mismo tiempo.
 * **Reemplazo**: si hay un 2H equipado, equipar cualquier 1H/escudo/varita es rechazado hasta desequipar el 2H. Si hay 1H en ambas manos, equipar un 2H es rechazado.
+* **Penalización de offhand (decisión PO 2026-09-22):** una 1H equipada en `OffHand` aporta solo el **25% de su ATK** (penalización 75%). Afecta **SOLO el ATK del arma 1H en offhand** — el resto de sus stats se aplican completos. Es un **valor inicial para el RC de ITEMS-06** (validar con combinaciones: el 2H debe superar al dual 1H+1H en ATK; el único 2H afinado ~46,2 vs dual ~41,9–44,6 en las tiradas de referencia).
 * Las validaciones las aplica el servidor; el cliente solo envía intención (`RequestEquipItem`/`RequestUnequipItem` existentes). No se crean RemoteEvents nuevos.
 * El campo `weaponAffinity` ya existe en `ItemConfig` (armas): espadas → specs Paladín/Cazador, `hunter_bow` → `Hunter_Assault`/`Hunter_Punteria` (verificado en código). Los templates nuevos de armas definen el suyo: `cleric_wand` → `Cleric_Misericordia`/`Cleric_Colera`.
 * Migración de templates existentes (templateIds reales verificados en `ItemConfig`): `sword_apprentice`, `sword_iron`, `sword_knight`, `sword_champion` → `OneHand`; `shield_guard` → `OffHand`; `hunter_bow` → `TwoHand`; `unique_frost_edge` → `OneHand`; `unique_frostbow` → `TwoHand`; `unique_glacial_wand` → `MainHandOnly`.
@@ -245,7 +246,7 @@ Regla: cada pieza cae en los pisos acordes a su `levelReq` (lvl 1 → pisos 1–
 * Los visuales de los sets se reflejan en el avatar R15 (pipeline EST-01): cuero del Cazador, tela del Clérigo, varita en la mano derecha. El collar y el anillo **no tienen visual** en el avatar.
 * El dual wield se ve como dos armas en ambas manos; el 2H como un arma grande en la mano derecha (sin IK de dos manos en esta HU, como EST-01).
 * Las reglas de armas son reglas de negocio server-side; la UI solo refleja rechazos con feedback breve ("No podés equipar eso", etc.).
-* Sin bonus numérico de dual wield ni penalización en esta HU: es solo equipamiento (balance en R8d).
+* Sin bonus numérico de dual wield en esta HU: es solo equipamiento (balance en R8d). **La penalización de offhand (25% ATK) quedó cerrada el 2026-09-22 en la regla de armas de esta HU** (ver arriba); los % finales se validan en el RC de ITEMS-06.
 
 ---
 
@@ -317,5 +318,5 @@ Regla: cada pieza cae en los pisos acordes a su `levelReq` (lvl 1 → pisos 1–
 | Fecha | Cambio |
 |-------|--------|
 | 2026-09-12 | Creación de HU-ITEMS-01: sets Cazador/Clérigo, varita, collar y anillo; reglas de armas 1H dual / 2H bloquea offhand; obtención seed por loot/vendor; decisiones cerradas con producto |
-| 2026-09-15 | Revisión PM: slot canónico `Necklace` confirmado en `ItemConfig.SLOTS` (9 slots, Ring/Necklace ya existen); templateIds de migración y `weaponAffinity` verificados en código; `preferredSlot` marcado como extensión del contrato de `RequestEquipItem`; **collar y anillo sin modelo visual** (decisión de producto: solo dato + icono) |
 | 2026-09-15 | **rc034 aprobado** con criterio de vendor confirmado (solo `vendor_gear`, sin NPC nuevo); **seed cerrado por el PM**: stats/rolls por pieza, levelReq/rareza por template y pesos de loot por piso (tablas en "Seed aprobado"); R8d afina balance |
+| 2026-09-22 | **Regla de armas cerrada (decisión PO, para el RC de ITEMS-06):** penalización de offhand — una 1H en `OffHand` aporta **25% de su ATK** (solo ATK, resto de stats completas); valor inicial a validar (el 2H debe superar al dual 1H+1H) |

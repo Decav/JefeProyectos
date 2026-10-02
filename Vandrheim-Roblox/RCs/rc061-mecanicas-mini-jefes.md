@@ -3,7 +3,7 @@
           REQUERIMIENTO TÉCNICO: rc061 — FASE R6.18 (HU-R6.18)
 ================================================================================
 Proyecto: Vandrheim — RPG/MMO-like en 3ª persona (Roblox).
-Fuente: HU-R6.18 (HU/HU-R6.18-Mecanicas-Mini-Jefes.md) + GDD §§8, 14, 17
+Fuente: HU-R6.18 (HU/fases/HU-R6.18-Mecanicas-Mini-Jefes.md) + GDD §§8, 14, 17
   + PROJECT_ARCHITECTURE + DATA_SCHEMA + ASSETS_POLICY.
 Estado: ABIERTO (pendiente de implementación).
 Requisitos previos: HU-R6a/rc009 (EnemyService y mini-jefes), HU-R6.7

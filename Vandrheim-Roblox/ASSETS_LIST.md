@@ -3,7 +3,7 @@ Genera cada ítem como UNA imagen separada, en estilo consistente.
 
 REGLAS TÉCNICAS (obligatorias para todas):
 
-- 512x512, FONDO NEGRO SÓLIDO (#000000), sin gradiente ni patrón en el fondo.
+- 512x512, **FONDO TRANSPARENTE** (decisión 2026-09-22: los iconos nuevos ya NO llevan fondo negro; reemplaza el estándar anterior).
 - Sin marco, sin borde, sin texto, sin UI, sin sombra exterior.
 - El objeto ocupa ~85% del encuadre, centrado, en perspectiva 3/4 (diagonal),
   como icono de inventario MMO.
