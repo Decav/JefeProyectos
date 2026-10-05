@@ -1,0 +1,1409 @@
+{
+  "animation_name": "monster_helada_frostwarden_yeti_revision_preview_attack_horizontal_sweep_v1",
+  "description": "Ataque pesado de barrido horizontal con el brazo derecho: carga el peso y retrae el brazo, gira el torso para barrer de derecha a izquierda y recupera la guardia sin desplazamiento.",
+  "total_frames": 54,
+  "fps": 60,
+  "intensity": 0.84,
+  "keyframes": [
+    {
+      "joint": "RootJoint",
+      "frame": 0,
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "Neck",
+      "frame": 0,
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightShoulder",
+      "frame": 0,
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": -2
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightElbow",
+      "frame": 0,
+      "rotation": {
+        "x": 8,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftShoulder",
+      "frame": 0,
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 2
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftElbow",
+      "frame": 0,
+      "rotation": {
+        "x": 8,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightHip",
+      "frame": 0,
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightKnee",
+      "frame": 0,
+      "rotation": {
+        "x": 6,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftHip",
+      "frame": 0,
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftKnee",
+      "frame": 0,
+      "rotation": {
+        "x": 6,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RootJoint",
+      "frame": 6,
+      "rotation": {
+        "x": 4,
+        "y": -4,
+        "z": 1
+      },
+      "position": {
+        "x": 0,
+        "y": -0.04,
+        "z": 0
+      }
+    },
+    {
+      "joint": "Neck",
+      "frame": 6,
+      "rotation": {
+        "x": -2,
+        "y": 2,
+        "z": -1
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightShoulder",
+      "frame": 6,
+      "rotation": {
+        "x": 5,
+        "y": -8,
+        "z": -12
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightElbow",
+      "frame": 6,
+      "rotation": {
+        "x": 18,
+        "y": 0,
+        "z": -2
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftShoulder",
+      "frame": 6,
+      "rotation": {
+        "x": 8,
+        "y": 4,
+        "z": 10
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftElbow",
+      "frame": 6,
+      "rotation": {
+        "x": 16,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightHip",
+      "frame": 6,
+      "rotation": {
+        "x": -5,
+        "y": -2,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightKnee",
+      "frame": 6,
+      "rotation": {
+        "x": 12,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftHip",
+      "frame": 6,
+      "rotation": {
+        "x": 5,
+        "y": 2,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftKnee",
+      "frame": 6,
+      "rotation": {
+        "x": 10,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RootJoint",
+      "frame": 12,
+      "rotation": {
+        "x": 7,
+        "y": -14,
+        "z": 4
+      },
+      "position": {
+        "x": 0,
+        "y": -0.08,
+        "z": 0
+      }
+    },
+    {
+      "joint": "Neck",
+      "frame": 12,
+      "rotation": {
+        "x": -3,
+        "y": 6,
+        "z": -2
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightShoulder",
+      "frame": 12,
+      "rotation": {
+        "x": 15,
+        "y": -12,
+        "z": -42
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightElbow",
+      "frame": 12,
+      "rotation": {
+        "x": 28,
+        "y": 0,
+        "z": -8
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftShoulder",
+      "frame": 12,
+      "rotation": {
+        "x": -5,
+        "y": 5,
+        "z": 10
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftElbow",
+      "frame": 12,
+      "rotation": {
+        "x": 24,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightHip",
+      "frame": 12,
+      "rotation": {
+        "x": -10,
+        "y": -4,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightKnee",
+      "frame": 12,
+      "rotation": {
+        "x": 20,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftHip",
+      "frame": 12,
+      "rotation": {
+        "x": 10,
+        "y": 4,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftKnee",
+      "frame": 12,
+      "rotation": {
+        "x": 16,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RootJoint",
+      "frame": 18,
+      "rotation": {
+        "x": 7,
+        "y": -20,
+        "z": 5
+      },
+      "position": {
+        "x": 0,
+        "y": -0.1,
+        "z": 0
+      }
+    },
+    {
+      "joint": "Neck",
+      "frame": 18,
+      "rotation": {
+        "x": -4,
+        "y": 8,
+        "z": -2
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightShoulder",
+      "frame": 18,
+      "rotation": {
+        "x": 22,
+        "y": -18,
+        "z": -58
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightElbow",
+      "frame": 18,
+      "rotation": {
+        "x": 45,
+        "y": 0,
+        "z": -10
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftShoulder",
+      "frame": 18,
+      "rotation": {
+        "x": -10,
+        "y": 4,
+        "z": 6
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftElbow",
+      "frame": 18,
+      "rotation": {
+        "x": 30,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightHip",
+      "frame": 18,
+      "rotation": {
+        "x": -15,
+        "y": -5,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightKnee",
+      "frame": 18,
+      "rotation": {
+        "x": 26,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftHip",
+      "frame": 18,
+      "rotation": {
+        "x": 12,
+        "y": 5,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftKnee",
+      "frame": 18,
+      "rotation": {
+        "x": 18,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RootJoint",
+      "frame": 22,
+      "rotation": {
+        "x": -3,
+        "y": -8,
+        "z": -2
+      },
+      "position": {
+        "x": 0,
+        "y": -0.02,
+        "z": 0
+      }
+    },
+    {
+      "joint": "Neck",
+      "frame": 22,
+      "rotation": {
+        "x": -2,
+        "y": 4,
+        "z": -1
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightShoulder",
+      "frame": 22,
+      "rotation": {
+        "x": 8,
+        "y": -8,
+        "z": -18
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightElbow",
+      "frame": 22,
+      "rotation": {
+        "x": 24,
+        "y": 0,
+        "z": -4
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftShoulder",
+      "frame": 22,
+      "rotation": {
+        "x": 4,
+        "y": -4,
+        "z": -3
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftElbow",
+      "frame": 22,
+      "rotation": {
+        "x": 20,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightHip",
+      "frame": 22,
+      "rotation": {
+        "x": -8,
+        "y": -3,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightKnee",
+      "frame": 22,
+      "rotation": {
+        "x": 18,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftHip",
+      "frame": 22,
+      "rotation": {
+        "x": 8,
+        "y": 3,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftKnee",
+      "frame": 22,
+      "rotation": {
+        "x": 14,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RootJoint",
+      "frame": 25,
+      "rotation": {
+        "x": -9,
+        "y": 12,
+        "z": -6
+      },
+      "position": {
+        "x": 0,
+        "y": 0.04,
+        "z": 0
+      }
+    },
+    {
+      "joint": "Neck",
+      "frame": 25,
+      "rotation": {
+        "x": -5,
+        "y": -8,
+        "z": 3
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightShoulder",
+      "frame": 25,
+      "rotation": {
+        "y": -17,
+        "x": 3,
+        "z": 49
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightElbow",
+      "frame": 25,
+      "rotation": {
+        "y": 11,
+        "x": 104,
+        "z": -87
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftShoulder",
+      "frame": 25,
+      "rotation": {
+        "x": -12,
+        "y": -8,
+        "z": -12
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftElbow",
+      "frame": 25,
+      "rotation": {
+        "x": 22,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightHip",
+      "frame": 25,
+      "rotation": {
+        "x": 13,
+        "y": 7,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightKnee",
+      "frame": 25,
+      "rotation": {
+        "x": 14,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftHip",
+      "frame": 25,
+      "rotation": {
+        "x": -13,
+        "y": -7,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftKnee",
+      "frame": 25,
+      "rotation": {
+        "x": 18,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RootJoint",
+      "frame": 29,
+      "rotation": {
+        "x": -7,
+        "y": 20,
+        "z": -8
+      },
+      "position": {
+        "x": 0,
+        "y": 0.06,
+        "z": 0
+      }
+    },
+    {
+      "joint": "Neck",
+      "frame": 29,
+      "rotation": {
+        "x": -4,
+        "y": -12,
+        "z": 4
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightShoulder",
+      "frame": 29,
+      "rotation": {
+        "y": 7,
+        "x": -30,
+        "z": 48
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightElbow",
+      "frame": 29,
+      "rotation": {
+        "y": 23,
+        "x": 103,
+        "z": -84
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftShoulder",
+      "frame": 29,
+      "rotation": {
+        "x": -14,
+        "y": -6,
+        "z": -18
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftElbow",
+      "frame": 29,
+      "rotation": {
+        "x": 16,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightHip",
+      "frame": 29,
+      "rotation": {
+        "x": 15,
+        "y": 10,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightKnee",
+      "frame": 29,
+      "rotation": {
+        "x": 12,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftHip",
+      "frame": 29,
+      "rotation": {
+        "x": -15,
+        "y": -10,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftKnee",
+      "frame": 29,
+      "rotation": {
+        "x": 16,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RootJoint",
+      "frame": 36,
+      "rotation": {
+        "x": 4,
+        "y": 8,
+        "z": 2
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "Neck",
+      "frame": 36,
+      "rotation": {
+        "x": -2,
+        "y": -4,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightShoulder",
+      "frame": 36,
+      "rotation": {
+        "x": -10,
+        "y": 8,
+        "z": 10
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightElbow",
+      "frame": 36,
+      "rotation": {
+        "x": 12,
+        "y": 0,
+        "z": 5
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftShoulder",
+      "frame": 36,
+      "rotation": {
+        "x": -3,
+        "y": -4,
+        "z": -4
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftElbow",
+      "frame": 36,
+      "rotation": {
+        "x": 14,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightHip",
+      "frame": 36,
+      "rotation": {
+        "x": 5,
+        "y": 4,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightKnee",
+      "frame": 36,
+      "rotation": {
+        "x": 10,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftHip",
+      "frame": 36,
+      "rotation": {
+        "x": -5,
+        "y": -4,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftKnee",
+      "frame": 36,
+      "rotation": {
+        "x": 12,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RootJoint",
+      "frame": 45,
+      "rotation": {
+        "x": 1,
+        "y": 2,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "Neck",
+      "frame": 45,
+      "rotation": {
+        "x": 0,
+        "y": -1,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightShoulder",
+      "frame": 45,
+      "rotation": {
+        "x": -2,
+        "y": 2,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightElbow",
+      "frame": 45,
+      "rotation": {
+        "x": 9,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftShoulder",
+      "frame": 45,
+      "rotation": {
+        "x": 0,
+        "y": -1,
+        "z": 1
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftElbow",
+      "frame": 45,
+      "rotation": {
+        "x": 9,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightHip",
+      "frame": 45,
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightKnee",
+      "frame": 45,
+      "rotation": {
+        "x": 7,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftHip",
+      "frame": 45,
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftKnee",
+      "frame": 45,
+      "rotation": {
+        "x": 7,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RootJoint",
+      "frame": 54,
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "Neck",
+      "frame": 54,
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightShoulder",
+      "frame": 54,
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": -2
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightElbow",
+      "frame": 54,
+      "rotation": {
+        "x": 8,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftShoulder",
+      "frame": 54,
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 2
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftElbow",
+      "frame": 54,
+      "rotation": {
+        "x": 8,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightHip",
+      "frame": 54,
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "RightKnee",
+      "frame": 54,
+      "rotation": {
+        "x": 6,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftHip",
+      "frame": 54,
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "joint": "LeftKnee",
+      "frame": 54,
+      "rotation": {
+        "x": 6,
+        "y": 0,
+        "z": 0
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    }
+  ]
+}

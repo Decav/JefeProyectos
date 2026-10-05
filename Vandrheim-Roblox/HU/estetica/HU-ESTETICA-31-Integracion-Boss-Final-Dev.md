@@ -6,7 +6,7 @@
 **Estado:** Lista para implementar
 **Tipo:** Integración + animación + VFX del boss (dev)
 **Fase GDD:** R7 / EST (complementa HU-R7 ya implementada)
-**Depende de:** HU-ESTETICA-30 (modelo articulado del boss), HU-R7 (boss `helada_frostwarden`: `glacial_impact`, cofre, uniques), HU-ESTETICA-02 (estructura de enemigos), HU-R6.7 (framework de animaciones por familia), HU-ESTETICA-19/20 (boss bar del HUD), HU-PUBLICAR-04 (sync de places)
+**Depende de:** **HU-ESTETICA-36 (modelo del JOTUNN — sustituye a EST-30, que quedó obsoleta)**, HU-R7 (boss `helada_frostwarden`: `glacial_impact`, cofre, uniques), HU-ESTETICA-02 (estructura de enemigos), HU-R6.7 (framework de animaciones por familia), HU-ESTETICA-19/20 (boss bar del HUD), HU-PUBLICAR-04 (sync de places)
 **Nota de capacidad (confirmada por el PO 2026-09-22):** **todas las animaciones del juego se crean con Moon Animator** (jugador y casi todos los enemigos ya animados; nada viene de la toolbox). Para el boss se usa el mismo método estándar — la ASSETS_POLICY fue actualizada (la regla vieja "no crear animaciones / solo Library" quedó corregida).
 
 ---
@@ -25,7 +25,7 @@
 
 ### **Descripción del Requerimiento / Contexto**
 
-El boss final (`helada_frostwarden`, Guardián de la Escarcha) existe como dato (R7: ai `boss_melee`, ataque `glacial_impact`, cofre + uniques en `floor_5_boss`) pero **usa placeholder** (no tiene modelo real ni animaciones propias). El diseñador entrega el modelo **articulado** (EST-30); el dev:
+El boss final (`helada_frostwarden`, Guardián de la Escarcha) existe como dato (R7: ai `boss_melee`, ataque `glacial_impact`, cofre + uniques en `floor_5_boss`) pero **usa placeholder** (no tiene modelo real ni animaciones propias). El diseñador entrega el modelo **articulado** (EST-36 — Jotunn); el dev:
 
 1. **Enlaza el modelo** (`modelId` en `BossConfig`/`EnemyConfig`).
 2. **Crea las animaciones con Moon Animator** (idle, caminar/lunge, ataques, `glacial_impact`, muerte) usando la tabla de articulaciones del diseñador.
@@ -46,7 +46,7 @@ El boss final (`helada_frostwarden`, Guardián de la Escarcha) existe como dato 
 
 #### **2. Animaciones con Moon Animator (método estándar del proyecto)**
 
-* Crear con **Moon Animator** sobre el rig articulado (tabla de articulaciones de EST-30) — **bestia cuadrúpeda** (Dirección C):
+* Crear con **Moon Animator** sobre el rig articulado (tabla de articulaciones de **EST-36**) — **Jotunn humanoide** (gigante de hielo, 10 partes con Motor6D):
   * **Idle** imponente (respiración pesada, aura de nieve, runas pulsando).
   * **Walk/lunge** (avance pesado con patas segmentadas y balanceo del torso).
   * **Ataque melee** (zarpazo/embestida: wind-up → swipe/bite con patas delanteras, cabeza y mandíbula — usando el torso).
@@ -124,7 +124,7 @@ El boss final (`helada_frostwarden`, Guardián de la Escarcha) existe como dato 
 
 #### No incluye
 
-* El modelo del boss (diseñador — HU-ESTETICA-30).
+* El modelo del boss (diseñador — **HU-ESTETICA-36**, Jotunn).
 * Animaciones para otros enemigos (regla original: solo librería).
 * SFX (R9b), balance (R8d/R9c) ni mecánicas nuevas.
 

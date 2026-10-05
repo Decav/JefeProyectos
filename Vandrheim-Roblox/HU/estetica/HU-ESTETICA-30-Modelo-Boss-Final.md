@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Estética / Enemigos / Boss final
 **Prioridad:** **CRÍTICA** (es el jefe final del juego)
-**Estado:** Lista para implementar
+**Estado:** **⛔ OBSOLETA / SUSTITUIDA por HU-ESTETICA-36** (decisión PO 2026-09-22: el boss final pasa a ser un **Jotunn nórdico** humanoide — esta HU queda como histórico; no implementar)
 **Tipo:** Producción de modelo 3D (diseñador) — **sin scripts ni animaciones propias**; el rig se entrega articulado para que el dev anime con Moon Animator
 **Fase GDD:** R7 / EST (cubre el hueco que EST-02 dejó para R7: el boss no tiene modelo real)
 **Depende de:** HU-R7 (boss del piso 5: `helada_frostwarden`, ai `boss_melee`, ataque `glacial_impact`), HU-ESTETICA-02 (estructura estándar de enemigos), ASSETS_POLICY (naming/registro)
@@ -137,3 +137,4 @@ Los enemigos actuales se hicieron con piezas sólidas (brazo completo, pierna co
 |-------|--------|
 | 2026-09-22 | Creación de HU-ESTETICA-30: modelo del boss final (Guardián de la Escarcha) con **rig articulado para Moon Animator** (extremidades segmentadas + tabla de articulaciones) — cubre el hueco que EST-02 dejó para R7 |
 | 2026-09-22 | **Rediseño (decisión PO — Dirección C):** el boss pasa a ser una **bestia colosal cuadrúpeda** (oso/mamut de hielo, 3–3.5× el jugador) — rompe con el set humanoide; patas segmentadas + torso/cuello/mandíbula articulados, núcleo de cristal brillante, aura de nieve y suelo congelado; familia `quadruped` |
+| 2026-09-22 | **⛔ OBSOLETA — SUSTITUIDA por HU-ESTETICA-36:** el PO cambia la dirección del boss final a un **Jotunn nórdico** (gigante de hielo humanoide, rig de 10 partes con Motor6D). Esta HU queda como histórico — **no implementar** (ver EST-36) |
