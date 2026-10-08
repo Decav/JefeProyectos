@@ -289,11 +289,13 @@ Diseño de bosses y roles asume party **2–4** aunque el MVP se juegue solo.
 |--|--|
 | Permitido | Cosméticos (skins de arma, auras, títulos visuales, etc.) |
 | Permitido (convenience) | **3.er slot de personaje** (Robux) |
+| Permitido (convenience, decisión PO 2026-09-22) | **Revive 50 Robux** tras 3 resurrecciones gratis por run (HU-R6.28) |
 | Gratis siempre | **2 slots** de personaje + todo el contenido PvE |
 | Prohibido en diseño | Pay-to-win / power / loot mejor de pago |
 | Principio | **El juego se completa bien con 0 Robux** (2 PJs bastan) |
 
 - El 3.er slot es **convenience** (alt/reroll), no poder.
+- El **revive de 50 Robux** (R6.28) es conveniencia acotada: 3 resurrecciones gratis por run garantizan juego completo sin Robux; el pago solo extiende la run actual (sin ventaja persistente ni "pay-to-progress" reabierto).
 - DataService debe modelar `characters[1..maxSlots]` con `maxSlots = 2 o 3` según ownership del gamepass.
 - Cosméticos pueden ir después; el flag de slot 3 conviene dejarlo desde R2.
 
@@ -646,6 +648,7 @@ Ver `HU/fases/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º 
 | 2026-09-22 | **Ajuste de balance de armas (decisión PO, para el RC de ITEMS-06):** (1) **afinidad del espadón 2H y su único = Paladín (Protector/Castigo)** — hoy no configurada (con el bonus +10% el único 2H pasa a ~46,2 ATK); (2) **penalización de offhand: una 1H en `OffHand` aporta solo el 25% de su ATK** (75% de penalización; solo afecta ATK, el resto de stats completas; regla documentada en ITEMS-01) — valor inicial a validar en el RC: el 2H debe superar al dual 1H+1H (único+épica ≈ 41,9–44,6 vs 46,2 del espadón afinado) |
 | 2026-09-22 | **HU-R6.27 creada** — fix/mejoras UI: casillas de ítems con **fondo negro + hover de borde** (estilo micro menú; se elimina la iluminación lila en stats/equipo y bolsa), tipografía legible (tooltips de ítems, grimorio y talentos — los peores paneles), barra activa del grimorio con casillas adaptadas al icono (patrón skill bar del HUD), tooltips de skills con **rango real + daño/escalado**, y tooltips de vendedores con **levelReq real** (reportado por PO) |
 | 2026-09-22 | **HU-ESTETICA-35 creada** — pantallas de economía (diseñador, Pencil): ventana de **trade** (2 lados, estados y candados de ECON-01) y **subasta** (4 pestañas: Explorar · Mis listados · Recompensas · Historial + publicar/compra); tokens EST-13 con acentos dorados y casillas estándar (R6.27) |
+| 2026-09-22 | **HU-R6.28 + HU-ESTETICA-38 creadas (decisión PO):** límite de **3 resurrecciones por run** + **panel de muerte** (Reaparecer / Abandonar run) + **revive con Robux (50, Dev Product configurable, idempotente)** cuando se agotan; cubre solo/hub y party (contador individual); decisión de monetización registrada en **§11 como conveniencia acotada** (sin pay-to-progress) |
 | 2026-09-22 | **BOSS FINAL REDISEÑADO (decisión PO):** se descarta la bestia colosal cuadrúpeda (EST-30 queda **OBSOLETA**) y el último enemigo del juego pasa a ser un **JOTUNN nórdico** — gigante de hielo humanoide ~3–3.5× el jugador, cuernos/barba de hielo, runas `Neon` y núcleo de cristal. **Nueva HU-ESTETICA-36**: rig de **10 partes** (pecho, cabeza, brazo sup/inf ×2, pierna sup/inf ×2) con **Motor6D bien puestos** (pivotes en articulaciones, C0/C1 correctos) para animar con Moon Animator; familia humanoide/biped. EST-31 (integración dev) actualizada a EST-36 |
 | 2026-09-22 | **Renumeración EST-20→23** (Iconos del micromenú, de otra sesión, chocaba con el reskin del HUD dev) + **HU-ESTETICA-24 creada** (iconos de las 3 clases) + **HU-ESTETICA-25 creada** (reskin de Selección y Creación de PJ) |
 | 2026-08-26 | **HU-ESTETICA-06 creada** — revisión del diseño de UI sobre EST-04 (solapamientos corregidos, iconos de mini-menú, rediseño del panel de stats, modernización general de las 12 pantallas); diseñador ejecuta, PM verifica |

@@ -65,3 +65,55 @@ HABILIDADES DEL CAZADOR (una por imagen, nómbrala así):
 28. Icon_Skill_hunter_mm_trueshot — Tiro certero: flecha centrada en un blanco con impacto preciso y anillo de tensión. 
 29. Icon_Skill_hunter_mm_chain — Tiro en cadena: rayo de energía conectando dos objetivos con flechas. 
 30. Icon_Skill_hunter_mm_death — Disparo mortal: flecha espectral con brillo oscuro y destello letal.
+
+## ICONOS UI · PANEL DE MUERTE / EST-38
+
+**Imágenes PNG generadas** (no glifos vectoriales de Pencil): mismo estilo que los iconos de ítems/skills — pintado digital de fantasía, paleta Vandrheim (latón `#C89445`, pergamino `#F4EDE0`, frío `#8FB7D6`, fondos oscuros), silueta legible a 24 px.
+**Técnica:** 512×512, **fondo transparente** (estándar vigente), sin texto, objeto ~85% centrado, perspectiva 3/4 o frontal según el icono; se suben a Roblox como PNG y el dev configura los `rbxassetid` en el config del death panel (`ReviveConfig`/`DeathPanelConfig`: `deathRuneIconId`, `reviveGemIconId`, `reviveGemOffIconId`, `robuxIconId`).
+
+- `Icon_UI_death_death` — runa de muerte (calavera/cráneo nórdico grabado), frío `#8FB7D6`.
+- `Icon_UI_death_revive` — gema de resurrección (oro/latón con brillo interior), latón `#C89445`. **Variante apagada:** `Icon_UI_death_revive_off` (gema oscura/opaca `#52495D`) para el contador X/3.
+- `Icon_UI_death_robux` — moneda Vanrhheim (oro) sobre anillo de hielo; el texto "R$ 50" NO va dentro del glifo (lo pinta la UI).
+
+| Asset | Nodo Pencil / archivo | Roblox |
+|---|---|---|
+| Icon_UI_death_death | PNG generado (pendiente) | (pendiente) |
+| Icon_UI_death_revive | PNG generado (pendiente) | (pendiente) |
+| Icon_UI_death_revive_off | PNG generado (pendiente) | (pendiente) |
+| Icon_UI_death_robux | PNG generado (pendiente) | (pendiente) |
+
+
+## ICONOS UI · MATCHMAKING / EST-37
+
+Pictogramas legibles a 24 px, **fondo transparente**, sin texto dentro del glifo. El estado cubierto usa el icono en color; la falta de rol usa su variante apagada. IDs actualizados con los recursos de Roblox proporcionados por el usuario:
+
+- `Icon_UI_role_tank` / `Icon_UI_role_tank_uncovered` — escudo: rol Tank cubierto / pendiente.
+- `Icon_UI_role_heal` / `Icon_UI_role_heal_uncovered` — cruz de vida: rol Heal cubierto / pendiente.
+- `Icon_UI_role_dps` / `Icon_UI_role_dps_uncovered` — espadas cruzadas: rol DPS cubierto / pendiente.
+
+Los iconos cubiertos se registran en `RoomConfig.RoleIcons`; sus variantes apagadas en `RoomConfig.RoleIconsUncovered`. El indicador de composición considera cubierto Tank con 1, Heal con 1 y DPS con 2 miembros.
+
+| Asset | ID de recurso | Tipo | Modificado | Creador |
+|---|---:|---|---:|---|
+| Icon_UI_role_heal | `110947674181561` | Image | `1791412121274` | Decavii |
+| Icon_UI_role_tank | `108924685421755` | Image | `1791412127510` | Decavii |
+| Icon_UI_role_tank_uncovered | `104055532601732` | Image | `1791412121393` | Decavii |
+| Icon_UI_role_dps_uncovered | `85742564014865` | Image | `1791412121367` | Decavii |
+| Icon_UI_role_dps | `86280431749523` | Image | `1791412121429` | Decavii |
+| Icon_UI_role_heal_uncovered | `120110117123296` | Image | `1791412121446` | Decavii |
+
+La licencia no venía indicada en los metadatos recibidos. La disponibilidad/render de los assets en el cliente publicado queda pendiente de QA.
+
+## ICONO UNIVERSAL DE ORO
+
+- `Icon_UI_currency_gold` — diamante vectorial inspirado en el glifo `◈`, color Hearthbound Gold `#C89445`. Componente maestro reutilizable en `Vandrheim-design.pen` (`S9eT1`, frame `tDU80`). Dos diamantes concéntricos; sin fondo, para usar junto al valor numérico.
+- `Icon_UI_currency_gold_coins_stack` — alternativa de monedas apiladas (`Lucide / coins`), componente (`SOi1o`, frame `xqC61`).
+- Tamaños de referencia: 16 / 24 / 32 / 48 px; recomendado 24 px para HUD, inventario y listas, 32 px en botones o recompensas. Usar junto al valor numérico (`12,840`), sin escribir “oro” dentro del glifo.
+- Pendiente de exportar/subir como asset Roblox durante la integración; mantener color y silueta consistentes en HUD, tienda, vendors, recompensas y loot.
+- Variantes para comparar en `EST-39 — Variantes del icono de oro` (`rQjsU`):
+  - `Icon_UI_currency_gold_rune` — moneda individual con sello rúnico (`BikRQ`); opción compacta para saldo y drops.
+  - `Icon_UI_currency_gold_ingot` — lingotes apilados (`eMWzk`); alternativa ornamental o para botín.
+- Nuevas variantes (`EST-39 — Variantes adicionales de oro`, `hVu6u`):
+  - `Icon_UI_currency_gold_pouch` — bolsa con moneda visible (`LhU0X`); indicada para tiendas, ventas y recompensas.
+  - `Icon_UI_currency_gold_nugget` — pepita con brillo (`hT89i`); indicada para botín, minería o materiales.
+- El diamante `◈` queda como variante preferida para uso global porque coincide con el símbolo monetario ya usado en las UI. Las monedas apiladas, sello rúnico, lingote, bolsa y pepita quedan como alternativas visuales.
