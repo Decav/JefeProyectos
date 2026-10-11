@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Estética / UI / Implementación (subconjunto de HU-ESTETICA-14)
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** **⛔ VISUAL SUPERADO — el grimorio se reskinea sobre el nuevo diseño de `HU-ESTETICA-42`** (frame `WUFrU` "Grimorio · Libro de habilidades WoW style", aprobado PO 2026-09-22); esta HU queda como referencia de contrato/instancias
 **Tipo:** Implementación de UI en Roblox Studio (dev)
 **Fase GDD:** EST (transversal; ventana por ventana)
 **Depende de:** HU-ESTETICA-09 (diseño del grimorio en Pencil), HU-ESTETICA-13 (paquete de specs/assets), HU-ESTETICA-14 (reskin general — esta HU ejecuta la parte del grimorio), HU-R5.1 (ventana de habilidades/spellbook), HU-R3 (barra de 4 slots/loadout)

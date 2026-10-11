@@ -157,3 +157,4 @@ El rig es **humanoide con 10 partes** (más articulado que los enemigos actuales
 | Fecha | Cambio |
 |-------|--------|
 | 2026-09-22 | Creación de HU-ESTETICA-36: **Jotunn nórdico** (gigante de hielo) como boss final — **sustituye a EST-30** (bestia cuadrúpeda, Dirección C, descartada por decisión PO); rig humanoide de **10 partes** (pecho, cabeza, brazo sup/inf ×2, pierna sup/inf ×2) con **Motor6D bien puestos** (pivotes en articulaciones, C0/C1 correctos) para Moon Animator; familia de animación humanoide/biped |
+| 2026-09-22 | **Nombre canónico (decisión PO):** el boss se llama en juego **"Jotunn, Guardián de la Escarcha"** (`helada_frostwarden`) — se unifica la presentación (boss bar, HUD, matchmaking/info) con este nombre |

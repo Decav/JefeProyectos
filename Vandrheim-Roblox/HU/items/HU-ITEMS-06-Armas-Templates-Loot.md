@@ -30,6 +30,11 @@ Plan de armas cerrado (PO 2026-09-22) + **Corrección 1 (2026-09-22, revisada co
 * **Familias (5):** espada 1H · **espadón 2H (nuevo)** · arco · varita · escudo.
 * **Tiers y niveles:** blanco **1** · verde **5** · azul **9** · **ÉPICA frost 16** · **uniques 14**.
 * **Reconocimiento del juego (dev):** **morado = rareza ÉPICA** (UI morada, "ÉPICA"); el **tier interno de las épicas es `frost`** (igual que las armaduras `paladin_helmet_frost`). Las armas épicas ya registradas: `sword_champion`, `unique_frost_edge`, `unique_frostbow`, `unique_glacial_wand`. **Los modelos `*_frost_segmented` del diseñador son los modelos ÉPICOS** (catálogo en Workspace; esta HU los convierte en ítems).
+* **Terminología de rareza (decisión PO 2026-09-22):** NO existe la rareza "Unique" como clase — todo morado es **ÉPICA**. La distinción es de origen/stats:
+  * **ÉPICAS ÚNICAS** = las 4 armas del Señor de la Escarcha (`unique_frost_*`) — épicas exclusivas del boss (piso 4), mejores stats.
+  * **ÉPICAS DEL JOTUNN (cofre final, 35 % de tu clase, 50 % arma / 50 % armadura)** — todo exclusivo del cofre (las épicas nunca caen en tablas de piso):
+    * **ARMADURAS: exclusivas de CLASE y de BOSS** (el set Helada de tu clase — solo del cofre final; no existen en otro lado).
+    * **ARMAS: de tu clase** (épicas `*_frost` por `weaponAffinity`) y solo del cofre final.
 * **Dos categorías de "morado" DISTINTAS:**
   * **ÉPICA frost (16):** rareza Epic — cae del **cofre del boss final** (35% pieza de tu clase, arma o armadura). Stats normales de épica.
   * **ÚNICA (14, del Señor de la Escarcha):** `unique_frost_*` — **mejores stats que la épica** — exclusivos del 4.º boss (drop automático). NO sustituyen a las épicas.
@@ -82,12 +87,10 @@ Bases blancas reales del juego (`sword_apprentice` ATK 8/2 en R4; `cleric_wand` 
 
 #### **3. Cofre del boss final — decisión cerrada (PO 2026-09-22)**
 
-* Dentro del **35% épico de tu clase** del cofre: **50% arma / 50% armadura** (slot aleatorio).
-* **Armas épicas por clase** (peso igual entre las de su clase):
-  * Paladín → `sword_frost`, `greatsword_frost`, `shield_frost` (1/3 cada una)
-  * Cazador → `bow_frost`
-  * Clérigo → `wand_frost`
-* **Requiere extensión de `LootService`** (hoy solo elige armadura): se extiende la misma excepción aprobada en ITEMS-04 (§2.1) para elegir entre armas y armaduras épicas por `weaponAffinity`/clase. ITEMS-04 queda enmendado.
+* Dentro del **35% épico del cofre**: **50% arma / 50% armadura**:
+  * **ARMADURA → del set DE TU CLASE** (slot aleatorio; exclusivas de clase y de boss).
+  * **ARMA → de CUALQUIER familia, SIN clase** (decisión PO 2026-09-22): peso igual entre las 5 épicas (`sword_frost`, `greatsword_frost`, `bow_frost`, `wand_frost`, `shield_frost`); cualquier clase puede recibir y usar cualquiera (la `weaponAffinity` es bonus, no hard-lock — ITEMS-01/GDD §4).
+* **Requiere extensión de `LootService`** (hoy solo elige armadura): se extiende la misma excepción aprobada en ITEMS-04 (§2.1) para elegir entre armadura por clase y arma genérica. ITEMS-04 queda enmendado.
 
 #### **4. Loot**
 
@@ -124,8 +127,8 @@ Bases blancas reales del juego (`sword_apprentice` ATK 8/2 en R4; `cleric_wand` 
 #### **Escenario 1b: Cofre del boss final (arma o armadura)**
 
 * **GIVEN** el cofre del boss final
-* **WHEN** activa el 35% épico de clase
-* **THEN** entrega 50% arma / 50% armadura épica de la clase (Paladín: espada/espadón/escudo a partes iguales; Cazador: arco; Clérigo: varita) — nunca uniques
+* **WHEN** activa el 35% épico
+* **THEN** entrega 50% arma (cualquier familia — sin clase) / 50% armadura del set de tu clase — nunca uniques
 
 #### **Escenario 2: Espadón 2H completo**
 

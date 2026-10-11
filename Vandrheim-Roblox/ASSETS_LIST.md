@@ -109,11 +109,57 @@ La licencia no venía indicada en los metadatos recibidos. La disponibilidad/ren
 - `Icon_UI_currency_gold` — diamante vectorial inspirado en el glifo `◈`, color Hearthbound Gold `#C89445`. Componente maestro reutilizable en `Vandrheim-design.pen` (`S9eT1`, frame `tDU80`). Dos diamantes concéntricos; sin fondo, para usar junto al valor numérico.
 - `Icon_UI_currency_gold_coins_stack` — alternativa de monedas apiladas (`Lucide / coins`), componente (`SOi1o`, frame `xqC61`).
 - Tamaños de referencia: 16 / 24 / 32 / 48 px; recomendado 24 px para HUD, inventario y listas, 32 px en botones o recompensas. Usar junto al valor numérico (`12,840`), sin escribir “oro” dentro del glifo.
-- Pendiente de exportar/subir como asset Roblox durante la integración; mantener color y silueta consistentes en HUD, tienda, vendors, recompensas y loot.
+- La versión ilustrada de la moneda rúnica se creó con ImageGen a partir del componente de `Vandrheim-design.pen`; la carga como asset Roblox queda pendiente. Mantener color y silueta consistentes en HUD, tienda, vendors, recompensas y loot.
 - Variantes para comparar en `EST-39 — Variantes del icono de oro` (`rQjsU`):
-  - `Icon_UI_currency_gold_rune` — moneda individual con sello rúnico (`BikRQ`); opción compacta para saldo y drops.
+  - `Icon_UI_currency_gold_rune` — moneda individual con sello solar rúnico (`BikRQ`); PNG trabajado con ImageGen en `Assets/Temp/HU-ESTETICA-39/Icon_UI_currency_gold_rune.png` (256×256, RGBA transparente); opción compacta para precios, saldo y drops.
   - `Icon_UI_currency_gold_ingot` — lingotes apilados (`eMWzk`); alternativa ornamental o para botín.
 - Nuevas variantes (`EST-39 — Variantes adicionales de oro`, `hVu6u`):
   - `Icon_UI_currency_gold_pouch` — bolsa con moneda visible (`LhU0X`); indicada para tiendas, ventas y recompensas.
   - `Icon_UI_currency_gold_nugget` — pepita con brillo (`hT89i`); indicada para botín, minería o materiales.
 - El diamante `◈` queda como variante preferida para uso global porque coincide con el símbolo monetario ya usado en las UI. Las monedas apiladas, sello rúnico, lingote, bolsa y pepita quedan como alternativas visuales.
+
+
+## ICONOS DE ESTADÍSTICAS · HU-ESTETICA-39
+
+Iconos gráficos de trazo sólido, estilo del menú de talentos, sin marco ni fondo; PNG 256×256 con alfa transparente. Paleta dorado `#C89445` y pergamino `#F4EDE0`. Fuente: producción propia asistida por IA, limpiada y normalizada localmente; uso interno de Vandrheim. Los nombres canónicos sirven como `iconId`; `rbxassetid` queda pendiente de carga por el desarrollador.
+
+| iconId | Tipo | Uso | Archivo local | Fuente / licencia | rbxassetid |
+|---|---|---|---|---|---|
+| `Icon_Stat_ATK` | Icono | Daño físico | `Assets/Temp/HU-ESTETICA-39/Icon_Stat_ATK.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
+| `Icon_Stat_MATK` | Icono | Daño mágico | `Assets/Temp/HU-ESTETICA-39/Icon_Stat_MATK.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
+| `Icon_Stat_DEF` | Icono | Defensa física | `Assets/Temp/HU-ESTETICA-39/Icon_Stat_DEF.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
+| `Icon_Stat_MDEF` | Icono | Defensa mágica | `Assets/Temp/HU-ESTETICA-39/Icon_Stat_MDEF.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
+| `Icon_Stat_MaxHP` | Icono | Vida máxima | `Assets/Temp/HU-ESTETICA-39/Icon_Stat_MaxHP.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
+| `Icon_Stat_MaxMP` | Icono | Maná máximo | `Assets/Temp/HU-ESTETICA-39/Icon_Stat_MaxMP.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
+| `Icon_Stat_CRIT` | Icono | Probabilidad de golpe crítico | `Assets/Temp/HU-ESTETICA-39/Icon_Stat_CRIT.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
+| `Icon_Stat_GOLD` | Icono | Oro | `Assets/Temp/HU-ESTETICA-39/Icon_Stat_GOLD.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
+| `Icon_Stat_XP` | Icono | Experiencia / nivel | `Assets/Temp/HU-ESTETICA-39/Icon_Stat_XP.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
+
+
+## ICONOS DE TALENTOS · HU-ESTETICA-40
+
+Iconos de talento con composición de habilidad activa: sellos rúnicos, impactos y energía pintada en la estética de las skills de Vandrheim. PNG 512×512 con alfa transparente, sin marco ni texto. Fuente: producción propia asistida por ImageGen; uso interno de Vandrheim. Los nombres canónicos sirven como `iconId`; `rbxassetid` queda pendiente de carga por el desarrollador.
+
+| iconId | Tipo | Uso | Archivo local | Fuente / licencia | rbxassetid |
+|---|---|---|---|---|---|
+| `Icon_Talent_ATK` | Icono | Mejora de daño físico | `Assets/Temp/HU-ESTETICA-40/Icon_Talent_ATK.png` | ImageGen; interno Vandrheim | `rbxassetid://89068082294902` |
+| `Icon_Talent_MATK` | Icono | Mejora de daño mágico | `Assets/Temp/HU-ESTETICA-40/Icon_Talent_MATK.png` | ImageGen; interno Vandrheim | `rbxassetid://139893316216189` |
+| `Icon_Talent_DEF` | Icono | Mejora de defensa física | `Assets/Temp/HU-ESTETICA-40/Icon_Talent_DEF.png` | ImageGen; interno Vandrheim | `rbxassetid://140021244024450` |
+| `Icon_Talent_MDEF` | Icono | Mejora de defensa mágica | `Assets/Temp/HU-ESTETICA-40/Icon_Talent_MDEF.png` | ImageGen; interno Vandrheim | `rbxassetid://114061430971883` |
+| `Icon_Talent_MaxHP` | Icono | Mejora de vida máxima | `Assets/Temp/HU-ESTETICA-40/Icon_Talent_MaxHP.png` | ImageGen; interno Vandrheim | `rbxassetid://109280055205927` |
+| `Icon_Talent_MaxMP` | Icono | Mejora de maná máximo | `Assets/Temp/HU-ESTETICA-40/Icon_Talent_MaxMP.png` | ImageGen; interno Vandrheim | `rbxassetid://133258370924897` |
+| `Icon_Talent_CRIT` | Icono | Mejora de crítico | `Assets/Temp/HU-ESTETICA-40/Icon_Talent_CRIT.png` | ImageGen; interno Vandrheim | `rbxassetid://93440920540891` |
+| `Icon_Talent_CDR` | Icono | Mejora de reducción de cooldown | `Assets/Temp/HU-ESTETICA-40/Icon_Talent_CDR.png` | ImageGen; interno Vandrheim | `rbxassetid://81743460448421` |
+| `Icon_Talent_GOLD` | Icono | Mejora económica | — | — | — (no requerido: ningún talento actual mejora oro) |
+| `Icon_Talent_XP` | Icono | Mejora de experiencia | — | — | — (no requerido: ningún talento actual mejora XP) |
+| `Icon_Talent_MultiStat` | Icono | Mejora simultánea de varias estadísticas | `Assets/Temp/HU-ESTETICA-40/Icon_Talent_MultiStat.png` | ImageGen; interno Vandrheim | Pendiente |
+
+> **Nota (2026-09-22):** los 8 iconos producidos por el diseñador están subidos (IDs de `Decavii`). **CDR se agrega al set** (existe como stat en el juego — panel de stats "CDR"; el capstone de Fuego da +3 % CDR). GOLD/XP no aplican a los talentos actuales y quedan fuera.
+## RETRATOS DE JEFES · GUÍA DE DUNGEON
+
+Retratos de torso con fondo transparente para la pestaña de información de la dungeon (HU-R9a.2 / HU-ESTETICA-37). PNG RGBA 512×512; sin marco ni texto. Basados en las capturas de los modelos y producidos con ImageGen; uso interno de Vandrheim. La carga a Roblox queda pendiente.
+
+| assetId | Tipo | Uso | Archivo local | Fuente / licencia | rbxassetid |
+|---|---|---|---|---|---|
+| `Portrait_Boss_Jotunn` | Retrato | Jotunn, Guardián de la Escarcha — jefe final | `Assets/Temp/DungeonGuide-BossPortraits/Portrait_Boss_Jotunn.png` | ImageGen; interno Vandrheim | Pendiente |
+| `Portrait_Boss_FrostLord` | Retrato | Señor de la Escarcha — mini-jefe del piso 4 | `Assets/Temp/DungeonGuide-BossPortraits/Portrait_Boss_FrostLord.png` | ImageGen; interno Vandrheim | Pendiente |

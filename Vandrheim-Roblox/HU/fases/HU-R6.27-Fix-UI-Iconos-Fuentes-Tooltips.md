@@ -68,6 +68,14 @@
 * **Nivel mínimo = `levelReq` real del template** (`ItemConfig`) — hoy todos muestran "requiere nivel 1" (fallback hardcodeado o campo sin leer).
 * El tooltip del vendor (R5/VendorConfig) debe leer el levelReq del ítem vendido y mostrar el correcto; coherente con el tooltip del inventario.
 
+#### **6. CENTRALIZACIÓN DE TOOLTIPS + FALTANTES (decisión PO 2026-09-22)**
+
+* **Sistema único de tooltips (TooltipSystem):** componente/config compartido con **plantillas por tipo** — `item_equipable` (stats+delta+set+BoE+levelReq), `item_consumible` (efecto/duración/stacks/tecla), `skill` (coste/CD/**rango real**/**daño+escalado**/fuente), `talento` (ramas/gates — reusa el panel de info del nodo), `vendor_item` (levelReq real), `party_member`, `loot`, `stat` (hover en números del panel).
+* **API única:** `show(entity, data)` / `hide()` — TODAS las superficies lo usan (inventario, stats/equipo, bolsa, acción bar del HUD, grimorio, talentos, vendors, subasta ECON-02, party frame R9a, tutorial). **Prohibido crear tooltips sueltos fuera del sistema.**
+* **Tooltips que faltan (se agregan):** talentos (hover sobre nodos del árbol), consumibles en la barra de acción, loot, party frame (hover en miembros), stats del panel de personaje, y los 3 tipos nuevos (equipable/consumible/skill) con el diseño del diseñador (brief 2026-09-22 — diseña `Tooltip_Item_*`, `Tooltip_Consumible_*`, `Tooltip_Skill_*` con tokens EST-13 e iconos `Icon_Stat_*` de EST-39).
+* **Reglas visuales:** 9-slice + flecha/puntero al elemento, borde por rareza, anclaje al cursor evitando bordes de pantalla (gira de lado si no cabe), **móvil = tap-hold**; legibilidad R6.27 (fondo oscuro, nombre ≥11, detalles ≥9).
+* Integra los fixes de esta HU (rango real, daño/escalado, levelReq real) y queda coherente con el grimorio/árbol diseñados.
+
 ---
 
 ### **Criterios de Aceptación (Gherkin)**
@@ -117,8 +125,8 @@
 * Estándar de casillas de ítems (fondo negro + hover de borde) en todos los paneles; eliminación de la iluminación lila.
 * Tipografía de tooltips de ítems y paneles grimorio/talentos.
 * Barra activa del grimorio (casillas adaptadas al icono, patrón HUD).
-* Tooltips de skills (rango real + daño/escalado).
-* Tooltips de vendedores (levelReq real).
+* **TooltipSystem centralizado** (plantillas por tipo: equipable/consumible/skill/talento/vendor/party/loot/stat; API `show`/`hide`) + agregar los tooltips faltantes.
+* Tooltips de skills (rango real + daño/escalado) y de vendedores (levelReq real).
 
 #### No incluye
 
@@ -149,3 +157,5 @@
 | Fecha | Cambio |
 |-------|--------|
 | 2026-09-22 | Creación de HU-R6.27: fix/mejoras UI — casillas de ítems con fondo negro y hover de borde (estilo micro menú; se elimina la iluminación lila de stats/equipo/bolsa), tipografía legible (tooltips de ítems, grimorio y talentos), barra activa del grimorio con casillas adaptadas al icono (patrón HUD), tooltips de skills con rango real + daño/escalado, y tooltips de vendedores con levelReq real (reportado por PO) |
+| 2026-09-22 | **Centralización de tooltips (decisión PO):** TooltipSystem único con plantillas por tipo (equipable/consumible/skill/talento/vendor/party/loot/stat) y API `show`/`hide`; se agregan los tooltips faltantes (talentos, consumibles de barra, loot, party, stats); diseños nuevos del diseñador (`Tooltip_Item_*`, `Tooltip_Consumible_*`, `Tooltip_Skill_*` — brief 2026-09-22) con tokens EST-13 e iconos `Icon_Stat_*` (EST-39); móvil = tap-hold |
+| 2026-09-22 | **Tooltips diseñados y entregados (diseñador + ajustes PO, verificado en el `.pen`):** `Tooltip_Item_Espada_Campeon` (rareza+slot, stats solo texto — decisión PO sin iconos, set 3/5 con progreso y bonos activo/inactivo, BoE, **levelReq real "Requiere nivel 16"**) · `Tooltip_Consumible_Pocion_HP` (efecto, **sin cooldown — quitado por PO**, pointer) · `Tooltip_Skill_Anillo_Luz` (coste/CD/**radio 6 studs**/efecto/**escalado MATK**, pointer); board documenta EST-13 · 9-slice · móvil tap-hold |

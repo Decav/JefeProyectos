@@ -65,7 +65,7 @@ Coherentes con Hearthbound Gold (`Scale` + `UIAspectRatioConstraint` en implemen
 * **Números de daño/cura (flotantes):** estilo del HUD (Geist Mono mapeada); daño normal (pergamino), **crítico** (más grande, latón o rojo), **cura (verde `#7BC47F`)**, daño recibido (rojo `#C45345`); alineación y tamaño por tipo; sin desorden (se diseñan 2–3 tamaños, no 10).
 * **Indicador de target (R3.3):** **flecha roja sólida (`#D64545`) fija sobre la cabeza del enemigo seleccionado**, apuntando hacia abajo (estilo R3.3, no un anillo en el suelo); aparece en combate sobre el objetivo; distinta del anillo de SelfAoE y del marcador de zona.
 * **Marcador de GroundAoE:** círculo de **pre-lanzamiento** (donde el jugador apunta, con radio visible) y la **zona activa persistente** (relleno semitransparente con borde, estilo de la skill: sagrada/íra).
-* **Barra del boss (R7):** frame superior con nombre del Guardián de la Escarcha, HP grande y distintivo (latón/rojo), visible solo en la pelea del piso 5; distinta del target normal.
+* **Barra del boss (R7):** frame superior con nombre del **Jotunn, Guardián de la Escarcha** (decisión PO 2026-09-22 — nombre canónico en juego), HP grande y distintivo (latón/rojo), visible solo en la pelea del piso 5; distinta del target normal.
 * **Cooldowns en la skillbar:** overlay oscuro con **cuenta regresiva** (número o barra) sobre el slot en recarga; el slot activo con resaltado al lanzar; coste de maná indicado (el coste ya está en el slot; se resalta al no alcanzar el maná).
 * **Feedback de golpes:** flash/borde rojo en el HUD al recibir daño (sutil), sin tapar la pantalla.
 * **Crosshair de combate:** discreto, en latón `#C89445`, sin etiqueta ni caja (rediseñado sobre el cursor "AIM/CAST" original); no compite con la acción.

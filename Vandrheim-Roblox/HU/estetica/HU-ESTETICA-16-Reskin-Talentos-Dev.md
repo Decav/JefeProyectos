@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Estética / UI / Implementación (subconjunto de HU-ESTETICA-14)
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** **⛔ VISUAL SUPERADO — el árbol de talentos se reskinea sobre el nuevo diseño de `HU-ESTETICA-41`** (frame `Xff5t` "D · WoW-inspired talent tree", aprobado PO 2026-09-22); esta HU queda como referencia de contrato/instancias
 **Tipo:** Implementación de UI en Roblox Studio (dev)
 **Fase GDD:** EST (transversal; ventana por ventana)
 **Depende de:** HU-ESTETICA-08 (diseño del panel de talentos en Pencil), HU-ESTETICA-13 (paquete de specs/assets), HU-ESTETICA-14 (reskin general — esta HU ejecuta la parte de talentos), HU-R5.1 (TalentUI/TalentService, árbol v2), HU-R5 (respec con oro)

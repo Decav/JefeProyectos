@@ -63,7 +63,7 @@ Plan de itemización cerrado (PO 2026-09-22):
 
 * El `LootService` actual no sabe elegir piezas del set por clase ni manejar % con fallback. Se aprueba una **extensión mínima** (excepción documentada como la de pociones en R8d):
   * Al abrir el cofre del boss final: **35%** → 1 pieza épica Helada **de la clase del jugador**; **65%** → recompensa alternativa (**pieza azul de su clase u oro** — config).
-  * **Enmendado por ITEMS-06 (2026-09-22):** dentro del 35% épico → **50% arma / 50% armadura** (slot aleatorio); armas épicas por clase: Paladín → espada/espadón/escudo (peso igual), Cazador → arco, Clérigo → varita. La extensión del servicio ahora cubre armas y armaduras.
+  * **Enmendado por ITEMS-06 (2026-09-22; corregido PO):** dentro del 35% épico → **50% arma (CUALQUIER familia — sin clase) / 50% armadura del set DE TU CLASE** (slot aleatorio). La extensión del servicio ahora cubre armaduras por clase y armas genéricas (`weaponAffinity` = bonus, no hard-lock).
   * Sin tocar el resto del flujo de recompensa (R4/R7).
 * **Riesgo resuelto (seedOnly):** el selector de recompensas genérico debe **excluir los templates `seedOnly`** (los seed de ITEMS-03) del pool de equipo — los templates llevan el flag `seedOnly=true` y el selector lo respeta (config-driven).
 
@@ -190,6 +190,6 @@ Valores **blanco** por clase/slot (base/roll, patrón del equipo existente); los
 | Fecha | Cambio |
 |-------|--------|
 | 2026-09-22 | Creación de HU-ITEMS-04: itemización de contenido y loot — 60 templates por tier (blanco/verde/azul/frost), levelReq cerrados (progresión por pieza hasta verde), azul en piso 3+, set Helada del boss final (%) y uniques al Señor de la Escarcha (lvl 14) |
-| 2026-09-22 | **Enmendado por ITEMS-06 (cofre del boss final):** el 35% épico ahora puede ser **arma (50%) o armadura (50%)** de la clase; armas épicas por clase (Paladín: espada/espadón/escudo · Cazador: arco · Clérigo: varita); la extensión de LootService cubre armas y armaduras |
+| 2026-09-22 | **Enmendado por ITEMS-06 (cofre del boss final):** el 35% épico ahora puede ser **arma (50 %, cualquier familia — SIN clase) o armadura del set de tu clase (50 %)**; la extensión de LootService cubre armaduras por clase y armas genéricas |
 | 2026-09-22 | **Decisiones PM (feedback dev):** (1) **extensión aprobada** del flujo de recompensa del boss final (35% → pieza del set de tu clase; 65% → azul/oro) y exclusión de `seedOnly` del pool genérico; (2) **tabla de stats seed por clase/slot/tier** (blanco concreto + multiplicadores verde ×1.4 / azul ×1.9 / frost ×2.5; CRIT en fracción) |
 | 2026-09-22 | **Decisiones PM (rc065):** Señor de la Escarcha con **drop automático al morir** (extensión del flujo de mini-jefes para `uniqueChance`/`uniquePool`; sin cofre nuevo — el cofre es solo del boss final); fallback del cofre final = **40% pieza azul de tu clase + 25% oro (40–80)** |

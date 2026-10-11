@@ -52,6 +52,7 @@ Esta HU agrega (decisiones PO 2026-09-22):
 * `revivesLeft` > 0 → resurreción gratuita; llega a 0 → solo revive pagado.
 * No se persiste en el perfil (es de la run; el abandonar/rejoin no reanuda la run — R6b).
 * Reset: cada `StartRun` fija `revivesLeft = 3`.
+* **EXCEPCIÓN — recibo tardío (`pendingRevives`, decisión PM 2026-09-22):** campo persistente en el perfil (entero, 0 por defecto). Se suma solo por **recibos confirmados sin run activa** (ver §4); al iniciar una run: `revivesLeft = 3 + pendingRevives` y `pendingRevives = 0`. Nunca otorga poder fuera de la dungeon (solo se consume en runs).
 
 #### **2. Panel de muerte (DeathPanel UI, cliente)**
 
@@ -74,11 +75,24 @@ Esta HU agrega (decisiones PO 2026-09-22):
 
 #### **4. Compra con Robux (Dev Product)**
 
-* Dev Product configurable: `revive` (id del producto en config). **Precio default: 50 Robux** (configurable sin tocar lógica).
+* Dev Product: **"Vandrheim - Revivir en Mazmorra" — ProductId `3717359753`** (creado por el PO 2026-09-22). **Precio default: 50 Robux** (configurable sin tocar lógica; el precio real lo fija el dashboard).
 * Flujo estándar: `ProcessReceipt` server-side; validación idempotente por `ReceiptId` (no duplica revives).
 * Compra OK → `revivesLeft` no se "suma como saldo"**: el revive comprado se consume en el respawn inmediato (o se acredita +1 si el jugador queda muerto). Default: comprar revive = recargar +1 y **poder reaparecer al instante** (la compra aplica sobre el cuerpo muerto actual).
 * Compra fallida/cancelada → sin revive, el panel sigue (feedback claro).
-* **Anti-abuso:** el servidor valida: muerto, en dungeon, run activa, precio del Dev Product de config; receipts únicos; sin multiplicar ventajas (cada compra = 1 revive; no acumula saldo para runs futuras).
+* **Anti-abuso:** el servidor valida: muerto, en dungeon, run activa, precio del Dev Product de config; receipts únicos; sin multiplicar ventajas (cada compra = 1 revive; **no acumula saldo para runs futuras — única excepción: `pendingRevives` por recibo tardío, ver abajo**).
+
+#### **4.1 RECIBO TARDÍO — decisión PM (2026-09-22)**
+
+**Problema:** Roblox puede confirmar una compra (o reintentar un recibo sin resolver) **después** de que el jugador se desconectó y su run ya terminó (R6b). Roblox NO reembolsa automáticamente y la HU prohibía guardar revives para runs futuras.
+
+**Regla cerrada (Patrón estándar de Roblox — grant eventual):** el recibo se **concede siempre**, aunque llegue tarde:
+
+1. `ProcessReceipt` confirma → valida idempotencia por `ReceiptId` → intenta el grant inmediato:
+   * **Run activa y jugador muerto** → revive al instante (caso normal).
+   * **Sin run activa** (desconectado/run terminada/otro servidor) → `pendingRevives += 1` (**persistido en el perfil**).
+2. Al iniciar una run nueva → `revivesLeft = 3 + pendingRevives`; `pendingRevives = 0` (consumidos; la compra jamás se pierde).
+3. Sin tope de acumulación: cada `pendingRevive` corresponde a un recibo real pagado (50 Robux); imposible de explotar (idempotente por `ReceiptId`, solo existe tras pago confirmado).
+4. El `DeathPanel` NO muestra `pendingRevives` (es invisible; se aplica al arrancar la próxima run).
 
 #### **5. Información de muerte**
 
@@ -141,7 +155,14 @@ Esta HU agrega (decisiones PO 2026-09-22):
 
 * **GIVEN** una nueva run (solo o party).
 * **WHEN** comienza.
-* **THEN** `revivesLeft = 3` para cada jugador.
+* **THEN** `revivesLeft = 3` para cada jugador (más `pendingRevives` si los hubiera, que se consumen y quedan en 0).
+
+#### **Escenario 7b: Recibo tardío (decisión PM)**
+
+* **GIVEN** un recibo confirmado sin run activa (jugador desconectado o run terminada)
+* **WHEN** el recibo se procesa (ahora o al volver el jugador a cualquier servidor)
+* **THEN** no se pierde la compra: `pendingRevives += 1` en el perfil
+* **AND** al iniciar la próxima run, `revivesLeft = 3 + pendingRevives` (y `pendingRevives` vuelve a 0) — el recibo se concedió siempre (grant eventual, patrón Roblox)
 
 #### **Escenario 8: Party individual**
 
@@ -223,6 +244,7 @@ Esta HU agrega (decisiones PO 2026-09-22):
 | Tema | Default |
 |------|---------|
 | Resurrecciones gratis | **3 por run** (por jugador; reset en cada run) |
+| Recibo tardío | **Grant eventual (patrón Roblox):** sin run activa → `pendingRevives += 1` en perfil; se consumen en la próxima run (decisión PM 2026-09-22) |
 | Panel de muerte | Reaparecer / Revivir 50 Robux / Abandonar (con confirmación) |
 | Precio revive | **50 Robux** (Dev Product configurable) |
 | Uso del revive pagado | Ilimitado dentro de la run; cada compra = 1 respawn inmediato |
@@ -244,3 +266,5 @@ Esta HU agrega (decisiones PO 2026-09-22):
 | Fecha | Cambio |
 |-------|--------|
 | 2026-09-22 | Creación de HU-R6.28: límite de 3 resurrecciones por run, panel de muerte (Reaparecer/Abandonar) y revive con Robux (50, Dev Product configurable); decisión de monetización PO a registrar en GDD §11 |
+| 2026-09-22 | **Recibo tardío cerrado (decisión PM, duda del dev en rc076):** Roblox puede confirmar compras tras desconectarse/run terminada → **grant eventual**: sin run activa → `pendingRevives += 1` (persistido en perfil) que se consumen al iniciar la próxima run (`revivesLeft = 3 + pendingRevives`, vuelven a 0); nunca se pierde la compra ni otorga poder fuera de la dungeon |
+| 2026-09-22 | **ProductId recibido (PO):** Dev Product **"Vandrheim - Revivir en Mazmorra"** → **`3717359753`** (50 Robux) — config listo para el RC |

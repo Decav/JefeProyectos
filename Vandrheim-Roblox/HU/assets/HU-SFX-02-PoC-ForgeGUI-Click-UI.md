@@ -39,13 +39,14 @@ Esta PoC valida ForgeGUI con **el sonido más transversal**: `Sfx_ui_click` (tod
 
 * **Sonido:** `Sfx_ui_click` — prompt canónico ya definido en `SFX_LIST.md` (se le pasa tal cual a ForgeGUI):
   > "Short original UI sound effect for a dark fantasy MMORPG. A player pressing a hand-carved wooden button on an old settlement interface. Thick polished wood tapped with a leather-wrapped finger, dry and warm, with a faint low body and a quick natural decay. Subtle, tactile, never sharp or digital. Understated so it can be heard hundreds of times per session without fatigue. 0.2 seconds, clean ending, no modern UI sounds, no imitation of existing games."
-* **Formato de entrega (contrato SFX-01):** WAV 44.1 kHz, 16-bit, mono; duración ~0.2 s; normalizado (~−14 LUFS o pico ≤ −1 dB); sin clipping; sin silencio inicial/final excesivo.
+* **Formato de entrega — decisión PM 2026-10-09, excepción exclusiva de esta PoC:** se acepta la salida nativa **MP3 de ForgeGUI** en lugar de WAV 44.1 kHz/16-bit/mono. El audio se publica como Roblox Audio y se respetan los límites del publisher. Esta decisión no modifica el contrato global de SFX-01 ni autoriza a cambiar los otros 48 sonidos.
+* **Duración/calidad:** el prompt canónico conserva el objetivo de 0.2 s. La API actual solo acepta `duration_seconds` explícito desde 0.5 s; omitir ese campo y conservar la duración indicada en el prompt. Registrar la duración y metadatos que realmente devuelva ForgeGUI; no transcodificar ni regenerar automáticamente. Mantener la evaluación de nivel/ausencia de clipping como criterio de calidad y declarar cualquier métrica no disponible como no verificada.
 * **Naming/carpeta:** `Sfx_ui_click` en `Assets/SFX/UI/`.
 * **Reglas vigentes:** sin voces, sin música, sin imitación de juegos existentes (paleta sonora Vandrheim).
 
 #### **2. Integración mínima (dev)**
 
-* Subir el WAV al Asset Server → `rbxassetid`.
+* Subir el MP3 aceptado para esta PoC al Asset Server → `rbxassetid`.
 * Crear/actualizar la entrada en `ReplicatedStorage.Config.SFXConfig`:
   ```luau
   { id = "ui_click", assetId = "rbxassetid://...", volume = 0.5, category = "UI", cooldown = 0.05 }
@@ -77,7 +78,7 @@ Al cerrar, el reporte del dev debe incluir la evaluación respecto a los criteri
 
 * **GIVEN** el prompt canónico de `Sfx_ui_click`.
 * **WHEN** ForgeGUI genera el archivo.
-* **THEN** el WAV cumple el formato (44.1 kHz 16-bit mono, ~0.2 s, normalizado).
+* **THEN** se recibe la salida MP3 nativa de ForgeGUI (excepción aprobada solo para esta PoC); se registran sus metadatos reales y se evalúan el objetivo de duración (~0.2 s), nivel y ausencia de clipping sin afirmar métricas no medidas.
 * **AND** suena a madera/cuero, cálido y táctil (no digital).
 
 #### **Escenario 2: Suena en la UI**
@@ -128,7 +129,7 @@ Al cerrar, el reporte del dev debe incluir la evaluación respecto a los criteri
 
 ### **Definition of Done (DoD)**
 
-* [ ] ForgeGUI generó `Sfx_ui_click` con el formato del contrato (WAV 44.1 kHz 16-bit mono, ~0.2 s, normalizado).
+* [ ] ForgeGUI generó `Sfx_ui_click` como MP3 nativo (desviación aprobada solo para esta PoC); duración/metadatos reales registrados, objetivo ~0.2 s evaluado y nivel/ausencia de clipping reportados sin afirmar métricas no medidas.
 * [ ] Subido y enlazado en `SFXConfig` (`ui_click`) y registrado en `ASSETS_REGISTRY` (fuente ForgeGUI).
 * [ ] El click suena en la UI en PC y móvil, sin spam y con volumen coherente.
 * [ ] El sonido es coherente con la paleta de Vandrheim (madera/cuero cálidos; no digital/agudo).
@@ -146,7 +147,7 @@ Al cerrar, el reporte del dev debe incluir la evaluación respecto a los criteri
 | Sonido de prueba | `Sfx_ui_click` (el más usado) |
 | Herramienta | ForgeGUI (IA, conectada a Codex) |
 | Prompt | El canónico de `SFX_LIST.md` (sin modificaciones) |
-| Formato | WAV 44.1 kHz 16-bit mono, ~0.2 s, normalizado |
+| Formato | MP3 nativo ForgeGUI (excepción de esta PoC aprobada por PM 2026-10-09); SFX-01 global permanece sin cambios |
 | Integración | `SFXConfig` (`ui_click`) + `ASSETS_REGISTRY` (fuente ForgeGUI) |
 | Reproducción | Clicks de botones de UI (PC y móvil), cooldown categoría UI |
 | Producción completa | **No en esta HU** — decide el PO tras la evaluación |
@@ -164,3 +165,4 @@ Generación: minutos–1 sesión (ForgeGUI). Dev: 1 sesión (subir, config, cone
 | Fecha | Cambio |
 |-------|--------|
 | 2026-09-22 | Creación de HU-SFX-02: PoC de ForgeGUI con 1 solo SFX (`Sfx_ui_click`) para validar calidad/flujo antes de producir los 48 del catálogo; la actualización de HU-SFX-01 depende del resultado |
+| 2026-10-09 | Decisión PM para esta PoC: aceptar MP3 nativo de ForgeGUI en lugar de WAV; excepción limitada a `Sfx_ui_click`, sin modificar el contrato global SFX-01. Mantener el objetivo de 0.2 s en el prompt, registrar duración/metadatos reales y no transcodificar automáticamente |

@@ -36,7 +36,7 @@ El cofre entrega una recompensa de equipo, con posibilidad configurable de un í
 ```luau
 {
   ["helada_frostwarden"] = {
-    name = "Guardián de la Escarcha",
+    name = "Jotunn, Guardián de la Escarcha",
     floorIndex = 5,
     level = 16,
     maxHp = 2000,
