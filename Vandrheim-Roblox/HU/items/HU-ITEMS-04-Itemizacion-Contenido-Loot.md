@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Ítems / Itemización / Contenido y loot
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Contenido de ítems + loot (dev)
 **Fase GDD:** Ítems (mini-épica de itemización — plan cerrado con el PO 2026-09-22)
 **Depende de:** HU-ITEMS-03 (setId/sistema de bonos), HU-ESTETICA-33 (assets), HU-R7 (boss/cofre/uniques), HU-R6a (LootTables), HU-ITEMS-01 (sets existentes)

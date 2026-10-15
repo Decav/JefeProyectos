@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Ítems / Consumibles / Alquimista
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Contenido + mecánica de buffs para consumibles (dev)
 **Fase GDD:** Ítems (transversal; reemplaza la decisión de pociones de R8d — el 25% pasa a ser la poción "chica")
 **Depende de:** HU-R8d (excepción aprobada: `healPercent`/`manaPercent` en `InventoryService`), HU-R5 (vendors/consumibles), HU-R5.2 (stacking), SKILLS_CATALOG (framework soporta `Buff`)

@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Estética / UI / Personaje — Reskin (dev)
 **Prioridad:** Alta
-**Estado:** Lista para implementar (RC obligatorio del dev antes de programar)
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Reskin de UI (dev) — solo visual, sin tocar lógica
 **Fase GDD:** UI (sustituye el visual de EST-10/21 — ventana C: equipo + stats)
 **Depende de:** frame del `.pen`: **`HUMWS` — "Equipo y estadísticas · Panel de personaje" (VARIANTE B, seleccionada por el PO)** dentro de **`MqBFE` — "HU-EST-10 · Variantes de reskin de personaje"** (A/C/D = alternativas descartadas, documentadas), HU-ESTETICA-13 (tokens/handoff), HU-R6.27 (fuentes + TooltipSystem), HU-R6.32 (drag & drop de ítems), HU-ITEMS-01 (slot order/reglas), R2/R4/R6.5 (lógica)

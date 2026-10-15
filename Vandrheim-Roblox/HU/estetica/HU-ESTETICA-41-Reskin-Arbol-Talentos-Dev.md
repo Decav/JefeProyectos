@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Estética / UI / Talentos — Reskin (dev)
 **Prioridad:** Alta
-**Estado:** Lista para implementar (RC obligatorio del dev antes de programar)
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Reskin de UI (dev) — solo visual, sin tocar lógica
 **Fase GDD:** UI (sustituye el visual de EST-16)
 **Depende de:** **HU-ESTETICA-16 (reskin a superar — el frame nuevo lo reemplaza)**, frame del `.pen`: **`Xff5t` — "D · WoW-inspired talent tree"** (aprobado por PO; incluye el panel de información del nodo), HU-ESTETICA-13 (tokens/handoff), HU-ESTETICA-40 (iconos `Icon_Talent_*` para nodos), HU-R6.27 (fuentes legibles + TooltipSystem), HU-R5 (talentos/lógica)

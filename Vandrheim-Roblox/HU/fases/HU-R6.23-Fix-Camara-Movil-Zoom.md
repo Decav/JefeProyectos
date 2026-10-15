@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R6.x / Fix (reportado por PO 2026-09-22)
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Bugfix de cámara (dev)
 **Fase GDD:** R6.23 (no cambia reglas de juego)
 **Depende de:** HU-R6.15 (cámara móvil: joystick + drag), HU-R3.1 (cámara), `CameraConfig` (distancias)

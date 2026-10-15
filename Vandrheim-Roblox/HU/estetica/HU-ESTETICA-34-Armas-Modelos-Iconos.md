@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Ítems / Armas / Diseño
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Producción de modelos e iconos de armas (diseñador) — el dev integra por config
 **Fase GDD:** Ítems (mini-épica de itemización — ampliación de armas, plan cerrado con el PO 2026-09-22)
 **Depende de:** HU-ESTETICA-01/05 (pipeline HandModel, arco), HU-ESTETICA-18 (uniques existentes), HU-ITEMS-06 (templates), ASSETS_POLICY/ASSETS_LIST

@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Ítems / Itemización / Diseño
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Producción de modelos/reskins e iconos (diseñador) — el dev integra por config
 **Fase GDD:** Ítems (mini-épica de itemización — plan cerrado con el PO 2026-09-22)
 **Depende de:** HU-ESTETICA-01 (pipeline visual R15), HU-ESTETICA-07 (sets Cazador/Clérigo), HU-ITEMS-03/04 (bonos y contenido), ASSETS_POLICY/ASSETS_LIST

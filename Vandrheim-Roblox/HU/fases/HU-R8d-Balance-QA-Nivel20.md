@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R8 — 3 clases jugables / R8d (cierre del bloque)
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Balance (dev) + QA — solo números en configs; sin mecánicas nuevas
 **Fase GDD:** R8 (R8a Paladín ✅ → R8b Cazador ✅ → R8c Clérigo ✅ → **R8d**)
 **Depende de:** HU-R8a/b/c (completas), HU-ITEMS-01 (rc034, sets/armas/joyería), HU-R7 (boss piso 5), HU-R6a (enemigos/XP/loot), SKILLS_CATALOG v2.2 (árboles finales)

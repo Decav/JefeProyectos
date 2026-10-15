@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Mazmorra / Boss final / Pelea
 **Prioridad:** **CRÍTICA** (es la pelea del último enemigo del juego)
-**Estado:** Lista para implementar (RC obligatorio del dev antes de programar)
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Fase GDD:** R7.1 (extiende la pelea de `helada_frostwarden`; no cambia loot/cofre de R7)
 **Depende de:** HU-ESTETICA-36 (modelo Jotunn), HU-ESTETICA-31 (integración dev: animaciones Moon Animator + VFX), HU-R7 (boss `helada_frostwarden`, ai `boss_melee`, `glacial_impact`), HU-R6.18 (telegraphs — áreas rojas, cargas 1.2/1.5 s), HU-R8d (bandas de balance nivel 20)
 **Componentes observados:** `BossConfig`/`EnemyConfig` (`helada_frostwarden`), sistema de telegraphs R6.18, framework de animaciones R6.7

@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Ítems / Itemización / Balance y QA
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Balance + QA (dev) — solo números en configs
 **Fase GDD:** Ítems (mini-épica de itemización — cierre)
 **Depende de:** HU-ITEMS-03 (bonos), HU-ITEMS-04 (templates/loot), HU-R8d/R9c (bandas de balance), HU-ESTETICA-33 (assets)

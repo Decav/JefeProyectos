@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Publicación / Integración (dev)
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Integración de servicios + publicación de place (dev)
 **Fase GDD:** Publicación (transversal; complementa el flujo R6b ya implementado)
 **Depende de:** HU-R6b (DungeonService: start/join/run/exit con ReservedServer + teleport data), HU-PUBLICAR-01 (Place ID de `Dungeon_Helada` + accesos del PO), HU-R6a (FloorService/EnemyService/XP), HU-R2 (perfil/DataStore), HU-R6.5 (HUD dungeon)

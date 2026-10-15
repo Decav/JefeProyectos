@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)  
 **Épica:** R8 — 3 clases jugables / R8a (primera parte)  
 **Prioridad:** Crítica  
-**Estado:** Lista para implementar  
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)  
 **Tipo:** Contenido de clases + ajuste de framework  
 **Fase GDD:** R8 (se ejecuta en 4 HUs: R8a Paladín → R8b Cazador → R8c Clérigo → R8d balance/assets/QA)  
 **Depende de:** HU-R3 (SkillService), HU-R5.1 (TalentConfig v2), HU-R5 (respec), SKILLS_CATALOG v2.2 (árboles finales), HU-R6.9 (AoE zona/Self), HU-R6.6 (animationKey)  

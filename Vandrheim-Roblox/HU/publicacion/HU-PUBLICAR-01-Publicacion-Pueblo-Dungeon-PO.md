@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Publicación / Ops
 **Prioridad:** Alta
-**Estado:** Lista para ejecutar
+**Estado:** Ejecutada (reporte PO 2026-09-22; Dungeon_Helada publicada — Place ID 125210265978348)
 **Tipo:** Publicación y configuración en Roblox (PO/publicador — **sin código**; el dev hace la integración en HU-PUBLICAR-02)
 **Fase GDD:** Publicación (transversal)
 **Depende de:** HU-R6b (flujo dungeon con ReservedServer + teleport data), HU-PUBLICAR-02 (integración del dev), juego funcional publicado de forma limitada

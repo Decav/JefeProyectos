@@ -154,12 +154,41 @@ Iconos de talento con composición de habilidad activa: sellos rúnicos, impacto
 | `Icon_Talent_XP` | Icono | Mejora de experiencia | — | — | — (no requerido: ningún talento actual mejora XP) |
 | `Icon_Talent_MultiStat` | Icono | Mejora simultánea de varias estadísticas | `Assets/Temp/HU-ESTETICA-40/Icon_Talent_MultiStat.png` | ImageGen; interno Vandrheim | Pendiente |
 
-> **Nota (2026-09-22):** los 8 iconos producidos por el diseñador están subidos (IDs de `Decavii`). **CDR se agrega al set** (existe como stat en el juego — panel de stats "CDR"; el capstone de Fuego da +3 % CDR). GOLD/XP no aplican a los talentos actuales y quedan fuera.
-## RETRATOS DE JEFES · GUÍA DE DUNGEON
+> **Nota (2026-09-22):** los 8 iconos producidos por el diseñador están subidos (IDs de `Decavii`). **CDR se agrega al set** (existe como stat en el juego — panel de stats "CDR"; el capstone de Fuego da +3 % CDR). GOLD/XP no aplican a los talentos actuales y quedan fuera.
 
-Retratos de torso con fondo transparente para la pestaña de información de la dungeon (HU-R9a.2 / HU-ESTETICA-37). PNG RGBA 512×512; sin marco ni texto. Basados en las capturas de los modelos y producidos con ImageGen; uso interno de Vandrheim. La carga a Roblox queda pendiente.
+## RETRATOS DE JEFES Y ENEMIGOS · GUÍA DE DUNGEON
+
+Retratos con fondo transparente para la pestaña de información de la dungeon (HU-R9a.2 / HU-ESTETICA-37): dos jefes, un enemigo genérico reutilizable y ocho retratos específicos de enemigos regulares. PNG RGBA 512×512; sin marco ni texto. Basados en las capturas de los modelos y producidos con ImageGen; uso interno de Vandrheim. Los retratos de jefe y genérico ya están subidos a Roblox; los nuevos retratos específicos están pendientes de carga. También se usan en el medallón del **TargetFrame** (EST-47): Jotunn para el boss final, FrostLord para el Señor de la Escarcha y los retratos específicos o genérico para el resto.
 
 | assetId | Tipo | Uso | Archivo local | Fuente / licencia | rbxassetid |
 |---|---|---|---|---|---|
-| `Portrait_Boss_Jotunn` | Retrato | Jotunn, Guardián de la Escarcha — jefe final | `Assets/Temp/DungeonGuide-BossPortraits/Portrait_Boss_Jotunn.png` | ImageGen; interno Vandrheim | Pendiente |
-| `Portrait_Boss_FrostLord` | Retrato | Señor de la Escarcha — mini-jefe del piso 4 | `Assets/Temp/DungeonGuide-BossPortraits/Portrait_Boss_FrostLord.png` | ImageGen; interno Vandrheim | Pendiente |
+| `Portrait_Boss_Jotunn` | Retrato | Jotunn, Guardián de la Escarcha — jefe final | `Assets/Temp/DungeonGuide-BossPortraits/Portrait_Boss_Jotunn.png` | ImageGen; interno Vandrheim | `rbxassetid://112251764292750` |
+| `Portrait_Boss_FrostLord` | Retrato | Señor de la Escarcha — mini-jefe del piso 4 | `Assets/Temp/DungeonGuide-BossPortraits/Portrait_Boss_FrostLord.png` | ImageGen; interno Vandrheim | `rbxassetid://105086910359542` |
+| `Portrait_Enemy_Generic` | Retrato | Enemigos regulares de la dungeon — retrato genérico | `Assets/Temp/DungeonGuide-EnemyPortraits/Portrait_Enemy_Generic.png` | ImageGen; interno Vandrheim | `rbxassetid://99954963258644` |
+| `Portrait_Enemy_FrostArcher` | Retrato | Helada, arquero de escarcha (`helada_frost_archer`) | `Assets/Temp/DungeonGuide-EnemyPortraits/Portrait_Enemy_FrostArcher.png` | ImageGen; interno Vandrheim | Pendiente |
+| `Portrait_Enemy_FrostKnight` | Retrato | Helada, caballero de escarcha (`helada_frost_knight`) | `Assets/Temp/DungeonGuide-EnemyPortraits/Portrait_Enemy_FrostKnight.png` | ImageGen; interno Vandrheim | Pendiente |
+| `Portrait_Enemy_IceTroll` | Retrato | Helada, trol de escarcha (`helada_frost_troll`) | `Assets/Temp/DungeonGuide-EnemyPortraits/Portrait_Enemy_IceTroll.png` | ImageGen; interno Vandrheim | Pendiente |
+| `Portrait_Enemy_BlizzardWraith` | Retrato | Helada, espectro de ventisca (`helada_blizzard_wraith`) | `Assets/Temp/DungeonGuide-EnemyPortraits/Portrait_Enemy_BlizzardWraith.png` | ImageGen; interno Vandrheim | Pendiente |
+| `Portrait_Enemy_IceMite` | Retrato | Helada, ácaro de escarcha (`helada_ice_mite`) | `Assets/Temp/DungeonGuide-EnemyPortraits/Portrait_Enemy_IceMite.png` | ImageGen; interno Vandrheim | Pendiente |
+| `Portrait_Enemy_IceGolem` | Retrato | Helada, gólem de hielo (`helada_ice_golem`) | `Assets/Temp/DungeonGuide-EnemyPortraits/Portrait_Enemy_IceGolem.png` | ImageGen; interno Vandrheim | Pendiente |
+| `Portrait_Enemy_FrostWolf` | Retrato | Helada, lobo de escarcha (`helada_frost_wolf`) | `Assets/Temp/DungeonGuide-EnemyPortraits/Portrait_Enemy_FrostWolf.png` | ImageGen; interno Vandrheim | Pendiente |
+| `Portrait_Enemy_IceElemental` | Retrato | Helada, elemental de hielo (`helada_ice_elemental`) | `Assets/Temp/DungeonGuide-EnemyPortraits/Portrait_Enemy_IceElemental.png` | ImageGen; interno Vandrheim | Pendiente |
+
+## ICONO OFICIAL DEL JUEGO · PROPUESTAS 2026-10-14
+
+Tres propuestas de icono de experiencia basadas en el logotipo, los personajes y el equipamiento de Vandrheim. PNG RGB 512×512 con fondo ilustrado. Originales, comparación a 150×150, notas y prompts en `Assets/Temp/GameIcons-2026-10-14/`. Pendientes de selección como icono oficial y publicación.
+
+| assetId | Tipo | Uso | Archivo local | Fuente / licencia | rbxassetid |
+|---|---|---|---|---|---|
+| `Icon_Game_01_Jotunn` | Icono de experiencia | Propuesta 01: Jotunn protagonista | `Assets/Temp/GameIcons-2026-10-14/Icon_Game_01_Jotunn_512.png` | ImageGen + referencias propias; interno Vandrheim | Pendiente |
+| `Icon_Game_02_Desafio` | Icono de experiencia | Propuesta 02: paladín frente a Jotunn | `Assets/Temp/GameIcons-2026-10-14/Icon_Game_02_Desafio_512.png` | ImageGen + referencias propias; interno Vandrheim | Pendiente |
+| `Icon_Game_03_Reliquia` | Icono de experiencia | Propuesta 03: espadón único de escarcha | `Assets/Temp/GameIcons-2026-10-14/Icon_Game_03_Reliquia_512.png` | ImageGen + referencias propias; interno Vandrheim | Pendiente |
+
+## MINIATURAS DEL JUEGO · PROPUESTAS 2026-10-14
+
+Arte promocional horizontal 16:9 basado en los assets propios. Dos propuestas en JPG y PNG 1920×1080. JPG de menos de 3 MB, originales y notas en `Assets/Temp/GameThumbnails-2026-10-14/`. Pendientes de selección y publicación.
+
+| assetId | Tipo | Uso | Archivo local | Fuente / licencia | rbxassetid |
+|---|---|---|---|---|---|
+| `Thumbnail_Game_01_Desafio_Jotunn` | Miniatura | Paladín frente a Jotunn | `Assets/Temp/GameThumbnails-2026-10-14/Thumbnail_Game_01_Desafio_Jotunn_1920x1080.jpg` | ImageGen + referencias propias; interno Vandrheim | Pendiente |
+| `Thumbnail_Game_02_Reliquia_Helada` | Miniatura | Equipo único y exploración de Helada | `Assets/Temp/GameThumbnails-2026-10-14/Thumbnail_Game_02_Reliquia_Helada_1920x1080.jpg` | ImageGen + referencias propias; interno Vandrheim | Pendiente |

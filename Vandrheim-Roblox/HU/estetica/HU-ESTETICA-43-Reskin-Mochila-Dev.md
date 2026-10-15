@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Estética / UI / Inventario — Reskin (dev)
 **Prioridad:** Alta
-**Estado:** Lista para implementar (RC obligatorio del dev antes de programar)
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Reskin de UI (dev) — solo visual, sin tocar lógica
 **Fase GDD:** UI (sustituye el visual de EST-11/21)
 **Depende de:** frame del `.pen`: **`nwaNs` — "Inventario de Eirik · Mochila"** (aprobado por el PO), HU-ESTETICA-13 (tokens/handoff), HU-R6.27 (casillas estándar + TooltipSystem), HU-R6.32 (drag & drop), HU-ESTETICA-44 (tooltips de ítem), R4/R5.2 (inventario/stacking)

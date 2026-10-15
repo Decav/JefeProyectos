@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Estética / Enemigos / Boss final — Integración (dev)
 **Prioridad:** **CRÍTICA** (cierra la pelea final del juego)
-**Estado:** Lista para implementar
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Integración + animación + VFX del boss (dev)
 **Fase GDD:** R7 / EST (complementa HU-R7 ya implementada)
 **Depende de:** **HU-ESTETICA-36 (modelo del JOTUNN — sustituye a EST-30, que quedó obsoleta)**, HU-R7 (boss `helada_frostwarden`: `glacial_impact`, cofre, uniques), HU-ESTETICA-02 (estructura de enemigos), HU-R6.7 (framework de animaciones por familia), HU-ESTETICA-19/20 (boss bar del HUD), HU-PUBLICAR-04 (sync de places)

@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Publicación / Ops (dev)
 **Prioridad:** Alta (bug reportado en producción limitada)
-**Estado:** Lista para implementar
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Mantenimiento cross-place + proceso (dev)
 **Fase GDD:** Publicación (transversal)
 **Depende de:** HU-PUBLICAR-02 (bootstrap del place dungeon), SKILLS_CATALOG v2.3 (Flecha venenosa/DoT), todo lo implementado desde el bootstrap del place

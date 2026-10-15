@@ -116,6 +116,27 @@ Se completa a medida que se incorporan assets reales (obligatorio en DoD de HU-A
 | (ej. 123456789) | Animación | cast genérico mágico | Library | UsuarioX | Free (crédito) | 2026-XX-XX |
 | ... | | | | | | |
 | 89348168546122 | Icono | Icon_Skill_hunter_mm_venom (R8e) | Subida informada por el usuario | Por confirmar | Por confirmar | 2026-09-23 |
+| 80809123525734 | SFX | sfx_normal_hit — golpe básico sin armas (player/mobs) | Aportado por el PO (subido, `Workspace.Sounds`) | Por confirmar | Uso propio | 2026-10-12 |
+| 136755951725689 | SFX | sfx_normal_hit_2 — golpe básico sin armas (variante) | Aportado por el PO (subido, `Workspace.Sounds`) | Por confirmar | Uso propio | 2026-10-12 |
+| 140462043853173 | SFX | sfx_sword_hit — impacto de espada | Aportado por el PO (subido, `Workspace.Sounds`) | Por confirmar | Uso propio | 2026-10-12 |
+| 138293953015099 | SFX | sfx_sword_skill — skill de espada | Aportado por el PO (subido, `Workspace.Sounds`) | Por confirmar | Uso propio | 2026-10-12 |
+| 90951132448816 | SFX | sfx_bow_shoot — disparo de arco | Aportado por el PO (subido, `Workspace.Sounds`) | Por confirmar | Uso propio | 2026-10-12 |
+| 81276928984693 | SFX | sfx_magic_hit — impacto mágico | Aportado por el PO (subido, `Workspace.Sounds`) | Por confirmar | Uso propio | 2026-10-12 |
+| 9116385056 | SFX | sfx_magic_skill — skill mágica | Aportado por el PO (subido, `Workspace.Sounds`) | Por confirmar | Uso propio | 2026-10-12 |
+| 137545490038565 | SFX | sfx_magic_skill_2 — skill mágica (variante) | Aportado por el PO (subido, `Workspace.Sounds`) | Por confirmar | Uso propio | 2026-10-12 |
+| 138498992667102 | SFX | sfx_magic_heal — cura | Aportado por el PO (subido, `Workspace.Sounds`) | Por confirmar | Uso propio | 2026-10-12 |
+| 9116384757 | SFX | sfx_magic_shield — escudo/barrera | Aportado por el PO (subido, `Workspace.Sounds`) | Por confirmar | Uso propio | 2026-10-12 |
+| 140728595235867 | SFX | sfx_skill_selfAOE — AoE propia | Aportado por el PO (subido, `Workspace.Sounds`) | Por confirmar | Uso propio | 2026-10-12 |
+| 99963459517796 | SFX | sfx_boss_AOE — AoE del jefe | Aportado por el PO (subido, `Workspace.Sounds`) | Por confirmar | Uso propio | 2026-10-12 |
+| 9125640290 | SFX | sfx_boss_skill — skill del jefe | Aportado por el PO (subido, `Workspace.Sounds`) | Por confirmar | Uso propio | 2026-10-12 |
+| 138867344936809 | SFX | sfx_die — muerte de enemigo | Aportado por el PO (subido, `Workspace.Sounds`) | Por confirmar | Uso propio | 2026-10-12 |
+| 140602821561280 | SFX | sfx_lvl_up — subir de nivel | Aportado por el PO (subido, `Workspace.Sounds`) | Por confirmar | Uso propio | 2026-10-12 |
+| 140395633128797 | SFX | Transacciones monetarias (vendor/subasta/oro) | Aportado por el PO (subido) | Por confirmar | Uso propio | 2026-10-12 |
+| 77363443690081 | Música | Vandrheim — tema del hub/pueblo | Aportado por el PO (subido) | Decavii | Uso propio | 2026-10-12 |
+| 112917722141522 | Música | Vandrheim-Frost-Dungeon1-2 — pisos 1–2 | Aportado por el PO (subido) | Decavii | Uso propio | 2026-10-12 |
+| 70388794256162 | Música | Vandrheim-Frost-Dungeon3-5 — pisos 3–5 (más intenso) | Aportado por el PO (subido) | Decavii | Uso propio | 2026-10-12 |
+| 126551601593677 | Música | Vandrheim-Frost-JotunnBossFight — batalla del jefe final | Aportado por el PO (subido) | Decavii | Uso propio | 2026-10-12 |
+| 121076782362772 | Icono | Icon_Menu_nameplates — botón toggle de nameplates (micromenú) | Aportado por el PO (subido) | Decavii | Uso propio | 2026-10-12 |
 
 ---
 

@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Estética / UI / Talento
 **Prioridad:** Media
-**Estado:** Lista para diseñar
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Producción de iconos 2D (diseñador) — el dev los referencia por config
 **Fase GDD:** Talentos (nodos de mejora estadística del árbol)
 **Depende de:** HU-ESTETICA-39 (mismos stats, estilo minimalista — este set es el **formato de juego**), HU-ESTETICA-16 (talentos dev/panel), ASSETS_LIST (estándar de iconos de juego) + **fondo TRANSPARENTE (decisión 2026-09-22)**

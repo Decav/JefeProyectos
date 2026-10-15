@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Ítems / Itemización / Sistema
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Sistema nuevo de bonos por set (dev)
 **Fase GDD:** Ítems (mini-épica de itemización — plan cerrado con el PO 2026-09-22)
 **Depende de:** HU-R4 (equip/InventoryService), HU-R6.16 (targeting aliado para el heal AOE), SKILLS_CATALOG (skills de las specs); **HU-ITEMS-04 aporta los templates reales después** (el contrato de `setId` se define en esta HU y se prueba con templates seed — sin dependencia circular)

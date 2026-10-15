@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** UI / Interacción — Mejora (decisión PO 2026-09-22)
 **Prioridad:** Alta
-**Estado:** Lista para implementar (RC obligatorio del dev antes de programar)
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Sistema de interacción (dev) — server-authoritative
 **Fase GDD:** R6.32 (cambia la interacción con ítems y skills; no cambia reglas de daño/equip)
 **Depende de:** HU-ITEMS-01 (Reglas de equip: dual 1H/2H/escudo/varita, `RequestEquipItem` con `preferredSlot`), R6.5/EST-10/11/21 (panel de personaje y mochila), HU-ESTETICA-42 (grimorio estilo libro + barra equipada), HU-ESTETICA-13 (tokens/handoff), HU-R6.27 (TooltipSystem), HU-ECONOMIA-01/02 (locks de trade/custodia de subasta), HU-ECONOMIA-03 (perfil atómico — cuando exista)

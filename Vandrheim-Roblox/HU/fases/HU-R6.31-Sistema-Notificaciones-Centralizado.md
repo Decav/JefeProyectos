@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R6.x / UI — Mejora (decisión PO 2026-09-22)
 **Prioridad:** Alta
-**Estado:** Lista para implementar (RC obligatorio del dev antes de programar)
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Sistema de UI (dev)
 **Fase GDD:** R6.31 (no cambia reglas de juego — centraliza feedback)
 **Depende de:** HU-R6.20 (OrdenUI config + persistencia), R8c (HUD), HU-R6.27 (feedback claro de UI), R5/R5.2 (consumibles), skills/InventoryService/Vendor etc. (fuentes de mensajes)

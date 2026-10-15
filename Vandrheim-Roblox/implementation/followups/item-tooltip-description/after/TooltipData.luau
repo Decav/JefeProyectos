@@ -165,17 +165,18 @@ function Data.Item(item)
  local level=item.levelReq or cfg.levelReq
  if level~=nil then table.insert(rows,row("Requiere nivel "..number(level),C.Parchment,true,Config.DetailSize,3)) end
  local state=cfg.setId and setState(cfg.setId)
- if state then
+ if state and state.rule.bonusesEnabled then
   table.insert(rows,row(string.upper(state.rule.setName):gsub("^SET ","CONJUNTO "):gsub("í","Í"):gsub("é","É").." · "..state.count.."/5 PIEZAS",C.Gold,true,Config.DetailSize,Config.SectionGap))
   table.insert(rows,{progress=state.count/5})
-  local three=state.rule.threePiece
-  if three then table.insert(rows,row("3 piezas · "..three.description,state.eligible and state.count>=3 and C.Green or C.Parchment)) end
-  local effect=state.effect
-  if not effect and spellbook and spellbook.specId then effect=state.rule.fourPieceBySpec[spellbook.specId] end
-  local text=effect and effect.description or "Bono según tu especialización"
-  table.insert(rows,row("4 piezas · "..text,state.eligible and state.count>=4 and effect and C.Green or C.Parchment))
-  if not state.rule.bonusesEnabled then table.insert(rows,row("Bonos de clase solo en el conjunto épico de Helada.",C.Muted,false))
-  elseif not state.eligible then table.insert(rows,row("Requiere clase "..tostring(state.rule.classId),C.Muted,false)) end
+  if state.rule.bonusesEnabled then
+   local three=state.rule.threePiece
+   if three then table.insert(rows,row("3 piezas · "..three.description,state.eligible and state.count>=3 and C.Green or C.Parchment)) end
+   local effect=state.effect
+   if not effect and spellbook and spellbook.specId then effect=state.rule.fourPieceBySpec[spellbook.specId] end
+   local text=effect and effect.description or "Bono según tu especialización"
+   table.insert(rows,row("4 piezas · "..text,state.eligible and state.count>=4 and effect and C.Green or C.Parchment))
+   if not state.eligible then table.insert(rows,row("Requiere clase "..tostring(state.rule.classId),C.Muted,false)) end
+  end
  end
  appendDescription()
  return result

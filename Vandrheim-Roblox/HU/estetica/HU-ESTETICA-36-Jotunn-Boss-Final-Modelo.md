@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Estética / Enemigos / Boss final
 **Prioridad:** **CRÍTICA** (es el último enemigo del juego)
-**Estado:** Lista para implementar — **SUSTITUYE a HU-ESTETICA-30** (decisión PO 2026-09-22)
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente) — **SUSTITUYE a HU-ESTETICA-30** (decisión PO 2026-09-22)
 **Tipo:** Producción de modelo 3D (diseñador) — **sin scripts ni animaciones propias**; el rig se entrega articulado (Motor6D) para que el dev anime con Moon Animator
 **Fase GDD:** R7 / EST (jefe final del piso 5: `helada_frostwarden`, ai `boss_melee`, ataque `glacial_impact`)
 **Depende de:** HU-R7 (boss del piso 5), HU-ESTETICA-02 (estructura estándar de enemigos), HU-ESTETICA-18 (familia visual de hielo: runas `Neon` azul pálido), ASSETS_POLICY (naming/registro)

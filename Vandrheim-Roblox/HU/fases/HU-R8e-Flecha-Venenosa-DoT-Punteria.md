@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R8 — 3 clases jugables / R8e (contenido adicional sobre R8b)
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Contenido + framework mínimo (dev): nueva skill con DoT single-target
 **Fase GDD:** R8e (posterior a R8b; los números se rigen por las bandas de balance de R8d)
 **Depende de:** HU-R8b (Cazador completo), HU-R8d (reglas de balance: bandas de DPS), HU-R6.9 (sistema de ticks de GroundAoE — se reutiliza para el DoT), SKILLS_CATALOG v2.2 (árboles finales), ASSETS_LIST (iconos), VFX por skill (R8b)

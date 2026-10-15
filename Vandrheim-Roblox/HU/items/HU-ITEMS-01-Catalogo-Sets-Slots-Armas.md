@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)  
 **Épica:** Ítems / Equipamiento / Catálogo  
 **Prioridad:** Alta  
-**Estado:** Lista para implementar  
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Ampliación de contenido + ajuste de reglas de equipamiento  
 **Fase GDD:** Ítems (extensión transversal; implementación antes/paralela a R8a–R8c)  
 **Depende de:** HU-R4 (inventario/equip/BoE/rolls), HU-R5 (vendors/oro), HU-R5.2 (stacking), HU-R6.5 (UI mochila/equipo), HU-ESTETICA-01 (pipeline visual R15), HU-ESTETICA-07 (modelos/iconos del diseñador), HU-R6a (LootTables)  

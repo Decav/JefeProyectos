@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Combate / Muerte / Monetización de conveniencia
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Sistema de muerte/resurrección (dev)
 **Fase GDD:** R6.28 (mejora del ciclo de muerte; decisión de monetización registrada en GDD §11)
 **Depende de:** HU-R6a (muerte/respawn en entrada del piso, HP/MP llenos, sin pérdida), HU-R6b (run lifecycle: abandonar = fin de run con lo ganado), HU-R9a (party: respawn individual), HU-PUBLICAR-02 (dungeon cross-place), checks de compra Robux (Proceso de pago estándar)

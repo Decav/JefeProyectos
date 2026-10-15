@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Publicación / Ops (dev)
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Refactor de configuración + proceso de publicación (dev) — **elimina el sync manual entre places**
 **Fase GDD:** Publicación (transversal)
 **Depende de:** HU-PUBLICAR-02 (teleport cross-place), HU-PUBLICAR-03 (estrategia de sincronización), HU-R6b (DungeonService), Place ID real `125210265978348`

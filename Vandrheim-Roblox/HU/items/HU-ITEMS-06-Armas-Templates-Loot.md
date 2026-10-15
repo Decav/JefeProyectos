@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Ítems / Armas / Contenido (dev)
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Contenido de armas (dev)
 **Fase GDD:** Ítems (mini-épica de itemización — ampliación de armas, plan cerrado con el PO 2026-09-22)
 **Depende de:** HU-ESTETICA-34 (modelos/iconos), HU-ITEMS-04 (loot/uniques del piso 4), HU-ITEMS-03 (setId/sistema), HU-ESTETICA-18 (uniques existentes)

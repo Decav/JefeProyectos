@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R6.x / UI — Fix (reportado por PO 2026-09-22)
 **Prioridad:** Media
-**Estado:** Lista para implementar
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Bugfix de UI (dev)
 **Fase GDD:** R6.25 (no cambia reglas de juego)
 **Depende de:** HU-ESTETICA-25/32 (selección de PJ), HU-ESTETICA-13 (tokens)

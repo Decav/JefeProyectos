@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Estética / UI / Grimorio — Reskin (dev)
 **Prioridad:** Alta
-**Estado:** Lista para implementar (RC obligatorio del dev antes de programar)
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Reskin de UI (dev) — solo visual, sin tocar lógica
 **Fase GDD:** UI (sustituye el visual de EST-17)
 **Depende de:** **HU-ESTETICA-17 (reskin a superar — el frame nuevo lo reemplaza)**, frame del `.pen`: **`WUFrU` — "Grimorio · Libro de habilidades WoW style"** (aprobado por PO), HU-ESTETICA-13 (tokens/handoff), HU-R6.27 (fuentes legibles + barra activa con casillas al icono + TooltipSystem), HU-R5.1 (skills/lógica), SKILLS_CATALOG

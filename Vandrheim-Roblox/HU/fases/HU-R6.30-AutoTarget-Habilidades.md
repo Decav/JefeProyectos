@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Combate / Targeting — Mejora (decisión PO 2026-09-22)
 **Prioridad:** Alta
-**Estado:** Lista para implementar (RC obligatorio del dev antes de programar)
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Mejora de targeting (dev)
 **Fase GDD:** R6.30 (no cambia reglas de daño ni de selección manual)
 **Depende de:** HU-R3.1/R3.3 (targeting e indicador visual), HU-R6.21 (habilidades dirigidas al target), HU-R6.19 (proyectiles/LOS), SKILLS_CATALOG

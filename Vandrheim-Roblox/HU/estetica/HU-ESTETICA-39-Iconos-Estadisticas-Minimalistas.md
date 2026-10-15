@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Estética / UI / Iconografía
 **Prioridad:** Media
-**Estado:** Lista para diseñar
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Producción de iconos 2D (diseñador) — el dev los referencia por config (ASSETS_LIST)
 **Fase GDD:** UI (acompaña a tooltips de ítems/skills, panel de stats y party frame)
 **Depende de:** HU-ESTETICA-13 (tokens/fuentes), HU-R6.27 (mejoras de tooltips — casillas y legibilidad), ASSETS_POLICY (estándar de iconos: **fondo TRANSPARENTE desde 2026-09-22**), ASSETS_LIST

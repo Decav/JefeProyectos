@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R6.x / Dungeon — Fix de layout (dev)
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Bugfix de geometría/kit de la dungeon (dev)
 **Fase GDD:** R6.24 (no cambia reglas de juego ni seeds)
 **Depende de:** HU-R6a (kit Helada/FloorService), HU-R6.3 (variantes de layout — variante "Caverna"), HU-R6.4 (topología — corredores)

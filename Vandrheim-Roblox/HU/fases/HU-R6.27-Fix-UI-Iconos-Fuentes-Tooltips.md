@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R6.x / UI — Fix y mejoras (reportado por PO 2026-09-22)
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
 **Tipo:** Bugfix/mejoras de UI (dev)
 **Fase GDD:** R6.27 (no cambia reglas de juego)
 **Depende de:** HU-ESTETICA-10/11/21 (stats/equipo, bolsa), HU-ESTETICA-16/17 (talentos, grimorio), HU-ESTETICA-13 (tokens/fuentes), HU-R5 (vendors), R8c (HUD/skill bar), SKILLS_CATALOG
