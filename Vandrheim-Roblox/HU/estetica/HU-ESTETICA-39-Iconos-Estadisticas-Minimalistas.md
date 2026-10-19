@@ -53,7 +53,7 @@ Los tooltips y paneles muestran las estadísticas como texto plano (ej. "ATK 20/
 
 #### **3. Entrega**
 
-* Archivos `Icon_Stat_*.png` en `Assets/Temp/HU-ESTETICA-39/` + registro en `ASSETS_LIST.md`/`ASSETS_REGISTRY` (naming exacto de la tabla).
+* Archivos canónicos en `Assets/Icons/UI/Stats/`; procedencia aprobada se archiva en `Assets/Source/Design/HU-ESTETICA-39/` si existe.
 * Sin scripts; solo assets.
 
 ---

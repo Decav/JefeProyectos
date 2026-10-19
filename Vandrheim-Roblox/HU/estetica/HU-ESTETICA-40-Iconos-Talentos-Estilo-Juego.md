@@ -54,7 +54,7 @@ El árbol de talentos (EST-16) mostrará los nodos de mejora estadística. Este 
 
 #### **3. Entrega**
 
-* Archivos `Icon_Talent_*.png` en `Assets/Temp/HU-ESTETICA-40/` + registro en `ASSETS_LIST.md`/`ASSETS_REGISTRY` (naming exacto de la tabla).
+* Archivos canónicos en `Assets/Icons/Talents/`; procedencia aprobada se archiva en `Assets/Source/Design/HU-ESTETICA-40/` si existe.
 * Sin scripts; solo assets.
 
 ---

@@ -16,7 +16,7 @@ Use this skill for Vandrheim RPG weapon model and icon work in Roblox Studio. It
 
 ## Use icons as the design reference
 
-- Look for supplied item icons before creating new ones. Preserve existing files and alpha transparency. For HU-ESTETICA-34, the delivered set is under `Assets/Temp/HU-ESTETICA-34/Icons_512`.
+- Look for supplied item icons before creating new ones. Preserve existing files and alpha transparency. Canonical HU-ESTETICA-34 icons are organized under `Assets/Icons/Items/Weapons/{OneHand,TwoHand,Bow,Wand,Shield,Unique}/`; approved source renders/previews are archived under `Assets/Source/Design/HU-ESTETICA-34/`.
 - When an icon is missing and the task includes icon creation, make a transparent-background PNG matching the project's established dimensions and naming convention. Verify dimensions and that transparent corners have zero alpha.
 - Roblox Studio Mesh AI accepts a text prompt rather than the PNG itself. Describe the icon's silhouette, proportions, materials, palette, focal ornament, and tier details in the prompt. Do not imply that Mesh AI received or analyzed the image.
 

@@ -1,4 +1,4 @@
-# HU-R6.29: Mejoras UI móvil — botón Target, botones Correr/Target y Loot en el OrdenUI (no en PC)
+# HU-R6.29: Mejoras UI móvil — botón Target independiente, Correr y Loot en el OrdenUI
 
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R6.x / UI móvil — Mejora (decisión PO 2026-09-22)
@@ -25,28 +25,28 @@
 
 ### **Descripción del Requerimiento / Contexto**
 
-En móvil no existe TAB ni forma de targetear alternando enemigos — se agrega un **botón Target** con el mismo comportamiento que TAB (selecciona al más cercano y va alternando con cada pulsación). Además, los botones **Correr** (ya existe en móvil) y **Target** entran al **OrdenUI** (config R6.20) para poder moverse — **solo en móvil, NO en PC**. El **loot** también entra al OrdenUI en **PC y móvil**.
+En móvil no existe TAB ni forma de targetear alternando enemigos. R6.29 define el comportamiento de target (seleccionar el más cercano, alternar y limpiar si no hay enemigos) como **botón independiente en el HUD móvil**, movible en el OrdenUI. R6.35 le asigna `Icon_Menu_target_cycle` y mueve únicamente los accesos de Dungeon y Party al micromenú. El botón **Correr** y el **LootPopup** siguen en el OrdenUI; LootPopup en PC y móvil.
 
-**Criterio de hecho global:** en móvil, el botón Target selecciona/alterna enemigos como TAB; los botones Correr y Target son movibles vía OrdenUI **solo en móvil**; el loot es movible vía OrdenUI en **PC y móvil**; nada de esto aparece en PC salvo el loot.
+**Criterio de hecho global:** en móvil, el botón Target independiente selecciona/alterna enemigos como TAB; Correr y Target son movibles vía OrdenUI solo en móvil; LootPopup es movible en PC y móvil.
 
 ---
 
 ### **Especificaciones Técnicas / Contratos de API**
 
-#### **1. Botón TARGET (móvil)**
+#### **1. Acción TARGET (móvil; presentación en micromenú por R6.35)**
 
-* **Botón en el HUD (móvil):** al presionar → selecciona el **enemigo más cercano** al jugador (patrón TAB de R3.1); **cada pulsación alterna** al siguiente enemigo (patrón de ciclo de R3.1/R3.3 — mismo orden/prioridad que TAB).
+* Botón Target **independiente en el HUD móvil**; al presionarlo → selecciona el **enemigo más cercano** al jugador (patrón TAB de R3.1); **cada pulsación alterna** al siguiente enemigo (patrón de ciclo de R3.1/R3.3 — mismo orden/prioridad que TAB).
+* El botón usa el icono `Icon_Menu_target_cycle` de R6.35; el icono no implica que el botón pertenezca al micromenú.
 * Muestra el indicador de target existente (R3.3: contorno + flecha) sobre el seleccionado.
 * **Sin enemigos cercanos → LIMPIA la selección actual** (mismo comportamiento que TAB — decisión PM 2026-09-22, cerrada para rc079).
-* El botón **no aparece en PC** (TAB nativo).
+* La acción Target **no aparece en PC** (TAB nativo), tampoco como entrada ni slot vacío del micromenú/OrdenUI.
 
 #### **2. OrdenUI (config R6.20)**
 
 * Se agregan al OrdenUI (movibles/ordenables con el sistema existente):
-  * **Botón Target** (móvil) — *solo móvil*.
   * **Botón Correr** (móvil, existente) — *solo móvil*.
   * **LootPopup (aviso de loot recibido)** — **PC y móvil**: el loot va **directo al inventario** (no hay pickups en el piso — GDD/R6a); el LootPopup actual es solo un **aviso temporal de adquisición** y **esa es la interfaz de loot que se vuelve movible** (decisión PM 2026-09-22, cerrada para rc079). El LootPopup **NO se absorbe en el NotificationFrame de R6.31**: queda como elemento propio del HUD, movible por el jugador.
-* Regla: los ítems marcados **mobile-only** no se muestran en PC (ni su presencia en la UI ni en la config de orden de PC — sin slots fantasmas).
+* Target ya no es un elemento independiente del OrdenUI: su ubicación dentro del micromenú se define en R6.35. Los ítems marcados **mobile-only** no se muestran en PC ni dejan slots fantasmas.
 * **Persistencia por plataforma (decisión PM):** un guardado desde PC preserva las posiciones de PC y no pisa las de móvil (TouchEnabled separa los controles móviles — la config guarda posiciones por plataforma).
 
 #### **3. Reglas**
@@ -58,10 +58,10 @@ En móvil no existe TAB ni forma de targetear alternando enemigos — se agrega 
 
 ### **Criterios de Aceptación (Gherkin)**
 
-#### **Escenario 1: Botón Target en móvil**
+#### **Escenario 1: Botón Target independiente en móvil**
 
 * **GIVEN** un jugador móvil con enemigos cercanos
-* **WHEN** pulsa Target
+* **WHEN** pulsa el botón Target independiente
 * **THEN** se selecciona el enemigo más cercano (indicador R3.3 visible) y con cada pulsación alterna al siguiente
 
 #### **Escenario 2: Sin enemigos**
@@ -80,7 +80,7 @@ En móvil no existe TAB ni forma de targetear alternando enemigos — se agrega 
 
 * **GIVEN** un jugador en PC
 * **WHEN** se carga el HUD
-* **THEN** ni el botón Target ni el Correr aparecen (ni slots fantasmas en el OrdenUI de PC)
+* **THEN** ni el botón Target ni el botón Correr aparecen en PC (ni slots fantasmas en OrdenUI); TAB queda intacto
 
 #### **Escenario 5: Loot movible (PC y móvil)**
 
@@ -101,8 +101,8 @@ En móvil no existe TAB ni forma de targetear alternando enemigos — se agrega 
 
 #### Incluye
 
-* Botón Target móvil (más cercano + alternar, patrón TAB).
-* OrdenUI: Correr + Target (mobile-only) y Loot (PC y móvil).
+* Botón Target móvil (más cercano + alternar, icono `Icon_Menu_target_cycle` de R6.35).
+* OrdenUI: Correr + Target (mobile-only) y LootPopup (PC y móvil).
 
 #### No incluye
 
@@ -112,9 +112,9 @@ En móvil no existe TAB ni forma de targetear alternando enemigos — se agrega 
 
 ### **Definition of Done (DoD)**
 
-* [ ] Botón Target móvil selecciona/alterna como TAB (indicador R3.3).
-* [ ] Correr y Target movibles vía OrdenUI (solo móvil); Loot movible en PC y móvil; persistencia OK.
-* [ ] Nada mobile-only aparece en PC.
+* [ ] Botón Target independiente selecciona/alterna como TAB (indicador R3.3, icono de R6.35).
+* [ ] Correr y Target movibles vía OrdenUI (solo móvil); LootPopup movible en PC y móvil; persistencia OK.
+* [ ] Target y Correr no aparecen en PC (TAB intacto para target).
 * [ ] Sin errores rojos (PC y móvil, publicado).
 * [ ] El dev prepara el RC desde esta HU antes de programar (DEV_PROMPT).
 * [ ] Nota en GDD después de QA.
@@ -131,5 +131,6 @@ En móvil no existe TAB ni forma de targetear alternando enemigos — se agrega 
 
 | Fecha | Cambio |
 |-------|--------|
-| 2026-09-22 | Creación de HU-R6.29: mejoras UI móvil — botón **Target** (selecciona el más cercano y alterna, patrón TAB de PC, que no existía en móvil); **Correr y Target al OrdenUI (solo móvil — no en PC)**; **Loot al OrdenUI en PC y móvil** (reportado por PO) |
-| 2026-09-22 | **2 decisiones PM cerradas (rc079, dudas del dev):** (1) **el loot va directo al inventario, no hay pickups** → lo movible es el **LootPopup** (aviso temporal de adquisición), que **NO se absorbe en el NotificationFrame de R6.31**; (2) **sin enemigos, Target LIMPIA la selección** (igual que TAB). **+La persistencia del OrdenUI es por plataforma** (un guardado de PC no pisa el de móvil) |
+| 2026-09-22 | Creación de HU-R6.29: comportamiento de Target móvil (seleccionar el más cercano y alternar, patrón TAB) + Correr y LootPopup en OrdenUI (reportado por PO) |
+| 2026-09-22 | **Decisiones PM cerradas (rc079):** loot directo al inventario → LootPopup movible (no se absorbe en R6.31); sin enemigos, Target limpia selección; OrdenUI persiste por plataforma |
+| 2026-10-17 | **Enmienda de icono (R6.35):** Target **sigue como botón móvil independiente y movible en OrdenUI**; se le asigna `Icon_Menu_target_cycle`. Dungeon y Party sí se retiran del HUD móvil y pasan al micromenú. Target no aparece en PC (TAB nativo) |

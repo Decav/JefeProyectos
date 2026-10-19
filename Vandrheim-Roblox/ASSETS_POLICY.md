@@ -1,15 +1,15 @@
 # Vandrheim — Política de Assets (animaciones e iconos)
 
 > Documento de política de recursos visuales. Complementa GDD §17 (Assets).
-> Última actualización: 2026-08-23
-> Decisión de producto: **gratis + placeholders + producción propia (modelos/materiales/UI/iluminación) + animaciones SOLO de la Roblox Library** (el dev no hace rigging/animaciones propias).
+> Última actualización: 2026-10-17
+> Decisión de producto: **gratis cuando sea posible + producción propia + placeholders reemplazables**. Las animaciones se producen con Moon Animator (decisión PO 2026-09-22); la Roblox Library queda como referencia/fallback.
 
 ---
 
 ## 1. Principios
 
-1. **Costo cero mientras sea posible:** Roblox Library gratuita + placeholders + producción propia de modelos/materiales/UI/iluminación.
-2. **Animaciones NO se crean:** no hay rigging ni animación propia (capacidad del dev). Todas las animaciones vienen de la **Roblox Library / Marketplace** (gratis o compra con decisión explícita).
+1. **Costo cero mientras sea posible:** assets propios, toolbox gratuita o placeholders; compras solo por decisión explícita del PO.
+2. **Animaciones:** producción propia con **Moon Animator** como método aprobado; Library/Marketplace puede servir de referencia/fallback sujeto a licencia y aprobación.
 3. **Licencia respetada siempre:** todo asset con fuente clara; créditos al autor cuando la licencia lo pida; **prohibido** material sin licencia o "stolen".
 4. **Placeholders estándar hasta que los assets reales existan:** reemplazables **solo cambiando el `id` en config** (nunca tocar código).
 5. **Assets = visuales puros:** no afectan gameplay ni stats; el daño/efecto siempre es server (R3).
@@ -62,6 +62,10 @@ ReplicatedStorage/
 
 * Los IDs viven en **config data-driven** (`iconId`, `animationId` en SkillConfig/ItemConfig) — nunca hardcodeados en scripts.
 * Una animación/icono puede compartirse entre varios ítems/skills; el registro indica reusos.
+
+### 4.1 Organización local del repositorio
+
+La copia de trabajo se organiza en `Assets/` según `Assets/README.md`: iconos finales bajo `Assets/Icons/{Classes,Items,Skills,Talents,UI}`, retratos/arte bajo `Assets/Images/{Brand,Enemies/Portraits,Marketing}`, y animaciones/ropa/audio en sus carpetas de tipo. Los masters, previews, prompts, entregas y scripts de assets aprobados van a `Assets/Source/`; `Assets/Temp/` queda solo para trabajo todavía no aprobado. Las rutas locales canónicas y los IDs Roblox se mantienen en `ASSETS_LIST.md`/este registro.
 
 ---
 

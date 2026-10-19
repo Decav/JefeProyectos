@@ -66,9 +66,31 @@ HABILIDADES DEL CAZADOR (una por imagen, nómbrala así):
 29. Icon_Skill_hunter_mm_chain — Tiro en cadena: rayo de energía conectando dos objetivos con flechas. 
 30. Icon_Skill_hunter_mm_death — Disparo mortal: flecha espectral con brillo oscuro y destello letal.
 
+## UBICACIÓN CANÓNICA DE ICONOS FINALES
+
+Los PNG finales se guardan bajo `Assets/Icons/` por dominio; **no se dejan sueltos ni en `Assets/Temp`**. Masters, prompts, previews, renders fuente y entregas aprobadas se archivan bajo `Assets/Source/`; Temp queda para trabajo no aprobado. Estructura completa: `Assets/README.md`.
+
+| Tipo | Ruta canónica | Convención / contenido |
+|---|---|---|
+| Clases | `Assets/Icons/Classes/` | `Icon_Class_*` |
+| Armadura | `Assets/Icons/Items/Armor/<Clase>/<Tier>/` | Base, Blue, Frost; nombres `Icon_Item_<clase>_<pieza>_<tier>.png`; iconos base existentes en `<Clase>/Base/` |
+| Armas | `Assets/Icons/Items/Weapons/<Familia>/` | `OneHand`, `TwoHand`, `Bow`, `Wand`, `Shield`, `Unique`; conservar el nombre canónico `Icon_Item_*` |
+| Consumibles | `Assets/Icons/Items/Consumables/` | `Icon_Item_potion_*` |
+| Accesorios | `Assets/Icons/Items/Accessories/` | collar, anillo y joyería |
+| Habilidades | `Assets/Icons/Skills/<Clase>/` | `Icon_Skill_<clase>_*` |
+| Talentos | `Assets/Icons/Talents/` | `Icon_Talent_*` activos |
+| UI | `Assets/Icons/UI/<Menu,Common,Currency,Stats,Death,PartyRoles>/` | `Icon_Menu_*`, `Icon_UI_*`, `Icon_Stat_*` |
+| Retratos/branding/marketing | `Assets/Images/{Enemies/Portraits,Brand,Marketing}/` | `Portrait_*`, logotipo/banner, iconos/miniaturas promocionales |
+
+### Armaduras y armas por tier (HU-ESTETICA-33/34)
+
+* Armaduras azules y Frost: `Assets/Icons/Items/Armor/<Paladin|Hunter|Cleric>/<Blue|Frost>/`.
+* Armas por tier: `Assets/Icons/Items/Weapons/<familia>/` (`sword→OneHand`, `greatsword→TwoHand`, `bow→Bow`, `wand→Wand`, `shield→Shield`); las cuatro `unique_frost_*` van en `Unique/`.
+* Los `Icons/` fuente, masters y previews de EST-33/34 se archivan en `Assets/Source/Itemization/` y `Assets/Source/Design/`; el juego y la documentación de integración usan la ruta canónica de arriba.
+
 ## ICONOS UI · PANEL DE MUERTE / EST-38
 
-**Imágenes PNG generadas** (no glifos vectoriales de Pencil): mismo estilo que los iconos de ítems/skills — pintado digital de fantasía, paleta Vandrheim (latón `#C89445`, pergamino `#F4EDE0`, frío `#8FB7D6`, fondos oscuros), silueta legible a 24 px.
+**Imágenes PNG generadas** (no glifos vectoriales de Pencil): mismo estilo que los iconos de ítems/skills — pintado digital de fantasía, paleta Vandrheim (latón `#C89445`, pergamino `#F4EDE0`, frío `#8FB7D6`, fondos oscuros), silueta legible a 24 px. Archivos locales finales en `Assets/Icons/UI/Death/`; los `rbxassetid` aún están pendientes de enlace/config.
 **Técnica:** 512×512, **fondo transparente** (estándar vigente), sin texto, objeto ~85% centrado, perspectiva 3/4 o frontal según el icono; se suben a Roblox como PNG y el dev configura los `rbxassetid` en el config del death panel (`ReviveConfig`/`DeathPanelConfig`: `deathRuneIconId`, `reviveGemIconId`, `reviveGemOffIconId`, `robuxIconId`).
 
 - `Icon_UI_death_death` — runa de muerte (calavera/cráneo nórdico grabado), frío `#8FB7D6`.
@@ -77,10 +99,11 @@ HABILIDADES DEL CAZADOR (una por imagen, nómbrala así):
 
 | Asset | Nodo Pencil / archivo | Roblox |
 |---|---|---|
-| Icon_UI_death_death | PNG generado (pendiente) | (pendiente) |
-| Icon_UI_death_revive | PNG generado (pendiente) | (pendiente) |
-| Icon_UI_death_revive_off | PNG generado (pendiente) | (pendiente) |
-| Icon_UI_death_robux | PNG generado (pendiente) | (pendiente) |
+| Icon_UI_death_death | `Assets/Icons/UI/Death/Icon_UI_death_death.png` | (pendiente) |
+| Icon_UI_death_revive | `Assets/Icons/UI/Death/Icon_UI_death_revive.png` | (pendiente) |
+| Icon_UI_death_revive_off | `Assets/Icons/UI/Death/Icon_UI_death_revive_off.png` | (pendiente) |
+| Icon_UI_death_revive_spent | `Assets/Icons/UI/Death/Icon_UI_death_revive_spent.png` | (pendiente) |
+| Icon_UI_death_robux | `Assets/Icons/UI/Death/Icon_UI_death_robux.png` | (pendiente) |
 
 
 ## ICONOS UI · MATCHMAKING / EST-37
@@ -102,6 +125,8 @@ Los iconos cubiertos se registran en `RoomConfig.RoleIcons`; sus variantes apaga
 | Icon_UI_role_dps | `86280431749523` | Image | `1791412121429` | Decavii |
 | Icon_UI_role_heal_uncovered | `120110117123296` | Image | `1791412121446` | Decavii |
 
+Archivos locales canónicos: `Assets/Icons/UI/PartyRoles/` (nombres de archivo `Icon_UI_role_*.png`).
+
 La licencia no venía indicada en los metadatos recibidos. La disponibilidad/render de los assets en el cliente publicado queda pendiente de QA.
 
 ## ICONO UNIVERSAL DE ORO
@@ -111,7 +136,7 @@ La licencia no venía indicada en los metadatos recibidos. La disponibilidad/ren
 - Tamaños de referencia: 16 / 24 / 32 / 48 px; recomendado 24 px para HUD, inventario y listas, 32 px en botones o recompensas. Usar junto al valor numérico (`12,840`), sin escribir “oro” dentro del glifo.
 - La versión ilustrada de la moneda rúnica se creó con ImageGen a partir del componente de `Vandrheim-design.pen`; la carga como asset Roblox queda pendiente. Mantener color y silueta consistentes en HUD, tienda, vendors, recompensas y loot.
 - Variantes para comparar en `EST-39 — Variantes del icono de oro` (`rQjsU`):
-  - `Icon_UI_currency_gold_rune` — moneda individual con sello solar rúnico (`BikRQ`); PNG trabajado con ImageGen en `Assets/Temp/HU-ESTETICA-39/Icon_UI_currency_gold_rune.png` (256×256, RGBA transparente); opción compacta para precios, saldo y drops.
+  - `Icon_UI_currency_gold_rune` — moneda individual con sello solar rúnico (`BikRQ`); PNG de alternativa en `Assets/Icons/UI/Currency/Alternatives/Icon_UI_currency_gold_rune.png` (256×256, RGBA transparente); opción compacta para precios, saldo y drops.
   - `Icon_UI_currency_gold_ingot` — lingotes apilados (`eMWzk`); alternativa ornamental o para botín.
 - Nuevas variantes (`EST-39 — Variantes adicionales de oro`, `hVu6u`):
   - `Icon_UI_currency_gold_pouch` — bolsa con moneda visible (`LhU0X`); indicada para tiendas, ventas y recompensas.
@@ -125,15 +150,15 @@ Iconos gráficos de trazo sólido, estilo del menú de talentos, sin marco ni fo
 
 | iconId | Tipo | Uso | Archivo local | Fuente / licencia | rbxassetid |
 |---|---|---|---|---|---|
-| `Icon_Stat_ATK` | Icono | Daño físico | `Assets/Temp/HU-ESTETICA-39/Icon_Stat_ATK.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
-| `Icon_Stat_MATK` | Icono | Daño mágico | `Assets/Temp/HU-ESTETICA-39/Icon_Stat_MATK.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
-| `Icon_Stat_DEF` | Icono | Defensa física | `Assets/Temp/HU-ESTETICA-39/Icon_Stat_DEF.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
-| `Icon_Stat_MDEF` | Icono | Defensa mágica | `Assets/Temp/HU-ESTETICA-39/Icon_Stat_MDEF.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
-| `Icon_Stat_MaxHP` | Icono | Vida máxima | `Assets/Temp/HU-ESTETICA-39/Icon_Stat_MaxHP.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
-| `Icon_Stat_MaxMP` | Icono | Maná máximo | `Assets/Temp/HU-ESTETICA-39/Icon_Stat_MaxMP.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
-| `Icon_Stat_CRIT` | Icono | Probabilidad de golpe crítico | `Assets/Temp/HU-ESTETICA-39/Icon_Stat_CRIT.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
-| `Icon_Stat_GOLD` | Icono | Oro | `Assets/Temp/HU-ESTETICA-39/Icon_Stat_GOLD.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
-| `Icon_Stat_XP` | Icono | Experiencia / nivel | `Assets/Temp/HU-ESTETICA-39/Icon_Stat_XP.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
+| `Icon_Stat_ATK` | Icono | Daño físico | `Assets/Icons/UI/Stats/Icon_Stat_ATK.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
+| `Icon_Stat_MATK` | Icono | Daño mágico | `Assets/Icons/UI/Stats/Icon_Stat_MATK.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
+| `Icon_Stat_DEF` | Icono | Defensa física | `Assets/Icons/UI/Stats/Icon_Stat_DEF.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
+| `Icon_Stat_MDEF` | Icono | Defensa mágica | `Assets/Icons/UI/Stats/Icon_Stat_MDEF.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
+| `Icon_Stat_MaxHP` | Icono | Vida máxima | `Assets/Icons/UI/Stats/Icon_Stat_MaxHP.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
+| `Icon_Stat_MaxMP` | Icono | Maná máximo | `Assets/Icons/UI/Stats/Icon_Stat_MaxMP.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
+| `Icon_Stat_CRIT` | Icono | Probabilidad de golpe crítico | `Assets/Icons/UI/Stats/Icon_Stat_CRIT.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
+| `Icon_Stat_GOLD` | Icono | Oro (opcional, no enlazado en UI) | `Assets/Icons/UI/Stats/Icon_Stat_GOLD.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
+| `Icon_Stat_XP` | Icono | Experiencia / nivel (opcional, no enlazado en UI) | `Assets/Icons/UI/Stats/Icon_Stat_XP.png` | Producción propia asistida por IA; interno Vandrheim | Pendiente |
 
 
 ## ICONOS DE TALENTOS · HU-ESTETICA-40
@@ -142,19 +167,32 @@ Iconos de talento con composición de habilidad activa: sellos rúnicos, impacto
 
 | iconId | Tipo | Uso | Archivo local | Fuente / licencia | rbxassetid |
 |---|---|---|---|---|---|
-| `Icon_Talent_ATK` | Icono | Mejora de daño físico | `Assets/Temp/HU-ESTETICA-40/Icon_Talent_ATK.png` | ImageGen; interno Vandrheim | `rbxassetid://89068082294902` |
-| `Icon_Talent_MATK` | Icono | Mejora de daño mágico | `Assets/Temp/HU-ESTETICA-40/Icon_Talent_MATK.png` | ImageGen; interno Vandrheim | `rbxassetid://139893316216189` |
-| `Icon_Talent_DEF` | Icono | Mejora de defensa física | `Assets/Temp/HU-ESTETICA-40/Icon_Talent_DEF.png` | ImageGen; interno Vandrheim | `rbxassetid://140021244024450` |
-| `Icon_Talent_MDEF` | Icono | Mejora de defensa mágica | `Assets/Temp/HU-ESTETICA-40/Icon_Talent_MDEF.png` | ImageGen; interno Vandrheim | `rbxassetid://114061430971883` |
-| `Icon_Talent_MaxHP` | Icono | Mejora de vida máxima | `Assets/Temp/HU-ESTETICA-40/Icon_Talent_MaxHP.png` | ImageGen; interno Vandrheim | `rbxassetid://109280055205927` |
-| `Icon_Talent_MaxMP` | Icono | Mejora de maná máximo | `Assets/Temp/HU-ESTETICA-40/Icon_Talent_MaxMP.png` | ImageGen; interno Vandrheim | `rbxassetid://133258370924897` |
-| `Icon_Talent_CRIT` | Icono | Mejora de crítico | `Assets/Temp/HU-ESTETICA-40/Icon_Talent_CRIT.png` | ImageGen; interno Vandrheim | `rbxassetid://93440920540891` |
-| `Icon_Talent_CDR` | Icono | Mejora de reducción de cooldown | `Assets/Temp/HU-ESTETICA-40/Icon_Talent_CDR.png` | ImageGen; interno Vandrheim | `rbxassetid://81743460448421` |
-| `Icon_Talent_GOLD` | Icono | Mejora económica | — | — | — (no requerido: ningún talento actual mejora oro) |
+| `Icon_Talent_ATK` | Icono | Mejora de daño físico | `Assets/Icons/Talents/Icon_Talent_ATK.png` | ImageGen; interno Vandrheim | `rbxassetid://89068082294902` |
+| `Icon_Talent_MATK` | Icono | Mejora de daño mágico | `Assets/Icons/Talents/Icon_Talent_MATK.png` | ImageGen; interno Vandrheim | `rbxassetid://139893316216189` |
+| `Icon_Talent_DEF` | Icono | Mejora de defensa física | `Assets/Icons/Talents/Icon_Talent_DEF.png` | ImageGen; interno Vandrheim | `rbxassetid://140021244024450` |
+| `Icon_Talent_MDEF` | Icono | Mejora de defensa mágica | `Assets/Icons/Talents/Icon_Talent_MDEF.png` | ImageGen; interno Vandrheim | `rbxassetid://114061430971883` |
+| `Icon_Talent_MaxHP` | Icono | Mejora de vida máxima | `Assets/Icons/Talents/Icon_Talent_MaxHP.png` | ImageGen; interno Vandrheim | `rbxassetid://109280055205927` |
+| `Icon_Talent_MaxMP` | Icono | Mejora de maná máximo | `Assets/Icons/Talents/Icon_Talent_MaxMP.png` | ImageGen; interno Vandrheim | `rbxassetid://133258370924897` |
+| `Icon_Talent_CRIT` | Icono | Mejora de crítico | `Assets/Icons/Talents/Icon_Talent_CRIT.png` | ImageGen; interno Vandrheim | `rbxassetid://93440920540891` |
+| `Icon_Talent_CDR` | Icono | Mejora de reducción de cooldown | `Assets/Icons/Talents/Icon_Talent_CDR.png` | ImageGen; interno Vandrheim | `rbxassetid://81743460448421` |
+| `Icon_Talent_GOLD` | Icono | Mejora económica opcional (ningún nodo actual) | `Assets/Icons/Talents/Optional/Icon_Talent_GOLD.png` | ImageGen; interno Vandrheim | Pendiente |
 | `Icon_Talent_XP` | Icono | Mejora de experiencia | — | — | — (no requerido: ningún talento actual mejora XP) |
-| `Icon_Talent_MultiStat` | Icono | Mejora simultánea de varias estadísticas | `Assets/Temp/HU-ESTETICA-40/Icon_Talent_MultiStat.png` | ImageGen; interno Vandrheim | Pendiente |
+| `Icon_Talent_MultiStat` | Icono | Mejora simultánea opcional de varias estadísticas | `Assets/Icons/Talents/Optional/Icon_Talent_MultiStat.png` | ImageGen; interno Vandrheim | Pendiente |
 
-> **Nota (2026-09-22):** los 8 iconos producidos por el diseñador están subidos (IDs de `Decavii`). **CDR se agrega al set** (existe como stat en el juego — panel de stats "CDR"; el capstone de Fuego da +3 % CDR). GOLD/XP no aplican a los talentos actuales y quedan fuera.
+> **Nota:** los 8 iconos activos del diseñador están subidos (IDs de `Decavii`). CDR se incluye porque es stat del juego; los iconos GOLD y MultiStat aprobados quedan disponibles como opcionales aunque ningún nodo actual los usa. `Icon_Talent_XP` no se produjo.
+
+## TEXTURAS BODY-SKIN · HU-ESTETICA-33
+
+Mapas de camisa/pantalón clásicos R15 con alfa transparente, organizados por clase/tier. Se conservan las variantes aprobadas/versionadas. Notas de producción en `Assets/Source/Itemization/HU-ESTETICA-33/`.
+
+| Clase / tier | Archivos canónicos |
+|---|---|
+| Paladín azul | `Assets/Clothing/EST-33/BodySkins/Paladin_Blue/paladin_blue_classic_{shirt,pants}_r15.png` y variantes `_v2.png` |
+| Paladín Frost | `Assets/Clothing/EST-33/BodySkins/Paladin_Frost/paladin_frost_classic_{shirt,pants}_r15_v1.png` |
+| Cazador azul | `Assets/Clothing/EST-33/BodySkins/Hunter_Blue/hunter_blue_classic_{shirt,pants}_r15_v1.png` |
+| Cazador Frost | `Assets/Clothing/EST-33/BodySkins/Hunter_Frost/hunter_frost_classic_{shirt,pants}_r15_v1.png` |
+| Clérigo azul | `Assets/Clothing/EST-33/BodySkins/Cleric_Blue/cleric_blue_classic_{shirt,pants}_r15_v1.png`, `_v2.png`, `_v2_body_skin_ready.png` |
+| Clérigo Frost | `Assets/Clothing/EST-33/BodySkins/Cleric_Frost/cleric_frost_classic_{shirt,pants}_r15_v1.png` |
 
 ## RETRATOS DE JEFES Y ENEMIGOS · GUÍA DE DUNGEON
 
@@ -162,33 +200,53 @@ Retratos con fondo transparente para la pestaña de información de la dungeon (
 
 | assetId | Tipo | Uso | Archivo local | Fuente / licencia | rbxassetid |
 |---|---|---|---|---|---|
-| `Portrait_Boss_Jotunn` | Retrato | Jotunn, Guardián de la Escarcha — jefe final | `Assets/Temp/DungeonGuide-BossPortraits/Portrait_Boss_Jotunn.png` | ImageGen; interno Vandrheim | `rbxassetid://112251764292750` |
-| `Portrait_Boss_FrostLord` | Retrato | Señor de la Escarcha — mini-jefe del piso 4 | `Assets/Temp/DungeonGuide-BossPortraits/Portrait_Boss_FrostLord.png` | ImageGen; interno Vandrheim | `rbxassetid://105086910359542` |
-| `Portrait_Enemy_Generic` | Retrato | Enemigos regulares de la dungeon — retrato genérico | `Assets/Temp/DungeonGuide-EnemyPortraits/Portrait_Enemy_Generic.png` | ImageGen; interno Vandrheim | `rbxassetid://99954963258644` |
-| `Portrait_Enemy_FrostArcher` | Retrato | Helada, arquero de escarcha (`helada_frost_archer`) | `Assets/Temp/DungeonGuide-EnemyPortraits/Portrait_Enemy_FrostArcher.png` | ImageGen; interno Vandrheim | Pendiente |
-| `Portrait_Enemy_FrostKnight` | Retrato | Helada, caballero de escarcha (`helada_frost_knight`) | `Assets/Temp/DungeonGuide-EnemyPortraits/Portrait_Enemy_FrostKnight.png` | ImageGen; interno Vandrheim | Pendiente |
-| `Portrait_Enemy_IceTroll` | Retrato | Helada, trol de escarcha (`helada_frost_troll`) | `Assets/Temp/DungeonGuide-EnemyPortraits/Portrait_Enemy_IceTroll.png` | ImageGen; interno Vandrheim | Pendiente |
-| `Portrait_Enemy_BlizzardWraith` | Retrato | Helada, espectro de ventisca (`helada_blizzard_wraith`) | `Assets/Temp/DungeonGuide-EnemyPortraits/Portrait_Enemy_BlizzardWraith.png` | ImageGen; interno Vandrheim | Pendiente |
-| `Portrait_Enemy_IceMite` | Retrato | Helada, ácaro de escarcha (`helada_ice_mite`) | `Assets/Temp/DungeonGuide-EnemyPortraits/Portrait_Enemy_IceMite.png` | ImageGen; interno Vandrheim | Pendiente |
-| `Portrait_Enemy_IceGolem` | Retrato | Helada, gólem de hielo (`helada_ice_golem`) | `Assets/Temp/DungeonGuide-EnemyPortraits/Portrait_Enemy_IceGolem.png` | ImageGen; interno Vandrheim | Pendiente |
-| `Portrait_Enemy_FrostWolf` | Retrato | Helada, lobo de escarcha (`helada_frost_wolf`) | `Assets/Temp/DungeonGuide-EnemyPortraits/Portrait_Enemy_FrostWolf.png` | ImageGen; interno Vandrheim | Pendiente |
-| `Portrait_Enemy_IceElemental` | Retrato | Helada, elemental de hielo (`helada_ice_elemental`) | `Assets/Temp/DungeonGuide-EnemyPortraits/Portrait_Enemy_IceElemental.png` | ImageGen; interno Vandrheim | Pendiente |
+| `Portrait_Boss_Jotunn` | Retrato | Jotunn, Guardián de la Escarcha — jefe final | `Assets/Images/Enemies/Portraits/Portrait_Boss_Jotunn.png` | ImageGen; interno Vandrheim | `rbxassetid://112251764292750` |
+| `Portrait_Boss_FrostLord` | Retrato | Señor de la Escarcha — mini-jefe del piso 4 | `Assets/Images/Enemies/Portraits/Portrait_Boss_FrostLord.png` | ImageGen; interno Vandrheim | `rbxassetid://105086910359542` |
+| `Portrait_Enemy_Generic` | Retrato | Enemigos regulares de la dungeon — retrato genérico | `Assets/Images/Enemies/Portraits/Portrait_Enemy_Generic.png` | ImageGen; interno Vandrheim | `rbxassetid://99954963258644` |
+| `Portrait_Enemy_FrostArcher` | Retrato | Helada, arquera helada (`helada_frost_archer`) | `Assets/Images/Enemies/Portraits/Portrait_Enemy_FrostArcher.png` | ImageGen; interno Vandrheim | Pendiente |
+| `Portrait_Enemy_FrostKnight` | Retrato | Helada, caballero helado (`helada_frost_knight`) | `Assets/Images/Enemies/Portraits/Portrait_Enemy_FrostKnight.png` | ImageGen; interno Vandrheim | Pendiente |
+| `Portrait_Enemy_IceTroll` | Retrato | Helada, trol de escarcha (`helada_frost_troll`) | `Assets/Images/Enemies/Portraits/Portrait_Enemy_IceTroll.png` | ImageGen; interno Vandrheim | Pendiente |
+| `Portrait_Enemy_BlizzardWraith` | Retrato | Helada, espectro de ventisca (`helada_blizzard_wraith`) | `Assets/Images/Enemies/Portraits/Portrait_Enemy_BlizzardWraith.png` | ImageGen; interno Vandrheim | Pendiente |
+| `Portrait_Enemy_IceMite` | Retrato | Helada, ácaro de escarcha (`helada_ice_mite`) | `Assets/Images/Enemies/Portraits/Portrait_Enemy_IceMite.png` | ImageGen; interno Vandrheim | Pendiente |
+| `Portrait_Enemy_IceGolem` | Retrato | Helada, gólem de hielo (`helada_ice_golem`) | `Assets/Images/Enemies/Portraits/Portrait_Enemy_IceGolem.png` | ImageGen; interno Vandrheim | Pendiente |
+| `Portrait_Enemy_FrostWolf` | Retrato | Helada, lobo helado (`helada_frost_wolf`) | `Assets/Images/Enemies/Portraits/Portrait_Enemy_FrostWolf.png` | ImageGen; interno Vandrheim | Pendiente |
+| `Portrait_Enemy_IceElemental` | Retrato | Helada, elemental de hielo (`helada_ice_elemental`) | `Assets/Images/Enemies/Portraits/Portrait_Enemy_IceElemental.png` | ImageGen; interno Vandrheim | Pendiente |
 
 ## ICONO OFICIAL DEL JUEGO · PROPUESTAS 2026-10-14
 
-Tres propuestas de icono de experiencia basadas en el logotipo, los personajes y el equipamiento de Vandrheim. PNG RGB 512×512 con fondo ilustrado. Originales, comparación a 150×150, notas y prompts en `Assets/Temp/GameIcons-2026-10-14/`. Pendientes de selección como icono oficial y publicación.
+Tres candidatos aprobados de icono de experiencia basados en el logotipo, los personajes y el equipamiento de Vandrheim. PNG RGB 512×512 con fondo ilustrado en `Assets/Images/Marketing/ExperienceIcons/Candidates/`. Masters, comparación a 150×150, notas y prompts en `Assets/Source/Design/GameIcons-2026-10-14/`. Pendiente seleccionar el icono oficial y publicarlo.
 
 | assetId | Tipo | Uso | Archivo local | Fuente / licencia | rbxassetid |
 |---|---|---|---|---|---|
-| `Icon_Game_01_Jotunn` | Icono de experiencia | Propuesta 01: Jotunn protagonista | `Assets/Temp/GameIcons-2026-10-14/Icon_Game_01_Jotunn_512.png` | ImageGen + referencias propias; interno Vandrheim | Pendiente |
-| `Icon_Game_02_Desafio` | Icono de experiencia | Propuesta 02: paladín frente a Jotunn | `Assets/Temp/GameIcons-2026-10-14/Icon_Game_02_Desafio_512.png` | ImageGen + referencias propias; interno Vandrheim | Pendiente |
-| `Icon_Game_03_Reliquia` | Icono de experiencia | Propuesta 03: espadón único de escarcha | `Assets/Temp/GameIcons-2026-10-14/Icon_Game_03_Reliquia_512.png` | ImageGen + referencias propias; interno Vandrheim | Pendiente |
+| `Icon_Game_01_Jotunn` | Icono de experiencia | Candidato 01: Jotunn protagonista | `Assets/Images/Marketing/ExperienceIcons/Candidates/Icon_Game_01_Jotunn_512.png` | ImageGen + referencias propias; interno Vandrheim | Pendiente |
+| `Icon_Game_02_Desafio` | Icono de experiencia | Candidato 02: paladín frente a Jotunn | `Assets/Images/Marketing/ExperienceIcons/Candidates/Icon_Game_02_Desafio_512.png` | ImageGen + referencias propias; interno Vandrheim | Pendiente |
+| `Icon_Game_03_Reliquia` | Icono de experiencia | Candidato 03: espadón único de escarcha | `Assets/Images/Marketing/ExperienceIcons/Candidates/Icon_Game_03_Reliquia_512.png` | ImageGen + referencias propias; interno Vandrheim | Pendiente |
 
 ## MINIATURAS DEL JUEGO · PROPUESTAS 2026-10-14
 
-Arte promocional horizontal 16:9 basado en los assets propios. Dos propuestas en JPG y PNG 1920×1080. JPG de menos de 3 MB, originales y notas en `Assets/Temp/GameThumbnails-2026-10-14/`. Pendientes de selección y publicación.
+Arte promocional horizontal 16:9 basado en los assets propios. Dos candidatos aprobados en JPG y PNG 1920×1080, en `Assets/Images/Marketing/Thumbnails/Candidates/`. Masters, comparativas, notas y prompts en `Assets/Source/Design/GameThumbnails-2026-10-14/`. Pendientes de selección y publicación.
 
 | assetId | Tipo | Uso | Archivo local | Fuente / licencia | rbxassetid |
 |---|---|---|---|---|---|
-| `Thumbnail_Game_01_Desafio_Jotunn` | Miniatura | Paladín frente a Jotunn | `Assets/Temp/GameThumbnails-2026-10-14/Thumbnail_Game_01_Desafio_Jotunn_1920x1080.jpg` | ImageGen + referencias propias; interno Vandrheim | Pendiente |
-| `Thumbnail_Game_02_Reliquia_Helada` | Miniatura | Equipo único y exploración de Helada | `Assets/Temp/GameThumbnails-2026-10-14/Thumbnail_Game_02_Reliquia_Helada_1920x1080.jpg` | ImageGen + referencias propias; interno Vandrheim | Pendiente |
+| `Thumbnail_Game_01_Desafio_Jotunn` | Miniatura | Candidato: Paladín frente a Jotunn | `Assets/Images/Marketing/Thumbnails/Candidates/Thumbnail_Game_01_Desafio_Jotunn_1920x1080.jpg` | ImageGen + referencias propias; interno Vandrheim | Pendiente |
+| `Thumbnail_Game_02_Reliquia_Helada` | Miniatura | Candidato: equipo único y exploración de Helada | `Assets/Images/Marketing/Thumbnails/Candidates/Thumbnail_Game_02_Reliquia_Helada_1920x1080.jpg` | ImageGen + referencias propias; interno Vandrheim | Pendiente |
+
+## MICROMENÚ · DUNGEON, GUÍA, GRUPOS Y OBJETIVO · 2026-10-17
+
+Cuatro iconos complementarios aprobados del micromenú, basados en los originales de grimorio, equipamiento y talentos. PNG 512×512 RGBA transparentes, sin texto ni marco en `Assets/Icons/UI/Menu/`. Masters, comparaciones, originales y revisiones a 24–32 px en `Assets/Source/Design/Micromenu-2026-10-17/`. Subidos a Roblox; IDs registrados abajo.
+
+| assetId | Tipo | Uso | Archivo local | Fuente / licencia | rbxassetid |
+|---|---|---|---|---|---|
+| `Icon_Menu_dungeon` | Icono | Panel de dungeon | `Assets/Icons/UI/Menu/Icon_Menu_dungeon.png` | ImageGen + referencias propias; interno Vandrheim | `rbxassetid://83060256059692` |
+| `Icon_Menu_dungeon_guide` | Icono | Guía de dungeon en pergamino | `Assets/Icons/UI/Menu/Icon_Menu_dungeon_guide.png` | ImageGen + referencias propias; interno Vandrheim | `rbxassetid://86986450600688` |
+| `Icon_Menu_party` | Icono | Panel de equipos/grupos | `Assets/Icons/UI/Menu/Icon_Menu_party.png` | ImageGen + referencias propias; interno Vandrheim | `rbxassetid://123627897975211` |
+| `Icon_Menu_target_cycle` | Icono | Alternar el objetivo entre enemigos | `Assets/Icons/UI/Menu/Icon_Menu_target_cycle.png` | ImageGen + referencias propias; interno Vandrheim | `rbxassetid://107774845279668` |
+
+## COMPONENTES GENERALES DE UI · 2026-10-17
+
+Iconos reutilizables aprobados para paneles y ventanas, con la familia visual del micromenú. PNG 512×512 RGBA transparente bajo `Assets/Icons/UI/{Common,Currency}/`. Revisiones a 16–48 px, masters y prompts en `Assets/Source/Design/UI-Components-2026-10-17/`.
+
+| assetId | Tipo | Uso | Archivo local | Fuente / licencia | rbxassetid |
+|---|---|---|---|---|---|
+| `Icon_UI_close` | Icono | Cerrar paneles y ventanas | `Assets/Icons/UI/Common/Icon_UI_close.png` | ImageGen + referencias propias; interno Vandrheim | `rbxassetid://130341785019897` |
+| `Icon_UI_currency_gold` | Icono | Moneda de oro global: HUD, precios, comercio, recompensas y contadores | `Assets/Icons/UI/Currency/Icon_UI_currency_gold.png` | ImageGen + referencias propias; interno Vandrheim | `rbxassetid://95443487243282` |

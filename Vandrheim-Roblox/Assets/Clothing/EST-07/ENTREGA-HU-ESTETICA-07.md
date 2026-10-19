@@ -45,7 +45,7 @@ Los IDs ya están asignados en `ShirtTemplate`/`PantsTemplate` dentro de sus mod
 
 ## Iconos existentes — conservar
 
-Los 23 iconos PNG existentes en `Assets/Icons/EST-07/` se conservaron y ya están subidos a Roblox Asset Server. No se generaron iconos adicionales en esta fase.
+Los 23 iconos PNG existentes se conservaron y ya están subidos a Roblox Asset Server. En la organización canónica se distribuyen en `Assets/Icons/Items/Armor/{Hunter,Cleric}/Base/`, `Assets/Icons/Items/Weapons/Wand/`, `Assets/Icons/Items/Accessories/` y `Assets/Icons/Skills/{Hunter,Cleric}/`. No se generaron iconos adicionales en esta fase.
 
 | Archivo | Asset ID |
 | --- | --- |
