@@ -25,9 +25,9 @@
 
 ### **Descripción del Requerimiento / Contexto**
 
-En móvil no existe TAB ni forma de targetear alternando enemigos. R6.29 define el comportamiento de target (seleccionar el más cercano, alternar y limpiar si no hay enemigos) como **botón independiente en el HUD móvil**, movible en el OrdenUI. R6.35 le asigna `Icon_Menu_target_cycle` y mueve únicamente los accesos de Dungeon y Party al micromenú. El botón **Correr** y el **LootPopup** siguen en el OrdenUI; LootPopup en PC y móvil.
+En móvil no existe TAB ni forma de targetear alternando enemigos. R6.29 define el comportamiento de target (seleccionar el más cercano, alternar y limpiar si no hay enemigos) como **botón independiente en el HUD móvil**, movible en el OrdenUI. R6.35 le asigna `Icon_Menu_target_cycle` y mueve únicamente los accesos de Dungeon y Party al micromenú. El botón **Correr** y el **LootPopup de adquisición** siguen como elementos independientes del OrdenUI; el LootPopup es movible en PC y móvil y no forma parte de R6.31.
 
-**Criterio de hecho global:** en móvil, el botón Target independiente selecciona/alterna enemigos como TAB; Correr y Target son movibles vía OrdenUI solo en móvil; LootPopup es movible en PC y móvil.
+**Criterio de hecho global:** en móvil, el botón Target independiente selecciona/alterna enemigos como TAB; Correr y Target son movibles vía OrdenUI solo en móvil; el `LootPopup` de adquisición sigue siendo independiente y movible en PC y móvil.
 
 ---
 
@@ -45,9 +45,9 @@ En móvil no existe TAB ni forma de targetear alternando enemigos. R6.29 define 
 
 * Se agregan al OrdenUI (movibles/ordenables con el sistema existente):
   * **Botón Correr** (móvil, existente) — *solo móvil*.
-  * **LootPopup (aviso de loot recibido)** — **PC y móvil**: el loot va **directo al inventario** (no hay pickups en el piso — GDD/R6a); el LootPopup actual es solo un **aviso temporal de adquisición** y **esa es la interfaz de loot que se vuelve movible** (decisión PM 2026-09-22, cerrada para rc079). El LootPopup **NO se absorbe en el NotificationFrame de R6.31**: queda como elemento propio del HUD, movible por el jugador.
+  * **LootPopup (aviso de loot recibido)** — **PC y móvil**: el loot va **directo al inventario** (no hay pickups en el piso — GDD/R6a); este aviso temporal de adquisición sigue siendo un elemento propio del HUD y movible por el jugador. Por decisión PO 2026-10-19, **no se absorbe en el NotificationFrame de R6.31**.
 * Target ya no es un elemento independiente del OrdenUI: su ubicación dentro del micromenú se define en R6.35. Los ítems marcados **mobile-only** no se muestran en PC ni dejan slots fantasmas.
-* **Persistencia por plataforma (decisión PM):** un guardado desde PC preserva las posiciones de PC y no pisa las de móvil (TouchEnabled separa los controles móviles — la config guarda posiciones por plataforma).
+* **Persistencia por plataforma (decisión PM):** un guardado desde PC preserva las posiciones de PC y no pisa las de móvil (TouchEnabled separa los controles móviles — la config guarda posiciones por plataforma). Target/Correr móvil y LootPopup PC/móvil conservan sus posiciones separadas.
 
 #### **3. Reglas**
 
@@ -82,12 +82,12 @@ En móvil no existe TAB ni forma de targetear alternando enemigos. R6.29 define 
 * **WHEN** se carga el HUD
 * **THEN** ni el botón Target ni el botón Correr aparecen en PC (ni slots fantasmas en OrdenUI); TAB queda intacto
 
-#### **Escenario 5: Loot movible (PC y móvil)**
+#### **Escenario 5: LootPopup independiente movible (PC y móvil)**
 
-* **GIVEN** el LootPopup (aviso de loot recibido — el loot va directo al inventario, no hay pickup)
-* **WHEN** se abre el OrdenUI (PC y móvil)
-* **THEN** se puede mover y la posición se persiste (por plataforma — un guardado de PC no pisa el de móvil)
-* **AND** no se absorbe en el NotificationFrame de R6.31 (sigue siendo elemento propio del HUD)
+* **GIVEN** un ítem de loot se acredita directamente al inventario (no hay pickup)
+* **WHEN** se publica su aviso
+* **THEN** aparece el `LootPopup` independiente de adquisición
+* **AND** al abrir OrdenUI (PC/móvil), el usuario puede mover el LootPopup y su posición se persiste por personaje/plataforma; no se integra en `NotificationFrame`
 
 #### **Escenario 6: Regresión**
 
@@ -102,7 +102,7 @@ En móvil no existe TAB ni forma de targetear alternando enemigos. R6.29 define 
 #### Incluye
 
 * Botón Target móvil (más cercano + alternar, icono `Icon_Menu_target_cycle` de R6.35).
-* OrdenUI: Correr + Target (mobile-only) y LootPopup (PC y móvil).
+* OrdenUI: Correr + Target (mobile-only) y LootPopup independiente (PC y móvil), persistencia por plataforma.
 
 #### No incluye
 
@@ -113,7 +113,7 @@ En móvil no existe TAB ni forma de targetear alternando enemigos. R6.29 define 
 ### **Definition of Done (DoD)**
 
 * [ ] Botón Target independiente selecciona/alterna como TAB (indicador R3.3, icono de R6.35).
-* [ ] Correr y Target movibles vía OrdenUI (solo móvil); LootPopup movible en PC y móvil; persistencia OK.
+* [ ] Correr y Target movibles vía OrdenUI (solo móvil); LootPopup independiente movible en PC/móvil con persistencia por personaje/plataforma; no se absorbe en `NotificationFrame`.
 * [ ] Target y Correr no aparecen en PC (TAB intacto para target).
 * [ ] Sin errores rojos (PC y móvil, publicado).
 * [ ] El dev prepara el RC desde esta HU antes de programar (DEV_PROMPT).
@@ -134,3 +134,5 @@ En móvil no existe TAB ni forma de targetear alternando enemigos. R6.29 define 
 | 2026-09-22 | Creación de HU-R6.29: comportamiento de Target móvil (seleccionar el más cercano y alternar, patrón TAB) + Correr y LootPopup en OrdenUI (reportado por PO) |
 | 2026-09-22 | **Decisiones PM cerradas (rc079):** loot directo al inventario → LootPopup movible (no se absorbe en R6.31); sin enemigos, Target limpia selección; OrdenUI persiste por plataforma |
 | 2026-10-17 | **Enmienda de icono (R6.35):** Target **sigue como botón móvil independiente y movible en OrdenUI**; se le asigna `Icon_Menu_target_cycle`. Dungeon y Party sí se retiran del HUD móvil y pasan al micromenú. Target no aparece en PC (TAB nativo) |
+| 2026-10-19 | **Decisión PO que supersede rc079:** integrar el aviso de adquisición de loot en `NotificationFrame` de R6.31, con icono del ítem + nombre; el frame raíz es el único elemento de notificaciones movible (PC/móvil), persistido por personaje/plataforma. Se elimina el LootPopup independiente |
+| 2026-10-19 | **Reversión de alcance PO:** se descarta la integración de la adquisición de loot en `NotificationFrame`; el `LootPopup` independiente de esta HU permanece movible en PC/móvil. R6.31 centraliza los demás avisos pasivos |

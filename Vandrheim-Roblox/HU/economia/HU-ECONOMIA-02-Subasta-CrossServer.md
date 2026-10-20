@@ -63,7 +63,7 @@ Toda operación tiene un **`operationId` (GUID)** generado en el server y pasos 
 
 #### **3. Funcionalidad MVP (buyout — sin pujas)**
 
-* **Publicar:** ítem + **precio** + **duración 24 h / 48 h**. **Fee 5 oro** (no reembolsable). Máx. **10 listados activos** por jugador. El ítem pasa a custodia (fuera del inventario).
+* **Publicar:** ítem + **precio** + **duración 24 h / 48 h**. **Fee 5 oro** (no reembolsable). Máx. **10 listados activos por cuenta (`UserId`)**, compartidos entre los personajes de ese jugador. El ítem pasa a custodia (fuera del inventario).
 * **Explorar:** catálogo **ordenado por precio ascendente**, paginado (20/página), **sin filtros en v1** (decisión PO — se agregan en fase posterior con índices adicionales); pestañas **Mis listados / Mis recompensas / Historial**.
 * **Comprar:** buyout atómico (CAS sobre la clave del anuncio). **Comprador paga el precio exacto**; **vendedor recibe `precio × 0.95`** (corte 5% pagado por el vendedor — sink de oro).
 * **Cross-server:** automático: el anuncio vive en DataStore (visible desde cualquier server vía índice MemoryStore compartido); la compra usa `UpdateAsync` sobre la clave del anuncio (un solo server gana el CAS; los demás reciben "no disponible").
@@ -108,7 +108,7 @@ Toda operación tiene un **`operationId` (GUID)** generado en el server y pasos 
 
 #### **Escenario 6: Límites**
 
-* **GIVEN** un jugador con 10 listados activos
+* **GIVEN** una cuenta (`UserId`) con 10 listados activos entre sus personajes
 * **WHEN** intenta publicar otro
 * **THEN** el server lo rechaza con mensaje
 
@@ -163,7 +163,7 @@ Toda operación tiene un **`operationId` (GUID)** generado en el server y pasos 
 | Duración | 24 h / 48 h (expiración por `expiresAt` en DataStore) |
 | Fee de listado | **5 oro** (no reembolsable) |
 | Corte de venta | **5% pagado por el VENDEDOR** (comprador paga el precio exacto) |
-| Listados máx. | 10 por jugador (+ cap global 10,000) |
+| Listados máx. | 10 por cuenta (`UserId`, compartidos entre sus PJs) (+ cap global 10,000) |
 | Filtros de catálogo | **Ninguno en v1** (precio ascendente; filtros con índices en fase posterior) |
 | Concurrencia/fallos | `operationId` + pasos idempotentes + reconciliación periódica |
 | Prerequisito | **ECON-03** (seguridad de DataService) — bloqueante |
@@ -182,3 +182,4 @@ Toda operación tiene un **`operationId` (GUID)** generado en el server y pasos 
 |-------|--------|
 | 2026-09-22 | Creación v1 de HU-ECONOMIA-02 (MemoryStore como fuente de verdad) |
 | 2026-09-22 | **v2 tras revisión del dev senior:** MemoryStore como fuente de verdad era inseguro (UpdateAsync cubre una clave, no la operación completa) → **DataStore autoritativo por clave + MemoryStore solo índice + protocolo con `operationId`/idempotencia/reconciliación**; expiración por `expiresAt` (no TTL); filtros fuera del MVP; corte 5% pagado por el vendedor (comprador paga precio exacto); **nuevo prerequisito ECON-03** (DataService sin session lock confirmado en Studio — GetAsync/SetAsync completos) |
+| 2026-10-19 | Se precisa que `maxListings` es por cuenta (`UserId`) y compartido entre sus personajes; ECON-04 usa el mismo ámbito para `token_auction` |

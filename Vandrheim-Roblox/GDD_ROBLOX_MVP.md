@@ -253,7 +253,7 @@ Volcánica, Viento (mismo Place dungeon con bioma distinto o Places extra).
 | Slot | Acceso |
 |------|--------|
 | 1 y 2 | **Gratis** (MVP) |
-| 3 | **Gamepass / Dev Product Robux** |
+| 3 | Dev Product repetible `token_slot3`; se desbloquea al canjear la ficha |
 
 - **1 cuenta (UserId) → hasta 2 personajes** sin pagar; opcionalmente 3 con Robux.
 - Cada slot = perfil propio (clase, nombre, nivel, inventario, talentos, oro).
@@ -289,14 +289,16 @@ Diseño de bosses y roles asume party **2–4** aunque el MVP se juegue solo.
 |--|--|
 | Permitido | Cosméticos (skins de arma, auras, títulos visuales, etc.) |
 | Permitido (convenience) | **3.er slot de personaje** (Robux) |
-| Permitido (convenience, decisión PO 2026-09-22) | **Revive 50 Robux** tras 3 resurrecciones gratis por run (HU-R6.28) |
+| Permitido (convenience, decisión PO 2026-10-19) | **Revive 49 Robux** tras 3 resurrecciones gratis por run (HU-R6.28) |
 | Gratis siempre | **2 slots** de personaje + todo el contenido PvE |
 | Prohibido en diseño | Pay-to-win / power / loot mejor de pago |
 | Principio | **El juego se completa bien con 0 Robux** (2 PJs bastan) |
 
 - El 3.er slot es **convenience** (alt/reroll), no poder.
-- El **revive de 50 Robux** (R6.28) es conveniencia acotada: 3 resurrecciones gratis por run garantizan juego completo sin Robux; el pago solo extiende la run actual (sin ventaja persistente ni "pay-to-progress" reabierto).
-- DataService debe modelar `characters[1..maxSlots]` con `maxSlots = 2 o 3` según ownership del gamepass.
+- El **revive de 49 Robux** (R6.28) es conveniencia acotada: 3 resurrecciones gratis por run garantizan juego completo sin Robux; el pago solo extiende la run actual (sin ventaja persistente ni "pay-to-progress" reabierto).
+- DataService debe modelar `characters[1..maxSlots]` con `maxSlots = 2 o 3`; el servidor aplica `maxSlots = 3` al canjear `token_slot3` y fijar `perks.slot3 = true` en la cuenta.
+- Las compras Robux de tokens se registran idempotentemente en un buzón de cuenta por `UserId`; el jugador reclama cada ficha en un personaje existente.
+- `token_slot3` y el límite de anuncios de `token_auction` son por cuenta; `token_bag` y `token_rename` aplican solo al personaje que canjea la ficha.
 - Cosméticos pueden ir después; el flag de slot 3 conviene dejarlo desde R2.
 
 ---
@@ -688,6 +690,12 @@ Ver `HU/fases/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º 
 | 2026-10-12 | **HU-R2.1 creada — activar el 3er slot (nunca se activó, era stub):** **Game Pass** real (default **299 Robux**, a confirmar + GamePassId pendiente del PO), checkout con `PromptGamePassPurchase`, ownership server-side en compra y join, retiro del flag de test de Studio |
 | 2026-10-12 | **Sistema de monetización (decisión PO) + `MONETIZATION.md`:** principios (sin pay-to-win; conveniencia + cosmética) · **Fase 1 (5 productos):** revive 50 (existe) · slot 3 299 · mochila +10 199 · subasta +10 149 (requiere ECON-02) · cambio de nombre 99 · Fase 2 en evaluación (transmog/mascotas/cosméticos) + Premium Payouts. **Descripción de tienda del pase slot 3** lista ("Tercer Personaje"). **Pendientes:** confirmar precio slot 3 + GamePassId · crear HUs de mochila/nombre/subasta · iconos de tienda 512 (diseñador) |
 | 2026-10-12 | **Todo Dev Product, sin Game Passes — HU-ECONOMIA-04 (tokens PLEX/Bond):** 4 tokens (`token_slot3` 299 · `token_bag` 199 · `token_auction` 149 · `token_rename` 99) — compra Robux (idempotente + grant eventual) → canje permanente o venta por oro (F2P accede sin pagar); R2.1 migrada a token; `MONETIZATION.md` actualizado. **Pendientes:** IDs de los 4 Dev Products (PO) + HUs de mochila/nombre/subasta |
+| 2026-10-19 | **Developer Products creados y confirmados por el PO:** revive `Vandrheim Token - Revivir en Mazmorra` (`3717359753`, 49 R$); `token_slot3` `Vandrheim Token - Tercer slot de personaje` (`3718622291`, 149 R$); `token_bag` `Vandrheim Token - Mochila ampliada` (`3720053583`, 99 R$); `token_auction` `Vandrheim Token - Mejora de subasta` (`3720054258`, 79 R$); `token_rename` `Vandrheim Token - Renombrar personaje` (`3720053841`, 49 R$). Los 4 últimos son las fichas de ECON-04; revive queda como producto independiente. |
+| 2026-10-19 | **ECON-04 — entrega y alcance de perks:** las compras Robux generan un grant durable en el buzón de cuenta y el jugador elige un personaje existente para reclamar el token; slot 3 es por cuenta y mochila +10/renombre por personaje (decisión PO); la ampliación de subasta es por cuenta según el límite por jugador/UserId de ECON-02. |
+| 2026-10-19 | **R6.31/R6.29 — notificaciones:** `NotificationFrame` agrupa los avisos pasivos de sistema y loot (el loot muestra icono + nombre) y es el único elemento de notificaciones movible con OrdenUI en PC/móvil; esta decisión supersede la excepción anterior de LootPopup independiente en R6.29. Máximo 2 avisos visibles; cola por prioridad error > aviso > éxito > info, FIFO dentro de prioridad; los errores no se descartan para mostrar avisos de menor prioridad. |
+| 2026-10-19 | **Reversión PO de R6.31/R6.29:** la adquisición de loot permanece en `LootPopup`, independiente y movible en PC/móvil. `NotificationFrame` centraliza los demás avisos pasivos y no absorbe el toast de loot; la propuesta de incluir icono + nombre dentro del frame queda descartada. |
+| 2026-10-19 | **ECON-01 v3 (actualización PO):** COMERCIAR provisional PC/móvil con estilo existente; selector de jugadores cercanos + solicitud Aceptar/Rechazar, sin requisito de party; trade permitido en todo el Hub (≤15 inicio, >20 cancela precommit), bloqueo de combate 5 s; commit en LOCKED durable tras RESERVING/ambas reservas; lock breve de capacidad sin perder grants; dos liquidaciones atómicas por perfil; pilas parciales, no entrega pendiente por mochila llena, sin historial visible, limpieza tras reconciliación y QA en test place |
+| 2026-10-19 | **HU-R6.31 cerrada por confirmación PO:** implementación y QA completos, con `NotificationFrame` central para avisos pasivos, `LootPopup` independiente, un solo elemento de notificaciones en OrdenUI y cola priorizada. |
 | 2026-09-22 | **R6.32 — tap-hold móvil cerrado (decisión PM):** **300 ms** con umbral de movimiento 8 px (moverse antes = scroll; se cancela) · tap corto (<300 ms) conserva la interacción normal · una vez activado, el ítem sigue al dedo |
 | 2026-09-22 | **R6.32 — contrato del lock de ítems (decisión PM):** campo `lock = { kind: "trade"\|"auction", opId }` en la instancia del ítem (R4) — escritores futuros: ECON-01 (`HOLD_ITEMS`) y ECON-02 (custodia); `RequestDeleteItem` lo consulta y rechaza si está activo; **hoy inerte** (la economía no está implementada → el campo siempre es nil) |
 | 2026-09-22 | **Mejoras UI (reportadas por PO) — 3 HUs creadas:** **R6.29** — botón **Target** móvil (selecciona el más cercano y alterna, patrón TAB que no existía en móvil); **Correr y Target al OrdenUI (solo móvil, no en PC)**; **Loot movible en el OrdenUI (PC y móvil)** · **R6.30** — **auto-target**: lanzar una habilidad dirigida contra un enemigo no seleccionado lo deja seleccionado (indicador R3.3; sin tocar selección manual ni skills sin target) · **R6.31** — **sistema de notificaciones centralizado**: NotificationFrame único con cola/prioridad (error>aviso>éxito>info), API `notify()`, migración de todas las fuentes (consumibles, skills, inventario, vendors, loot, party, economía, tutorial, muerte), movible con el OrdenUI en PC y móvil |

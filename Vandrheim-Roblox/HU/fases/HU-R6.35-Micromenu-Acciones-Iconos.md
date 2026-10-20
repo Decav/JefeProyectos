@@ -6,7 +6,7 @@
 **Estado:** Lista para RC (assets subidos; integrar IDs indicados)
 **Tipo:** Integración de UI e iconos (dev)
 **Fase GDD:** R6.35 (reorganiza accesos; conserva las acciones existentes)
-**Depende de:** HU-R6.19 (targeting/ciclo), HU-R6.20 (OrdenUI), HU-R6.29 (Target móvil y controles), HU-R9a.2 (lobby/matchmaking), HU-ESTETICA-19/20 (micromenú), HU-ESTETICA-35/37 (ventanas de economía/lobby), `ASSETS_LIST.md` (iconos del 2026-10-17)
+**Depende de:** HU-R6.19 (targeting/ciclo), HU-R6.20 (OrdenUI), HU-R6.29 (Target móvil y controles), HU-R6.31 (`NotificationFrame` central), HU-R9a.2 (lobby/matchmaking), HU-ESTETICA-19/20 (micromenú), HU-ESTETICA-35/37 (ventanas de economía/lobby), `ASSETS_LIST.md` (iconos del 2026-10-17)
 **Assets:** IDs en ASSETS_LIST: iconos Dungeon/Guía/Party/Target, `Icon_UI_close` reusable y `Icon_UI_currency_gold` global.
 
 ---
@@ -19,11 +19,11 @@
 
 ### Descripción / Contexto
 
-El PO produjo cuatro iconos complementarios para la UI. Esta HU integra **Dungeon, Guía y Party** en el micromenú **globalmente: PC y móvil, Hub y dungeon**. El icono `Icon_Menu_target_cycle` se aplica al **botón Target independiente del HUD móvil**: no se mueve al micromenú. El botón Target es editable/movible por OrdenUI solo en móvil; PC conserva TAB.
+El PO produjo cuatro iconos complementarios para la UI. Esta HU integra **Dungeon, Guía y Party** en el micromenú **globalmente: PC y móvil, Hub y dungeon**. El icono `Icon_Menu_target_cycle` se aplica al **botón Target independiente del HUD móvil**: no se mueve al micromenú. El botón Target es editable/movible por OrdenUI solo en móvil; PC conserva TAB. El `NotificationFrame` de R6.31 centraliza avisos pasivos de sistema; el `LootPopup` de adquisición permanece independiente y movible según R6.29.
 
 **Frame/estilo de referencia:** micromenú existente de EST-19/20 y previews `Preview_Micromenu.png` / `Preview_StyleMatch.png` archivados en `Assets/Source/Design/Micromenu-2026-10-17/`.
 
-**Criterio de hecho global:** Dungeon, Guía y Party aparecen como entradas del micromenú en todos los entornos/plataformas; el botón Target permanece independiente, con icono y movible por OrdenUI en móvil; desaparecen los botones sueltos de Dungeon/Party; Target no aparece ni deja espacio fantasma en PC.
+**Criterio de hecho global:** Dungeon, Guía y Party aparecen como entradas del micromenú en PC/móvil; el botón Target permanece independiente y movible en móvil; `NotificationFrame` y `LootPopup` conservan sus roles independientes; desaparecen los botones sueltos de Dungeon/Party; Target no aparece ni deja slot fantasma en PC.
 
 ---
 
@@ -60,7 +60,7 @@ El PO produjo cuatro iconos complementarios para la UI. Esta HU integra **Dungeo
 
 * Retirar del HUD móvil los botones independientes de **Dungeon** y **Party**; sus acciones pasan al micromenú.
 * **Target permanece como botón independiente en móvil**, ahora con `Icon_Menu_target_cycle`; se mantiene movible/editable en el OrdenUI móvil según R6.29. No aparece en PC ni reserva slot en el OrdenUI de PC (PC usa TAB).
-* **Correr** permanece como botón móvil independiente y movible en OrdenUI; el **LootPopup** sigue movible en PC/móvil (R6.29). No retirar ni reubicar esas funciones.
+* **Correr** permanece como botón móvil independiente y movible en OrdenUI. `NotificationFrame` de R6.31 centraliza avisos pasivos de sistema; `LootPopup` de R6.29 permanece separado y movible en PC/móvil.
 * Limpiar del OrdenUI móvil solo las posiciones persistidas de los botones independientes de Dungeon y Party, sin borrar las posiciones de PC ni pisar datos de otra plataforma.
 
 #### 3. Autoridad / compatibilidad
@@ -79,12 +79,11 @@ El PO produjo cuatro iconos complementarios para la UI. Esta HU integra **Dungeo
 * **WHEN** se revisan sus acciones
 * **THEN** aparecen Dungeon, Guía y Party en el micromenú en PC y móvil, tanto en Hub como en dungeon; el botón Target independiente de móvil usa su icono aprobado
 * **AND** PC también puede abrir Dungeon con J, Party con O y Guía con G
-
 #### Escenario 2: Botones sueltos retirados
 
 * **GIVEN** un jugador móvil
 * **WHEN** carga el HUD
-* **THEN** no hay botones flotantes independientes de Dungeon ni Party; siguen Correr, Target con icono (movible por OrdenUI) y LootPopup según R6.29
+* **THEN** no hay botones flotantes independientes de Dungeon ni Party; siguen Correr, Target con icono (movible por OrdenUI) y el `LootPopup` independiente; los demás avisos pasivos usan el `NotificationFrame` central de R6.31
 
 #### Escenario 3: Target independiente solo móvil
 
@@ -103,13 +102,13 @@ El PO produjo cuatro iconos complementarios para la UI. Esta HU integra **Dungeo
 
 * **GIVEN** posiciones de OrdenUI guardadas para PC y móvil
 * **WHEN** se retiran los botones sueltos en móvil
-* **THEN** se limpian solo sus posiciones móviles; Correr/Loot y las posiciones de PC se conservan
+* **THEN** se limpian solo las posiciones móviles de Dungeon/Party; Correr y `LootPopup` conservan sus posiciones PC/móvil, sin que un guardado de PC pise el de móvil; `NotificationFrame` conserva su posición de R6.31
 
 #### Escenario 6: Regresión visual/funcional
 
 * **GIVEN** los iconos integrados
 * **WHEN** se usa el micromenú en PC y móvil
-* **THEN** Nameplates, Correr, LootPopup, TAB/click y ventanas existentes siguen funcionando; sin errores rojos
+* **THEN** Nameplates, Correr, `NotificationFrame`, `LootPopup`, TAB/click y ventanas existentes siguen funcionando; sin errores rojos
 
 #### Escenario 7: Botón cerrar reusable
 
@@ -131,11 +130,11 @@ El PO produjo cuatro iconos complementarios para la UI. Esta HU integra **Dungeo
 
 * Enlace de iconos Dungeon/Guía/Party y Target móvil; atajos PC G/O/J.
 * Componente reusable MenuCloseButton global y uso del icono de oro canónico en todo el juego.
-* Retirada de botones sueltos móviles Dungeon/Party y limpieza segura del OrdenUI móvil; Target permanece independiente móvil.
+* Retirada de botones sueltos móviles Dungeon/Party y limpieza segura del OrdenUI móvil; Target permanece independiente móvil; R6.31 controla `NotificationFrame` y R6.29 conserva `LootPopup` separado en PC/móvil.
 
 #### No incluye
 
-* Rediseñar el micromenú, rehacer iconos, modificar las ventanas abiertas por cada acción, cambiar targeting de PC, retirar Correr/Loot ni modificar el toggle de nameplates.
+* Rediseñar el micromenú, rehacer iconos, modificar las ventanas abiertas por cada acción, cambiar targeting de PC, retirar Correr/LootPopup ni cambiar el comportamiento del `NotificationFrame` definido en R6.31, ni modificar el toggle de nameplates.
 
 ---
 
@@ -145,7 +144,7 @@ El PO produjo cuatro iconos complementarios para la UI. Esta HU integra **Dungeo
 * [ ] Atajos PC G (Guía), O (Party), J (Dungeon) funcionales, sin conflicto con campos de texto.
 * [ ] Dungeon, Guía y Party funcionan desde el micromenú global (PC/móvil, Hub/dungeon).
 * [ ] Botones sueltos móviles de Dungeon/Party retirados; Target independiente conserva su edición/posición OrdenUI móvil y muestra `Icon_Menu_target_cycle`; no aparece en PC.
-* [ ] Correr y LootPopup siguen movibles en OrdenUI; limpieza no pisa posiciones de PC.
+* [ ] Correr sigue movible en móvil; `LootPopup` permanece independiente y movible en PC/móvil junto al `NotificationFrame` de avisos de sistema; posiciones separadas por plataforma se conservan.
 * [ ] `MenuCloseButton` reusable con `Icon_UI_close` integrado en todos los paneles/menús incluidos en el alcance.
 * [ ] `Icon_UI_currency_gold` usado como icono canónico en todos los contadores/precios/recompensas del juego.
 * [ ] Nameplates, targeting PC y accesos existentes intactos; sin errores rojos (PC/móvil, publicado).
@@ -165,3 +164,5 @@ El PO produjo cuatro iconos complementarios para la UI. Esta HU integra **Dungeo
 |---|---|
 | 2026-10-17 | Creación de HU-R6.35: integrar iconos Dungeon/Guía/Party en el micromenú global; Target independiente móvil con icono y OrdenUI; Dungeon/Party/GUÍA también con atajos PC J/O/G |
 | 2026-10-17 | **Alcance ampliado por PO:** componente reusable `MenuCloseButton` con `Icon_UI_close` para todos los paneles globales; `Icon_UI_currency_gold` como pictograma canónico en todos los contadores/precios/recompensas; PC/móvil responsive |
+| 2026-10-19 | Alineación con R6.31: los avisos de loot se integran en `NotificationFrame` con icono + nombre; Correr sigue independiente y el frame central es el único bloque de notificaciones ordenable en PC/móvil |
+| 2026-10-19 | **Reversión de alcance PO:** el loot mantiene `LootPopup` independiente y movible conforme a R6.29; R6.31 centraliza solo los demás avisos pasivos y no absorbe el aviso de adquisición |

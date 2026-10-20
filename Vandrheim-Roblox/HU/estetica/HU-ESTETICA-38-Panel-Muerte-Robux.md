@@ -3,10 +3,10 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Estética / UI / Death panel
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Diseño entregado; pendiente sincronizar en Pencil el precio vigente de 49 Robux antes del próximo handoff.
 **Tipo:** Diseño de UI en Pencil (solo diseñador; **sin desarrollo, sin código**)
 **Fase GDD:** EST (transversal; complementa la HU dev `HU-R6.28-Limite-Resurrecciones-Panel-Muerte`)
-**Depende de:** HU-R6.28 (funcionalidad: 3 revives por run, revive 50 Robux, abandonar), HU-ESTETICA-13 (tokens/paquete de UI), HU-ESTETICA-12 (patrón de ventana/vendor), HU-R6.27 (casillas fondo negro + borde hover)
+**Depende de:** HU-R6.28 (funcionalidad: 3 revives por run, revive 49 Robux, abandonar), HU-ESTETICA-13 (tokens/paquete de UI), HU-ESTETICA-12 (patrón de ventana/vendor), HU-R6.27 (casillas fondo negro + borde hover)
 **No modifica:** la lógica de muerte, respawn, compras ni gameplay
 
 ---
@@ -25,7 +25,7 @@
 
 ### **Descripción del Requerimiento / Contexto**
 
-`HU-R6.28` agrega el sistema de muerte: al morir en la dungeon se abre un panel con **Reaparecer** (3 gratis por run), **Revivir por 50 Robux** (cuando llegan a 0) y **Abandonar la run** (conservando lo ganado). Esta HU produce el **diseño visual** de ese panel en `Vandrheim-design.pen`, coherente con Hearthbound Gold (tokens EST-13) y el estándar de casillas (R6.27).
+`HU-R6.28` agrega el sistema de muerte: al morir en la dungeon se abre un panel con **Reaparecer** (3 gratis por run), **Revivir por 49 Robux** (cuando llegan a 0) y **Abandonar la run** (conservando lo ganado). Esta HU produce el **diseño visual** de ese panel en `Vandrheim-design.pen`, coherente con Hearthbound Gold (tokens EST-13) y el estándar de casillas (R6.27).
 
 **Criterio de hecho global:** existe en el `.pen` el frame del panel de muerte con sus estados (con revives, sin revives con compra, confirmación de abandono) y variante móvil, listo para que el dev lo implemente en R6.28.
 
@@ -42,7 +42,7 @@
    * Botón **Abandonar la run** (secundario/rojo suave) — con aclaración "Conservas el oro y lo ganado del piso".
 2. **Estado sin resurrecciones:**
    * Contador en 0/3 (gemas apagadas).
-   * Botón **Revivir por 50 Robux** (destacado, con icono de moneda/R$ y el precio) — habilitado.
+   * Botón **Revivir por 49 Robux** (destacado, con icono de moneda/R$ y el precio) — habilitado.
    * Botón **Abandonar la run** — disponible igualmente.
 3. **Estado compra/feedback:**
    * Microcopia de "Reviviendo…" / error breve si la compra falla ("No se pudo completar la compra").
@@ -65,7 +65,7 @@
 
 * **GIVEN** el frame `Death Panel` en el `.pen`.
 * **WHEN** se observa.
-* **THEN** se ven el título, el contador de resurrecciones y las opciones Reaparecer / (Revivir 50 Robux) / Abandonar.
+* **THEN** se ven el título, el contador de resurrecciones y las opciones Reaparecer / (Revivir 49 Robux) / Abandonar.
 * **AND** el lenguaje visual es coherente con EST-13/R6.27.
 
 #### **Escenario 2: Contador claro**
@@ -79,7 +79,7 @@
 
 * **GIVEN** el estado con 0/3.
 * **WHEN** se revisa.
-* **THEN** el botón de revive (50 Robux) es el protagonista y Abandonar sigue disponible.
+* **THEN** el botón de revive (49 Robux) es el protagonista y Abandonar sigue disponible.
 
 #### **Escenario 4: Confirmación de abandono**
 
@@ -98,7 +98,7 @@
 ### **Comportamiento Visual / Reglas de Negocio**
 
 * Diseño puro: no define lógica de muertes, contador, compra ni teleport (eso es R6.28).
-* El panel refleja las 3 reglas: 3 revives por run, revive 50 Robux al agotar, abandonar conserva lo ganado.
+* El panel refleja las 3 reglas: 3 revives por run, revive 49 Robux al agotar, abandonar conserva lo ganado.
 * Sin timeout visual sugerido (el panel espera la decisión).
 
 ---
@@ -122,7 +122,7 @@
 ### **Definition of Done (DoD)**
 
 * [x] Existe el frame `HU-ESTETICA-38 — Death Panel` (`MDVTC`) en el `.pen`.
-* [x] Estado con revives (2/3 + Reaparecer) y sin revives (0/3 + Revivir 50 Robux + Abandonar).
+* [x] Estados con revives (2/3 + Reaparecer) y sin revives (0/3 + Revivir + Abandonar) representados.
 * [x] Confirmación de Abandonar con aclaración de que no se reanuda y se conserva lo ganado.
 * [x] Feedback de compra: Reviviendo…, compra completada y error representados.
 * [x] Variante móvil (`RSYEg`) con acciones apiladas y táctiles.
@@ -130,6 +130,7 @@
 * [x] Coherente con EST-13/R6.27; revisión visual y bounds sin recortes.
 * [x] El dev puede implementar R6.28 con los estados y textos visuales definidos, sin reinterpretar.
 * [x] Reporte al PM con el detalle del diseño y pendientes (`HU-ESTETICA-38-REPORTE-PM.md`).
+* [ ] Precio visible actualizado a 49 Robux en los frames de escritorio y móvil de `Vandrheim-design.pen`.
 
 ---
 
@@ -139,7 +140,7 @@
 |------|---------|
 | Estados | Con revives · Sin revives (compra) · Feedback de compra · Confirmación abandonar |
 | Contador | Runas/gemas 3 (X/3) |
-| Botón principal | Reaparecer (latón) / Revivir 50 Robux (destacado con moneda) |
+| Botón principal | Reaparecer (latón) / Revivir 49 Robux (destacado con moneda) |
 | Abandonar | Secundario rojo suave + aclaración "conservas lo ganado" |
 | Estilo | Tokens EST-13 + casillas R6.27 |
 | Móvil | Panel vertical apilado |
@@ -158,3 +159,4 @@
 |-------|--------|
 | 2026-09-22 | Creación de HU-ESTETICA-38: diseño en Pencil del panel de muerte (contador 3/revive 50 Robux/abandonar + confirmación + móvil) — complementa la HU dev R6.28 |
 | 2026-09-22 | Diseño entregado: frames `MDVTC` (estados escritorio), `RSYEg` (móvil) y `WNxnZ` (iconos muerte/gema/Robux); `ASSETS_LIST.md` actualizado y reporte PM creado. Capturas y bounds revisados; sin lógica ni comportamiento implementados |
+| 2026-10-19 | Se actualiza el precio operativo del revive de 50 a **49 Robux** según decisión PO; ProductId `3717359753`. Revisar el precio mostrado en los frames de Pencil antes de volver a exportar o implementar el panel |

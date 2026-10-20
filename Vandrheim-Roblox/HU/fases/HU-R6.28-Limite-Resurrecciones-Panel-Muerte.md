@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Combate / Muerte / Monetización de conveniencia
 **Prioridad:** Alta
-**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
+**Estado:** Implementada (reporte PO 2026-09-22); QA previo pendiente y actualización a 49 Robux reportada el 2026-10-19, falta verificar la configuración/copy del precio en el juego.
 **Tipo:** Sistema de muerte/resurrección (dev)
 **Fase GDD:** R6.28 (mejora del ciclo de muerte; decisión de monetización registrada en GDD §11)
 **Depende de:** HU-R6a (muerte/respawn en entrada del piso, HP/MP llenos, sin pérdida), HU-R6b (run lifecycle: abandonar = fin de run con lo ganado), HU-R9a (party: respawn individual), HU-PUBLICAR-02 (dungeon cross-place), checks de compra Robux (Proceso de pago estándar)
@@ -37,10 +37,10 @@ Esta HU agrega (decisiones PO 2026-09-22):
 2. **Panel de muerte** al morir (en vez del respawn inmediato):
    * **Reaparecer** (consume 1 de las 3) → respawn en la entrada del piso, HP/MP llenos.
    * **Abandonar la run** → fin de run (regla R6b), vuelta al pueblo conservando lo ganado.
-3. **Revive con Robux cuando llega a 0**: botón "Revivir por **50 Robux**" (Dev Product configurable) — cada compra otorga 1 resurrección; ilimitadas dentro de la run.
+3. **Revive con Robux cuando llega a 0**: botón "Revivir por **49 Robux**" (Dev Product configurable) — cada compra otorga 1 resurrección; ilimitadas dentro de la run.
 4. **Party**: el límite es **individual**; cada miembro ve su propio panel; los vivos continúan mientras otros deciden (reglas de R9a: si todos abandonan/quedan 0 → run termina).
 
-**Criterio de hecho global:** al morir en la dungeon aparece el panel con Reaparecer/Abandonar, las 3 gratuitas se consumen por run y al agotarlas el revive cuesta 50 Robux (validado, idempotente y server-authoritative).
+**Criterio de hecho global:** al morir en la dungeon aparece el panel con Reaparecer/Abandonar, las 3 gratuitas se consumen por run y al agotarlas el revive cuesta 49 Robux (validado, idempotente y server-authoritative).
 
 ---
 
@@ -57,7 +57,7 @@ Esta HU agrega (decisiones PO 2026-09-22):
 #### **2. Panel de muerte (DeathPanel UI, cliente)**
 
 * El servidor **retira el respawn automático inmediato** en dungeon: al morir (`humanoid.Died`, DungeonService) se dispara el estado "muerto" con panel.
-* `DeathPanel` (ScreenGui): título ("Has muerto"), contador de resurrecciones restantes, botón **Reaparecer** (gratis si `revivesLeft > 0`), botón **Revivir por 50 Robux** (solo si `revivesLeft = 0`), botón **Abandonar run** (confirmación fuerte: no se reanuda; lo ganado se conserva).
+* `DeathPanel` (ScreenGui): título ("Has muerto"), contador de resurrecciones restantes, botón **Reaparecer** (gratis si `revivesLeft > 0`), botón **Revivir por 49 Robux** (solo si `revivesLeft = 0`), botón **Abandonar run** (confirmación fuerte: no se reanuda; lo ganado se conserva).
 * Mientras el panel está abierto, la cámara queda libre (spectator) y el personaje no actúa; sin timeout (el jugador decide, en party los vivos siguen).
 * Runnable también como apariencia móvil (mismo contrato).
 
@@ -75,7 +75,7 @@ Esta HU agrega (decisiones PO 2026-09-22):
 
 #### **4. Compra con Robux (Dev Product)**
 
-* Dev Product: **"Vandrheim - Revivir en Mazmorra" — ProductId `3717359753`** (creado por el PO 2026-09-22). **Precio default: 50 Robux** (configurable sin tocar lógica; el precio real lo fija el dashboard).
+* Dev Product: nombre exacto en Dashboard **"Vandrheim Token - Revivir en Mazmorra" — ProductId `3717359753`** (creado por el PO 2026-09-22). **Precio actual: 49 Robux** (confirmado por el PO el 2026-10-19; el revive es un producto standalone, no una ficha de ECON-04).
 * Flujo estándar: `ProcessReceipt` server-side; validación idempotente por `ReceiptId` (no duplica revives).
 * Compra OK → `revivesLeft` no se "suma como saldo"**: el revive comprado se consume en el respawn inmediato (o se acredita +1 si el jugador queda muerto). Default: comprar revive = recargar +1 y **poder reaparecer al instante** (la compra aplica sobre el cuerpo muerto actual).
 * Compra fallida/cancelada → sin revive, el panel sigue (feedback claro).
@@ -91,7 +91,7 @@ Esta HU agrega (decisiones PO 2026-09-22):
    * **Run activa y jugador muerto** → revive al instante (caso normal).
    * **Sin run activa** (desconectado/run terminada/otro servidor) → `pendingRevives += 1` (**persistido en el perfil**).
 2. Al iniciar una run nueva → `revivesLeft = 3 + pendingRevives`; `pendingRevives = 0` (consumidos; la compra jamás se pierde).
-3. Sin tope de acumulación: cada `pendingRevive` corresponde a un recibo real pagado (50 Robux); imposible de explotar (idempotente por `ReceiptId`, solo existe tras pago confirmado).
+3. Sin tope de acumulación: cada `pendingRevive` corresponde a un recibo real pagado (49 Robux); imposible de explotar (idempotente por `ReceiptId`, solo existe tras pago confirmado).
 4. El `DeathPanel` NO muestra `pendingRevives` (es invisible; se aplica al arrancar la próxima run).
 
 #### **5. Información de muerte**
@@ -134,7 +134,7 @@ Esta HU agrega (decisiones PO 2026-09-22):
 #### **Escenario 4: Revivir con Robux**
 
 * **GIVEN** el panel con 0 resurrecciones.
-* **WHEN** el jugador compra el revive (50 Robux) y la compra se confirma.
+* **WHEN** el jugador compra el revive (49 Robux) y la compra se confirma.
 * **THEN** respawnea en la entrada del piso y puede seguir la run.
 * **AND** la compra es única (misma ReceiptId no da dos revives).
 
@@ -194,7 +194,7 @@ Esta HU agrega (decisiones PO 2026-09-22):
 
 ### **Comportamiento Visual / Reglas de Negocio**
 
-* El panel de muerte es claro: qué opciones hay, cuántas resurrecciones quedan y qué cuesta el revive (50 Robux).
+* El panel de muerte es claro: qué opciones hay, cuántas resurrecciones quedan y qué cuesta el revive (49 Robux).
 * Abandonar conserva lo ganado (aclaración visible).
 * El límite de 3 es por run (por jugador); el revive Robux es de conveniencia (sin poder permanente, alineado con GDD §11 — decisión PO registrada).
 * Sin Timeout: el jugador decide; en party, los vivos no se bloquean.
@@ -206,9 +206,9 @@ Esta HU agrega (decisiones PO 2026-09-22):
 #### Incluye
 
 * Contador `revivesLeft = 3` por jugador por run (reset en StartRun).
-* DeathPanel (UI): Reaparecer / Revivir 50 Robux / Abandonar + contador.
+* DeathPanel (UI): Reaparecer / Revivir 49 Robux / Abandonar + contador.
 * Respawneo solo tras validación server (gratis si queda; pagado si llegó a 0).
-* Dev Product `revive` + ProcessReceipt idempotente (50 Robux configurable, ilimitado en run).
+* Dev Product `revive` + ProcessReceipt idempotente (49 Robux actual, ilimitado en run).
 * Ajuste del manejo de muerte en `DungeonService` (panel en vez de respawn inmediato; respawn anclado a RequestRespawn).
 * Integración party (individual) y hub/entrenamiento (sin panel).
 
@@ -225,7 +225,7 @@ Esta HU agrega (decisiones PO 2026-09-22):
 
 * [ ] Al morir en dungeon aparece el panel (sin respawn automático).
 * [ ] Reaparecer consume 1 de 3 por run (reset en StartRun).
-* [ ] Con 0 resurrecciones, el panel ofrece Revivir (50 Robux) y Abandonar.
+* [ ] Con 0 resurrecciones, el panel ofrece Revivir (49 Robux) y Abandonar.
 * [ ] La compra con Robux es server-validada e idempotente (ProcessReceipt).
 * [ ] Abandonar cierra la run conservando lo ganado (R6b).
 * [ ] Party: contador individual; los vivos no se bloquean; si todos mueren/abandonan → fin de run.
@@ -233,7 +233,7 @@ Esta HU agrega (decisiones PO 2026-09-22):
 * [ ] El respawn solo lo ejecuta el servidor (anti-exploit).
 * [ ] Sin errores rojos en muerte → panel → reaparecer/comprar/abandonar (PC y móvil, solo y party).
 * [ ] Se actualizan `PROJECT_ARCHITECTURE`, `DATA_SCHEMA` y el registro de la HU/RC al cerrar.
-* [ ] **GDD §11 y historial:** registrar la excepción de monetización (revive 50 Robux = conveniencia acotada) al cerrar la verificación.
+* [ ] **GDD §11 y historial:** registrar la excepción de monetización (revive 49 Robux = conveniencia acotada) al cerrar la verificación.
 * [ ] Nota `R6.28 completo` en el GDD después de la verificación.
 * [ ] El dev prepara el RC desde esta HU antes de programar (DEV_PROMPT).
 
@@ -245,8 +245,8 @@ Esta HU agrega (decisiones PO 2026-09-22):
 |------|---------|
 | Resurrecciones gratis | **3 por run** (por jugador; reset en cada run) |
 | Recibo tardío | **Grant eventual (patrón Roblox):** sin run activa → `pendingRevives += 1` en perfil; se consumen en la próxima run (decisión PM 2026-09-22) |
-| Panel de muerte | Reaparecer / Revivir 50 Robux / Abandonar (con confirmación) |
-| Precio revive | **50 Robux** (Dev Product configurable) |
+| Panel de muerte | Reaparecer / Revivir 49 Robux / Abandonar (con confirmación) |
+| Precio revive | **49 Robux** (ProductId `3717359753`, Developer Product) |
 | Uso del revive pagado | Ilimitado dentro de la run; cada compra = 1 respawn inmediato |
 | Respawn | Entrada del piso, HP/MP llenos, sin pérdida (R6a) |
 | Fuera de dungeon | Sin panel ni límite (respawn actual) |
@@ -268,3 +268,4 @@ Esta HU agrega (decisiones PO 2026-09-22):
 | 2026-09-22 | Creación de HU-R6.28: límite de 3 resurrecciones por run, panel de muerte (Reaparecer/Abandonar) y revive con Robux (50, Dev Product configurable); decisión de monetización PO a registrar en GDD §11 |
 | 2026-09-22 | **Recibo tardío cerrado (decisión PM, duda del dev en rc076):** Roblox puede confirmar compras tras desconectarse/run terminada → **grant eventual**: sin run activa → `pendingRevives += 1` (persistido en perfil) que se consumen al iniciar la próxima run (`revivesLeft = 3 + pendingRevives`, vuelven a 0); nunca se pierde la compra ni otorga poder fuera de la dungeon |
 | 2026-09-22 | **ProductId recibido (PO):** Dev Product **"Vandrheim - Revivir en Mazmorra"** → **`3717359753`** (50 Robux) — config listo para el RC |
+| 2026-10-19 | El PO confirma nombre de Dashboard `Vandrheim Token - Revivir en Mazmorra` y actualiza el precio a **49 Robux**; ProductId `3717359753` sin cambios. Se conserva como revive standalone; no es uno de los cuatro tokens de ECON-04 |

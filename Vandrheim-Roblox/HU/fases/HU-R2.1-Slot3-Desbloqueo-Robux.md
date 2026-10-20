@@ -35,14 +35,15 @@ Hoy el slot 3 existe bloqueado con CTA "Desbloquear", pero el desbloqueo era un 
 
 #### **1. Producto (decisión PO: todo Dev Product, sin Game Pass)**
 
-* **Token `token_slot3` — "Pase: Tercer Personaje"** (HU-ECONOMIA-04): Dev Product repetible, **299 Robux** (a confirmar por el PO; configurable sin tocar lógica).
-* Vías de obtención: **compra con Robux** (recibe el token) o **compra con oro** a otro jugador (tradeo/subasta) — ambas terminan en canje.
-* El PO crea el Dev Product en el Dashboard (Monetización del universo) y pasa su **ID numérico** (mismo flujo que el ProductId de R6.28).
+* **Token `token_slot3` — "Pase: Tercer Personaje"** (HU-ECONOMIA-04): Developer Product repetible `Vandrheim Token - Tercer slot de personaje`, **ProductId `3718622291`**, **149 Robux**.
+* Vías de obtención: **compra con Robux** (el recibo crea un grant pendiente en el buzón de cuenta) o **compra con oro** a otro jugador (tradeo/subasta).
+* El jugador reclama el token del buzón en el inventario de un personaje existente y lo canjea desde ese PJ; el flag `perks.slot3` desbloquea el slot para toda la cuenta.
+* El Developer Product ya fue creado por el PO en el Dashboard; el ProductId numérico `3718622291` se usa en la configuración de `token_slot3`.
 
 #### **2. Flujo (server-authoritative, vía token)**
 
-1. Slot 3 bloqueado muestra CTA "Desbloquear (token o 299 R$)".
-2. El jugador obtiene `token_slot3` (compra Robux → inventario, o compra con oro a otro jugador).
+1. Slot 3 bloqueado muestra CTA "Desbloquear (ficha o 149 R$)".
+2. El jugador reclama `token_slot3` del buzón de cuenta al inventario de un PJ existente (compra Robux), o lo recibe como ítem por trade/subasta.
 3. **Canje:** usar el token → el servidor valida (token en posesión + `perks.slot3` no poseído) → `perks.slot3 = true` → `maxSlots = 3` → el slot se desbloquea y permite crear el 3er PJ (el token se consume).
 4. Sin token canjeado: el slot sigue locked (rechazo de 3er PJ, como ya hace R2).
 
@@ -61,18 +62,18 @@ Hoy el slot 3 existe bloqueado con CTA "Desbloquear", pero el desbloqueo era un 
 #### **Escenario 1: Compra y desbloqueo**
 
 * **GIVEN** un jugador con 2 PJs y slot 3 bloqueado
-* **WHEN** compra el Game Pass (299 R$) y se confirma
+* **WHEN** compra el Developer Product `3718622291`, reclama el token a un PJ existente y lo canjea
 * **THEN** `maxSlots = 3` y puede crear su tercer personaje
 
 #### **Escenario 2: Ya lo posee**
 
-* **GIVEN** un jugador que ya compró el pase
+* **GIVEN** un jugador que ya canjeó `token_slot3` y tiene `perks.slot3 = true`
 * **WHEN** entra (rejoin)
 * **THEN** el slot 3 aparece desbloqueado sin recomprar
 
 #### **Escenario 3: Sin compra**
 
-* **GIVEN** un jugador sin el pase
+* **GIVEN** un jugador sin `perks.slot3` y sin una ficha `token_slot3` canjeable
 * **WHEN** intenta crear un tercer PJ
 * **THEN** el servidor lo rechaza y el slot sigue locked con su CTA
 
@@ -85,8 +86,8 @@ Hoy el slot 3 existe bloqueado con CTA "Desbloquear", pero el desbloqueo era un 
 #### **Escenario 5: Anti-exploit**
 
 * **GIVEN** un cliente manipulado
-* **WHEN** intenta forzar `maxSlots = 3` sin ownership
-* **THEN** el servidor lo rechaza (solo ownership confirmado desbloquea)
+* **WHEN** intenta forzar `maxSlots = 3` sin canje válido
+* **THEN** el servidor lo rechaza (solo el servidor activa `perks.slot3` tras canjear el token)
 
 #### **Escenario 6: Regresión**
 
@@ -100,7 +101,7 @@ Hoy el slot 3 existe bloqueado con CTA "Desbloquear", pero el desbloqueo era un 
 
 #### Incluye
 
-* Game Pass real (precio configurable) + checkout + verificación server-side de ownership.
+* Developer Product `3718622291` (149 Robux) + grant idempotente en el buzón de cuenta, reclamo por personaje y canje server-side.
 * Retiro del flag de test; UI del slot 3 (locked/desbloqueado/feedback).
 
 #### No incluye
@@ -120,14 +121,14 @@ Hoy el slot 3 existe bloqueado con CTA "Desbloquear", pero el desbloqueo era un 
 
 ---
 
-### **Decisiones por defecto (PO: confirmar precio e ID)**
+### **Decisiones confirmadas por el PO**
 
 | Tema | Default |
 |------|---------|
 | Producto | **Dev Product + token `token_slot3`** (sin Game Pass — decisión PO 2026-10-12) |
-| Precio | **299 Robux** (a confirmar por el PO) |
-| ID | **Pendiente PO:** ID del Dev Product en el Dashboard (Monetización del universo) |
-| Ownership | Verificado por servidor en compra y en cada join (sin campo en perfil) |
+| Precio | **149 Robux** (confirmado por el PO el 2026-10-19) |
+| ID | **`3718622291`** — `Vandrheim Token - Tercer slot de personaje` |
+| Grant y canje | Recibo idempotente crea el grant en el buzón de cuenta; se reclama en un PJ existente; el servidor activa `perks.slot3` para toda la cuenta al canjearlo |
 | Copy | El juego se completa con 2 PJs; el 3.º es conveniencia |
 
 ---
@@ -144,3 +145,4 @@ Hoy el slot 3 existe bloqueado con CTA "Desbloquear", pero el desbloqueo era un 
 |-------|--------|
 | 2026-10-12 | Creación de HU-R2.1: activar el 3er slot (nunca se activó — era stub con flag de test) → **Game Pass** real (default 299 Robux, a confirmar + GamePassId pendiente del PO), checkout con `PromptGamePassPurchase`, ownership server-side, retiro del flag de test (decisión PO) |
 | 2026-10-12 | **Cambio de modelo (decisión PO: todo Dev Product, sin Game Passes):** el desbloqueo va por **token `token_slot3`** (HU-ECONOMIA-04) — compra Robux o compra con oro → canje validado → `maxSlots = 3`; Game Pass descartado |
+| 2026-10-19 | El PO confirma Developer Product `Vandrheim Token - Tercer slot de personaje`, ProductId `3718622291`, precio 149 Robux; se actualizan los criterios vigentes de compra → token → canje. Las decisiones Game Pass/299 Robux de 2026-10-12 quedan como historial reemplazado |
