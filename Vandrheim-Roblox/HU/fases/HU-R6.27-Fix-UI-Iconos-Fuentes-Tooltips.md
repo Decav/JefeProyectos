@@ -76,6 +76,12 @@
 * **Reglas visuales:** 9-slice + flecha/puntero al elemento, borde por rareza, anclaje al cursor evitando bordes de pantalla (gira de lado si no cabe), **móvil = tap-hold**; legibilidad R6.27 (fondo oscuro, nombre ≥11, detalles ≥9).
 * Integra los fixes de esta HU (rango real, daño/escalado, levelReq real) y queda coherente con el grimorio/árbol diseñados.
 
+#### **7. Tooltip_Item — mostrar el tipo de empuñadura real**
+
+* La etiqueta de tipo de arma se deriva de `ItemConfig.wieldType`, no de `slot` (el slot `MainHand` también almacena armas TwoHand).
+* `TwoHand` (espadón/arco) muestra **`DOS MANOS · 2H`**, nunca `MANO DERECHA` ni `MANO IZQUIERDA`; `OneHand` muestra `UNA MANO · 1H`, `MainHandOnly` = `MANO PRINCIPAL`, `OffHand` = `MANO SECUNDARIA`.
+* La etiqueta es informativa y no modifica el equipamiento: la autoridad y las reglas de reserva de ambas manos siguen en ECON-01/ITEMS-01.
+
 ---
 
 ### **Criterios de Aceptación (Gherkin)**
@@ -116,6 +122,12 @@
 * **WHEN** se juega el flujo completo (PC y móvil, publicado)
 * **THEN** no hay errores rojos y el HUD/paneles existentes funcionan igual
 
+#### **Escenario 7: Tooltip de armas 2H**
+
+* **GIVEN** un espadón o arco cuyo `wieldType` es `TwoHand` y su `slot` es `MainHand`
+* **WHEN** se muestra su tooltip de inventario/equipo
+* **THEN** indica `DOS MANOS · 2H`, nunca una mano derecha/izquierda; OneHand/MainHandOnly/OffHand conservan etiquetas acordes a su `wieldType`
+
 ---
 
 ### **Alcance**
@@ -127,6 +139,7 @@
 * Barra activa del grimorio (casillas adaptadas al icono, patrón HUD).
 * **TooltipSystem centralizado** (plantillas por tipo: equipable/consumible/skill/talento/vendor/party/loot/stat; API `show`/`hide`) + agregar los tooltips faltantes.
 * Tooltips de skills (rango real + daño/escalado) y de vendedores (levelReq real).
+* Tooltip de arma etiqueta la empuñadura desde `wieldType` (2H no se rotula como mano derecha/izquierda).
 
 #### No incluye
 
@@ -140,6 +153,7 @@
 * [ ] Textos de tooltips/grimorio/talentos legibles (tamaño/negrita) sin romper layout.
 * [ ] Barra activa del grimorio con iconos rellenando la casilla (patrón skill bar del HUD).
 * [ ] Tooltips de skills con rango real y daño/escalado; tooltips de vendor con levelReq real.
+* [ ] Tooltips de ítems muestran el tipo de empuñadura desde `wieldType`; espadones/arcos `TwoHand` aparecen como `DOS MANOS · 2H`.
 * [ ] PC y móvil OK; sin errores rojos.
 * [ ] El dev prepara el RC desde esta HU antes de programar (DEV_PROMPT).
 * [ ] Nota en GDD después de QA.
@@ -159,3 +173,4 @@
 | 2026-09-22 | Creación de HU-R6.27: fix/mejoras UI — casillas de ítems con fondo negro y hover de borde (estilo micro menú; se elimina la iluminación lila de stats/equipo/bolsa), tipografía legible (tooltips de ítems, grimorio y talentos), barra activa del grimorio con casillas adaptadas al icono (patrón HUD), tooltips de skills con rango real + daño/escalado, y tooltips de vendedores con levelReq real (reportado por PO) |
 | 2026-09-22 | **Centralización de tooltips (decisión PO):** TooltipSystem único con plantillas por tipo (equipable/consumible/skill/talento/vendor/party/loot/stat) y API `show`/`hide`; se agregan los tooltips faltantes (talentos, consumibles de barra, loot, party, stats); diseños nuevos del diseñador (`Tooltip_Item_*`, `Tooltip_Consumible_*`, `Tooltip_Skill_*` — brief 2026-09-22) con tokens EST-13 e iconos `Icon_Stat_*` (EST-39); móvil = tap-hold |
 | 2026-09-22 | **Tooltips diseñados y entregados (diseñador + ajustes PO, verificado en el `.pen`):** `Tooltip_Item_Espada_Campeon` (rareza+slot, stats solo texto — decisión PO sin iconos, set 3/5 con progreso y bonos activo/inactivo, BoE, **levelReq real "Requiere nivel 16"**) · `Tooltip_Consumible_Pocion_HP` (efecto, **sin cooldown — quitado por PO**, pointer) · `Tooltip_Skill_Anillo_Luz` (coste/CD/**radio 6 studs**/efecto/**escalado MATK**, pointer); board documenta EST-13 · 9-slice · móvil tap-hold |
+| 2026-10-21 | Se agrega follow-up PO para que el Tooltip_Item rotule armas según `wieldType`: espadón/arco TwoHand = `DOS MANOS · 2H`, no `MANO DERECHA/IZQUIERDA`. |

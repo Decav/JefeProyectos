@@ -51,8 +51,9 @@ Mostrar cuatro tarjetas, cada una con icono, nombre, beneficio breve, ámbito de
 | `token_auction` | Aumenta a 20 los anuncios simultáneos | Cuenta | 79 R$ |
 | `token_rename` | Permite cambiar el nombre del personaje | Personaje que completa el cambio | 49 R$ |
 
-* Los productos son repetibles. Si el jugador ya tiene el perk, indicarlo sin deshabilitar **Comprar**: el token comprado aún puede venderse o intercambiarse.
-* Se puede informar de que las fichas también se consiguen entre jugadores mediante trade/subasta; no añadir precio en oro ni simular una compra con oro dentro de esta tienda.
+* Los productos son repetibles. Si el jugador ya tiene el perk, indicarlo sin deshabilitar **Comprar**.
+* No incluir en las tarjetas o descripciones copy de venta/intercambio entre jugadores; esa comerciabilidad pertenece a las reglas del sistema, no al texto del ítem o de la Tienda.
+* No añadir precio en oro ni simular una compra con oro dentro de esta tienda.
 * Estados visuales: catálogo normal, CTA activa, confirmación/cancelación devuelta por el prompt nativo y perk ya desbloqueado.
 
 #### 3. Compras pendientes (buzón de cuenta)
@@ -123,7 +124,7 @@ Los placeholders deben poder sustituirse por estos nombres canónicos cuando el 
 
 * **GIVEN** que el jugador ya posee el perk de una ficha
 * **WHEN** consulta su tarjeta en Tienda
-* **THEN** el estado informa que ya tiene el perk, pero no oculta la posibilidad de comprar la ficha para comerciarla
+* **THEN** el estado informa que ya tiene el perk, pero deja visible la CTA **Comprar** porque el Developer Product es repetible; sin texto sobre vender/intercambiar la ficha
 
 #### Escenario 7: Placeholders listos para los iconos
 

@@ -31,7 +31,9 @@ Los 3 tipos de tooltip del juego, diseñados por brief del PO y **entregados en 
 
 #### **1. Tooltip_Item (equipable — `Tooltip_Item_Espada_Campeon`)**
 
-* Nombre + línea de **rareza · slot** ("ÉPICO · MANO DERECHA").
+* Nombre + línea de **rareza · tipo de empuñadura** (ej. `ÉPICO · UNA MANO (1H)` para `OneHand`). El dato se deriva de `wieldType`, no del slot de almacenamiento.
+* Para `wieldType="TwoHand"` (espadones/arcos), mostrar **`DOS MANOS · 2H`**; nunca mostrar `MANO DERECHA` ni `MANO IZQUIERDA` aunque `slot="MainHand"` sea la ubicación canónica del template.
+* Otros tipos: `OneHand` = **UNA MANO (1H)**; `MainHandOnly` = **MANO PRINCIPAL**; `OffHand` = **MANO SECUNDARIA**.
 * **Stats solo texto** (decisión PO: sin iconos `Icon_Stat_*`): "+17 ATK", "+5 % CRIT" (fs ≥10 bold).
 * **Conjunto**: "CONJUNTO PALADÍN · 3/5 PIEZAS" + **progreso** (track `#3A302A` / fill `#C89445`), bono activo en verde ("3 piezas · Bono activo del conjunto") y bono inactivo en pergamino ("4 piezas · Siguiente bono del conjunto").
 * **BoE**: "Se liga al equipar".
@@ -90,6 +92,12 @@ Los 3 tipos de tooltip del juego, diseñados por brief del PO y **entregados en 
 * **GIVEN** los tooltips entregados
 * **WHEN** el dev implementa el TooltipSystem (R6.27 §6)
 * **THEN** usa estos 3 como referencia visual de las plantillas `item_equipable`, `item_consumible` y `skill`
+
+#### **Escenario 6: Empuñadura 2H correcta**
+
+* **GIVEN** un espadón o arco con `wieldType="TwoHand"` y `slot="MainHand"`
+* **WHEN** se muestra su `Tooltip_Item`
+* **THEN** la línea indica `DOS MANOS · 2H`, nunca `MANO DERECHA` ni `MANO IZQUIERDA`
 
 ---
 

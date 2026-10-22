@@ -77,6 +77,7 @@ Modelo PLEX/Bond (decisión PO 2026-10-12): todo lo comprable con dinero real ex
 * Solo conveniencia (los 4 perks), nunca poder — anti pay-to-win intacto.
 * Sin dupes: recibos idempotentes + mutaciones atómicas (ECON-03); el token consumido desaparece (pila −1).
 * Un token = un canje; los flags son permanentes e irreversibles (sin reembolso de perk).
+* Las descripciones visibles de tokens (`ItemConfig.description`/tooltip y tarjeta de Tienda) explican solo efecto/uso; no mencionan venta ni intercambio con otros jugadores. La comerciabilidad permanece como regla funcional, no como copy del ítem; el fix de presentación se sigue en HU-R6.36.
 * Los tokens no se asignan a los slots rápidos Z/X; se canjean explícitamente desde la mochila.
 * `token_bag` aumenta a 30 las casillas del personaje que lo canjea; reutilizar la grilla existente de 5 columnas y su scroll, generando las casillas según `bagSlots` sin rediseñar la mochila.
 * Al tocar el slot 3 bloqueado en Selección de Personaje, abrir Tienda con `token_slot3` seleccionado. Canjear `token_slot3` desde la mochila de cualquier PJ activa `perks.slot3` y desbloquea el slot para toda la cuenta.

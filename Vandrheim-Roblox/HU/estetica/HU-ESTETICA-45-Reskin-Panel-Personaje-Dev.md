@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Estética / UI / Personaje — Reskin (dev)
 **Prioridad:** Alta
-**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
+**Estado:** Implementada (reporte PO 2026-09-22); QA y seguimiento de color de stats pendientes
 **Tipo:** Reskin de UI (dev) — solo visual, sin tocar lógica
 **Fase GDD:** UI (sustituye el visual de EST-10/21 — ventana C: equipo + stats)
 **Depende de:** frame del `.pen`: **`HUMWS` — "Equipo y estadísticas · Panel de personaje" (VARIANTE B, seleccionada por el PO)** dentro de **`MqBFE` — "HU-EST-10 · Variantes de reskin de personaje"** (A/C/D = alternativas descartadas, documentadas), HU-ESTETICA-13 (tokens/handoff), HU-R6.27 (fuentes + TooltipSystem), HU-R6.32 (drag & drop de ítems), HU-ITEMS-01 (slot order/reglas), R2/R4/R6.5 (lógica)
@@ -36,7 +36,7 @@ El diseñador entregó las **variantes de reskin del panel de personaje** (frame
    * **RECURSOS**: MaxHP · MaxMP
    * **ATAQUE**: ATK · MATK · CRIT · CDR
    * **DEFENSA**: DEF · MDEF
-   * Filas con **stripes alternos** `#171311`/`#211916`: label dorado `#C89445` (fs 8.5) + **valor bold** (fs 9): **verde `#70C08B`** = valor positivos/destacado (MaxHP 1.050, ATK 112, CRIT 12 %…), **pergamino `#F4EDE0`** = neutro (MaxMP, CDR 0 %).
+   * Filas con **stripes alternos** `#171311`/`#211916`: label dorado `#C89445` (fs 8.5) + **valor bold** (fs 9). El valor usa **verde `#70C08B` solo si equipo o talentos aportan un bonus positivo a ese stat**; usa **pergamino `#F4EDE0`** si solo tiene el valor base. No pintar verde solo porque el total sea mayor que cero ni por un efecto únicamente consumible.
    * **CDR se muestra siempre** aunque sea 0 % (dato real; es el mismo stat del panel actual).
 3. **9 slots de equipo** (casillas `#0E0D0C`): order de slots = `ItemConfig.SLOTS` (Helmet, Chest, Shoulders, Legs, Gloves, **Necklace**, **Ring**, **OffHand**, **MainHand** — per ITEMS-01):
    * Slots con ítem: **imagen del ítem** (`Icon_Item_*` — los `photo` del frame son placeholders; el dev mapea `visualModelId`/icono real) + hover de borde (estándar R6.27).
@@ -48,6 +48,7 @@ El diseñador entregó las **variantes de reskin del panel de personaje** (frame
 * **Conservar los nombres de instancias/jerarquía que los scripts usan** (contrato EST-13).
 * Mismo contrato de apertura/cierre (tecla C), slot mapping y stats que EST-10/21 (sin cambios de lógica).
 * Los valores salen **del servidor** (base de clase + equipo + talentos — mismo desglose que el panel actual; el tooltip de stat lo cubre el TooltipSystem de R6.27 §6).
+* La decisión de color consulta las fuentes de `statsBreakdown` (equipo/talentos); si no hay contribución positiva de esas fuentes, el valor queda en pergamino aunque el stat base sea >0. Para CDR, mostrar verde solo cuando exista bonus de talento y pergamino cuando sea 0/base.
 * **Drag & drop (R6.32):** los slots son destinos válidos para equipar arrastrando desde la mochila (highlight verde al hover con ítem válido; rechazo si no aplica); click derecho = equipar/usar (ya no borra). Estados de interacción según el estándar de casillas (R6.27).
 * Tooltips: slot con ítem → tooltip de ítem (plantilla `item_equipable` — Tooltip_Item_* de EST-44); fila de stat → tooltip de stat (plantilla `stat`).
 * Móvil: se adapta por escala (máx 85 % viewport), sin romper y con fuentes legibles (R6.27: labels ≥8.5, valores ≥9).
@@ -92,6 +93,12 @@ El diseñador entregó las **variantes de reskin del panel de personaje** (frame
 * **WHEN** se revisa
 * **THEN** se adapta (escale/touch) sin romper y con fuentes legibles (R6.27)
 
+#### **Escenario 7: Color refleja fuente del bonus**
+
+* **GIVEN** un stat del personaje con desglose base/equipo/talentos
+* **WHEN** no recibe bonus de equipo ni de talentos
+* **THEN** su valor se muestra en pergamino; al aportar equipo o talento positivo cambia a verde, y vuelve a pergamino al retirar el origen del bonus
+
 ---
 
 ### **Alcance**
@@ -108,7 +115,7 @@ El diseñador entregó las **variantes de reskin del panel de personaje** (frame
 
 ### **Definition of Done (DoD)**
 
-* [ ] Panel C replica la variante B (`HUMWS`): título+identidad, grupos RECURSOS/ATAQUE/DEFENSA con stripes y valores por color, 9 slots (ítem/vacío), cerrar.
+* [ ] Panel C replica la variante B (`HUMWS`): título+identidad, grupos RECURSOS/ATAQUE/DEFENSA con stripes y valores coloreados según aporte real de equipo/talentos, 9 slots (ítem/vacío), cerrar.
 * [ ] Datos reales del servidor (incl. CDR); slots en el orden de `ItemConfig.SLOTS`.
 * [ ] Nombres de instancias conservados; equip/stats intactos (sin errores rojos).
 * [ ] Interacción (R6.32) y tooltips (R6.27) integrados.
@@ -129,3 +136,4 @@ El diseñador entregó las **variantes de reskin del panel de personaje** (frame
 | Fecha | Cambio |
 |-------|--------|
 | 2026-09-22 | Creación de HU-ESTETICA-45: reskin del panel de personaje (Equipo + Estadísticas) — **variante B seleccionada** (frame `HUMWS` dentro de `MqBFE` "HU-EST-10 · Variantes"); titular + identidad real, 3 grupos de atributos (RECURSOS/ATAQUE/DEFENSA incl. CDR) con stripes y colores por valor, 9 slots de equipo con ítem/vacío (order `ItemConfig.SLOTS`), cerrar; integra drag & drop (R6.32) y tooltips (R6.27); alternativas A/C/D descartadas documentadas |
+| 2026-10-21 | Seguimiento PO: el color del valor debe depender de bonus positivo de equipo/talentos; valor base sin bonus queda en pergamino. |
