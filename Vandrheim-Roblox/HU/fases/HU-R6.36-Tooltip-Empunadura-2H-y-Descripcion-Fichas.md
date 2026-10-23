@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R6.x / UI / Inventario
 **Prioridad:** Alta
-**Estado:** Lista para RC
+**Estado:** Implementada (confirmación del PO 2026-10-22; RC cerrado)
 **Tipo:** Bugfix de presentación de ítems/tooltip y copy de fichas (dev)
 **Depende de:** HU-R6.27 (TooltipSystem), HU-ESTETICA-44 (referencia de tooltip), HU-ITEMS-01 (`wieldType`), HU-ECONOMIA-04 (templates y copy de fichas)
 **No modifica:** reglas de equipamiento, almacenamiento `MainHand`/`OffHand`, stats, precios ni comerciabilidad.

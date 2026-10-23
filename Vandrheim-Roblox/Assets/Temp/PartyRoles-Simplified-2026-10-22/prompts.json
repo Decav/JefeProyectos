@@ -1,0 +1,112 @@
+{
+  "title": "Party roles simplificados",
+  "date": "2026-10-22",
+  "tool": "ImageGen",
+  "status": "Propuestas para revisión; las versiones canónicas no se han reemplazado.",
+  "format": "PNG RGBA 512x512 con fondo transparente",
+  "style": "Silueta directa, contorno oscuro grueso, rellenos amplios azul hielo, pergamino y latón, detalle reducido para lectura a 24 px.",
+  "roles": {
+    "tank": {
+      "asset": "Icon_UI_role_tank_simplified",
+      "prompt": "Create one isolated Vandrheim RPG party-role UI icon. Visual family: simple bold illustrated icon, large instantly readable silhouette, thick clean charcoal outline, broad solid fills, only 2 or 3 large color regions, restrained flat bevel highlights, slate/ice blue + parchment cream + warm brass gold. No metal scratches, no photorealism, no ornate filigree, no runic engraving, no micro-details, no text or letters. The icon must remain unmistakable when displayed at 24 pixels. Center it on a square transparent canvas with comfortable padding. Preserve a clean 2D game-icon look. Transparent background, PNG with true alpha.\n\nReference 1 is the current Tank icon; use it only to identify the shield concept and the Vandrheim palette, then simplify it drastically. Design a single broad, sturdy heater shield facing forward. Use a large slate-blue shield face, one thick warm-gold rim, and one simple centered cream boss plate. The shield silhouette itself must dominate and read as protection immediately. No cross, no swords, no extra symbols, no texture.",
+      "references": [
+        "Assets/Source/Design/PartyRoles-Active-Originals-2026-10-23/Icon_UI_role_tank.png",
+        "Assets/Icons/UI/Menu/Icon_Menu_dungeon.png"
+      ],
+      "generated_source": "C:\\Users\\Diego\\.codex\\generated_images\\01a0f36e-9def-7e80-9b8b-9f2ec5810d5e\\exec-a6be03e7-d670-4356-8717-5b308845db16.png",
+      "export": {
+        "file": "Icon_UI_role_tank_simplified.png",
+        "source_size": [
+          1254,
+          1254
+        ],
+        "source_alpha": [
+          0,
+          255
+        ],
+        "content_bbox": [
+          137,
+          36,
+          1116,
+          1209
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      }
+    },
+    "heal": {
+      "asset": "Icon_UI_role_heal_simplified",
+      "prompt": "Create one isolated Vandrheim RPG party-role UI icon. Visual family: simple bold illustrated icon, large instantly readable silhouette, thick clean charcoal outline, broad solid fills, only 2 or 3 large color regions, restrained flat bevel highlights, slate/ice blue + parchment cream + warm brass gold. No metal scratches, no photorealism, no ornate filigree, no runic engraving, no micro-details, no text or letters. The icon must remain unmistakable when displayed at 24 pixels. Center it on a square transparent canvas with comfortable padding. Preserve a clean 2D game-icon look. Transparent background, PNG with true alpha.\n\nReference 1 is the current Heal icon; use it only to identify the healing-cross concept and Vandrheim colors, then simplify it drastically. Design one large, clear medical/healing cross with thick parchment-cream arms, a simple ice-blue center disk, and a restrained warm-gold outline. Keep the cross silhouette broad and readable at a glance. No pulse line, no wings, no extra droplets, no texture, no second emblem.",
+      "references": [
+        "Assets/Source/Design/PartyRoles-Active-Originals-2026-10-23/Icon_UI_role_heal.png",
+        "Assets/Icons/UI/Menu/Icon_Menu_dungeon.png"
+      ],
+      "generated_source": "C:\\Users\\Diego\\.codex\\generated_images\\01a0f36e-9def-7e80-9b8b-9f2ec5810d5e\\exec-77f79132-1639-431a-bcbd-213d415377fc.png",
+      "export": {
+        "file": "Icon_UI_role_heal_simplified.png",
+        "source_size": [
+          1254,
+          1254
+        ],
+        "source_alpha": [
+          0,
+          255
+        ],
+        "content_bbox": [
+          49,
+          55,
+          1205,
+          1201
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      }
+    },
+    "dps": {
+      "asset": "Icon_UI_role_dps_simplified",
+      "prompt": "Create one isolated Vandrheim RPG party-role UI icon. Visual family: simple bold illustrated icon, large instantly readable silhouette, thick clean charcoal outline, broad solid fills, only 2 or 3 large color regions, restrained flat bevel highlights, slate/ice blue + parchment cream + warm brass gold. No metal scratches, no photorealism, no ornate filigree, no runic engraving, no micro-details, no text or letters. The icon must remain unmistakable when displayed at 24 pixels. Center it on a square transparent canvas with comfortable padding. Preserve a clean 2D game-icon look. Transparent background, PNG with true alpha.\n\nReference 1 is the current DPS icon; use it only to identify the crossed-swords concept and Vandrheim colors, then simplify it drastically. Design exactly two broad, clean swords crossing in a clear X. Use simple slate-blue steel blades, parchment highlights, and compact warm-gold guards and pommels. The crossed-swords silhouette must dominate and read as damage immediately. No ornament, no runes, no extra weapon, no texture.",
+      "references": [
+        "Assets/Source/Design/PartyRoles-Active-Originals-2026-10-23/Icon_UI_role_dps.png",
+        "Assets/Icons/UI/Menu/Icon_Menu_dungeon.png"
+      ],
+      "generated_source": "C:\\Users\\Diego\\.codex\\generated_images\\01a0f36e-9def-7e80-9b8b-9f2ec5810d5e\\exec-eefc29ac-eda8-4904-9f66-a7080daefd18.png",
+      "export": {
+        "file": "Icon_UI_role_dps_simplified.png",
+        "source_size": [
+          1254,
+          1254
+        ],
+        "source_alpha": [
+          0,
+          255
+        ],
+        "content_bbox": [
+          43,
+          47,
+          1211,
+          1181
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      }
+    }
+  }
+}

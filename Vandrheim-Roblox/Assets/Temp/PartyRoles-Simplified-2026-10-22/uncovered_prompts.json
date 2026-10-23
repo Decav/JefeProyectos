@@ -1,0 +1,44 @@
+{
+  "title": "Party roles simplificados · variantes uncovered",
+  "date": "2026-10-23",
+  "tool": "ImageGen",
+  "status": "Aprobado e instalado localmente en Assets/Icons/UI/PartyRoles; pendientes re-subida y actualización de IDs de Roblox.",
+  "format": "PNG RGBA de 512x512 con exterior transparente; muestras a 16, 24, 32, 48 y 64 px.",
+  "style": "Misma silueta simplificada de cada icono activo, recoloreada a carbón y gris violeta apagado para comunicar estado inactivo, siguiendo como referencia los uncovered actuales.",
+  "items": [
+    {
+      "asset": "Icon_UI_role_tank_simplified_variant_02_uncovered",
+      "role": "TANK",
+      "prompt": "Color-adjust the first image only into a darker disabled palette. Preserve the existing shield silhouette, central chevron, rim, studs, exact layout, details and transparent alpha; no geometry edits. Use the second image only as a brightness/palette reference, never copy its design or texture. The result is currently too bright. Push every visible part down to dark charcoal and muted violet-gray: most surfaces around RGB 35-65, secondary bevels 50-75, and rare highlights no brighter than medium gray around RGB 85-95. There must be no white, pale silver, gold, blue, glow, or luminous edges. Keep the chevron distinct but also muted. Match the old inactive icon's subdued dark feel. Fully transparent canvas outside the shield; do not add a background, checkerboard, shadow, or any new detail.",
+      "design_reference": "Assets/Icons/UI/PartyRoles/Icon_UI_role_tank.png",
+      "palette_reference": "Assets/Source/Design/PartyRoles-Uncovered-Originals-2026-10-23/Icon_UI_role_tank_uncovered.png",
+      "generated_source": "C:\\Users\\Diego\\.codex\\generated_images\\01a0f36e-9def-7e80-9b8b-9f2ec5810d5e\\exec-50ef9230-d109-40d0-b790-65d4893b3a83.png",
+      "export": "Assets/Icons/UI/PartyRoles/Icon_UI_role_tank_uncovered.png",
+      "final_generated_source": "C:\\Users\\Diego\\.codex\\generated_images\\01a0f36e-9def-7e80-9b8b-9f2ec5810d5e\\exec-50ef9230-d109-40d0-b790-65d4893b3a83.png",
+      "refinement_input": "C:\\Users\\Diego\\.codex\\generated_images\\01a0f36e-9def-7e80-9b8b-9f2ec5810d5e\\exec-ad3b8681-54d6-47c1-a0b6-35db8370a50c.png"
+    },
+    {
+      "asset": "Icon_UI_role_heal_simplified_uncovered",
+      "role": "HEAL",
+      "prompt": "Make a color-only edit to the first icon. Preserve the exact cross, center gem, layout, edges, detail, proportions, and transparent alpha. Use the second image only to match its very dark inactive palette, never its design or texture. The current first icon is too bright. Remove its pale silver appearance: recolor the full cross and center gem to dark graphite and muted charcoal-violet, with most visible surfaces near RGB 35-60 and highlights only around RGB 70-85. No pixels should look white, pale silver, or luminous. Keep the gem subtly distinct but dark. Match the second reference's quiet low contrast. Do not alter geometry or add details. Keep exterior truly transparent, no checkerboard or backdrop.",
+      "design_reference": "Assets/Icons/UI/PartyRoles/Icon_UI_role_heal.png",
+      "palette_reference": "Assets/Source/Design/PartyRoles-Uncovered-Originals-2026-10-23/Icon_UI_role_heal_uncovered.png",
+      "generated_source": "C:\\Users\\Diego\\.codex\\generated_images\\01a0f36e-9def-7e80-9b8b-9f2ec5810d5e\\exec-633537f6-1ae0-4c6a-b995-ce7f3257a7a2.png",
+      "export": "Assets/Icons/UI/PartyRoles/Icon_UI_role_heal_uncovered.png",
+      "final_generated_source": "C:\\Users\\Diego\\.codex\\generated_images\\01a0f36e-9def-7e80-9b8b-9f2ec5810d5e\\exec-633537f6-1ae0-4c6a-b995-ce7f3257a7a2.png",
+      "refinement_input": "C:\\Users\\Diego\\.codex\\generated_images\\01a0f36e-9def-7e80-9b8b-9f2ec5810d5e\\exec-a7370c94-759d-468b-8638-439bb9354ae3.png"
+    },
+    {
+      "asset": "Icon_UI_role_dps_simplified_uncovered",
+      "role": "DPS",
+      "prompt": "Make a color-only edit to the first icon. Preserve the exact crossed swords, their silhouette, guard/grip details, layout, edges, proportions, and transparent alpha. Use the second image only to match its very dark inactive palette, never its design or texture. The current first icon is too bright. Remove its pale silver appearance: recolor the full swords to dark graphite and muted charcoal-violet, with most visible surfaces near RGB 35-60 and highlights only around RGB 70-85. No pixels should look white, pale silver, or luminous. Keep both swords subtly distinct but dark. Match the second reference's quiet low contrast. Do not alter geometry or add details. Keep exterior truly transparent, no checkerboard or backdrop.",
+      "design_reference": "Assets/Icons/UI/PartyRoles/Icon_UI_role_dps.png",
+      "palette_reference": "Assets/Source/Design/PartyRoles-Uncovered-Originals-2026-10-23/Icon_UI_role_dps_uncovered.png",
+      "generated_source": "C:\\Users\\Diego\\.codex\\generated_images\\01a0f36e-9def-7e80-9b8b-9f2ec5810d5e\\exec-45b4d13b-4430-4015-86d0-898459ee8a26.png",
+      "export": "Assets/Icons/UI/PartyRoles/Icon_UI_role_dps_uncovered.png",
+      "final_generated_source": "C:\\Users\\Diego\\.codex\\generated_images\\01a0f36e-9def-7e80-9b8b-9f2ec5810d5e\\exec-45b4d13b-4430-4015-86d0-898459ee8a26.png",
+      "refinement_input": "C:\\Users\\Diego\\.codex\\generated_images\\01a0f36e-9def-7e80-9b8b-9f2ec5810d5e\\exec-e25ecf5c-7107-49c3-83d8-9c4ad6380db3.png"
+    }
+  ],
+  "color_target": "Comparadas visualmente con los iconos uncovered originales archivados en Assets/Source/Design/PartyRoles-Uncovered-Originals-2026-10-23/."
+}

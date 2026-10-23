@@ -1,7 +1,7 @@
 # Vandrheim — GDD MVP (Roblox Studio)
 
 > Documento vivo. **Fuente de verdad** para desarrollo en Roblox Studio.
-> Última actualización: 2026-08-26  
+> Última actualización: 2026-10-23
 > Decisiones del cuestionario de arquitectura/diseño **integradas y cerradas**.
 
 ---
@@ -429,7 +429,7 @@ StarterGui/
 | **R8c** | **Completo** (2026-09-18) | Clérigo completo (Misericordia + Cólera) + VFX por skillId | Clérigo jugable con builds heal y dps; QA cerrado según reporte |
 | **R8d** | Pendiente | Balance de números + assets (iconos 30) + QA a nivel 20 — **HU-R8d creada (2026-09-18)** | Las 6 specs se sienten distintas y el arco a 20 funciona |
 | **R9** | Pendiente | Party amigos (si entra), polish UI, balance medio a 20 | Demo estable |
-| **R10+** | Pendiente | Matchmaking, trade, más biomas/clases, cosméticos | Expansión |
+| **R10+** | Backlog propuesto, post-lanzamiento y sin priorizar | Expansión a semi-mundo abierto (nuevos biomas, enemigos y bosses de mundo, misiones); profesiones; progresión ampliada (subir el nivel máximo, nuevas habilidades/talentos e ítems); ampliar creación/personalización de personajes; PvP; modo PvE de oleadas infinitas con recompensas; selección de dificultad en dungeons; efectos y otros cosméticos | Ideas PO; definir prioridad, alcance, dependencias y HUs después del lanzamiento |
 
 > **R6 se ejecuta en 2 HUs:** `HU/fases/HU-R6a-Dungeon-Preparacion.md` (enemigos, pisos, layout por seed, XP/leveling, respawn + arena de prueba) → `HU/fases/HU-R6b-Dungeon-Core.md` (teleport + ReservedServer, run lifecycle, exit). Criterio R6: *run completa solo*.
 > **R8 se ejecuta en 4 HUs:** R8a (Paladín) → R8b (Cazador) → R8c (Clérigo) → R8d (balance + assets + QA). Criterio R8: *builds distintas*.
@@ -694,7 +694,15 @@ Ver `HU/fases/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º 
 | 2026-10-19 | **ECON-04 — entrega y alcance de perks:** las compras Robux generan un grant durable en el buzón de cuenta y el jugador elige un personaje existente para reclamar el token; slot 3 es por cuenta y mochila +10/renombre por personaje (decisión PO); la ampliación de subasta es por cuenta según el límite por jugador/UserId de ECON-02. |
 | 2026-10-19 | **R6.31/R6.29 — notificaciones:** `NotificationFrame` agrupa los avisos pasivos de sistema y loot (el loot muestra icono + nombre) y es el único elemento de notificaciones movible con OrdenUI en PC/móvil; esta decisión supersede la excepción anterior de LootPopup independiente en R6.29. Máximo 2 avisos visibles; cola por prioridad error > aviso > éxito > info, FIFO dentro de prioridad; los errores no se descartan para mostrar avisos de menor prioridad. |
 | 2026-10-19 | **Reversión PO de R6.31/R6.29:** la adquisición de loot permanece en `LootPopup`, independiente y movible en PC/móvil. `NotificationFrame` centraliza los demás avisos pasivos y no absorbe el toast de loot; la propuesta de incluir icono + nombre dentro del frame queda descartada. |
-| 2026-10-19 | **ECON-01 v3 (actualización PO):** COMERCIAR provisional PC/móvil con estilo existente; selector de jugadores cercanos + solicitud Aceptar/Rechazar, sin requisito de party; trade permitido en todo el Hub (≤15 inicio, >20 cancela precommit), bloqueo de combate 5 s; commit en LOCKED durable tras RESERVING/ambas reservas; lock breve de capacidad sin perder grants; dos liquidaciones atómicas por perfil; pilas parciales, no entrega pendiente por mochila llena, sin historial visible, limpieza tras reconciliación y QA en test place |
+| 2026-10-22 | **HU-R6.38 creada:** hallazgo del dev: CRIT solo afecta ataques básicos. Se especifican críticos para impactos de habilidades Instant, SelfAoE y cada tick/objetivo elegible de GroundAoE, con CRIT existente y ×1,5; se excluyen DoT (Flecha venenosa y Aniquilación). Curación/escudos/buffs no tiran. |
+| 2026-10-22 | **HU-R6.37 ampliada por el PO:** además del color de stats, incluye tooltips que explican el efecto de cada estadística y breakdown por origen/fuente, más descripciones individuales, distintivas y fieles a la mecánica para todas las skills. |
+| 2026-10-22 | **HU-R6.37 cerrada por confirmación del PO:** ampliación, copy de stats/skills e implementación completados. |
+| 2026-10-22 | **HU-VFX-01 exitosa por reporte del PO** (Anillo de luz del Paladín mejorado notablemente) y **HU-VFX-02 creada:** rediseño visual completo de las 30 skills, con propuestas por habilidad y criterios compartidos de legibilidad/performance; no modifica gameplay ni SFX. |
+| 2026-10-23 | **HU-ESTETICA-50 creada:** integración del rediseño de matchmaking de Pencil con R9a.2 e iconos activos/inactivos de party roles. La referencia visual se corrigió después a los frames seleccionados por el PO. |
+| 2026-10-23 | **Iconos simplificados de roles subidos/registrados:** Tank `99345927547899`, Heal `128865686691543`, DPS `111799977902329` y variantes uncovered; IDs en ASSETS_LIST y HU-ESTETICA-50. |
+| 2026-10-23 | **Corrección de diseño matchmaking por el PO:** frames seleccionados `o0nxs` (Salas), `B3yoQT` (Crear sala) y `FRPZ6` (Tu sala); las referencias anteriores se retiran. El servidor inicia automáticamente cuando todos están listos; la composición 1/1/2 es informativa. |
+| 2026-10-23 | **Corrección de integración matchmaking:** el dev integró frames que no eran los seleccionados; HU-ESTETICA-50 queda como instrucción de rework para sustituirlos por `o0nxs`, `B3yoQT` y `FRPZ6`. |
+| 2026-10-23 | **Backlog propuesto R10+ (post-lanzamiento, sin priorizar):** semi-mundo abierto, biomas/enemigos/bosses/misiones; profesiones; nivel máximo y contenido de clases/ítems; ampliación de creación de personajes; PvP; oleadas PvE infinitas con recompensas; dificultades de dungeon; efectos y cosméticos. No son HUs comprometidas para el lanzamiento. |
 | 2026-10-19 | **HU-R6.31 cerrada por confirmación PO:** implementación y QA completos, con `NotificationFrame` central para avisos pasivos, `LootPopup` independiente, un solo elemento de notificaciones en OrdenUI y cola priorizada. |
 | 2026-09-22 | **R6.32 — tap-hold móvil cerrado (decisión PM):** **300 ms** con umbral de movimiento 8 px (moverse antes = scroll; se cancela) · tap corto (<300 ms) conserva la interacción normal · una vez activado, el ítem sigue al dedo |
 | 2026-09-22 | **R6.32 — contrato del lock de ítems (decisión PM):** campo `lock = { kind: "trade"\|"auction", opId }` en la instancia del ítem (R4) — escritores futuros: ECON-01 (`HOLD_ITEMS`) y ECON-02 (custodia); `RequestDeleteItem` lo consulta y rechaza si está activo; **hoy inerte** (la economía no está implementada → el campo siempre es nil) |

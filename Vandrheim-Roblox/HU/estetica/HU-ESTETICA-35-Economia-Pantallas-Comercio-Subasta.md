@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Economía / Diseño UI
 **Prioridad:** Alta
-**Estado:** Entrega parcial: frames de Subasta para escritorio/móvil entregados; quedan pendientes registrados en §2/DoD. Trade conserva su selector/invitación previa pendiente.
+**Estado:** Implementada (confirmación del PO 2026-10-22; RC cerrado)
 **Tipo:** Diseño de pantallas (diseñador) — el dev integra por frames (patrón EST-13/15/16/17/22)
 **Fase GDD:** Economía 1 y 2 (comercio y subasta, decisiones PO 2026-09-22)
 **Depende de:** HU-ECONOMIA-01 (comercio/tradeo), HU-ECONOMIA-02 (subasta cross-server), HU-ESTETICA-13 (tokens/fuentes/9-slice), HU-ESTETICA-10/11 (patrón de paneles stats/bolsa), HU-ESTETICA-20/23 (micro menú), ASSETS_LIST (iconos por tier)

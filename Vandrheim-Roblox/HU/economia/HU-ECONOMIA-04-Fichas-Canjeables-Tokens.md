@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Economía / Monetización — Tokens (dev)
 **Prioridad:** Alta
-**Estado:** Pendiente del diseño visual HU-ESTETICA-49 y del RC del dev antes de programar
+**Estado:** Implementada (confirmación del PO 2026-10-22; diseño y RC cerrados).
 **Tipo:** Sistema nuevo (dev) — modelo PLEX/Bond
 **Fase GDD:** Economía 4 (decisión PO 2026-10-12: **todo Dev Product, sin Game Passes**)
 **Depende de:** HU-ECONOMIA-03 (perfil atómico — mutaciones con `UpdateAsync`), HU-ECONOMIA-01/02 (tradeo/subasta: los tokens son ítems normales y circulan por ahí), HU-R6.28 (precedente `ProcessReceipt` + grant eventual), HU-R4 (ítems de inventario), HU-ITEMS-01 (templates en `ItemConfig`), HU-ESTETICA-49 (Tienda, Compras pendientes e iconos)

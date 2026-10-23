@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R6.x / Mobile — Bug (reportado por PO 2026-10-12)
 **Prioridad:** **Crítica** (el juego en teléfono real queda sin audio ni animaciones)
-**Estado:** Lista para implementar (RC obligatorio del dev antes de programar)
+**Estado:** Implementada (confirmación del PO 2026-10-22; RC cerrado)
 **Tipo:** Bugfix de plataforma (dev)
 **Fase GDD:** R6.34 (no cambia reglas de juego)
 **Depende de:** HU-R9b (música/SFX), HU-R6.6/6.7 (animaciones), HU-R6.15 (móvil)

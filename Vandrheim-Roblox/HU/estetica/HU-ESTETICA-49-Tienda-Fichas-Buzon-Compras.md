@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Economía / UI / Monetización
 **Prioridad:** Alta — handoff visual para HU-ECONOMIA-04
-**Estado:** Paneles entregados para revisión; iconos finales pospuestos al PO
+**Estado:** Implementada (confirmación del PO 2026-10-22; paneles e iconos entregados)
 **Tipo:** Diseño de UI en Pencil (solo diseñador; sin código). El PO generará posteriormente los iconos finales con ImageGen.
 **Depende de:** HU-ECONOMIA-04 (productos, precios, buzón y canje), HU-ESTETICA-04/13 (dirección Hearthbound Gold y handoff), HU-ESTETICA-25 (referencia de Selección de Personaje), HU-ESTETICA-11 (patrón de inventario), ASSETS_POLICY.md y ASSETS_LIST.md
 **No modifica:** precios, lógica de compra/recibos, inventario, selección de personaje ni sistemas de trade/subasta.

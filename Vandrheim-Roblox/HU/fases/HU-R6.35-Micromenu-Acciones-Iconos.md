@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R6.x / UI móvil y micromenú
 **Prioridad:** Alta
-**Estado:** Lista para RC (assets subidos; integrar IDs indicados)
+**Estado:** Implementada (confirmación del PO 2026-10-22; RC cerrado)
 **Tipo:** Integración de UI e iconos (dev)
 **Fase GDD:** R6.35 (reorganiza accesos; conserva las acciones existentes)
 **Depende de:** HU-R6.19 (targeting/ciclo), HU-R6.20 (OrdenUI), HU-R6.29 (Target móvil y controles), HU-R6.31 (`NotificationFrame` central), HU-R9a.2 (lobby/matchmaking), HU-ESTETICA-19/20 (micromenú), HU-ESTETICA-35/37 (ventanas de economía/lobby), `ASSETS_LIST.md` (iconos del 2026-10-17)

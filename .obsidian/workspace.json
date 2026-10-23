@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Vandrheim-Roblox/HU/economia/HU-ECONOMIA-02-Subasta-CrossServer.md",
+                "file": "Vandrheim-Roblox/HU/estetica/HU-ESTETICA-50-Rediseño-Matchmaking-Dev.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HU-ECONOMIA-02-Subasta-CrossServer"
+              "title": "HU-ESTETICA-50-Rediseño-Matchmaking-Dev"
             }
           }
         ]
@@ -83,7 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 360.81640625
+    "width": 466.5
   },
   "right": {
     "id": "a6cf1b15ac9815ec",
@@ -185,7 +185,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 484.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -200,18 +200,54 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "2dda58b72707236d",
+  "active": "a63b811dd23526ea",
   "lastOpenFiles": [
-    "Vandrheim-Roblox/HU/tutorial/HU-TUTORIAL-01-Onboarding.md",
-    "Vandrheim-Roblox/HU/fases/HU-R6.37-Color-Stats-Segun-Bonus.md",
-    "Vandrheim-Roblox/HU/fases/HU-R6.36-Tooltip-Empunadura-2H-y-Descripcion-Fichas.md",
-    "Vandrheim-Roblox/HU/economia/HU-ECONOMIA-02-Subasta-CrossServer.md",
-    "Vandrheim-Roblox/HU/estetica/HU-ESTETICA-49-Tienda-Fichas-Buzon-Compras.md",
-    "Vandrheim-Roblox/ASSETS_LIST.md",
-    "Vandrheim-Roblox/GDD_ROBLOX_MVP.md",
-    "DCVStudiosLogo.png",
-    "2026-10-20.md",
-    "Vandrheim-Roblox/HU/estetica/HU-ESTETICA-01-Equipamiento-Visual.md",
+    "bots/DCVStudioOrganizer/node_modules/@types/node/inspector/promises.d.ts",
+    "bots/DCVStudioOrganizer/node_modules/@types/node/inspector",
+    "bots/DCVStudioOrganizer/node_modules/@types/node/dns/promises.d.ts",
+    "bots/DCVStudioOrganizer/node_modules/@types/node/dns",
+    "bots/DCVStudioOrganizer/node_modules/@types/node/assert/strict.d.ts",
+    "bots/DCVStudioOrganizer/node_modules/@types/node/assert",
+    "bots/DCVStudioOrganizer/node_modules/@types/node/ts5.7/compatibility/float16array.d.ts",
+    "bots/DCVStudioOrganizer/node_modules/@types/node/ts5.7/index.d.ts",
+    "bots/DCVStudioOrganizer/node_modules/@types/node/ts5.7/compatibility",
+    "bots/DCVStudioOrganizer/node_modules/@types/node/ts5.7",
+    "bots/DCVStudioOrganizer/node_modules/@types/node/zlib/iter.d.ts",
+    "Vandrheim-Roblox/HU/fases/HU-R9a.2-Matchmaking-Dungeon-Lobby.md",
+    "Vandrheim-Roblox/Assets/Icons/UI/PartyRoles/Icon_UI_role_dps.png",
+    "bots/DCVStudioOrganizer/node_modules/@discordjs/rest/node_modules/undici/types/README.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/types/README.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/best-practices/writing-tests.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/best-practices/proxy.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/best-practices/mocking-request.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/best-practices/client-certificate.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/api/WebSocket.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/api/Util.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/api/RetryHandler.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/api/RetryAgent.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/api/ProxyAgent.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/api/RedirectHandler.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/api/MockErrors.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/api/PoolStats.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/api/Pool.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/api/MockAgent.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/api/MockPool.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/api/MockClient.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/api/Fetch.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/api/EventSource.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/api/Errors.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/api/EnvHttpProxyAgent.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/api/Dispatcher.md",
+    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/api/DiagnosticsChannel.md",
+    "Vandrheim-Roblox/Assets/Source/Design/PartyRoles-Active-Originals-2026-10-23/Icon_UI_role_dps.png",
+    "Vandrheim-Roblox/Assets/Source/Design/PartyRoles-Active-Originals-2026-10-23/Icon_UI_role_heal.png",
+    "Vandrheim-Roblox/Assets/Source/Design/PartyRoles-Active-Originals-2026-10-23/Icon_UI_role_tank.png",
+    "Vandrheim-Roblox/Assets/Icons/UI/PartyRoles/Icon_UI_role_dps_uncovered.png",
+    "Vandrheim-Roblox/Assets/Icons/UI/PartyRoles/Icon_UI_role_heal_uncovered.png",
+    "Vandrheim-Roblox/Assets/Icons/UI/PartyRoles/Icon_UI_role_tank_uncovered.png",
+    "Vandrheim-Roblox/Assets/Icons/UI/PartyRoles/Icon_UI_role_tank.png",
+    "Vandrheim-Roblox/Assets/Icons/UI/PartyRoles/Icon_UI_role_heal.png",
+    "Vandrheim-Roblox/Assets/Temp/PartyRoles-Simplified-2026-10-22/Icon_UI_role_dps_simplified.png",
     "Sin título.canvas"
   ]
 }

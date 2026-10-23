@@ -1,0 +1,26 @@
+{
+  "asset": "Icon_Menu_shop",
+  "date": "2026-10-22",
+  "tool": "ImageGen",
+  "mode": "new image with local style references",
+  "transparent_background": true,
+  "prompt": "Create one polished fantasy RPG user-interface icon for Vandrheim, a Nordic-inspired Roblox RPG. Subject: a compact Nordic merchant stall, viewed straight-on, with a simple peaked cloth awning, sturdy wooden counter, and one small round brass sun-rune sign mounted at the center of the awning. It must read instantly as a SHOP at tiny size. Follow the exact visual language of the provided Vandrheim icon references: bold clean near-black outlines; compact, centered, chunky silhouette; crisp faceted shapes; warm brass and golden yellow, parchment cream, charcoal and dark brown; restrained flat bevel highlights and shadows. Keep every part connected into one clear emblem. Make the awning and counter large and easy to read, with only a few broad cloth panels. No people, no letters, no text, no loose coins, no goods clutter, no background, no frame, no halo, no cast shadow beyond the icon. Center the complete artwork with generous transparent padding. Isolated icon with truly transparent background.",
+  "references": [
+    "Assets/Icons/UI/Menu/Icon_Menu_dungeon.png",
+    "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png"
+  ],
+  "generated_source": "C:\\Users\\Diego\\.codex\\generated_images\\01a0f36e-9def-7e80-9b8b-9f2ec5810d5e\\exec-df87272e-eed7-475c-bd0e-8931b345b8d2.png",
+  "export": {
+    "size_px": [
+      512,
+      512
+    ],
+    "format": "PNG",
+    "color_mode": "RGBA",
+    "artwork_max_px": [
+      420,
+      420
+    ],
+    "padding_px": "centered; alpha crop with 8 px safety edge"
+  }
+}

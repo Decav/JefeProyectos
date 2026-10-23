@@ -15,7 +15,7 @@
 
 ### 2. Pase: Tercer Personaje — Dev Product · 149 R$
 
-- **Estado:** Developer Product creado; implementación del token pendiente (HU-ECONOMIA-04/HU-R2.1). **ProductId `3718622291`. Sin Game Pass.**
+- **Estado:** Implementado como token (HU-ECONOMIA-04/HU-R2.1; confirmación del PO 2026-10-22). **ProductId `3718622291`. Sin Game Pass.**
 - **Nombre en Dashboard:** `Vandrheim Token - Tercer slot de personaje` (aplica al token `token_slot3`).
 - **Ámbito del canje:** cuenta completa (el slot adicional se comparte entre sus PJs).
 - **Descripción en tienda:**
@@ -24,7 +24,7 @@
 
 ### 3. Pase: Mochila Ampliada — Dev Product · 99 R$
 
-- **Estado:** Developer Product creado; implementación del token pendiente (HU-ECONOMIA-04). **ProductId `3720053583`.**
+- **Estado:** Implementado como token (HU-ECONOMIA-04; confirmación del PO 2026-10-22). **ProductId `3720053583`.**
 - **Nombre en Dashboard:** `Vandrheim Token - Mochila ampliada` (aplica al token `token_bag`).
 - **Descripción en tienda:**
   > +10 espacios permanentes en la mochila de este personaje (de 20 a 30). Canjea la ficha con el aventurero al que quieras ampliar la bolsa y lleva más botín por run. ¿No la quieres usar? Véndela por oro en la subasta.
@@ -33,7 +33,7 @@
 
 ### 4. Pase: Subasta Ampliada — Dev Product · 79 R$
 
-- **Estado:** Developer Product creado; implementación del token pendiente (HU-ECONOMIA-04; **requiere ECON-02 implementada** para activar el perk). **ProductId `3720054258`.**
+- **Estado:** Implementado como token (HU-ECONOMIA-04; ECON-02 implementada; confirmación del PO 2026-10-22). **ProductId `3720054258`.**
 - **Nombre en Dashboard:** `Vandrheim Token - Mejora de subasta` (aplica al token `token_auction`).
 - **Ámbito del canje:** cuenta (`UserId`), de acuerdo con el límite de anuncios por jugador de ECON-02.
 - **Descripción en tienda:**
@@ -42,7 +42,7 @@
 
 ### 5. Pergamino de Renombre — Dev Product · 49 R$
 
-- **Estado:** Developer Product creado; implementación del token pendiente (HU-ECONOMIA-04). **ProductId `3720053841`.**
+- **Estado:** Implementado como token (HU-ECONOMIA-04; confirmación del PO 2026-10-22). **ProductId `3720053841`.**
 - **Nombre en Dashboard:** `Vandrheim Token - Renombrar personaje` (aplica al token `token_rename`).
 - **Ámbito del canje:** solo el personaje cuyo flujo de cambio de nombre se completa.
 - **Descripción en tienda:**
@@ -63,9 +63,9 @@
 
 - **Premium Payouts:** activar en el Dashboard (Roblox paga por tiempo de juego de usuarios Premium; $0 esfuerzo). Tarea de publicación.
 
-## Assets pendientes (diseñador)
+## Assets de monetización
 
-- **Icono de tienda 512×512 por cada token** (slot 3, mochila, subasta, renombre). Fondo transparente (estándar vigente).
+- **Iconos finales 512×512 para los cuatro tokens:** entregados (confirmación del PO 2026-10-22). Fondo transparente (estándar vigente).
 
 ---
 
@@ -76,3 +76,4 @@
 | 2026-10-12 | Creación del catálogo: 5 productos Fase 1 (revive 50 · slot 3 299 · mochila +10 199 · subasta +10 149 · nombre 99) + Fase 2 en evaluación + Premium Payouts; descripción de tienda del pase de slot 3 |
 | 2026-10-12 | **Todo Dev Product, sin Game Passes (modelo PLEX/Bond, HU-ECONOMIA-04):** los 4 perks van por **token** (`token_slot3`/`token_bag`/`token_auction`/`token_rename`) — compra Robux o compra con oro → canje permanente o venta; R2.1 migrada a token |
 | 2026-10-19 | **IDs y precios confirmados por el PO:** revive 3717359753/49 R$; `token_slot3` 3718622291/149 R$; `token_bag` 3720053583/99 R$; `token_auction` 3720054258/79 R$; `token_rename` 3720053841/49 R$. Los productos ya existen en el Dashboard; la implementación de tokens sigue pendiente |
+| 2026-10-22 | El PO confirma implementada toda la economía y cerrados todos los RCs; se actualizan estados de tokens y assets finales |

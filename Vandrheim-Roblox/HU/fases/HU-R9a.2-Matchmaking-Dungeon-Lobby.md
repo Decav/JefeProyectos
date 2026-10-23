@@ -35,16 +35,16 @@ Esta HU agrega la **ventana de matchmaking** (en el hub, al interactuar con el p
 2. **Crear sala**: elegir **pública** (aparece en la lista) o **privada** (solo invitaciones); opcional nombre de sala; invitar gente desde la lista del lobby (R9a.1) o esperar a que se unan.
 2.1 **Autocompletado del party**: si el jugador ya tiene un **party armado** (R9a) al entrar en modo Grupo, la sala se crea/abre **pre-cargada con los miembros de su party** (misma info de roles/ready); no tiene que volver a invitar a quienes ya lo acompañan.
 3. **Unirse a una sala**: lista de salas públicas del servidor (líder, tamaño, roles cubiertos); unirse con un click si hay lugar y no se está en party/sala.
-4. **Sala (2–4)**: casillas con **rol esperado y rol cubierto** (Tank/Heal/DPS según clase+spec), estado de **Listo** por jugador, botones **Salir de sala** (miembro) y **Empezar run** (líder).
+4. **Sala (2–4)**: casillas con **rol esperado y rol cubierto** (Tank/Heal/DPS según clase+spec), estado de **Listo** por jugador y control **Salir de sala**. No existe botón de inicio manual: el servidor inicia automáticamente cuando todos los presentes están Listos y se cumplen las condiciones de R9a.2.
 5. **Roles auto-verificados (server)**: el sistema deriva el rol de la clase+spec activa (Protector → Tank, Misericordia → Heal; el resto → DPS). **Si no califica como Tank ni Heal, va como DPS** (no hay selección manual).
 6. **Composición — regla final (decisión PO 2026-09-22):**
    * **Party pre-armado:** **no se valida composición** — se inicia con el count que tenga el party (2–4).
-   * **Sala pública/privada (matchmaking):** la composición **se valida y se muestra** (objetivo 1 Tank / 1 Heal / 2 DPS, sin duplicar Tank ni Heal), pero el inicio **nunca se bloquea por composición ni por cantidad**.
+    * **Sala pública/privada (matchmaking):** se calcula y muestra la cobertura frente al objetivo 1 Tank / 1 Heal / 2 DPS (máximo 1 Tank y 1 Heal), pero la composición es **solo informativa** y el inicio **nunca se bloquea por composición ni por cantidad**.
    * **Inicio siempre permitido con ≥2 jugadores** (2, 3 o 4), con el **ready-check de los presentes**; si la sala/grupo queda con 1 jugador, ese jugador va en modo solo.
 7. **Ready-check**: cada miembro marca **Listo**; cuando **todos los presentes** están listos, la run **arranca automáticamente** y todos se teleportan juntos (flujo R6b/PUBLICAR-02 con `partyId`).
 7.1 **Ventana de info de la dungeon** (misma interfaz, pestaña/panel): detalle de la Helada, enemigos por piso, mini-jefe del piso 4, boss final (Jotunn) y **loots de los últimos 2 jefes**.
 
-**Criterio de hecho global:** desde el hub, un jugador elige solo o grupo; si es grupo, crea/une a una sala (pública o privada), completa la composición 1/1/2 y el ready-check, y toda la sala entra junta a la misma run; el solo funciona idéntico sin pasar por sala.
+**Criterio de hecho global:** desde el hub, un jugador elige solo o grupo; si es grupo, crea/une a una sala (pública o privada), ve el objetivo de composición 1/1/2 como información, completa el ready-check y, cuando todos los presentes están listos, toda la sala entra automáticamente a la misma run; el solo funciona idéntico sin pasar por sala.
 
 ---
 
@@ -75,7 +75,7 @@ Esta HU agrega la **ventana de matchmaking** (en el hub, al interactuar con el p
 | `RequestRoomList` | C→S | — | Lista de salas públicas del servidor (con PJ activo, sin party) |
 | `RequestJoinRoom` | C→S | `{ partyId }` | Sala pública del mismo servidor, lugar libre, sin party previo |
 | `RequestLeaveRoom` | C→S | — | En sala (antes de iniciar la run) — delega salir de party (R9a) |
-| `RequestSetReady` | C→S | `{ ready }` | En sala; al quedar todos ready + composición válida → el server inicia la run |
+| `RequestSetReady` | C→S | `{ ready }` | En sala; al quedar todos los presentes ready y cumplirse las condiciones de inicio → el servidor inicia automáticamente la run; la composición no bloquea |
 | `RoomStateUpdate` | S→C | `{ partyId, members, roles, ready, isPublic, roomName, status }` | Estado de la sala a todos los miembros |
 | `RoomListUpdate` | S→C | `{ rooms }` | Actualización de la lista de salas públicas |
 
@@ -94,7 +94,7 @@ Esta HU agrega la **ventana de matchmaking** (en el hub, al interactuar con el p
 
 * Mapa `roleBySpec` en config (`SpecConfig` o `RoomConfig`); sin inventar roles ni permitir selección manual en MVP.
 * **Roles auto (server):** Protector → `Tank`; Misericordia → `Heal`; cualquier otra spec o clase sin rol → `DPS` (default). El rol del jugador se recalcula si cambia spec (respec) mientras está en sala.
-* **Composición (regla final):** en **sala matchmaking** se valida y muestra el objetivo 1/1/2 (máximo 1 Tank y 1 Heal por sala) como **información**, sin bloquear el inicio; en **party pre-armado** la composición no se valida. El inicio depende solo del ready-check de los presentes (mínimo 2 jugadores).
+* **Composición (regla final):** en **sala matchmaking** se muestra el objetivo 1/1/2 (máximo 1 Tank y 1 Heal por sala) como **información**, sin bloquear el inicio; en **party pre-armado** la composición no se valida. El inicio depende solo del ready-check de los presentes (mínimo 2 jugadores).
 
 #### **4. Ventana de info de la dungeon (data-driven)**
 
@@ -113,14 +113,14 @@ Esta HU agrega la **ventana de matchmaking** (en el hub, al interactuar con el p
   * Vista **Solo/Grupo**.
   * Vista **Crear Sala** (nombre opcional, toggle pública/privada, invitar por lista del lobby R9a.1).
   * Vista **Lista de salas** (públicas: líder, tamaño X/4, roles cubiertos, nombre).
-  * Vista **Sala** (casillas 4 con rol + jugador + Listo, botones Salir / Empezar run del líder, mensajes de composición).
+  * Vista **Sala** (casillas 4 con rol + jugador + Listo, botones Salir/Invitar y mensajes informativos de composición; inicio automático al quedar todos listos, sin acción manual del líder).
   * Vista **Info de dungeon** (pestaña/panel lateral con los datos de la sección 4).
 * Estilo EST-13/Hearthbound Gold (tokens, Scale + UIAspectRatioConstraint, PC + móvil); referencias: ventana de party de EST-22 y diseño de ventanas (EST-10/11/12). Si el diseñador entrega un frame propio de matchmaking (EST futura), se implementa ese diseño; para el MVP el dev usa el patrón EST-13.
 
 #### **6. Seguridad y autoridad**
 
 * Solo en el hub; salas del mismo servidor; server-authoritative para roles, ready e inicio.
-* El inicio automático lo valida el servidor (composición + todos ready + lugar en servidor reservado); un cliente no puede saltarse el ready-check ni iniciar sin composición.
+* El inicio automático lo valida el servidor (todos los presentes ready, mínimo 2 jugadores y servidor reservado disponible). La composición no es condición de inicio; un cliente no puede saltarse el ready-check ni iniciar por su cuenta.
 * Anti-exploit: límite 4, una sala por jugador, unirse solo a salas públicas, invitaciones de R9a intactas, en la dungeon no hay matchmaking.
 
 ---
@@ -183,12 +183,11 @@ Esta HU agrega la **ventana de matchmaking** (en el hub, al interactuar con el p
 * **THEN** se muestra qué rol falta (objetivo 1/1/2, sin duplicar Tank/Heal).
 * **AND** el inicio **no se bloquea** por composición ni por cantidad.
 
-#### **Escenario 7.2: Party pre-armado sin validación**
+#### **Escenario 7.2: Party pre-armado sin validación y auto-inicio**
 
 * **GIVEN** una sala autocompletada desde un party existente.
-* **WHEN** el líder intenta iniciar.
-* **THEN** la composición no se valida.
-* **AND** el inicio depende solo del ready-check de los presentes.
+* **WHEN** todos los presentes marcan Listo.
+* **THEN** la composición no se valida y el servidor inicia la run automáticamente sin pedir una acción adicional al líder.
 
 #### **Escenario 7.3: Inicio con 2 o 3 jugadores**
 
@@ -228,7 +227,7 @@ Esta HU agrega la **ventana de matchmaking** (en el hub, al interactuar con el p
 #### **Escenario 12: Anti-exploit y regresión**
 
 * **GIVEN** un cliente manipulador.
-* **WHEN** intenta unirse sin invitación a sala privada, entrar dos salas, arrancar sin ready/composición o cambiar su rol.
+* **WHEN** intenta unirse sin invitación a sala privada, entrar dos salas, forzar inicio sin ready o cambiar su rol.
 * **THEN** el servidor rechaza.
 * **AND** el solo, R9a/R9a.1, teleport y dungeon compartida no tienen regresiones ni errores rojos.
 
@@ -237,8 +236,8 @@ Esta HU agrega la **ventana de matchmaking** (en el hub, al interactuar con el p
 ### **Comportamiento Visual / Reglas de Negocio**
 
 * La ventana de matchmaking es la puerta de entrada a la dungeon: decisión explícita de solo o grupo antes del teleport.
-* Roles derivados de clase/spec; la composición 1/1/2 es **requisito** para iniciar (con mínimo T+H+DPS).
-* Ready-check: el inicio es automático cuando todos están listos y la composición es válida (decisión cerrada).
+* Roles derivados de clase/spec; la composición 1/1/2 es un **objetivo informativo** en matchmaking y no bloquea el inicio.
+* Ready-check: el inicio es automático cuando todos los presentes están listos y se cumplen las condiciones operativas (mínimo 2 jugadores; la composición no se valida).
 * La información de la dungeon está disponible en la misma ventana para decidir con datos.
 * Sin matchmaking aleatorio fuera del servidor (el GDD lo mantiene post-MVP): la lista de salas es del hub.
 
@@ -251,7 +250,7 @@ Esta HU agrega la **ventana de matchmaking** (en el hub, al interactuar con el p
 * Ventana `MatchmakingUI` en el hub: Solo/Grupo, crear sala (pública/privada), lista de salas, sala con roles y ready, pestaña de info.
 * Metadatos de sala sobre `PartyService` (isPublic, roomName, ready, roles, status).
 * Remotes de sala nuevos; rol derivado de clase+spec (config).
-* Composición obligatoria (T+H+DPS) + ready-check con inicio automático server-side.
+* Composición 1/1/2 informativa + ready-check con inicio automático server-side cuando todos los presentes están listos.
 * Inicio de run con el teleport grupal existente (R9a/PUBLICAR-02).
 * Info de dungeon data-driven (pisos, enemigos, jefes, loot de los 2 últimos jefes).
 * Verificación PC y móvil.
@@ -303,10 +302,10 @@ Esta HU agrega la **ventana de matchmaking** (en el hub, al interactuar con el p
 
 ---
 
-### **Pendientes de confirmación**
+### **Decisiones cerradas / pendientes de implementación**
 
 * ~~Composición con 3 jugadores~~ **Resuelto (decisión PO 2026-09-22):** el inicio nunca se bloquea por composición ni cantidad (mínimo 2); en sala matchmaking la compo 1/1/2 es informativa y en party pre-armado no se valida.
-* **Diseño de la ventana:** el dev implementará con el patrón EST-13/EST-22; si el diseñador quiere entregar un frame propio de matchmaking en Pencil, se crea una HU-ESTETICA y el dev la referencia.
+* **Diseño e inicio (PO 2026-10-23, cerrado):** usar exclusivamente los frames seleccionados `o0nxs` (Salas), `B3yoQT` (Crear sala) y `FRPZ6` (Tu sala); implementar el inicio automático al quedar todos los presentes listos, sin botón del líder. La primera integración con frames anteriores debe corregirse mediante HU-ESTETICA-50.
 
 ---
 
@@ -322,3 +321,4 @@ Esta HU agrega la **ventana de matchmaking** (en el hub, al interactuar con el p
 |-------|--------|
 | 2026-09-22 | Creación de HU-R9a.2: prelobby de matchmaking — Solo/Grupo, salas públicas/privadas, unirse/crear/invitar, roles 1/1/2 obligatorios, ready-check con inicio automático y ventana de info de dungeon data-driven; reutiliza party (R9a/R9a.1) y teleport grupal |
 | 2026-09-22 | **Ajuste de reglas (decisión PO):** sala **autocompletada con el party existente** (sin re-invitar); **inicio permitido con 2–4** (mínimo 2, 1 solo = modo solo); **roles 100% automáticos** (Protector=Tank, Misericordia=Heal, resto=DPS); composición 1/1/2 **informativa en salas matchmaking** (máx 1 Tank/1 Heal) y **sin validación en party pre-armado** — el inicio depende solo del ready-check de los presentes |
+| 2026-10-23 | **Enmienda PO de UI/inicio:** frames finales seleccionados `o0nxs` (Salas), `B3yoQT` (Crear sala) y `FRPZ6` (Tu sala); al quedar todos los miembros presentes listos, el servidor inicia automáticamente, sin botón manual del líder. Se elimina cualquier requisito de composición para iniciar; el objetivo 1/1/2 es informativo. |

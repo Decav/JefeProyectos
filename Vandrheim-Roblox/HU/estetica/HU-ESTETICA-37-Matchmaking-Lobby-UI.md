@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Estética / UI / Predungeon
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Diseño original completado; su presentación queda supersedida para implementación por HU-ESTETICA-50 (Cuaderno, decisión PO 2026-10-23).
 **Tipo:** Diseño de UI en Pencil (solo diseñador; **sin desarrollo, sin código**)
 **Fase GDD:** EST (transversal; complementa la HU dev `HU-R9a.2-Matchmaking-Dungeon-Lobby`)
 **Depende de:** HU-R9a.2 (funcionalidad del prelobby), HU-ESTETICA-22 (party frames y ventana de party — referencias de sala), HU-ESTETICA-10/11/12 (ventanas de equipo/mochila/vendor: patrón de panel), HU-ESTETICA-13 (tokens y paquete de UI), HU-ESTETICA-19 (HUD de combate — coherencia visual), HU-R6.27 (casillas con fondo negro + hover de borde)
@@ -25,7 +25,7 @@
 
 ### **Descripción del Requerimiento / Contexto**
 
-`HU-R9a.2` implementa el prelobby de la dungeon: elección Solo/Grupo, salas públicas/privadas, lista de salas, sala con roles y Listo, inicio automático con composición 1/1/2 y una pestaña de información de la dungeon. Esta HU produce el **diseño visual completo** de esa interfaz en `Vandrheim-design.pen`, coherente con Hearthbound Gold (tokens EST-13) y con el estilo de casillas de R6.27.
+`HU-R9a.2` implementa el prelobby de la dungeon: elección Solo/Grupo, salas públicas/privadas, lista de salas, sala con roles y Listo, inicio automático al quedar listos los presentes y una pestaña de información de la dungeon. La composición 1/1/2 es informativa, no bloquea el inicio. Esta HU conserva el diseño visual original; la nueva presentación de implementación está en `HU-ESTETICA-50`.
 
 **Criterio de hecho global:** existe en el `.pen` un frame completo de la pantalla de matchmaking (flujo solo/grupo + sala + lista + info de dungeon, con estados y variante móvil) listo para que el dev lo implemente en R9a.2.
 
@@ -54,7 +54,7 @@
    * **Autocompletado del party:** si el jugador llegó con un party armado, las casillas ya vienen ocupadas por sus miembros (sin invitarlos de nuevo).
    * Cabecera: nombre de sala, **pública/privada**, líder marcado (corona/runas), ocupación X/4.
    * Mensajes de composición (bajo las casillas) **informativos**: "Falta tanque", "Falta curador", "Falta dps" u objetivo "Composición objetivo 1/1/2" — **nunca bloquean el inicio**.
-   * Botones: **Salir de sala** (miembro) y **Empezar run** (solo líder; habilitado cuando todos los presentes están Listo — funciona con 2, 3 o 4 jugadores; con 1 se indica "Modo solo").
+    * Botones: **Salir de sala** (miembro) e **Invitar**. Cuando todos los miembros presentes están Listos, el servidor inicia automáticamente; no hay botón de inicio manual. Si queda 1 jugador, se indica "Modo solo".
    * Botón **Invitar** (abre la lista del lobby, patrón EST-22/R9a.1).
 
 5. **Pestaña Info de la dungeon (misma ventana):**
@@ -150,12 +150,12 @@
 * [x] Existe el frame `HU-ESTETICA-37 — Matchmaking Lobby` en el `.pen` (`Nkt7w`).
 * [x] Las 5 vistas están diseñadas y conectadas (tabs SOLO/GRUPO · CREAR SALA · SALAS ABIERTAS · TU SALA · GUÍA).
 * [x] Las casillas de sala muestran rol, jugador, nivel y Listo (vistas 4A incompleta y 4B completa/privada).
-* [x] Los mensajes de composición (falta tank/heal/dps) están representados como informativos; nunca deshabilitan Empezar. El estado incompleto deshabilita solo mientras falta el Listo de un miembro presente; la vista lista y nota de 2/4 muestran el inicio habilitado con 2–4 presentes listos y 1 jugador como modo solo.
+* [x] Los mensajes de composición (falta tank/heal/dps) son informativos y no bloquean el inicio. La presentación anterior del botón Empezar queda supersedida por el inicio automático confirmado; la sala inicia cuando todos los presentes están listos (2–4) y con 1 jugador se usa modo solo.
 * [x] La pestaña de info muestra pisos/enemigos/jefes y loot de los 2 últimos jefes (con disclaimer "datos ilustrativos").
 * [x] Estados: incompleta, completa-lista, privada, lista vacía y móvil (verificado en `Nkt7w` + variante móvil `NcFgD`).
 * [x] Runas de rol Tank/Heal/DPS entregadas (set vectorial `daQ4B`; `ASSETS_LIST.md` con `Icon_UI_role_tank/heal/dps`).
 * [x] Coherente con EST-13/EST-22/R6.27 y sin recortes: capturas de escritorio, móvil y estados revisadas; bounds de escritorio/móvil/set de runas sin clipping.
-* [ ] El dev puede implementar R9a.2 con el diseño sin reinterpretar: pendiente de aprobación PM del render.
+* [x] El handoff visual original fue entregado; para la implementación del rediseño usar HU-ESTETICA-50 y el set Cuaderno seleccionado por el PO.
 * [x] Reporte al PM entregado (`HU-ESTETICA-37-REPORTE-PM.md`).
 * [x] Estado de invitación entrante a una sala de dungeon diseñado en el frame `HU-ESTETICA-37 — Invitación a dungeon` (`UbZiA`): líder, sala/mazmorra, ocupación, integrantes y acciones Aceptar/Rechazar.
 
@@ -189,3 +189,4 @@
 | 2026-09-22 | **Diseño entregado y verificado por PM (estructura):** frames `Nkt7w` (lobby escritorio, 5 vistas), `NcFgD` (variante móvil) y `daQ4B` (runas Tank/Heal/DPS); `ASSETS_LIST.md` actualizado; reporte `HU-ESTETICA-37-REPORTE-PM.md`. Pendiente: verificación visual del render y aprobación final del PM |
 | 2026-09-22 | **Ajuste PO aplicado al diseño:** party existente autocargado sin reinvitar; composición 1/1/2 marcada informativa y no bloqueante; Empezar depende del Listo de los presentes (2–4 pueden iniciar; 1 = modo solo). Capturas y bounds revisados; tooltips/estados reflejados en escritorio y móvil |
 | 2026-09-22 | Se añade el frame `UbZiA` para la invitación entrante a una sala de dungeon: contexto del pueblo atenuado, quién invita, información de sala/Helada, ocupación, integrantes y acciones Aceptar/Rechazar. Captura revisada; bounds sin clipping |
+| 2026-10-23 | El PO selecciona los frames `o0nxs` (Salas), `B3yoQT` (Crear sala) y `FRPZ6` (Tu sala) para HU-ESTETICA-50. Las versiones Cuaderno anteriores quedan supersedidas; el inicio es automático al quedar todos listos y no se muestra el botón manual antiguo. |

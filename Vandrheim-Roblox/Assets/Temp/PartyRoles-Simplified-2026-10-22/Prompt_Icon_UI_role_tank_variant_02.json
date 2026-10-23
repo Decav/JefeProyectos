@@ -1,0 +1,35 @@
+{
+  "asset": "Icon_UI_role_tank_simplified_variant_02",
+  "date": "2026-10-22",
+  "tool": "ImageGen",
+  "mode": "image edit; preserve shield shape and change the center only",
+  "transparent_background": true,
+  "prompt": "Edit the supplied Vandrheim Tank shield icon. Preserve the existing shield's outer geometry exactly: same heater silhouette, shoulder shape, pointed bottom, thickness, gold rim, blue face, charcoal outline, rivets, scale, colors, lighting and framing. Change only the central circular cream boss. Remove that round boss and replace it with one bold, simple parchment-cream downward chevron (a broad V-shaped defensive mark) centered on the blue shield face, with a restrained thin warm-gold edge. Keep the chevron fully inside the blue face with clear margin from the rim. Do not alter any other part of the shield. No circle, no extra emblems, no added decoration, no texture, no text. Transparent background.",
+  "references": [
+    "Assets/Temp/PartyRoles-Simplified-2026-10-22/Icon_UI_role_tank_simplified.png"
+  ],
+  "generated_source": "C:\\Users\\Diego\\.codex\\generated_images\\01a0f36e-9def-7e80-9b8b-9f2ec5810d5e\\exec-f5674297-df1b-42a3-b06e-4f2ee8ca2e46.png",
+  "export": {
+    "file": "C:\\Users\\Diego\\Desktop\\Proyectos\\JefeProyectos\\Vandrheim-Roblox\\Assets\\Temp\\PartyRoles-Simplified-2026-10-22\\Icon_UI_role_tank_simplified_variant_02.png",
+    "size_px": [
+      512,
+      512
+    ],
+    "format": "PNG",
+    "color_mode": "RGBA",
+    "artwork_max_px": [
+      420,
+      420
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "source_content_bbox": [
+      195,
+      110,
+      1057,
+      1144
+    ]
+  }
+}

@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Economía — Comercio (dev)
 **Prioridad:** Alta
-**Estado:** Cerrada por el PO 2026-10-19; decisiones de producto y criterios de aceptación cerrados para implementación.
+**Estado:** Implementada (confirmación del PO 2026-10-22; RC cerrado).
 **Tipo:** Sistema nuevo (dev)
 **Fase GDD:** Economía 1 (decisión PO 2026-09-22; v2 tras revisión técnica 2026-09-22)
 **Depende de:** **HU-ECONOMIA-03 (PREREQUISITO: seguridad de guardado)**, HU-ITEMS-01 (ItemConfig, inventario), R2 (inventario/oro), HU-ESTETICA-13 (tokens), HU-ESTETICA-35 (referencia visual de Trade)

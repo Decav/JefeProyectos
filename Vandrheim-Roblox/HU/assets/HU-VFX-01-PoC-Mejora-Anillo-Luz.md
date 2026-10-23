@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** VFX / Polish de clases — PoC
 **Prioridad:** Alta
-**Estado:** Lista para implementar (RC obligatorio del dev antes de programar)
+**Estado:** Completada por confirmación del PO 2026-10-22; PoC exitosa.
 **Tipo:** Prueba de concepto de VFX (dev) — 1 sola skill
 **Fase GDD:** Polish (los VFX de clases pueden mejorar mucho; se prueba con una skill)
 **Depende de:** SKILLS_CATALOG (Anillo de luz sagrada: SelfAoE, MATK, radio 6, CD 10 s, 25 MP), HU-R6.8 (VFX base), HU-R8a (contenido Paladín), `sfx_skill_selfAOE` (sonido ya existe)
@@ -103,3 +103,4 @@ Los VFX actuales de las skills de clase son básicos y pueden mejorar mucho. Est
 | Fecha | Cambio |
 |-------|--------|
 | 2026-10-12 | Creación de HU-VFX-01: PoC de mejora de VFX de clases con el **Anillo de luz del Paladín** (onda expansiva radio 6 + destello + impacto, sonido existente); si gusta, el estándar se replica al resto (decisión PO) |
+| 2026-10-22 | PO confirma que la PoC fue exitosa y que el VFX del Anillo de luz mejoró notablemente; se crea HU-VFX-02 para extender el rediseño a todas las habilidades. |

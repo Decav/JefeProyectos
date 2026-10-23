@@ -142,6 +142,8 @@ Se completa a medida que se incorporan assets reales (obligatorio en DoD de HU-A
 | 126551601593677 | Música | Vandrheim-Frost-JotunnBossFight — batalla del jefe final | Aportado por el PO (subido) | Decavii | Uso propio | 2026-10-12 |
 | 121076782362772 | Icono | Icon_Menu_nameplates — botón toggle de nameplates (micromenú) | Aportado por el PO (subido) | Decavii | Uso propio | 2026-10-12 |
 
+**Actualización 2026-10-22:** el ID registrado corresponde a la versión anterior con fondo negro. El reemplazo transparente aprobado está en `Assets/Icons/UI/Menu/Icon_Menu_nameplates.png`; requiere volver a subirse para que Roblox use la versión nueva.
+
 ---
 
 ## 10. Riesgos

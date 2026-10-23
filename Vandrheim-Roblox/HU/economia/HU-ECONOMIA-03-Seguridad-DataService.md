@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Economía — Infraestructura de datos (dev) — PREREQUISITO
 **Prioridad:** **CRÍTICA / BLOQUEANTE** (para ECON-01 tradeo y ECON-02 subasta)
-**Estado:** Lista para implementar tras revisión del dev senior (RC obligatorio del dev antes de programar)
+**Estado:** Implementada (confirmación del PO 2026-10-22; RC cerrado).
 **Tipo:** Fix de infraestructura (dev)
 **Fase GDD:** Economía 0 (infra) — requisito detectado por el dev senior 2026-09-22; v2 tras su revisión 2026-09-22
 **Depende de:** R2 (perfil/oro/inventario)

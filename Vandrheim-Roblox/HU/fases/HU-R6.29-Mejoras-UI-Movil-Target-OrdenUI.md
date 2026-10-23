@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R6.x / UI móvil — Mejora (decisión PO 2026-09-22)
 **Prioridad:** Alta
-**Estado:** Lista para implementar (RC obligatorio del dev antes de programar)
+**Estado:** Implementada (confirmación del PO 2026-10-22; RC cerrado)
 **Tipo:** Mejoras de UI (dev)
 **Fase GDD:** R6.29 (no cambia reglas de juego)
 **Depende de:** HU-R3.1/R3.3 (targeting TAB/click + indicador visual), HU-R6.14/15 (controles móviles), HU-R6.20 (OrdenUI — escala/orden configurable), HU-R6.21 (target de habilidades), R8c (HUD), loot pickup (R6a/R4)

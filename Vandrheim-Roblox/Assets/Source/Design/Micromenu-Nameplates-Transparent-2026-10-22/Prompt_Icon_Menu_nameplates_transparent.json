@@ -1,0 +1,19 @@
+{
+  "asset": "Icon_Menu_nameplates_transparent",
+  "date": "2026-10-22",
+  "tool": "ImageGen",
+  "mode": "edit supplied image; transparent background",
+  "transparent_background": true,
+  "prompt": "Edit the supplied 512x512 Vandrheim UI icon. Perform a precise background removal only: replace the uniform pure-black square canvas surrounding the icon with fully transparent pixels. Preserve the entire foreground artwork exactly in place, with identical shapes, geometry, colors, proportions and 512x512 framing. Crucially, preserve the black/dark parts that belong to the icon itself: the eye pupil, the unfilled black portion inside the small gold status bar, all dark outlines and interior shadows. Do not erase or recolor any black region enclosed by the icon's gold or cream contours. Do not redraw, enhance, crop, resize, add padding, or change any details. Output a 512x512 RGBA PNG with true alpha transparency only in the exterior background.",
+  "reference": "Assets/Icons/UI/Menu/Icon_Menu_nameplates.png",
+  "generated_source": "C:\\Users\\Diego\\.codex\\generated_images\\01a0f36e-9def-7e80-9b8b-9f2ec5810d5e\\exec-a1a066dd-1dbe-4cab-b08b-82fa18936d3d.png",
+  "export": {
+    "size_px": [
+      512,
+      512
+    ],
+    "format": "PNG",
+    "color_mode": "RGBA",
+    "alpha_corner": 0
+  }
+}

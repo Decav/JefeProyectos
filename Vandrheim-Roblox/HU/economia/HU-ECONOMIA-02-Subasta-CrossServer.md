@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Economía — Subasta (dev)
 **Prioridad:** Alta
-**Estado:** ECON-03 está implementada según confirmación del PO. P4 (elegibilidad), P9 (NPC en Hub) y P10 (diseños PC/móvil) confirmados; el resto de P1–P14 se registra como propuesta para aprobación final. RC103 permanece ABIERTO.
+**Estado:** Implementada (confirmación del PO 2026-10-22; RC103 cerrado y todos los RCs cerrados).
 **Tipo:** Sistema nuevo (dev)
 **Fase GDD:** Economía 2 (decisión PO 2026-09-22; v2 tras revisión técnica 2026-09-22)
 **Depende de:** **HU-ECONOMIA-03 (PREREQUISITO: seguridad de guardado de DataService)**, HU-ECONOMIA-01 (tradeo), HU-ITEMS-01 (ItemConfig/inventario), R2 (oro), HU-ESTETICA-13 (tokens), HU-R6.11 (ventanas movibles), HU-R6.31 (NotificationFrame/NotificationSystem), HU-ESTETICA-35 (diseño visual de Subasta)
@@ -110,9 +110,9 @@ El agregado antiguo `V6A4f` queda supersedido; integrar los estados separados an
 * `AuctionConfig`: `feeListing = 5`, `saleCut = 0.05`, `minPrice = 1`, `maxPrice = 1000000`, `maxListingsBase = 10`, `maxListingsWithPerk = 20`, `durations = {24, 48}`, `pageSize = 20`, `catalogCacheTtl = 10` s por servidor/página, `indexTtlMarginHours = 2`, `reconcileInterval = 120` s, `expirySweepInterval = 300` s, `globalListingCap = 10000` (soft cap aproximado).
 
 
-### **Propuesta para cerrar P1–P14 en RC103**
+### **Decisiones finales de RC103 (cerrado por el PO 2026-10-22)**
 
-P4, P9 y P10 recogen las confirmaciones directas del PO; las demás son recomendaciones para aprobar o ajustar. Mantener RC103 ABIERTO hasta que el PO confirme.
+La tabla registra las decisiones de producto cerradas para RC103; usar estos valores como referencia de la implementación aceptada.
 
 | # | Decisión |
 |---|---|

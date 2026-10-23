@@ -1,0 +1,17 @@
+{
+  "name": "dcv-studios-discord-bot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Bot oficial de Discord para organizar el servidor de DCV Studios.",
+  "engines": {
+    "node": ">=20.6.0"
+  },
+  "scripts": {
+    "commands": "node --env-file=.env src/register-commands.js",
+    "start": "node --env-file=.env src/bot.js"
+  },
+  "dependencies": {
+    "discord.js": "14.26.5"
+  }
+}

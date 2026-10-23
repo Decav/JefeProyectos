@@ -1,0 +1,198 @@
+{
+  "categories": [
+    {
+      "name": "📌 EMPIEZA AQUÍ",
+      "aliases": ["Información", "Empieza aquí"],
+      "channels": [
+        {
+          "name": "bienvenida-y-normas",
+          "aliases": ["bienvenida"],
+          "type": "text",
+          "topic": "Presentación de DCV Studios y normas para la comunidad."
+        },
+        {
+          "name": "anuncios",
+          "type": "text",
+          "topic": "Noticias oficiales y novedades de DCV Studios."
+        },
+        {
+          "name": "recursos",
+          "type": "text",
+          "topic": "Enlaces, guías y recursos útiles para la comunidad."
+        }
+      ]
+    },
+    {
+      "name": "💬 COMUNIDAD",
+      "aliases": ["Canales de texto", "Comunidad"],
+      "channels": [
+        {
+          "name": "general",
+          "type": "text",
+          "topic": "Conversación general de la comunidad DCV Studios."
+        },
+        {
+          "name": "planes-para-reuniones",
+          "type": "text",
+          "topic": "Coordina reuniones, horarios y actividades del estudio."
+        },
+        {
+          "name": "fuera-de-tema",
+          "type": "text",
+          "topic": "Conversaciones casuales que no van en los otros canales."
+        }
+      ]
+    },
+    {
+      "name": "🎮 VANDRHEIM",
+      "aliases": ["Vandrheim"],
+      "channels": [
+        {
+          "name": "teasers",
+          "type": "text",
+          "topic": "Avances, imágenes y pequeños adelantos de Vandrheim."
+        },
+        {
+          "name": "devlogs",
+          "type": "text",
+          "topic": "Diarios de desarrollo y progreso del juego."
+        },
+        {
+          "name": "actualizaciones",
+          "type": "text",
+          "topic": "Cambios, novedades y versiones de Vandrheim."
+        },
+        {
+          "name": "ideas-y-feedback",
+          "type": "forum",
+          "topic": "Una publicación por idea. Explica el problema o la oportunidad, la propuesta y el impacto esperado.",
+          "tags": ["Nueva idea", "Gameplay", "Balance", "Interfaz", "Aceptada", "No planificada"],
+          "defaultSortOrder": "latest_activity"
+        },
+        {
+          "name": "reportar-bugs",
+          "type": "forum",
+          "topic": "Una publicación por error. Incluye pasos para reproducirlo, resultado esperado y real, plataforma y captura si puedes.",
+          "tags": ["Nuevo", "Necesita información", "Confirmado", "En progreso", "Resuelto"],
+          "defaultSortOrder": "latest_activity"
+        }
+      ]
+    },
+    {
+      "name": "🔊 VOZ",
+      "aliases": ["Canales de voz", "Voz"],
+      "channels": [
+        {
+          "name": "Zona de descanso",
+          "aliases": ["zona-de-descanso"],
+          "type": "voice"
+        },
+        {
+          "name": "Sala de reuniones",
+          "aliases": ["sala-de-reuniones"],
+          "type": "voice"
+        }
+      ]
+    },
+    {
+      "name": "🔒 EQUIPO",
+      "aliases": ["Equipo interno"],
+      "private": true,
+      "accessRoles": ["founder", "admin", "moderator", "developer", "artist", "qa"],
+      "channels": [
+        {
+          "name": "equipo-general",
+          "type": "text",
+          "topic": "Coordinación interna del equipo de DCV Studios."
+        },
+        {
+          "name": "progreso-interno",
+          "type": "text",
+          "topic": "Seguimiento de tareas, avances y bloqueos del estudio."
+        },
+        {
+          "name": "reuniones-equipo",
+          "type": "text",
+          "topic": "Agenda, acuerdos y notas de reuniones internas."
+        },
+        {
+          "name": "Sala del equipo",
+          "aliases": ["sala-equipo"],
+          "type": "voice"
+        }
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "key": "founder",
+      "name": "👑 Fundador",
+      "color": "#F1C40F",
+      "hoist": true,
+      "mentionable": false,
+      "permissions": []
+    },
+    {
+      "key": "admin",
+      "name": "🛡️ Administración",
+      "color": "#9B59B6",
+      "hoist": true,
+      "mentionable": false,
+      "permissions": ["ManageChannels", "ManageMessages", "ModerateMembers"]
+    },
+    {
+      "key": "moderator",
+      "name": "🔨 Moderación",
+      "color": "#E67E22",
+      "hoist": true,
+      "mentionable": false,
+      "permissions": ["ManageMessages", "ModerateMembers"]
+    },
+    {
+      "key": "developer",
+      "name": "💻 Desarrollo",
+      "color": "#3498DB",
+      "hoist": true,
+      "mentionable": false,
+      "permissions": []
+    },
+    {
+      "key": "artist",
+      "name": "🎨 Arte y Diseño",
+      "color": "#E84393",
+      "hoist": true,
+      "mentionable": false,
+      "permissions": []
+    },
+    {
+      "key": "qa",
+      "name": "🧪 QA Tester",
+      "color": "#2ECC71",
+      "hoist": true,
+      "mentionable": false,
+      "permissions": []
+    },
+    {
+      "key": "announcements",
+      "name": "📣 Anuncios",
+      "color": "#F39C12",
+      "hoist": false,
+      "mentionable": true,
+      "permissions": []
+    }
+  ],
+  "welcome": {
+    "title": "¡Bienvenido/a a DCV Studios!",
+    "description": "Somos un estudio de desarrollo de juegos de Roblox. Este es el punto de partida para conocer la comunidad, encontrar los canales correctos y seguir nuestros proyectos.",
+    "rules": [
+      "Trata a todos con respeto. No se permite acoso, discriminación ni ataques personales.",
+      "Evita el spam, la publicidad no autorizada y los enlaces o archivos sospechosos.",
+      "Publica cada tema en su canal y comparte sugerencias de forma constructiva.",
+      "No compartas contraseñas, tokens, datos privados ni contenido ajeno sin permiso.",
+      "No publiques exploits, trampas ni contenido que infrinja las normas de Roblox o Discord.",
+      "Sigue las indicaciones del equipo de moderación y ayuda a mantener un ambiente seguro."
+    ],
+    "footer": "Al participar en DCV Studios aceptas estas normas. ¡Que disfrutes la comunidad!",
+    "arrival": "¡Hola {user}! Te damos la bienvenida a DCV Studios. Revisa este canal para conocer las normas y los proyectos."
+  }
+}

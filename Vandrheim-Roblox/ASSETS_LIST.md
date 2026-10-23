@@ -118,16 +118,32 @@ Los iconos cubiertos se registran en `RoomConfig.RoleIcons`; sus variantes apaga
 
 | Asset | ID de recurso | Tipo | Modificado | Creador |
 |---|---:|---|---:|---|
-| Icon_UI_role_heal | `110947674181561` | Image | `1791412121274` | Decavii |
-| Icon_UI_role_tank | `108924685421755` | Image | `1791412127510` | Decavii |
-| Icon_UI_role_tank_uncovered | `104055532601732` | Image | `1791412121393` | Decavii |
-| Icon_UI_role_dps_uncovered | `85742564014865` | Image | `1791412121367` | Decavii |
-| Icon_UI_role_dps | `86280431749523` | Image | `1791412121429` | Decavii |
-| Icon_UI_role_heal_uncovered | `120110117123296` | Image | `1791412121446` | Decavii |
+| Icon_UI_role_heal | `128865686691543` | Image | `1792729030367` | Decavii |
+| Icon_UI_role_dps_uncovered | `109267135109201` | Image | `1792729030595` | Decavii |
+| Icon_UI_role_heal_uncovered | `115978652940412` | Image | `1792729030667` | Decavii |
+| Icon_UI_role_tank_uncovered | `95037433065246` | Image | `1792729030775` | Decavii |
+| Icon_UI_role_tank | `99345927547899` | Image | `1792729030743` | Decavii |
+| Icon_UI_role_dps | `111799977902329` | Image | `1792729030897` | Decavii |
 
 Archivos locales canónicos: `Assets/Icons/UI/PartyRoles/` (nombres de archivo `Icon_UI_role_*.png`).
 
-La licencia no venía indicada en los metadatos recibidos. La disponibilidad/render de los assets en el cliente publicado queda pendiente de QA.
+La licencia no venía indicada en los metadatos recibidos. Los seis IDs de la tabla fueron proporcionados por el PO el 2026-10-23 para los PNG simplificados aprobados; queda pendiente validar su render en el cliente publicado.
+
+### PROPUESTAS SIMPLIFICADAS DE PARTY ROLES · 2026-10-22
+
+Rediseño visual de Tank, Heal y DPS. El Tank con chevron, Heal y DPS activos y sus variantes `uncovered` fueron aprobados el 2026-10-23 e instalados como archivos canónicos. La primera opción activa de Tank sigue en revisión. Masters, prompts y muestras a 16–64 px en `Assets/Temp/PartyRoles-Simplified-2026-10-22/`.
+
+| Propuesta | Rol | Archivo local | Fuente / licencia | Estado |
+|---|---|---|---|---|
+| `Icon_UI_role_tank_simplified` | Tank · escudo | `Assets/Temp/PartyRoles-Simplified-2026-10-22/Icon_UI_role_tank_simplified.png` | ImageGen + referencias propias; interno Vandrheim | Pendiente de revisión |
+| `Icon_UI_role_tank` | Tank · escudo con chevron defensivo | `Assets/Icons/UI/PartyRoles/Icon_UI_role_tank.png` | ImageGen + referencias propias; interno Vandrheim | Aprobado; cargado a Roblox; ID vigente en la tabla superior |
+| `Icon_UI_role_heal` | Heal · cruz | `Assets/Icons/UI/PartyRoles/Icon_UI_role_heal.png` | ImageGen + referencias propias; interno Vandrheim | Aprobado; cargado a Roblox; ID vigente en la tabla superior |
+| `Icon_UI_role_dps` | DPS · espadas cruzadas | `Assets/Icons/UI/PartyRoles/Icon_UI_role_dps.png` | ImageGen + referencias propias; interno Vandrheim | Aprobado; cargado a Roblox; ID vigente en la tabla superior |
+| `Icon_UI_role_tank_uncovered` | Tank · inactivo, escudo con chevron | `Assets/Icons/UI/PartyRoles/Icon_UI_role_tank_uncovered.png` | ImageGen + iconos uncovered propios; interno Vandrheim | Aprobado; cargado a Roblox; ID vigente en la tabla superior |
+| `Icon_UI_role_heal_uncovered` | Heal · inactivo, cruz | `Assets/Icons/UI/PartyRoles/Icon_UI_role_heal_uncovered.png` | ImageGen + iconos uncovered propios; interno Vandrheim | Aprobado; cargado a Roblox; ID vigente en la tabla superior |
+| `Icon_UI_role_dps_uncovered` | DPS · inactivo, espadas cruzadas | `Assets/Icons/UI/PartyRoles/Icon_UI_role_dps_uncovered.png` | ImageGen + iconos uncovered propios; interno Vandrheim | Aprobado; cargado a Roblox; ID vigente en la tabla superior |
+
+Los iconos activos canónicos anteriores se conservaron en `Assets/Source/Design/PartyRoles-Active-Originals-2026-10-23/`; los anteriores uncovered están en `Assets/Source/Design/PartyRoles-Uncovered-Originals-2026-10-23/`. Los IDs de la tabla superior corresponden ahora a los PNG simplificados aprobados; falta validar su render en el cliente publicado.
 
 ## ICONO UNIVERSAL DE ORO
 
@@ -250,3 +266,19 @@ Iconos reutilizables aprobados para paneles y ventanas, con la familia visual de
 |---|---|---|---|---|---|
 | `Icon_UI_close` | Icono | Cerrar paneles y ventanas | `Assets/Icons/UI/Common/Icon_UI_close.png` | ImageGen + referencias propias; interno Vandrheim | `rbxassetid://130341785019897` |
 | `Icon_UI_currency_gold` | Icono | Moneda de oro global: HUD, precios, comercio, recompensas y contadores | `Assets/Icons/UI/Currency/Icon_UI_currency_gold.png` | ImageGen + referencias propias; interno Vandrheim | `rbxassetid://95443487243282` |
+
+## ICONO DE TIENDA · 2026-10-22
+
+Icono aprobado de un puesto de comerciante nórdico para identificar la tienda. PNG 512×512 RGBA transparente en `Assets/Icons/UI/Menu/`. Original, prompt y vistas previas archivados en `Assets/Source/Design/Micromenu-Shop-2026-10-22/`. La carga a Roblox queda pendiente.
+
+| assetId | Tipo | Uso | Archivo local | Fuente / licencia | Estado / rbxassetid |
+|---|---|---|---|---|---|
+| `Icon_Menu_shop` | Icono | Entrada/panel de tienda | `Assets/Icons/UI/Menu/Icon_Menu_shop.png` | ImageGen + referencias propias; interno Vandrheim | Aprobado; carga pendiente |
+
+## NAMEPLATES · REEMPLAZO TRANSPARENTE · 2026-10-22
+
+Reemplazo aprobado del icono de nameplates con fondo RGBA transparente, conservando los detalles negros interiores. La versión anterior permanece archivada en `Assets/Source/Design/Micromenu-Nameplates-Transparent-2026-10-22/Masters/`. El ID de Roblox existente aún sirve la imagen previa y requiere actualizarse.
+
+| assetId | Tipo | Uso | Archivo local | Fuente / licencia | Estado / rbxassetid |
+|---|---|---|---|---|---|
+| `Icon_Menu_nameplates` | Icono | Toggle de nameplates del micromenú | `Assets/Icons/UI/Menu/Icon_Menu_nameplates.png` | ImageGen + referencia propia; interno Vandrheim | Aprobado; re-subida pendiente (ID previo: `rbxassetid://121076782362772`) |

@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Estética / UI / Grimorio — Rediseño (dev)
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Implementada (confirmación del PO 2026-10-22)
 **Tipo:** Rediseño de UI (dev) — solo visual + navegación local, sin tocar lógica de skills
 **Fase GDD:** UI (rediseño del frame del grimorio; la lógica de EST-42/R5.1 queda intacta)
 **Depende de:** **HU-ESTETICA-42 (contrato vivo del grimorio: instancias, lógica, datos reales)**, frame del `.pen`: **`D69Fdc — Grimorio · Tomo abierto simplificado`** (verificado en repo), HU-ESTETICA-09/17 (lógica spellbook), HU-R5.1 (skills), HU-R6.27 (fuentes legibles + TooltipSystem), SKILLS_CATALOG, contrato EST-13

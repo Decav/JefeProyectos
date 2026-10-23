@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R6.x / Fixes — Batch 2 (reportado por PO 2026-10-12)
 **Prioridad:** Alta
-**Estado:** Lista para implementar (RC obligatorio del dev antes de programar)
+**Estado:** Implementada (confirmación del PO 2026-10-22; RC cerrado)
 **Tipo:** Bugfixes/mejoras (dev)
 **Fase GDD:** R6.33 (no cambia reglas de juego)
 **Depende de:** HU-R6.20 (OrdenUI/escala), HU-R6.12 (nameplates), HU-R6.18/R7.1 (telegraphs/precats), HU-R6.27 (fuentes), HU-R3 (GroundAoE/precats), HU-ESTETICA-47 (frames de combate), HU-ESTETICA-19/20 (micromenú), ASSETS_LIST (icono `Icon_Menu_nameplates`)
