@@ -1,13 +1,15 @@
-## HU-R6.3: Variantes de layout del dungeon Helada (Corredor / Caverna / Salón)
+## HU-R6.3: Variantes originales de layout del dungeon Helada (Corredor / Caverna / Salón)
 
 **Proyecto:** Vandrheim (Roblox MVP)  
 **Épica:** Mazmorra / Generación de pisos / R6.3  
 **Prioridad:** Alta  
-**Estado:** Completada (implementada; reporte equipo 2026-08-26)  
+**Estado:** Completada originalmente; el catálogo de variantes queda supersedido por HU-R6.39 (PO 2026-10-23)
 **Tipo:** Mejora de contenido procedural del dungeon  
 **Fase GDD:** R6.3 (mejora posterior a R6a/R6b; puede ejecutarse en paralelo con R7)  
 **Depende de:** HU-R6a (FloorService, EnemyConfig, EnemyService), HU-R6b (DungeonService, teleport data, run lifecycle), HU-R6.1 (HUD/movimiento)  
 **Componentes observados:** `ServerScriptService.Services.FloorService`, `ServerScriptService.Services.DungeonService`, `ReplicatedStorage.Config.EnemyConfig`, HUD de dungeon (piso actual)
+
+> **Enmienda PO 2026-10-23:** retirar `Corredor de Escarcha` por ser demasiado estrecho e incómodo. La nueva fuente de verdad será HU-R6.39: solo Caverna/Salón, con ambientación/iluminación/decoración rediseñadas y PoC para Terrain. Los detalles/config de Corredor más abajo son históricos y no deben conservarse como opción jugable.
 
 ---
 

@@ -54,7 +54,7 @@ Cambios que implica:
 
 | ID | Nombre | Tipo | Stat | Rango | Maná | CD | Obtención | Params (seed) | Threat |
 |----|--------|------|------|-------|------|----|-----------|---------------|--------|
-| `hunter_mm_venom` | Flecha venenosa | DoT | ATK | 25 | 15 | 10 | **nivel 1 (spec) — reemplaza "Flecha pesada"** | por tick 4/0.35 · 6 s · tick 1 s (6 ticks) | 1 |
+| `hunter_mm_venom` | Flecha venenosa | DoT | ATK | 30 | 15 | 10 | **nivel 1 (spec) — reemplaza "Flecha pesada"** | por tick 4/0.35 · 6 s · tick 1 s (6 ticks) | 1 |
 
 * Puntería mantiene **6 skills** (2 básicas + 4 de spec); el total del catálogo sigue en **30 skills** (sin excepciones).
 * `weaponAffinity`: Hunter_Punteria (como el resto de la spec).
@@ -191,3 +191,4 @@ Cambios que implica:
 | Fecha | Cambio |
 |-------|--------|
 | 2026-09-18 | Creación de HU-R8e: Flecha venenosa (DoT single-target) para Puntería — nuevo SkillType (reusa ticks de R6.9), reemplaza a "Flecha pesada" como skill de nivel 1 (sin enmienda de árboles, Puntería mantiene 6 skills), VFX verde veneno, icono y números bajo bandas de R8d |
+| 2026-10-23 | El rango de Flecha venenosa cambia de 25 a 30 studs por HU-R6.40; no cambia DoT, daño, duración ni cooldown. |

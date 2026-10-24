@@ -1,7 +1,7 @@
-# Vandrheim — Catálogo de Skills (diseño MVP — v2.4)
+# Vandrheim — Catálogo de Skills (diseño MVP — v2.5)
 
 > Documento de diseño canónico para skills. Complementa GDD §4 (clases/specs), §5 (combate) y §6 (progresión).
-> Última actualización: 2026-09-24 — **v2.4: balance numérico inicial R8d (rc051); se conserva v2.3/R8e DoT**
+> Última actualización: 2026-10-23 — **v2.5: rangos normalizados de ataques de arco/Puntería por HU-R6.40; se conserva v2.4/R8d y v2.3/R8e DoT**
 > Estado: **Balance inicial aplicado en Hub; QA de seis runs pendiente** — los números se revisarán con métricas observadas.
 
 ---
@@ -74,7 +74,7 @@ Columnas: `tipo`, `stat`, `rango/radio`, `maná`, `CD`, `nivel/obtención`, `par
 | ID | Nombre | Tipo | Stat | Rango | Maná | CD | Obtención | Params | Threat |
 |----|--------|------|------|-------|------|----|-----------|--------|--------|
 | `hunter_savage_cut` | Corte salvaje | Instant | ATK | 12 | 10 | 4 | lvl 1 | 12/1.0 | 1 |
-| `hunter_piercing_shot` | Disparo perforante | Instant | ATK | 25 | 15 | 6 | lvl 1 | 15/1.1 | 1 |
+| `hunter_piercing_shot` | Disparo perforante | Instant | ATK | 30 | 15 | 6 | lvl 1 | 15/1.1 | 1 |
 
 ### 3.5 Cazador — Asalto (melee físico)
 
@@ -87,12 +87,14 @@ Columnas: `tipo`, `stat`, `rango/radio`, `maná`, `CD`, `nivel/obtención`, `par
 
 ### 3.6 Cazador — Puntería (ranged físico)
 
+Rango de arco/Puntería normalizado por HU-R6.40: ataque automático de arco, Disparo perforante y habilidades estándar a **30 studs**; **Disparo mortal** a **35 studs**.
+
 | ID | Nombre | Tipo | Stat | Rango | Maná | CD | Obtención | Params | Threat |
 |----|--------|------|------|-------|------|----|-----------|--------|--------|
-| `hunter_mm_venom` | Flecha venenosa | **DoT** | ATK | 25 | 15 | 10 | **lvl 1 (spec) — reemplaza "Flecha pesada" (v2.3/R8e)** | por tick 4/0.35 · 6 s · tick 1 s (6 ticks) | 1 |
+| `hunter_mm_venom` | Flecha venenosa | **DoT** | ATK | 30 | 15 | 10 | **lvl 1 (spec) — reemplaza "Flecha pesada" (v2.3/R8e)** | por tick 4/0.35 · 6 s · tick 1 s (6 ticks) | 1 |
 | `hunter_mm_trueshot` | Tiro certero | Instant | ATK | 30 | 20 | 8 | lvl 5 | 28/1.3 | 1 |
-| `hunter_mm_chain` | Tiro en cadena | Instant | ATK | 20 | 12 | 4 | **talento (rama Precisión, tier 2)** | 10/0.9 | 1 |
-| `hunter_mm_death` | Disparo mortal | Instant | ATK | 30 | 30 | 12 | **talento (rama Precisión, profundo)** | 50/1.9 | 1 |
+| `hunter_mm_chain` | Tiro en cadena | Instant | ATK | 30 | 12 | 4 | **talento (rama Precisión, tier 2)** | 10/0.9 | 1 |
+| `hunter_mm_death` | Disparo mortal | Instant | ATK | 35 | 30 | 12 | **talento (rama Precisión, profundo)** | 50/1.9 | 1 |
 
 ### 3.7 Clérigo — Básicas
 
@@ -253,3 +255,4 @@ Convención: rama → Nodo1 → Nodo2 → Capstone. Tier 2 exige ≥4 puntos + l
 | 2026-08-26 | **v2.2:** Castigo: Ejecución divina → **Anillo de luz sagrada** (SelfAoE); árboles de talentos finales de las 6 specs aprobados (R8) |
 | 2026-09-18 | **v2.3:** SkillType **DoT** (daño en el tiempo single-target, sin stacks, reusa ticks de R6.9); **Flecha venenosa** para Puntería (HU-R8e) **reemplaza "Flecha pesada"** como skill de nivel 1 — sin enmienda de árboles, 6 skills por spec y 30 total; números bajo bandas de R8d |
 | 2026-09-24 | **v2.4:** primera pasada de cifras de balance R8d/rc051: curas/escudo, GroundAoE, SelfAoE y burst capstone; conserva IDs, tipos, cooldowns y DoT de R8e. Seis runs y cierre de balance pendientes de QA. |
+| 2026-10-23 | **v2.5 / HU-R6.40:** rango estandarizado a 30 studs para ataque automático de arco, Disparo perforante, Flecha venenosa, Tiro certero y Tiro en cadena; Disparo mortal queda a 35 studs. Sin cambios a daño/coste/CD. |

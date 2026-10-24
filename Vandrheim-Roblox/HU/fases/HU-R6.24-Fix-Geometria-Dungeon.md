@@ -9,6 +9,8 @@
 **Depende de:** HU-R6a (kit Helada/FloorService), HU-R6.3 (variantes de layout — variante "Caverna"), HU-R6.4 (topología — corredores)
 **Componentes observados:** kit de la dungeon (escombros, pasillos del corredor helado), `FloorService`/`DungeonVariantConfig`
 
+> **Enmienda PO 2026-10-23:** la mejora de ancho de los pasillos de la variante Corredor queda supersedida porque esa variante se retira en HU-R6.39. La corrección de formaciones/escombros de Caverna se conserva.
+
 ---
 
 ### **Narrativa (INVEST)**

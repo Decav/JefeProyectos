@@ -72,6 +72,7 @@ El menú in-game (R6.10) tiene placeholders de **Volumen** y **Gráficos** ("Pr�
 * **Gráficos:** selector simple (Automático / Baja / Media / Alta) → `UserSettings():GetService("UserGameSettings").QualityLevel` (o `GraphicsMode`). Persiste por dispositivo.
 * Ambos reemplazan el feedback "Próximamente" de esos botones (Ordenar UI ya es real desde R6.11).
 * UI: controles con el estilo Hearthbound Gold (EST-13; slider/tab como componentes existentes).
+* **Ampliación posterior:** HU-R6.42 agrega los controles separados SFX/Música/Pisadas y el tab Interfaz con sensibilidad/límites de zoom; el MasterVolume y el selector de gráficos de esta HU se conservan como existentes.
 
 #### **4. Música (tracks del PO — mapeo cerrado 2026-10-12)**
 

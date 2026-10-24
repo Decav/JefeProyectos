@@ -25,6 +25,8 @@
 
 ### **Descripción del Requerimiento / Contexto**
 
+> **Vigencia de los ajustes:** esta HU describe los placeholders originales. Volumen general y Gráficos tienen su implementación en HU-R9b; Orden de UI se implementa en HU-R6.11. Los controles separados de SFX/Música/Pisadas y cámara (sensibilidad/zoom) se especifican en HU-R6.42. Donde esta HU mencione placeholders de ajustes, prevalecen esas HUs posteriores.
+
 Hoy no existe menú in-game: `ESC` solo cierra el inventario si está abierto, y la única forma de cambiar de personaje es salir y volver a entrar al juego.
 
 Esta HU agrega un **menú de pausa**:
@@ -215,3 +217,4 @@ Menu → "Volver a la selección de personaje"
 | Fecha | Cambio |
 |-------|--------|
 | 2026-08-26 | Creación de HU-R6.10: menú in-game con "volver a selección de personaje" funcional y placeholders de volumen/gráficos/orden de UI |
+| 2026-10-23 | Se aclara la vigencia: R9b implementa volumen general/gráficos, R6.11 Orden de UI y R6.42 amplía audio y cámara; los placeholders originales quedan como historial. |

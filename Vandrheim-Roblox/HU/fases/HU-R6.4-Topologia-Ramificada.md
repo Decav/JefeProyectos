@@ -4,6 +4,7 @@
 **Épica:** Mazmorra / Generación de pisos / R6.4  
 **Prioridad:** Alta  
 **Estado:** Completada (implementada; reporte equipo 2026-08-26)  
+**Enmienda PO 2026-10-23:** referencias a la variante Corredor quedan históricas/supersedidas por HU-R6.39. La topología ramificada continúa con Caverna y Salón.
 **Tipo:** Mejora de contenido procedural (reemplaza la linealidad del layout)  
 **Fase GDD:** R6.4 (mejora posterior a R6.3; puede ejecutarse en paralelo con R7)  
 **Depende de:** HU-R6a (FloorService, EnemyService, EnemyConfig), HU-R6b (run lifecycle, DungeonHUD), HU-R6.3 (DungeonVariantConfig, generador parametrizado)  
@@ -26,7 +27,7 @@
 
 ### **Descripción del Requerimiento / Contexto**
 
-El dungeon actual genera siempre el mismo tipo de layout: una fila de salas conectadas por corredores rectos (con variación lateral del seed y, desde R6.3, morfologías Corredor/Caverna/Salón). La ruta es única y lineal: de la entrada a la boss room sin decisiones de recorrido.
+Antes de R6.4 el dungeon generaba una fila de salas conectadas por corredores rectos. R6.4 completó la topología ramificada; el rediseño visual R6.39 conserva ese grafo y las variantes restantes Caverna/Salón.
 
 Esta HU introduce una **topología ramificada** controlada por seed:
 
@@ -36,7 +37,7 @@ Esta HU introduce una **topología ramificada** controlada por seed:
 4. **Mensaje en la puerta** indicando que está sellada (decisión cerrada: sin contador numérico en HUD).
 5. Al morir el jugador, **el progreso de limpieza se mantiene**: los enemigos ya muertos no respawnean y una puerta ya abierta permanece abierta.
 
-La topología se combina con las variantes morfológicas de R6.3: cualquier variante (Corredor, Caverna, Salón) puede tener topología ramificada; las dimensiones de salas, corredores y decoración siguen viniendo de `DungeonVariantConfig`. El seed del piso determina la forma del grafo (número de ramas, salas por rama, orientación de conectores).
+La topología se combina con las variantes morfológicas supervivientes de R6.3: Caverna y Salón; las dimensiones de salas, corredores y decoración siguen viniendo de `DungeonVariantConfig`. El seed del piso determina la forma del grafo (número de ramas, salas por rama, orientación de conectores).
 
 **Criterio de hecho global:** un piso generado presenta una sala central con ramas explorables en varias direcciones y una sala final sellada que se abre al limpiar el piso, con progreso persistente ante la muerte y sin que el cliente pueda abrirla.
 
@@ -67,7 +68,7 @@ La topología se combina con las variantes morfológicas de R6.3: cualquier vari
 * `FloorService.GenerateFloor(floorIndex, seed, parent, variant, topology?)` conserva la firma de R6.3 y agrega la generación del grafo.
 * `topology` es opcional: si no se pasa, se deriva del seed (server). El cliente nunca lo aporta.
 * Las salas (hub, ramas, final) usan el `roomSize` y decoración de la variante activa (`DungeonVariantConfig`).
-* Los corredores usan `corridorWidth`/`corridorLength` de la variante; la caverna puede generar más diagonales largos, el corredor ramas más angostas (directrices orientativas en config).
+* Los conectores usan `corridorWidth`/`corridorLength` de Caverna o Salón; no existe ya una variante angosta dedicada.
 * Los packs se colocan en las salas de combate (central y ramas) respetando la densidad de la variante (`packSizeMin/Max`) y el límite de enemigos por piso de R6.3 (`maxEnemiesPerFloor = 20`).
 * Los mini-bosses (pisos 1–4) y la boss room (piso 5) conservan su flujo y formato de R6a/R6.3, ahora ubicados en la sala final sellada.
 
@@ -100,7 +101,7 @@ La topología se combina con las variantes morfológicas de R6.3: cualquier vari
 #### **Debug (solo Studio)**
 
 * `DebugSpawnFloor` acepta `variant` (R6.3) y opcionalmente `topology` para QA; si no se pasa, la topología se deriva del seed de forma estable (mismo seed+piso → mismo grafo y layout).
-* Se mantiene la reproducción determinista del seed en las tres variantes.
+* Se mantiene la reproducción determinista del seed en Caverna y Salón.
 
 #### **Seguridad y autoridad**
 
@@ -172,10 +173,10 @@ La topología se combina con las variantes morfológicas de R6.3: cualquier vari
 
 #### **Escenario 9: Integración con variantes**
 
-* **GIVEN** cada variante (Corredor, Caverna, Salón) con topología ramificada.
+* **GIVEN** cada variante vigente (Caverna o Salón) con topología ramificada.
 * **WHEN** se generan pisos.
 * **THEN** las salas y corredores usan las dimensiones de la variante.
-* **AND** la caverna permite rutas más abiertas y el corredor ramas más angostas, sin romper el generador.
+* **AND** cada variante conserva sus dimensiones y sus rutas son cómodas de recorrer, sin romper el generador.
 
 #### **Escenario 10: Densidad y límite de enemigos**
 
@@ -252,7 +253,7 @@ La topología se combina con las variantes morfológicas de R6.3: cualquier vari
 * [ ] Al abrirse, la puerta deja de colisionar, se oculta y el mensaje desaparece.
 * [ ] Morir conserva la limpieza: sin repoblado y puertas abiertas permanecen abiertas.
 * [ ] El cliente no puede abrir la puerta ni forzar topología/seed.
-* [ ] Las tres variantes de R6.3 funcionan con la topología ramificada.
+* [ ] Las dos variantes vigentes de R6.3 (Caverna y Salón) funcionan con la topología ramificada.
 * [ ] La densidad respeta `packSizeMin/Max` y el límite de enemigos por piso.
 * [ ] Run completa de 5 pisos con respawn, abandono y final sin errores rojos.
 * [ ] `DebugSpawnFloor` reproduce topología por seed (y acepta `topology` en Studio).

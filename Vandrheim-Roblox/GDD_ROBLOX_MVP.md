@@ -409,7 +409,7 @@ StarterGui/
 | **R6** | **Completo** (2026-08-22) | Teleport dungeon, reserved server, 5 pisos kit+seed, exit=abandon | Run completa solo |
 | **R6.1** | **Completo** (2026-08-23) | Correr por defecto, toggle caminar U/botón móvil, animaciones y pisadas sincronizadas por material | Movimiento y audio calzan con cada apoyo |
 | **R6.2** | **Completo** (2026-08-26) | 2 slots de uso de ítems Z/X + reset de nivel debug en Studio | Ítems utilizables accesibles sin abrir inventario; QA puede repetir progresión desde nivel 1 |
-| **R6.3** | **Completo** (2026-08-26) | Variantes de layout del dungeon (corredor/caverna/salón) | Cada run puede tener morfología distinta |
+| **R6.3** | **Completo original** (2026-08-26); catálogo en revisión por R6.39 | Variantes de layout iniciales; Corredor se retira y Caverna/Salón permanecen | Variedad espacial sin una variante incómoda |
 | **R6.4** | **Completo** (2026-08-26) | Topología ramificada + puertas selladas | Los pisos se exploran, no se corren en línea recta |
 | **R6.5** | **Completo** (2026-08-26) | UI: barra de XP, mochila (B) y equipo (C) separados + stats | El jugador ve su progreso y su build sin ventanas apretadas |
 | **R6.6** | **Completo** (2026-08-26) | Animaciones de combate del jugador (auto-attack y skills) | Cada golpe/cast tiene su animación; base para pruebas |
@@ -417,6 +417,7 @@ StarterGui/
 | **R6.8** | **Completo** (2026-08-26) | VFX básico de combate: proyectiles ranged, hits, números de daño y muerte de enemigos | El combate se siente contundente sin assets externos |
 | **R6.9** | **Completo** (2026-08-26) | AoE: zonas de suelo persistentes (daño en el tiempo) + SelfAoE alrededor del jugador | Consagración/Ira divina vs Torbellino se sienten distintas |
 | **R6.10** | Pendiente | Menú in-game (ESC): volver a selección de PJ funcional + placeholders volumen/gráficos/UI | Probar varias clases sin salir del juego |
+| **R6.39** | Borrador para RC | Retirar Corredor y rediseñar ambiente, iluminación y decoración; PoC Terrain/híbrido | Dungeon Helada cómoda, ambientada y con identidad por piso |
 | **EST-01** | **Completo** (2026-08-26) | Equipamiento visible en avatar + 8 modelos iniciales del Paladín | Equipar cambia también la apariencia del personaje |
 | **EST-02** | Pendiente | Modelos 3D de los enemigos de la Helada (7 bases + 5 elites) | Cada piso tiene enemigos y mini-bosses reconocibles |
 | **EST-03** | Pendiente | Estructuras del pueblo nórdico: casas, caminos, límites, entradas y decoraciones | El hub se ve como un asentamiento nórdico coherente |
@@ -703,6 +704,9 @@ Ver `HU/fases/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º 
 | 2026-10-23 | **Corrección de diseño matchmaking por el PO:** frames seleccionados `o0nxs` (Salas), `B3yoQT` (Crear sala) y `FRPZ6` (Tu sala); las referencias anteriores se retiran. El servidor inicia automáticamente cuando todos están listos; la composición 1/1/2 es informativa. |
 | 2026-10-23 | **Corrección de integración matchmaking:** el dev integró frames que no eran los seleccionados; HU-ESTETICA-50 queda como instrucción de rework para sustituirlos por `o0nxs`, `B3yoQT` y `FRPZ6`. |
 | 2026-10-23 | **Backlog propuesto R10+ (post-lanzamiento, sin priorizar):** semi-mundo abierto, biomas/enemigos/bosses/misiones; profesiones; nivel máximo y contenido de clases/ítems; ampliación de creación de personajes; PvP; oleadas PvE infinitas con recompensas; dificultades de dungeon; efectos y cosméticos. No son HUs comprometidas para el lanzamiento. |
+| 2026-10-23 | **HU-R6.39 creada:** rediseño pre-lanzamiento de la Helada; retira el Corredor angosto, renueva ambiente/iluminación/decoración de Caverna y Salón y evalúa Terrain con una PoC híbrida. |
+| 2026-10-23 | **Nueva tanda de bugs formalizada:** ECON-05 tooltips en Trade; R6.40 rangos de arco/Puntería (30 studs, Disparo mortal 35); R6.41 LOS para daño del jugador; R7.2 velocidad de bosses anti-kite; R7.3 cierre de arena a 10 s y reset de boss fugado. `SKILLS_CATALOG` pasa a v2.5. |
+| 2026-10-23 | **HU-R6.42 creada:** ampliar ajustes del menú con sliders separados de SFX/música/pisadas, sensibilidad y límites de zoom; el fullscreen backdrop superior queda como extra opcional. |
 | 2026-10-19 | **HU-R6.31 cerrada por confirmación PO:** implementación y QA completos, con `NotificationFrame` central para avisos pasivos, `LootPopup` independiente, un solo elemento de notificaciones en OrdenUI y cola priorizada. |
 | 2026-09-22 | **R6.32 — tap-hold móvil cerrado (decisión PM):** **300 ms** con umbral de movimiento 8 px (moverse antes = scroll; se cancela) · tap corto (<300 ms) conserva la interacción normal · una vez activado, el ítem sigue al dedo |
 | 2026-09-22 | **R6.32 — contrato del lock de ítems (decisión PM):** campo `lock = { kind: "trade"\|"auction", opId }` en la instancia del ítem (R4) — escritores futuros: ECON-01 (`HOLD_ITEMS`) y ECON-02 (custodia); `RequestDeleteItem` lo consulta y rechaza si está activo; **hoy inerte** (la economía no está implementada → el campo siempre es nil) |
