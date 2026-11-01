@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R6.x / Combate / Autoridad server-side
 **Prioridad:** Alta
-**Estado:** Lista para RC
+**Estado:** Cerrada — implementada y QA completada (confirmación del PO 2026-10-23)
 **Tipo:** Bugfix de validación de impactos (dev)
 **Depende de:** HU-R3/R3.1 (targeting y ataques), HU-R6.19 (LOS existente para enemigos ranged), HU-R6.38 (críticos por impacto), `CombatService`, `SkillService`, TooltipSystem/NotificationFrame
 **No modifica:** fórmulas de daño, rango, cooldown, coste, reglas de targeting ni LOS de la IA enemiga R6.19.
@@ -98,13 +98,13 @@ El jugador actualmente puede causar daño a enemigos al otro lado de paredes. R6
 
 ### Definition of Done (DoD)
 
-* [ ] Básicos y habilidades dirigidas no aplican impactos a través de paredes y validan LOS en servidor.
-* [ ] Los AoE/ticks resuelven LOS por objetivo y no dañan objetivos ocultos.
-* [ ] Un ataque dirigido sin LOS muestra el mensaje acordado, no aplica daño/efecto y no consume recurso/cooldown.
-* [ ] Los efectos visuales y objetos no bloqueantes no causan falsos negativos.
-* [ ] QA en geometría abierta, una pared, esquina, puerta y pasillo; PC/móvil, solo/party.
-* [ ] R6.19 NPC-ranged, R6.38 críticos, y remotes existentes sin regresión; sin errores rojos.
-* [ ] RC y evidencia adjuntos.
+* [x] Básicos y habilidades dirigidas no aplican impactos a través de paredes y validan LOS en servidor.
+* [x] Los AoE/ticks resuelven LOS por objetivo y no dañan objetivos ocultos.
+* [x] Un ataque dirigido sin LOS muestra el mensaje acordado, no aplica daño/efecto y no consume recurso/cooldown.
+* [x] Los efectos visuales y objetos no bloqueantes no causan falsos negativos.
+* [x] QA en geometría abierta, una pared, esquina, puerta y pasillo; PC/móvil, solo/party.
+* [x] R6.19 NPC-ranged, R6.38 críticos, y remotes existentes sin regresión; sin errores rojos.
+* [x] RC y evidencia adjuntos.
 
 ---
 

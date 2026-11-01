@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Party / Dungeon — Bug crítico (reportado por PO 2026-10-12)
 **Prioridad:** **Crítica** (rompe el juego en grupo)
-**Estado:** Lista para implementar (RC obligatorio del dev antes de programar)
+**Estado:** Cerrada — implementada y QA completada (confirmación del PO 2026-10-23)
 **Tipo:** Bugfix de instanciado multiplayer (dev)
 **Fase GDD:** R9a.3 (no cambia reglas de loot/XP; cambia quién guía la run)
 **Depende de:** HU-R9a (party), HU-R6b (run lifecycle), HU-R9a.2 (matchmaking/lobby), HU-R7/R7.1 (jefes), HU-R8d (bandas de escalado)
@@ -111,13 +111,13 @@
 
 ### **Definition of Done (DoD)**
 
-* [ ] Party de 2–4 entra a UNA dungeon compartida (un seed, un set de jefes).
-* [ ] Guía migra al salir el líder sin resets ni duplicados.
-* [ ] Jefes idempotentes (una sola vez por run, ante entradas simultáneas/rejoins).
-* [ ] Escalado por integrantes (bandas R8d); loot/XP intactos.
-* [ ] Sin errores rojos (solo y party, publicado).
-* [ ] El dev prepara el RC desde esta HU antes de programar (DEV_PROMPT).
-* [ ] Nota en GDD después de QA.
+* [x] Party de 2–4 entra a UNA dungeon compartida (un seed, un set de jefes).
+* [x] Guía migra al salir el líder sin resets ni duplicados.
+* [x] Jefes idempotentes (una sola vez por run, ante entradas simultáneas/rejoins).
+* [x] Escalado por integrantes (bandas R8d); loot/XP intactos.
+* [x] Sin errores rojos (solo y party, publicado).
+* [x] El dev prepara el RC desde esta HU antes de programar (DEV_PROMPT).
+* [x] Nota en GDD después de QA.
 
 ---
 
@@ -144,3 +144,4 @@
 | Fecha | Cambio |
 |-------|--------|
 | 2026-10-12 | Creación de HU-R9a.3: instancia compartida de dungeon en party — **una sola run por grupo** (el bug generaba 1 por integrante con jefes duplicados); el **líder guía** y al salir hereda el siguiente miembro **sin reset**; jefes idempotentes; **solo escala la dificultad** por integrantes (reportado por PO) |
+| 2026-10-23 | PO confirma implementación y QA completos; HU cerrada. |

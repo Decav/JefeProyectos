@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Mazmorra / Boss final / Pelea
 **Prioridad:** **CRÍTICA** (es la pelea del último enemigo del juego)
-**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
+**Estado:** Cerrada — implementación y QA confirmados por el PO 2026-10-23
 **Fase GDD:** R7.1 (extiende la pelea de `helada_frostwarden`; no cambia loot/cofre de R7)
 **Depende de:** HU-ESTETICA-36 (modelo Jotunn), HU-ESTETICA-31 (integración dev: animaciones Moon Animator + VFX), HU-R7 (boss `helada_frostwarden`, ai `boss_melee`, `glacial_impact`), HU-R6.18 (telegraphs — áreas rojas, cargas 1.2/1.5 s), HU-R8d (bandas de balance nivel 20)
 **Componentes observados:** `BossConfig`/`EnemyConfig` (`helada_frostwarden`), sistema de telegraphs R6.18, framework de animaciones R6.7
@@ -147,15 +147,15 @@ Diseño de pelea cerrado con el PO (2026-09-22). El **Jotunn** (`helada_frostwar
 
 ### **Definition of Done (DoD)**
 
-* [ ] Jotunn rota las 3 habilidades con telegraphs visibles y tiempos correctos (1 s escombro · 1,5 s avalancha y rugido).
-* [ ] Charco helado: radio ~8, 30 s, tick daño, CD 15 s, máx 2 simultáneos.
-* [ ] Avalancha: daño + empuje orientado a la cara del jefe; Rugido: daño + Congelado (slow 50 %/4 s, radio 20).
-* [ ] **2 variantes de ataque básico que alternan al azar** (solo básicos; las habilidades tienen animación propia).
-* [ ] **Placeholder de animación por ataque**: 1 por habilidad (Escombro/Avalancha/Rugido) + 1 por variante de básico — la pelea funciona con los placeholders hasta las animaciones finales (EST-31).
-* [ ] El tank puede reposicionar y orientar al jefe (jugable en solo y party 1–4).
-* [ ] Sin errores rojos; cofre/uniques/loot intactos (regresión).
-* [ ] El dev prepara el RC desde esta HU antes de programar (DEV_PROMPT).
-* [ ] Nota en GDD después de QA.
+* [x] Jotunn rota las 3 habilidades con telegraphs visibles y tiempos correctos (1 s escombro · 1,5 s avalancha y rugido).
+* [x] Charco helado: radio ~8, 30 s, tick daño, CD 15 s, máx 2 simultáneos.
+* [x] Avalancha: daño + empuje orientado a la cara del jefe; Rugido: daño + Congelado (slow 50 %/4 s, radio 20).
+* [x] **2 variantes de ataque básico que alternan al azar** (solo básicos; las habilidades tienen animación propia).
+* [x] **Placeholder de animación por ataque**: 1 por habilidad (Escombro/Avalancha/Rugido) + 1 por variante de básico — la pelea funciona con los placeholders hasta las animaciones finales (EST-31).
+* [x] El tank puede reposicionar y orientar al jefe (jugable en solo y party 1–4).
+* [x] Sin errores rojos; cofre/uniques/loot intactos (regresión).
+* [x] El dev prepara el RC desde esta HU antes de programar (DEV_PROMPT).
+* [x] Nota en GDD después de QA.
 
 ---
 
@@ -163,7 +163,7 @@ Diseño de pelea cerrado con el PO (2026-09-22). El **Jotunn** (`helada_frostwar
 
 | Tema | Decisión |
 |------|----------|
-| H1 Escombro | Telegraph círculo rojo sobre aggro (1 s) → charco radio ~8, **30 s**, tick ~8–10/s; **CD 15 s → máx 2 charcos** |
+| H1 Escombro | Telegraph círculo rojo sobre aggro (1 s) → charco radio ~8, **30 s**, tick ~8–10/s; **CD 15 s → máx 2 charcos** (config actual del PO: `maxActive = 3`, `poolDuration = 45`; ver R6.45) |
 | H2 Avalancha | Rectángulo frente al jefe (1,5 s) → daño ~60 + **empuje**; CD ~10 s |
 | H3 Rugido | Círculo centrado radio ~20 (**1,5 s de casteo**) → daño ~45 + **Congelado** (slow 50 %/4 s); CD ~24 s |
 | Formato | 100 % posicionamiento: **sin invocaciones**; telegraphs siempre visibles |
@@ -184,3 +184,4 @@ Diseño de pelea cerrado con el PO (2026-09-22). El **Jotunn** (`helada_frostwar
 | 2026-09-22 | Creación de HU-R7.1: pelea final del Jotunn — **3 habilidades** (Escombro helado: charco 30 s/CD 15 s/máx 2 · Avalancha frontal: daño + empuje/CD 10 s · Rugido congelante: AoE radio 20 con casteo **1,5 s** + slow/CD 24 s); rotación de posicionamiento (el tank reposiciona y orienta al jefe); sin invocaciones; valores en banda R8d a validar en QA |
 | 2026-09-22 | **Añadido (decisión PO):** **2 variantes de ataque básico aleatorias** (solo básicos — las habilidades tienen animación propia) + **placeholder de animación por ataque** (1 por habilidad + 1 por variante de básico) hasta las animaciones finales del animador (EST-31) |
 | 2026-09-22 | **6 decisiones PM cerradas (§5.1, respuestas al dev):** H1 tick 1 s / 8 DPS · H2 empuje ~15 studs en 0,4 s · H3 slow 50 %/4 s sin apilar con renovación a 4 s · rotación por cooldown (no estricta) · H2 dirección fija al inicio del casteo · fallback de animación autorizado (5 slots config-driven) |
+| 2026-10-27 | **Enmienda R6.45:** H1 sube a `maxActive = 3` y `poolDuration = 45`; la duración visual debe coincidir con el daño. Ver HU-R6.45. |

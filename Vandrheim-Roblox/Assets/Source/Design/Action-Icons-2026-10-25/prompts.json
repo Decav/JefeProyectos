@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-25",
+  "tool": "built-in image_gen",
+  "style_references": [
+    "Assets/Source/Design/UI-Components-2026-10-17/Masters/Icon_UI_close_master.png",
+    "Assets/Source/Design/Micromenu-2026-10-17/Masters/Icon_Menu_dungeon_master.png",
+    "Assets/Icons/UI/Menu/Icon_Menu_bag.png"
+  ],
+  "assets": [
+    {
+      "output": "Icon_UI_settings.png",
+      "master": "Masters/Icon_UI_settings_master.png",
+      "prompt": "Use case: Vandrheim RPG game HUD action icon. Asset type: standalone 2D UI icon.\nStyle: Match the project's micromenu and Close component: clean illustrated fantasy-game icon, bold dark charcoal outline, warm brass gold and amber #C89445, parchment cream #F4EDE0, charcoal #292A2E; restrained flat shading and a subtle shallow bevel. Strong, readable silhouette at 24–32 px.\nComposition: One compact eight-tooth cogwheel for Settings, viewed straight-on. A dark charcoal center hub with a small parchment-cream circular center, gold metal face and a few broad simple bevel planes. Centered, complete silhouette fills about 78% of a square canvas with generous even transparent margins.\nConstraints: genuinely transparent background; clean alpha edges. No background, tile, border, text, letters, numbers, extra symbols, tiny details, photorealism, 3D render, glow, particles, gritty texture, or drop shadow. One icon only."
+    },
+    {
+      "output": "Icon_UI_trash.png",
+      "master": "Masters/Icon_UI_trash_master.png",
+      "prompt": "Use case: Vandrheim RPG game HUD action icon. Asset type: standalone 2D UI icon.\nStyle: Match the project's micromenu and Close component: clean illustrated fantasy-game icon, bold dark charcoal outline, warm brass gold and amber #C89445, parchment cream #F4EDE0, charcoal #292A2E; restrained flat shading and a subtle shallow bevel. Strong, readable silhouette at 24–32 px.\nComposition: A simple upright lidded waste bin for the “clear junk” action. Dark charcoal barrel-shaped rectangular bin with broad gold lid and rim, three large parchment-cream vertical slots on the front, and a small gold handle. Keep it sturdy and compact, viewed straight-on, centered and filling about 78% of a square canvas with generous even transparent margins.\nConstraints: genuinely transparent background; clean alpha edges. No background, tile, border, text, letters, loose debris, extra symbols, tiny details, photorealism, 3D render, glow, particles, gritty texture, or drop shadow. One icon only."
+    },
+    {
+      "output": "Icon_UI_sell_all.png",
+      "master": "Masters/Icon_UI_sell_all_master.png",
+      "prompt": "Use case: Vandrheim RPG game HUD action icon. Asset type: standalone 2D UI icon.\nStyle: Match the project's micromenu and Close component: clean illustrated fantasy-game icon, bold dark charcoal outline, warm brass gold and amber #C89445, parchment cream #F4EDE0, charcoal #292A2E; restrained flat shading and a subtle shallow bevel. Strong, readable silhouette at 24–32 px.\nComposition: An unmistakable bulk-sale symbol: a large warm-gold coin in the foreground, a small two-coin stack behind it, and one bold upward-right arrow emerging beside the coins to signal items being sold for gold. Emboss only a simple centered diamond on the large coin, no currency letters or numbers. Three broad shapes maximum. Centered, complete silhouette fills about 78% of a square canvas with generous even transparent margins.\nConstraints: genuinely transparent background; clean alpha edges. No background, tile, border, text, letters, numbers, price tag, hand, extra symbols, tiny details, photorealism, 3D render, glow, particles, gritty texture, or drop shadow. One icon only."
+    }
+  ]
+}

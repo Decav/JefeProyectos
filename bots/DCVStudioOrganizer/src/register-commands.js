@@ -1,4 +1,5 @@
 import { REST, Routes, SlashCommandBuilder, PermissionFlagsBits } from 'discord.js';
+import { buildAnnouncementCommands } from './announcements.js';
 
 const { DISCORD_TOKEN, DISCORD_CLIENT_ID, DISCORD_GUILD_ID } = process.env;
 
@@ -25,7 +26,7 @@ const command = new SlashCommandBuilder()
 
 const rest = new REST({ version: '10' }).setToken(DISCORD_TOKEN);
 await rest.put(Routes.applicationGuildCommands(DISCORD_CLIENT_ID, DISCORD_GUILD_ID), {
-  body: [command.toJSON()],
+  body: [command.toJSON(), buildAnnouncementCommands().toJSON()],
 });
 
-console.log('Comando /dcv-setup registrado en el servidor configurado.');
+console.log('Comandos /dcv-setup y /anuncio registrados en el servidor configurado.');

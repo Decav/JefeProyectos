@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R9a / Party — Prelobby de dungeon (matchmaking)
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Cerrada — implementada y QA completada (confirmación del PO 2026-10-23)
 **Tipo:** Sistema de lobby/matchmaking (dev) sobre el party existente
 **Fase GDD:** R9a (enmienda; R9a/R9a.1 declaraban el matchmaking fuera — esta HU lo agrega)
 **Depende de:** HU-R9a (PartyService, límite 4, invitación 60 s, teleport grupal, run compartida), HU-R9a.1 (lista del lobby para invitar), HU-PUBLICAR-02/R6b (teleport cross-place con `partyId`), HU-ESTETICA-22 (party frames/ventana de party, estilo EST-13), HU-R8d (bandas), `EnemyConfig`/`LootTables`/`BossConfig` (info de dungeon)
@@ -267,20 +267,20 @@ Esta HU agrega la **ventana de matchmaking** (en el hub, al interactuar con el p
 
 ### **Definition of Done (DoD)**
 
-* [ ] `MatchmakingUI` con Solo/Grupo, crear sala (pública/privada), lista de salas, sala (roles + ready) e info de dungeon.
-* [ ] Roles derivados de clase+spec mediante config; **default DPS** cuando no califica como Tank ni Heal.
-* [ ] Sala **autocompletada** con los miembros del party existente (sin re-invitar).
-* [ ] Inicio permitido con **2–4 jugadores** con el ready-check de los presentes (mínimo 2; 1 solo = modo solo).
-* [ ] En sala matchmaking la composición 1/1/2 se **muestra** (máx 1 Tank/1 Heal) **sin bloquear**; en party pre-armado **no se valida**.
-* [ ] Ready-check: al quedar todos los presentes listos, el servidor inicia la run.
-* [ ] Toda la sala se teleporta junta (misma run, `partyId`) con el flujo existente.
-* [ ] Sala privada no aparece en la lista; invitaciones de R9a.1 intactas.
-* [ ] Info de dungeon 100% data-driven (sin contenido inventado).
-* [ ] Solo en el hub; anti-exploit (límite 4, una sala, server controla rol/ready/inicio).
-* [ ] Solo y R9a/R9a.1 sin regresiones; sin errores rojos en PC y móvil.
-* [ ] Se actualizan `PROJECT_ARCHITECTURE`, `DATA_SCHEMA` y el registro de la HU/RC al cerrar.
-* [ ] Nota `R9a.2 completo` en el GDD después de la verificación, no antes.
-* [ ] El dev prepara el RC desde esta HU antes de programar (DEV_PROMPT).
+* [x] `MatchmakingUI` con Solo/Grupo, crear sala (pública/privada), lista de salas, sala (roles + ready) e info de dungeon.
+* [x] Roles derivados de clase+spec mediante config; **default DPS** cuando no califica como Tank ni Heal.
+* [x] Sala **autocompletada** con los miembros del party existente (sin re-invitar).
+* [x] Inicio permitido con **2–4 jugadores** con el ready-check de los presentes (mínimo 2; 1 solo = modo solo).
+* [x] En sala matchmaking la composición 1/1/2 se **muestra** (máx 1 Tank/1 Heal) **sin bloquear**; en party pre-armado **no se valida**.
+* [x] Ready-check: al quedar todos los presentes listos, el servidor inicia la run.
+* [x] Toda la sala se teleporta junta (misma run, `partyId`) con el flujo existente.
+* [x] Sala privada no aparece en la lista; invitaciones de R9a.1 intactas.
+* [x] Info de dungeon 100% data-driven (sin contenido inventado).
+* [x] Solo en el hub; anti-exploit (límite 4, una sala, server controla rol/ready/inicio).
+* [x] Solo y R9a/R9a.1 sin regresiones; sin errores rojos en PC y móvil.
+* [x] Se actualizan `PROJECT_ARCHITECTURE`, `DATA_SCHEMA` y el registro de la HU/RC al cerrar.
+* [x] Nota `R9a.2 completo` en el GDD después de la verificación, no antes.
+* [x] El dev prepara el RC desde esta HU antes de programar (DEV_PROMPT).
 
 ---
 
@@ -302,10 +302,10 @@ Esta HU agrega la **ventana de matchmaking** (en el hub, al interactuar con el p
 
 ---
 
-### **Decisiones cerradas / pendientes de implementación**
+### **Decisiones cerradas**
 
 * ~~Composición con 3 jugadores~~ **Resuelto (decisión PO 2026-09-22):** el inicio nunca se bloquea por composición ni cantidad (mínimo 2); en sala matchmaking la compo 1/1/2 es informativa y en party pre-armado no se valida.
-* **Diseño e inicio (PO 2026-10-23, cerrado):** usar exclusivamente los frames seleccionados `o0nxs` (Salas), `B3yoQT` (Crear sala) y `FRPZ6` (Tu sala); implementar el inicio automático al quedar todos los presentes listos, sin botón del líder. La primera integración con frames anteriores debe corregirse mediante HU-ESTETICA-50.
+* **Diseño e inicio (PO 2026-10-23, cerrado):** las vistas de grupo usan los frames seleccionados `o0nxs` (Salas), `B3yoQT` (Crear sala) y `FRPZ6` (Tu sala); el inicio es automático al quedar todos los presentes listos, sin botón del líder. La integración visual también queda cerrada en HU-ESTETICA-50.
 
 ---
 
@@ -322,3 +322,4 @@ Esta HU agrega la **ventana de matchmaking** (en el hub, al interactuar con el p
 | 2026-09-22 | Creación de HU-R9a.2: prelobby de matchmaking — Solo/Grupo, salas públicas/privadas, unirse/crear/invitar, roles 1/1/2 obligatorios, ready-check con inicio automático y ventana de info de dungeon data-driven; reutiliza party (R9a/R9a.1) y teleport grupal |
 | 2026-09-22 | **Ajuste de reglas (decisión PO):** sala **autocompletada con el party existente** (sin re-invitar); **inicio permitido con 2–4** (mínimo 2, 1 solo = modo solo); **roles 100% automáticos** (Protector=Tank, Misericordia=Heal, resto=DPS); composición 1/1/2 **informativa en salas matchmaking** (máx 1 Tank/1 Heal) y **sin validación en party pre-armado** — el inicio depende solo del ready-check de los presentes |
 | 2026-10-23 | **Enmienda PO de UI/inicio:** frames finales seleccionados `o0nxs` (Salas), `B3yoQT` (Crear sala) y `FRPZ6` (Tu sala); al quedar todos los miembros presentes listos, el servidor inicia automáticamente, sin botón manual del líder. Se elimina cualquier requisito de composición para iniciar; el objetivo 1/1/2 es informativo. |
+| 2026-10-23 | PO confirma R9a.2 implementada y verificada; matchmaking/teleport grupal completados. |

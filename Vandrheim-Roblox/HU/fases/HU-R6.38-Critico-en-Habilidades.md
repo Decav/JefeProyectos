@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R6.x / Combate / CRIT
 **Prioridad:** Alta
-**Estado:** Pendiente de RC para implementación
+**Estado:** Cerrada — implementada y QA completada (confirmación del PO 2026-10-23)
 **Tipo:** Corrección de combate (dev)
 **Fase GDD:** R6.38 — habilitar críticos en impactos de habilidades de daño sin cambiar la fórmula CRIT existente.
 **Depende de:** HU-R6.22 (CRIT en fracción 0–1 y tirada independiente por impacto), HU-R3 (framework de skills), HU-R6.9 (GroundAoE persistente y SelfAoE), `SKILLS_CATALOG`, R8e (Flecha venenosa), HU-ITEMS-03 (Aniquilación, bono de 4 piezas del set Helada del Clérigo)
@@ -118,14 +118,14 @@ La tirada debe ocurrir **por impacto dañino sobre cada objetivo**, no una vez p
 
 ### Definition of Done (DoD)
 
-* [ ] `CombatService` y `SkillService` usan un contrato de crítico consistente, server-authoritative, sin doble aplicación.
-* [ ] Instant y SelfAoE hacen una tirada independiente por impacto/objetivo.
-* [ ] GroundAoE hace una tirada independiente por objetivo en cada tick elegible.
-* [ ] Flecha venenosa y Aniquilación no hacen críticos; se valida con `CRIT = 1`.
-* [ ] `CRIT = 0` no produce críticos; `CRIT = 1` produce críticos en todos los impactos elegibles.
-* [ ] Para CRIT intermedio se verifica independencia sin exigir proporciones exactas en muestras pequeñas.
-* [ ] Críticos de skills muestran el feedback correspondiente y usan ×1,5; curas/escudos/buffs no tiran.
-* [ ] Los ataques básicos mantienen su comportamiento; sin errores rojos y con evidencia de QA.
+* [x] `CombatService` y `SkillService` usan un contrato de crítico consistente, server-authoritative, sin doble aplicación.
+* [x] Instant y SelfAoE hacen una tirada independiente por impacto/objetivo.
+* [x] GroundAoE hace una tirada independiente por objetivo en cada tick elegible.
+* [x] Flecha venenosa y Aniquilación no hacen críticos; se valida con `CRIT = 1`.
+* [x] `CRIT = 0` no produce críticos; `CRIT = 1` produce críticos en todos los impactos elegibles.
+* [x] Para CRIT intermedio se verifica independencia sin exigir proporciones exactas en muestras pequeñas.
+* [x] Críticos de skills muestran el feedback correspondiente y usan ×1,5; curas/escudos/buffs no tiran.
+* [x] Los ataques básicos mantienen su comportamiento; sin errores rojos y con evidencia de QA.
 
 ---
 
@@ -134,3 +134,4 @@ La tirada debe ocurrir **por impacto dañino sobre cada objetivo**, no una vez p
 | Fecha | Cambio |
 |---|---|
 | 2026-10-22 | HU creada a partir del hallazgo del dev: CRIT solo se consulta en ataques básicos; se define alcance para skills y excepción de DoT. |
+| 2026-10-23 | PO confirma implementación y QA completos; HU cerrada. |

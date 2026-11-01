@@ -7,4 +7,6 @@ Archivos generados:
 - `vandrheim_traveler_starter_classic_pants_r15_v3.png`
 - `Preview_UV_Maps_v3.png`
 
-Verificación: ambos PNG son RGBA de 585×559 y conservan exactamente el canal alpha de las máscaras aprobadas. Se dejaron en esta carpeta temporal para revisión; no se importaron a Roblox Studio ni se movieron a los assets finales.
+Verificación: ambos PNG son RGBA de 585×559 y conservan exactamente el canal alpha de las máscaras aprobadas. Se aplicaron a un rig R15 de preview en Roblox Studio y se revisaron de frente, espalda y costado; el traje quedó alineado, sin franjas descubiertas ni costuras defectuosas a escala de avatar. IDs usados por el preview: camisa `rbxassetid://129609031177806`, pantalón `rbxassetid://124517385758133`.
+
+**Estado:** aprobado visualmente por Diego el 2026-10-27. Los PNG fuente siguen aquí; el rig permanece aislado en `Workspace.ModelTest.VandrheimTravelerStarter_v3`. No se ha integrado como equipo del juego.

@@ -1,0 +1,20 @@
+{
+  "asset": "Icon_Menu_quest",
+  "date": "2026-10-31",
+  "tool": "image-generator",
+  "transparent_background": true,
+  "style_reference": [
+    "Assets/Icons/UI/Menu/Icon_Menu_dungeon_guide.png",
+    "Assets/Icons/UI/Menu/Icon_Menu_spellbook.png",
+    "Assets/Icons/UI/Menu/Icon_Menu_equipment.png"
+  ],
+  "prompt": "2D cel-shaded RPG quest log micromenu icon matching the Icon_Menu_* art style, featuring an unrolled cream parchment scroll with brass gold roller rods and a bold gold quest exclamation mark ('!'), with dark outlines on a solid black #000000 background ready for alpha cutout. Palette: #C89445 brass gold, #F4EDE0 parchment cream, #292A2E dark charcoal outline.",
+  "source_raw": "C:\\Users\\Diego\\.gemini\\antigravity\\brain\\7d09d813-8993-4770-8a4f-0c9a3c66d46a\\icon_menu_quest_1793495275873.jpg",
+  "export": {
+    "file": "Assets/Icons/UI/Menu/Icon_Menu_quest.png",
+    "size_px": [512, 512],
+    "format": "PNG",
+    "color_mode": "RGBA",
+    "alpha_corner": 0
+  }
+}

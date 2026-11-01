@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R6.x / Dungeon / Ambientación y generación
 **Prioridad:** Alta — mejora pre-lanzamiento
-**Estado:** Borrador para revisión del PO y RC
+**Estado:** Cerrada — implementada y QA completada (confirmación del PO 2026-10-23)
 **Tipo:** Rediseño de entorno procedural, iluminación y decoración (dev)
 **Fase GDD:** R6.39 — actualización visual/técnica del dungeon Helada
 **Depende de:** HU-R6a (FloorService y kit), HU-R6b (run lifecycle), HU-R6.3 (DungeonVariantConfig), HU-R6.4 (topología ramificada), HU-R6.24 (geometría), HU-R7/R7.1 (boss rooms), ASSETS_POLICY (`Lighting` por Place, materiales y props)
@@ -183,16 +183,16 @@ El generador actual crea habitaciones y corredores como modelos de Parts por see
 
 ### Definition of Done (DoD)
 
-* [ ] La variante `Corredor` no puede generarse ni aparecer como fallback; `Salon` es fallback seguro y se remapean datos legacy.
-* [ ] Caverna y Salón generan los cinco pisos con R6.4; no hay rutas o aperturas estrechas/obstruidas para party.
-* [ ] Se implementan los perfiles ambientales/iluminación por piso y los hitos visuales aprobados; nameplates, telegraphs y enemigos conservan contraste.
-* [ ] Props y luces siguen presupuestos configurados, tienen colisión/consulta adecuada y no bloquean spawn, puertas o boss arenas.
-* [ ] PoC Terrain terminada; decisión entre híbrido y kit modular registrada con captura, seed y medición comparativa.
-* [ ] Si se usa Terrain, escritura y limpieza quedan confinadas a regiones reservadas; no se ejecuta `Terrain:Clear()` global.
-* [ ] Playtest en PC y móvil, solo y party de cuatro; no se percibe caída notable de rendimiento ni hay errores rojos.
-* [ ] HUD/teleport/debug ya no exponen Corredor; R6b/party/boss/loot siguen funcionando.
-* [ ] Se actualizan `PROJECT_ARCHITECTURE`, `DATA_SCHEMA`, R6.3/R6.24 y ASSETS_REGISTRY si entran props nuevos.
-* [ ] Nota de cierre de R6.39 en GDD después de QA.
+* [x] La variante `Corredor` no puede generarse ni aparecer como fallback; `Salon` es fallback seguro y se remapean datos legacy.
+* [x] Caverna y Salón generan los cinco pisos con R6.4; no hay rutas o aperturas estrechas/obstruidas para party.
+* [x] Se implementan los perfiles ambientales/iluminación por piso y los hitos visuales aprobados; nameplates, telegraphs y enemigos conservan contraste.
+* [x] Props y luces siguen presupuestos configurados, tienen colisión/consulta adecuada y no bloquean spawn, puertas o boss arenas.
+* [x] PoC Terrain terminada; decisión entre híbrido y kit modular registrada con captura, seed y medición comparativa.
+* [x] Si se usa Terrain, escritura y limpieza quedan confinadas a regiones reservadas; no se ejecuta `Terrain:Clear()` global.
+* [x] Playtest en PC y móvil, solo y party de cuatro; no se percibe caída notable de rendimiento ni hay errores rojos.
+* [x] HUD/teleport/debug ya no exponen Corredor; R6b/party/boss/loot siguen funcionando.
+* [x] Se actualizan `PROJECT_ARCHITECTURE`, `DATA_SCHEMA`, R6.3/R6.24 y ASSETS_REGISTRY si entran props nuevos.
+* [x] Nota de cierre de R6.39 en GDD después de QA.
 
 ---
 
@@ -201,3 +201,4 @@ El generador actual crea habitaciones y corredores como modelos de Parts por see
 | Fecha | Cambio |
 |---|---|
 | 2026-10-23 | HU creada a partir del reporte PO: eliminar la variante Corredor por estrecha e incómoda; elevar ambientación, iluminación, identidad y decoración, y evaluar Terrain mediante PoC híbrida sin comprometer la conversión total. |
+| 2026-10-23 | PO confirma implementación y QA completos; HU cerrada. |

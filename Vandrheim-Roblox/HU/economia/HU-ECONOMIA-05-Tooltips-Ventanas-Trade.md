@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Economía / Trade / UX
 **Prioridad:** Alta
-**Estado:** Lista para RC
+**Estado:** Cerrada — implementada y QA completada (confirmación del PO 2026-10-23)
 **Tipo:** Bugfix de interfaz (dev)
 **Depende de:** HU-ECONOMIA-01 (trade), HU-R4 (inventario/tooltips de ítems), HU-R6.27 (TooltipSystem), HU-ESTETICA-35 (estados visuales de Trade), `ItemConfig`
 **No modifica:** reglas de trade, reservas/locks, inventario, stats ni valores de ítems.
@@ -96,11 +96,11 @@ Actualmente los tooltips de ítems no aparecen en la UI de Trade. Esta HU conect
 
 ### Definition of Done (DoD)
 
-* [ ] Tooltip real funciona para cada slot ocupado de ambos lados de Trade.
-* [ ] Estados `OFFERING`, `LOCKED`, `EXCHANGING` y terminal conservan sus acciones/reglas; inspeccionar no modifica ofertas ni emite remotes de Trade.
-* [ ] PC y móvil probados: hover/tap, cierre, drag/drop, contenido largo y anclaje dentro de pantalla.
-* [ ] Tooltip se limpia correctamente al cambiar/cerrar el trade; sin datos obsoletos ni errores rojos.
-* [ ] Dev prepara RC desde esta HU y adjunta evidencia de los estados revisados.
+* [x] Tooltip real funciona para cada slot ocupado de ambos lados de Trade.
+* [x] Estados `OFFERING`, `LOCKED`, `EXCHANGING` y terminal conservan sus acciones/reglas; inspeccionar no modifica ofertas ni emite remotes de Trade.
+* [x] PC y móvil probados: hover/tap, cierre, drag/drop, contenido largo y anclaje dentro de pantalla.
+* [x] Tooltip se limpia correctamente al cambiar/cerrar el trade; sin datos obsoletos ni errores rojos.
+* [x] Dev prepara RC desde esta HU y adjunta evidencia de los estados revisados.
 
 ---
 

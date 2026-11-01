@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Publicación / Integración (dev)
 **Prioridad:** Alta
-**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
+**Estado:** Cerrada — implementación y QA confirmados por el PO 2026-10-23
 **Tipo:** Integración de servicios + publicación de place (dev)
 **Fase GDD:** Publicación (transversal; complementa el flujo R6b ya implementado)
 **Depende de:** HU-R6b (DungeonService: start/join/run/exit con ReservedServer + teleport data), HU-PUBLICAR-01 (Place ID de `Dungeon_Helada` + accesos del PO), HU-R6a (FloorService/EnemyService/XP), HU-R2 (perfil/DataStore), HU-R6.5 (HUD dungeon)
@@ -150,16 +150,16 @@ El flujo de R6b ya existe en el place del pueblo: `DungeonService.StartRun` → 
 
 ### **Definition of Done (DoD)**
 
-* [ ] Place `Dungeon_Helada` publicado con servicios/configs/remotes/HUD dungeon y arranque que carga el perfil (DataStore).
-* [ ] Portal teleporta a `Dungeon_Helada` (servidor reservado) con teleport data {runId, floorSeed, dungeonDef, partyId}.
-* [ ] Fallo de teleport → feedback y reintento sin estados raros.
-* [ ] Entrada directa a la dungeon rechazada (acceso + validación de runId).
-* [ ] Run completa publicada: pueblo → portal → 5 pisos → completar/abandonar → pueblo con lo ganado persistido.
-* [ ] 2 jugadores: runs independientes sin interferencias.
-* [ ] Sin errores rojos; servicios/remotes sin duplicación de lógica.
-* [ ] `DungeonConfig` con place IDs en config (no hardcode).
-* [ ] El dev prepara el RC desde esta HU antes de programar (DEV_PROMPT).
-* [ ] Al cerrar: PROJECT_ARCHITECTURE, DATA_SCHEMA y registro HU/RC actualizados; nota en GDD después de QA (con la prueba publicada).
+* [x] Place `Dungeon_Helada` publicado con servicios/configs/remotes/HUD dungeon y arranque que carga el perfil (DataStore).
+* [x] Portal teleporta a `Dungeon_Helada` (servidor reservado) con teleport data {runId, floorSeed, dungeonDef, partyId}.
+* [x] Fallo de teleport → feedback y reintento sin estados raros.
+* [x] Entrada directa a la dungeon rechazada (acceso + validación de runId).
+* [x] Run completa publicada: pueblo → portal → 5 pisos → completar/abandonar → pueblo con lo ganado persistido.
+* [x] 2 jugadores: runs independientes sin interferencias.
+* [x] Sin errores rojos; servicios/remotes sin duplicación de lógica.
+* [x] `DungeonConfig` con place IDs en config (no hardcode).
+* [x] El dev prepara el RC desde esta HU antes de programar (DEV_PROMPT).
+* [x] Al cerrar: PROJECT_ARCHITECTURE, DATA_SCHEMA y registro HU/RC actualizados; nota en GDD después de QA (con la prueba publicada).
 
 ---
 

@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R6.x / Combate / Cazador
 **Prioridad:** Alta
-**Estado:** Lista para RC
+**Estado:** Cerrada — implementada y QA completada (confirmación del PO 2026-10-23)
 **Tipo:** Bugfix de alcance de ataques/habilidades (dev)
 **Depende de:** HU-R8b (contenido Cazador), HU-R8e (Flecha venenosa), HU-R3 (combate y habilidades), HU-R6.19 (ataques ranged), `SKILLS_CATALOG`, `SkillConfig`/config de ataques básicos
 **No modifica:** daño, cooldown, coste de maná, número de objetivos, set bonuses ni las habilidades de Asalto.
@@ -87,12 +87,12 @@ El rango actual de Puntería varía sin una razón consistente: Flecha venenosa 
 
 ### Definition of Done (DoD)
 
-* [ ] Ataque automático de arco, Disparo perforante y Flecha venenosa/Tiro certero/Tiro en cadena usan 30 studs en config, servidor, UI y catálogo.
-* [ ] Disparo mortal usa 35 studs en config, servidor, UI y catálogo.
-* [ ] Los objetivos fuera del rango correspondiente se rechazan server-side con el feedback existente.
-* [ ] Se comprueba Tiro en cadena: rango inicial 30; objetivo secundario conserva el alcance de cadena.
-* [ ] Asalto y otras clases no presentan regresiones; sin errores rojos.
-* [ ] `SKILLS_CATALOG` queda actualizado y el dev adjunta evidencia en el RC.
+* [x] Ataque automático de arco, Disparo perforante y Flecha venenosa/Tiro certero/Tiro en cadena usan 30 studs en config, servidor, UI y catálogo.
+* [x] Disparo mortal usa 35 studs en config, servidor, UI y catálogo.
+* [x] Los objetivos fuera del rango correspondiente se rechazan server-side con el feedback existente.
+* [x] Se comprueba Tiro en cadena: rango inicial 30; objetivo secundario conserva el alcance de cadena.
+* [x] Asalto y otras clases no presentan regresiones; sin errores rojos.
+* [x] `SKILLS_CATALOG` queda actualizado y el dev adjunta evidencia en el RC.
 
 ---
 

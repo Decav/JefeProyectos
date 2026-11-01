@@ -14,6 +14,7 @@ import {
   PermissionsBitField,
   SortOrderType,
 } from 'discord.js';
+import { handleAnnouncementInteraction, startAnnouncementScheduler, stopAnnouncementScheduler } from './announcements.js';
 
 const { DISCORD_TOKEN, DISCORD_GUILD_ID } = process.env;
 if (!DISCORD_TOKEN || !DISCORD_GUILD_ID) {
@@ -441,9 +442,13 @@ function isAuthorized(interaction) {
 client.once(Events.ClientReady, (readyClient) => {
   console.log(`Conectado como ${readyClient.user.tag}.`);
   console.log(`Bienvenida automática al entrar: ${memberWelcomeEnabled ? 'activada' : 'desactivada'}.`);
+  startAnnouncementScheduler(readyClient).catch((error) => {
+    console.error('No pude iniciar el scheduler de anuncios:', error);
+  });
 });
 
 client.on(Events.InteractionCreate, async (interaction) => {
+  if (await handleAnnouncementInteraction(interaction)) return;
   if (!interaction.isChatInputCommand() || interaction.commandName !== 'dcv-setup') return;
 
   if (!interaction.inGuild() || interaction.guildId !== DISCORD_GUILD_ID) {
@@ -562,5 +567,17 @@ if (memberWelcomeEnabled) {
     await channel.send({ content: arrival }).catch((error) => console.error('No pude enviar bienvenida:', error));
   });
 }
+
+let shuttingDown = false;
+async function gracefulShutdown(signal) {
+  if (shuttingDown) return;
+  shuttingDown = true;
+  console.log(`Recibí ${signal}; deteniendo el scheduler y cerrando Discord.`);
+  await stopAnnouncementScheduler();
+  client.destroy();
+}
+
+process.once('SIGINT', () => { void gracefulShutdown('SIGINT'); });
+process.once('SIGTERM', () => { void gracefulShutdown('SIGTERM'); });
 
 client.login(DISCORD_TOKEN);

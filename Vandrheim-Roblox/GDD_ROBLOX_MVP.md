@@ -28,7 +28,7 @@ pueblo hub → portal → mazmorra (instancia propia) → pisos → boss + cofre
 | Autoridad | **Server-authoritative** (daño, loot, oro, progresión) |
 | Persistencia | DataStoreService (perfil, inventario, talentos, oro, clase) |
 | Clientes | PC + móvil (UI escalable) |
-| Avatar | **R15** del jugador (skin de Roblox) + overrides de equipo/clase |
+| Avatar | **Cuerpo R15 Vandrheim Traveler Starter** por defecto (sin armadura) + **cabeza del jugador** + overrides de equipo/clase (R2.2 — implementado; verificación pendiente) |
 | Monetización MVP | Cosmética + **3.er slot de personaje** (Robux); 2 slots gratis; gameplay completable sin Robux |
 | Slots de personaje | **2 por UserId** (MVP gratis); **3.º** desbloqueable con Robux |
 | Seguridad | Nunca confiar en el cliente |
@@ -105,7 +105,7 @@ Place: Pueblo (servidor público)
 | Rareza | Blanco, Verde, Azul, Morado |
 | Inventario / stacking | `maxStack` configurable por ítem; pociones hasta 20; equipo 1; **20 slots = 20 pilas ocupadas**; uso/venta descuentan 1 unidad |
 | Req. nivel ítem | Sí |
-| Creación PJ | **Solo nombre + clase**; skin = avatar Roblox del jugador |
+| Creación PJ | **Solo nombre + clase**; cuerpo starter Vandrheim; cabeza del jugador (R2.2 — implementado) |
 | Slots de PJ | **2 gratis** por UserId; **3.º** con Robux |
 | Sexo / pelo / piel custom | **No** en MVP (lo trae el avatar) |
 | Monetización | Cosmética + slot extra; **juego completable sin Robux** (2 PJs bastan) |
@@ -264,9 +264,9 @@ Volcánica, Viento (mismo Place dungeon con bioma distinto o Places extra).
 
 1. Elegir **clase** (Paladín / Cazador / Clérigo).
 2. Elegir **nombre** in-game (display del personaje en Vandrheim).
-3. **Apariencia** = avatar R15 del jugador en Roblox (sin editor de pelo/piel propio).
+3. **Apariencia** = cuerpo R15 Vandrheim Traveler Starter + cabeza del jugador (sin editor de pelo/piel propio; R2.2 — implementado; verificación pendiente).
 
-No hay selección de sexo/cuerpo custom en MVP: lo define el avatar del usuario.
+No hay selección de sexo/cuerpo custom en el MVP: el cuerpo lo define Vandrheim y la cabeza viene del avatar del usuario.
 
 ---
 
@@ -300,6 +300,7 @@ Diseño de bosses y roles asume party **2–4** aunque el MVP se juegue solo.
 - Las compras Robux de tokens se registran idempotentemente en un buzón de cuenta por `UserId`; el jugador reclama cada ficha en un personaje existente.
 - `token_slot3` y el límite de anuncios de `token_auction` son por cuenta; `token_bag` y `token_rename` aplican solo al personaje que canjea la ficha.
 - Cosméticos pueden ir después; el flag de slot 3 conviene dejarlo desde R2.
+- **Beta abierta (decisión PO 2026-10-27):** se mantiene la monetización de conveniencia existente; no se agrega acceso pago a contenido ni pay-to-win. Las compras deben ser idempotentes y con recibo validado. El progreso de la beta se conserva salvo incidente crítico; si hubiera un wipe, se avisa con antelación y se compensa. El copy de tienda y anuncios debe decir **“Beta abierta”** y aclarar que el contenido, el balance y la economía pueden cambiar.
 
 ---
 
@@ -416,21 +417,23 @@ StarterGui/
 | **R6.7** | **Completo** (framework — según docs del dev: `EnemyAnimationService` + PROJECT_ARCHITECTURE; el contenido de animaciones se produce con Moon Animator por familia/enemigo) | Cada tipo de enemigo se anima según su cuerpo; reemplazo por config |
 | **R6.8** | **Completo** (2026-08-26) | VFX básico de combate: proyectiles ranged, hits, números de daño y muerte de enemigos | El combate se siente contundente sin assets externos |
 | **R6.9** | **Completo** (2026-08-26) | AoE: zonas de suelo persistentes (daño en el tiempo) + SelfAoE alrededor del jugador | Consagración/Ira divina vs Torbellino se sienten distintas |
-| **R6.10** | Pendiente | Menú in-game (ESC): volver a selección de PJ funcional + placeholders volumen/gráficos/UI | Probar varias clases sin salir del juego |
-| **R6.39** | Borrador para RC | Retirar Corredor y rediseñar ambiente, iluminación y decoración; PoC Terrain/híbrido | Dungeon Helada cómoda, ambientada y con identidad por piso |
+| **R6.10** | **Implementado** (reporte PO 2026-10-27; QA/verificación pendiente) | Menú in-game (ESC): volver a selección de PJ funcional + placeholders volumen/gráficos/UI | Probar varias clases sin salir del juego |
+| **R6.39** | Completo (confirmación PO 2026-10-23) | Retirar Corredor y rediseñar ambiente, iluminación y decoración; PoC Terrain/híbrido | Dungeon Helada cómoda, ambientada y con identidad por piso |
 | **EST-01** | **Completo** (2026-08-26) | Equipamiento visible en avatar + 8 modelos iniciales del Paladín | Equipar cambia también la apariencia del personaje |
 | **EST-02** | Pendiente | Modelos 3D de los enemigos de la Helada (7 bases + 5 elites) | Cada piso tiene enemigos y mini-bosses reconocibles |
 | **EST-03** | Pendiente | Estructuras del pueblo nórdico: casas, caminos, límites, entradas y decoraciones | El hub se ve como un asentamiento nórdico coherente |
 | **EST-04** | Pendiente | Diseño completo de UI (dirección "Hearthbound Gold"): sistema visual + 12 pantallas (incl. móvil) + componentes/assets | La interfaz tiene identidad nórdica cálida y es implementable por el dev |
 | **EST-05** | Pendiente | Arco del Cazador: modelo 3D (diseñador) + integración como ítem (dev, pipeline EST-01) | Cazador equipa arco visible y funcional para pruebas |
 | **R7** | **Completo** (2026-08-26) | Boss piso 5 + cofre + uniques + reward UI | Loop de botín cierra |
-| **R8** | Pendiente | 3 clases jugables (skills/talentos MVP) | Builds distintas |
+| **R8** | **Completo** (R8a–c 2026-09; R8d confirmado 2026-10-23) | 3 clases jugables (skills/talentos MVP) | Builds distintas |
 | **R8a** | **Completo** (2026-09-11) | Paladín completo: 10 skills + árboles finales (Protector/Castigo) + soporte MATKMult + **VFX únicos client-side por skillId** | Paladín jugable de punta a punta con 2 builds |
 | **R8b** | **Completo** (2026-09-11) | Cazador completo (Asalto + Puntería) + VFX por skillId | Cazador jugable con builds melee y ranged; iconos finales pendientes de carga/registro |
 | **R8c** | **Completo** (2026-09-18) | Clérigo completo (Misericordia + Cólera) + VFX por skillId | Clérigo jugable con builds heal y dps; QA cerrado según reporte |
-| **R8d** | Pendiente | Balance de números + assets (iconos 30) + QA a nivel 20 — **HU-R8d creada (2026-09-18)** | Las 6 specs se sienten distintas y el arco a 20 funciona |
-| **R9** | Pendiente | Party amigos (si entra), polish UI, balance medio a 20 | Demo estable |
-| **R10+** | Backlog propuesto, post-lanzamiento y sin priorizar | Expansión a semi-mundo abierto (nuevos biomas, enemigos y bosses de mundo, misiones); profesiones; progresión ampliada (subir el nivel máximo, nuevas habilidades/talentos e ítems); ampliar creación/personalización de personajes; PvP; modo PvE de oleadas infinitas con recompensas; selección de dificultad en dungeons; efectos y otros cosméticos | Ideas PO; definir prioridad, alcance, dependencias y HUs después del lanzamiento |
+| **R8d** | **Completo** (confirmación PO 2026-10-23) | Balance de números + assets (iconos 30) + QA a nivel 20 — **HU-R8d cerrada** | Las 6 specs se sienten distintas y el arco a 20 funciona |
+| **R9** | En cierre — R9c pendiente | Party/matchmaking (R9a), audio/polish (R9b) y balance fino (R9c) | Demo estable |
+| **R10+** | Backlog propuesto, post-lanzamiento y sin priorizar | Expansión a semi-mundo abierto (nuevos biomas, enemigos y bosses de mundo, misiones); profesiones; progresión ampliada (subir el nivel máximo, nuevas habilidades/talentos e ítems); ampliar creación/personalización de personajes; PvP; modo PvE de oleadas infinitas con recompensas; selección de dificultad en dungeons; efectos y otros cosméticos | Ideas PO; prioridad y dependencias en `ROADMAP.md`; crear HUs solo al aprobar alcance |
+
+> **Beta abierta (decisión PO 2026-10-27):** la Helada se lanza primero como **beta abierta**, no como 1.0. La ruta beta → 1.0 → v2 Fuego/Lava y el backlog post-1.0 viven en `ROADMAP.md`.
 
 > **R6 se ejecuta en 2 HUs:** `HU/fases/HU-R6a-Dungeon-Preparacion.md` (enemigos, pisos, layout por seed, XP/leveling, respawn + arena de prueba) → `HU/fases/HU-R6b-Dungeon-Core.md` (teleport + ReservedServer, run lifecycle, exit). Criterio R6: *run completa solo*.
 > **R8 se ejecuta en 4 HUs:** R8a (Paladín) → R8b (Cazador) → R8c (Clérigo) → R8d (balance + assets + QA). Criterio R8: *builds distintas*.
@@ -478,6 +481,17 @@ Ver `HU/fases/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º 
 - Al menos 2 specs (entre clases) se sienten distintas.  
 - Abandonar run es claro y no corrompe el save.  
 - Llegar a ~20 es un arco de varias sesiones, no un día ni un mes.
+
+### Métricas de beta abierta (2026-10-27)
+
+- **D1/D7:** medir baseline en la primera semana y acordar objetivo antes de 1.0.
+- **Runs completadas:** porcentaje de runs que llegan al cofre sin softlock, en solo y party.
+- **Estabilidad:** crashes/errores por sesión y tiempo de carga en PC y móvil.
+- **Progresión:** tiempo real a nivel 20 y abandono por piso.
+- **Party/matchmaking:** uso, tiempos de espera y runs completadas en grupo.
+- **Bugs:** P0/P1 abiertos por semana y tiempo de resolución.
+- **Monetización:** recibos procesados, grants pendientes y reembolsos.
+- **Feedback:** volumen y temas de `#ideas-y-feedback` / `#reportar-bugs`.
 
 ---
 
@@ -699,14 +713,20 @@ Ver `HU/fases/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º 
 | 2026-10-22 | **HU-R6.37 ampliada por el PO:** además del color de stats, incluye tooltips que explican el efecto de cada estadística y breakdown por origen/fuente, más descripciones individuales, distintivas y fieles a la mecánica para todas las skills. |
 | 2026-10-22 | **HU-R6.37 cerrada por confirmación del PO:** ampliación, copy de stats/skills e implementación completados. |
 | 2026-10-22 | **HU-VFX-01 exitosa por reporte del PO** (Anillo de luz del Paladín mejorado notablemente) y **HU-VFX-02 creada:** rediseño visual completo de las 30 skills, con propuestas por habilidad y criterios compartidos de legibilidad/performance; no modifica gameplay ni SFX. |
+| 2026-10-23 | **HU-VFX-02 cerrada** por confirmación del PO: rediseño visual de las 30 habilidades implementado y QA completada. |
 | 2026-10-23 | **HU-ESTETICA-50 creada:** integración del rediseño de matchmaking de Pencil con R9a.2 e iconos activos/inactivos de party roles. La referencia visual se corrigió después a los frames seleccionados por el PO. |
 | 2026-10-23 | **Iconos simplificados de roles subidos/registrados:** Tank `99345927547899`, Heal `128865686691543`, DPS `111799977902329` y variantes uncovered; IDs en ASSETS_LIST y HU-ESTETICA-50. |
 | 2026-10-23 | **Corrección de diseño matchmaking por el PO:** frames seleccionados `o0nxs` (Salas), `B3yoQT` (Crear sala) y `FRPZ6` (Tu sala); las referencias anteriores se retiran. El servidor inicia automáticamente cuando todos están listos; la composición 1/1/2 es informativa. |
-| 2026-10-23 | **Corrección de integración matchmaking:** el dev integró frames que no eran los seleccionados; HU-ESTETICA-50 queda como instrucción de rework para sustituirlos por `o0nxs`, `B3yoQT` y `FRPZ6`. |
+| 2026-10-23 | **Incidente de integración matchmaking:** se detectó que la primera implementación utilizaba frames no seleccionados; HU-ESTETICA-50 registró el rework hacia `o0nxs`, `B3yoQT` y `FRPZ6`. |
+| 2026-10-23 | **R9a.2 + HU-ESTETICA-50 cerradas por el PO:** matchmaking implementado y QA completo usando `o0nxs`, `B3yoQT` y `FRPZ6`; auto-inicio con todos listos. |
 | 2026-10-23 | **Backlog propuesto R10+ (post-lanzamiento, sin priorizar):** semi-mundo abierto, biomas/enemigos/bosses/misiones; profesiones; nivel máximo y contenido de clases/ítems; ampliación de creación de personajes; PvP; oleadas PvE infinitas con recompensas; dificultades de dungeon; efectos y cosméticos. No son HUs comprometidas para el lanzamiento. |
 | 2026-10-23 | **HU-R6.39 creada:** rediseño pre-lanzamiento de la Helada; retira el Corredor angosto, renueva ambiente/iluminación/decoración de Caverna y Salón y evalúa Terrain con una PoC híbrida. |
 | 2026-10-23 | **Nueva tanda de bugs formalizada:** ECON-05 tooltips en Trade; R6.40 rangos de arco/Puntería (30 studs, Disparo mortal 35); R6.41 LOS para daño del jugador; R7.2 velocidad de bosses anti-kite; R7.3 cierre de arena a 10 s y reset de boss fugado. `SKILLS_CATALOG` pasa a v2.5. |
 | 2026-10-23 | **HU-R6.42 creada:** ampliar ajustes del menú con sliders separados de SFX/música/pisadas, sensibilidad y límites de zoom; el fullscreen backdrop superior queda como extra opcional. |
+| 2026-10-23 | **HU-R6.43 creada:** centrar el título de mochila y añadir filtro de rarezas compartido para venta/borrado masivo con resumen, confirmación y protección server-side; venta masiva requiere sesión/rango de vendor, borrado sigue disponible en dungeon; venta individual R5.2 sigue unitaria. |
+| 2026-10-23 | **HU-R6.43 cerrada por confirmación del PO:** solo cuatro rarezas actuales, Común por defecto, multiselección, venta/borrado masivos con confirmación y vendor-gate para vender. Pencil incluye `nDUnt` (confirmar venta) y `w8ZVMb` (confirmar eliminación). |
+| 2026-10-23 | **Cierre PO de la tanda pre-lanzamiento:** R9a.3, R6.38–R6.43, R7.1–R7.3, ECON-05, VFX-02, R8d y PUBLICAR-02/03/04 implementadas y verificadas. |
+| 2026-10-23 | **HU-R9b cerrada por confirmación del PO:** SFX, música, screen shake y ajustes básicos de volumen/gráficos implementados y verificados. |
 | 2026-10-19 | **HU-R6.31 cerrada por confirmación PO:** implementación y QA completos, con `NotificationFrame` central para avisos pasivos, `LootPopup` independiente, un solo elemento de notificaciones en OrdenUI y cola priorizada. |
 | 2026-09-22 | **R6.32 — tap-hold móvil cerrado (decisión PM):** **300 ms** con umbral de movimiento 8 px (moverse antes = scroll; se cancela) · tap corto (<300 ms) conserva la interacción normal · una vez activado, el ítem sigue al dedo |
 | 2026-09-22 | **R6.32 — contrato del lock de ítems (decisión PM):** campo `lock = { kind: "trade"\|"auction", opId }` en la instancia del ítem (R4) — escritores futuros: ECON-01 (`HOLD_ITEMS`) y ECON-02 (custodia); `RequestDeleteItem` lo consulta y rechaza si está activo; **hoy inerte** (la economía no está implementada → el campo siempre es nil) |
@@ -722,19 +742,24 @@ Ver `HU/fases/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º 
 | 2026-09-15 | **HU-ESTETICA-16 creada (dev)** — reskin de la ventana de talentos, referenciando el frame `v1eO9E` del diseño (EST-08) y el paquete EST-13; árbol conectado, estados de nodo, tooltips y respec — sin tocar la lógica |
 | 2026-09-15 | **EST-16 completa** — reskin de la ventana de talentos implementado según reporte del dev (árbol conectado y estados, similar al diseño) |
 | 2026-09-15 | **HU-ESTETICA-17 creada (dev)** — reskin del grimorio, referenciando el frame `NXCBS` del diseño (EST-09) y el paquete EST-13; estados de skill, vista previa del loadout y tooltips — sin tocar la lógica |
+| 2026-10-27 | **Decisión PO: beta abierta.** La Helada se lanza como beta, no como 1.0; ruta beta → 1.0 → v2 Fuego/Lava; backlog post-1.0 en `ROADMAP.md`. El copy de Roblox/Discord pasa a “Beta abierta”. |
+| 2026-10-27 | **HU-R6.44 creada e implementada (reporte PO; QA/verificación pendiente):** corrección de dungeon — geometría transitable, reintento de jefes por muerte/wipe y personaje muerto inerte. |
+| 2026-10-27 | **HU-R2.2 creada e implementada (reporte PO; QA/verificación pendiente):** avatar starter R15 Vandrheim + cabeza del jugador; enmienda GDD §2/§9. |
+| 2026-10-27 | **R6.10 y onboarding implementados** según reporte del PO (QA/verificación pendiente); el menú ESC y el tutorial quedan listos para la beta. |
+| 2026-10-27 | **HU-R6.45 creada:** pools del Jotunn visibles durante todo su daño, salto restaurado tras revivir y reset de arena en party cuando no queda ningún vivo dentro. |
+| 2026-10-27 | **QUEST-01/02 creadas (adelanto de R10+):** framework de misiones + onboarding con el Guía; objetivo retención de primera sesión. Diseño en `QUEST_SYSTEM.md`. |
 
 ---
 
 ## 20. Próximo paso de producción
 
-1. **R0–R7 + R6.x + EST-01 cerrados** (gameplay completo: combate, progresión, inventario, dungeon con variantes/topología, boss, UI y animaciones de combate).  
-2. Implementar **HU-R6.7**: framework de animaciones de enemigos por familia (deja el código listo para los modelos de EST-02).  
-3. Implementar **HU-R6.8**: VFX básico de combate (hits, números de daño, proyectiles ranged, muerte).  
-4. Implementar **HU-R6.9**: AoE — zonas persistentes de suelo (DoT) + SelfAoE (SKILLS_CATALOG v2.1).  
-5. Implementar **EST-02 / HU-ESTETICA-02**: modelos de enemigos de la Helada (diseñador; dev enlaza `modelId`).  
-6. Implementar **EST-03 / HU-ESTETICA-03**: estructuras del pueblo nórdico (diseñador; dev integra en el hub).  
-7. Criterio de hecho EST: *cada piso tiene enemigos reconocibles y el hub se ve como un asentamiento nórdico*.  
-8. **R8 puede planificarse/crearse en paralelo** (R8a Paladín ya creada); la implementación de R8 comienza cuando el loop base esté estable, sin esperar a EST-02/03 para avanzar con las HUs.
+> Este apartado reemplaza la lista anterior (R6.7/R6.8/R6.9 y EST-02/03 como “próximo”), que ya está completada o reordenada.
+
+1. **Verificar y cerrar lo que queda de beta:** QA de R6.44, R6.10, R2.2 y onboarding (implementados según PO 2026-10-27); implementar R6.45 (pools del Jotunn, salto y reset de party); R8d confirmado 2026-10-23; cerrar R9c (balance fino) y performance.
+2. **Preparar la beta abierta:** copy beta en Roblox y Discord, anuncios, analítica, política de datos/compras, known issues y plan de rollback.
+3. **Abrir la beta abierta** y ejecutar el plan de `ROADMAP.md`.
+4. **Cerrar beta → 1.0** cuando se cumplan los criterios de salida definidos en `ROADMAP.md`.
+5. **Después de 1.0:** v2 Fuego/Lava y backlog post-1.0 (profesiones, clases, niveles, biomas, PvP, mundo abierto, oleadas, dificultades, personalización).
 
 ---
 

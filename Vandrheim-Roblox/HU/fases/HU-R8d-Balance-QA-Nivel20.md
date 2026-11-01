@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R8 — 3 clases jugables / R8d (cierre del bloque)
 **Prioridad:** Alta
-**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
+**Estado:** Cerrada — implementación y QA confirmados por el PO 2026-10-23
 **Tipo:** Balance (dev) + QA — solo números en configs; sin mecánicas nuevas
 **Fase GDD:** R8 (R8a Paladín ✅ → R8b Cazador ✅ → R8c Clérigo ✅ → **R8d**)
 **Depende de:** HU-R8a/b/c (completas), HU-ITEMS-01 (rc034, sets/armas/joyería), HU-R7 (boss piso 5), HU-R6a (enemigos/XP/loot), SKILLS_CATALOG v2.2 (árboles finales)
@@ -179,16 +179,16 @@ Referencias calculadas (sin gear ni talentos): lvl 4 / 8 / 12 / 16 / 20 → Pala
 
 ### **Definition of Done (DoD)**
 
-* [ ] Las 6 specs completan la dungeon (5 pisos + boss) a lvl 20 con build conseguible (0–2 muertes, consumibles).
-* [ ] TTK por piso dentro de las bandas objetivo; boss en 60–120 s y sin kills < 45 s.
-* [ ] Pociones al 25% del máximo con precio 15; economía verificada.
-* [ ] Familias de skills dentro de sus metas (single/burst/zona/SelfAoE/cura/escudo/maná).
-* [ ] Diferenciación de specs verificada (sobrevivencia Protector, sostenimiento Misericordia, dps relativos).
-* [ ] Uniques claramente superiores a Rare/Epic del mismo nivel.
-* [ ] Todos los cambios son numéricos (más la excepción aprobada de pociones al 25%); sin regresión mecánica; sin errores rojos.
-* [ ] SKILLS_CATALOG v2.4 actualizado con números finales + tabla de métricas en el RC.
-* [ ] Nota `R8d completo` + cierre de R8 en GDD tras la verificación.
-* [ ] PROJECT_ARCHITECTURE / DATA_SCHEMA / registro HU/RC actualizados al cerrar.
+* [x] Las 6 specs completan la dungeon (5 pisos + boss) a lvl 20 con build conseguible (0–2 muertes, consumibles).
+* [x] TTK por piso dentro de las bandas objetivo; boss en 60–120 s y sin kills < 45 s.
+* [x] Pociones al 25% del máximo con precio 15; economía verificada.
+* [x] Familias de skills dentro de sus metas (single/burst/zona/SelfAoE/cura/escudo/maná).
+* [x] Diferenciación de specs verificada (sobrevivencia Protector, sostenimiento Misericordia, dps relativos).
+* [x] Uniques claramente superiores a Rare/Epic del mismo nivel.
+* [x] Todos los cambios son numéricos (más la excepción aprobada de pociones al 25%); sin regresión mecánica; sin errores rojos.
+* [x] SKILLS_CATALOG v2.4 actualizado con números finales + tabla de métricas en el RC.
+* [x] Nota `R8d completo` + cierre de R8 en GDD tras la verificación.
+* [x] PROJECT_ARCHITECTURE / DATA_SCHEMA / registro HU/RC actualizados al cerrar.
 
 ---
 

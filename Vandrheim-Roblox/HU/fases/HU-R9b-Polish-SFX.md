@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R9 — Demo estable / Polish (segunda parte)
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Cerrada — implementada y QA completada (confirmación del PO 2026-10-23)
 **Tipo:** Polish de feel + ajustes reales en el menú (dev; SFX y música con assets del PO o placeholders intercambiables por config)
 **Fase GDD:** R9 (posterior a R8d; el juego ya es jugable)
 **Depende de:** HU-R8d (balance), HU-R6.10 (placeholders Volumen/Gráficos del menú), HU-R6.11 (Ordenar UI ya real), HU-R6.6/6.7/6.8 (animaciones/VFX base), ASSETS_POLICY (SFX pendiente de confirmar; registro obligatorio)
@@ -165,15 +165,15 @@ El menú in-game (R6.10) tiene placeholders de **Volumen** y **Gráficos** ("Pr�
 
 ### **Definition of Done (DoD)**
 
-* [ ] Capacidad de SFX confirmada; sonidos de las categorías integrados por config y registrados (placeholders marcados PENDIENTE donde no haya asset).
-* [ ] Sin spam de audio (cooldown/límite por segundo).
-* [ ] Música por contexto con crossfade (4 tracks del PO mapeados; victoria/muerte PENDIENTE); respeta el slider de Volumen; **una sola música a la vez** + loop con delay ≥10 s.
-* [ ] Screen shake sutil al recibir daño (y crítico) configurable (0 = off).
-* [ ] Slider de Volumen funcional y persistente; selector de Gráficos funcional y persistente.
-* [ ] Placeholders del menú (Volumen/Gráficos) ya no muestran "Próximamente".
-* [ ] Sin errores rojos en menú → combate → dungeon.
-* [ ] El dev prepara el RC desde esta HU antes de programar (DEV_PROMPT).
-* [ ] Al cerrar: PROJECT_ARCHITECTURE, ASSETS_POLICY (SFX confirmado) y registro HU/RC actualizados; nota en GDD después de QA.
+* [x] Capacidad de SFX confirmada; sonidos de las categorías integrados por config y registrados (placeholders marcados PENDIENTE donde no haya asset).
+* [x] Sin spam de audio (cooldown/límite por segundo).
+* [x] Música por contexto con crossfade (4 tracks del PO mapeados; victoria/muerte PENDIENTE); respeta el slider de Volumen; **una sola música a la vez** + loop con delay ≥10 s.
+* [x] Screen shake sutil al recibir daño (y crítico) configurable (0 = off).
+* [x] Slider de Volumen funcional y persistente; selector de Gráficos funcional y persistente.
+* [x] Placeholders del menú (Volumen/Gráficos) ya no muestran "Próximamente".
+* [x] Sin errores rojos en menú → combate → dungeon.
+* [x] El dev prepara el RC desde esta HU antes de programar (DEV_PROMPT).
+* [x] Al cerrar: PROJECT_ARCHITECTURE, ASSETS_POLICY (SFX confirmado) y registro HU/RC actualizados; nota en GDD después de QA.
 
 ---
 
@@ -205,3 +205,4 @@ El menú in-game (R6.10) tiene placeholders de **Volumen** y **Gráficos** ("Pr�
 | 2026-10-12 | **Sonidos reales del PO (15 en `Workspace.Sounds` + transacciones):** catálogo mapeado con IDs subidos (melee/magia/cast/cura/escudo/AoE/muerte/lvlup/boss) + **nueva categoría Moneda** (transacciones, `140395633128797`); pendientes: **muerte del jugador** y **click UI** (PoC SFX-02); registrados en ASSETS_REGISTRY |
 | 2026-10-12 | **Música mapeada (4 tracks del PO, subidos):** hub `77363443690081` · pisos 1–2 `112917722141522` · pisos 3–5 `70388794256162` (más intenso) · Jotunn `126551601593677` (solo durante la batalla); victoria/muerte PENDIENTE. **Reglas PO:** una sola música a la vez (nunca se solapan; SFX exentos) + loop por área con **delay ≥10 s** |
 | 2026-10-12 | **Muerte del jugador = `sfx_die` reutilizado** (temporal, decisión PO); pendiente solo el **click UI** (PoC SFX-02) |
+| 2026-10-23 | PO confirma R9b implementada y cerrada con QA; el polish de audio y ajustes del menú queda completado. |

@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Estética / UI / Predungeon
 **Prioridad:** Alta
-**Estado:** Corrección requerida: el dev integró frames equivocados; reemplazar esa UI con `o0nxs`, `B3yoQT` y `FRPZ6`. No cerrar RC sin verificación contra Pencil.
+**Estado:** Cerrada — integración corregida y QA completada (confirmación del PO 2026-10-23)
 **Tipo:** Integración/rediseño visual de UI existente (dev)
 **Fase GDD:** R9a.2 — nueva presentación del matchmaking de dungeon
 **Depende de:** HU-R9a.2 (lógica de salas/matchmaking), HU-R9a/R9a.1 (party e invitaciones), HU-ESTETICA-37 (diseño anterior y lenguaje visual), HU-ESTETICA-46 (Guía de la Helada separada), HU-R6.27 (casillas y tooltips), `ASSETS_LIST.md` (iconos de Tank/Heal/DPS), `Vandrheim-design.pen`
@@ -179,22 +179,21 @@ Integrar los tres primeros en `RoomConfig.RoleIcons` y los tres últimos en `Roo
 ### Definition of Done (DoD)
 
 * [x] El PO confirma los frames Cuaderno seleccionados (`o0nxs`, `B3yoQT`, `FRPZ6`, 680×485) como referencia vigente y el inicio automático al quedar todos listos.
-* [ ] Se corrige la integración existente y las vistas de grupo usan exactamente `o0nxs`, `B3yoQT` y `FRPZ6`; las referencias anteriores se retiran, no se combinan.
-* [ ] Los seis iconos aprobados están subidos a Roblox, los IDs entregados por el PO están registrados y activos/uncovered se muestran correctamente.
-* [ ] Lista, formularios, party precargado, estados de rol/ready, sala llena/vacía/privada, errores e invitaciones usan datos reales y acciones existentes.
-* [ ] La meta 1/1/2 es informativa y no se introduce bloqueo de composición ni otro cambio de reglas.
-* [ ] Al quedar todos los miembros presentes listos, la sala inicia sin click adicional del líder; no queda botón manual de inicio.
-* [ ] Guía abre como panel separado de EST-46; volver al buscador conserva estado apropiado.
-* [ ] Adaptación PC/móvil verificada: sin clipping, targets táctiles adecuados, safe area y textos legibles.
-* [ ] Regresión de R9a/R9a.1/R9a.2, solo, invitaciones y teleport sin errores rojos.
-* [ ] El dev prepara RC desde esta HU; capturas de los estados clave y nota de cierre en GDD.
+* [x] Se corrige la integración existente y las vistas de grupo usan exactamente `o0nxs`, `B3yoQT` y `FRPZ6`; las referencias anteriores se retiran, no se combinan.
+* [x] Los seis iconos aprobados están subidos a Roblox, los IDs entregados por el PO están registrados y activos/uncovered se muestran correctamente.
+* [x] Lista, formularios, party precargado, estados de rol/ready, sala llena/vacía/privada, errores e invitaciones usan datos reales y acciones existentes.
+* [x] La meta 1/1/2 es informativa y no se introduce bloqueo de composición ni otro cambio de reglas.
+* [x] Al quedar todos los miembros presentes listos, la sala inicia sin click adicional del líder; no queda botón manual de inicio.
+* [x] Guía abre como panel separado de EST-46; volver al buscador conserva estado apropiado.
+* [x] Adaptación PC/móvil verificada: sin clipping, targets táctiles adecuados, safe area y textos legibles.
+* [x] Regresión de R9a/R9a.1/R9a.2, solo, invitaciones y teleport sin errores rojos.
+* [x] El dev prepara RC desde esta HU; capturas de los estados clave y nota de cierre en GDD.
 
 ---
 
-### Pendientes para cerrar antes del RC
+### Cierre
 
-1. Integrar en `RoomConfig.RoleIcons` y `RoomConfig.RoleIconsUncovered` los seis IDs finales registrados arriba y en `ASSETS_LIST.md`.
-2. Adaptar la variante móvil de `NcFgD` al diseño Cuaderno; no se encontró un set Cuaderno específico para móvil en Pencil.
+El PO confirma que el rework con los frames seleccionados, los seis iconos y la adaptación PC/móvil están implementados y verificados.
 
 ---
 
@@ -207,3 +206,4 @@ Integrar los tres primeros en `RoomConfig.RoleIcons` y los tres últimos en `Roo
 | 2026-10-23 | Interpretación inicial incorrecta de la selección visual: se habían anotado `vp61U`, `hsuJW`, `pokG5`; no eran los frames seleccionados para implementar. |
 | 2026-10-23 | El PO selecciona en Pencil `o0nxs`, `B3yoQT` y `FRPZ6` (680×485); estos IDs sustituyen las referencias anteriores. La implementación del dev todavía requiere el rework indicado en esta HU. |
 | 2026-10-23 | Corrección PO: la integración previa usó frames antiguos. Se reitera que el dev debe sustituirla y verificar visualmente solo contra `o0nxs`, `B3yoQT` y `FRPZ6`; el set Cuaderno anterior no es el seleccionado. |
+| 2026-10-23 | PO confirma corrección e implementación final con los frames seleccionados; HU-ESTETICA-50 cerrada. |

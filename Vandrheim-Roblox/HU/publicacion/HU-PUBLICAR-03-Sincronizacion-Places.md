@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Publicación / Ops (dev)
 **Prioridad:** Alta (bug reportado en producción limitada)
-**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
+**Estado:** Cerrada — implementación y QA confirmados por el PO 2026-10-23
 **Tipo:** Mantenimiento cross-place + proceso (dev)
 **Fase GDD:** Publicación (transversal)
 **Depende de:** HU-PUBLICAR-02 (bootstrap del place dungeon), SKILLS_CATALOG v2.3 (Flecha venenosa/DoT), todo lo implementado desde el bootstrap del place
@@ -114,12 +114,12 @@ Sincronizar en `Dungeon_Helada` todo lo que el hub tiene y la dungeon no (o tien
 
 ### **Definition of Done (DoD)**
 
-* [ ] `Dungeon_Helada` sincronizado con el hub (configs/servicios/remotes/UI idénticos en los módulos compartidos).
-* [ ] Bug verificado publicado: Cazador conserva Flecha venenosa en la dungeon y castea DoT.
-* [ ] Flujo cross-place sin errores rojos (skills, ítems, UI, HUD idénticos).
-* [ ] Regla "Sync places" documentada para los RC futuros (lista de módulos + verificación).
-* [ ] El dev prepara el RC desde esta HU antes de programar (DEV_PROMPT).
-* [ ] Al cerrar: nota en GDD después de QA.
+* [x] `Dungeon_Helada` sincronizado con el hub (configs/servicios/remotes/UI idénticos en los módulos compartidos).
+* [x] Bug verificado publicado: Cazador conserva Flecha venenosa en la dungeon y castea DoT.
+* [x] Flujo cross-place sin errores rojos (skills, ítems, UI, HUD idénticos).
+* [x] Regla "Sync places" documentada para los RC futuros (lista de módulos + verificación).
+* [x] El dev prepara el RC desde esta HU antes de programar (DEV_PROMPT).
+* [x] Al cerrar: nota en GDD después de QA.
 
 ---
 

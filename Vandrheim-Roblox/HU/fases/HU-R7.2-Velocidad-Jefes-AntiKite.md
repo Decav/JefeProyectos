@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R7 / Bosses / Combate
 **Prioridad:** Alta
-**Estado:** Lista para RC
+**Estado:** Cerrada — implementada y QA completada (confirmación del PO 2026-10-23)
 **Tipo:** Ajuste de movimiento/IA de bosses (dev)
 **Depende de:** HU-R6.7 (animaciones/enemy movement), HU-R6.19 (IA melee/ranged), HU-R7/R7.1 (bosses actuales), HU-R8d/R9c (balance y QA), `EnemyConfig`/`BossConfig`
 **No modifica:** velocidad del jugador, daño, cooldowns, telegraphs, knockback ni reglas de encuentro.
@@ -90,11 +90,11 @@ Los jefes son demasiado kiteables por jugadores ranged. El jugador corre a 20 st
 
 ### Definition of Done (DoD)
 
-* [ ] `BossConfig`/config de cada boss garantiza velocidad normal de persecución > `CharacterConfig.runSpeed`; valor inicial recomendado 22 frente a 20.
-* [ ] Incluye bosses de piso 1–4 y boss final; excepciones de movimiento están documentadas y no rompen la regla durante chase.
-* [ ] Telegráficos, ventanas de casteo, control de orientación, pathfinding y límites de arena funcionan sin cambios de gameplay.
-* [ ] QA con Cazador Puntería, otras builds ranged/melee, solo y party; sin kiting indefinido ni atrapamientos.
-* [ ] RC y evidencia de mediciones adjuntos; sin errores rojos.
+* [x] `BossConfig`/config de cada boss garantiza velocidad normal de persecución > `CharacterConfig.runSpeed`; valor inicial recomendado 22 frente a 20.
+* [x] Incluye bosses de piso 1–4 y boss final; excepciones de movimiento están documentadas y no rompen la regla durante chase.
+* [x] Telegráficos, ventanas de casteo, control de orientación, pathfinding y límites de arena funcionan sin cambios de gameplay.
+* [x] QA con Cazador Puntería, otras builds ranged/melee, solo y party; sin kiting indefinido ni atrapamientos.
+* [x] RC y evidencia de mediciones adjuntos; sin errores rojos.
 
 ---
 

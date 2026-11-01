@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R7 / Bosses / Dungeon
 **Prioridad:** Alta
-**Estado:** Lista para RC
+**Estado:** Cerrada — implementada y QA completada (confirmación del PO 2026-10-23)
 **Tipo:** Bugfix de límites/estado del encuentro de boss (dev)
 **Depende de:** HU-R6.4 (puertas y sala final), HU-R6b (run lifecycle), HU-R7/R7.1 (boss rooms y encuentros), HU-R7.2 (velocidad/leash de bosses), `FloorService`, `EnemyService`, `BossConfig`
 **No modifica:** composición de salas, daño, loot, niveles, telegraphs ni teleport de la run.
@@ -98,19 +98,19 @@ Los jugadores pueden llevar a un boss fuera de su sala. Al iniciarse cada encuen
 
 ### Definition of Done (DoD)
 
-* [ ] Puerta mantiene paso exactamente 10 s desde el inicio del boss y luego cierra para el grupo.
-* [ ] El cierre y el timer son server-authoritative y replican un estado/feedback claro.
-* [ ] Escape del boss durante gracia o tras el cierre ejecuta un solo reset: punto inicial, vida completa, fase/cooldowns/aggro/hazards limpios.
-* [ ] El reset no otorga loot/XP/kill credit ni duplica bosses/triggers.
-* [ ] Al morir el boss, el flujo regular vuelve a abrir/progresar la sala una sola vez.
-* [ ] QA en minibosses y Jotunn, solo/party, door open/closed, knockback y teleport edge cases; sin errores rojos.
-* [ ] RC y evidencia de prueba adjuntos.
+* [x] Puerta mantiene paso exactamente 10 s desde el inicio del boss y luego cierra para el grupo.
+* [x] El cierre y el timer son server-authoritative y replican un estado/feedback claro.
+* [x] Escape del boss durante gracia o tras el cierre ejecuta un solo reset: punto inicial, vida completa, fase/cooldowns/aggro/hazards limpios.
+* [x] El reset no otorga loot/XP/kill credit ni duplica bosses/triggers.
+* [x] Al morir el boss, el flujo regular vuelve a abrir/progresar la sala una sola vez.
+* [x] QA en minibosses y Jotunn, solo/party, door open/closed, knockback y teleport edge cases; sin errores rojos.
+* [x] RC y evidencia de prueba adjuntos.
 
 ---
 
-### Pendiente de RC
+### Cierre
 
-Confirmar con el dev si el detector de salida debe usar `ArenaBounds` por volumen (recomendado) o el umbral del vano de puerta como subcondición. En ambos casos la sala completa es el límite autoritativo y debe cubrir todos los lados/salidas.
+El PO confirma implementación y QA completos; no quedan decisiones ni evidencias pendientes para el RC.
 
 ---
 
@@ -119,3 +119,5 @@ Confirmar con el dev si el detector de salida debe usar `ArenaBounds` por volume
 | Fecha | Cambio |
 |---|---|
 | 2026-10-23 | HU nueva por reporte del PO: cerrar la arena del boss tras 10 s de gracia y reiniciar el encuentro a vida completa si el boss sale. |
+| 2026-10-23 | PO confirma implementación y QA completos; HU cerrada. |
+| 2026-10-27 | **Enmienda R6.45:** si el encuentro está activo y no queda ningún miembro vivo dentro de la arena, se resetea y recibe una gracia nueva de 10 s; ver HU-R6.45. |

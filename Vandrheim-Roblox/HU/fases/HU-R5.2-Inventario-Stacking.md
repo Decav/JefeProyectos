@@ -24,7 +24,7 @@ Actualmente cada unidad de ítem se guarda como una entrada independiente. Esta 
 
 La capacidad de la bolsa pasa a contabilizar **pilas ocupadas**: una pila, aunque contenga varias unidades, ocupa un slot.
 
-El comportamiento de venta es deliberadamente unitario: una acción vende una unidad y nunca liquida una pila completa en el MVP.
+La venta individual es deliberadamente unitaria: una acción normal vende una unidad y no liquida una pila completa. **Enmienda:** la venta masiva por rareza de HU-R6.43 constituye un flujo separado y confirmado por el jugador que puede liquidar las pilas elegibles completas.
 
 ---
 
@@ -98,7 +98,7 @@ Las entradas de inventario deben soportar:
 * Cada acción vende exactamente `1` unidad de la entrada indicada.
 * El servidor acredita el precio unitario y descuenta `1` de `quantity`.
 * Si la cantidad llega a `0`, elimina la entrada.
-* No existe venta de pila completa en el MVP.
+* La venta individual no vende pilas completas. La excepción de venta masiva por rareza queda definida exclusivamente en HU-R6.43.
 * Ítems bound siguen pudiéndose vender a NPC; trade entre jugadores no cambia.
 
 #### **Persistencia y seguridad**
@@ -209,7 +209,7 @@ Las entradas de inventario deben soportar:
 
 #### No incluye
 
-* Venta de pila completa o selector de cantidad para vender.
+* Selector de cantidad para venta individual; la venta masiva por rareza se define en HU-R6.43.
 * Nuevos tipos de ítems, materiales, crafting o trade entre jugadores.
 * Cambios en precios, cooldowns, rarezas, BoE o reglas de vendors.
 * Modificaciones de `rc010`.
@@ -245,3 +245,4 @@ Las entradas de inventario deben soportar:
 |-------|--------|
 | 2026-08-22 | Creación de HU-R5.2; stacking configurable, 20 pilas por bolsa y venta unitaria confirmados |
 | 2026-08-22 | Marcada completada según reporte del equipo |
+| 2026-10-23 | Enmienda PO: R5.2 conserva la venta individual unitaria; HU-R6.43 añade como flujo separado la venta masiva confirmada de pilas completas por rareza. |

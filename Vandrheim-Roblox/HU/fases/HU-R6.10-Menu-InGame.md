@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)  
 **Épica:** UI / Menú / R6.10  
 **Prioridad:** Alta  
-**Estado:** Lista para implementar  
+**Estado:** Implementada (reporte PO 2026-10-27; QA/verificación pendiente)
 **Tipo:** Menú de pausa in-game (funcional parcial + placeholders)  
 **Fase GDD:** R6.10 (posterior a R6.9; no modifica reglas de juego)  
 **Depende de:** HU-R2 (CharacterSelect/CharacterCreate, DataService, spawnActiveCharacter), HU-R3.1 (cámara/drag), HU-R6.5 (ventanas UI)  
@@ -218,3 +218,4 @@ Menu → "Volver a la selección de personaje"
 |-------|--------|
 | 2026-08-26 | Creación de HU-R6.10: menú in-game con "volver a selección de personaje" funcional y placeholders de volumen/gráficos/orden de UI |
 | 2026-10-23 | Se aclara la vigencia: R9b implementa volumen general/gráficos, R6.11 Orden de UI y R6.42 amplía audio y cámara; los placeholders originales quedan como historial. |
+| 2026-10-27 | Implementada según reporte del PO; QA/verificación pendiente. |

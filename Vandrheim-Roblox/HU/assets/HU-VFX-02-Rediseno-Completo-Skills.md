@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** VFX / Polish de clases
 **Prioridad:** Alta
-**Estado:** Borrador para RC del dev
+**Estado:** Cerrada — rediseño implementado y QA completada (confirmación del PO 2026-10-23)
 **Tipo:** Rediseño visual de combate (dev)
 **Fase GDD:** Polish de VFX para las 30 habilidades del catálogo MVP
 **Depende de:** HU-VFX-01 (PoC exitosa: Anillo de luz sagrada), HU-R6.8/R6.9 (VFX base y AoE), HU-R8a/R8b/R8c (skills por clase), `SKILLS_CATALOG`, `VFXConfig`
@@ -183,15 +183,15 @@ Los conceptos siguientes son la dirección visual concreta de implementación. E
 
 ### Definition of Done (DoD)
 
-* [ ] Cada una de las 30 skills tiene el VFX de identidad definido en la tabla y está enlazada por `skillId`.
-* [ ] Cada tipo (Instant melee, Instant ranged, SelfAoE, GroundAoE, DoT, Heal, Shield) tiene lanzamiento/trayectoria/impacto/zona adecuados.
-* [ ] Las seis mejoras por bono de set se visualizan solo al activarse y no agregan impactos o feedback de gameplay ficticios.
-* [ ] El Anillo de luz conserva la PoC exitosa como referencia de calidad y no pierde su radio/lectura/sincronía.
-* [ ] VFX sigue el centro, objetivos, radio y duración reales; no cambia gameplay ni tapa telegraphs/nameplates/barras.
-* [ ] QA de las 30 skills en PC y móvil, solo y party; performance estable con hasta cuatro jugadores y varios efectos concurrentes.
-* [ ] Efectos temporales y conexiones se limpian correctamente; sin fugas, loops huérfanos ni errores rojos.
-* [ ] Reporte de implementación incluye capturas/video de cada clase/spec y evidencia de performance/legibilidad.
-* [ ] Nota en GDD tras cierre de QA.
+* [x] Cada una de las 30 skills tiene el VFX de identidad definido en la tabla y está enlazada por `skillId`.
+* [x] Cada tipo (Instant melee, Instant ranged, SelfAoE, GroundAoE, DoT, Heal, Shield) tiene lanzamiento/trayectoria/impacto/zona adecuados.
+* [x] Las seis mejoras por bono de set se visualizan solo al activarse y no agregan impactos o feedback de gameplay ficticios.
+* [x] El Anillo de luz conserva la PoC exitosa como referencia de calidad y no pierde su radio/lectura/sincronía.
+* [x] VFX sigue el centro, objetivos, radio y duración reales; no cambia gameplay ni tapa telegraphs/nameplates/barras.
+* [x] QA de las 30 skills en PC y móvil, solo y party; performance estable con hasta cuatro jugadores y varios efectos concurrentes.
+* [x] Efectos temporales y conexiones se limpian correctamente; sin fugas, loops huérfanos ni errores rojos.
+* [x] Reporte de implementación incluye capturas/video de cada clase/spec y evidencia de performance/legibilidad.
+* [x] Nota en GDD tras cierre de QA.
 
 ---
 

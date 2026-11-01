@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R6.x / Menú / Preferencias de jugador
 **Prioridad:** Alta — polish pre-lanzamiento
-**Estado:** Lista para RC
+**Estado:** Cerrada — implementada y QA completada (confirmación del PO 2026-10-23)
 **Tipo:** Mejora de menú y preferencias de cliente (dev)
 **Fase GDD:** R6.42 — completar ajustes del menú in-game
 **Depende de:** HU-R6.10 (MenuUI), HU-R9b (volumen general, SFX y música), HU-R6.1 (FootstepSystem), HU-R3.1/R3.2 (cámara/CameraConfig), HU-R6.15/R6.23 (gestos y sensibilidad móvil), `SFXConfig`, `MusicConfig`, preferencias existentes del jugador
@@ -170,14 +170,14 @@ Exponer cuatro controles deslizantes independientes, rango visual 0–100 %:
 
 ### Definition of Done (DoD)
 
-* [ ] El menú ofrece tabs funcionales Sonido e Interfaz; ESC/móvil y volver a selección siguen intactos.
-* [ ] Master, SFX, Music y Footsteps son independientes según su contrato; música/crossfade y pisadas por material no se rompen.
-* [ ] Sensibilidad ajusta PC/móvil sobre los defaults actuales; 100 % conserva la sensibilidad aumentada actual.
-* [ ] MinDistance/MaxDistance se pueden ajustar, persisten y se respetan por scroll y pinza; min siempre menor que max.
-* [ ] Defaults y restauración de preferencias funcionan después de respawn/rejoin.
-* [ ] **Extra opcional:** backdrop cubre la franja blanca/viewport; controles siguen seguros y accesibles en notch/safe area.
-* [ ] QA PC y móvil real/simulador; verificar Master 0, cada canal 0, min/max, sensibilidad baja/alta y regresión de camera inputs.
-* [ ] Sin errores rojos ni pérdida de preferencias; captura del menú en desktop y móvil adjunta al RC.
+* [x] El menú ofrece tabs funcionales Sonido e Interfaz; ESC/móvil y volver a selección siguen intactos.
+* [x] Master, SFX, Music y Footsteps son independientes según su contrato; música/crossfade y pisadas por material no se rompen.
+* [x] Sensibilidad ajusta PC/móvil sobre los defaults actuales; 100 % conserva la sensibilidad aumentada actual.
+* [x] MinDistance/MaxDistance se pueden ajustar, persisten y se respetan por scroll y pinza; min siempre menor que max.
+* [x] Defaults y restauración de preferencias funcionan después de respawn/rejoin.
+* [x] **Extra opcional:** backdrop cubre la franja blanca/viewport; controles siguen seguros y accesibles en notch/safe area.
+* [x] QA PC y móvil real/simulador; verificar Master 0, cada canal 0, min/max, sensibilidad baja/alta y regresión de camera inputs.
+* [x] Sin errores rojos ni pérdida de preferencias; captura del menú en desktop y móvil adjunta al RC.
 
 ---
 

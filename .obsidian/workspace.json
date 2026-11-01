@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "097f5cb1f4b2799d",
+        "id": "aa691a4f67ba3e64",
         "type": "tabs",
         "children": [
           {
-            "id": "0139496fa40405e2",
+            "id": "2de797df3b753893",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Vandrheim-Roblox/Assets/Source/Design/UI-Components-2026-10-17/ENTREGA.md",
-                "mode": "source",
-                "source": false
+                "file": "Vandrheim-Roblox/Assets/Icons/UI/Menu/Icon_Menu_quest.png"
               },
-              "icon": "lucide-file",
-              "title": "ENTREGA"
+              "icon": "lucide-image",
+              "title": "Icon_Menu_quest"
             }
           }
         ]
@@ -83,7 +81,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 466.5
+    "width": 367.5
   },
   "right": {
     "id": "a6cf1b15ac9815ec",
@@ -185,7 +183,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 484.5
+    "width": 389.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -202,52 +200,52 @@
   },
   "active": "f23c157eed1757de",
   "lastOpenFiles": [
-    "Vandrheim-Roblox/Assets/Source/Design/UI-Components-2026-10-17/ENTREGA-Oro.md",
-    "Vandrheim-Roblox/Assets/Source/Design/UI-Components-2026-10-17/Preview_Close.png",
-    "Vandrheim-Roblox/Assets/Source/Design/UI-Components-2026-10-17/Preview_Gold.png",
-    "Vandrheim-Roblox/Assets/Source/Design/PartyRoles-Uncovered-Originals-2026-10-23/Icon_UI_role_heal_uncovered.png",
-    "Vandrheim-Roblox/Assets/Source/Design/PartyRoles-Uncovered-Originals-2026-10-23/Icon_UI_role_tank_uncovered.png",
-    "Vandrheim-Roblox/Assets/Source/Design/PartyRoles-Uncovered-Originals-2026-10-23/Icon_UI_role_dps_uncovered.png",
-    "Vandrheim-Roblox/Assets/Source/Design/PartyRoles-Active-Originals-2026-10-23/Icon_UI_role_dps.png",
-    "Vandrheim-Roblox/Assets/Source/Design/PartyRoles-Active-Originals-2026-10-23/Icon_UI_role_heal.png",
-    "Vandrheim-Roblox/Assets/Source/Design/PartyRoles-Active-Originals-2026-10-23/Icon_UI_role_tank.png",
-    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Shop-2026-10-22/Preview_Shop.png",
-    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Shop-2026-10-22/Icon_Menu_shop.png",
-    "Vandrheim-Roblox/Assets/Temp/PartyRoles-Simplified-2026-10-22/ENTREGA.md",
-    "Vandrheim-Roblox/HU/fases/HU-R6.42-Configuracion-Audio-Interfaz.md",
-    "Vandrheim-Roblox/HU/economia/HU-ECONOMIA-01-Comercio-Tradeo.md",
-    "Vandrheim-Roblox/HU/economia/HU-ECONOMIA-05-Tooltips-Ventanas-Trade.md",
-    "Vandrheim-Roblox/Assets/Temp/BodySkins/Vandrheim_Traveler_Starter_v3/LECCION_UV_APLICADA_A_SKILL.md",
-    "Vandrheim-Roblox/Assets/Temp/BodySkins/Vandrheim_Traveler_Starter_v3/NOTA_PARA_SKILL_PENDIENTE.md",
-    "Vandrheim-Roblox/Assets/Temp/BodySkins/Vandrheim_Traveler_Starter_v3/ENTREGA.md",
-    "Vandrheim-Roblox/Assets/Temp/BodySkins/Vandrheim_Traveler_Starter_v3/Generate-VandrheimTravelerStarterBodySkin_v3.py",
-    "Vandrheim-Roblox/Assets/Temp/BodySkins/Vandrheim_Traveler_Starter_v3",
-    "Vandrheim-Roblox/HU/fases/HU-R6.41-Linea-Vision-Combate-Jugador.md",
-    "Vandrheim-Roblox/Assets/Temp/BodySkins/Vandrheim_Traveler_Starter_v2/ENTREGA.md",
-    "Vandrheim-Roblox/Assets/Temp/BodySkins/Vandrheim_Traveler_Starter_v2/Generate-VandrheimTravelerStarterBodySkin_v2.py",
-    "Vandrheim-Roblox/Assets/Temp/BodySkins/Vandrheim_Traveler_Starter_v2",
-    "Vandrheim-Roblox/Assets/Temp/Traveler_Starter_Icons_v1/PROMPTS.md",
-    "Vandrheim-Roblox/Assets/Temp/Traveler_Starter_Icons_v1/ENTREGA.md",
-    "Vandrheim-Roblox/Assets/Temp/Traveler_Starter_Icons_v1/Prepare-TravelerStarterIcons.py",
-    "Vandrheim-Roblox/Assets/Temp/Traveler_Starter_Icons_v1/Masters",
-    "Vandrheim-Roblox/Assets/Temp/Traveler_Starter_Icons_v1",
-    "Vandrheim-Roblox/Assets/Temp/BodySkins/Vandrheim_Traveler_Starter_v1/ENTREGA.md",
-    "Vandrheim-Roblox/Assets/Temp/BodySkins/Vandrheim_Traveler_Starter_v1/Generate-VandrheimTravelerStarterBodySkin.py",
-    "Vandrheim-Roblox/Assets/Temp/BodySkins/Vandrheim_Traveler_Starter_v1",
-    "Vandrheim-Roblox/Assets/Temp/BodySkins",
-    "Vandrheim-Roblox/HU/fases/HU-R6.40-Rango-Cazador-Punteria.md",
-    "Vandrheim-Roblox/HU/fases/HU-R7.3-Puerta-Arena-Jefes.md",
-    "Vandrheim-Roblox/HU/fases/HU-R7.2-Velocidad-Jefes-AntiKite.md",
-    "Vandrheim-Roblox/HU/fases/HU-R6.39-Rediseno-Dungeon-Helada.md",
+    "Vandrheim-Roblox/Assets/Icons/UI/Menu/Icon_Menu_quest.png",
+    "Vandrheim-Roblox/Assets/Icons/UI/Menu/Icon_Menu_dungeon_guide.png",
+    "Vandrheim-Roblox/Assets/Icons/UI/Menu/Icon_Menu_dungeon.png",
+    "Vandrheim-Roblox/Assets/Icons/UI/Menu/Icon_Menu_bag.png",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Quest-2026-10-31/ENTREGA.md",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Quest-2026-10-31/Prompt_Icon_Menu_quest.json",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Quest-2026-10-31/Previews/Preview_Quest.png",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Quest-2026-10-31/Masters/Icon_Menu_quest_512.png",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Quest-2026-10-31/Masters/Master_Icon_Menu_quest_raw.jpg",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Quest-2026-10-31/Previews",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Quest-2026-10-31/Masters",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Quest-2026-10-31",
+    "Vandrheim-Roblox/Assets/Icons/UI/Menu/Icon_Menu_equipment.png",
+    "Vandrheim-Roblox/Assets/Icons/UI/Menu/Icon_Menu_target_cycle.png",
+    "Vandrheim-Roblox/Assets/Icons/UI/Menu/Icon_Menu_talents.png",
+    "Vandrheim-Roblox/Assets/Icons/UI/Menu/Icon_Menu_spellbook.png",
+    "Vandrheim-Roblox/HU/quest/HU-QUEST-01-Sistema-Misiones.md",
+    "Vandrheim-Roblox/Assets/Images/NPCs/Portraits",
+    "Vandrheim-Roblox/Assets/Images/NPCs",
+    "Vandrheim-Roblox/HU-ESTETICA-51-ENTREGA-DISENO.md",
+    "Vandrheim-Roblox/HU/estetica/HU-ESTETICA-51-Diseno-Sistema-Misiones.md",
+    "Vandrheim-Roblox/QUEST_SYSTEM.md",
+    "Vandrheim-Roblox/HU/fases/HU-R6.43-Limpieza-Mochila-Masiva.md",
+    "Vandrheim-Roblox/HU/fases/HU-R6.45-Correccion-Boss-Salto-Reset-Party.md",
+    "Vandrheim-Roblox/BETA_COPY.md",
+    "bots/DCVStudioOrganizer/src/announcements.js",
+    "bots/DCVStudioOrganizer/config/announcements.json",
+    "Vandrheim-Roblox/HU/fases/HU-R2.2-Avatar-Starter-Por-Defecto.md",
+    "Vandrheim-Roblox/ROADMAP.md",
+    "Vandrheim-Roblox/GDD_ROBLOX_MVP.md",
+    "bots/DCVStudioOrganizer/HU/HU-BOT-01-Anuncios-Lanzamiento.md",
+    "bots/DCVStudioOrganizer/HU",
+    "Vandrheim-Roblox/HU/fases/HU-R9c-Balance-Fino.md",
+    "bots/DCVStudioOrganizer/README.md",
+    "Vandrheim-Roblox/HU/fases/HU-R6.44-Correccion-Dungeon-Geometria-Boss-Muerte.md",
+    "Vandrheim-Roblox/HU/tutorial/HU-TUTORIAL-01-Onboarding.md",
     "Vandrheim-Roblox/HU/estetica/HU-ESTETICA-50-Rediseño-Matchmaking-Dev.md",
-    "Vandrheim-Roblox/HU/fases/HU-R9a.2-Matchmaking-Dungeon-Lobby.md",
-    "bots/DCVStudioOrganizer/node_modules/@discordjs/rest/node_modules/undici/types/README.md",
-    "bots/DCVStudioOrganizer/node_modules/undici/types/README.md",
-    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/best-practices/writing-tests.md",
-    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/best-practices/proxy.md",
-    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/best-practices/mocking-request.md",
-    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/best-practices/client-certificate.md",
-    "bots/DCVStudioOrganizer/node_modules/undici/docs/docs/api/WebSocket.md",
+    "Vandrheim-Roblox/skills/project-docs/SKILL.md",
+    "Vandrheim-Roblox/skills/project-docs",
+    "Vandrheim-Roblox/UI_AUDIT_2026-10-08.md",
+    "Vandrheim-Roblox/Assets/Source/Design/Action-Icons-2026-10-25/ENTREGA.md",
+    "Vandrheim-Roblox/HU/fases/HU-R6.42-Configuracion-Audio-Interfaz.md",
+    "Vandrheim-Roblox/Assets/Source/Design/UI-Components-2026-10-17/ENTREGA.md",
+    "Vandrheim-Roblox/Assets/Source/Design/UI-Components-2026-10-17/ENTREGA-Oro.md",
+    "Vandrheim-Roblox/Assets/Temp/PartyRoles-Simplified-2026-10-22/ENTREGA.md",
+    "Vandrheim-Roblox/HU/economia/HU-ECONOMIA-01-Comercio-Tradeo.md",
     "Sin título.canvas"
   ]
 }

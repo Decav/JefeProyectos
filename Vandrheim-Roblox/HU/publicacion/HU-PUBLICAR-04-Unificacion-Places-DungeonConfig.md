@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Publicación / Ops (dev)
 **Prioridad:** Alta
-**Estado:** Implementada (reporte PO 2026-09-22; verificación/QA pendiente)
+**Estado:** Cerrada — implementación y QA confirmados por el PO 2026-10-23
 **Tipo:** Refactor de configuración + proceso de publicación (dev) — **elimina el sync manual entre places**
 **Fase GDD:** Publicación (transversal)
 **Depende de:** HU-PUBLICAR-02 (teleport cross-place), HU-PUBLICAR-03 (estrategia de sincronización), HU-R6b (DungeonService), Place ID real `125210265978348`
@@ -167,17 +167,17 @@ end
 
 ### **Definition of Done (DoD)**
 
-* [ ] `DungeonConfig` con IDs reales + `IsDungeonPlace()`/`IsHubPlace()`; sin Place IDs hardcodeados.
-* [ ] Proceso de copia derivada definido y documentado (excluye `Workspace.Hub`; el hub original no se modifica).
-* [ ] Copia derivada publicada en `125210265978348` **verificando el ID** y con **backup** del place anterior.
-* [ ] La dungeon publicada NO tiene pueblo/portales/vendors; el piso se genera en runtime y el HUD de dungeon funciona.
-* [ ] UI del hub (selección/creación, vendors) no se muestra en la dungeon; scripts compartidos conservados.
-* [ ] Validación de TeleportData, `JoinRun`, pisos 1–5 y retorno al hub intactos.
-* [ ] Publicar el hub no cambia el hub; flujo hub → dungeon → hub sin errores rojos.
-* [ ] Bug de la Flecha venenosa verificado como no reaparece (publicado).
-* [ ] Docs del place de dungeon actualizados (DEV_PROMPT/PROJECT_ARCHITECTURE/DATA_SCHEMA; sin referencias viejas).
-* [ ] El dev prepara el RC desde esta HU antes de programar (DEV_PROMPT).
-* [ ] Nota en GDD después de QA.
+* [x] `DungeonConfig` con IDs reales + `IsDungeonPlace()`/`IsHubPlace()`; sin Place IDs hardcodeados.
+* [x] Proceso de copia derivada definido y documentado (excluye `Workspace.Hub`; el hub original no se modifica).
+* [x] Copia derivada publicada en `125210265978348` **verificando el ID** y con **backup** del place anterior.
+* [x] La dungeon publicada NO tiene pueblo/portales/vendors; el piso se genera en runtime y el HUD de dungeon funciona.
+* [x] UI del hub (selección/creación, vendors) no se muestra en la dungeon; scripts compartidos conservados.
+* [x] Validación de TeleportData, `JoinRun`, pisos 1–5 y retorno al hub intactos.
+* [x] Publicar el hub no cambia el hub; flujo hub → dungeon → hub sin errores rojos.
+* [x] Bug de la Flecha venenosa verificado como no reaparece (publicado).
+* [x] Docs del place de dungeon actualizados (DEV_PROMPT/PROJECT_ARCHITECTURE/DATA_SCHEMA; sin referencias viejas).
+* [x] El dev prepara el RC desde esta HU antes de programar (DEV_PROMPT).
+* [x] Nota en GDD después de QA.
 
 ---
 
