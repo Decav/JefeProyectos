@@ -80,6 +80,8 @@
 * EST-02/03/05 si el diseñador entrega a tiempo.
 * QoL de UI, sonidos y feedback.
 * **Sistema de misiones (adelanto de R10+):** `QUEST-01` framework + `QUEST-02` onboarding; ver `QUEST_SYSTEM.md` y `HU/quest/`. Objetivo: retención de primera sesión.
+* **Quest diaria + racha de inicio de sesión (propuesta PO 2026-10-27):** reutiliza `QUEST-01` para dar un motivo de retorno diario con recompensa creciente. HU a crear cuando se apruebe el alcance.
+* **Bonos del tier azul (2/4 piezas) y joyería (propuesta):** bonos de solo estadísticas al armar 2 y 4 piezas azules (armadura + joyería azul), con collares y anillos por tier. La joyería Helada se define aparte. Ver `HU-ITEMS-07`.
 * Dificultades de dungeon y oleadas (si no retrasan P0).
 
 **Criterios de salida de beta (para pasar a 1.0):**
@@ -202,3 +204,4 @@
 | Fecha | Cambio |
 |---|---|
 | 2026-10-27 | Creación del roadmap: decisión de beta abierta, ruta beta → 1.0 → v2 Fuego/Lava, backlog post-1.0 con profesiones, clases, niveles, biomas, PvP, mundo abierto y sistemas de retención. |
+| 2026-10-27 | Se anotan dos propuestas: quest diaria + racha (retención) y afinidad de clase del tier azul (`HU-ITEMS-07`). |

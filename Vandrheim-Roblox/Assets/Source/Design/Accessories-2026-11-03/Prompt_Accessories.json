@@ -1,0 +1,70 @@
+{
+  "asset_group": "Accessories_Necklaces_Rings",
+  "date": "2026-11-03",
+  "author": "DesignerAgent",
+  "role": "Producción de assets visuales",
+  "project": "Vandrheim RPG",
+  "transparent_background": true,
+  "canvas_size_px": [512, 512],
+  "artwork_max_px": [420, 420],
+  "items": [
+    {
+      "id": "Icon_Item_collar",
+      "tier": "Common",
+      "slot": "Necklace",
+      "name": "Collar sencillo",
+      "file": "Assets/Icons/Items/Accessories/Icon_Item_collar.png",
+      "master": "Assets/Source/Design/Accessories-2026-11-03/Masters/Icon_Item_collar_master.png",
+      "description": "Collar sencillo de metal dorado con gema central. Versión canónica con fondo transparente extraído y des-premultiplicado."
+    },
+    {
+      "id": "Icon_Item_collar_blue",
+      "tier": "Rare",
+      "slot": "Necklace",
+      "name": "Collar rúnico de zafiro",
+      "file": "Assets/Icons/Items/Accessories/Icon_Item_collar_blue.png",
+      "master": "Assets/Source/Design/Accessories-2026-11-03/Masters/Icon_Item_collar_blue_master.jpg",
+      "description": "Collar nórdico forjado en plata y acero con grabados rúnicos y colgante ornamental engarzado con zafiro azul brillante (#3B82F6)."
+    },
+    {
+      "id": "Icon_Item_collar_frost",
+      "tier": "Epic",
+      "slot": "Necklace",
+      "name": "Collar glacial de Jotunn",
+      "file": "Assets/Icons/Items/Accessories/Icon_Item_collar_frost.png",
+      "master": "Assets/Source/Design/Accessories-2026-11-03/Masters/Icon_Item_collar_frost_master.jpg",
+      "description": "Amuleto de escarcha antigua tallado en plata antigua y fragmentos de hielo glaciar (#8FB7D6), con runas de ventisca y corazón de cristal gélido."
+    },
+    {
+      "id": "Icon_Item_ring",
+      "tier": "Common",
+      "slot": "Ring",
+      "name": "Anillo sencillo",
+      "file": "Assets/Icons/Items/Accessories/Icon_Item_ring.png",
+      "master": "Assets/Source/Design/Accessories-2026-11-03/Masters/Icon_Item_ring_master.png",
+      "description": "Anillo de batalla de latón/acero. Versión canónica con fondo transparente extraído y des-premultiplicado."
+    },
+    {
+      "id": "Icon_Item_ring_blue",
+      "tier": "Rare",
+      "slot": "Ring",
+      "name": "Anillo de plata y zafiro",
+      "file": "Assets/Icons/Items/Accessories/Icon_Item_ring_blue.png",
+      "master": "Assets/Source/Design/Accessories-2026-11-03/Masters/Icon_Item_ring_blue_master.jpg",
+      "description": "Anillo de combate de plata rúnica y acero nórdico con filigrana entrelazada, coronado con un zafiro azul facetado (#3B82F6)."
+    },
+    {
+      "id": "Icon_Item_ring_frost",
+      "tier": "Epic",
+      "slot": "Ring",
+      "name": "Anillo de escarcha eterna",
+      "file": "Assets/Icons/Items/Accessories/Icon_Item_ring_frost.png",
+      "master": "Assets/Source/Design/Accessories-2026-11-03/Masters/Icon_Item_ring_frost_master.jpg",
+      "description": "Anillo de hielo eterno de Jotunn modelado en hielo translúcido y plata rúnica (#8FB7D6 / #93C5FD), con corona de prismas de escarcha y energía ártica."
+    }
+  ],
+  "tooling": {
+    "generator": "image-generator",
+    "processor": "Assets/Source/Design/Accessories-2026-11-03/Tools/Export_Accessories.py"
+  }
+}

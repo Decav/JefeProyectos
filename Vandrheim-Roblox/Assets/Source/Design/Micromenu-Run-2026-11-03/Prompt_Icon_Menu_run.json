@@ -1,0 +1,42 @@
+{
+  "asset": "Icon_Menu_run",
+  "date": "2026-11-03",
+  "author": "DesignerAgent",
+  "role": "Producción de assets visuales",
+  "project": "Vandrheim RPG",
+  "style_references": [
+    "Assets/Icons/UI/Menu/Icon_Menu_target_cycle.png",
+    "Assets/Icons/UI/Menu/Icon_Menu_dungeon.png",
+    "Assets/Icons/UI/Menu/Icon_Menu_quest.png",
+    "Assets/Icons/UI/Menu/Icon_Menu_party.png"
+  ],
+  "palette": {
+    "brass_gold": "#C89445",
+    "parchment_cream": "#F4EDE0",
+    "dark_charcoal_outline": "#292A2E",
+    "leather_brown": "#3C2A1E"
+  },
+  "candidates": [
+    {
+      "id": "run_winged_boot",
+      "canonical_file": "Assets/Icons/UI/Menu/Icon_Menu_run.png",
+      "master": "Assets/Source/Design/Micromenu-Run-2026-11-03/Masters/Icon_Menu_run_winged_boot_master.jpg",
+      "concept": "Bota alada en zancada veloz con refuerzos de latón nórdico y estelas de viento.",
+      "status": "Propuesta principal (canónica)"
+    },
+    {
+      "id": "run_warrior",
+      "canonical_file": "Assets/Source/Design/Micromenu-Run-2026-11-03/Icon_Menu_run_variant_warrior.png",
+      "master": "Assets/Source/Design/Micromenu-Run-2026-11-03/Masters/Icon_Menu_run_warrior_master.jpg",
+      "concept": "Silueta de guerrero nórdico en sprint con coraza de latón, capa corta de pergamino y estelas.",
+      "status": "Variante alternativa"
+    }
+  ],
+  "export": {
+    "size_px": [512, 512],
+    "format": "PNG",
+    "color_mode": "RGBA",
+    "corner_alpha": 0,
+    "artwork_max_px": [420, 420]
+  }
+}

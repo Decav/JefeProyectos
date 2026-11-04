@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "aa691a4f67ba3e64",
+        "id": "de2e917987ada8c8",
         "type": "tabs",
         "children": [
           {
-            "id": "2de797df3b753893",
+            "id": "05e7281d98d28811",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Vandrheim-Roblox/Assets/Icons/UI/Menu/Icon_Menu_quest.png"
+                "file": "Vandrheim-Roblox/HU/fases/HU-R6.48-PoC-Mapa-Terreno-Pueblo-Helada.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Icon_Menu_quest"
+              "icon": "lucide-file",
+              "title": "HU-R6.48-PoC-Mapa-Terreno-Pueblo-Helada"
             }
           }
         ]
@@ -81,7 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 367.5
+    "width": 310.0390625
   },
   "right": {
     "id": "a6cf1b15ac9815ec",
@@ -198,54 +200,54 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "f23c157eed1757de",
+  "active": "05e7281d98d28811",
   "lastOpenFiles": [
-    "Vandrheim-Roblox/Assets/Icons/UI/Menu/Icon_Menu_quest.png",
-    "Vandrheim-Roblox/Assets/Icons/UI/Menu/Icon_Menu_dungeon_guide.png",
-    "Vandrheim-Roblox/Assets/Icons/UI/Menu/Icon_Menu_dungeon.png",
-    "Vandrheim-Roblox/Assets/Icons/UI/Menu/Icon_Menu_bag.png",
-    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Quest-2026-10-31/ENTREGA.md",
-    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Quest-2026-10-31/Prompt_Icon_Menu_quest.json",
-    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Quest-2026-10-31/Previews/Preview_Quest.png",
-    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Quest-2026-10-31/Masters/Icon_Menu_quest_512.png",
-    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Quest-2026-10-31/Masters/Master_Icon_Menu_quest_raw.jpg",
-    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Quest-2026-10-31/Previews",
-    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Quest-2026-10-31/Masters",
-    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Quest-2026-10-31",
-    "Vandrheim-Roblox/Assets/Icons/UI/Menu/Icon_Menu_equipment.png",
-    "Vandrheim-Roblox/Assets/Icons/UI/Menu/Icon_Menu_target_cycle.png",
-    "Vandrheim-Roblox/Assets/Icons/UI/Menu/Icon_Menu_talents.png",
-    "Vandrheim-Roblox/Assets/Icons/UI/Menu/Icon_Menu_spellbook.png",
-    "Vandrheim-Roblox/HU/quest/HU-QUEST-01-Sistema-Misiones.md",
-    "Vandrheim-Roblox/Assets/Images/NPCs/Portraits",
-    "Vandrheim-Roblox/Assets/Images/NPCs",
-    "Vandrheim-Roblox/HU-ESTETICA-51-ENTREGA-DISENO.md",
-    "Vandrheim-Roblox/HU/estetica/HU-ESTETICA-51-Diseno-Sistema-Misiones.md",
-    "Vandrheim-Roblox/QUEST_SYSTEM.md",
-    "Vandrheim-Roblox/HU/fases/HU-R6.43-Limpieza-Mochila-Masiva.md",
-    "Vandrheim-Roblox/HU/fases/HU-R6.45-Correccion-Boss-Salto-Reset-Party.md",
-    "Vandrheim-Roblox/BETA_COPY.md",
-    "bots/DCVStudioOrganizer/src/announcements.js",
-    "bots/DCVStudioOrganizer/config/announcements.json",
-    "Vandrheim-Roblox/HU/fases/HU-R2.2-Avatar-Starter-Por-Defecto.md",
-    "Vandrheim-Roblox/ROADMAP.md",
+    "Vandrheim-Roblox/HU/fases/HU-R6.46-Ajustes-Skills-Clases.md",
+    "Vandrheim-Roblox/HU/fases/HU-R6.48-PoC-Mapa-Terreno-Pueblo-Helada.md",
+    "Vandrheim-Roblox/SKILLS_CATALOG.md",
+    "Vandrheim-Roblox/HU/fases/HU-R6.47-Fix-Musica-Jotunn-Reinicio.md",
+    "Vandrheim-Roblox/HU/items/HU-ITEMS-08-Joyeria-Helada-Toque-de-la-Helada.md",
+    "agents/StudyAgent.md",
+    "agents/SpecAgent.md",
+    "agents/RobloxAnimatorAgent.md",
+    "agents/MacAdvisorAgent.md",
+    "agents/DevAgent.md",
+    "agents/DesignAgent.md",
+    "agents/CodeReviewAgent.md",
+    "agents/BuilderAgent.md",
+    "agents/ApproverAgent.md",
+    "Vandrheim-Roblox/AGENTS.md",
+    "Vandrheim-Roblox/HU/items/HU-ITEMS-07-Afinidad-Tier-Azul.md",
+    "Vandrheim-Roblox/Assets/Icons/UI/Menu/Icon_Menu_run.png",
+    "Vandrheim-Roblox/Assets/Icons/UI/.DS_Store",
+    "Vandrheim-Roblox/Assets/Icons/Items/.DS_Store",
+    "Vandrheim-Roblox/Assets/Icons/Items/Accessories/Icon_Item_collar.png",
+    "Vandrheim-Roblox/Assets/Icons/.DS_Store",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Run-2026-11-03/ENTREGA.md",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Run-2026-11-03/Prompt_Icon_Menu_run.json",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Run-2026-11-03/Preview_StyleMatch.png",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Run-2026-11-03/Icon_Menu_run_variant_warrior.png",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Run-2026-11-03/Previews/run_warrior_64.png",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Run-2026-11-03/Previews/run_warrior_48.png",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Run-2026-11-03/Previews/run_warrior_32.png",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Run-2026-11-03/Previews/run_warrior_24.png",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Run-2026-11-03/Previews/run_warrior_16.png",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Run-2026-11-03/Previews/run_winged_boot_64.png",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Run-2026-11-03/Tools/Export_Run_Icon.py",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Run-2026-11-03/Tools",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Run-2026-11-03/Previews",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Run-2026-11-03/Masters",
+    "Vandrheim-Roblox/Assets/Source/Design/Micromenu-Run-2026-11-03",
+    "Vandrheim-Roblox/DEV_PROMPT.md",
+    "Vandrheim-Roblox/Assets/Source/Design/Accessories-2026-11-03/Prompt_Accessories.json",
     "Vandrheim-Roblox/GDD_ROBLOX_MVP.md",
-    "bots/DCVStudioOrganizer/HU/HU-BOT-01-Anuncios-Lanzamiento.md",
-    "bots/DCVStudioOrganizer/HU",
-    "Vandrheim-Roblox/HU/fases/HU-R9c-Balance-Fino.md",
-    "bots/DCVStudioOrganizer/README.md",
-    "Vandrheim-Roblox/HU/fases/HU-R6.44-Correccion-Dungeon-Geometria-Boss-Muerte.md",
-    "Vandrheim-Roblox/HU/tutorial/HU-TUTORIAL-01-Onboarding.md",
-    "Vandrheim-Roblox/HU/estetica/HU-ESTETICA-50-Rediseño-Matchmaking-Dev.md",
-    "Vandrheim-Roblox/skills/project-docs/SKILL.md",
-    "Vandrheim-Roblox/skills/project-docs",
-    "Vandrheim-Roblox/UI_AUDIT_2026-10-08.md",
-    "Vandrheim-Roblox/Assets/Source/Design/Action-Icons-2026-10-25/ENTREGA.md",
-    "Vandrheim-Roblox/HU/fases/HU-R6.42-Configuracion-Audio-Interfaz.md",
-    "Vandrheim-Roblox/Assets/Source/Design/UI-Components-2026-10-17/ENTREGA.md",
-    "Vandrheim-Roblox/Assets/Source/Design/UI-Components-2026-10-17/ENTREGA-Oro.md",
-    "Vandrheim-Roblox/Assets/Temp/PartyRoles-Simplified-2026-10-22/ENTREGA.md",
-    "Vandrheim-Roblox/HU/economia/HU-ECONOMIA-01-Comercio-Tradeo.md",
-    "Sin título.canvas"
+    "AGENTS.md",
+    "CLAUDE.md",
+    "Sin título.canvas",
+    "Vandrheim-Roblox/CLAUDE.md",
+    "agents/PMAgent.md",
+    "agents/README.md",
+    "Vandrheim-Roblox/ASSETS_POLICY.md",
+    "Vandrheim-Roblox/ASSETS_LIST.md"
   ]
 }

@@ -88,6 +88,32 @@ Los PNG finales se guardan bajo `Assets/Icons/` por dominio; **no se dejan suelt
 * Armas por tier: `Assets/Icons/Items/Weapons/<familia>/` (`sword→OneHand`, `greatsword→TwoHand`, `bow→Bow`, `wand→Wand`, `shield→Shield`); las cuatro `unique_frost_*` van en `Unique/`.
 * Los `Icons/` fuente, masters y previews de EST-33/34 se archivan en `Assets/Source/Itemization/` y `Assets/Source/Design/`; el juego y la documentación de integración usan la ruta canónica de arriba.
 
+### Accesorios por tier (Collares y Anillos)
+
+* Ubicación canónica: `Assets/Icons/Items/Accessories/`.
+* Formato: PNG 512×512, fondo transparente extraído, arte centrado al ~82% (bounding box ~420 px).
+* Collares:
+  * `Icon_Item_collar.png` — Común: collar sencillo de metal dorado con gema central.
+  * `Icon_Item_collar_blue.png` — Raro: collar rúnico de plata y acero con zafiro azul tallado (#3B82F6).
+  * `Icon_Item_collar_frost.png` — Épico: collar de escarcha de Jotunn con cristales de hielo y runas glaciares (#8FB7D6).
+* Anillos:
+  * `Icon_Item_ring.png` — Común: anillo sencillo de latón/acero.
+  * `Icon_Item_ring_blue.png` — Raro: anillo de combate de plata rúnica y acero con zafiro facetado (#3B82F6).
+  * `Icon_Item_ring_frost.png` — Épico: anillo de escarcha eterna con cristales de hielo de Jotunn y runas de ventisca (#8FB7D6).
+
+**IDs subidos (2026-11-03):** los iconos de Común sustituyen a los anteriores. Todos son PNG 512×512 con **fondo transparente**; el borde de rareza lo pinta la casilla, nunca la imagen. Los verdes reutilizan el icono de Común.
+
+| Icono | rbxassetid | Uso |
+|---|---|---|
+| `Icon_Item_collar` | `88383256424732` | Collar común y collar verde |
+| `Icon_Item_collar_blue` | `80822592106770` | Collar azul |
+| `Icon_Item_collar_frost` | `122632130926824` | Collar Helada (fuera del bono azul) |
+| `Icon_Item_ring` | `125055600901549` | Anillo común y anillo verde |
+| `Icon_Item_ring_blue` | `76040067823433` | Anillo azul |
+| `Icon_Item_ring_frost` | `125276837628603` | Anillo Helada (fuera del bono azul) |
+
+* Masters originales, previews multi-resolución (16–64 px) y script de procesamiento en `Assets/Source/Design/Accessories-2026-11-03/`.
+
 ## ICONOS UI · PANEL DE MUERTE / EST-38
 
 **Imágenes PNG generadas** (no glifos vectoriales de Pencil): mismo estilo que los iconos de ítems/skills — pintado digital de fantasía, paleta Vandrheim (latón `#C89445`, pergamino `#F4EDE0`, frío `#8FB7D6`, fondos oscuros), silueta legible a 24 px. Archivos locales finales en `Assets/Icons/UI/Death/`; los `rbxassetid` aún están pendientes de enlace/config.
@@ -285,3 +311,11 @@ Reemplazo aprobado del icono de nameplates con fondo RGBA transparente, conserva
 | assetId | Tipo | Uso | Archivo local | Fuente / licencia | Estado / rbxassetid |
 |---|---|---|---|---|---|
 | `Icon_Menu_nameplates` | Icono | Toggle de nameplates del micromenú | `Assets/Icons/UI/Menu/Icon_Menu_nameplates.png` | ImageGen + referencia propia; interno Vandrheim | Aprobado; re-subida pendiente (ID previo: `rbxassetid://121076782362772`) |
+
+## CONTROL DE MOVIMIENTO / MICROMENÚ · BOTÓN CORRER · 2026-11-03
+
+Icono para el control de alternancia correr/caminar (`MovementToggleButton` en móvil / tecla `U` en PC). Estilo coherente con los iconos del micromenú: 512×512 RGBA con transparencia estricta, paleta latón/pergamino/carbón y silueta legible a 24–32 px.
+
+| assetId | Tipo | Uso | Archivo local | Fuente / licencia | Estado / rbxassetid |
+|---|---|---|---|---|---|
+| `Icon_Menu_run` | Icono | Botón/control de correr (bota alada en sprint) | `Assets/Icons/UI/Menu/Icon_Menu_run.png` | Producción propia asistida con IA; interno Vandrheim | Entregado; carga pendiente |

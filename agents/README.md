@@ -1,156 +1,68 @@
-# moon-animator-open-source-license
-# Moon Animator — Sarang Edition
+# Catálogo de Agentes — Ecosistema SDD (Spec-Driven Development) y Especialistas
 
-> A free, open-source modified version of Moon Animator for Roblox Studio with one-click JSON import, all themes unlocked, and AI-powered features coming soon.
-
----
-
-## 🆕 Latest Update (v1.1.0)
-
-- **JSON Export Added** — New options to export selected keyframes or the full active rig timeline to JSON.
-- **Roundtrip Logic Fixed** — JSON export now writes joint transforms as offsets relative to each joint base pose, matching import behavior.
-- **More Reliable Re-import** — Exported JSON is now compatible with the same offset-based pipeline used by `JSON to Animate`.
-- **In-Plugin JSON Handoff** — Exported JSON can be sent directly to the AI Fight Animator window and persisted as a `StringValue`.
-
-### Why v1.1.0?
-
-This update includes **new features + bug fixes** with no breaking format changes, so the recommended semantic version is **v1.1.0** (minor).
+Este directorio contiene las definiciones de agentes del workspace. El núcleo de desarrollo funciona bajo una arquitectura **SDD (Spec-Driven Development)** compuesta por **6 agentes totalmente interconectados**, complementados por agentes especialistas según el dominio.
 
 ---
 
-## ✨ Features
+## 1. Los 6 Agentes del Flujo SDD (Núcleo Conectado)
 
-- **One-Click JSON Import** — Paste any animation JSON from [Sarang](https://sarang-roblox.web.app) directly into Moon Animator and start animating instantly. No manual setup, no keyframe copying.
-- **R15 Support** — Fully compatible with R15 rigs. R6 and Custom Rig support coming in a future update.
-- **All Themes Free** — Every UI theme is unlocked out of the box. No purchases, no paywalls.
-- **AI Features (Coming Soon)** — Intelligent animation suggestions, auto-smoothing, and more powered by AI.
-- **100% Free & Open Source** — Fork it, modify it, use it however you like.
+El ciclo de desarrollo se divide en 4 etapas conectadas:
+1. **Especificación (Potencia Máxima):** `SpecAgent`
+2. **Construcción (Potencia Máxima):** `BuilderAgent`
+3. **Triple Auditoría Read-Only en Paralelo (Potencia Media):** `CodeReviewAgent` + `UXReviewAgent` + `UIReviewAgent`
+4. **Consolidación y Aprobación Final (Potencia Media):** `ApproverAgent`
 
----
-
-## 🚀 Installation
-
-1. Download the latest `.rbxm` file from the [Releases](../../releases) page.
-2. Open **Roblox Studio**.
-3. In the **Explorer**, right-click on `ServerStorage` → **Insert from File**.
-4. Select the downloaded `.rbxm` file.
-5. The plugin will appear in your **Plugins** toolbar.
-
----
-
-## 🎬 How to Use JSON Animations
-
-1. Go to [sarang-roblox.web.app](https://sarang-roblox.web.app) and browse the free animation library.
-2. Click on any animation and press **Copy JSON**.
-3. Open Moon Animator Sarang Edition in Roblox Studio.
-4. Click **Import** → **Paste JSON**.
-5. Done — your animation is ready to use.
+| # | Agente | Archivo | Rol en el Flujo SDD | Permisos | Claude | Codex | Antigravity |
+| :-: | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **1** | **Spec Agent** | [`SpecAgent.md`](./SpecAgent.md) | Redacta la **Spec cerrada ("Zero-Guesswork")** con mapa de archivos, contratos técnicos, matriz UX, reglas UI fluidas y criterios Gherkin. | Lectura repo + Escritura Specs (`.md` / `RC`) | **Opus** (`opus`) | **Sol** (`sol`) | **Argon** (`pro`) |
+| **2** | **Builder Agent** | [`BuilderAgent.md`](./BuilderAgent.md) | Implementa el **100% del código** siguiendo la Spec, emite el **Manifiesto de Entrega** y ejecuta las correcciones que le ordena el `ApproverAgent`. | Lectura/Escritura de Código y Docs Técnicos | **Opus** (`opus`) | **Sol** (`sol`) | **Argon** (`pro`) |
+| **3a** | **Code Review Agent** | [`CodeReviewAgent.md`](./CodeReviewAgent.md) | Audita **calidad de código, arquitectura, buenas prácticas, seguridad y cero bugs/memory leaks** e informa sus hallazgos al `ApproverAgent`. | **Estricto Read-Only** (Informa a `ApproverAgent`) | **Sonnet** (`sonnet`) | **Terra** / **Luna Max** | **Flash** (`flash`) |
+| **3b** | **UX Review Agent** | [`UXReviewAgent.md`](./UXReviewAgent.md) | Audita **flujos de usuario, matriz de estados (`idle`, `loading`, `empty`, `error`, `success`), feedback y paridad PC/Mobile** e informa al `ApproverAgent`. | **Estricto Read-Only** (Informa a `ApproverAgent`) | **Sonnet** (`sonnet`) | **Terra** / **Luna Max** | **Flash** (`flash`) |
+| **3c** | **UI Review Agent** | [`UIReviewAgent.md`](./UIReviewAgent.md) | Audita **interfaz visual, cero tamaños fijos indebidos, responsive multi-resolución, legibilidad, contraste y overflow** e informa al `ApproverAgent`. | **Estricto Read-Only** (Informa a `ApproverAgent`) | **Sonnet** (`sonnet`) | **Terra** / **Luna Max** | **Flash** (`flash`) |
+| **4** | **Approver Agent** | [`ApproverAgent.md`](./ApproverAgent.md) | **Juez final:** recibe los 3 dictámenes (`Code`, `UX`, `UI`), deduplica/reconcilia hallazgos y o bien le ordena al `BuilderAgent` qué corregir (`[FIX-XX]`), o bien declara el trabajo **`APROBADO Y LISTO`**. | **Read-Only en código** (Emite Resolución Oficial) | **Sonnet** (`sonnet`) | **Terra** / **Luna Max** | **Flash** (`flash`) |
 
 ---
 
-## 🛠️ Requirements
+## 2. Diagrama de Conexión y Protocolo de Handoff SDD
 
-- Roblox Studio (latest version recommended)
-- R15 rig (R6 support coming soon)
+```mermaid
+flowchart TD
+    User(["Solicitud del Usuario / Feature / HU"]) --> Spec["1. SpecAgent\n(Claude Opus | Codex Sol | AGY Argon)"]
+    Spec -- "Entrega SPEC-[ID] cerrada\n(TECH + UX + UI + Gherkin)" --> Builder["2. BuilderAgent\n(Claude Opus | Codex Sol | AGY Argon)"]
+    
+    Builder -- "Emite Manifiesto de Entrega" --> CR["3a. CodeReviewAgent\n(Sonnet | Terra/Luna Max | Flash)"]
+    Builder -- "Emite Manifiesto de Entrega" --> UXR["3b. UXReviewAgent\n(Sonnet | Terra/Luna Max | Flash)"]
+    Builder -- "Emite Manifiesto de Entrega" --> UIR["3c. UIReviewAgent\n(Sonnet | Terra/Luna Max | Flash)"]
 
----
+    CR -- "Dictamen Codigo ([CR-XX])" --> Approver["4. ApproverAgent\n(Sonnet | Terra/Luna Max | Flash)"]
+    UXR -- "Dictamen UX ([UX-XX])" --> Approver
+    UIR -- "Dictamen UI ([UI-XX])" --> Approver
 
-## 📄 License
+    Approver -- "CAMBIOS REQUERIDOS\n(Orden de Correccion Consolidada [FIX-XX])" --> Builder
+    Approver -- "DESARROLLO APROBADO Y LISTO" --> Done(["Desarrollo Completado y Certificado"])
+```
 
-This project is open source and based on Moon Animator. All modifications made under the Sarang Edition are released under the [MIT License](LICENSE).
-
-Original Moon Animator plugin by [@xSIXx](https://www.roblox.com/users/1399914/profile). All credit for the original tool goes to its creator.
-
----
-
-## 🤝 Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
-
----
-
-## 🔗 Links
-
-- 🌐 Animation Library: [sarang-roblox.web.app](https://sarang-roblox.web.app)
-- 🐛 Report a bug: [Issues](../../issues)
-- 💬 Community: Discord (coming soon)
-
----
-
----
-
-# Moon Animator — Sarang Edition (Español)
-
-> Una versión modificada y gratuita de Moon Animator para Roblox Studio con importación de JSON en un clic, todos los temas desbloqueados y funciones con IA próximamente.
+### Reglas del Ciclo SDD de 6 Agentes
+1. **Ningún desarrollo arranca a ciegas:** Primero interviene `SpecAgent` inspeccionando el repositorio real y generando la Spec con identificadores trazables (`TECH-XX`, `UX-XX`, `UI-XX`, `CA-XX`).
+2. **Construcción integral:** `BuilderAgent` toma la Spec aprobada e implementa lógica, estados de UX y layout UI responsive en una misma entrega, cerrando con el bloque **`MANIFIESTO DE ENTREGA — BUILDER AGENT`**.
+3. **Triple Auditoría en Paralelo hacia el `ApproverAgent` (Read-Only):**
+   - `CodeReviewAgent`, `UXReviewAgent` y `UIReviewAgent` inspeccionan los archivos entregados sin modificar el código.
+   - Los 3 entregan sus dictámenes estandarizados (`DICTAMEN DE AUDITORÍA DE CÓDIGO`, `DICTAMEN DE AUDITORÍA DE UX`, `DICTAMEN DE AUDITORÍA DE UI`) directamente al **`ApproverAgent`**.
+4. **Decisión Centralizada del `ApproverAgent`:**
+   - **Si hay hallazgos `[BLOQUEANTE]` o `[MAYOR]`:** `ApproverAgent` fusiona, deduplica y resuelve cualquier conflicto entre los 3 revisores en una única **`ORDEN DE CORRECCIÓN CONSOLIDADA ([FIX-01..FIX-N])`** agrupada por archivo, y se la envía al `BuilderAgent`.
+   - **Si las 3 auditorías están aprobadas:** `ApproverAgent` emite la **`RESOLUCIÓN DEL APPROVER AGENT — DESARROLLO APROBADO Y LISTO`** informando que el desarrollo superó la puerta de calidad y está terminado.
 
 ---
 
-## 🆕 Última actualización (v1.1.0)
+## 3. Otros Agentes del Repositorio (Roles de Producto y Especialistas)
 
-- **Exportar JSON agregado** — Nuevas opciones para exportar keyframes seleccionados o toda la timeline del rig activo a JSON.
-- **Lógica de roundtrip corregida** — El export JSON ahora guarda transformaciones como offsets relativos a la pose base de cada joint, igual que el import.
-- **Reimportación más estable** — El JSON exportado ahora respeta el mismo flujo basado en offsets que usa `JSON to Animate`.
-- **Envío directo dentro del plugin** — El JSON exportado se puede enviar a la ventana AI Fight Animator y también guardarse como `StringValue`.
+Además del pipeline SDD de 6 agentes, la carpeta cuenta con los siguientes agentes complementarios:
 
-### ¿Por qué v1.1.0?
-
-Esta actualización trae **funciones nuevas + correcciones** sin romper el formato anterior, por eso la versión semántica recomendada es **v1.1.0** (minor).
-
----
-
-## ✨ Características
-
-- **Importar JSON en un clic** — Pega cualquier JSON de animación desde [Sarang](https://sarang-roblox.web.app) directamente en Moon Animator y empieza a animar al instante. Sin configuración manual, sin copiar keyframes.
-- **Soporte R15** — Compatible con rigs R15. El soporte para R6 y Rigs Personalizados llegará en una actualización futura.
-- **Todos los Temas Gratis** — Cada tema de la interfaz está desbloqueado desde el inicio. Sin compras, sin muros de pago.
-- **Funciones con IA (Próximamente)** — Sugerencias de animación inteligentes, suavizado automático y más impulsado por IA.
-- **100% Gratuito y Open Source** — Forkéalo, modifícalo, úsalo como quieras.
-
----
-
-## 🚀 Instalación
-
-1. Descarga el archivo `.rbxm` más reciente desde la página de [Releases](../../releases).
-2. Abre **Roblox Studio**.
-3. En el **Explorer**, haz clic derecho en `ServerStorage` → **Insert from File**.
-4. Selecciona el archivo `.rbxm` descargado.
-5. El plugin aparecerá en tu barra de **Plugins**.
-
----
-
-## 🎬 Cómo usar animaciones en JSON
-
-1. Ve a [sarang.web.app](https://sarang-roblox.web.app) y explora la biblioteca gratuita de animaciones.
-2. Haz clic en cualquier animación y presiona **Copiar JSON**.
-3. Abre Moon Animator Sarang Edition en Roblox Studio.
-4. Haz clic en **Import** → **Paste JSON**.
-5. Listo — tu animación está lista para usar.
-
----
-
-## 🛠️ Requisitos
-
-- Roblox Studio (se recomienda la versión más reciente)
-- Rig R15 (soporte para R6 próximamente)
-
----
-
-## 📄 Licencia
-
-Este proyecto es open source y está basado en Moon Animator. Todas las modificaciones hechas bajo la Sarang Edition se publican bajo la [Licencia MIT](LICENSE).
-
-Plugin original Moon Animator por [@xSIXx](https://www.roblox.com/users/1399914/profile). Todo el crédito de la herramienta original es de su creador.
-
----
-
-## 🤝 Contribuir
-
-Los pull requests son bienvenidos. Para cambios importantes, por favor abre un issue primero para discutir qué te gustaría cambiar.
-
----
-
-## 🔗 Enlaces
-
-- 🌐 Biblioteca de animaciones: [sarang.web.app](https://sarang-roblox.web.app)
-- 🐛 Reportar un bug: [Issues](../../issues)
-- 💬 Comunidad: Discord (próximamente)
+| Agente | Archivo | Propósito |
+| :--- | :--- | :--- |
+| **PM Agent (Product Owner)** | [`PMAgent.md`](./PMAgent.md) | Gestión macro de alcance de producto, roadmap, priorización de MVP y redacción de Historias de Usuario (`HU-TEMPLATE.md`) previas a la Spec técnica. |
+| **Design Agent (Assets)** | [`DesignAgent.md`](./DesignAgent.md) | Producción aislada de recursos visuales (modelos 3D, texturas, íconos, paletas) listos para que el `BuilderAgent` los integre. |
+| **Dev Agent (Legacy)** | [`DevAgent.md`](./DevAgent.md) | Versión anterior del agente implementador basado en HUs/RCs (reemplazado en el flujo SDD completo por el par `SpecAgent` + `BuilderAgent`). |
+| **Roblox Animator Agent** | [`RobloxAnimatorAgent.md`](./RobloxAnimatorAgent.md) | Protocolo biomecánico universal R15 y biblioteca de primitivas JSON para animación corporal. |
+| **Study Agent** | [`StudyAgent.md`](./StudyAgent.md) | Tutor académico que genera sesiones estructuradas de estudio (esquemas, resúmenes, diapositivas Marp, fórmulas y ejercicios) bajo `Estudio/{asignatura}/`. |
+| **Mac Advisor Agent** | [`MacAdvisorAgent.md`](./MacAdvisorAgent.md) | Diagnóstico *read-only* de almacenamiento y organización segura de macOS mediante scripts `.sh` bajo confirmación explícita. |

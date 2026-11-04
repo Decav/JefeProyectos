@@ -1,130 +1,80 @@
-# RC-TEMPLATE — Requerimiento Técnico (RC)
-
-> Uso: un **RC por HU**. Se deriva 100% de la HU + GDD. Lo consume el agente/dev
-> de implementación. Se entrega como comentario Luau (`--[[ ... --]]`) en el
-> código o como archivo en `RCs/`. Numeración secuencial: `rc001`, `rc002`, …
+# RC-TEMPLATE — Requerimiento Técnico
 
 ## Reglas
+1. Un RC por HU/especificación asignada. Derivar alcance de la HU y GDD citado (`Vandrheim-Roblox/GDD_ROBLOX_MVP.md` en el proyecto local); no inventar decisiones de producto.
+2. Un RC concreta qué, dónde y cómo técnico; no incluye el código de implementación.
+3. Conservar estos estados en el propio RC: ABIERTO (pendiente de implementación) -> EN IMPLEMENTACIÓN -> COMPLETO (verificado el <fecha>).
+4. Conservar los diez apartados. Si uno no aplica, escribir N/A.
+5. Todo RC es una instancia Script con Disabled=true y Source compuesto únicamente por comentario Luau válido. No usar ModuleScript/StringValue ni agregar lógica ejecutable.
+6. Nombre de instancia: rc-titulo-descriptivo, minúsculas, sin tildes/espacios, palabras separadas por guion.
+7. Ubicación: Workspace.DevelopmentStandard.Requirement/<Seccion>/<Name>. Crear carpeta funcional estable solo cuando tenga RCs.
+8. ID estable: rcNNN en el encabezado y atributo RCId. El Name no lleva el número. No renumerar ni reciclar IDs.
+9. Actualizar Requirement.INDEX con ID, sección, título corto y ruta exacta. El índice no replica estado, aceptación ni aprobación; cada RC es la fuente autoritativa.
+10. Obtener el siguiente ID revisando IDs/encabezados de todo Requirement y el índice.
+11. Antes de mover o convertir un RC, comprobar referencias/consumidores; preservar Source, estado, ID y aprobaciones. Corregir solo errores que impidan el contrato Script documental.
+12. La revisión/aprobación del PO antecede a implementación. Mantener el procedimiento de places de rc048.
+13. Si faltan decisiones/defaults de producto en HU/GDD, registrarlos como pendientes y resolverlos antes de implementar la parte dependiente.
+14. Si hay código compartido, §8 enumera módulos y places consumidores y exige comprobar identidad/versiones y el flujo afectado. El PO deriva/publica desde Hub según rc048. Si no aplica, declarar sin sync — solo [place] y justificarlo.
 
-1. **Fuente:** HU formal (plantilla) + GDD (secciones citadas). No inventar alcance.
-2. **Solo “qué + dónde + cómo técnico”, no el código en sí.**
-3. **Estado:** `ABIERTO (pendiente de implementación)` → `EN IMPLEMENTACIÓN` → `COMPLETO (verificado el <fecha>)`.
-4. **Secciones obligatorias:** 1–10. Si una no aplica, escribir “N/A” (no borrarla).
-5. **Convenciones fijas del proyecto:** `task.wait()`/`task.spawn()` (prohibido `wait()`); UI con `Scale` + `UIAspectRatioConstraint`; server-authoritative.
+## Categorías estables
+Documentacion, PersonajesProgresion, CombateHabilidades, MundoDungeon, InventarioEquipo, Interfaz, Social, Economia, Assets y Publicacion. Añadir categoría solo si el volumen/función justifica un dominio estable. Cada RC tiene una carpeta principal; usar referencias cruzadas para los temas transversales.
 
-## Mapeo HU → RC
+## Mapeo HU -> RC
+| Apartado | Fuente |
+|---|---|
+| 1. Descripción | Narrativa y objetivo de la HU |
+| 2. Alcance | Incluye de la HU |
+| 3. Fuera de alcance | No incluye y fases posteriores |
+| 4. Criterios | Escenarios verificables |
+| 5. Implementación técnica | Especificaciones, contratos y defaults aprobados |
+| 6. Integración | Dependencias y consumidores afectados |
+| 7. Optimización | Presupuestos/patrones indicados por la HU |
+| 8. Definición de hecho | DoD y verificación, incluido sync cuando corresponda |
+| 9. Estimación | Estimación de HU o N/A |
+| 10. Dependencias | HU/RC previo o Ninguna |
 
-| Sección RC | De dónde sale |
-|------------|---------------|
-| Header (Fuente) | “Depende de” + fases previas de la HU; secciones GDD citadas |
-| 1. Descripción | Narrativa INVEST + objetivo de la fase |
-| 2. Alcance (SÍ) | “Incluye” de la HU, concreto a servicios/places/remotes |
-| 3. Fuera de alcance | “No incluye” de la HU + fases siguientes |
-| 4. Criterios aceptación | Escenarios Gherkin → lista numerada verificable |
-| 5. Implementación técnica | “Especificaciones Técnicas / Contratos” + defaults cerrados |
-| 6. Integración | Dependencias de la HU + qué deja listo para la siguiente fase |
-| 7. Optimización | Presupuesto de sesiones, anti-overengineering, patrones (señales) |
-| 8. Definición de hecho | DoD de la HU + nota de estado en GDD/README |
-| 9. Estimación | Estimación de la HU (orientativo) |
-| 10. Dependencias | “Depende de” de la HU o “Ninguna” |
-
----
-
-## Copiar desde aquí
+## Plantilla
+Crear el Script, asignar Disabled=true, Source y atributo RCId antes de parentarlo. El Source debe contener únicamente un comentario como este:
 
 ```luau
 --[[
-================================================================================
-          REQUERIMIENTO TÉCNICO: rc[NUM] — FASE R[N] (HU-R[N])
-================================================================================
-Proyecto: Vandrheim — RPG/MMO-like en 3ª persona (Roblox).
-Fuente: HU-R[N] ([archivo]) + GDD (secciones [x, y, z]).
+REQUERIMIENTO TÉCNICO: rcNNN — <título descriptivo> (HU-...)
+Proyecto: Vandrheim RPG (Roblox).
+Fuente: HU/especificación y secciones pertinentes del GDD.
+ID estable: rcNNN
 Estado: ABIERTO (pendiente de implementación).
-Requisitos previos: [HU-R[N-1] completa / "Ninguna"].
+Requisitos previos: [...]
 
-================================================================================
 1. DESCRIPCIÓN
-================================================================================
-[Comportamiento a lograr en lenguaje de producto (narrativa de la HU).]
+Objetivo y criterio global verificable.
 
-Objetivo de la fase: [1–2 frases del objetivo técnico concreto].
-Criterio de hecho global: "[frase verificable del GDD §14 o de la HU]".
-
-================================================================================
 2. ALCANCE (SÍ)
-================================================================================
-[Bullets concretos de lo que SÍ se implementa: servicios, places, remotes,
- carpetas, UI. Derivado del "Incluye" de la HU.]
+Servicios, configuración, remotes, pantallas y places incluidos.
 
-================================================================================
-3. FUERA DE ALCANCE (NO en esta HU)
-================================================================================
-[Bullets sistema por sistema: del "No incluye" de la HU + fases siguientes.
- Un bullet por sistema (skills, inventario, dungeon, ...).]
+3. FUERA DE ALCANCE
+Exclusiones explícitas y fases posteriores.
 
-================================================================================
-4. CRITERIOS DE ACEPTACIÓN (DEFINICIÓN DE HECHO)
-================================================================================
-1. [Un criterio verificable por línea (de los escenarios Gherkin de la HU).]
-2. [...]
-3. [...]
+4. CRITERIOS DE ACEPTACIÓN
+Lista numerada, concreta y verificable.
 
-================================================================================
 5. IMPLEMENTACIÓN TÉCNICA
-================================================================================
-[Qué se crea, dónde (servicio/carpeta/place), contratos de red (remotes +
- payload), defaults numéricos, convenciones obligatorias:
-   - Server-authoritative: [qué valida el server y qué nunca el cliente].
-   - Remotes: nombre, dirección C→S / S→C, payload.
-   - Data/estado: [schema, replicación, defaults].
-   - task.wait()/task.spawn() (PROHIBIDO wait()).
-   - UI con Scale y UIAspectRatioConstraint.]
+Rutas, autoridad, payloads, datos, defaults y límites.
 
-================================================================================
 6. INTEGRACIÓN
-================================================================================
-[Qué espera de las fases previas; qué debe dejar listo para las siguientes;
- qué comparte entre Places/sistemas.]
+Dependencias y consumidores; coordinación entre sistemas/places.
 
-================================================================================
 7. OPTIMIZACIÓN
-================================================================================
-[Presupuesto de sesiones; qué NO sobrediseñar; patrones:
- - Evitar bucles while true; priorizar señales (GetPropertyChangedSignal).
- - No cargar lógica de fases posteriores.]
+Restricciones de rendimiento y patrones requeridos.
 
-================================================================================
-8. DEFINICIÓN DE HECHO (VERIFICACIÓN)
-================================================================================
-[ ] [Prueba manual en Studio (Play Solo): ...]
-[ ] [Prueba multiplayer — opcional/recomendada si aplica.]
-[ ] [Nota en GDD/README: "R[N] completo".]
-[ ] [Sin errores rojos en output.]
-[ ] [Criterio anti-exploit / seguridad si aplica a la fase.]
+8. DEFINICIÓN DE HECHO
+Checklist de validación y sync; declarar sin sync y justificar si aplica.
 
-================================================================================
 9. ESTIMACIÓN
-================================================================================
-[N sesiones, con supuesto. Orientativo.]
+Sesiones/supuesto o N/A.
 
-================================================================================
 10. DEPENDENCIAS
-================================================================================
-[HU-R[N-1] + RCs previos / "Ninguna. Primera fase".]
+HUs/RCs previos o Ninguna.
 
-================================================================================
 FIN DEL REQUERIMIENTO
-================================================================================
---]]
+]]
 ```
-
----
-
-## Checklist de emisión (PM)
-
-- [ ] HU formal existe y está alineada con GDD
-- [ ] Defaults de la HU cerrados y citados en §5
-- [ ] Nada en “Alcance SÍ” sin respaldo en HU/GDD
-- [ ] Criterios §4 = Gherkin de la HU, verificables
-- [ ] Estado y numeración (rcNNN) actualizados
-- [ ] Guardado en `RCs/rc[NUM]-*.md` y/o entregado como comentario Luau

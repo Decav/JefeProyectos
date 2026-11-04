@@ -28,9 +28,13 @@ DEVELOPER_GUIDE como índices; consultar después solo las páginas Architecture
 Schemas relacionadas. Ampliar la lectura al descubrir una dependencia concreta.
 Consultar PROJECT_STANDARD para las reglas técnicas y RC-TEMPLATE para un RC.
 
-GDD define intención y reglas de producto; SKILL_CATALOG contiene el catálogo de
-skills; ASSETS_POLICY corresponde a assets. Consultarlos cuando la tarea los
-requiera. History y los RCs históricos no son lectura inicial obligatoria.
+GDD (`Vandrheim-Roblox/GDD_ROBLOX_MVP.md`) define intención y reglas de producto y
+`Vandrheim-Roblox/SKILLS_CATALOG.md` contiene el catálogo de skills: ambos viven
+únicamente en el proyecto local (mantenidos por el PM) y no deben guardarse en
+Studio. `RC-TEMPLATE` es idéntico en el proyecto local (`RC-TEMPLATE.md`) y en
+Studio (`Workspace.DevelopmentStandard.RC-TEMPLATE`). ASSETS_POLICY corresponde
+a assets. Consultarlos cuando la tarea los requiera. History y los RCs históricos
+no son lectura inicial obligatoria.
 
 DEV_PROMPT debe indicar la fuente y ruta exacta de la tarea, el trabajo solicitado
 (análisis, emisión de RC o implementación), el RC aprobado cuando corresponda,
