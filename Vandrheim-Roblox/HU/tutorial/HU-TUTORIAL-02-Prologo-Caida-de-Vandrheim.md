@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Tutorial / Onboarding / Retención
 **Prioridad:** Alta — primera sesión y conversión de ads
-**Estado:** Implementada (reporte PO 2026-10-27; QA/verificación pendiente)
+**Estado:** Implementada y validada funcionalmente por el PO (2026-11-04); QA/performance pendiente
 **Tipo:** Contenido de prólogo jugable + NPC guía + misión guionizada (dev)
 **Fase GDD:** Tutorial 2 (adelanto de R10+; decisión PO 2026-10-27)
 **Depende de:** HU-R2 (selección/creación de PJ), HU-QUEST-01/02 (sistema de misiones y quest de onboarding), HU-TUTORIAL-01 (onboarding por tarjetas; se coordina), HU-R3/MOBS + SKILLS_CATALOG (skills por spec), HU-R6b/R6.3 (kit de la Helada), HU-R7.1 + HU-ESTETICA-36 (Jotunn), HU-ITEMS-04/06 (sets azules y armas épicas), HU-ESTETICA-02 (enemigos de la Helada), `DataService`
@@ -322,3 +322,4 @@ Registrar eventos: `prologue_place_entered`, `prologue_started`, `prologue_class
 | 2026-10-27 | Decisiones PO: prólogo en **place separado**; recompensa de **50 oro + 5 pociones de vida** al primer personaje; texto canónico épico del NPC y alternativas aprobadas. |
 | 2026-10-27 | El cierre pasa al **NPC del pueblo**: la caverna solo envía al hub; el Guía completa la misión, entrega la recompensa y da la quest de onboarding. Estado por cuenta `nil → cave → town → done`. |
 | 2026-10-27 | Implementado según reporte del PO. Pendiente: QA en móvil/PC, verificación del funnel y nota en GDD. |
+| 2026-11-04 | **Validación funcional del PO:** prólogo, misiones y tutorial funcionan como se espera. Queda QA/performance y el fix de música de Jotunn (R6.47). |

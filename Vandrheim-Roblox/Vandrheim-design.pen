@@ -79406,6 +79406,4395 @@
           ]
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "Sh0pBd",
+      "x": 2316,
+      "y": 21700,
+      "name": "HU-ESTETICA-53 — Rediseño Tienda NPCs (Comprar / Vender · 2 Columnas)",
+      "clip": false,
+      "width": 2800,
+      "height": 1400,
+      "fill": "#0E0B0A",
+      "cornerRadius": 16,
+      "stroke": "#C89445",
+      "strokeWidth": 2,
+      "layout": "none",
+      "children": [
+        {
+          "type": "text",
+          "id": "87ff21",
+          "x": 40,
+          "y": 30,
+          "name": "Board Header Title",
+          "fill": "#F4EDE0",
+          "textGrowth": "fixed-width",
+          "width": 1200,
+          "content": "REDISEÑO DE TIENDAS DE NPCS · SISTEMA CLARO Y SIMPLE (2 COLUMNAS)",
+          "lineHeight": 1.1,
+          "fontFamily": "Playfair Display",
+          "fontSize": 24,
+          "fontWeight": "bold"
+        },
+        {
+          "type": "text",
+          "id": "303781",
+          "x": 40,
+          "y": 68,
+          "name": "Board Header Note",
+          "fill": "#A09285",
+          "textGrowth": "fixed-width",
+          "width": 1400,
+          "content": "Vandrheim RPG · Casilla de ítem con render 3D + Nombre a la derecha + Precio en oro debajo · Botones con flexbox centering · Scrollbar visible · Variantes PC y Móvil",
+          "lineHeight": 1.1,
+          "fontFamily": "Geist Mono",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "ShpWin01",
+          "x": 40,
+          "y": 120,
+          "name": "FRAME_NPC_SHOP_REDSGN_BUY · Comerciante de Vandrheim",
+          "clip": true,
+          "width": 720,
+          "height": 480,
+          "fill": "#15100D",
+          "cornerRadius": 10,
+          "stroke": "#C89445",
+          "strokeWidth": 1,
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "d49395",
+              "x": 24,
+              "y": 20,
+              "name": "Shop Title",
+              "fill": "#F4EDE0",
+              "textGrowth": "fixed-width",
+              "width": 380,
+              "content": "Comerciante de Vandrheim",
+              "lineHeight": 1.1,
+              "fontFamily": "Playfair Display",
+              "fontSize": 18,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "text",
+              "id": "2d65f9",
+              "x": 24,
+              "y": 44,
+              "name": "Shop Subtitle",
+              "fill": "#A09285",
+              "textGrowth": "fixed-width",
+              "width": 380,
+              "content": "Armero & Proveedor de Expedición",
+              "lineHeight": 1.1,
+              "fontFamily": "Geist Mono",
+              "fontSize": 10,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "frame",
+              "id": "f012d9",
+              "x": 670,
+              "y": 20,
+              "name": "Button Close",
+              "width": 26,
+              "height": 26,
+              "fill": "#211916",
+              "cornerRadius": 4,
+              "stroke": "#6B4A2B",
+              "strokeWidth": 1,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "2afa19",
+                  "name": "Icon Close",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "Assets/Icons/UI/Common/Icon_UI_close.png",
+                    "mode": "contain"
+                  },
+                  "width": 18,
+                  "height": 18
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "5c87b0",
+              "x": 520,
+              "y": 21,
+              "name": "Player Gold Bar",
+              "width": 140,
+              "height": 24,
+              "fill": "#17120F",
+              "cornerRadius": 4,
+              "stroke": "#4A3B2C",
+              "strokeWidth": 1,
+              "padding": [
+                0,
+                8
+              ],
+              "alignItems": "center",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "c68e2f",
+                  "name": "Gold Icon",
+                  "width": 14,
+                  "height": 14,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                    "mode": "contain"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "270e05",
+                  "name": "Gold Amount",
+                  "fill": "#C89445",
+                  "content": "340 Oro",
+                  "fontFamily": "Geist Mono",
+                  "fontSize": 11,
+                  "fontWeight": "bold"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "1a202c",
+              "x": 24,
+              "y": 66,
+              "name": "Tab Bar Container",
+              "width": 260,
+              "height": 34,
+              "fill": "#15100D",
+              "cornerRadius": 6,
+              "stroke": "#3A2C23",
+              "strokeWidth": 1,
+              "padding": 3,
+              "gap": 6,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "8e0b5f",
+                  "name": "Tab Comprar",
+                  "width": 124,
+                  "height": 28,
+                  "fill": "#C89445",
+                  "cornerRadius": 4,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "c88983",
+                      "name": "Tab Comprar Label",
+                      "fill": "#15100D",
+                      "content": "COMPRAR",
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "58093f",
+                  "name": "Tab Vender",
+                  "width": 124,
+                  "height": 28,
+                  "fill": "#211916",
+                  "cornerRadius": 4,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "c1dd82",
+                      "name": "Tab Vender Label",
+                      "fill": "#B5A79A",
+                      "content": "VENDER",
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "b87e83",
+              "x": 24,
+              "y": 114,
+              "name": "Scrollable Items Container (2 Col)",
+              "clip": true,
+              "width": 654,
+              "height": 328,
+              "fill": null,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "9fcde8",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Card · Espada de Acero Nórdico",
+                  "width": 320,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A3B2C",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "ee3cdd",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "eb9c16",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Weapons/OneHand/Icon_Item_sword_white.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "e9abda",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 173,
+                      "content": "Espada de Acero Nórdico",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "41cb48",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "40041c",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 153,
+                      "content": "45 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ab4d26",
+                      "x": 236,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#C89445",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "5e06e7",
+                          "name": "Btn Label",
+                          "fill": "#15100D",
+                          "content": "COMPRAR",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "928674",
+                  "x": 334,
+                  "y": 0,
+                  "name": "Card · Escudo de Guardia Glacial",
+                  "width": 320,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A3B2C",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "2797a9",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "0047a7",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Weapons/Shield/Icon_Item_shield_white.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "1bbf0a",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 173,
+                      "content": "Escudo de Guardia Glacial",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "e09d2d",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "4cc17c",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 153,
+                      "content": "60 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "c31967",
+                      "x": 236,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#C89445",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "47cd74",
+                          "name": "Btn Label",
+                          "fill": "#15100D",
+                          "content": "COMPRAR",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "d06af1",
+                  "x": 0,
+                  "y": 74,
+                  "name": "Card · Arco del Cazador Furtivo",
+                  "width": 320,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A3B2C",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "9d6526",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "4a6063",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Weapons/Bow/Icon_Item_bow_white.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "4eabdf",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 173,
+                      "content": "Arco del Cazador Furtivo",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "397266",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "f94af0",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 153,
+                      "content": "55 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "b6c68f",
+                      "x": 236,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#C89445",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "bb8d79",
+                          "name": "Btn Label",
+                          "fill": "#15100D",
+                          "content": "COMPRAR",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "9d8f15",
+                  "x": 334,
+                  "y": 74,
+                  "name": "Card · Mandoble de Soldado",
+                  "width": 320,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A3B2C",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "3959f5",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "42782b",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Weapons/TwoHand/Icon_Item_greatsword_white.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "d7fd19",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 173,
+                      "content": "Mandoble de Soldado",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "3ecb9c",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "b2d015",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 153,
+                      "content": "80 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "f41579",
+                      "x": 236,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#C89445",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "02954c",
+                          "name": "Btn Label",
+                          "fill": "#15100D",
+                          "content": "COMPRAR",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "952c78",
+                  "x": 0,
+                  "y": 148,
+                  "name": "Card · Poción de Vida Concentrada",
+                  "width": 320,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A3B2C",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "d9234f",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "859d06",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Consumables/Icon_Item_potion_buff_hp.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "f363bc",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 173,
+                      "content": "Poción de Vida Concentrada",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "9e82c8",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "fb9d2b",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 153,
+                      "content": "10 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "9bb34c",
+                      "x": 236,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#C89445",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "f72044",
+                          "name": "Btn Label",
+                          "fill": "#15100D",
+                          "content": "COMPRAR",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "419f19",
+                  "x": 334,
+                  "y": 148,
+                  "name": "Card · Poción de Maná Cristalina",
+                  "width": 320,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A3B2C",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "15eb41",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "2558c8",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Consumables/Icon_Item_potion_buff_atk.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "476694",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 173,
+                      "content": "Poción de Maná Cristalina",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "b5dd0a",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "2371cf",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 153,
+                      "content": "10 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "11e128",
+                      "x": 236,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#C89445",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "0a1960",
+                          "name": "Btn Label",
+                          "fill": "#15100D",
+                          "content": "COMPRAR",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "8902fa",
+                  "x": 0,
+                  "y": 222,
+                  "name": "Card · Carne de Jabalí Fresca",
+                  "width": 320,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A3B2C",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "9c50e5",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "9e607a",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Consumables/Icon_Item_boar_meat.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "589e5e",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 173,
+                      "content": "Carne de Jabalí Fresca",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "3a0c2c",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "b26432",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 153,
+                      "content": "8 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "66f169",
+                      "x": 236,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#C89445",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "2b11bb",
+                          "name": "Btn Label",
+                          "fill": "#15100D",
+                          "content": "COMPRAR",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "930b36",
+                  "x": 334,
+                  "y": 222,
+                  "name": "Card · Polvo de Escarcha Puro",
+                  "width": 320,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A3B2C",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "8bd6ab",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "d103bd",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Materials/Icon_Item_frost_dust.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "fd115b",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 173,
+                      "content": "Polvo de Escarcha Puro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "76162b",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "85017d",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 153,
+                      "content": "15 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "639e48",
+                      "x": 236,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#C89445",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "485094",
+                          "name": "Btn Label",
+                          "fill": "#15100D",
+                          "content": "COMPRAR",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "d1c1a6",
+              "x": 686,
+              "y": 114,
+              "name": "Catalog Scrollbar Track",
+              "width": 6,
+              "height": 328,
+              "fill": "#17120F",
+              "cornerRadius": 3,
+              "stroke": "#2E241D",
+              "strokeWidth": 1
+            },
+            {
+              "type": "rectangle",
+              "id": "4e4821",
+              "x": 686,
+              "y": 118,
+              "name": "Catalog Scrollbar Thumb",
+              "width": 6,
+              "height": 137,
+              "fill": "#C89445",
+              "cornerRadius": 3
+            },
+            {
+              "type": "text",
+              "id": "c5fb04",
+              "x": 24,
+              "y": 454,
+              "name": "Footer Note",
+              "fill": "#7D6F63",
+              "textGrowth": "fixed-width",
+              "width": 652,
+              "content": "Desplaza la lista con la rueda del ratón o desliza en móvil para ver más ítems.",
+              "lineHeight": 1.1,
+              "fontFamily": "Geist Mono",
+              "fontSize": 9,
+              "fontWeight": "bold"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ShpWin02",
+          "x": 800,
+          "y": 120,
+          "name": "FRAME_NPC_SHOP_REDSGN_SELL · Comerciante de Vandrheim",
+          "clip": true,
+          "width": 720,
+          "height": 480,
+          "fill": "#15100D",
+          "cornerRadius": 10,
+          "stroke": "#C89445",
+          "strokeWidth": 1,
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "c0145b",
+              "x": 24,
+              "y": 20,
+              "name": "Shop Title",
+              "fill": "#F4EDE0",
+              "textGrowth": "fixed-width",
+              "width": 380,
+              "content": "Comerciante de Vandrheim",
+              "lineHeight": 1.1,
+              "fontFamily": "Playfair Display",
+              "fontSize": 18,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "text",
+              "id": "90d6ab",
+              "x": 24,
+              "y": 44,
+              "name": "Shop Subtitle",
+              "fill": "#A09285",
+              "textGrowth": "fixed-width",
+              "width": 380,
+              "content": "Armero & Proveedor de Expedición",
+              "lineHeight": 1.1,
+              "fontFamily": "Geist Mono",
+              "fontSize": 10,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "frame",
+              "id": "c4b90a",
+              "x": 670,
+              "y": 20,
+              "name": "Button Close",
+              "width": 26,
+              "height": 26,
+              "fill": "#211916",
+              "cornerRadius": 4,
+              "stroke": "#6B4A2B",
+              "strokeWidth": 1,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "e138b4",
+                  "name": "Icon Close",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "Assets/Icons/UI/Common/Icon_UI_close.png",
+                    "mode": "contain"
+                  },
+                  "width": 18,
+                  "height": 18
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "885b51",
+              "x": 520,
+              "y": 21,
+              "name": "Player Gold Bar",
+              "width": 140,
+              "height": 24,
+              "fill": "#17120F",
+              "cornerRadius": 4,
+              "stroke": "#4A3B2C",
+              "strokeWidth": 1,
+              "padding": [
+                0,
+                8
+              ],
+              "alignItems": "center",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "60f804",
+                  "name": "Gold Icon",
+                  "width": 14,
+                  "height": 14,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                    "mode": "contain"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "d2bf6e",
+                  "name": "Gold Amount",
+                  "fill": "#C89445",
+                  "content": "340 Oro",
+                  "fontFamily": "Geist Mono",
+                  "fontSize": 11,
+                  "fontWeight": "bold"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "b9cef1",
+              "x": 24,
+              "y": 66,
+              "name": "Tab Bar Container",
+              "width": 260,
+              "height": 34,
+              "fill": "#15100D",
+              "cornerRadius": 6,
+              "stroke": "#3A2C23",
+              "strokeWidth": 1,
+              "padding": 3,
+              "gap": 6,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "477c91",
+                  "name": "Tab Comprar",
+                  "width": 124,
+                  "height": 28,
+                  "fill": "#211916",
+                  "cornerRadius": 4,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ba760e",
+                      "name": "Tab Comprar Label",
+                      "fill": "#B5A79A",
+                      "content": "COMPRAR",
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "8519a0",
+                  "name": "Tab Vender",
+                  "width": 124,
+                  "height": 28,
+                  "fill": "#C89445",
+                  "cornerRadius": 4,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "898f6b",
+                      "name": "Tab Vender Label",
+                      "fill": "#15100D",
+                      "content": "VENDER",
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "0c2bec",
+              "x": 24,
+              "y": 114,
+              "name": "Scrollable Items Container (2 Col)",
+              "clip": true,
+              "width": 654,
+              "height": 328,
+              "fill": null,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "f3db3c",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Card · Carne de Jabalí de Caza",
+                  "width": 320,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A2828",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "c88ea1",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "17c6b1",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Consumables/Icon_Item_boar_meat.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "240a74",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 173,
+                      "content": "Carne de Jabalí de Caza",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "568d21",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "ac087b",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 153,
+                      "content": "4 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "83ee5d",
+                      "x": 236,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#6B2A2A",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "99ef8c",
+                          "name": "Btn Label",
+                          "fill": "#F4EDE0",
+                          "content": "VENDER",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "6b447d",
+                      "x": 38,
+                      "y": 40,
+                      "name": "Qty Badge",
+                      "width": 20,
+                      "height": 16,
+                      "fill": "#211916",
+                      "cornerRadius": 3,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "5ff19a",
+                          "name": "Qty Text",
+                          "fill": "#F4EDE0",
+                          "content": "x5",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 8.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "445898",
+                  "x": 334,
+                  "y": 0,
+                  "name": "Card · Mena de Hierro Nórdico",
+                  "width": 320,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A2828",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "eae187",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "f488ca",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Materials/Icon_Item_iron_ore.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "d5b45e",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 173,
+                      "content": "Mena de Hierro Nórdico",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "f9e1d4",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "9a776f",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 153,
+                      "content": "6 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "78c50f",
+                      "x": 236,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#6B2A2A",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "1d6ada",
+                          "name": "Btn Label",
+                          "fill": "#F4EDE0",
+                          "content": "VENDER",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "d17332",
+                      "x": 38,
+                      "y": 40,
+                      "name": "Qty Badge",
+                      "width": 20,
+                      "height": 16,
+                      "fill": "#211916",
+                      "cornerRadius": 3,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "62455f",
+                          "name": "Qty Text",
+                          "fill": "#F4EDE0",
+                          "content": "x12",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 8.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "6b0852",
+                  "x": 0,
+                  "y": 74,
+                  "name": "Card · Polvo de Escarcha Glacial",
+                  "width": 320,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A2828",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "983d2b",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "55b59d",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Materials/Icon_Item_frost_dust.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "11a308",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 173,
+                      "content": "Polvo de Escarcha Glacial",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "b33e3f",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "daee0f",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 153,
+                      "content": "7 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "52dd4d",
+                      "x": 236,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#6B2A2A",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "55b21d",
+                          "name": "Btn Label",
+                          "fill": "#F4EDE0",
+                          "content": "VENDER",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "1c2b08",
+                      "x": 38,
+                      "y": 40,
+                      "name": "Qty Badge",
+                      "width": 20,
+                      "height": 16,
+                      "fill": "#211916",
+                      "cornerRadius": 3,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "4b7c74",
+                          "name": "Qty Text",
+                          "fill": "#F4EDE0",
+                          "content": "x8",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 8.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "dadfbe",
+                  "x": 334,
+                  "y": 74,
+                  "name": "Card · Frasco con Espíritu Esmeralda",
+                  "width": 320,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A2828",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "3eb0a5",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "bf42c5",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Materials/Icon_Item_green_wisp_jar.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "711912",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 173,
+                      "content": "Frasco con Espíritu Esmeralda",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "3ea3af",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "b4d421",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 153,
+                      "content": "14 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "b3ee89",
+                      "x": 236,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#6B2A2A",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "250375",
+                          "name": "Btn Label",
+                          "fill": "#F4EDE0",
+                          "content": "VENDER",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "c2b09b",
+                      "x": 38,
+                      "y": 40,
+                      "name": "Qty Badge",
+                      "width": 20,
+                      "height": 16,
+                      "fill": "#211916",
+                      "cornerRadius": 3,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "4668a0",
+                          "name": "Qty Text",
+                          "fill": "#F4EDE0",
+                          "content": "x2",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 8.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "249797",
+                  "x": 0,
+                  "y": 148,
+                  "name": "Card · Brazales de Saqueador",
+                  "width": 320,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A2828",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "2fac0c",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "73c289",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Armor/Hunter/Icon_Item_raider_bracers.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "d132e9",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 173,
+                      "content": "Brazales de Saqueador",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "68cd90",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "0b2bff",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 153,
+                      "content": "22 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "fd46ff",
+                      "x": 236,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#6B2A2A",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "611046",
+                          "name": "Btn Label",
+                          "fill": "#F4EDE0",
+                          "content": "VENDER",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "e09059",
+                      "x": 38,
+                      "y": 40,
+                      "name": "Qty Badge",
+                      "width": 20,
+                      "height": 16,
+                      "fill": "#211916",
+                      "cornerRadius": 3,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "38c98d",
+                          "name": "Qty Text",
+                          "fill": "#F4EDE0",
+                          "content": "x1",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 8.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "d1c2d1",
+                  "x": 334,
+                  "y": 148,
+                  "name": "Card · Daga de Hierro Desgastada",
+                  "width": 320,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A2828",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "e12836",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "a93620",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Weapons/OneHand/Icon_Item_sword_white.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "edfaed",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 173,
+                      "content": "Daga de Hierro Desgastada",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "13d0b4",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "28206e",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 153,
+                      "content": "12 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "3eab1a",
+                      "x": 236,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#6B2A2A",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "7e22fa",
+                          "name": "Btn Label",
+                          "fill": "#F4EDE0",
+                          "content": "VENDER",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ca3b22",
+                      "x": 38,
+                      "y": 40,
+                      "name": "Qty Badge",
+                      "width": 20,
+                      "height": 16,
+                      "fill": "#211916",
+                      "cornerRadius": 3,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "cc720d",
+                          "name": "Qty Text",
+                          "fill": "#F4EDE0",
+                          "content": "x1",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 8.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "83b1e0",
+              "x": 686,
+              "y": 114,
+              "name": "Catalog Scrollbar Track",
+              "width": 6,
+              "height": 328,
+              "fill": "#17120F",
+              "cornerRadius": 3,
+              "stroke": "#2E241D",
+              "strokeWidth": 1
+            },
+            {
+              "type": "rectangle",
+              "id": "0e10ba",
+              "x": 686,
+              "y": 118,
+              "name": "Catalog Scrollbar Thumb",
+              "width": 6,
+              "height": 137,
+              "fill": "#C89445",
+              "cornerRadius": 3
+            },
+            {
+              "type": "text",
+              "id": "245595",
+              "x": 24,
+              "y": 454,
+              "name": "Footer Note",
+              "fill": "#7D6F63",
+              "textGrowth": "fixed-width",
+              "width": 652,
+              "content": "Desplaza la lista para revisar todo el inventario de tu mochila.",
+              "lineHeight": 1.1,
+              "fontFamily": "Geist Mono",
+              "fontSize": 9,
+              "fontWeight": "bold"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ShpWin03",
+          "x": 40,
+          "y": 660,
+          "name": "FRAME_NPC_SHOP_REDSGN_BUY · Tienda de Provisiones",
+          "clip": true,
+          "width": 640,
+          "height": 360,
+          "fill": "#15100D",
+          "cornerRadius": 10,
+          "stroke": "#C89445",
+          "strokeWidth": 1,
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "59fa44",
+              "x": 24,
+              "y": 20,
+              "name": "Shop Title",
+              "fill": "#F4EDE0",
+              "textGrowth": "fixed-width",
+              "width": 380,
+              "content": "Tienda de Provisiones",
+              "lineHeight": 1.1,
+              "fontFamily": "Playfair Display",
+              "fontSize": 18,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "text",
+              "id": "ac18e9",
+              "x": 24,
+              "y": 44,
+              "name": "Shop Subtitle",
+              "fill": "#A09285",
+              "textGrowth": "fixed-width",
+              "width": 380,
+              "content": "Móvil · Touch UI",
+              "lineHeight": 1.1,
+              "fontFamily": "Geist Mono",
+              "fontSize": 10,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "frame",
+              "id": "e538b1",
+              "x": 590,
+              "y": 20,
+              "name": "Button Close",
+              "width": 26,
+              "height": 26,
+              "fill": "#211916",
+              "cornerRadius": 4,
+              "stroke": "#6B4A2B",
+              "strokeWidth": 1,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "0259da",
+                  "name": "Icon Close",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "Assets/Icons/UI/Common/Icon_UI_close.png",
+                    "mode": "contain"
+                  },
+                  "width": 18,
+                  "height": 18
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "fffd3d",
+              "x": 440,
+              "y": 21,
+              "name": "Player Gold Bar",
+              "width": 140,
+              "height": 24,
+              "fill": "#17120F",
+              "cornerRadius": 4,
+              "stroke": "#4A3B2C",
+              "strokeWidth": 1,
+              "padding": [
+                0,
+                8
+              ],
+              "alignItems": "center",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "5f8a6b",
+                  "name": "Gold Icon",
+                  "width": 14,
+                  "height": 14,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                    "mode": "contain"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "d34c89",
+                  "name": "Gold Amount",
+                  "fill": "#C89445",
+                  "content": "340 Oro",
+                  "fontFamily": "Geist Mono",
+                  "fontSize": 11,
+                  "fontWeight": "bold"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "d77421",
+              "x": 24,
+              "y": 66,
+              "name": "Tab Bar Container",
+              "width": 260,
+              "height": 34,
+              "fill": "#15100D",
+              "cornerRadius": 6,
+              "stroke": "#3A2C23",
+              "strokeWidth": 1,
+              "padding": 3,
+              "gap": 6,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "0c7d9e",
+                  "name": "Tab Comprar",
+                  "width": 124,
+                  "height": 28,
+                  "fill": "#C89445",
+                  "cornerRadius": 4,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ae97d5",
+                      "name": "Tab Comprar Label",
+                      "fill": "#15100D",
+                      "content": "COMPRAR",
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "b62cb0",
+                  "name": "Tab Vender",
+                  "width": 124,
+                  "height": 28,
+                  "fill": "#211916",
+                  "cornerRadius": 4,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "dc8d3a",
+                      "name": "Tab Vender Label",
+                      "fill": "#B5A79A",
+                      "content": "VENDER",
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "52eae8",
+              "x": 24,
+              "y": 114,
+              "name": "Scrollable Items Container (2 Col)",
+              "clip": true,
+              "width": 574,
+              "height": 208,
+              "fill": null,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "327f27",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Card · Espada de Acero Nórdico",
+                  "width": 280,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A3B2C",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "787688",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "ee3882",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Weapons/OneHand/Icon_Item_sword_white.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "953e0e",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 133,
+                      "content": "Espada de Acero Nórdico",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "360fbf",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "7450ce",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 113,
+                      "content": "45 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "27e18c",
+                      "x": 196,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#C89445",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "6b409e",
+                          "name": "Btn Label",
+                          "fill": "#15100D",
+                          "content": "COMPRAR",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "d9ce8d",
+                  "x": 294,
+                  "y": 0,
+                  "name": "Card · Escudo de Guardia Glacial",
+                  "width": 280,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A3B2C",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "551b4a",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "ee8dc4",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Weapons/Shield/Icon_Item_shield_white.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "49e502",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 133,
+                      "content": "Escudo de Guardia Glacial",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "58da14",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "53bb71",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 113,
+                      "content": "60 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "a0d85e",
+                      "x": 196,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#C89445",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "8fa0ba",
+                          "name": "Btn Label",
+                          "fill": "#15100D",
+                          "content": "COMPRAR",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "fc512a",
+                  "x": 0,
+                  "y": 74,
+                  "name": "Card · Arco del Cazador Furtivo",
+                  "width": 280,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A3B2C",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "ae0eba",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "04d45a",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Weapons/Bow/Icon_Item_bow_white.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "7ca477",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 133,
+                      "content": "Arco del Cazador Furtivo",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "0fd43f",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "fb497b",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 113,
+                      "content": "55 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "63bf87",
+                      "x": 196,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#C89445",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "59ef5c",
+                          "name": "Btn Label",
+                          "fill": "#15100D",
+                          "content": "COMPRAR",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "97ede2",
+                  "x": 294,
+                  "y": 74,
+                  "name": "Card · Mandoble de Soldado",
+                  "width": 280,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A3B2C",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "868c96",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "d1d1ee",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Weapons/TwoHand/Icon_Item_greatsword_white.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "202486",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 133,
+                      "content": "Mandoble de Soldado",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "f0632f",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "685330",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 113,
+                      "content": "80 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "e51e66",
+                      "x": 196,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#C89445",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ee659f",
+                          "name": "Btn Label",
+                          "fill": "#15100D",
+                          "content": "COMPRAR",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "bad66a",
+                  "x": 0,
+                  "y": 148,
+                  "name": "Card · Poción de Vida Concentrada",
+                  "width": 280,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A3B2C",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "d0791d",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "351cf1",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Consumables/Icon_Item_potion_buff_hp.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "fbc25c",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 133,
+                      "content": "Poción de Vida Concentrada",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "ba235e",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "ddcd13",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 113,
+                      "content": "10 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "b50ea8",
+                      "x": 196,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#C89445",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "c094eb",
+                          "name": "Btn Label",
+                          "fill": "#15100D",
+                          "content": "COMPRAR",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ac0916",
+                  "x": 294,
+                  "y": 148,
+                  "name": "Card · Poción de Maná Cristalina",
+                  "width": 280,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A3B2C",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "e23d1d",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "413a8a",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Consumables/Icon_Item_potion_buff_atk.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "b2f8a4",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 133,
+                      "content": "Poción de Maná Cristalina",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "3aeb36",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "99fe47",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 113,
+                      "content": "10 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "c37bae",
+                      "x": 196,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#C89445",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "6358c2",
+                          "name": "Btn Label",
+                          "fill": "#15100D",
+                          "content": "COMPRAR",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "348ff6",
+              "x": 606,
+              "y": 114,
+              "name": "Catalog Scrollbar Track",
+              "width": 6,
+              "height": 208,
+              "fill": "#17120F",
+              "cornerRadius": 3,
+              "stroke": "#2E241D",
+              "strokeWidth": 1
+            },
+            {
+              "type": "rectangle",
+              "id": "aab21e",
+              "x": 606,
+              "y": 118,
+              "name": "Catalog Scrollbar Thumb",
+              "width": 6,
+              "height": 87,
+              "fill": "#C89445",
+              "cornerRadius": 3
+            },
+            {
+              "type": "text",
+              "id": "35250a",
+              "x": 24,
+              "y": 334,
+              "name": "Footer Note",
+              "fill": "#7D6F63",
+              "textGrowth": "fixed-width",
+              "width": 572,
+              "content": "Desplaza la lista con la rueda del ratón o desliza en móvil para ver más ítems.",
+              "lineHeight": 1.1,
+              "fontFamily": "Geist Mono",
+              "fontSize": 9,
+              "fontWeight": "bold"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ShpWin04",
+          "x": 800,
+          "y": 660,
+          "name": "FRAME_NPC_SHOP_REDSGN_SELL · Venta de Botín",
+          "clip": true,
+          "width": 640,
+          "height": 360,
+          "fill": "#15100D",
+          "cornerRadius": 10,
+          "stroke": "#C89445",
+          "strokeWidth": 1,
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "7880a0",
+              "x": 24,
+              "y": 20,
+              "name": "Shop Title",
+              "fill": "#F4EDE0",
+              "textGrowth": "fixed-width",
+              "width": 380,
+              "content": "Venta de Botín",
+              "lineHeight": 1.1,
+              "fontFamily": "Playfair Display",
+              "fontSize": 18,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "text",
+              "id": "809077",
+              "x": 24,
+              "y": 44,
+              "name": "Shop Subtitle",
+              "fill": "#A09285",
+              "textGrowth": "fixed-width",
+              "width": 380,
+              "content": "Móvil · Touch UI",
+              "lineHeight": 1.1,
+              "fontFamily": "Geist Mono",
+              "fontSize": 10,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "frame",
+              "id": "af850e",
+              "x": 590,
+              "y": 20,
+              "name": "Button Close",
+              "width": 26,
+              "height": 26,
+              "fill": "#211916",
+              "cornerRadius": 4,
+              "stroke": "#6B4A2B",
+              "strokeWidth": 1,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "9100a6",
+                  "name": "Icon Close",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "Assets/Icons/UI/Common/Icon_UI_close.png",
+                    "mode": "contain"
+                  },
+                  "width": 18,
+                  "height": 18
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "4375ed",
+              "x": 440,
+              "y": 21,
+              "name": "Player Gold Bar",
+              "width": 140,
+              "height": 24,
+              "fill": "#17120F",
+              "cornerRadius": 4,
+              "stroke": "#4A3B2C",
+              "strokeWidth": 1,
+              "padding": [
+                0,
+                8
+              ],
+              "alignItems": "center",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "bdd9c2",
+                  "name": "Gold Icon",
+                  "width": 14,
+                  "height": 14,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                    "mode": "contain"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "c5133c",
+                  "name": "Gold Amount",
+                  "fill": "#C89445",
+                  "content": "340 Oro",
+                  "fontFamily": "Geist Mono",
+                  "fontSize": 11,
+                  "fontWeight": "bold"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "f6e60e",
+              "x": 24,
+              "y": 66,
+              "name": "Tab Bar Container",
+              "width": 260,
+              "height": 34,
+              "fill": "#15100D",
+              "cornerRadius": 6,
+              "stroke": "#3A2C23",
+              "strokeWidth": 1,
+              "padding": 3,
+              "gap": 6,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "1febf4",
+                  "name": "Tab Comprar",
+                  "width": 124,
+                  "height": 28,
+                  "fill": "#211916",
+                  "cornerRadius": 4,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "dbaeef",
+                      "name": "Tab Comprar Label",
+                      "fill": "#B5A79A",
+                      "content": "COMPRAR",
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "a72b0f",
+                  "name": "Tab Vender",
+                  "width": 124,
+                  "height": 28,
+                  "fill": "#C89445",
+                  "cornerRadius": 4,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "0f86b9",
+                      "name": "Tab Vender Label",
+                      "fill": "#15100D",
+                      "content": "VENDER",
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "dad110",
+              "x": 24,
+              "y": 114,
+              "name": "Scrollable Items Container (2 Col)",
+              "clip": true,
+              "width": 574,
+              "height": 208,
+              "fill": null,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "749af6",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Card · Carne de Jabalí de Caza",
+                  "width": 280,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A2828",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "1d71b4",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "759c78",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Consumables/Icon_Item_boar_meat.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "e7f76a",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 133,
+                      "content": "Carne de Jabalí de Caza",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "109c76",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "9603a8",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 113,
+                      "content": "4 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "b8fda7",
+                      "x": 196,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#6B2A2A",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "1ac12d",
+                          "name": "Btn Label",
+                          "fill": "#F4EDE0",
+                          "content": "VENDER",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "f85def",
+                      "x": 38,
+                      "y": 40,
+                      "name": "Qty Badge",
+                      "width": 20,
+                      "height": 16,
+                      "fill": "#211916",
+                      "cornerRadius": 3,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "078e2e",
+                          "name": "Qty Text",
+                          "fill": "#F4EDE0",
+                          "content": "x5",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 8.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "13de39",
+                  "x": 294,
+                  "y": 0,
+                  "name": "Card · Mena de Hierro Nórdico",
+                  "width": 280,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A2828",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "9382eb",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "a2a291",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Materials/Icon_Item_iron_ore.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "1eb0a8",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 133,
+                      "content": "Mena de Hierro Nórdico",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "56eb40",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "a70a57",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 113,
+                      "content": "6 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "a17cfc",
+                      "x": 196,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#6B2A2A",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "c16b1b",
+                          "name": "Btn Label",
+                          "fill": "#F4EDE0",
+                          "content": "VENDER",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "e82a32",
+                      "x": 38,
+                      "y": 40,
+                      "name": "Qty Badge",
+                      "width": 20,
+                      "height": 16,
+                      "fill": "#211916",
+                      "cornerRadius": 3,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "2886c3",
+                          "name": "Qty Text",
+                          "fill": "#F4EDE0",
+                          "content": "x12",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 8.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "4bc0a8",
+                  "x": 0,
+                  "y": 74,
+                  "name": "Card · Polvo de Escarcha Glacial",
+                  "width": 280,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A2828",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "bbf7e3",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "bbb6cc",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Materials/Icon_Item_frost_dust.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "b349e9",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 133,
+                      "content": "Polvo de Escarcha Glacial",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "d7ebb9",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "422f31",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 113,
+                      "content": "7 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "345e41",
+                      "x": 196,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#6B2A2A",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "131010",
+                          "name": "Btn Label",
+                          "fill": "#F4EDE0",
+                          "content": "VENDER",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "509391",
+                      "x": 38,
+                      "y": 40,
+                      "name": "Qty Badge",
+                      "width": 20,
+                      "height": 16,
+                      "fill": "#211916",
+                      "cornerRadius": 3,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "5e77bf",
+                          "name": "Qty Text",
+                          "fill": "#F4EDE0",
+                          "content": "x8",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 8.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "a526a5",
+                  "x": 294,
+                  "y": 74,
+                  "name": "Card · Frasco con Espíritu Esmeralda",
+                  "width": 280,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A2828",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "306602",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "9d5392",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Materials/Icon_Item_green_wisp_jar.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "8f0821",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 133,
+                      "content": "Frasco con Espíritu Esmeralda",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "42d309",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "17ebb7",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 113,
+                      "content": "14 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "f5727a",
+                      "x": 196,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#6B2A2A",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "550e11",
+                          "name": "Btn Label",
+                          "fill": "#F4EDE0",
+                          "content": "VENDER",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "29affd",
+                      "x": 38,
+                      "y": 40,
+                      "name": "Qty Badge",
+                      "width": 20,
+                      "height": 16,
+                      "fill": "#211916",
+                      "cornerRadius": 3,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "bf336e",
+                          "name": "Qty Text",
+                          "fill": "#F4EDE0",
+                          "content": "x2",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 8.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "b1dbed",
+                  "x": 0,
+                  "y": 148,
+                  "name": "Card · Brazales de Saqueador",
+                  "width": 280,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A2828",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "067d52",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "72b5e7",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Armor/Hunter/Icon_Item_raider_bracers.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "2c9d82",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 133,
+                      "content": "Brazales de Saqueador",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "20a7ed",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "7229a0",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 113,
+                      "content": "22 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ae608b",
+                      "x": 196,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#6B2A2A",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "c8ef3a",
+                          "name": "Btn Label",
+                          "fill": "#F4EDE0",
+                          "content": "VENDER",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ceca72",
+                      "x": 38,
+                      "y": 40,
+                      "name": "Qty Badge",
+                      "width": 20,
+                      "height": 16,
+                      "fill": "#211916",
+                      "cornerRadius": 3,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "e17a0b",
+                          "name": "Qty Text",
+                          "fill": "#F4EDE0",
+                          "content": "x1",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 8.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "cc5652",
+                  "x": 294,
+                  "y": 148,
+                  "name": "Card · Daga de Hierro Desgastada",
+                  "width": 280,
+                  "height": 64,
+                  "fill": "#1A1412",
+                  "cornerRadius": 6,
+                  "stroke": "#4A2828",
+                  "strokeWidth": 1,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "a49d75",
+                      "x": 10,
+                      "y": 8,
+                      "name": "Item Slot",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#15100D",
+                      "cornerRadius": 6,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "ca0ed9",
+                      "x": 14,
+                      "y": 12,
+                      "name": "Item Icon",
+                      "width": 40,
+                      "height": 40,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/Items/Weapons/OneHand/Icon_Item_sword_white.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "1a6ccb",
+                      "x": 66,
+                      "y": 14,
+                      "name": "Item Name",
+                      "fill": "#F4EDE0",
+                      "textGrowth": "fixed-width",
+                      "width": 133,
+                      "content": "Daga de Hierro Desgastada",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 11,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "770b48",
+                      "x": 66,
+                      "y": 36,
+                      "name": "Gold Icon",
+                      "width": 14,
+                      "height": 14,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "Assets/Icons/UI/Currency/Icon_UI_currency_gold.png",
+                        "mode": "contain"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "a29a24",
+                      "x": 84,
+                      "y": 38,
+                      "name": "Item Price",
+                      "fill": "#C89445",
+                      "textGrowth": "fixed-width",
+                      "width": 113,
+                      "content": "12 Oro",
+                      "lineHeight": 1.1,
+                      "fontFamily": "Geist Mono",
+                      "fontSize": 10,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "cc4811",
+                      "x": 196,
+                      "y": 18,
+                      "name": "Btn Action",
+                      "width": 72,
+                      "height": 28,
+                      "fill": "#6B2A2A",
+                      "cornerRadius": 4,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "8f2c3d",
+                          "name": "Btn Label",
+                          "fill": "#F4EDE0",
+                          "content": "VENDER",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 9.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "1e8f75",
+                      "x": 38,
+                      "y": 40,
+                      "name": "Qty Badge",
+                      "width": 20,
+                      "height": 16,
+                      "fill": "#211916",
+                      "cornerRadius": 3,
+                      "stroke": "#6B4A2B",
+                      "strokeWidth": 1,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "c982b4",
+                          "name": "Qty Text",
+                          "fill": "#F4EDE0",
+                          "content": "x1",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 8.5,
+                          "fontWeight": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "609a2d",
+              "x": 606,
+              "y": 114,
+              "name": "Catalog Scrollbar Track",
+              "width": 6,
+              "height": 208,
+              "fill": "#17120F",
+              "cornerRadius": 3,
+              "stroke": "#2E241D",
+              "strokeWidth": 1
+            },
+            {
+              "type": "rectangle",
+              "id": "871555",
+              "x": 606,
+              "y": 118,
+              "name": "Catalog Scrollbar Thumb",
+              "width": 6,
+              "height": 87,
+              "fill": "#C89445",
+              "cornerRadius": 3
+            },
+            {
+              "type": "text",
+              "id": "d0885d",
+              "x": 24,
+              "y": 334,
+              "name": "Footer Note",
+              "fill": "#7D6F63",
+              "textGrowth": "fixed-width",
+              "width": 572,
+              "content": "Desplaza la lista para revisar todo el inventario de tu mochila.",
+              "lineHeight": 1.1,
+              "fontFamily": "Geist Mono",
+              "fontSize": 9,
+              "fontWeight": "bold"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ShpSpec01",
+          "x": 1600,
+          "y": 120,
+          "name": "FRAME_NPC_SHOP_SPECS_HANDOFF_EST53",
+          "width": 1100,
+          "height": 900,
+          "fill": "#17120F",
+          "cornerRadius": 10,
+          "stroke": "#C89445",
+          "strokeWidth": 1,
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "13dee8",
+              "x": 28,
+              "y": 24,
+              "name": "Specs Title",
+              "fill": "#F4EDE0",
+              "textGrowth": "fixed-width",
+              "width": 1000,
+              "content": "ESPECIFICACIONES DE DISEÑO Y HANDOFF · REDISEÑO TIENDAS NPC",
+              "lineHeight": 1.1,
+              "fontFamily": "Playfair Display",
+              "fontSize": 18,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "text",
+              "id": "f4d141",
+              "x": 28,
+              "y": 64,
+              "name": "Specs Subtitle",
+              "fill": "#C89445",
+              "textGrowth": "fixed-width",
+              "width": 1000,
+              "content": "Arquitectura de 2 Columnas · Flexbox Centering en Botones · Scrollbar Visible · Tabs Comprar/Vender",
+              "lineHeight": 1.1,
+              "fontFamily": "Geist Mono",
+              "fontSize": 12,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "text",
+              "id": "d71c9e",
+              "x": 28,
+              "y": 108,
+              "name": "Specs Content 1",
+              "fill": "#D6C7B7",
+              "textGrowth": "fixed-width",
+              "width": 1040,
+              "content": "1. BOTONES CON CENTRADO NATIVO FLEXBOX (PENCIL CANONICAL):\n- Todos los botones (Comprar, Vender, Tabs y Badges) son marcos tipo 'frame' con layout flexbox (justifyContent: 'center', alignItems: 'center').\n- El texto interior usa tamaño auto sin coordenadas manuales, garantizando centrado matemático impecable en el renderer de Pencil.\n- Contraste visual claro: botón Comprar #C89445 con texto #15100D, botón Vender #6B2A2A con texto #F4EDE0.",
+              "lineHeight": 1.4,
+              "fontFamily": "Geist Mono",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "4d1e0d",
+              "x": 28,
+              "y": 240,
+              "name": "Specs Content 2",
+              "fill": "#D6C7B7",
+              "textGrowth": "fixed-width",
+              "width": 1040,
+              "content": "2. SCROLLINGFRAME Y BARRA DE DESPLAZAMIENTO VISIBLE:\n- Contenedor con clip: true para aislar y recortar el listado de 2 columnas.\n- Scrollbar visible a la derecha: Track oscuro (#17120F, 6px de ancho con borde #2E241D) y Thumb dorado nórdico (#C89445 con radio 3px).\n- Permite desplazamiento con rueda de ratón en PC y gesto táctil vertical en móvil.",
+              "lineHeight": 1.4,
+              "fontFamily": "Geist Mono",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "cbf829",
+              "x": 28,
+              "y": 380,
+              "name": "Specs Content 3",
+              "fill": "#D6C7B7",
+              "textGrowth": "fixed-width",
+              "width": 1040,
+              "content": "3. ANATOMÍA DE LA TARJETA DE ÍTEM:\n- Casilla cuadrada 48x48 px con fondo #15100D y borde de latón #6B4A2B.\n- Icono/render 3D de 40x40 px centrado.\n- Bloque derecho: Nombre en primera línea (#F4EDE0, 11px bold) y Precio en oro debajo (#C89445, 10px bold con icono oficial).\n- Botón de acción a la derecha alineado simétricamente.",
+              "lineHeight": 1.4,
+              "fontFamily": "Geist Mono",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "8e9e1f",
+              "x": 28,
+              "y": 550,
+              "name": "Specs Content 4",
+              "fill": "#A09285",
+              "textGrowth": "fixed-width",
+              "width": 1040,
+              "content": "4. TOKENS DE COLOR Y MATERIALES:\n- Fondo principal ventana: #15100D (Obsidiana / Cuero nórdico profundo)\n- Borde ventana: #C89445 (Latón Hearthbound Gold 1px)\n- Fondo tarjetas ítem: #1A1412 | Borde tarjeta: #4A3B2C\n- Botón Comprar: #C89445 | Botón Vender: #6B2A2A\n- Track Scrollbar: #17120F | Thumb Scrollbar: #C89445",
+              "lineHeight": 1.4,
+              "fontFamily": "Geist Mono",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
     }
   ],
   "fileToken": "390d70dc-aa60-4065-965b-d4bace68185c"

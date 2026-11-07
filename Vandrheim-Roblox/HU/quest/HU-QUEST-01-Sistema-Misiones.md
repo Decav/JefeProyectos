@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** QUEST — Sistema de misiones / retención
 **Prioridad:** Alta — retención de beta
-**Estado:** Abierta — lista para implementar (RC obligatorio del dev antes de programar)
+**Estado:** Implementada y validada funcionalmente por el PO (2026-11-04); QA/performance pendiente
 **Tipo:** Sistema nuevo (dev)
 **Fase GDD:** QUEST-01 (adelanto de R10+; decisión PO 2026-10-27)
 **Depende de:** HU-R2 (perfil/PJ), HU-R4/R5 (inventario/oro), HU-R6a/R6b (dungeon), HU-R6.5/R6.10/R6.35 (UI/menú/micromenú), HU-R8 (XP/nivel), HU-TUTORIAL-01 (onboarding; se coordina), `DataService`, `InventoryService`, `ClassService`, `DungeonService`, `EnemyService`, `LootService`, `CharacterService`
@@ -255,6 +255,7 @@ Reglas:
 * `LootService`/pickup: recogida.
 * `MenuUI`/micromenú/HUD: acceso y tracker.
 * `Tutorial-01`: la quest reemplaza las tarjetas de pasos; el panel de Ayuda se conserva; evitar doble onboarding.
+* `Tutorial-02` (prólogo): la misión de cuenta `prologo_caida_vandrheim` se maneja con `prologueStage` y reutiliza tracker/panel/marcadores; no usa `QuestState` por personaje. La onboarding se habilita recién al cerrar el prólogo con el Guía.
 * No cambia combate, loot, economía ni balance.
 
 ---
@@ -464,3 +465,4 @@ Reglas:
 | 2026-10-27 | Creación de HU-QUEST-01: framework de misiones con 1 activa, 5 pendientes, tracker/log/panel, objetivos MVP, dificultades con techo de rareza, claim atómico, NPC giver, marcadores world-space sin minimapa, persistencia y analítica. |
 | 2026-10-27 | **Cambio PO:** soporte de recompensas de paso y `choice`; la onboarding entrega la elección de arma inicial antes de la dungeon. |
 | 2026-10-31 | **Decisiones finales de UI:** tracker solo activo; sin log separado; detalle en el panel; elección de arma en el panel del Guía (no modal); notificaciones existentes. Paneles 2, 4 y 4b descartados. |
+| 2026-11-04 | **Validado funcionalmente por el PO:** quests, tracker, panel y Guía funcionan. Se documenta la integración con el prólogo (`prologueStage`) y queda QA/performance pendiente. |

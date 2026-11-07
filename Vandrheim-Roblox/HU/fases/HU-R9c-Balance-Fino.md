@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R9 — Demo estable / Balance (tercera parte)
 **Prioridad:** Alta
-**Estado:** Lista para implementar
+**Estado:** Diferida — no bloqueante de beta (decisión PO 2026-11-04); se reevalúa con datos de beta
 **Tipo:** Balance fino (dev) — solo números en configs, sobre datos de QA y playtest
 **Fase GDD:** R9 (posterior a R8d implementado y al playtest publicado con amigos)
 **Depende de:** HU-R8d (balance base implementado), HU-PUBLICAR-01/02 (playtest publicado), HU-R9a (party — números de dificultad grupal), HU-R9b (polish)
@@ -158,3 +158,4 @@ R8d dejó el balance **coherente y verificado** (bandas TTK/TTD por piso, power 
 | Fecha | Cambio |
 |-------|--------|
 | 2026-09-22 | Creación de HU-R9c: balance fino post-playtest — ajustes numéricos con fuente y tolerancias (±10–15%), verificación de bandas R8d (solo y party), QA final de demo y cierre de R9 |
+| 2026-11-04 | **Diferida por decisión PO:** el juego está suficientemente balanceado; R9c no bloquea la beta. Se mantiene como contingencia post-beta si los datos muestran desbalance. |

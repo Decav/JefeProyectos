@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Audio / Combate / Dungeon
 **Prioridad:** Alta — rompe la continuidad del combate final
-**Estado:** Abierta — lista para RC
+**Estado:** Fix implementado (reporte PO); QA de audio pendiente
 **Tipo:** Bugfix (dev)
 **Fase GDD:** Audio / Jefes
 **Depende de:** HU-R6.34 (MusicClient), HU-R7.1/R7.2 (combate de Jotunn), HU-TUTORIAL-02 + rc130 (prólogo: `PrologueMusic` y casteo forzado del rugido), HU-R6.31 (audio)
@@ -122,3 +122,4 @@ La música debe reproducirse de corrido durante todo el encuentro, sin reinicios
 | Fecha | Cambio |
 |---|---|
 | 2026-11-03 | Creación de HU-R6.47: la música de Jotunn se reinicia al castear el rugido; se documentan los puntos de `MusicClient` y `BossEncounterState` que pueden causar el corte y el fix propuesto (pista pegajosa, debounce y aislamiento de `PrologueMusic`). |
+| 2026-11-06 | Fix implementado (reporte PO); QA de audio pendiente en solo/party, PC/móvil. |

@@ -141,6 +141,13 @@ Se completa a medida que se incorporan assets reales (obligatorio en DoD de HU-A
 | 70388794256162 | Música | Vandrheim-Frost-Dungeon3-5 — pisos 3–5 (más intenso) | Aportado por el PO (subido) | Decavii | Uso propio | 2026-10-12 |
 | 126551601593677 | Música | Vandrheim-Frost-JotunnBossFight — batalla del jefe final | Aportado por el PO (subido) | Decavii | Uso propio | 2026-10-12 |
 | 121076782362772 | Icono | Icon_Menu_nameplates — botón toggle de nameplates (micromenú) | Aportado por el PO (subido) | Decavii | Uso propio | 2026-10-12 |
+| 100477087334778 | Icono | Icon_Item_frost_dust — Polvo de escarcha (HU-R6.50) | Aportado por el PO (Decavii) | Decavii | Uso propio | 2026-11-04 |
+| 88415197605482 | Body Skin | Shirt — Guardia de Valgard Puerta (HU-ESTETICA-52) | Producción propia (DesignAgent / EST-52) | Decavii | Uso propio | 2026-11-06 |
+| 81266561479192 | Body Skin | Pants — Guardia de Valgard Puerta (HU-ESTETICA-52) | Producción propia (DesignAgent / EST-52) | Decavii | Uso propio | 2026-11-06 |
+| 87819650254549 | Body Skin | Shirt — Ayudante de Herrería (HU-ESTETICA-52) | Producción propia (DesignAgent / EST-52) | Decavii | Uso propio | 2026-11-06 |
+| 131135835792445 | Body Skin | Pants — Ayudante de Herrería (HU-ESTETICA-52) | Producción propia (DesignAgent / EST-52) | Decavii | Uso propio | 2026-11-06 |
+| 78430914134815 | Body Skin | Shirt — Tabernero de Valgard Civil (HU-ESTETICA-52) | Producción propia (DesignAgent / EST-52) | Decavii | Uso propio | 2026-11-06 |
+| 135113559315871 | Body Skin | Pants — Tabernero de Valgard Civil (HU-ESTETICA-52) | Producción propia (DesignAgent / EST-52) | Decavii | Uso propio | 2026-11-06 |
 
 **Actualización 2026-10-22:** el ID registrado corresponde a la versión anterior con fondo negro. El reemplazo transparente aprobado está en `Assets/Icons/UI/Menu/Icon_Menu_nameplates.png`; requiere volver a subirse para que Roblox use la versión nueva.
 
@@ -164,3 +171,4 @@ Se completa a medida que se incorporan assets reales (obligatorio en DoD de HU-A
 | 2026-08-12 | Iconos con IA (Gemini) habilitados: PNG 512×512 transparente; batch Paladín (armas/armaduras/pociones) en curso; catálogo completo en R8 |
 | 2026-08-23 | HU-R6.1 integra los sonidos existentes de `FootstepSystem` por material; no crea nuevos paquetes SFX ni envía eventos por cada pisada |
 | 2026-08-26 | **VFX con partículas confirmado** (ParticleEmitter/Beam/Trail, client-side con autoridad server). R6.8/R6.9 (VFX básico y zonas AoE) completas; **VFX únicos por skill en R8a/b/c (por clase)**; SFX/sonido → R9 |
+| 2026-11-04 | Registrado `Icon_Item_frost_dust` (`100477087334778`, Image, Decavii) para la misión diaria de HU-R6.50 |

@@ -27,17 +27,19 @@
 
 ## 2. Estado actual (resumen)
 
-**Base jugable:** R0–R9 con combate, progresión, inventario, dungeon de 5 pisos, jefes, loot, party/matchmaking y UI. R9 en cierre (R9c pendiente).
+**Base jugable:** R0–R9 con combate, progresión, inventario, dungeon de 5 pisos, jefes, loot, party/matchmaking y UI. R9 en cierre; **R9c diferida** (no bloqueante, decisión PO 2026-11-04).
 
-**Implementado (reporte PO 2026-10-27; QA/verificación pendiente):** R6.44, R6.10, R2.2 y onboarding. R8d confirmado 2026-10-23.
+**Implementado y validado funcionalmente (PO 2026-11-04):** R6.44, R6.45, R6.46, R6.10, R2.2, onboarding, quests, prólogo/TUTORIAL-02, ITEMS-07 e ITEMS-08. R8d confirmado 2026-10-23. R6.48 PoC aprobada; R6.47 con fix reportado y QA de audio pendiente. QA/performance pendiente.
+
+**Implementado (reporte PO 2026-11-06), QA pendiente:** R6.49 (mapa/Hub), R6.50 (diaria), R6.51 (tienda rotativa) y R6.52 (NPCs ambientales). La decisión del mapa queda resuelta: el mapa nuevo es el Hub activo.
 
 **Pendiente antes de beta:**
 
-* R6.45 — pools del Jotunn, salto tras revivir y reset de arena en party.
-* R9c — balance fino.
+* R6.47 — QA de audio de Jotunn (fix reportado; confirmar en build).
+* QA de R6.49–R6.52: mapa/Hub, diaria, tienda rotativa y NPCs ambientales.
 * Performance móvil y pruebas de carga.
-* QA/verificación de R6.44, R6.10, R2.2 y onboarding.
-* Copy de lanzamiento en modo **beta**.
+* QA/verificación final de lo implementado.
+* Aprobación final del copy beta (`BETA_COPY.md`), thumbnail/icono y links.
 
 **Pendiente para 1.0:**
 
@@ -66,22 +68,30 @@
 
 | ID | Tema | Estado |
 |---|---|---|
-| R6.44 | Geometría, reintento de jefes, muerto inerte | Implementado (reporte PO 2026-10-27; QA pendiente) |
-| R6.45 | Pools del Jotunn, salto y reset de arena en party | Abierta; implementación pendiente |
+| R6.44 | Geometría, reintento de jefes, muerto inerte | Implementado y validado funcionalmente (2026-11-04); QA pendiente |
+| R6.45 | Pools del Jotunn, salto y reset de arena en party | Implementado y validado funcionalmente (2026-11-04); QA pendiente |
+| R6.46 | Ajustes de skills por clase | Implementado (reporte PO 2026-11-04); QA pendiente |
+| R6.47 | Música de Jotunn | Fix reportado; QA de audio pendiente |
 | R8d | Balance nivel 20 | Completo (confirmación PO 2026-10-23) |
-| R9c | Balance fino | Pendiente |
-| R6.10 | Menú in-game ESC | Implementado (reporte PO 2026-10-27; QA pendiente) |
-| R2.2 | Avatar starter + cabeza del jugador | Implementado (reporte PO 2026-10-27; QA pendiente) |
-| — | Onboarding/tutorial | Implementado (reporte PO 2026-10-27; QA pendiente) |
+| R9c | Balance fino | Diferida; no bloqueante (decisión PO 2026-11-04) |
+| R6.10 | Menú in-game ESC | Implementado y validado funcionalmente (2026-11-04); QA pendiente |
+| R2.2 | Avatar starter + cabeza del jugador | Implementado y validado funcionalmente (2026-11-04); QA pendiente |
+| — | Prólogo + onboarding + quests | Implementado y validado funcionalmente (2026-11-04); QA/performance pendiente |
 | — | Performance móvil | Pendiente |
 
 **P1 — deseable en beta, no bloqueante:**
 
 * EST-02/03/05 si el diseñador entrega a tiempo.
 * QoL de UI, sonidos y feedback.
-* **Sistema de misiones (adelanto de R10+):** `QUEST-01` framework + `QUEST-02` onboarding; ver `QUEST_SYSTEM.md` y `HU/quest/`. Objetivo: retención de primera sesión.
-* **Quest diaria + racha de inicio de sesión (propuesta PO 2026-10-27):** reutiliza `QUEST-01` para dar un motivo de retorno diario con recompensa creciente. HU a crear cuando se apruebe el alcance.
-* **Bonos del tier azul (2/4 piezas) y joyería (propuesta):** bonos de solo estadísticas al armar 2 y 4 piezas azules (armadura + joyería azul), con collares y anillos por tier. La joyería Helada se define aparte. Ver `HU-ITEMS-07`.
+* **Sistema de misiones (adelanto de R10+):** `QUEST-01` framework + `QUEST-02` onboarding; implementado y validado funcionalmente (2026-11-04). Ver `QUEST_SYSTEM.md` y `HU/quest/`.
+* **Mapa/Hub (HU-R6.49):** implementado (reporte PO 2026-11-06); QA pendiente. El mapa nuevo es el Hub activo y la decisión del mapa queda resuelta.
+* **Misiones diarias del Guía (HU-R6.50):** implementada (reporte PO 2026-11-06); QA pendiente. Polvo de escarcha (9 drops al 80 %) y cacería (6 enemigos normales, bandas por nivel; 12+ azul); 2 recompensas/día por personaje; abandonar permite reintentar, sin tablón. La racha de inicio de sesión queda como propuesta separada.
+* **Tienda rotativa (HU-R6.51):** implementada (reporte PO 2026-11-06); QA pendiente. Mercader Errante con hasta 10 ítems/día por servidor compartido, 1 azul garantizado, azul extra 20 %, morado 3 % (máx. 1); pool morado limitado a joyería y armas del Jotunn; verdes de armadura/joyería, sin blancos; precios 700/1500/3000.
+* **NPCs ambientales (HU-R6.52):** implementada (reporte PO 2026-11-06); QA pendiente. 8 aldeanos caminando en Valgard + 3 viajeros en los caminos; rutas server-side, sin interacción, sin target ni loot.
+* **Valgard vivo (HU-R6.53 creada):** 9 NPCs nuevos + perro, 5 microescenas, props/audio, 6 POIs en caminos y 8 coleccionables de lore con persistencia por personaje; usa placeholders hasta la aprobación de EST-52.
+* **Revisión de modelos nuevos (HU-ESTETICA-52 aprobada y entregada):** paquete de 6 NPCs R15 100% body skin, 14 props y 6 POIs en Workspace.TestPlace; niños y perro descartados por PO; fauna pasiva diferida a P1; arte aprobado para integración directa en R6.53.
+* **Bonos del tier azul (2/4 piezas) y joyería:** implementados en ITEMS-07/08 (reporte PO 2026-11-04); QA pendiente. Ver `HU-ITEMS-07` y `HU-ITEMS-08`.
+* **R6.48 PoC de mapa aprobada (2026-11-04):** el mapa de terreno pueblo + Helada ya es el Hub activo mediante HU-R6.49; el pipeline sirve como base de v2. QA de mapa pendiente.
 * Dificultades de dungeon y oleadas (si no retrasan P0).
 
 **Criterios de salida de beta (para pasar a 1.0):**
@@ -98,10 +108,13 @@
 
 **Checklist de apertura:**
 
-* [ ] R6.44 verificada/QA (implementada según PO).
-* [ ] R6.45 implementada y QA.
-* [ ] R8d completo; R9c cerrado o con riesgo aceptado por el PO.
-* [ ] R6.10 y onboarding verificados (implementados según PO).
+* [ ] R6.44 verificada/QA (implementada y validada funcionalmente).
+* [ ] R6.45 verificada/QA (implementada y validada funcionalmente).
+* [ ] R6.46 verificada/QA (implementada según PO).
+* [ ] R6.47 verificada/QA de audio (fix reportado).
+* [ ] R8d completo; R9c diferida; monitoreo de balance en beta.
+* [ ] R6.10, prólogo, onboarding y quests verificados (validados funcionalmente).
+* [ ] R6.49–R6.52 verificadas/QA (mapa/Hub, diaria, tienda y NPCs ambientales).
 * [ ] R2.2 verificada (implementada según PO).
 * [ ] Copy de Roblox y Discord en modo beta.
 * [ ] Analítica de Roblox activada (funnel, retención, crashes).
@@ -149,7 +162,7 @@
 |---|---|---|---|
 | P2 | **v2.0 Fuego/Lava** | Bioma, dungeon, jefe, loot, nivel máximo | 1.0 estable |
 | P2 | **Profesiones** | Sistema horizontal de recolección/crafting o equivalente; no reemplaza combate | Economía e inventario estables |
-| P2 | **Dificultades de dungeon** | Modos normal/heroico o escalado configurable | Balance R8d/R9c |
+| P2 | **Dificultades de dungeon** | Modos normal/heroico o escalado configurable | Balance R8d + datos de beta |
 | P2 | **Oleadas PvE infinitas** | Modo repeatable con recompensas y ranking simple | Combate y balance estables |
 | P2 | **Clase nueva: Templario** | Clase + specs + skills + talentos + assets | 1.0 y pipeline de clases |
 | P2 | **Subidas de nivel** | Nuevo cap y contenido por expansión | Cada expansión |
@@ -205,3 +218,9 @@
 |---|---|
 | 2026-10-27 | Creación del roadmap: decisión de beta abierta, ruta beta → 1.0 → v2 Fuego/Lava, backlog post-1.0 con profesiones, clases, niveles, biomas, PvP, mundo abierto y sistemas de retención. |
 | 2026-10-27 | Se anotan dos propuestas: quest diaria + racha (retención) y afinidad de clase del tier azul (`HU-ITEMS-07`). |
+| 2026-11-04 | **Validación funcional del PO:** tutorial, quests y prólogo funcionan; R9c se difiere por balance suficiente; R6.48 PoC de mapa aprobada; único bug abierto R6.47 (música de Jotunn). |
+| 2026-11-04 | **HUs R6.49/R6.50/R6.51 creadas:** integración del mapa como Hub activo con zonas/banners; ácaros + misiones diarias del Guía (polvo de escarcha/cacería, 2 recompensas/día por personaje; abandonar permite reintentar); Mercader Errante con tienda rotativa diaria compartida por servidor. |
+| 2026-11-05 | **HU-R6.52 creada:** NPCs ambientales caminando (8 aldeanos en Valgard + 3 viajeros en caminos), server-side, sin interacción, sin target ni loot; rutas con waypoints, pausas y recuperación, sin aparecer en dungeon. |
+| 2026-11-06 | **R6.49–R6.52 implementadas (reporte PO 2026-11-06):** mapa/Hub integrado, diaria, tienda rotativa y NPCs ambientales; decisión de mapa resuelta. QA de las cuatro pendiente; R6.47 con fix reportado y QA de audio pendiente. |
+| 2026-11-06 | **HU-R6.53 y HU-ESTETICA-52 creadas:** Valgard vivo (NPCs con rutinas, microescenas, props/audio, POIs y coleccionables) y compuerta de revisión de modelos nuevos para integrar arte final. |
+| 2026-11-06 | **HU-ESTETICA-52 aprobada y entregada:** staging completo en Studio (6 NPCs R15, 14 props, 6 POIs); niños y perro descartados por PO; fauna diferida a P1; arte listo para HU-R6.53. |

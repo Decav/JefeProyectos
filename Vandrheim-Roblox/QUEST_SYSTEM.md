@@ -1,7 +1,7 @@
 # Vandrheim — Diseño del sistema de misiones
 
 **Proyecto:** Vandrheim (Roblox MVP)
-**Estado:** Diseño aprobado por el PO (2026-10-27); implementación pendiente
+**Estado:** Implementado y validado funcionalmente por el PO (2026-11-04); QA/performance pendiente
 **Alcance:** framework de misiones + primera quest de onboarding
 **Fuente:** GDD §14 (R10+), decisiones PO 2026-10-27
 **HUs:** `HU/quest/HU-QUEST-01-Sistema-Misiones.md` y `HU/quest/HU-QUEST-02-Onboarding-Quest.md`
@@ -99,6 +99,7 @@ Reglas:
 * Por ahora, **solo el Guía de la Helada** da misiones.
 * El Guía está cerca del spawn, visible, con icono de quest y prompt simple; no tiene diálogo ramificado ni tienda.
 * La onboarding arranca automáticamente; el paso 1 es hablar con el Guía y el paso 2 es elegir el arma inicial antes de entrar a la dungeon.
+* **Prólogo (`TUTORIAL-02`):** la misión de cuenta `prologo_caida_vandrheim` se maneja con `prologueStage` y reutiliza el tracker/panel/marcadores. El Guía cierra primero el prólogo y recién después ofrece `intro_helada`; la onboarding no se auto-inicia antes de ese cierre.
 * Misiones futuras: se aceptan en el NPC (`!`) y se entregan en el NPC (`?`).
 * Si el jugador tiene 5 pendientes, no puede aceptar otra; el NPC lo explica.
 * El panel puede mostrar disponibles, pero la aceptación se hace en el NPC.
@@ -245,3 +246,4 @@ El sistema debe soportar `nextQuestId` desde el día 1 para encadenar misiones s
 | 2026-10-27 | Diseño aprobado: 1 activa, 5 pendientes, tracker + log 3 + panel, marcadores world-space sin minimapa, dificultades con techo de rareza, claim atómico con validación de mochila, Guía como único NPC, progreso personal y onboarding con XP a nivel 2 + 10 pociones. |
 | 2026-10-27 | **Cambio PO:** la primera recompensa de la onboarding es elegir el arma inicial antes de entrar a la dungeon (recompensa de paso); la recompensa final (XP nivel 2 + 10 pociones) se mantiene. |
 | 2026-10-31 | **Decisiones finales de UI:** tracker solo con la misión activa; sin quest log separado; el detalle va al Cuaderno; la elección de arma se hace dentro del panel del Guía (sin modal); las notificaciones reutilizan el sistema existente. Paneles 2, 4 y 4b descartados. |
+| 2026-11-04 | **Validado funcionalmente por el PO:** tutorial, misiones y prólogo funcionan. Se documenta la secuencia prólogo → creación → Guía → onboarding y que la onboarding no se auto-inicia antes del cierre del prólogo. |

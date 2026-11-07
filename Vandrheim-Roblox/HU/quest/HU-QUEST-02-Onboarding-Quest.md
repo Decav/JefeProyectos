@@ -3,10 +3,10 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** QUEST — Onboarding / retención
 **Prioridad:** Alta — primera sesión de beta
-**Estado:** Abierta — lista para implementar (RC obligatorio del dev antes de programar)
+**Estado:** Implementada y validada funcionalmente por el PO (2026-11-04); QA/performance pendiente
 **Tipo:** Contenido de misión + NPC Guía (dev)
 **Fase GDD:** QUEST-02 (primera quest; adelanto de R10+; decisión PO 2026-10-27)
-**Depende de:** HU-QUEST-01 (framework), HU-TUTORIAL-01 (onboarding actual; se coordina), HU-R2 (perfil/PJ), HU-R6a/R6b (dungeon), HU-R8 (XP/nivel), `InventoryService`, `DataService`, modelo/placeholder del Guía
+**Depende de:** HU-QUEST-01 (framework), HU-TUTORIAL-01 (onboarding actual; se coordina), HU-TUTORIAL-02 (prólogo y cierre en el Guía), HU-R2 (perfil/PJ), HU-R6a/R6b (dungeon), HU-R8 (XP/nivel), `InventoryService`, `DataService`, modelo/placeholder del Guía
 **Componentes observados:** `QuestConfig`, `QuestService`, HUD/tracker, portal de la Helada, primer piso, loot, Guía del hub
 **No modifica:** combate, loot, dungeon, economía, clases ni balance.
 
@@ -110,11 +110,12 @@ Reglas:
 * `ProximityPrompt` (E / tap) que abre el panel simple de la quest.
 * No es vendor, no tiene tienda ni diálogo ramificado.
 * Marcador `!`/`?` y haz/icono según el estado; el paso 1 es hablar con él y el paso 2 es elegir el arma.
+* El Guía cierra primero `prologo_caida_vandrheim` (si está activo) y luego ofrece `intro_helada`; no iniciar la onboarding antes de ese cierre.
 * Al hablar en el paso 2, abre el estado de elección de arma dentro del mismo panel del Guía; al completar los pasos, mantiene `?` hasta que el jugador reclame; si la mochila está llena, sigue `?` y muestra “Mochila llena”.
 
 #### 3. Auto-start y skip
 
-* Al crear/seleccionar un personaje nuevo sin la quest, el servidor la auto-acepta y la marca `active`.
+* Al crear/seleccionar un personaje nuevo sin la quest: si `prologueStage = done` (prólogo cerrado o veterano), el servidor la auto-acepta; si viene de `prologueStage = town`, la onboarding se ofrece al cerrar `prologo_caida_vandrheim` con el Guía y recién entonces queda `active`. No se auto-inicia antes del cierre del prólogo.
 * Si el personaje ya la tiene (rejoin), no se duplica; se restaura el estado.
 * Si la cuenta tiene otro personaje con `intro_helada` en `rewarded` o `skipped`, el jugador puede **omitir** la onboarding **después de elegir el arma** en el personaje nuevo, sin recompensa final.
 * Si no hay personaje previo completado, no se puede omitir; el jugador puede ignorar la quest, pero el tracker sigue.
@@ -386,3 +387,4 @@ Reglas:
 | 2026-10-27 | Creación de HU-QUEST-02: primera quest `intro_helada` con Guía, 5 pasos, XP a nivel 2 + 10 pociones comunes, claim atómico, marcadores world-space y coordinación con TUTORIAL-01. |
 | 2026-10-27 | **Cambio PO:** la primera recompensa es elegir el arma inicial antes de la dungeon (paso 2, 2 opciones por clase); la quest pasa a 6 pasos y la recompensa final sigue siendo XP nivel 2 + 10 pociones. Skip solo después de elegir el arma. |
 | 2026-10-31 | **Decisiones finales de UI:** la elección de arma se hace dentro del panel del Guía (sin modal); tracker solo activo; sin log separado; notificaciones existentes. Los paneles 2, 4 y 4b quedan descartados. |
+| 2026-11-04 | **Validado funcionalmente por el PO:** tutorial, misiones y prólogo funcionan. Se aclara que la onboarding no se auto-inicia antes de cerrar `prologo_caida_vandrheim` con el Guía. QA/performance pendiente. |

@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Combate / Skills
 **Prioridad:** Alta — corrige golpes que no conectan y define el rol del tanque
-**Estado:** Abierta — lista para RC
+**Estado:** Implementada (reporte PO 2026-11-04; QA/verificación pendiente)
 **Tipo:** Ajuste de contenido y framework de skills (dev)
 **Fase GDD:** Combate (correcciones sobre R8a–R8c / R8d)
 **Depende de:** HU-R3 (framework de skills), HU-R8a/b/c (contenido por clase), HU-R6.8/R8 (VFX), HU-R6.16 (curación a aliados), HU-R6.31 (`NotificationFrame`), HU-ITEMS-03 (bono de 4 piezas de Puntería), SKILLS_CATALOG, `SkillService`, `CombatService`

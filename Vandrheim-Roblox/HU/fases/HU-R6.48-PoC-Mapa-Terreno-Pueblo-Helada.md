@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Mundo / Hub / PoC técnico
 **Prioridad:** Media — validación antes de invertir en el mundo final
-**Estado:** Abierta — PoC para aprobación (el dev prepara RC antes de construir)
+**Estado:** Completada — PoC aprobada por el PO (2026-11-04); decisión de mundo pendiente
 **Tipo:** Prueba de concepto de mundo (dev + apoyo de diseño)
 **Fase GDD:** Mundo / Hub (previo a la expansión de biomas)
 **Depende de:** HU-ESTETICA-26 (pueblo completo), HU-ESTETICA-27 (integración de NPCs), HU-ESTETICA-28 (zona Helada/entrada), HU-R9a.2 (portal/matchmaking), `StreamingEnabled`, `Lighting`

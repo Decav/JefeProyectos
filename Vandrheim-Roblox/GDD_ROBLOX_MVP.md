@@ -430,7 +430,7 @@ StarterGui/
 | **R8b** | **Completo** (2026-09-11) | Cazador completo (Asalto + Puntería) + VFX por skillId | Cazador jugable con builds melee y ranged; iconos finales pendientes de carga/registro |
 | **R8c** | **Completo** (2026-09-18) | Clérigo completo (Misericordia + Cólera) + VFX por skillId | Clérigo jugable con builds heal y dps; QA cerrado según reporte |
 | **R8d** | **Completo** (confirmación PO 2026-10-23) | Balance de números + assets (iconos 30) + QA a nivel 20 — **HU-R8d cerrada** | Las 6 specs se sienten distintas y el arco a 20 funciona |
-| **R9** | En cierre — R9c pendiente | Party/matchmaking (R9a), audio/polish (R9b) y balance fino (R9c) | Demo estable |
+| **R9** | En cierre — R9c diferida (decisión PO 2026-11-04) | Party/matchmaking (R9a), audio/polish (R9b) y balance fino (R9c, contingencia post-beta) | Demo estable |
 | **R10+** | Backlog propuesto, post-lanzamiento y sin priorizar | Expansión a semi-mundo abierto (nuevos biomas, enemigos y bosses de mundo, misiones); profesiones; progresión ampliada (subir el nivel máximo, nuevas habilidades/talentos e ítems); ampliar creación/personalización de personajes; PvP; modo PvE de oleadas infinitas con recompensas; selección de dificultad en dungeons; efectos y otros cosméticos | Ideas PO; prioridad y dependencias en `ROADMAP.md`; crear HUs solo al aprobar alcance |
 
 > **Beta abierta (decisión PO 2026-10-27):** la Helada se lanza primero como **beta abierta**, no como 1.0. La ruta beta → 1.0 → v2 Fuego/Lava y el backlog post-1.0 viven en `ROADMAP.md`.
@@ -748,6 +748,11 @@ Ver `HU/fases/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º 
 | 2026-10-27 | **R6.10 y onboarding implementados** según reporte del PO (QA/verificación pendiente); el menú ESC y el tutorial quedan listos para la beta. |
 | 2026-10-27 | **HU-R6.45 creada:** pools del Jotunn visibles durante todo su daño, salto restaurado tras revivir y reset de arena en party cuando no queda ningún vivo dentro. |
 | 2026-10-27 | **QUEST-01/02 creadas (adelanto de R10+):** framework de misiones + onboarding con el Guía; objetivo retención de primera sesión. Diseño en `QUEST_SYSTEM.md`. |
+| 2026-11-04 | **Validación funcional del PO:** tutorial, quests y prólogo funcionan; R9c se difiere por balance suficiente; R6.48 PoC de mapa aprobada; único bug abierto R6.47 (música de Jotunn). |
+| 2026-11-04 | **HU-R6.49 creada:** el mapa aprobado de R6.48 pasa a Hub activo, se archiva el viejo, se conectan NPCs/vendors/Guía/subasta/portal y se agregan zonas con banner. **HU-R6.50 creada/ajustada:** ácaros de escarcha y misiones diarias del Guía (polvo de escarcha y cacería, 2 recompensas/día por personaje; abandonar permite reintentar). **HU-R6.51 creada/ajustada:** Mercader Errante con tienda rotativa diaria compartida por servidor. |
+| 2026-11-05 | **HU-R6.52 creada:** NPCs ambientales caminando (8 aldeanos en Valgard + 3 viajeros en caminos), server-side, sin interacción, sin target ni loot; con rutas, pausas, recuperación y gate para no aparecer en dungeon. |
+| 2026-11-06 | **R6.49–R6.52 implementadas (reporte PO):** mapa/Hub integrado, misión diaria del Guía, tienda rotativa y NPCs ambientales. La decisión del mapa queda resuelta; QA de las cuatro pendiente. |
+| 2026-11-06 | **HU-R6.53 y HU-ESTETICA-52 creadas:** Valgard vivo (NPCs con rutinas, microescenas, props/audio, POIs y coleccionables) y revisión de modelos nuevos para integrar arte final. |
 
 ---
 
@@ -755,7 +760,7 @@ Ver `HU/fases/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º 
 
 > Este apartado reemplaza la lista anterior (R6.7/R6.8/R6.9 y EST-02/03 como “próximo”), que ya está completada o reordenada.
 
-1. **Verificar y cerrar lo que queda de beta:** QA de R6.44, R6.10, R2.2 y onboarding (implementados según PO 2026-10-27); implementar R6.45 (pools del Jotunn, salto y reset de party); R8d confirmado 2026-10-23; cerrar R9c (balance fino) y performance.
+1. **Verificar y cerrar lo que queda de beta:** QA de R6.44, R6.45, R6.46, R6.10, R2.2, prólogo, onboarding y quests (implementados y validados funcionalmente según PO 2026-11-04); corregir R6.47 (música de Jotunn); R8d confirmado 2026-10-23; R9c diferida (monitoreo de balance en beta) y performance.
 2. **Preparar la beta abierta:** copy beta en Roblox y Discord, anuncios, analítica, política de datos/compras, known issues y plan de rollback.
 3. **Abrir la beta abierta** y ejecutar el plan de `ROADMAP.md`.
 4. **Cerrar beta → 1.0** cuando se cumplan los criterios de salida definidos en `ROADMAP.md`.
