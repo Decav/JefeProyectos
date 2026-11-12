@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="tIron" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#575258"/><stop offset=".5" stop-color="#343033"/><stop offset="1" stop-color="#201D20"/></linearGradient>
+    <linearGradient id="tBrass" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#E4BD67"/><stop offset=".52" stop-color="#C89445"/><stop offset="1" stop-color="#81572E"/></linearGradient>
+    <linearGradient id="tBone" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFF9EB"/><stop offset=".6" stop-color="#D6C8B3"/><stop offset="1" stop-color="#8D7966"/></linearGradient>
+    <linearGradient id="tBlue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#D4EDFA"/><stop offset=".5" stop-color="#8FB7D6"/><stop offset="1" stop-color="#4D7189"/></linearGradient>
+  </defs>
+  <g stroke="#251C18" stroke-width="13" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Beveled brass target brackets -->
+    <path d="M52 171V91h82m244 0h82v80M52 341v80h82m244 0h82v-80" fill="none" stroke="#261F1B" stroke-width="25"/>
+    <path d="M52 163V91h73m262 0h73v72M52 349v72h73m262 0h73v-72" fill="none" stroke="url(#tBrass)" stroke-width="15"/>
+    <path d="M64 150v-47h49m286 0h49v47M64 362v47h49m286 0h49v-47" fill="none" stroke="#F0D294" stroke-width="4"/>
+    <!-- Cold-steel horned helm with shaded side wings -->
+    <path d="M123 175 93 101l72 30 33 54m154 0 33-54 72-30-30 74" fill="url(#tIron)"/>
+    <path d="m109 126 48 20m246-20-48 20" fill="none" stroke="#838087" stroke-width="7"/>
+    <path d="M126 274c0-73 43-117 130-194 87 77 130 121 130 194v64L256 459 126 338v-64Z" fill="url(#tIron)"/>
+    <path d="M149 273c4-58 38-95 107-155 69 60 103 97 107 155l-22 20-85-33-85 33-22-20Z" fill="#514C52" stroke-width="8"/>
+    <path d="m161 279 95-36 95 36v49l-95 94-95-94v-49Z" fill="url(#tBone)" stroke-width="10"/>
+    <!-- Layered brow plates, eyes and central rune -->
+    <path d="m165 282 47-20 28 21-43 16-32-8m182-9-47-20-28 21 43 16 32-8" fill="url(#tBrass)" stroke-width="8"/>
+    <path d="m193 287 28-9m98 9-28-9" fill="none" stroke="url(#tBlue)" stroke-width="10"/>
+    <path d="m256 211 37 37-37 37-37-37 37-37Z" fill="url(#tBrass)" stroke-width="9"/>
+    <path d="m256 225 23 23-23 23-23-23 23-23Z" fill="url(#tBlue)" stroke-width="7"/>
+    <path d="M256 232v31m-15-15h30" fill="none" stroke="#EAF6FC" stroke-width="5"/>
+    <!-- Faceted jaw guard and segmented mail -->
+    <path d="m190 329 31 7 35 37 35-37 31-7-66 67-66-67Z" fill="#B9AA96" stroke-width="8"/>
+    <path d="M222 370v23m34-15v27m34-35v23" fill="none" stroke="#5A5048" stroke-width="7"/>
+    <path d="M204 350h-22m148 0h-22" fill="none" stroke="url(#tBrass)" stroke-width="8"/>
+    <circle cx="153" cy="300" r="7" fill="url(#tBrass)"/><circle cx="359" cy="300" r="7" fill="url(#tBrass)"/>
+  </g>
+</svg>

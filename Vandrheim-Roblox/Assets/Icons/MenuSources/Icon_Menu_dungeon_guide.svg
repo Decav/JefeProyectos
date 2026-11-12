@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="gParchment" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#FFF8E8"/><stop offset=".56" stop-color="#E8DCC7"/><stop offset="1" stop-color="#B7A58D"/></linearGradient>
+    <linearGradient id="gLeather" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#514B4C"/><stop offset=".5" stop-color="#302B2D"/><stop offset="1" stop-color="#1F1C1E"/></linearGradient>
+    <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#E5BF70"/><stop offset=".5" stop-color="#C89445"/><stop offset="1" stop-color="#80572F"/></linearGradient>
+    <linearGradient id="gInk" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#795D48"/><stop offset="1" stop-color="#3D3029"/></linearGradient>
+  </defs>
+  <g stroke="#251C18" stroke-width="13" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Parchment sheet with softly rolled, shaded edges -->
+    <path d="M101 121c92 24 218 24 310 0v269c-92-26-218-26-310 0V121Z" fill="url(#gParchment)"/>
+    <path d="M121 143v224m270-224v224" fill="none" stroke="#B69E7E" stroke-width="8" opacity=".7"/>
+    <path d="M145 158c60 11 162 11 222 0M145 350c67-13 155-13 222 0" fill="none" stroke="#FFF9EC" stroke-width="5" opacity=".8"/>
+    <path d="M88 126 66 87c107-49 273-49 380 0l-22 39c-96 24-240 24-336 0Z" fill="url(#gLeather)" stroke="url(#gGold)" stroke-width="10"/>
+    <path d="M88 387 66 426c107 49 273 49 380 0l-22-39c-96-24-240-24-336 0Z" fill="url(#gLeather)" stroke="url(#gGold)" stroke-width="10"/>
+    <path d="M99 101c96-36 218-36 314 0M99 412c96 36 218 36 314 0" fill="none" stroke="#E8C878" stroke-width="6"/>
+    <!-- Scroll rods, chased end caps and inset rivets -->
+    <path d="M80 81c-22 13-22 39 0 52m352-52c22 13 22 39 0 52M80 380c-22 13-22 39 0 52m352-52c22 13 22 39 0 52" fill="url(#gGold)" stroke-width="9"/>
+    <circle cx="78" cy="107" r="8" fill="#F3D994"/><circle cx="434" cy="107" r="8" fill="#F3D994"/>
+    <circle cx="78" cy="406" r="8" fill="#F3D994"/><circle cx="434" cy="406" r="8" fill="#F3D994"/>
+    <!-- Relief map: mountain marks, route and destination seal -->
+    <path d="m144 223 26-34 23 34 22-28 29 40m33 82 26-39 25 39 22-28 29 28" fill="none" stroke="#9A876F" stroke-width="8"/>
+    <path d="M165 266h67v44h89v-43h58" fill="none" stroke="#F4EDE0" stroke-width="24"/>
+    <path d="M165 266h67v44h89v-43h58" fill="none" stroke="url(#gInk)" stroke-width="13"/>
+    <circle cx="165" cy="266" r="13" fill="url(#gGold)"/>
+    <path d="m379 238 37 37-37 37-37-37 37-37Z" fill="url(#gGold)" stroke-width="9"/>
+    <path d="m379 251 24 24-24 24-24-24 24-24Z" fill="#8FB7D6" stroke-width="6"/>
+    <path d="m379 261 14 14-14 14-14-14 14-14Z" fill="#D9EDF7" stroke="none"/>
+  </g>
+</svg>

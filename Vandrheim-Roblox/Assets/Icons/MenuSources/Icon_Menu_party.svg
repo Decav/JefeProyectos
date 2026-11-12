@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="pgold" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#E2B965"/><stop offset=".48" stop-color="#C89445"/><stop offset="1" stop-color="#80552A"/></linearGradient>
+    <linearGradient id="pblue" x1="0" y1="0" x2=".85" y2="1"><stop stop-color="#B8D7EB"/><stop offset=".5" stop-color="#8FB7D6"/><stop offset="1" stop-color="#4F718F"/></linearGradient>
+    <linearGradient id="pcloth" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#FFF8E9"/><stop offset=".55" stop-color="#D9CBB4"/><stop offset="1" stop-color="#887763"/></linearGradient>
+    <linearGradient id="pleather" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#78543E"/><stop offset=".55" stop-color="#4F3429"/><stop offset="1" stop-color="#30231E"/></linearGradient>
+  </defs>
+  <g stroke="#251C18" stroke-width="13" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Rear companions, layered shoulders and padded tunics -->
+    <path d="M28 438v-27c0-62 39-107 97-117l32-5 30 20 21 45v91H28Z" fill="url(#pblue)"/>
+    <path d="M42 430v-31c0-42 23-73 61-88l-4 121H42Z" fill="#587B98" stroke="none"/>
+    <path d="M43 382c17-19 39-31 68-37m-61 66h84" fill="none" stroke="#C7D9E4" stroke-width="7" opacity=".8"/>
+    <path d="M304 354l21-45 30-20 32 5c58 10 97 55 97 117v27H304v-84Z" fill="url(#pgold)"/>
+    <path d="M412 311c37 15 60 46 60 88v31h-57l-3-119Z" fill="#8A602F" stroke="none"/>
+    <path d="M367 345c32 5 58 17 78 37m-44 29h61" fill="none" stroke="#F0D69B" stroke-width="7" opacity=".8"/>
+    <!-- Rear heads with simple modeled circlets -->
+    <path d="M82 194c0-37 28-65 64-65s64 28 64 65v16c0 36-28 64-64 64s-64-28-64-64v-16Z" fill="url(#pblue)"/>
+    <path d="M95 191c8-29 25-43 51-43s43 14 51 43l-9 15H104l-9-15Z" fill="url(#pgold)"/>
+    <path d="M103 170c10-18 24-27 43-27m-45 49h88" fill="none" stroke="#F5DFAE" stroke-width="7"/>
+    <path d="M302 194c0-37 28-65 64-65s64 28 64 65v16c0 36-28 64-64 64s-64-28-64-64v-16Z" fill="url(#pcloth)"/>
+    <path d="M314 191c8-29 25-43 52-43s43 14 51 43l-9 15h-85l-9-15Z" fill="url(#pblue)"/>
+    <path d="M323 170c10-18 24-27 43-27m-45 49h88" fill="none" stroke="#D8E9F2" stroke-width="7"/>
+    <!-- Front leader, inlaid cloak and layered collar -->
+    <path d="M105 455v-72c0-88 61-145 151-145s151 57 151 145v72H105Z" fill="url(#pleather)"/>
+    <path d="M127 438v-57c0-68 45-113 129-113s129 45 129 113v57H127Z" fill="url(#pcloth)" stroke-width="9"/>
+    <path d="M141 436v-49c0-27 7-51 20-69l48 16 47 40 47-40 48-16c13 18 20 42 20 69v49H141Z" fill="url(#pblue)" stroke-width="8"/>
+    <path d="m164 318 45 16 47 40 47-40 45-16m-137 30 45 39 45-39" fill="none" stroke="url(#pgold)" stroke-width="12"/>
+    <path d="m256 355 17 18-17 30-17-30 17-18Z" fill="url(#pgold)" stroke-width="8"/>
+    <path d="m256 365 8 8-8 15-8-15 8-8Z" fill="url(#pblue)" stroke="none"/>
+    <!-- Leader's face and chased circlet -->
+    <path d="M190 162c0-39 28-68 66-68s66 29 66 68v18c0 46-28 76-66 76s-66-30-66-76v-18Z" fill="url(#pcloth)"/>
+    <path d="M198 153c8-35 27-53 58-53s50 18 58 53l-11 19h-94l-11-19Z" fill="url(#pgold)"/>
+    <path d="M215 147c10-18 23-27 41-27s31 9 41 27m-80 13h78" fill="none" stroke="#F4D994" stroke-width="7"/>
+    <path d="m217 190 15-3m48 0 15 3" fill="none" stroke="#4A3428" stroke-width="7"/>
+    <path d="M232 201h9m30 0h9" fill="none" stroke="#392A24" stroke-width="7"/>
+    <path d="M256 194v20l-8 6m-3 4h22" fill="none" stroke="#9E7658" stroke-width="6"/>
+  </g>
+</svg>
