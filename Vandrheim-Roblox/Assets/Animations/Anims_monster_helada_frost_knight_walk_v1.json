@@ -1,0 +1,1017 @@
+{
+  "animation_name": "monster_helada_frost_knight_walk_v1",
+  "description": "Marcha pesada y marcial del Frost Knight: ciclo de marcha de 8 fases con contra-rotacion de torso, escudo en guardia defensiva frontal, balanceo equilibrado de espada, amortiguacion de impacto en cada talon y cierre de ciclo continuo.",
+  "total_frames": 72,
+  "fps": 60,
+  "intensity": 0.85,
+  "keyframes": [
+    {
+      "joint": "Torso",
+      "frame": 0,
+      "rotation": {
+        "x": 4.0,
+        "y": -8.0,
+        "z": -1.5
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.06,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 0,
+      "rotation": {
+        "x": -1.0,
+        "y": 6.0,
+        "z": 1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 0,
+      "rotation": {
+        "x": 26.0,
+        "y": -12.0,
+        "z": 14.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 0,
+      "rotation": {
+        "x": 12.0,
+        "y": 4.0,
+        "z": -12.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 0,
+      "rotation": {
+        "x": 24.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 0,
+      "rotation": {
+        "x": -22.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Sword",
+      "frame": 0,
+      "rotation": {
+        "x": 18.0,
+        "y": -4.0,
+        "z": 4.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Shield",
+      "frame": 0,
+      "rotation": {
+        "x": 2.0,
+        "y": 4.0,
+        "z": -6.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Torso",
+      "frame": 9,
+      "rotation": {
+        "x": 3.5,
+        "y": -4.0,
+        "z": -1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.02,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 9,
+      "rotation": {
+        "x": -0.5,
+        "y": 3.0,
+        "z": 0.5
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 9,
+      "rotation": {
+        "x": 24.0,
+        "y": -13.0,
+        "z": 13.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 9,
+      "rotation": {
+        "x": 6.0,
+        "y": 5.0,
+        "z": -13.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 9,
+      "rotation": {
+        "x": 14.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 9,
+      "rotation": {
+        "x": -10.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Sword",
+      "frame": 9,
+      "rotation": {
+        "x": 20.0,
+        "y": -5.0,
+        "z": 5.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Shield",
+      "frame": 9,
+      "rotation": {
+        "x": 2.0,
+        "y": 3.0,
+        "z": -6.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Torso",
+      "frame": 18,
+      "rotation": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.04,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 18,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 18,
+      "rotation": {
+        "x": 22.0,
+        "y": -14.0,
+        "z": 12.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 18,
+      "rotation": {
+        "x": -2.0,
+        "y": 6.0,
+        "z": -14.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 18,
+      "rotation": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": 0.5
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 18,
+      "rotation": {
+        "x": 8.0,
+        "y": 0.0,
+        "z": -0.5
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Sword",
+      "frame": 18,
+      "rotation": {
+        "x": 22.0,
+        "y": -6.0,
+        "z": 6.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Shield",
+      "frame": 18,
+      "rotation": {
+        "x": 1.0,
+        "y": 2.0,
+        "z": -7.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Torso",
+      "frame": 27,
+      "rotation": {
+        "x": 3.5,
+        "y": 4.0,
+        "z": 1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.02,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 27,
+      "rotation": {
+        "x": -0.5,
+        "y": -3.0,
+        "z": -0.5
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 27,
+      "rotation": {
+        "x": 26.0,
+        "y": -13.0,
+        "z": 13.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 27,
+      "rotation": {
+        "x": -8.0,
+        "y": 7.0,
+        "z": -14.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 27,
+      "rotation": {
+        "x": -14.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 27,
+      "rotation": {
+        "x": 18.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Sword",
+      "frame": 27,
+      "rotation": {
+        "x": 24.0,
+        "y": -7.0,
+        "z": 6.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Shield",
+      "frame": 27,
+      "rotation": {
+        "x": 2.0,
+        "y": 2.0,
+        "z": -7.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Torso",
+      "frame": 36,
+      "rotation": {
+        "x": 4.0,
+        "y": 8.0,
+        "z": 1.5
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.06,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 36,
+      "rotation": {
+        "x": -1.0,
+        "y": -6.0,
+        "z": -1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 36,
+      "rotation": {
+        "x": 30.0,
+        "y": -12.0,
+        "z": 14.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 36,
+      "rotation": {
+        "x": -14.0,
+        "y": 8.0,
+        "z": -14.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 36,
+      "rotation": {
+        "x": -22.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 36,
+      "rotation": {
+        "x": 24.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Sword",
+      "frame": 36,
+      "rotation": {
+        "x": 26.0,
+        "y": -8.0,
+        "z": 6.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Shield",
+      "frame": 36,
+      "rotation": {
+        "x": 3.0,
+        "y": 3.0,
+        "z": -6.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Torso",
+      "frame": 45,
+      "rotation": {
+        "x": 3.5,
+        "y": 4.0,
+        "z": 1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.02,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 45,
+      "rotation": {
+        "x": -0.5,
+        "y": -3.0,
+        "z": -0.5
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 45,
+      "rotation": {
+        "x": 28.0,
+        "y": -13.0,
+        "z": 13.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 45,
+      "rotation": {
+        "x": -8.0,
+        "y": 7.0,
+        "z": -13.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 45,
+      "rotation": {
+        "x": -10.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 45,
+      "rotation": {
+        "x": 14.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Sword",
+      "frame": 45,
+      "rotation": {
+        "x": 24.0,
+        "y": -7.0,
+        "z": 5.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Shield",
+      "frame": 45,
+      "rotation": {
+        "x": 2.0,
+        "y": 3.0,
+        "z": -6.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Torso",
+      "frame": 54,
+      "rotation": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.04,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 54,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 54,
+      "rotation": {
+        "x": 24.0,
+        "y": -14.0,
+        "z": 12.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 54,
+      "rotation": {
+        "x": 4.0,
+        "y": 5.0,
+        "z": -13.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 54,
+      "rotation": {
+        "x": 8.0,
+        "y": 0.0,
+        "z": 0.5
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 54,
+      "rotation": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": -0.5
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Sword",
+      "frame": 54,
+      "rotation": {
+        "x": 20.0,
+        "y": -5.0,
+        "z": 5.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Shield",
+      "frame": 54,
+      "rotation": {
+        "x": 1.0,
+        "y": 2.0,
+        "z": -7.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Torso",
+      "frame": 63,
+      "rotation": {
+        "x": 3.5,
+        "y": -4.0,
+        "z": -1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.02,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 63,
+      "rotation": {
+        "x": -0.5,
+        "y": 3.0,
+        "z": 0.5
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 63,
+      "rotation": {
+        "x": 25.0,
+        "y": -13.0,
+        "z": 13.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 63,
+      "rotation": {
+        "x": 8.0,
+        "y": 4.0,
+        "z": -12.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 63,
+      "rotation": {
+        "x": 18.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 63,
+      "rotation": {
+        "x": -14.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Sword",
+      "frame": 63,
+      "rotation": {
+        "x": 19.0,
+        "y": -4.0,
+        "z": 4.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Shield",
+      "frame": 63,
+      "rotation": {
+        "x": 2.0,
+        "y": 3.0,
+        "z": -6.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Torso",
+      "frame": 72,
+      "rotation": {
+        "x": 4.0,
+        "y": -8.0,
+        "z": -1.5
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.06,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 72,
+      "rotation": {
+        "x": -1.0,
+        "y": 6.0,
+        "z": 1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 72,
+      "rotation": {
+        "x": 26.0,
+        "y": -12.0,
+        "z": 14.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 72,
+      "rotation": {
+        "x": 12.0,
+        "y": 4.0,
+        "z": -12.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 72,
+      "rotation": {
+        "x": 24.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 72,
+      "rotation": {
+        "x": -22.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Sword",
+      "frame": 72,
+      "rotation": {
+        "x": 18.0,
+        "y": -4.0,
+        "z": 4.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Shield",
+      "frame": 72,
+      "rotation": {
+        "x": 2.0,
+        "y": 4.0,
+        "z": -6.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    }
+  ]
+}

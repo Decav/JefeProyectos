@@ -1,0 +1,1979 @@
+{
+  "animation_name": "player_r15_bow_shoot_v2",
+  "description": "Disparo con arco para R15 con arco sostenido y proyectado por la mano derecha (brazo dominante) y tensado con anclaje al rostro por la mano izquierda. Inicia y finaliza en coincidencia perfecta con player_r15_idle_combat_v1.",
+  "total_frames": 54,
+  "fps": 60,
+  "duration": 0.9,
+  "priority": "Action",
+  "loop": false,
+  "keyframes": [
+    {
+      "frame": 0,
+      "time": 0.0,
+      "poses": [
+        {
+          "name": "HumanoidRootPart",
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LowerTorso",
+          "rotation": [
+            -6.0,
+            -12.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            -0.14,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "UpperTorso",
+          "rotation": [
+            -5.0,
+            8.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "Head",
+          "rotation": [
+            4.0,
+            4.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightUpperArm",
+          "rotation": [
+            8.0,
+            14.0,
+            12.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightLowerArm",
+          "rotation": [
+            68.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightHand",
+          "rotation": [
+            6.0,
+            8.0,
+            -5.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftUpperArm",
+          "rotation": [
+            15.0,
+            -8.0,
+            -10.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftLowerArm",
+          "rotation": [
+            72.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftHand",
+          "rotation": [
+            0.0,
+            -10.0,
+            4.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightUpperLeg",
+          "rotation": [
+            -10.0,
+            0.0,
+            8.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightLowerLeg",
+          "rotation": [
+            -22.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightFoot",
+          "rotation": [
+            -5.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftUpperLeg",
+          "rotation": [
+            14.0,
+            0.0,
+            -6.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftLowerLeg",
+          "rotation": [
+            -24.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftFoot",
+          "rotation": [
+            -8.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "time": 0.1333,
+      "poses": [
+        {
+          "name": "HumanoidRootPart",
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LowerTorso",
+          "rotation": [
+            -4.0,
+            10.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            -0.15,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "UpperTorso",
+          "rotation": [
+            -3.0,
+            8.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "Head",
+          "rotation": [
+            2.0,
+            -16.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightUpperArm",
+          "rotation": [
+            52.0,
+            -6.0,
+            -6.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightLowerArm",
+          "rotation": [
+            28.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightHand",
+          "rotation": [
+            4.0,
+            2.0,
+            -3.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftUpperArm",
+          "rotation": [
+            48.0,
+            -15.0,
+            12.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftLowerArm",
+          "rotation": [
+            62.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftHand",
+          "rotation": [
+            6.0,
+            -8.0,
+            2.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightUpperLeg",
+          "rotation": [
+            -12.0,
+            4.0,
+            6.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightLowerLeg",
+          "rotation": [
+            -20.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightFoot",
+          "rotation": [
+            -5.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftUpperLeg",
+          "rotation": [
+            12.0,
+            -4.0,
+            -8.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftLowerLeg",
+          "rotation": [
+            -25.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftFoot",
+          "rotation": [
+            -8.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        }
+      ]
+    },
+    {
+      "frame": 16,
+      "time": 0.2667,
+      "poses": [
+        {
+          "name": "HumanoidRootPart",
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LowerTorso",
+          "rotation": [
+            -4.0,
+            22.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            -0.16,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "UpperTorso",
+          "rotation": [
+            -3.0,
+            15.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "Head",
+          "rotation": [
+            3.0,
+            -32.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightUpperArm",
+          "rotation": [
+            72.0,
+            -12.0,
+            -8.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightLowerArm",
+          "rotation": [
+            14.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightHand",
+          "rotation": [
+            3.0,
+            -4.0,
+            -2.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftUpperArm",
+          "rotation": [
+            44.0,
+            -42.0,
+            15.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftLowerArm",
+          "rotation": [
+            98.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftHand",
+          "rotation": [
+            8.0,
+            -10.0,
+            4.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightUpperLeg",
+          "rotation": [
+            -13.0,
+            6.0,
+            5.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightLowerLeg",
+          "rotation": [
+            -18.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightFoot",
+          "rotation": [
+            -5.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftUpperLeg",
+          "rotation": [
+            11.0,
+            -6.0,
+            -9.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftLowerLeg",
+          "rotation": [
+            -26.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftFoot",
+          "rotation": [
+            -8.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        }
+      ]
+    },
+    {
+      "frame": 24,
+      "time": 0.4,
+      "poses": [
+        {
+          "name": "HumanoidRootPart",
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LowerTorso",
+          "rotation": [
+            -4.0,
+            28.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            -0.16,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "UpperTorso",
+          "rotation": [
+            -3.0,
+            20.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "Head",
+          "rotation": [
+            4.0,
+            -42.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightUpperArm",
+          "rotation": [
+            78.0,
+            -15.0,
+            -10.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightLowerArm",
+          "rotation": [
+            8.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightHand",
+          "rotation": [
+            4.0,
+            -5.0,
+            -2.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftUpperArm",
+          "rotation": [
+            45.0,
+            -62.0,
+            10.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftLowerArm",
+          "rotation": [
+            130.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftHand",
+          "rotation": [
+            12.0,
+            -12.0,
+            6.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightUpperLeg",
+          "rotation": [
+            -14.0,
+            8.0,
+            4.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightLowerLeg",
+          "rotation": [
+            -17.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightFoot",
+          "rotation": [
+            -5.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftUpperLeg",
+          "rotation": [
+            10.0,
+            -8.0,
+            -10.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftLowerLeg",
+          "rotation": [
+            -27.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftFoot",
+          "rotation": [
+            -8.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        }
+      ]
+    },
+    {
+      "frame": 28,
+      "time": 0.4667,
+      "poses": [
+        {
+          "name": "HumanoidRootPart",
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LowerTorso",
+          "rotation": [
+            -4.0,
+            28.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            -0.16,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "UpperTorso",
+          "rotation": [
+            -2.0,
+            20.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "Head",
+          "rotation": [
+            4.0,
+            -42.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightUpperArm",
+          "rotation": [
+            79.0,
+            -15.0,
+            -10.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightLowerArm",
+          "rotation": [
+            7.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightHand",
+          "rotation": [
+            4.0,
+            -5.0,
+            -2.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftUpperArm",
+          "rotation": [
+            46.0,
+            -64.0,
+            9.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftLowerArm",
+          "rotation": [
+            132.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftHand",
+          "rotation": [
+            12.0,
+            -12.0,
+            6.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightUpperLeg",
+          "rotation": [
+            -14.0,
+            8.0,
+            4.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightLowerLeg",
+          "rotation": [
+            -17.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightFoot",
+          "rotation": [
+            -5.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftUpperLeg",
+          "rotation": [
+            10.0,
+            -8.0,
+            -10.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftLowerLeg",
+          "rotation": [
+            -27.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftFoot",
+          "rotation": [
+            -8.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        }
+      ]
+    },
+    {
+      "frame": 33,
+      "time": 0.55,
+      "poses": [
+        {
+          "name": "HumanoidRootPart",
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LowerTorso",
+          "rotation": [
+            -3.0,
+            25.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            -0.15,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "UpperTorso",
+          "rotation": [
+            -2.0,
+            17.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "Head",
+          "rotation": [
+            3.0,
+            -38.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightUpperArm",
+          "rotation": [
+            85.0,
+            -18.0,
+            -14.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightLowerArm",
+          "rotation": [
+            12.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightHand",
+          "rotation": [
+            12.0,
+            -8.0,
+            -4.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftUpperArm",
+          "rotation": [
+            38.0,
+            -75.0,
+            18.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftLowerArm",
+          "rotation": [
+            108.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftHand",
+          "rotation": [
+            16.0,
+            -16.0,
+            8.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightUpperLeg",
+          "rotation": [
+            -13.0,
+            7.0,
+            5.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightLowerLeg",
+          "rotation": [
+            -18.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightFoot",
+          "rotation": [
+            -5.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftUpperLeg",
+          "rotation": [
+            11.0,
+            -7.0,
+            -9.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftLowerLeg",
+          "rotation": [
+            -26.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftFoot",
+          "rotation": [
+            -8.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        }
+      ]
+    },
+    {
+      "frame": 42,
+      "time": 0.7,
+      "poses": [
+        {
+          "name": "HumanoidRootPart",
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LowerTorso",
+          "rotation": [
+            -5.0,
+            6.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            -0.14,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "UpperTorso",
+          "rotation": [
+            -4.0,
+            12.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "Head",
+          "rotation": [
+            3.0,
+            -14.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightUpperArm",
+          "rotation": [
+            38.0,
+            2.0,
+            4.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightLowerArm",
+          "rotation": [
+            45.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightHand",
+          "rotation": [
+            8.0,
+            0.0,
+            -4.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftUpperArm",
+          "rotation": [
+            24.0,
+            -28.0,
+            2.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftLowerArm",
+          "rotation": [
+            85.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftHand",
+          "rotation": [
+            6.0,
+            -12.0,
+            5.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightUpperLeg",
+          "rotation": [
+            -11.0,
+            3.0,
+            7.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightLowerLeg",
+          "rotation": [
+            -21.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightFoot",
+          "rotation": [
+            -5.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftUpperLeg",
+          "rotation": [
+            13.0,
+            -3.0,
+            -7.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftLowerLeg",
+          "rotation": [
+            -24.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftFoot",
+          "rotation": [
+            -8.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        }
+      ]
+    },
+    {
+      "frame": 54,
+      "time": 0.9,
+      "poses": [
+        {
+          "name": "HumanoidRootPart",
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LowerTorso",
+          "rotation": [
+            -6.0,
+            -12.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            -0.14,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "UpperTorso",
+          "rotation": [
+            -5.0,
+            8.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "Head",
+          "rotation": [
+            4.0,
+            4.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightUpperArm",
+          "rotation": [
+            8.0,
+            14.0,
+            12.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightLowerArm",
+          "rotation": [
+            68.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightHand",
+          "rotation": [
+            6.0,
+            8.0,
+            -5.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftUpperArm",
+          "rotation": [
+            15.0,
+            -8.0,
+            -10.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftLowerArm",
+          "rotation": [
+            72.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftHand",
+          "rotation": [
+            0.0,
+            -10.0,
+            4.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightUpperLeg",
+          "rotation": [
+            -10.0,
+            0.0,
+            8.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightLowerLeg",
+          "rotation": [
+            -22.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "RightFoot",
+          "rotation": [
+            -5.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftUpperLeg",
+          "rotation": [
+            14.0,
+            0.0,
+            -6.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftLowerLeg",
+          "rotation": [
+            -24.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        },
+        {
+          "name": "LeftFoot",
+          "rotation": [
+            -8.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "easingStyle": "Cubic",
+          "easingDirection": "InOut"
+        }
+      ]
+    }
+  ]
+}
