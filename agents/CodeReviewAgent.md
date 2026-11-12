@@ -4,11 +4,11 @@
 
 ## Configuración de Modelo (Potencia Máxima)
 
-| Plataforma / Entorno | Modelo Obligatorio | Identificador / Nivel |
-| :--- | :--- | :--- |
-| **Claude (Anthropic)** | **Claude Opus** | `opus` |
-| **Codex** | **Sol** | `sol` |
-| **Antigravity** | **Pro (Argon)** | `pro` |
+| Plataforma / Entorno   | Modelo Obligatorio | Identificador / Nivel |
+| :--------------------- | :----------------- | :-------------------- |
+| **Claude (Anthropic)** | **Claude Opus**    | `opus`                |
+| **Codex**              | **Sol**            | `sol`                 |
+| **Antigravity**        | **low (Argon)**    | `low`                 |
 
 > Un revisor más débil que el autor aprueba lo que no entiende. Si es posible, usá una familia de modelos distinta a la del `BuilderAgent`.
 

@@ -4,11 +4,11 @@
 
 ## Configuración de Modelo (Potencia Máxima)
 
-| Plataforma / Entorno | Modelo Obligatorio | Identificador / Nivel |
-| :--- | :--- | :--- |
-| **Claude (Anthropic)** | **Claude Opus** | `opus` |
-| **Codex** | **Sol** | `sol` |
-| **Antigravity** | **Pro (Argon)** | `pro` |
+| Plataforma / Entorno   | Modelo Obligatorio | Identificador / Nivel |
+| :--------------------- | :----------------- | :-------------------- |
+| **Claude (Anthropic)** | **Claude Opus**    | `opus`                |
+| **Codex**              | **Sol**            | `sol`                 |
+| **Antigravity**        | **Low (Argon)**    | `low`                 |
 
 ---
 

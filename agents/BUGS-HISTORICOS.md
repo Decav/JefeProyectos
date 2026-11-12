@@ -80,3 +80,12 @@ Este archivo es la memoria del proyecto. Cada entrada es una falla que **llegó 
 - **Revisor responsable:** UX y REL.
 - **Cómo se habría detectado:** ejecutar con una cuenta completamente vacía.
 - **Cómo buscarla:** exigir siempre una prueba de primer uso con estado vacío, y otra con el estado más cargado posible.
+
+### BH-008 — Plantillas de prueba interna (seed/QA) filtradas en tablas de botín o recompensas
+- **Origen:** Vandrheim RPG, noviembre de 2026.
+- **Qué pasó:** al reclamar una recompensa de misión de cacería, un jugador recibió un casco con nombre `[QA Azul] Yelmo del Cazador` y descripción `"Template seed de prueba de set. No pertenece a loot ni vendor."`.
+- **Causa raíz:** `InventoryService.RollClassEquipment` iteraba sobre `pairs(ItemConfig)` seleccionando equipamiento por rareza y clase, omitiendo el filtro `template.seedOnly ~= true` y `not ItemConfig.IsSeedTemplate(templateId)`.
+- **Revisor responsable:** CR y UX.
+- **Cómo se habría detectado:** auditar todas las funciones que iteran catálogos globales de ítems buscando que respeten banderas de exclusión de prueba (`seedOnly`, `testOnly`, `debugOnly`), y probar la ruleta de recompensas con 100 tiradas consecutivas verificando que ningún ítem resultante contenga prefijos `[QA ...]` ni `seed_`.
+- **Cómo buscarla:** buscar `pairs(ItemCatalog)` o equivalentes y verificar que todas las selecciones aleatorias descarten plantillas marcadas como exclusivas de pruebas.
+
