@@ -137,6 +137,26 @@
 
 **No incluye:** contenido de la expansión de fuego; eso es v2.
 
+### 3.2.1 Programa aprobado — Dopamina y mundo (post-beta/1.0)
+
+**Aprobación PO:** 2026-11-12. No bloquea la beta actual; se implementa por sprints. Regla fija: **maestría de clase solo cosmética, sin daño ni stats**.
+
+| Orden | HU | Contenido | Estado |
+|---:|---|---|---|
+| 1 | **R6.54** | Juice visual: level up dorado y loot con partículas; usa SFX existentes | Creada — lista para RC |
+| 2 | **R6.55** | Mina Helada pública, enemigos existentes, vetas y diaria `mine` | Creada — lista para RC |
+| 3 | **R6.56** | Red de piedras rúnicas, naufragio y viaje por 100 de oro | Creada — lista para RC |
+| 4 | **R6.57** | Endless de la Helada, oleadas infinitas, récord y leaderboard semanal | Creada — lista para RC |
+| 5 | **R6.58** | Logros y títulos visibles, solo cosméticos | Creada — lista para RC |
+| 6 | **R6.59** | Bestiario/Codex con enemigos, lore y lugares | Creada — lista para RC |
+| 7 | **R6.60** | Maestría de clase cosmética, sin poder | Creada — lista para RC |
+| 8 | **R6.61** | Caravanas atacadas y campamentos enemigos | Creada — lista para RC |
+| — | **EST-53** | Revisión de modelos de mina, runas, naufragio, eventos y maestría | Creada — lista para revisión |
+
+**Secuencia:** R6.53 (POIs/coleccionables) y R6.54 primero; R6.55/R6.56 en paralelo; R6.57/R6.58 después; R6.59/R6.60 y R6.61 al final. R6.53 es dependencia de R6.55/R6.56/R6.59/R6.61. EST-53 corre en paralelo y no bloquea la lógica.
+
+**Reglas:** sin pay-to-win; leaderboard con recompensas cosméticas; el Endless reemplaza la Cámara semanal; el teleport va a la entrada de la dungeon, nunca dentro de una run; los minerales de la mina no se acumulan fuera de la diaria.
+
 ### 3.3 v2.0 — Fuego/Lava (primera expansión gratuita)
 
 **Objetivo:** abrir un bioma nuevo con identidad propia y una razón para volver.
@@ -163,7 +183,7 @@
 | P2 | **v2.0 Fuego/Lava** | Bioma, dungeon, jefe, loot, nivel máximo | 1.0 estable |
 | P2 | **Profesiones** | Sistema horizontal de recolección/crafting o equivalente; no reemplaza combate | Economía e inventario estables |
 | P2 | **Dificultades de dungeon** | Modos normal/heroico o escalado configurable | Balance R8d + datos de beta |
-| P2 | **Oleadas PvE infinitas** | Modo repeatable con recompensas y ranking simple | Combate y balance estables |
+| P2 | **Oleadas PvE infinitas** | Aprobado: HU-R6.57 (Endless con récord y leaderboard semanal) | Beta estable |
 | P2 | **Clase nueva: Templario** | Clase + specs + skills + talentos + assets | 1.0 y pipeline de clases |
 | P2 | **Subidas de nivel** | Nuevo cap y contenido por expansión | Cada expansión |
 | P3 | **PvP** | Modo, mapas, balance aparte, anti-abuse | Balance PvE y clase nueva |
@@ -223,4 +243,5 @@
 | 2026-11-05 | **HU-R6.52 creada:** NPCs ambientales caminando (8 aldeanos en Valgard + 3 viajeros en caminos), server-side, sin interacción, sin target ni loot; rutas con waypoints, pausas y recuperación, sin aparecer en dungeon. |
 | 2026-11-06 | **R6.49–R6.52 implementadas (reporte PO 2026-11-06):** mapa/Hub integrado, diaria, tienda rotativa y NPCs ambientales; decisión de mapa resuelta. QA de las cuatro pendiente; R6.47 con fix reportado y QA de audio pendiente. |
 | 2026-11-06 | **HU-R6.53 y HU-ESTETICA-52 creadas:** Valgard vivo (NPCs con rutinas, microescenas, props/audio, POIs y coleccionables) y compuerta de revisión de modelos nuevos para integrar arte final. |
+| 2026-11-12 | **Programa Dopamina y mundo aprobado:** HUs R6.54–R6.61 + EST-53 creadas. Incluye juice, mina/diaria, piedras rúnicas, Endless semanal, logros/títulos, Codex, maestría cosmética y eventos de caravana/campamento. Maestría sin stats por decisión PO. |
 | 2026-11-06 | **HU-ESTETICA-52 aprobada y entregada:** staging completo en Studio (6 NPCs R15, 14 props, 6 POIs); niños y perro descartados por PO; fauna diferida a P1; arte listo para HU-R6.53. |

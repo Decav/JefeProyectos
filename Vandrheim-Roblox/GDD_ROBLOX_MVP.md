@@ -753,6 +753,7 @@ Ver `HU/fases/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º 
 | 2026-11-05 | **HU-R6.52 creada:** NPCs ambientales caminando (8 aldeanos en Valgard + 3 viajeros en caminos), server-side, sin interacción, sin target ni loot; con rutas, pausas, recuperación y gate para no aparecer en dungeon. |
 | 2026-11-06 | **R6.49–R6.52 implementadas (reporte PO):** mapa/Hub integrado, misión diaria del Guía, tienda rotativa y NPCs ambientales. La decisión del mapa queda resuelta; QA de las cuatro pendiente. |
 | 2026-11-06 | **HU-R6.53 y HU-ESTETICA-52 creadas:** Valgard vivo (NPCs con rutinas, microescenas, props/audio, POIs y coleccionables) y revisión de modelos nuevos para integrar arte final. |
+| 2026-11-12 | **Programa Dopamina y mundo aprobado:** HUs R6.54–R6.61 + EST-53 creadas. Incluye juice, mina/diaria, piedras rúnicas, Endless semanal, logros/títulos, Codex, maestría cosmética y eventos de caravana/campamento. Maestría de clase solo cosmética, sin stats. |
 
 ---
 
