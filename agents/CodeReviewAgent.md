@@ -6,9 +6,9 @@
 
 | Plataforma / Entorno   | Modelo Obligatorio | Identificador / Nivel |
 | :--------------------- | :----------------- | :-------------------- |
-| **Claude (Anthropic)** | **Claude Opus**    | `opus`                |
-| **Codex**              | **Sol**            | `sol`                 |
-| **Antigravity**        | **low (Argon)**    | `low`                 |
+| **Claude (Anthropic)** | **Claude Sonnet 5.5** | `sonnet`              |
+| **Codex**              | **Sol**               | `sol`                 |
+| **Antigravity**        | **Hydrogen High**     | `high`                |
 
 > Un revisor más débil que el autor aprueba lo que no entiende. Si es posible, usá una familia de modelos distinta a la del `BuilderAgent`.
 

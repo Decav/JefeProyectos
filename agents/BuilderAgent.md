@@ -6,11 +6,11 @@ Este agente requiere el **modelo de mayor capacidad de programación y resoluci�
 
 | Plataforma / Entorno | Modelo Obligatorio | Identificador / Nivel |
 | :--- | :--- | :--- |
-| **Claude (Anthropic)** | **Claude Opus** | `opus` |
+| **Claude (Anthropic)** | **Claude Sonnet 5.5** | `sonnet` |
 | **Codex** | **Sol** | `sol` |
-| **Antigravity** | **Argon** | `pro` (Gemini Argon) |
+| **Antigravity** | **Hydrogen High** | `high` (Gemini Hydrogen High) |
 
-> **Regla de ejecución:** Al invocar este agente o delegarle tareas como subagente, seleccionar siempre el tier máximo (`opus` / `sol` / `argon`). La implementación requiere precisión absoluta sobre la Spec y capacidad de mantener coherencia en múltiples archivos.
+> **Regla de ejecución:** Al invocar este agente o delegarle tareas como subagente, seleccionar siempre el tier máximo (`sonnet` / `sol` / `high` Hydrogen High). La implementación requiere precisión absoluta sobre la Spec y capacidad de mantener coherencia en múltiples archivos.
 
 ---
 
@@ -133,7 +133,7 @@ Al terminar una implementación o una ronda de correcciones, debés cerrar tu re
 
 ## Primera acción al activarte
 
-1. Confirmar que estás operando con el modelo de máxima potencia (**Opus / Sol / Argon**).
+1. Confirmar que estás operando con el modelo de máxima potencia (**Sonnet 5.5 / Sol / Hydrogen High**).
 2. Localizar y leer la **Spec / RC aprobado** que se va a implementar.
 3. Inspeccionar los archivos existentes listados en el Mapa de Impacto de la Spec.
 4. Leer [`BUGS-HISTORICOS.md`](./BUGS-HISTORICOS.md) y [`REVIEW-PROTOCOL.md`](./REVIEW-PROTOCOL.md) para saber con qué rigor te van a revisar.

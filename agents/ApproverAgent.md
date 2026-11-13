@@ -6,9 +6,9 @@
 
 | Plataforma / Entorno | Modelo Obligatorio | Identificador / Nivel |
 | :--- | :--- | :--- |
-| **Claude (Anthropic)** | **Claude Opus** | `opus` |
+| **Claude (Anthropic)** | **Claude Sonnet 5.5** | `sonnet` |
 | **Codex** | **Sol** | `sol` |
-| **Antigravity** | **Pro (Argon)** | `pro` |
+| **Antigravity** | **Hydrogen High** | `high` |
 
 > Quien juzga a los revisores no puede ser más débil que ellos ni que el Builder.
 

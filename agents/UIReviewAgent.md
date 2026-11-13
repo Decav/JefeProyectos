@@ -6,9 +6,9 @@
 
 | Plataforma / Entorno   | Modelo Obligatorio | Identificador / Nivel |
 | :--------------------- | :----------------- | :-------------------- |
-| **Claude (Anthropic)** | **Claude Opus**    | `opus`                |
-| **Codex**              | **Sol**            | `sol`                 |
-| **Antigravity**        | **Low (Argon)**    | `low`                 |
+| **Claude (Anthropic)** | **Claude Sonnet 5.5** | `sonnet`              |
+| **Codex**              | **Sol**               | `sol`                 |
+| **Antigravity**        | **Hydrogen High**     | `high`                |
 
 ---
 

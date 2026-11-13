@@ -157,7 +157,7 @@ En caso de duda, se activa. El Approver puede ampliar la lista y nunca reducirla
 
 ## 10. Modelo
 
-Los revisores corren con **Potencia Máxima**, al menos al nivel del Builder (`opus` / `sol` / `pro`-Argon). Un revisor más débil que el autor aprueba lo que no entiende. Si es posible, conviene que revise una **familia de modelos distinta** a la que construyó, para no compartir puntos ciegos.
+Los revisores corren con **Potencia Máxima**, al menos al nivel del Builder (`sonnet` / `sol` / `high`-Hydrogen High). Un revisor más débil que el autor aprueba lo que no entiende. Si es posible, conviene que revise una **familia de modelos distinta** a la que construyó, para no compartir puntos ciegos.
 
 ---
 

@@ -36,10 +36,10 @@ Este proyecto opera bajo el ecosistema **SDD con revisión adversarial** (especi
 
 ## 2. Cómo operan los Agentes SDD sobre `Vandrheim-Roblox`
 
-**Todos los roles (incluidos revisores y aprobador) usan Potencia Máxima:** Claude `Opus` | Codex `Sol` | Antigravity `Argon` (`pro`). Se recomienda que revise una familia de modelos distinta a la que construyó.
+**Todos los roles (incluidos revisores y aprobador) usan Potencia Máxima:** Claude `Sonnet 5.5` | Codex `Sol` | Antigravity `Hydrogen High` (`high`). Se recomienda que revise una familia de modelos distinta a la que construyó.
 
 ### Etapa 1 — `SpecAgent` ([`../agents/SpecAgent.md`](../agents/SpecAgent.md))
-- **Modelo:** Claude `Opus` | Codex `Sol` | Antigravity `Argon` (`pro`)
+- **Modelo:** Claude `Sonnet 5.5` | Codex `Sol` | Antigravity `Hydrogen High` (`high`)
 - **Procedimiento obligatorio:**
   1. Leer en Studio `Workspace.DevelopmentStandard.DEV_PROMPT`, `PROJECT_ARCHITECTURE` y `DEVELOPER_GUIDE`, y en el proyecto local la HU asignada (`HU/`) y [`GDD_ROBLOX_MVP.md`](./GDD_ROBLOX_MVP.md) / [`SKILLS_CATALOG.md`](./SKILLS_CATALOG.md) cuando corresponda.
   2. Abrir y leer en Studio únicamente las páginas `Architecture.<Dominio>` y `Schemas.<Dominio>` relacionadas con la tarea, más los scripts reales involucrados en el DataModel (`ServerScriptService`, `ReplicatedStorage`, `StarterPlayerScripts`, `StarterGui`).
@@ -57,7 +57,7 @@ Este proyecto opera bajo el ecosistema **SDD con revisión adversarial** (especi
 ---
 
 ### Etapa 2 — `BuilderAgent` ([`../agents/BuilderAgent.md`](../agents/BuilderAgent.md))
-- **Modelo:** Claude `Opus` | Codex `Sol` | Antigravity `Argon` (`pro`)
+- **Modelo:** Claude `Sonnet 5.5` | Codex `Sol` | Antigravity `Hydrogen High` (`high`)
 - **Procedimiento obligatorio en Studio (vía MCP):**
   1. Leer el `rcNNN` aprobado en `Workspace.DevelopmentStandard.Requirement.<Categoria>`, junto con `PROJECT_STANDARD` y las páginas `Architecture.<Dominio>` y `Schemas.<Dominio>` involucradas.
   2. Cambiar el estado del `rcNNN` a `EN IMPLEMENTACIÓN`.
@@ -72,7 +72,7 @@ Este proyecto opera bajo el ecosistema **SDD con revisión adversarial** (especi
 ---
 
 ### Etapa 3 — Revisión Adversarial en Studio (Informan a `ApproverAgent`)
-- **Modelo de los revisores:** Potencia Máxima (Claude `Opus` | Codex `Sol` | Antigravity `Argon` `pro`).
+- **Modelo de los revisores:** Potencia Máxima (Claude `Sonnet 5.5` | Codex `Sol` | Antigravity `Hydrogen High` `high`).
 - **Mandato:** cada revisor sigue [`../agents/REVIEW-PROTOCOL.md`](../agents/REVIEW-PROTOCOL.md): asume que el código está roto, **lo ejecuta** y entrega un dictamen con **registro de ataques** y evidencia de reproducción. Lo que no pueda ejecutar queda `[NO VERIFICADO]` y bloquea la aprobación. Leen [`../agents/BUGS-HISTORICOS.md`](../agents/BUGS-HISTORICOS.md) antes de empezar.
 - **Activación por riesgo:** `CodeReviewAgent` y `UXReviewAgent` siempre; `SecurityReviewAgent` si el cambio toca remotes, combate, inventario, economía, perfil, party o cualquier entrada del cliente; `ReliabilityReviewAgent` si toca persistencia, estado de sesión o grupo, tareas asíncronas, conexiones o tiempos; `UIReviewAgent` si hay interfaz. En caso de duda se activa.
 - **Cómo ejecutan en Studio (compatible con `rc120`):** pueden iniciar Play, ejecutar código de prueba en los contextos de servidor y cliente, capturar pantalla, emular dispositivos y resoluciones y usar varios clientes. **No crean instancias ni carpetas `Reports/` en el DataModel, no modifican scripts ni instancias y no guardan nada.** El código de prueba vive solo en la sesión de Play. Los dictámenes se entregan en el chat. Si el Play usa un perfil o datos reales, lo declaran antes de probar y revierten cualquier cambio.
@@ -100,7 +100,7 @@ Este proyecto opera bajo el ecosistema **SDD con revisión adversarial** (especi
 ---
 
 ### Etapa 4 — `ApproverAgent` ([`../agents/ApproverAgent.md`](../agents/ApproverAgent.md))
-- **Modelo:** Potencia Máxima (Claude `Opus` | Codex `Sol` | Antigravity `Argon` `pro`).
+- **Modelo:** Potencia Máxima (Claude `Sonnet 5.5` | Codex `Sol` | Antigravity `Hydrogen High` `high`).
 - **Acción:**
   - Verifica que corrieron todos los revisores que el riesgo exige, **audita la calidad de cada dictamen** (rechaza los que no tengan registro de ataques o evidencia de ejecución) y reejecuta reproducciones y pruebas propias.
   - Deduplica hallazgos y resuelve conflictos contra el `rcNNN` y `Workspace.DevelopmentStandard`. **No puede descartar un hallazgo con evidencia.**

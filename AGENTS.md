@@ -12,16 +12,16 @@ Este workspace opera bajo una arquitectura estricta **SDD (Spec-Driven Developme
 
 Cada rol del ciclo SDD DEBE ejecutarse con el modelo correspondiente a su nivel de potencia según el entorno activo (**Claude**, **Codex** o **Antigravity**). **Los revisores y el aprobador corren con Potencia Máxima**, igual que el Builder: un juez más débil que el autor aprueba lo que no entiende.
 
-| Etapa  | Agente                     | Definición                                                               | Nivel      | Claude | Codex | Antigravity   | Permisos sobre Código                               |
-| :----: | :------------------------- | :----------------------------------------------------------------------- | :--------- | :----- | :---- | :------------ | :-------------------------------------------------- |
-| **1**  | **SpecAgent**              | [`agents/SpecAgent.md`](./agents/SpecAgent.md)                           | **Máxima** | `opus` | `sol` | `low` (Argon) | **Prohibido tocar código** (Solo redacta Spec / RC) |
-| **2**  | **BuilderAgent**           | [`agents/BuilderAgent.md`](./agents/BuilderAgent.md)                     | **Máxima** | `opus` | `sol` | `low` (Argon) | **Lectura y Escritura** de código de producción     |
-| **3a** | **CodeReviewAgent**        | [`agents/CodeReviewAgent.md`](./agents/CodeReviewAgent.md)               | **Máxima** | `opus` | `sol` | `low` (Argon) | **Read-only** en producción; ejecuta y prueba       |
-| **3b** | **SecurityReviewAgent**    | [`agents/SecurityReviewAgent.md`](./agents/SecurityReviewAgent.md)       | **Máxima** | `opus` | `sol` | `low` (Argon) | **Read-only** en producción; ataca el sistema       |
-| **3c** | **ReliabilityReviewAgent** | [`agents/ReliabilityReviewAgent.md`](./agents/ReliabilityReviewAgent.md) | **Máxima** | `opus` | `sol` | `low` (Argon) | **Read-only** en producción; fuerza fallos          |
-| **3d** | **UXReviewAgent**          | [`agents/UXReviewAgent.md`](./agents/UXReviewAgent.md)                   | **Máxima** | `opus` | `sol` | `low` (Argon) | **Read-only** en producción; ejecuta cada `CA-XX`   |
-| **3e** | **UIReviewAgent**          | [`agents/UIReviewAgent.md`](./agents/UIReviewAgent.md)                   | **Máxima** | `opus` | `sol` | `low` (Argon) | **Read-only** en producción; renderiza y mide       |
-| **4**  | **ApproverAgent**          | [`agents/ApproverAgent.md`](./agents/ApproverAgent.md)                   | **Máxima** | `opus` | `sol` | `low` (Argon) | **Read-only** en producción; audita a los revisores |
+| Etapa  | Agente                     | Definición                                                               | Nivel      | Claude   | Codex | Antigravity            | Permisos sobre Código                               |
+| :----: | :------------------------- | :----------------------------------------------------------------------- | :--------- | :------- | :---- | :--------------------- | :-------------------------------------------------- |
+| **1**  | **SpecAgent**              | [`agents/SpecAgent.md`](./agents/SpecAgent.md)                           | **Máxima** | `sonnet` | `sol` | `high` (Hydrogen High) | **Prohibido tocar código** (Solo redacta Spec / RC) |
+| **2**  | **BuilderAgent**           | [`agents/BuilderAgent.md`](./agents/BuilderAgent.md)                     | **Máxima** | `sonnet` | `sol` | `high` (Hydrogen High) | **Lectura y Escritura** de código de producción     |
+| **3a** | **CodeReviewAgent**        | [`agents/CodeReviewAgent.md`](./agents/CodeReviewAgent.md)               | **Máxima** | `sonnet` | `sol` | `high` (Hydrogen High) | **Read-only** en producción; ejecuta y prueba       |
+| **3b** | **SecurityReviewAgent**    | [`agents/SecurityReviewAgent.md`](./agents/SecurityReviewAgent.md)       | **Máxima** | `sonnet` | `sol` | `high` (Hydrogen High) | **Read-only** en producción; ataca el sistema       |
+| **3c** | **ReliabilityReviewAgent** | [`agents/ReliabilityReviewAgent.md`](./agents/ReliabilityReviewAgent.md) | **Máxima** | `sonnet` | `sol` | `high` (Hydrogen High) | **Read-only** en producción; fuerza fallos          |
+| **3d** | **UXReviewAgent**          | [`agents/UXReviewAgent.md`](./agents/UXReviewAgent.md)                   | **Máxima** | `sonnet` | `sol` | `high` (Hydrogen High) | **Read-only** en producción; ejecuta cada `CA-XX`   |
+| **3e** | **UIReviewAgent**          | [`agents/UIReviewAgent.md`](./agents/UIReviewAgent.md)                   | **Máxima** | `sonnet` | `sol` | `high` (Hydrogen High) | **Read-only** en producción; renderiza y mide       |
+| **4**  | **ApproverAgent**          | [`agents/ApproverAgent.md`](./agents/ApproverAgent.md)                   | **Máxima** | `sonnet` | `sol` | `high` (Hydrogen High) | **Read-only** en producción; audita a los revisores |
 
 **Recomendación de diversidad:** si el Builder usó una familia de modelos, conviene que los revisores sean de otra familia (por ejemplo, construye Claude y revisan Codex o Antigravity), para no compartir los mismos puntos ciegos.
 
@@ -32,7 +32,7 @@ Cada rol del ciclo SDD DEBE ejecutarse con el modelo correspondiente a su nivel 
 ## 2. Reglas de Activación Automática según el Pedido del Usuario
 
 ### A. Cuando el usuario pide redactar una Spec, RC o analizar una HU ("Escribe el spec de...", "Prepara el RC de...")
-1. Activar **`SpecAgent`** leyendo [`agents/SpecAgent.md`](./agents/SpecAgent.md) con el modelo de **Potencia Máxima** (`opus` / `sol` / `argon`).
+1. Activar **`SpecAgent`** leyendo [`agents/SpecAgent.md`](./agents/SpecAgent.md) con el modelo de **Potencia Máxima** (`sonnet` / `sol` / `high` Hydrogen High).
 2. Inspeccionar primero el repositorio real, la arquitectura y las plantillas del proyecto (`HU-TEMPLATE.md`, `RC-TEMPLATE.md`).
 3. Generar la Spec / RC completa con contratos técnicos (`TECH-XX`), estados de experiencia de usuario (`UX-XX`), reglas de interfaz fluida sin tamaños fijos (`UI-XX`) y criterios Gherkin (`CA-XX`).
 4. **Detenerse y esperar aprobación del usuario** antes de pasar al `BuilderAgent`.
