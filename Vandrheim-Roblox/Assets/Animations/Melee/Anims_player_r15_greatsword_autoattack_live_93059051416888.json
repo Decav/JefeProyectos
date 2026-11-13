@@ -1,0 +1,851 @@
+{
+  "animation_name": "player_r15_greatsword_autoattack_live_93059051416888",
+  "description": "Export exacto del asset en uso rbxassetid://93059051416888 (slot greatsword_autoattack de AnimationRegistry): tajo diagonal descendente de izquierda a derecha con mandoble. Keyframes dispersos: una articulacion ausente en un keyframe se interpola entre sus keyframes vecinos. Referencia para variantes, no reimportar.",
+  "total_frames": 40,
+  "fps": 60,
+  "loop": false,
+  "priority": "Action",
+  "sparse": true,
+  "keyframes": [
+    {
+      "joint": "LowerTorso",
+      "parent": "HumanoidRootPart",
+      "frame": 0,
+      "rotation": {
+        "x": -4.61,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "parent": "LowerTorso",
+      "frame": 0,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "parent": "UpperTorso",
+      "frame": 0,
+      "rotation": {
+        "x": 62.858,
+        "y": -20.879,
+        "z": 37.351
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "parent": "LeftUpperArm",
+      "frame": 0,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "parent": "LeftLowerArm",
+      "frame": 0,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "parent": "UpperTorso",
+      "frame": 0,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "parent": "UpperTorso",
+      "frame": 0,
+      "rotation": {
+        "x": 70.938,
+        "y": 16.199,
+        "z": -35.177
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "parent": "RightUpperArm",
+      "frame": 0,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "parent": "RightLowerArm",
+      "frame": 0,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "parent": "LowerTorso",
+      "frame": 0,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": 12.656
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "parent": "RightUpperLeg",
+      "frame": 0,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "parent": "RightLowerLeg",
+      "frame": 0,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "parent": "LowerTorso",
+      "frame": 0,
+      "rotation": {
+        "x": 1.991,
+        "y": -0.827,
+        "z": -8.805
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "parent": "LeftUpperLeg",
+      "frame": 0,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "parent": "LeftLowerLeg",
+      "frame": 0,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "parent": "HumanoidRootPart",
+      "frame": 8,
+      "rotation": {
+        "x": 2.157,
+        "y": 21.986,
+        "z": -0.808
+      },
+      "position": {
+        "x": 0.0315,
+        "y": 0.1171,
+        "z": 0.078
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "parent": "LowerTorso",
+      "frame": 8,
+      "rotation": {
+        "x": 3.127,
+        "y": 42.147,
+        "z": 0.874
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "parent": "UpperTorso",
+      "frame": 8,
+      "rotation": {
+        "x": 30.521,
+        "y": 23.291,
+        "z": 8.809
+      },
+      "position": {
+        "x": 0.1031,
+        "y": -0.386,
+        "z": -0.135
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "parent": "LeftUpperArm",
+      "frame": 8,
+      "rotation": {
+        "x": -0.99,
+        "y": -0.139,
+        "z": 7.999
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "parent": "UpperTorso",
+      "frame": 8,
+      "rotation": {
+        "x": -2.265,
+        "y": -27.981,
+        "z": -1.063
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "parent": "UpperTorso",
+      "frame": 8,
+      "rotation": {
+        "x": 71.852,
+        "y": 16.378,
+        "z": -66.47
+      },
+      "position": {
+        "x": -0.3516,
+        "y": -0.3642,
+        "z": -0.0834
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "parent": "RightUpperArm",
+      "frame": 8,
+      "rotation": {
+        "x": -0.99,
+        "y": 0.139,
+        "z": -7.999
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "parent": "LowerTorso",
+      "frame": 8,
+      "rotation": {
+        "x": -17.964,
+        "y": 15.044,
+        "z": 12.78
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "parent": "LowerTorso",
+      "frame": 8,
+      "rotation": {
+        "x": 7.59,
+        "y": -16.33,
+        "z": -7.59
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "parent": "HumanoidRootPart",
+      "frame": 19,
+      "rotation": {
+        "x": -8.815,
+        "y": -24.74,
+        "z": -3.713
+      },
+      "position": {
+        "x": 0.1469,
+        "y": 0.1733,
+        "z": -0.3149
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "parent": "LowerTorso",
+      "frame": 19,
+      "rotation": {
+        "x": -22.453,
+        "y": -44.912,
+        "z": -19.738
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "parent": "UpperTorso",
+      "frame": 19,
+      "rotation": {
+        "x": 58.466,
+        "y": -50.771,
+        "z": 53.837
+      },
+      "position": {
+        "x": 0.1194,
+        "y": -0.4031,
+        "z": -0.0328
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "parent": "LeftUpperArm",
+      "frame": 19,
+      "rotation": {
+        "x": -0.97,
+        "y": -0.242,
+        "z": 13.998
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "parent": "LeftLowerArm",
+      "frame": 19,
+      "rotation": {
+        "x": -0.0,
+        "y": -5.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "parent": "UpperTorso",
+      "frame": 19,
+      "rotation": {
+        "x": 7.065,
+        "y": 31.804,
+        "z": -3.737
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "parent": "UpperTorso",
+      "frame": 19,
+      "rotation": {
+        "x": 24.115,
+        "y": -19.202,
+        "z": 20.161
+      },
+      "position": {
+        "x": 0.0896,
+        "y": -0.5027,
+        "z": 0.0505
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "parent": "RightUpperArm",
+      "frame": 19,
+      "rotation": {
+        "x": -0.97,
+        "y": 0.242,
+        "z": -13.998
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "parent": "RightLowerArm",
+      "frame": 19,
+      "rotation": {
+        "x": -0.0,
+        "y": -5.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "parent": "LowerTorso",
+      "frame": 19,
+      "rotation": {
+        "x": 29.78,
+        "y": -5.697,
+        "z": 14.518
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "parent": "RightUpperLeg",
+      "frame": 19,
+      "rotation": {
+        "x": -22.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "parent": "LowerTorso",
+      "frame": 19,
+      "rotation": {
+        "x": -18.721,
+        "y": 13.95,
+        "z": -3.566
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "parent": "LeftUpperLeg",
+      "frame": 19,
+      "rotation": {
+        "x": -12.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "parent": "HumanoidRootPart",
+      "frame": 24,
+      "rotation": {
+        "x": -11.508,
+        "y": -29.499,
+        "z": -5.725
+      },
+      "position": {
+        "x": 0.1932,
+        "y": 0.1756,
+        "z": -0.3346
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "parent": "LowerTorso",
+      "frame": 24,
+      "rotation": {
+        "x": -30.182,
+        "y": -49.923,
+        "z": -27.623
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "parent": "UpperTorso",
+      "frame": 24,
+      "rotation": {
+        "x": 64.164,
+        "y": -56.589,
+        "z": 62.26
+      },
+      "position": {
+        "x": 0.103,
+        "y": -0.4088,
+        "z": -0.011
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "parent": "UpperTorso",
+      "frame": 24,
+      "rotation": {
+        "x": 23.358,
+        "y": -29.217,
+        "z": 24.964
+      },
+      "position": {
+        "x": 0.076,
+        "y": -0.4993,
+        "z": 0.0902
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "parent": "HumanoidRootPart",
+      "frame": 40,
+      "rotation": {
+        "x": -4.61,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "parent": "LowerTorso",
+      "frame": 40,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "parent": "UpperTorso",
+      "frame": 40,
+      "rotation": {
+        "x": 62.858,
+        "y": -20.879,
+        "z": 37.351
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "parent": "LeftUpperArm",
+      "frame": 40,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "parent": "LeftLowerArm",
+      "frame": 40,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "parent": "UpperTorso",
+      "frame": 40,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "parent": "UpperTorso",
+      "frame": 40,
+      "rotation": {
+        "x": 70.938,
+        "y": 16.199,
+        "z": -35.177
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "parent": "RightUpperArm",
+      "frame": 40,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "parent": "RightLowerArm",
+      "frame": 40,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "parent": "LowerTorso",
+      "frame": 40,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": 12.656
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "parent": "RightUpperLeg",
+      "frame": 40,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "parent": "RightLowerLeg",
+      "frame": 40,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "parent": "LowerTorso",
+      "frame": 40,
+      "rotation": {
+        "x": 1.991,
+        "y": -0.827,
+        "z": -8.805
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "parent": "LeftUpperLeg",
+      "frame": 40,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "parent": "LeftLowerLeg",
+      "frame": 40,
+      "rotation": {
+        "x": -0.0,
+        "y": 0.0,
+        "z": -0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    }
+  ]
+}

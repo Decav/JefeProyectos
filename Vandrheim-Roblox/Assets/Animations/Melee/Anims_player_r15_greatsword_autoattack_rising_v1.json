@@ -1,0 +1,8802 @@
+{
+  "animation_name": "player_r15_greatsword_autoattack_rising_v1",
+  "description": "Segundo ataque normal de mandoble 2H: carga baja a la derecha con torsion y flexion de rodillas, tajo diagonal ascendente cruzado de abajo-derecha a arriba-izquierda y vuelta a guardia. Contraparte del tajo descendente izquierda-derecha en uso (rbxassetid://93059051416888): misma guardia inicial y final (pose exacta del frame 0 del clip vivo), misma duracion (0.667 s) y cruce frontal a ~0.25 s. Ambas manos sobre el mango, pies plantados.",
+  "total_frames": 40,
+  "fps": 60,
+  "intensity": 0.9,
+  "loop": false,
+  "priority": "Action",
+  "source_animation": "player_r15_greatsword_autoattack_live_93059051416888 (guardia)",
+  "derivation": {
+    "method": "IK por descenso coordenado sobre los Motor6D del rig Workspace.Test.Rigs.R15, horneado a 60 fps (1 keyframe por frame, easing Linear) y suavizado temporal slerp 1-2-1 x3",
+    "weapon_grip": "Handle = RightHand * CFrame.new(0,-0.05,-0.10) * CFrame.Angles(-5, rad(-250), 0) (ItemConfig weaponOffsets.TwoHand); mano izquierda en la relacion mango-mano de la guardia viva",
+    "controls_hrp_space": {
+      "f05": {
+        "hand": [
+          0.8,
+          -0.45,
+          -1.0
+        ],
+        "tip_dir": [
+          0.7,
+          0.62,
+          0.2
+        ],
+        "root_rot": [
+          -5,
+          -12,
+          1
+        ],
+        "waist": [
+          -2,
+          -15,
+          2
+        ],
+        "neck": [
+          2,
+          20,
+          0
+        ]
+      },
+      "f10_carga": {
+        "hand": [
+          1.1,
+          -0.68,
+          -0.45
+        ],
+        "tip_dir": [
+          0.5,
+          -0.3,
+          0.81
+        ],
+        "root_rot": [
+          -6,
+          -24,
+          2
+        ],
+        "root_pos": [
+          0,
+          -0.16,
+          0.06
+        ],
+        "waist": [
+          -4,
+          -30,
+          4
+        ],
+        "neck": [
+          4,
+          40,
+          0
+        ]
+      },
+      "f15_cruce": {
+        "hand": [
+          0.35,
+          -0.45,
+          -1.75
+        ],
+        "tip_dir": [
+          0.35,
+          -0.2,
+          -0.92
+        ],
+        "root_rot": [
+          -8,
+          0,
+          0
+        ],
+        "waist": [
+          -6,
+          5,
+          -6
+        ],
+        "neck": [
+          2,
+          -5,
+          0
+        ]
+      },
+      "f17": {
+        "hand": [
+          -0.3,
+          0.2,
+          -1.55
+        ],
+        "tip_dir": [
+          -0.3,
+          0.62,
+          -0.72
+        ],
+        "root_rot": [
+          -6,
+          14,
+          -2
+        ],
+        "waist": [
+          1,
+          22,
+          -7
+        ],
+        "neck": [
+          -2,
+          -25,
+          2
+        ]
+      },
+      "f19_remate": {
+        "hand": [
+          -0.8,
+          0.8,
+          -1.05
+        ],
+        "tip_dir": [
+          -0.58,
+          0.8,
+          -0.12
+        ],
+        "root_rot": [
+          -2,
+          26,
+          -4
+        ],
+        "waist": [
+          8,
+          36,
+          -8
+        ],
+        "neck": [
+          -6,
+          -45,
+          4
+        ]
+      },
+      "f24_extension": {
+        "hand": [
+          -0.95,
+          0.92,
+          -0.9
+        ],
+        "tip_dir": [
+          -0.62,
+          0.77,
+          0.12
+        ],
+        "root_rot": [
+          -3,
+          30,
+          -5
+        ],
+        "waist": [
+          9,
+          41,
+          -9
+        ],
+        "neck": [
+          -6,
+          -50,
+          4
+        ]
+      }
+    },
+    "timing": "f0-f5-f10 smoothstep (carga), f10-f15 aceleracion cuadratica, f15-f19 lineal (maxima velocidad en el cruce), f19-f24 desaceleracion, f24-f40 smoothstep a guardia",
+    "validation": {
+      "max_joint_step_deg_per_frame": 24,
+      "max_foot_slide_studs": 0.032,
+      "blade_body_penetration": 0.0,
+      "max_hand_gap_studs": 0.37
+    }
+  },
+  "keyframes": [
+    {
+      "joint": "LowerTorso",
+      "frame": 0,
+      "rotation": {
+        "x": -4.61,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 0,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 0,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 0,
+      "rotation": {
+        "x": 70.94,
+        "y": 16.2,
+        "z": -35.18
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 0,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 0,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 0,
+      "rotation": {
+        "x": 62.86,
+        "y": -20.88,
+        "z": 37.35
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 0,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 0,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 0,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 12.66
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 0,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 0,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 0,
+      "rotation": {
+        "x": 1.99,
+        "y": -0.83,
+        "z": -8.81
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 0,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 0,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 1,
+      "rotation": {
+        "x": -4.66,
+        "y": -1.74,
+        "z": 0.15
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0116,
+        "z": 0.0044
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 1,
+      "rotation": {
+        "x": -0.3,
+        "y": -2.18,
+        "z": 0.3
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 1,
+      "rotation": {
+        "x": 0.29,
+        "y": 2.91,
+        "z": 0.02
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 1,
+      "rotation": {
+        "x": 65.37,
+        "y": 16.61,
+        "z": -35.3
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 1,
+      "rotation": {
+        "x": 6.37,
+        "y": 0.82,
+        "z": -3.38
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 1,
+      "rotation": {
+        "x": 8.84,
+        "y": 2.69,
+        "z": 9.43
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 1,
+      "rotation": {
+        "x": 60.81,
+        "y": -24.84,
+        "z": 34.53
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 1,
+      "rotation": {
+        "x": 6.48,
+        "y": -2.4,
+        "z": -0.95
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 1,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 1,
+      "rotation": {
+        "x": 2.2,
+        "y": 1.4,
+        "z": 12.46
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 1,
+      "rotation": {
+        "x": -2.8,
+        "y": 0.52,
+        "z": 0.01
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 1,
+      "rotation": {
+        "x": 0.78,
+        "y": 0.28,
+        "z": -0.01
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 1,
+      "rotation": {
+        "x": 3.44,
+        "y": 0.42,
+        "z": -8.94
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 1,
+      "rotation": {
+        "x": -3.3,
+        "y": 0.24,
+        "z": -0.38
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 1,
+      "rotation": {
+        "x": 1.84,
+        "y": 0.03,
+        "z": 0.25
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 2,
+      "rotation": {
+        "x": -4.73,
+        "y": -4.11,
+        "z": 0.34
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0274,
+        "z": 0.0103
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 2,
+      "rotation": {
+        "x": -0.7,
+        "y": -5.13,
+        "z": 0.7
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 2,
+      "rotation": {
+        "x": 0.68,
+        "y": 6.84,
+        "z": 0.03
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 2,
+      "rotation": {
+        "x": 55.49,
+        "y": 17.06,
+        "z": -34.98
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 2,
+      "rotation": {
+        "x": 18.99,
+        "y": 1.56,
+        "z": -7.66
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 2,
+      "rotation": {
+        "x": 17.51,
+        "y": 4.79,
+        "z": 14.01
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 2,
+      "rotation": {
+        "x": 55.22,
+        "y": -32.85,
+        "z": 28.67
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 2,
+      "rotation": {
+        "x": 22.47,
+        "y": -5.66,
+        "z": 1.56
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 2,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 2,
+      "rotation": {
+        "x": 6.35,
+        "y": 2.55,
+        "z": 11.93
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 2,
+      "rotation": {
+        "x": -8.31,
+        "y": 1.68,
+        "z": 0.32
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 2,
+      "rotation": {
+        "x": 2.57,
+        "y": 1.1,
+        "z": -0.07
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 2,
+      "rotation": {
+        "x": 6.72,
+        "y": 1.53,
+        "z": -9.07
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 2,
+      "rotation": {
+        "x": -10.53,
+        "y": 0.76,
+        "z": -1.3
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 2,
+      "rotation": {
+        "x": 5.71,
+        "y": 0.32,
+        "z": 0.91
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 3,
+      "rotation": {
+        "x": -4.82,
+        "y": -7.04,
+        "z": 0.59
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0469,
+        "z": 0.0177
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 3,
+      "rotation": {
+        "x": -1.19,
+        "y": -8.8,
+        "z": 1.2
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 3,
+      "rotation": {
+        "x": 1.16,
+        "y": 11.74,
+        "z": 0.04
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 3,
+      "rotation": {
+        "x": 41.49,
+        "y": 15.73,
+        "z": -35.58
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 3,
+      "rotation": {
+        "x": 36.55,
+        "y": 0.82,
+        "z": -11.7
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 3,
+      "rotation": {
+        "x": 25.69,
+        "y": 4.42,
+        "z": 12.66
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 3,
+      "rotation": {
+        "x": 46.23,
+        "y": -44.83,
+        "z": 18.9
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 3,
+      "rotation": {
+        "x": 46.77,
+        "y": -7.43,
+        "z": 6.59
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 3,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 3,
+      "rotation": {
+        "x": 12.01,
+        "y": 3.35,
+        "z": 11.08
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 3,
+      "rotation": {
+        "x": -15.68,
+        "y": 3.19,
+        "z": 0.95
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 3,
+      "rotation": {
+        "x": 4.96,
+        "y": 2.63,
+        "z": -0.21
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 3,
+      "rotation": {
+        "x": 11.25,
+        "y": 2.41,
+        "z": -9.22
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 3,
+      "rotation": {
+        "x": -20.55,
+        "y": 1.58,
+        "z": -2.68
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 3,
+      "rotation": {
+        "x": 11.05,
+        "y": 1.25,
+        "z": 1.98
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 4,
+      "rotation": {
+        "x": -4.94,
+        "y": -10.21,
+        "z": 0.85
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0674,
+        "z": 0.0261
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 4,
+      "rotation": {
+        "x": -1.7,
+        "y": -12.78,
+        "z": 1.75
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 4,
+      "rotation": {
+        "x": 1.68,
+        "y": 17.04,
+        "z": 0.04
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 4,
+      "rotation": {
+        "x": 26.97,
+        "y": 10.5,
+        "z": -40.24
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 4,
+      "rotation": {
+        "x": 52.29,
+        "y": -1.9,
+        "z": -13.41
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 4,
+      "rotation": {
+        "x": 31.49,
+        "y": 1.54,
+        "z": 9.1
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 4,
+      "rotation": {
+        "x": 40.23,
+        "y": -58.74,
+        "z": 8.67
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 4,
+      "rotation": {
+        "x": 65.47,
+        "y": -7.1,
+        "z": 8.49
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 4,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 4,
+      "rotation": {
+        "x": 17.4,
+        "y": 4.39,
+        "z": 10.28
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 4,
+      "rotation": {
+        "x": -22.13,
+        "y": 4.18,
+        "z": 1.11
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 4,
+      "rotation": {
+        "x": 6.73,
+        "y": 4.52,
+        "z": -0.17
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 4,
+      "rotation": {
+        "x": 15.0,
+        "y": 3.04,
+        "z": -9.48
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 4,
+      "rotation": {
+        "x": -29.23,
+        "y": 2.32,
+        "z": -3.95
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 4,
+      "rotation": {
+        "x": 15.72,
+        "y": 3.08,
+        "z": 3.03
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 5,
+      "rotation": {
+        "x": -5.1,
+        "y": -13.64,
+        "z": 1.14
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0888,
+        "z": 0.0362
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 5,
+      "rotation": {
+        "x": -2.21,
+        "y": -17.13,
+        "z": 2.4
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 5,
+      "rotation": {
+        "x": 2.22,
+        "y": 22.82,
+        "z": 0.05
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 5,
+      "rotation": {
+        "x": 13.98,
+        "y": 2.5,
+        "z": -49.65
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 5,
+      "rotation": {
+        "x": 62.27,
+        "y": -5.36,
+        "z": -12.79
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 5,
+      "rotation": {
+        "x": 32.96,
+        "y": -2.51,
+        "z": 7.86
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 5,
+      "rotation": {
+        "x": 49.42,
+        "y": -74.02,
+        "z": 9.46
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 5,
+      "rotation": {
+        "x": 67.31,
+        "y": -7.2,
+        "z": 5.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 5,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 5,
+      "rotation": {
+        "x": 22.1,
+        "y": 6.35,
+        "z": 9.69
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 5,
+      "rotation": {
+        "x": -26.91,
+        "y": 4.21,
+        "z": -0.11
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 5,
+      "rotation": {
+        "x": 7.43,
+        "y": 6.78,
+        "z": 0.42
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 5,
+      "rotation": {
+        "x": 17.24,
+        "y": 3.38,
+        "z": -9.91
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 5,
+      "rotation": {
+        "x": -35.32,
+        "y": 2.32,
+        "z": -4.65
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 5,
+      "rotation": {
+        "x": 19.13,
+        "y": 6.26,
+        "z": 3.6
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 6,
+      "rotation": {
+        "x": -5.3,
+        "y": -17.37,
+        "z": 1.45
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.1115,
+        "z": 0.0477
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 6,
+      "rotation": {
+        "x": -2.72,
+        "y": -21.88,
+        "z": 3.13
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 6,
+      "rotation": {
+        "x": 2.79,
+        "y": 29.13,
+        "z": 0.06
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 6,
+      "rotation": {
+        "x": 3.05,
+        "y": -4.83,
+        "z": -60.25
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 6,
+      "rotation": {
+        "x": 67.36,
+        "y": -8.12,
+        "z": -11.56
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 6,
+      "rotation": {
+        "x": 30.43,
+        "y": -7.43,
+        "z": 9.56
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 6,
+      "rotation": {
+        "x": 131.7,
+        "y": -82.36,
+        "z": 82.94
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 6,
+      "rotation": {
+        "x": 55.23,
+        "y": -7.04,
+        "z": -1.09
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 6,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 6,
+      "rotation": {
+        "x": 26.71,
+        "y": 8.65,
+        "z": 9.16
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 6,
+      "rotation": {
+        "x": -31.07,
+        "y": 3.42,
+        "z": -2.3
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 6,
+      "rotation": {
+        "x": 7.58,
+        "y": 10.04,
+        "z": 1.38
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 6,
+      "rotation": {
+        "x": 18.73,
+        "y": 3.31,
+        "z": -10.46
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 6,
+      "rotation": {
+        "x": -40.59,
+        "y": 1.03,
+        "z": -4.81
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 6,
+      "rotation": {
+        "x": 22.31,
+        "y": 11.22,
+        "z": 3.36
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 7,
+      "rotation": {
+        "x": -5.53,
+        "y": -20.74,
+        "z": 1.73
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.1325,
+        "z": 0.0576
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 7,
+      "rotation": {
+        "x": -3.19,
+        "y": -26.16,
+        "z": 3.75
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 7,
+      "rotation": {
+        "x": 3.34,
+        "y": 34.81,
+        "z": 0.04
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 7,
+      "rotation": {
+        "x": -4.89,
+        "y": -9.94,
+        "z": -68.41
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 7,
+      "rotation": {
+        "x": 69.51,
+        "y": -9.53,
+        "z": -10.84
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 7,
+      "rotation": {
+        "x": 26.24,
+        "y": -13.29,
+        "z": 11.78
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 7,
+      "rotation": {
+        "x": 178.61,
+        "y": -71.93,
+        "z": 124.66
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 7,
+      "rotation": {
+        "x": 39.64,
+        "y": -5.78,
+        "z": -6.48
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 7,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 7,
+      "rotation": {
+        "x": 30.91,
+        "y": 9.93,
+        "z": 8.62
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 7,
+      "rotation": {
+        "x": -34.74,
+        "y": 2.29,
+        "z": -4.08
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 7,
+      "rotation": {
+        "x": 7.63,
+        "y": 14.14,
+        "z": 2.14
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 7,
+      "rotation": {
+        "x": 19.9,
+        "y": 3.01,
+        "z": -10.95
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 7,
+      "rotation": {
+        "x": -45.46,
+        "y": -1.33,
+        "z": -4.83
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 7,
+      "rotation": {
+        "x": 25.6,
+        "y": 16.95,
+        "z": 2.3
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 8,
+      "rotation": {
+        "x": -5.73,
+        "y": -22.92,
+        "z": 1.91
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.1476,
+        "z": 0.0624
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 8,
+      "rotation": {
+        "x": -3.57,
+        "y": -28.86,
+        "z": 4.08
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 8,
+      "rotation": {
+        "x": 3.72,
+        "y": 38.41,
+        "z": 0.02
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 8,
+      "rotation": {
+        "x": -9.93,
+        "y": -13.39,
+        "z": -73.83
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 8,
+      "rotation": {
+        "x": 70.12,
+        "y": -9.95,
+        "z": -10.63
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 8,
+      "rotation": {
+        "x": 22.61,
+        "y": -18.65,
+        "z": 12.9
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 8,
+      "rotation": {
+        "x": -176.07,
+        "y": -62.97,
+        "z": 128.79
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 8,
+      "rotation": {
+        "x": 27.3,
+        "y": -4.39,
+        "z": -10.11
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 8,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 8,
+      "rotation": {
+        "x": 33.77,
+        "y": 9.94,
+        "z": 8.24
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 8,
+      "rotation": {
+        "x": -37.26,
+        "y": 1.42,
+        "z": -4.81
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 8,
+      "rotation": {
+        "x": 7.76,
+        "y": 17.62,
+        "z": 2.48
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 8,
+      "rotation": {
+        "x": 20.62,
+        "y": 2.72,
+        "z": -11.22
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 8,
+      "rotation": {
+        "x": -48.82,
+        "y": -3.53,
+        "z": -4.92
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 8,
+      "rotation": {
+        "x": 28.18,
+        "y": 21.32,
+        "z": 1.05
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 9,
+      "rotation": {
+        "x": -5.89,
+        "y": -23.77,
+        "z": 1.98
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.1557,
+        "z": 0.0622
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 9,
+      "rotation": {
+        "x": -3.83,
+        "y": -29.83,
+        "z": 4.1
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 9,
+      "rotation": {
+        "x": 3.92,
+        "y": 39.73,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 9,
+      "rotation": {
+        "x": -13.1,
+        "y": -15.64,
+        "z": -77.57
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 9,
+      "rotation": {
+        "x": 70.23,
+        "y": -10.0,
+        "z": -10.62
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 9,
+      "rotation": {
+        "x": 20.11,
+        "y": -22.2,
+        "z": 12.95
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 9,
+      "rotation": {
+        "x": -177.3,
+        "y": -57.87,
+        "z": 128.25
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 9,
+      "rotation": {
+        "x": 19.78,
+        "y": -3.55,
+        "z": -12.26
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 9,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 9,
+      "rotation": {
+        "x": 35.11,
+        "y": 9.52,
+        "z": 8.08
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 9,
+      "rotation": {
+        "x": -38.51,
+        "y": 1.01,
+        "z": -4.89
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 9,
+      "rotation": {
+        "x": 7.96,
+        "y": 19.41,
+        "z": 2.54
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 9,
+      "rotation": {
+        "x": 20.99,
+        "y": 2.53,
+        "z": -11.29
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 9,
+      "rotation": {
+        "x": -50.36,
+        "y": -4.66,
+        "z": -4.98
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 9,
+      "rotation": {
+        "x": 29.48,
+        "y": 23.34,
+        "z": 0.3
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 10,
+      "rotation": {
+        "x": -6.02,
+        "y": -23.68,
+        "z": 1.97
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.159,
+        "z": 0.058
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 10,
+      "rotation": {
+        "x": -4.03,
+        "y": -29.54,
+        "z": 3.88
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 10,
+      "rotation": {
+        "x": 3.97,
+        "y": 39.4,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 10,
+      "rotation": {
+        "x": -14.98,
+        "y": -16.73,
+        "z": -79.92
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 10,
+      "rotation": {
+        "x": 70.43,
+        "y": -10.0,
+        "z": -10.8
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 10,
+      "rotation": {
+        "x": 17.52,
+        "y": -24.56,
+        "z": 11.99
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 10,
+      "rotation": {
+        "x": -179.09,
+        "y": -55.52,
+        "z": 127.09
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 10,
+      "rotation": {
+        "x": 16.32,
+        "y": -3.2,
+        "z": -13.27
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 10,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 10,
+      "rotation": {
+        "x": 35.42,
+        "y": 9.34,
+        "z": 8.09
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 10,
+      "rotation": {
+        "x": -39.09,
+        "y": 0.74,
+        "z": -4.82
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 10,
+      "rotation": {
+        "x": 8.36,
+        "y": 19.79,
+        "z": 2.44
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 10,
+      "rotation": {
+        "x": 21.28,
+        "y": 2.4,
+        "z": -11.27
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 10,
+      "rotation": {
+        "x": -50.86,
+        "y": -4.97,
+        "z": -5.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 10,
+      "rotation": {
+        "x": 29.86,
+        "y": 23.62,
+        "z": 0.05
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 11,
+      "rotation": {
+        "x": -6.19,
+        "y": -22.65,
+        "z": 1.89
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.1592,
+        "z": 0.048
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 11,
+      "rotation": {
+        "x": -4.29,
+        "y": -27.95,
+        "z": 3.3
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 11,
+      "rotation": {
+        "x": 3.93,
+        "y": 37.36,
+        "z": -0.01
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 11,
+      "rotation": {
+        "x": -15.83,
+        "y": -16.76,
+        "z": -81.07
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 11,
+      "rotation": {
+        "x": 71.1,
+        "y": -9.98,
+        "z": -11.42
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 11,
+      "rotation": {
+        "x": 12.64,
+        "y": -27.19,
+        "z": 9.16
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 11,
+      "rotation": {
+        "x": -179.9,
+        "y": -54.44,
+        "z": 125.85
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 11,
+      "rotation": {
+        "x": 15.29,
+        "y": -3.11,
+        "z": -13.52
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 11,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 11,
+      "rotation": {
+        "x": 35.02,
+        "y": 9.76,
+        "z": 8.18
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 11,
+      "rotation": {
+        "x": -39.76,
+        "y": 0.08,
+        "z": -4.76
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 11,
+      "rotation": {
+        "x": 9.42,
+        "y": 19.09,
+        "z": 2.05
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 11,
+      "rotation": {
+        "x": 21.75,
+        "y": 2.41,
+        "z": -11.21
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 11,
+      "rotation": {
+        "x": -50.98,
+        "y": -4.97,
+        "z": -4.98
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 11,
+      "rotation": {
+        "x": 29.86,
+        "y": 22.54,
+        "z": 0.01
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 12,
+      "rotation": {
+        "x": -6.5,
+        "y": -20.09,
+        "z": 1.66
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.1564,
+        "z": 0.0268
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 12,
+      "rotation": {
+        "x": -4.79,
+        "y": -24.13,
+        "z": 2.05
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 12,
+      "rotation": {
+        "x": 3.76,
+        "y": 32.43,
+        "z": -0.01
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 12,
+      "rotation": {
+        "x": -15.3,
+        "y": -16.19,
+        "z": -81.53
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 12,
+      "rotation": {
+        "x": 72.32,
+        "y": -9.97,
+        "z": -12.57
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 12,
+      "rotation": {
+        "x": 3.61,
+        "y": -30.39,
+        "z": 3.02
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 12,
+      "rotation": {
+        "x": 179.89,
+        "y": -53.4,
+        "z": 123.49
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 12,
+      "rotation": {
+        "x": 15.2,
+        "y": -3.12,
+        "z": -13.24
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 12,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 12,
+      "rotation": {
+        "x": 33.45,
+        "y": 11.39,
+        "z": 8.22
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 12,
+      "rotation": {
+        "x": -40.72,
+        "y": -1.29,
+        "z": -4.72
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 12,
+      "rotation": {
+        "x": 11.66,
+        "y": 16.34,
+        "z": 1.16
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 12,
+      "rotation": {
+        "x": 22.52,
+        "y": 2.86,
+        "z": -11.21
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 12,
+      "rotation": {
+        "x": -50.65,
+        "y": -4.85,
+        "z": -4.89
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 12,
+      "rotation": {
+        "x": 29.55,
+        "y": 19.35,
+        "z": 0.08
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 13,
+      "rotation": {
+        "x": -6.96,
+        "y": -15.36,
+        "z": 1.25
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.1489,
+        "z": -0.0094
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 13,
+      "rotation": {
+        "x": -5.41,
+        "y": -17.2,
+        "z": -0.01
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 13,
+      "rotation": {
+        "x": 3.37,
+        "y": 23.51,
+        "z": 0.04
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 13,
+      "rotation": {
+        "x": -12.02,
+        "y": -15.99,
+        "z": -81.26
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 13,
+      "rotation": {
+        "x": 73.96,
+        "y": -9.97,
+        "z": -13.83
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 13,
+      "rotation": {
+        "x": -10.24,
+        "y": -32.82,
+        "z": -7.2
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 13,
+      "rotation": {
+        "x": 179.72,
+        "y": -51.81,
+        "z": 118.88
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 13,
+      "rotation": {
+        "x": 15.62,
+        "y": -3.14,
+        "z": -12.05
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 13,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 13,
+      "rotation": {
+        "x": 29.88,
+        "y": 14.27,
+        "z": 8.09
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 13,
+      "rotation": {
+        "x": -41.35,
+        "y": -3.02,
+        "z": -4.35
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 13,
+      "rotation": {
+        "x": 15.01,
+        "y": 10.02,
+        "z": -0.07
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 13,
+      "rotation": {
+        "x": 23.45,
+        "y": 4.17,
+        "z": -11.35
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 13,
+      "rotation": {
+        "x": -49.11,
+        "y": -4.65,
+        "z": -4.6
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 13,
+      "rotation": {
+        "x": 28.5,
+        "y": 12.99,
+        "z": 0.39
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 14,
+      "rotation": {
+        "x": -7.38,
+        "y": -8.56,
+        "z": 0.65
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.1361,
+        "z": -0.0565
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 14,
+      "rotation": {
+        "x": -5.6,
+        "y": -7.47,
+        "z": -2.45
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 14,
+      "rotation": {
+        "x": 2.62,
+        "y": 11.12,
+        "z": 0.22
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 14,
+      "rotation": {
+        "x": -4.37,
+        "y": -16.27,
+        "z": -78.9
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 14,
+      "rotation": {
+        "x": 76.38,
+        "y": -9.99,
+        "z": -14.65
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 14,
+      "rotation": {
+        "x": -27.01,
+        "y": -32.68,
+        "z": -19.69
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 14,
+      "rotation": {
+        "x": 179.55,
+        "y": -50.15,
+        "z": 111.77
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 14,
+      "rotation": {
+        "x": 17.95,
+        "y": -3.08,
+        "z": -8.71
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 14,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 14,
+      "rotation": {
+        "x": 24.22,
+        "y": 16.59,
+        "z": 8.01
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 14,
+      "rotation": {
+        "x": -40.93,
+        "y": -4.31,
+        "z": -2.97
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 14,
+      "rotation": {
+        "x": 18.64,
+        "y": 0.82,
+        "z": -1.03
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 14,
+      "rotation": {
+        "x": 23.93,
+        "y": 6.19,
+        "z": -11.53
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 14,
+      "rotation": {
+        "x": -45.46,
+        "y": -4.6,
+        "z": -3.9
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 14,
+      "rotation": {
+        "x": 26.24,
+        "y": 3.92,
+        "z": 0.77
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 15,
+      "rotation": {
+        "x": -7.45,
+        "y": -0.74,
+        "z": -0.09
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.119,
+        "z": -0.1025
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 15,
+      "rotation": {
+        "x": -4.68,
+        "y": 3.3,
+        "z": -4.57
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 15,
+      "rotation": {
+        "x": 1.44,
+        "y": -2.36,
+        "z": 0.63
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 15,
+      "rotation": {
+        "x": 7.58,
+        "y": -14.42,
+        "z": -73.06
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 15,
+      "rotation": {
+        "x": 80.43,
+        "y": -10.0,
+        "z": -14.95
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 15,
+      "rotation": {
+        "x": -41.76,
+        "y": -30.19,
+        "z": -30.09
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 15,
+      "rotation": {
+        "x": 179.29,
+        "y": -50.28,
+        "z": 102.87
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 15,
+      "rotation": {
+        "x": 25.52,
+        "y": -2.35,
+        "z": -2.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 15,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 15,
+      "rotation": {
+        "x": 17.41,
+        "y": 15.86,
+        "z": 8.23
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 15,
+      "rotation": {
+        "x": -38.98,
+        "y": -4.71,
+        "z": -0.43
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 15,
+      "rotation": {
+        "x": 21.62,
+        "y": -8.02,
+        "z": -1.32
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 15,
+      "rotation": {
+        "x": 23.15,
+        "y": 7.67,
+        "z": -11.38
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 15,
+      "rotation": {
+        "x": -39.51,
+        "y": -4.82,
+        "z": -2.43
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 15,
+      "rotation": {
+        "x": 22.58,
+        "y": -5.43,
+        "z": 0.73
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 16,
+      "rotation": {
+        "x": -6.89,
+        "y": 6.9,
+        "z": -0.93
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0991,
+        "z": -0.1366
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 16,
+      "rotation": {
+        "x": -2.41,
+        "y": 13.24,
+        "z": -5.95
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 16,
+      "rotation": {
+        "x": -0.17,
+        "y": -14.7,
+        "z": 1.33
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 16,
+      "rotation": {
+        "x": 21.06,
+        "y": -7.77,
+        "z": -65.53
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 16,
+      "rotation": {
+        "x": 85.53,
+        "y": -10.0,
+        "z": -14.94
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 16,
+      "rotation": {
+        "x": -50.69,
+        "y": -28.15,
+        "z": -35.62
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 16,
+      "rotation": {
+        "x": 177.96,
+        "y": -54.08,
+        "z": 93.24
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 16,
+      "rotation": {
+        "x": 39.95,
+        "y": 0.38,
+        "z": 6.52
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 16,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 16,
+      "rotation": {
+        "x": 10.21,
+        "y": 11.73,
+        "z": 8.65
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 16,
+      "rotation": {
+        "x": -35.08,
+        "y": -4.08,
+        "z": 2.22
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 16,
+      "rotation": {
+        "x": 23.21,
+        "y": -14.29,
+        "z": -0.88
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 16,
+      "rotation": {
+        "x": 20.95,
+        "y": 7.22,
+        "z": -10.59
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 16,
+      "rotation": {
+        "x": -32.32,
+        "y": -4.96,
+        "z": -0.16
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 16,
+      "rotation": {
+        "x": 17.88,
+        "y": -12.63,
+        "z": 0.01
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 17,
+      "rotation": {
+        "x": -5.7,
+        "y": 13.79,
+        "z": -1.86
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0774,
+        "z": -0.1574
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 17,
+      "rotation": {
+        "x": 0.78,
+        "y": 21.68,
+        "z": -6.69
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 17,
+      "rotation": {
+        "x": -2.04,
+        "y": -25.38,
+        "z": 2.23
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 17,
+      "rotation": {
+        "x": 33.43,
+        "y": 1.41,
+        "z": -59.78
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 17,
+      "rotation": {
+        "x": 88.8,
+        "y": -9.97,
+        "z": -14.58
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 17,
+      "rotation": {
+        "x": -54.23,
+        "y": -28.54,
+        "z": -36.9
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 17,
+      "rotation": {
+        "x": 173.58,
+        "y": -60.83,
+        "z": 82.79
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 17,
+      "rotation": {
+        "x": 57.04,
+        "y": 4.87,
+        "z": 12.62
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 17,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 17,
+      "rotation": {
+        "x": 2.66,
+        "y": 6.22,
+        "z": 9.06
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 17,
+      "rotation": {
+        "x": -28.96,
+        "y": -2.69,
+        "z": 3.49
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 17,
+      "rotation": {
+        "x": 23.19,
+        "y": -18.42,
+        "z": 0.32
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 17,
+      "rotation": {
+        "x": 18.02,
+        "y": 5.27,
+        "z": -9.41
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 17,
+      "rotation": {
+        "x": -25.22,
+        "y": -4.7,
+        "z": 2.13
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 17,
+      "rotation": {
+        "x": 12.87,
+        "y": -17.66,
+        "z": -0.88
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 18,
+      "rotation": {
+        "x": -4.22,
+        "y": 19.82,
+        "z": -2.83
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0571,
+        "z": -0.1708
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 18,
+      "rotation": {
+        "x": 4.07,
+        "y": 28.83,
+        "z": -7.25
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 18,
+      "rotation": {
+        "x": -3.86,
+        "y": -34.78,
+        "z": 3.12
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 18,
+      "rotation": {
+        "x": 44.59,
+        "y": 7.88,
+        "z": -56.88
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 18,
+      "rotation": {
+        "x": 87.43,
+        "y": -9.88,
+        "z": -13.59
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 18,
+      "rotation": {
+        "x": -55.02,
+        "y": -30.81,
+        "z": -35.9
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 18,
+      "rotation": {
+        "x": 163.72,
+        "y": -67.62,
+        "z": 69.08
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 18,
+      "rotation": {
+        "x": 70.19,
+        "y": 8.33,
+        "z": 14.72
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 18,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 18,
+      "rotation": {
+        "x": -4.89,
+        "y": 1.09,
+        "z": 9.3
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 18,
+      "rotation": {
+        "x": -21.51,
+        "y": -1.87,
+        "z": 2.9
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 18,
+      "rotation": {
+        "x": 22.09,
+        "y": -20.79,
+        "z": 1.75
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 18,
+      "rotation": {
+        "x": 15.07,
+        "y": 3.66,
+        "z": -8.27
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 18,
+      "rotation": {
+        "x": -18.59,
+        "y": -4.21,
+        "z": 3.59
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 18,
+      "rotation": {
+        "x": 8.06,
+        "y": -22.07,
+        "z": -1.44
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 19,
+      "rotation": {
+        "x": -3.0,
+        "y": 24.74,
+        "z": -3.74
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0437,
+        "z": -0.1826
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 19,
+      "rotation": {
+        "x": 6.74,
+        "y": 34.69,
+        "z": -7.89
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 19,
+      "rotation": {
+        "x": -5.29,
+        "y": -42.62,
+        "z": 3.78
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 19,
+      "rotation": {
+        "x": 54.61,
+        "y": 9.2,
+        "z": -55.71
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 19,
+      "rotation": {
+        "x": 81.29,
+        "y": -9.83,
+        "z": -12.14
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 19,
+      "rotation": {
+        "x": -55.06,
+        "y": -33.33,
+        "z": -34.39
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 19,
+      "rotation": {
+        "x": 147.47,
+        "y": -71.97,
+        "z": 50.06
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 19,
+      "rotation": {
+        "x": 76.64,
+        "y": 9.62,
+        "z": 14.74
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 19,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 19,
+      "rotation": {
+        "x": -10.97,
+        "y": -3.62,
+        "z": 9.34
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 19,
+      "rotation": {
+        "x": -15.03,
+        "y": -2.65,
+        "z": 1.48
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 19,
+      "rotation": {
+        "x": 20.9,
+        "y": -20.7,
+        "z": 2.54
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 19,
+      "rotation": {
+        "x": 12.5,
+        "y": 2.93,
+        "z": -7.35
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 19,
+      "rotation": {
+        "x": -12.64,
+        "y": -3.72,
+        "z": 4.25
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 19,
+      "rotation": {
+        "x": 3.89,
+        "y": -26.14,
+        "z": -1.71
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 20,
+      "rotation": {
+        "x": -2.43,
+        "y": 28.22,
+        "z": -4.46
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.04,
+        "z": -0.1939
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 20,
+      "rotation": {
+        "x": 8.43,
+        "y": 38.94,
+        "z": -8.55
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 20,
+      "rotation": {
+        "x": -6.11,
+        "y": -48.09,
+        "z": 4.14
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 20,
+      "rotation": {
+        "x": 62.46,
+        "y": 6.78,
+        "z": -54.99
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 20,
+      "rotation": {
+        "x": 72.77,
+        "y": -9.91,
+        "z": -11.06
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 20,
+      "rotation": {
+        "x": -55.02,
+        "y": -34.98,
+        "z": -33.34
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 20,
+      "rotation": {
+        "x": 129.87,
+        "y": -73.39,
+        "z": 30.28
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 20,
+      "rotation": {
+        "x": 78.38,
+        "y": 9.77,
+        "z": 14.19
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 20,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 20,
+      "rotation": {
+        "x": -14.41,
+        "y": -8.03,
+        "z": 9.28
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 20,
+      "rotation": {
+        "x": -11.31,
+        "y": -4.06,
+        "z": 0.46
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 20,
+      "rotation": {
+        "x": 20.4,
+        "y": -18.76,
+        "z": 2.52
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 20,
+      "rotation": {
+        "x": 10.63,
+        "y": 1.97,
+        "z": -6.64
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 20,
+      "rotation": {
+        "x": -8.1,
+        "y": -3.07,
+        "z": 4.61
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 20,
+      "rotation": {
+        "x": 0.96,
+        "y": -28.81,
+        "z": -1.83
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 21,
+      "rotation": {
+        "x": -2.43,
+        "y": 30.15,
+        "z": -4.89
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0431,
+        "z": -0.2021
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 21,
+      "rotation": {
+        "x": 9.19,
+        "y": 41.33,
+        "z": -9.03
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 21,
+      "rotation": {
+        "x": -6.39,
+        "y": -50.91,
+        "z": 4.25
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 21,
+      "rotation": {
+        "x": 67.4,
+        "y": 3.41,
+        "z": -54.27
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 21,
+      "rotation": {
+        "x": 64.87,
+        "y": -10.04,
+        "z": -11.15
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 21,
+      "rotation": {
+        "x": -55.0,
+        "y": -35.68,
+        "z": -32.86
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 21,
+      "rotation": {
+        "x": 117.8,
+        "y": -73.27,
+        "z": 16.79
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 21,
+      "rotation": {
+        "x": 78.39,
+        "y": 9.64,
+        "z": 13.57
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 21,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 21,
+      "rotation": {
+        "x": -15.62,
+        "y": -11.09,
+        "z": 9.22
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 21,
+      "rotation": {
+        "x": -10.01,
+        "y": -4.85,
+        "z": 0.17
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 21,
+      "rotation": {
+        "x": 20.54,
+        "y": -17.12,
+        "z": 2.21
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 21,
+      "rotation": {
+        "x": 9.55,
+        "y": 0.51,
+        "z": -6.14
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 21,
+      "rotation": {
+        "x": -5.25,
+        "y": -2.18,
+        "z": 4.84
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 21,
+      "rotation": {
+        "x": -0.67,
+        "y": -29.81,
+        "z": -1.78
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 22,
+      "rotation": {
+        "x": -2.66,
+        "y": 30.75,
+        "z": -5.06
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0472,
+        "z": -0.2051
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 22,
+      "rotation": {
+        "x": 9.33,
+        "y": 42.07,
+        "z": -9.21
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 22,
+      "rotation": {
+        "x": -6.34,
+        "y": -51.57,
+        "z": 4.21
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 22,
+      "rotation": {
+        "x": 69.75,
+        "y": 0.99,
+        "z": -53.59
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 22,
+      "rotation": {
+        "x": 59.37,
+        "y": -10.07,
+        "z": -12.3
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 22,
+      "rotation": {
+        "x": -55.0,
+        "y": -35.87,
+        "z": -32.72
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 22,
+      "rotation": {
+        "x": 111.75,
+        "y": -72.92,
+        "z": 10.07
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 22,
+      "rotation": {
+        "x": 78.3,
+        "y": 9.57,
+        "z": 13.24
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 22,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 22,
+      "rotation": {
+        "x": -15.82,
+        "y": -11.92,
+        "z": 9.19
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 22,
+      "rotation": {
+        "x": -9.76,
+        "y": -5.0,
+        "z": 0.35
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 22,
+      "rotation": {
+        "x": 20.74,
+        "y": -16.91,
+        "z": 2.03
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 22,
+      "rotation": {
+        "x": 9.01,
+        "y": -0.48,
+        "z": -5.88
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 22,
+      "rotation": {
+        "x": -3.68,
+        "y": -1.41,
+        "z": 4.89
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 22,
+      "rotation": {
+        "x": -1.44,
+        "y": -29.98,
+        "z": -1.63
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 23,
+      "rotation": {
+        "x": -2.85,
+        "y": 30.57,
+        "z": -5.07
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0494,
+        "z": -0.2038
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 23,
+      "rotation": {
+        "x": 9.21,
+        "y": 41.79,
+        "z": -9.16
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 23,
+      "rotation": {
+        "x": -6.18,
+        "y": -51.07,
+        "z": 4.12
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 23,
+      "rotation": {
+        "x": 70.54,
+        "y": -0.1,
+        "z": -53.02
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 23,
+      "rotation": {
+        "x": 56.33,
+        "y": -10.04,
+        "z": -13.69
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 23,
+      "rotation": {
+        "x": -55.0,
+        "y": -35.84,
+        "z": -32.71
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 23,
+      "rotation": {
+        "x": 108.97,
+        "y": -72.62,
+        "z": 7.19
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 23,
+      "rotation": {
+        "x": 78.53,
+        "y": 9.6,
+        "z": 13.35
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 23,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 23,
+      "rotation": {
+        "x": -15.76,
+        "y": -11.16,
+        "z": 9.14
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 23,
+      "rotation": {
+        "x": -9.73,
+        "y": -5.0,
+        "z": 0.71
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 23,
+      "rotation": {
+        "x": 20.72,
+        "y": -17.6,
+        "z": 1.99
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 23,
+      "rotation": {
+        "x": 8.78,
+        "y": -0.56,
+        "z": -5.81
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 23,
+      "rotation": {
+        "x": -2.96,
+        "y": -1.04,
+        "z": 4.81
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 23,
+      "rotation": {
+        "x": -1.74,
+        "y": -29.98,
+        "z": -1.49
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 24,
+      "rotation": {
+        "x": -2.97,
+        "y": 30.14,
+        "z": -5.02
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0499,
+        "z": -0.2009
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 24,
+      "rotation": {
+        "x": 9.05,
+        "y": 41.19,
+        "z": -9.04
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 24,
+      "rotation": {
+        "x": -6.04,
+        "y": -50.26,
+        "z": 4.03
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 24,
+      "rotation": {
+        "x": 70.72,
+        "y": -0.32,
+        "z": -52.56
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 24,
+      "rotation": {
+        "x": 54.85,
+        "y": -10.01,
+        "z": -14.6
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 24,
+      "rotation": {
+        "x": -55.0,
+        "y": -35.64,
+        "z": -32.81
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 24,
+      "rotation": {
+        "x": 107.29,
+        "y": -72.04,
+        "z": 6.03
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 24,
+      "rotation": {
+        "x": 78.98,
+        "y": 9.68,
+        "z": 13.75
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 24,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 24,
+      "rotation": {
+        "x": -15.61,
+        "y": -10.18,
+        "z": 9.1
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 24,
+      "rotation": {
+        "x": -9.68,
+        "y": -5.0,
+        "z": 1.03
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 24,
+      "rotation": {
+        "x": 20.51,
+        "y": -18.2,
+        "z": 1.97
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 24,
+      "rotation": {
+        "x": 8.66,
+        "y": -0.4,
+        "z": -5.82
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 24,
+      "rotation": {
+        "x": -2.73,
+        "y": -0.88,
+        "z": 4.72
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 24,
+      "rotation": {
+        "x": -1.78,
+        "y": -29.85,
+        "z": -1.41
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 25,
+      "rotation": {
+        "x": -3.03,
+        "y": 29.67,
+        "z": -4.95
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0495,
+        "z": -0.1977
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 25,
+      "rotation": {
+        "x": 8.9,
+        "y": 40.54,
+        "z": -8.9
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 25,
+      "rotation": {
+        "x": -5.93,
+        "y": -49.44,
+        "z": 3.95
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 25,
+      "rotation": {
+        "x": 70.78,
+        "y": 0.0,
+        "z": -52.05
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 25,
+      "rotation": {
+        "x": 54.12,
+        "y": -10.0,
+        "z": -14.94
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 25,
+      "rotation": {
+        "x": -55.01,
+        "y": -35.19,
+        "z": -33.23
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 25,
+      "rotation": {
+        "x": 105.72,
+        "y": -70.75,
+        "z": 6.05
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 25,
+      "rotation": {
+        "x": 79.73,
+        "y": 9.78,
+        "z": 14.25
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 25,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 25,
+      "rotation": {
+        "x": -15.42,
+        "y": -9.77,
+        "z": 9.15
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 25,
+      "rotation": {
+        "x": -9.4,
+        "y": -4.94,
+        "z": 1.22
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 25,
+      "rotation": {
+        "x": 20.08,
+        "y": -18.22,
+        "z": 1.9
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 25,
+      "rotation": {
+        "x": 8.53,
+        "y": -0.68,
+        "z": -5.84
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 25,
+      "rotation": {
+        "x": -2.7,
+        "y": -0.63,
+        "z": 4.67
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 25,
+      "rotation": {
+        "x": -1.7,
+        "y": -29.35,
+        "z": -1.39
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 26,
+      "rotation": {
+        "x": -3.08,
+        "y": 29.02,
+        "z": -4.84
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0487,
+        "z": -0.1933
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 26,
+      "rotation": {
+        "x": 8.69,
+        "y": 39.66,
+        "z": -8.69
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 26,
+      "rotation": {
+        "x": -5.79,
+        "y": -48.34,
+        "z": 3.86
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 26,
+      "rotation": {
+        "x": 70.71,
+        "y": 0.91,
+        "z": -51.31
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 26,
+      "rotation": {
+        "x": 53.99,
+        "y": -10.0,
+        "z": -15.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 26,
+      "rotation": {
+        "x": -55.02,
+        "y": -34.47,
+        "z": -34.28
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 26,
+      "rotation": {
+        "x": 104.36,
+        "y": -68.54,
+        "z": 7.99
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 26,
+      "rotation": {
+        "x": 81.02,
+        "y": 9.86,
+        "z": 14.68
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 26,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 26,
+      "rotation": {
+        "x": -15.13,
+        "y": -10.09,
+        "z": 9.28
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 26,
+      "rotation": {
+        "x": -8.77,
+        "y": -4.63,
+        "z": 1.44
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 26,
+      "rotation": {
+        "x": 19.3,
+        "y": -17.58,
+        "z": 1.65
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 26,
+      "rotation": {
+        "x": 8.37,
+        "y": -1.62,
+        "z": -5.89
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 26,
+      "rotation": {
+        "x": -2.77,
+        "y": -0.29,
+        "z": 4.71
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 26,
+      "rotation": {
+        "x": -1.57,
+        "y": -28.11,
+        "z": -1.46
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 27,
+      "rotation": {
+        "x": -3.16,
+        "y": 27.99,
+        "z": -4.67
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0472,
+        "z": -0.1864
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 27,
+      "rotation": {
+        "x": 8.37,
+        "y": 38.24,
+        "z": -8.37
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 27,
+      "rotation": {
+        "x": -5.57,
+        "y": -46.59,
+        "z": 3.72
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 27,
+      "rotation": {
+        "x": 69.99,
+        "y": 2.78,
+        "z": -50.36
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 27,
+      "rotation": {
+        "x": 55.19,
+        "y": -10.0,
+        "z": -15.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 27,
+      "rotation": {
+        "x": -55.03,
+        "y": -33.67,
+        "z": -36.12
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 27,
+      "rotation": {
+        "x": 103.82,
+        "y": -65.64,
+        "z": 13.02
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 27,
+      "rotation": {
+        "x": 82.87,
+        "y": 9.84,
+        "z": 14.91
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 27,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 27,
+      "rotation": {
+        "x": -14.59,
+        "y": -10.91,
+        "z": 9.49
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 27,
+      "rotation": {
+        "x": -7.9,
+        "y": -4.07,
+        "z": 1.89
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 27,
+      "rotation": {
+        "x": 18.14,
+        "y": -16.31,
+        "z": 1.11
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 27,
+      "rotation": {
+        "x": 8.1,
+        "y": -2.96,
+        "z": -6.01
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 27,
+      "rotation": {
+        "x": -2.82,
+        "y": -0.12,
+        "z": 4.81
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 27,
+      "rotation": {
+        "x": -1.4,
+        "y": -25.92,
+        "z": -1.57
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 28,
+      "rotation": {
+        "x": -3.26,
+        "y": 26.44,
+        "z": -4.42
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0448,
+        "z": -0.1759
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 28,
+      "rotation": {
+        "x": 7.88,
+        "y": 36.11,
+        "z": -7.88
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 28,
+      "rotation": {
+        "x": -5.24,
+        "y": -43.97,
+        "z": 3.51
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 28,
+      "rotation": {
+        "x": 67.87,
+        "y": 6.15,
+        "z": -49.11
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 28,
+      "rotation": {
+        "x": 58.71,
+        "y": -10.0,
+        "z": -15.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 28,
+      "rotation": {
+        "x": -55.03,
+        "y": -32.94,
+        "z": -38.66
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 28,
+      "rotation": {
+        "x": 104.23,
+        "y": -62.44,
+        "z": 21.57
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 28,
+      "rotation": {
+        "x": 84.9,
+        "y": 9.6,
+        "z": 14.98
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 28,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 28,
+      "rotation": {
+        "x": -13.76,
+        "y": -11.57,
+        "z": 9.84
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 28,
+      "rotation": {
+        "x": -6.92,
+        "y": -3.75,
+        "z": 2.38
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 28,
+      "rotation": {
+        "x": 16.63,
+        "y": -14.4,
+        "z": 0.37
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 28,
+      "rotation": {
+        "x": 7.61,
+        "y": -4.09,
+        "z": -6.23
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 28,
+      "rotation": {
+        "x": -2.63,
+        "y": -0.5,
+        "z": 4.86
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 28,
+      "rotation": {
+        "x": -1.23,
+        "y": -22.87,
+        "z": -1.66
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 29,
+      "rotation": {
+        "x": -3.4,
+        "y": 24.31,
+        "z": -4.06
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0414,
+        "z": -0.1617
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 29,
+      "rotation": {
+        "x": 7.22,
+        "y": 33.2,
+        "z": -7.22
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 29,
+      "rotation": {
+        "x": -4.81,
+        "y": -40.41,
+        "z": 3.23
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 29,
+      "rotation": {
+        "x": 63.97,
+        "y": 10.99,
+        "z": -47.01
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 29,
+      "rotation": {
+        "x": 64.38,
+        "y": -10.0,
+        "z": -15.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 29,
+      "rotation": {
+        "x": -55.06,
+        "y": -32.16,
+        "z": -41.89
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 29,
+      "rotation": {
+        "x": 104.7,
+        "y": -59.13,
+        "z": 32.69
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 29,
+      "rotation": {
+        "x": 86.2,
+        "y": 9.08,
+        "z": 15.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 29,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 29,
+      "rotation": {
+        "x": -12.99,
+        "y": -11.22,
+        "z": 10.38
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 29,
+      "rotation": {
+        "x": -5.54,
+        "y": -4.04,
+        "z": 2.49
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 29,
+      "rotation": {
+        "x": 14.78,
+        "y": -12.22,
+        "z": -0.23
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 29,
+      "rotation": {
+        "x": 6.91,
+        "y": -4.38,
+        "z": -6.52
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 29,
+      "rotation": {
+        "x": -2.09,
+        "y": -1.67,
+        "z": 4.72
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 29,
+      "rotation": {
+        "x": -1.13,
+        "y": -19.26,
+        "z": -1.67
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 30,
+      "rotation": {
+        "x": -3.55,
+        "y": 21.65,
+        "z": -3.62
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.037,
+        "z": -0.1439
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 30,
+      "rotation": {
+        "x": 6.4,
+        "y": 29.56,
+        "z": -6.4
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 30,
+      "rotation": {
+        "x": -4.28,
+        "y": -35.96,
+        "z": 2.88
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 30,
+      "rotation": {
+        "x": 58.73,
+        "y": 16.11,
+        "z": -43.31
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 30,
+      "rotation": {
+        "x": 70.01,
+        "y": -10.0,
+        "z": -15.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 30,
+      "rotation": {
+        "x": -54.96,
+        "y": -30.74,
+        "z": -45.81
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 30,
+      "rotation": {
+        "x": 103.46,
+        "y": -55.54,
+        "z": 43.97
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 30,
+      "rotation": {
+        "x": 85.56,
+        "y": 8.28,
+        "z": 15.03
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 30,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 30,
+      "rotation": {
+        "x": -12.42,
+        "y": -9.46,
+        "z": 11.03
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 30,
+      "rotation": {
+        "x": -3.75,
+        "y": -4.51,
+        "z": 2.19
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 30,
+      "rotation": {
+        "x": 12.63,
+        "y": -10.62,
+        "z": -0.4
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 30,
+      "rotation": {
+        "x": 6.1,
+        "y": -3.92,
+        "z": -6.81
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 30,
+      "rotation": {
+        "x": -1.35,
+        "y": -3.25,
+        "z": 4.28
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 30,
+      "rotation": {
+        "x": -1.08,
+        "y": -15.44,
+        "z": -1.54
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 31,
+      "rotation": {
+        "x": -3.72,
+        "y": 18.56,
+        "z": -3.1
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0318,
+        "z": -0.1233
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 31,
+      "rotation": {
+        "x": 5.47,
+        "y": 25.35,
+        "z": -5.47
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 31,
+      "rotation": {
+        "x": -3.67,
+        "y": -30.82,
+        "z": 2.47
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 31,
+      "rotation": {
+        "x": 53.4,
+        "y": 19.74,
+        "z": -38.06
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 31,
+      "rotation": {
+        "x": 72.49,
+        "y": -9.76,
+        "z": -15.04
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 31,
+      "rotation": {
+        "x": -53.59,
+        "y": -28.07,
+        "z": -48.9
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 31,
+      "rotation": {
+        "x": 98.56,
+        "y": -51.71,
+        "z": 52.05
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 31,
+      "rotation": {
+        "x": 81.75,
+        "y": 7.21,
+        "z": 15.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 31,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 31,
+      "rotation": {
+        "x": -11.47,
+        "y": -6.66,
+        "z": 11.68
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 31,
+      "rotation": {
+        "x": -2.51,
+        "y": -4.67,
+        "z": 1.76
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 31,
+      "rotation": {
+        "x": 10.56,
+        "y": -9.83,
+        "z": -0.28
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 31,
+      "rotation": {
+        "x": 5.29,
+        "y": -3.41,
+        "z": -7.0
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 31,
+      "rotation": {
+        "x": -0.72,
+        "y": -4.44,
+        "z": 3.51
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 31,
+      "rotation": {
+        "x": -1.0,
+        "y": -11.64,
+        "z": -1.24
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 32,
+      "rotation": {
+        "x": -3.89,
+        "y": 15.24,
+        "z": -2.54
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0262,
+        "z": -0.1012
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 32,
+      "rotation": {
+        "x": 4.47,
+        "y": 20.81,
+        "z": -4.47
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 32,
+      "rotation": {
+        "x": -3.01,
+        "y": -25.29,
+        "z": 2.04
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 32,
+      "rotation": {
+        "x": 49.86,
+        "y": 21.17,
+        "z": -32.38
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 32,
+      "rotation": {
+        "x": 69.71,
+        "y": -8.27,
+        "z": -15.17
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 32,
+      "rotation": {
+        "x": -48.44,
+        "y": -24.31,
+        "z": -46.62
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 32,
+      "rotation": {
+        "x": 88.95,
+        "y": -47.84,
+        "z": 53.88
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 32,
+      "rotation": {
+        "x": 73.27,
+        "y": 5.6,
+        "z": 14.54
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 32,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 32,
+      "rotation": {
+        "x": -9.47,
+        "y": -3.86,
+        "z": 12.3
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 32,
+      "rotation": {
+        "x": -2.75,
+        "y": -4.62,
+        "z": 1.39
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 32,
+      "rotation": {
+        "x": 9.0,
+        "y": -8.82,
+        "z": -0.23
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 32,
+      "rotation": {
+        "x": 4.55,
+        "y": -3.16,
+        "z": -7.05
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 32,
+      "rotation": {
+        "x": -0.38,
+        "y": -4.92,
+        "z": 2.46
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 32,
+      "rotation": {
+        "x": -0.82,
+        "y": -8.07,
+        "z": -0.87
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 33,
+      "rotation": {
+        "x": -4.06,
+        "y": 11.9,
+        "z": -1.99
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0205,
+        "z": -0.079
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 33,
+      "rotation": {
+        "x": 3.48,
+        "y": 16.25,
+        "z": -3.48
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 33,
+      "rotation": {
+        "x": -2.36,
+        "y": -19.74,
+        "z": 1.6
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 33,
+      "rotation": {
+        "x": 49.82,
+        "y": 21.21,
+        "z": -27.94
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 33,
+      "rotation": {
+        "x": 61.11,
+        "y": -4.45,
+        "z": -14.89
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 33,
+      "rotation": {
+        "x": -38.2,
+        "y": -19.51,
+        "z": -35.38
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 33,
+      "rotation": {
+        "x": 76.43,
+        "y": -43.19,
+        "z": 49.28
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 33,
+      "rotation": {
+        "x": 58.72,
+        "y": 3.18,
+        "z": 12.82
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 33,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 33,
+      "rotation": {
+        "x": -6.64,
+        "y": -2.06,
+        "z": 12.8
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 33,
+      "rotation": {
+        "x": -3.99,
+        "y": -4.55,
+        "z": 1.02
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 33,
+      "rotation": {
+        "x": 7.86,
+        "y": -6.68,
+        "z": -0.35
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 33,
+      "rotation": {
+        "x": 3.9,
+        "y": -2.86,
+        "z": -7.04
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 33,
+      "rotation": {
+        "x": -0.28,
+        "y": -4.95,
+        "z": 1.37
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 33,
+      "rotation": {
+        "x": -0.58,
+        "y": -5.0,
+        "z": -0.53
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 34,
+      "rotation": {
+        "x": -4.2,
+        "y": 8.77,
+        "z": -1.46
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0151,
+        "z": -0.0582
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 34,
+      "rotation": {
+        "x": 2.56,
+        "y": 11.97,
+        "z": -2.56
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 34,
+      "rotation": {
+        "x": -1.74,
+        "y": -14.55,
+        "z": 1.18
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 34,
+      "rotation": {
+        "x": 53.68,
+        "y": 20.8,
+        "z": -26.32
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 34,
+      "rotation": {
+        "x": 47.17,
+        "y": 0.6,
+        "z": -12.75
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 34,
+      "rotation": {
+        "x": -25.57,
+        "y": -12.91,
+        "z": -19.34
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 34,
+      "rotation": {
+        "x": 66.2,
+        "y": -36.86,
+        "z": 42.65
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 34,
+      "rotation": {
+        "x": 39.82,
+        "y": 0.78,
+        "z": 9.35
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 34,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 34,
+      "rotation": {
+        "x": -3.97,
+        "y": -1.51,
+        "z": 13.13
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 34,
+      "rotation": {
+        "x": -4.69,
+        "y": -4.12,
+        "z": 0.59
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 34,
+      "rotation": {
+        "x": 6.59,
+        "y": -3.92,
+        "z": -0.42
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 34,
+      "rotation": {
+        "x": 3.33,
+        "y": -2.41,
+        "z": -7.16
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 34,
+      "rotation": {
+        "x": -0.25,
+        "y": -4.63,
+        "z": 0.54
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 34,
+      "rotation": {
+        "x": -0.36,
+        "y": -2.63,
+        "z": -0.28
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 35,
+      "rotation": {
+        "x": -4.33,
+        "y": 6.03,
+        "z": -1.01
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0104,
+        "z": -0.0401
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 35,
+      "rotation": {
+        "x": 1.77,
+        "y": 8.24,
+        "z": -1.77
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 35,
+      "rotation": {
+        "x": -1.2,
+        "y": -10.02,
+        "z": 0.82
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 35,
+      "rotation": {
+        "x": 59.8,
+        "y": 19.91,
+        "z": -27.85
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 35,
+      "rotation": {
+        "x": 30.29,
+        "y": 3.57,
+        "z": -8.45
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 35,
+      "rotation": {
+        "x": -14.65,
+        "y": -6.26,
+        "z": -7.13
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 35,
+      "rotation": {
+        "x": 61.73,
+        "y": -30.21,
+        "z": 38.52
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 35,
+      "rotation": {
+        "x": 22.01,
+        "y": -0.37,
+        "z": 5.32
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 35,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 35,
+      "rotation": {
+        "x": -2.15,
+        "y": -1.85,
+        "z": 13.26
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 35,
+      "rotation": {
+        "x": -3.92,
+        "y": -2.87,
+        "z": 0.21
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 35,
+      "rotation": {
+        "x": 4.83,
+        "y": -1.69,
+        "z": -0.29
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 35,
+      "rotation": {
+        "x": 2.84,
+        "y": -2.08,
+        "z": -7.51
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 35,
+      "rotation": {
+        "x": -0.19,
+        "y": -3.74,
+        "z": 0.12
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 35,
+      "rotation": {
+        "x": -0.2,
+        "y": -1.09,
+        "z": -0.13
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 36,
+      "rotation": {
+        "x": -4.43,
+        "y": 3.83,
+        "z": -0.64
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0065,
+        "z": -0.0254
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 36,
+      "rotation": {
+        "x": 1.12,
+        "y": 5.23,
+        "z": -1.12
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 36,
+      "rotation": {
+        "x": -0.76,
+        "y": -6.35,
+        "z": 0.52
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 36,
+      "rotation": {
+        "x": 65.4,
+        "y": 18.52,
+        "z": -30.82
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 36,
+      "rotation": {
+        "x": 15.42,
+        "y": 3.19,
+        "z": -4.18
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 36,
+      "rotation": {
+        "x": -7.04,
+        "y": -2.28,
+        "z": -1.8
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 36,
+      "rotation": {
+        "x": 61.42,
+        "y": -25.28,
+        "z": 37.28
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 36,
+      "rotation": {
+        "x": 9.9,
+        "y": -0.42,
+        "z": 2.39
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 36,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 36,
+      "rotation": {
+        "x": -1.17,
+        "y": -2.38,
+        "z": 13.2
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 36,
+      "rotation": {
+        "x": -2.25,
+        "y": -1.13,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 36,
+      "rotation": {
+        "x": 2.9,
+        "y": -0.52,
+        "z": -0.11
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 36,
+      "rotation": {
+        "x": 2.44,
+        "y": -1.97,
+        "z": -7.96
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 36,
+      "rotation": {
+        "x": -0.09,
+        "y": -2.38,
+        "z": 0.02
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 36,
+      "rotation": {
+        "x": -0.12,
+        "y": -0.31,
+        "z": -0.05
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 37,
+      "rotation": {
+        "x": -4.5,
+        "y": 2.18,
+        "z": -0.36
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0037,
+        "z": -0.0145
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 37,
+      "rotation": {
+        "x": 0.64,
+        "y": 2.98,
+        "z": -0.64
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 37,
+      "rotation": {
+        "x": -0.44,
+        "y": -3.63,
+        "z": 0.3
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 37,
+      "rotation": {
+        "x": 68.83,
+        "y": 17.26,
+        "z": -33.24
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 37,
+      "rotation": {
+        "x": 6.13,
+        "y": 1.58,
+        "z": -1.61
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 37,
+      "rotation": {
+        "x": -2.73,
+        "y": -0.75,
+        "z": -0.42
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 37,
+      "rotation": {
+        "x": 62.18,
+        "y": -22.57,
+        "z": 37.23
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 37,
+      "rotation": {
+        "x": 3.7,
+        "y": -0.21,
+        "z": 0.88
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 37,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 37,
+      "rotation": {
+        "x": -0.63,
+        "y": -2.36,
+        "z": 13.03
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 37,
+      "rotation": {
+        "x": -0.83,
+        "y": 0.16,
+        "z": -0.05
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 37,
+      "rotation": {
+        "x": 1.39,
+        "y": -0.11,
+        "z": -0.02
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 37,
+      "rotation": {
+        "x": 2.18,
+        "y": -1.83,
+        "z": -8.34
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 37,
+      "rotation": {
+        "x": -0.03,
+        "y": -1.12,
+        "z": 0.01
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 37,
+      "rotation": {
+        "x": -0.07,
+        "y": -0.06,
+        "z": -0.01
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 38,
+      "rotation": {
+        "x": -4.56,
+        "y": 1.08,
+        "z": -0.18
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0018,
+        "z": -0.0072
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 38,
+      "rotation": {
+        "x": 0.32,
+        "y": 1.48,
+        "z": -0.32
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 38,
+      "rotation": {
+        "x": -0.22,
+        "y": -1.8,
+        "z": 0.15
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 38,
+      "rotation": {
+        "x": 70.31,
+        "y": 16.58,
+        "z": -34.51
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 38,
+      "rotation": {
+        "x": 1.92,
+        "y": 0.53,
+        "z": -0.49
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 38,
+      "rotation": {
+        "x": -0.85,
+        "y": -0.23,
+        "z": -0.13
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 38,
+      "rotation": {
+        "x": 62.65,
+        "y": -21.4,
+        "z": 37.32
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 38,
+      "rotation": {
+        "x": 1.15,
+        "y": -0.07,
+        "z": 0.27
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 38,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 38,
+      "rotation": {
+        "x": -0.31,
+        "y": -1.62,
+        "z": 12.85
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 38,
+      "rotation": {
+        "x": -0.17,
+        "y": 0.48,
+        "z": -0.03
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 38,
+      "rotation": {
+        "x": 0.54,
+        "y": -0.02,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 38,
+      "rotation": {
+        "x": 2.05,
+        "y": -1.52,
+        "z": -8.57
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 38,
+      "rotation": {
+        "x": 0.0,
+        "y": -0.38,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 38,
+      "rotation": {
+        "x": -0.03,
+        "y": -0.01,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 39,
+      "rotation": {
+        "x": -4.59,
+        "y": 0.42,
+        "z": -0.07
+      },
+      "position": {
+        "x": 0.0,
+        "y": -0.0007,
+        "z": -0.0028
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 39,
+      "rotation": {
+        "x": 0.12,
+        "y": 0.57,
+        "z": -0.12
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 39,
+      "rotation": {
+        "x": -0.08,
+        "y": -0.69,
+        "z": 0.06
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 39,
+      "rotation": {
+        "x": 70.8,
+        "y": 16.31,
+        "z": -35.0
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 39,
+      "rotation": {
+        "x": 0.47,
+        "y": 0.13,
+        "z": -0.11
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 39,
+      "rotation": {
+        "x": -0.2,
+        "y": -0.06,
+        "z": -0.03
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 39,
+      "rotation": {
+        "x": 62.81,
+        "y": -21.01,
+        "z": 37.34
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 39,
+      "rotation": {
+        "x": 0.28,
+        "y": -0.02,
+        "z": 0.06
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 39,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 39,
+      "rotation": {
+        "x": -0.11,
+        "y": -0.7,
+        "z": 12.72
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 39,
+      "rotation": {
+        "x": -0.01,
+        "y": 0.26,
+        "z": -0.01
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 39,
+      "rotation": {
+        "x": 0.16,
+        "y": -0.01,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 39,
+      "rotation": {
+        "x": 2.0,
+        "y": -1.14,
+        "z": -8.71
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 39,
+      "rotation": {
+        "x": 0.0,
+        "y": -0.09,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 39,
+      "rotation": {
+        "x": -0.01,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LowerTorso",
+      "frame": 40,
+      "rotation": {
+        "x": -4.61,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "UpperTorso",
+      "frame": 40,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "Head",
+      "frame": 40,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperArm",
+      "frame": 40,
+      "rotation": {
+        "x": 70.94,
+        "y": 16.2,
+        "z": -35.18
+      },
+      "position": {
+        "x": -0.1967,
+        "y": -0.3851,
+        "z": -0.2762
+      }
+    },
+    {
+      "joint": "RightLowerArm",
+      "frame": 40,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightHand",
+      "frame": 40,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperArm",
+      "frame": 40,
+      "rotation": {
+        "x": 62.86,
+        "y": -20.88,
+        "z": 37.35
+      },
+      "position": {
+        "x": 0.1903,
+        "y": -0.3201,
+        "z": -0.1979
+      }
+    },
+    {
+      "joint": "LeftLowerArm",
+      "frame": 40,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftHand",
+      "frame": 40,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightUpperLeg",
+      "frame": 40,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 12.66
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.031
+      }
+    },
+    {
+      "joint": "RightLowerLeg",
+      "frame": 40,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "RightFoot",
+      "frame": 40,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftUpperLeg",
+      "frame": 40,
+      "rotation": {
+        "x": 1.99,
+        "y": -0.83,
+        "z": -8.81
+      },
+      "position": {
+        "x": -0.0014,
+        "y": 0.0023,
+        "z": -0.028
+      }
+    },
+    {
+      "joint": "LeftLowerLeg",
+      "frame": 40,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "joint": "LeftFoot",
+      "frame": 40,
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    }
+  ]
+}
