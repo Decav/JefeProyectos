@@ -3,7 +3,8 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** R6.x / Combate / Cazador
 **Prioridad:** Alta
-**Estado:** Cerrada — implementada y QA completada (confirmación del PO 2026-10-23)
+**Estado:** Cerrada — implementada y QA completada (confirmación del PO 2026-10-23); rangos reemplazados por HU-R6.63 (45 studs)
+**Actualización 2026-11-12:** HU-R6.63 reemplaza los rangos de 30/35 por 45 studs para el ataque de arco y todas las habilidades de Puntería. Esta HU queda como registro histórico.
 **Tipo:** Bugfix de alcance de ataques/habilidades (dev)
 **Depende de:** HU-R8b (contenido Cazador), HU-R8e (Flecha venenosa), HU-R3 (combate y habilidades), HU-R6.19 (ataques ranged), `SKILLS_CATALOG`, `SkillConfig`/config de ataques básicos
 **No modifica:** daño, cooldown, coste de maná, número de objetivos, set bonuses ni las habilidades de Asalto.

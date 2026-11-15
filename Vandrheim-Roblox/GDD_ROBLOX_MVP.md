@@ -453,6 +453,7 @@ Prompt de implementación (dev): `DEV_PROMPT.md` — obliga a generar el RC desd
 | Fuera de rango | Deja de atacar (sin chase player) |
 | Dummy pega | No en R1 |
 | Respawn dummy | ~5 s mismo sitio |  
+> **Actualización 2026-11-12:** el comportamiento “fuera de rango sin chase” era un default de R1. R6.19/R6.63 establecen que los enemigos atacados toman aggro y persiguen; el Cazador de Puntería/arco usa 45 studs y los enemigos ranged tienen un máximo de 40. R6.64 separa los cooldowns de pociones de recuperación y buff.
   
 ### Defaults cerrados R2 (registro)
 
@@ -754,6 +755,7 @@ Ver `HU/fases/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º 
 | 2026-11-06 | **R6.49–R6.52 implementadas (reporte PO):** mapa/Hub integrado, misión diaria del Guía, tienda rotativa y NPCs ambientales. La decisión del mapa queda resuelta; QA de las cuatro pendiente. |
 | 2026-11-06 | **HU-R6.53 y HU-ESTETICA-52 creadas:** Valgard vivo (NPCs con rutinas, microescenas, props/audio, POIs y coleccionables) y revisión de modelos nuevos para integrar arte final. |
 | 2026-11-12 | **Programa Dopamina y mundo aprobado:** HUs R6.54–R6.61 + EST-53 creadas. Incluye juice, mina/diaria, piedras rúnicas, Endless semanal, logros/títulos, Codex, maestría cosmética y eventos de caravana/campamento. Maestría de clase solo cosmética, sin stats. |
+| 2026-11-12 | **Senda del Jotunn implementada (ex Endless) y ajustes creados:** R6.62 (orbes de vida/maná, XP automática por oleada, cash-out azul/morado con pociones grandes y respawn seguro), R6.63 (Puntería/arco 45 studs, aggro con persecución y ranged enemigo máximo 40) y R6.64 (cooldowns separados de pociones de recuperación y buff). |
 
 ---
 

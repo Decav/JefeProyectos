@@ -49,7 +49,7 @@ Los ítems utilizables deben declarar su comportamiento en configuración:
 
 * `usable = true` habilita el ítem para los slots rápidos.
 * `useAction` identifica el efecto que ejecuta el servicio de uso; el cliente nunca define el efecto.
-* Las pociones actuales conservan sus reglas de R5: cura/maná y cooldown compartido de 30 s.
+* Las pociones actuales conservan sus reglas de R5 de cura/maná. El cooldown compartido de 30 s queda reemplazado por HU-R6.64: grupos `recovery` y `buff` con CDs separados.
 * Armas, armaduras y cualquier ítem sin `usable=true` no pueden asignarse.
 * El flujo debe generalizar el servicio existente a `UseItem`; no duplicar una lógica separada para cada tipo de ítem.
 

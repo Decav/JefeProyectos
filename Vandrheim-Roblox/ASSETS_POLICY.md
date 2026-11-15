@@ -149,6 +149,7 @@ Se completa a medida que se incorporan assets reales (obligatorio en DoD de HU-A
 | 131135835792445 | Body Skin | Pants — Ayudante de Herrería (HU-ESTETICA-52) | Producción propia (DesignAgent / EST-52) | Decavii | Uso propio | 2026-11-06 |
 | 78430914134815 | Body Skin | Shirt — Tabernero de Valgard Civil (HU-ESTETICA-52) | Producción propia (DesignAgent / EST-52) | Decavii | Uso propio | 2026-11-06 |
 | 135113559315871 | Body Skin | Pants — Tabernero de Valgard Civil (HU-ESTETICA-52) | Producción propia (DesignAgent / EST-52) | Decavii | Uso propio | 2026-11-06 |
+| 85094789083310 | Retrato UI | Portrait_Object_PiedraRunica — Piedra rúnica / Viaje rúnico (HU-R6.56) | Producción propia (DesignAgent) | Decavii | Uso propio | 2026-11-14 |
 
 **Actualización 2026-10-22:** el ID registrado corresponde a la versión anterior con fondo negro. El reemplazo transparente aprobado está en `Assets/Icons/UI/Menu/Icon_Menu_nameplates.png`; requiere volver a subirse para que Roblox use la versión nueva.
 

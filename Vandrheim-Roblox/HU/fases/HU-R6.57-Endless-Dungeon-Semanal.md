@@ -3,7 +3,7 @@
 **Proyecto:** Vandrheim (Roblox MVP)
 **Épica:** Combate / Retención / Competencia
 **Prioridad:** Alta — modo repeatable y motivo semanal
-**Estado:** Abierta — lista para RC
+**Estado:** Implementada como “Senda del Jotunn” (reporte PO 2026-11-12); mejoras en HU-R6.62
 **Tipo:** Modo de juego instanciado + leaderboard (dev)
 **Fase GDD:** Dungeon / Endgame / Retención
 **Depende de:** R6.54 (juice), R6.58 (títulos/cosméticos), dungeon/combate existentes, `DataService`, `OrderedDataStore`, `TeleportService`/matchmaking de party, `EnemyConfig`, `EnemyService`, `DungeonService`, `UIService`
@@ -26,7 +26,7 @@
 
 ### Descripción / Contexto
 
-La campaña de 5 pisos es finita. Esta HU agrega el **Endless de la Helada**:
+La campaña de 5 pisos es finita. Esta HU agrega el **Endless de la Helada**, implementado por el dev como **“Senda del Jotunn”**. Las mejoras de orbes, recompensas y respawn viven en HU-R6.62.
 
 * Oleadas infinitas; enemigos aleatorios de la pool existente.
 * Jefe cada 10 rondas, usando jefes/mini-jefes existentes.
@@ -257,3 +257,4 @@ La campaña de 5 pisos es finita. Esta HU agrega el **Endless de la Helada**:
 | Fecha | Cambio |
 |---|---|
 | 2026-11-12 | Creación de HU-R6.57: Endless de la Helada con oleadas infinitas, enemigos/jefes existentes, cash-out, récord personal y leaderboard semanal por clase/spec; reemplaza la Cámara semanal. |
+| 2026-11-12 | Implementada por el dev bajo el nombre “Senda del Jotunn” (reporte PO); las mejoras de orbes, XP/recompensas endgame y respawn seguro se separan en HU-R6.62. |

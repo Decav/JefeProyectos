@@ -89,3 +89,19 @@ Este archivo es la memoria del proyecto. Cada entrada es una falla que **llegó 
 - **Cómo se habría detectado:** auditar todas las funciones que iteran catálogos globales de ítems buscando que respeten banderas de exclusión de prueba (`seedOnly`, `testOnly`, `debugOnly`), y probar la ruleta de recompensas con 100 tiradas consecutivas verificando que ningún ítem resultante contenga prefijos `[QA ...]` ni `seed_`.
 - **Cómo buscarla:** buscar `pairs(ItemCatalog)` o equivalentes y verificar que todas las selecciones aleatorias descarten plantillas marcadas como exclusivas de pruebas.
 
+### BH-009 — Autocancelación de corrutina de refresco al re-renderizar un diálogo abierto (`cannot cancel thread`)
+- **Origen:** Vandrheim RPG, noviembre de 2026 (`rc151`, `RunicStoneClient`).
+- **Qué pasó:** al abrir el diálogo de la piedra rúnica durante el enfriamiento de 5 s (o mantenerlo abierto tras una interacción en cooldown), a los 0.5 s se lanzó el error en cliente `RunicStoneClient:58: cannot cancel thread`.
+- **Causa raíz:** el hilo periódico `cooldownRefreshThread` llamaba cada `0.5 s` a `renderRunicDialog(...)`, que volvía a invocar `startDialogWatches(...)` -> `disconnectDialogWatches()`, ejecutando `task.cancel(cooldownRefreshThread)` desde dentro de la propia corrutina en ejecución (`cooldownRefreshThread == coroutine.running()`).
+- **Revisor responsable:** REL y UX.
+- **Cómo se habría detectado:** mantener abierto el panel/diálogo en vivo durante más de dos ciclos completos del temporizador (incluyendo la transición hasta que expire el enfriamiento) en Play real, en lugar de cerrar el panel o validar el cooldown solo mediante llamadas inmediatas a remotes.
+- **Cómo buscarla:** buscar `task.cancel(` en funciones de limpieza o refresco llamadas desde el propio ticker/watch loop, verificar que las guardas comparen `thread ~= coroutine.running()` y separar el re-render visual del ciclo de vida de conexiones y timers.
+
+### BH-010 — Propiedad inexistente en tabla de configuración al renderizar pantalla creada por flujo completo de UI (`nil` concatenation) y solape por `UILayoutDefaults`
+- **Origen:** Vandrheim RPG, noviembre de 2026 (`rc152`, `MatchmakingClient` y `DungeonClient`).
+- **Qué pasó:** al crear una sala desde la pestaña `CREAR SALA` de `MatchmakingUI` (especialmente en modo Endless) o cambiar de pestaña en party, el cliente lanzó `MatchmakingClient:757: attempt to concatenate nil with string` porque `renderRoom()` leía `roomModeInfo.displayName`, propiedad inexistente en `RoomConfig.DungeonModes` (`title`, `label`, `shortLabel`). Además, con `UILayoutDefaults` activo sobre `DungeonHUD.TopBar` (`y ≈ 0.088`), `EndlessCountdownBanner` en `y = 0.165` fijo se superponía sobre `TopBar`.
+- **Causa raíz:** la auditoría probó `RequestCreateRoom` sin validar la renderización completa de `TU SALA` tras crear la sala por interfaz con el selector de modo, y midió `EndlessCountdownBanner` con `Y` estático sin derivarlo del borde inferior real de `TopBar` tras aplicar `UILayoutClient` / `UILayoutDefaults`.
+- **Revisor responsable:** CR, UX y UI.
+- **Cómo se habría detectado:** recorrer el flujo real completo de UI de extremo a extremo (`CREAR SALA` -> elegir modo -> crear -> navegar por todas las pestañas en `TU SALA`) y medir solapes de HUD después de que `UILayoutClient` aplique `UILayoutDefaults` / layout persistido del personaje.
+- **Cómo buscarla:** contrastar cada campo accedido en UI (`cfg.displayName`, `cfg.label`, etc.) contra las claves reales definidas en su módulo `Config` (`table.freeze`) y anclar todo banner adyacente a elementos gestionados por `UILayoutClient` respecto a `AbsolutePosition`/`AbsoluteSize`.
+
