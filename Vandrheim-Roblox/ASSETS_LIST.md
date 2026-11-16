@@ -319,3 +319,19 @@ Icono para el control de alternancia correr/caminar (`MovementToggleButton` en m
 | assetId | Tipo | Uso | Archivo local | Fuente / licencia | Estado / rbxassetid |
 |---|---|---|---|---|---|
 | `Icon_Menu_run` | Icono | Botón/control de correr (bota alada en sprint) | `Assets/Icons/UI/Menu/Icon_Menu_run.png` | Producción propia asistida con IA; interno Vandrheim | Entregado; carga pendiente |
+
+## MINIATURA PROMOCIONAL R15 VS JOTUNN · 2026-11-16
+
+Miniatura oficial 16:9 (`1920×1080`, RGB opaco) con avatar estilizado Roblox R15 (`Paladin_Blue` + `unique_frost_greatsword`) enfrentando al jefe Jotunn. Incluye variante limpia sin texto (con espacio inferior izquierdo libre) y variante con el logotipo `Vandrheim__logotipo_nordico_glacial.png` compuesto. Master, script de exportación y comparativa en `Assets/Source/Design/GameThumbnails-2026-11-16/`.
+
+| assetId | Tipo | Uso | Archivo local | Fuente / licencia | Estado / rbxassetid |
+|---|---|---|---|---|---|
+| `Thumbnail_Game_03_R15_Jotunn_clean` | Miniatura 16:9 | Portada de experiencia sin texto (1920×1080) | `Assets/Images/Marketing/Thumbnails/Candidates/Thumbnail_Game_03_R15_Jotunn_clean_1920x1080.jpg` | Producción propia asistida con IA + referencias Vandrheim | Entregado; pendiente de selección |
+| `Thumbnail_Game_03_R15_Jotunn_logo` | Miniatura 16:9 | Portada de experiencia con logotipo bottom-left (1920×1080) | `Assets/Images/Marketing/Thumbnails/Candidates/Thumbnail_Game_03_R15_Jotunn_logo_1920x1080.jpg` | Producción propia asistida con IA + referencias Vandrheim | Entregado; pendiente de selección |
+| `Thumbnail_Game_04_R15_Blocky_Jotunn` | Miniatura 16:9 | Portada R15 blocky con rostro Roblox y casco con cuernos vs Jotunn (1920×1080, sin texto) | `Assets/Images/Marketing/Thumbnails/Candidates/Thumbnail_Game_04_R15_Blocky_Jotunn_1920x1080.jpg` | Producción propia asistida con IA + referencias Vandrheim | Entregado; pendiente de selección |
+| `Thumbnail_Game_04_VarianteA_Jotunn` | Miniatura 16:9 | Edición Variante A: paladín R15 con set `Paladin_Blue` completo (yelmo cerrado sin cuernos) y `unique_frost_greatsword` vs Jotunn (1920×1080, sin texto) | `Assets/Images/Marketing/Thumbnails/Candidates/Thumbnail_Game_04_VarianteA_Jotunn_1920x1080.jpg` | Edición asistida con IA sobre base 04 + refs Paladin_Blue | Entregado; pendiente de selección |
+| `Thumbnail_Game_05_R15_Loot_Dungeon` | Miniatura 16:9 | Portada R15 blocky con cofre rúnico, botín flotante y entrada de mazmorra helada (1920×1080, sin texto) | `Assets/Images/Marketing/Thumbnails/Candidates/Thumbnail_Game_05_R15_Loot_Dungeon_1920x1080.jpg` | Producción propia asistida con IA + referencias Vandrheim | Entregado; pendiente de selección |
+| `Thumbnail_Game_05_VarianteC_Botin` | Miniatura 16:9 | Edición Variante C: paladín R15 con set `Paladin_Blue` completo + 4 ítems Frost exactos (`shield_frost`, `ring_frost`, `unique_frost_edge`, `unique_frostbow`) (1920×1080, sin texto) | `Assets/Images/Marketing/Thumbnails/Candidates/Thumbnail_Game_05_VarianteC_Botin_1920x1080.jpg` | Edición asistida con IA sobre base 05 + 10 refs Vandrheim | Entregado; pendiente de selección |
+
+| `Thumbnail_Game_04_Jefe_Jotunn_logo` | Miniatura 16:9 | Versión final Variante A con logotipo oficial abajo a la izquierda (1920×1080). Miniatura principal recomendada | `Assets/Images/Marketing/Thumbnails/Candidates/Thumbnail_Game_04_Jefe_Jotunn_logo_1920x1080.jpg` | Edición asistida con IA + logotipo oficial; `Tools/Export_Thumbnails_A_C.py` | Lista para carga |
+| `Thumbnail_Game_05_Botin_Epico_logo` | Miniatura 16:9 | Versión final Variante C con texto "EPIC LOOT" y logotipo oficial abajo a la izquierda (1920×1080). Segunda miniatura | `Assets/Images/Marketing/Thumbnails/Candidates/Thumbnail_Game_05_Botin_Epico_logo_1920x1080.jpg` | Edición asistida con IA + logotipo oficial; `Tools/Export_Thumbnails_A_C.py` | Lista para carga |

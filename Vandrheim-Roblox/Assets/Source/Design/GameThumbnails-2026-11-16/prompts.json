@@ -1,0 +1,56 @@
+{
+  "createdDate": "2026-11-16",
+  "tool": "image-generator",
+  "author": "DesignerAgent",
+  "assets": [
+    {
+      "id": "03_R15_Jotunn",
+      "references": [
+        "Assets/Icons/Items/Armor/Paladin/Blue/Icon_Item_paladin_helmet_blue.png",
+        "Assets/Icons/Items/Armor/Paladin/Blue/Icon_Item_paladin_chest_blue.png",
+        "Assets/Icons/Items/Weapons/Unique/Icon_Item_unique_frost_greatsword.png",
+        "Assets/Images/Enemies/Portraits/Portrait_Boss_Jotunn.png",
+        "Assets/Images/Brand/Vandrheim__logotipo_nordico_glacial.png"
+      ],
+      "prompt": "Roblox game thumbnail, 16:9 1920x1080, for \"Vandrheim\", a Nordic fantasy action RPG. Foreground left: a Roblox R15 avatar paladin in steel-blue and gold plate armor (match reference), dynamic attack pose, holding a glowing frost greatsword, warm golden holy light around him. Background right, filling half the frame: Jotunn, a colossal frost giant boss with horned helmet and icy beard (match reference), towering and menacing, cold blue light, blizzard and ice shards. Strong warm-gold vs icy-blue contrast, cinematic rim lighting, polished stylized 3D render in the look of top Roblox RPG thumbnails, characters clearly recognizable as Roblox avatars, not realistic humans. Leave clean space bottom-left for the \"Vandrheim\" logo. No other text, no UI, no watermark.",
+      "master": "Assets/Source/Design/GameThumbnails-2026-11-16/Masters/Thumbnail_Game_03_R15_Jotunn_master.jpg",
+      "exports": {
+        "clean_png": "Assets/Images/Marketing/Thumbnails/Candidates/Thumbnail_Game_03_R15_Jotunn_clean_1920x1080.png",
+        "clean_jpg": "Assets/Images/Marketing/Thumbnails/Candidates/Thumbnail_Game_03_R15_Jotunn_clean_1920x1080.jpg",
+        "logo_png": "Assets/Images/Marketing/Thumbnails/Candidates/Thumbnail_Game_03_R15_Jotunn_logo_1920x1080.png",
+        "logo_jpg": "Assets/Images/Marketing/Thumbnails/Candidates/Thumbnail_Game_03_R15_Jotunn_logo_1920x1080.jpg"
+      }
+    }
+  ],
+  "edits_v2": {
+    "note": "Edicion sobre la imagen ya generada por el diseñador. Casco real Paladin_Blue: yelmo cerrado sin cuernos, la cara queda oculta.",
+    "A": {
+      "name": "Thumbnail_Game_03_Jefe_Jotunn_R15",
+      "references": [
+        "1: imagen A v2 del diseñador (base)",
+        "2: Assets/Icons/Items/Armor/Paladin/Blue/Icon_Item_paladin_helmet_blue.png",
+        "3: Assets/Icons/Items/Armor/Paladin/Blue/Icon_Item_paladin_chest_blue.png",
+        "4: Assets/Icons/Items/Armor/Paladin/Blue/Icon_Item_paladin_shoulders_blue.png",
+        "5: Assets/Icons/Items/Armor/Paladin/Blue/Icon_Item_paladin_gloves_blue.png",
+        "6: Assets/Icons/Items/Weapons/Unique/Icon_Item_unique_frost_greatsword.png"
+      ],
+      "prompt": "Use case: ads-marketing. Edit the attached image (Reference 1). Keep everything else identical: composition, camera, framing, background, lighting, colors, Jotunn's design, size and reaching pose, the paladin's position, body angle and golden light aura. Change only the following. 1. Pose: the paladin swings the frost greatsword overhead with both hands toward Jotunn. 2. Paladin helmet: replace the current helmet with the exact helmet from Reference 2: a fully closed great helm, polished silver steel, gold trim on every edge, a vertical gold ridge down the center of the visor, a narrow horizontal eye slit and vertical breathing slits, one blue diamond gem on the forehead, a round gold rivet on each side, dark navy-blue side panels. The face is completely hidden behind the visor. Nothing on top of the helmet: no horns, no wings, no crest, no plume. 3. Paladin armor: match References 3, 4 and 5 exactly: navy-blue undersuit; silver chest plate with gold trim, a gold vertical spine and a single blue diamond gem at the collar; layered silver shoulder pauldrons with gold edges and navy inlays; silver plate gauntlets with gold knuckle plates. Same armor colors and gem placement as the references, no extra ornaments. 4. Sword: keep the frost greatsword exactly as Reference 6: long crystalline ice-blue blade, dark silver spiked guard, violet diamond gems, long black wrapped grip, spiked pommel with a violet gem. It is a two-handed weapon: both block hands grip the long black handle, one above the other. 5. Keep the blocky Roblox R15 avatar body: square torso, rectangular arms and legs, block hands. Output: horizontal 16:9, exactly 1920x1080. Keep the bottom-left corner dark and empty for a logo. No text, no letters, no logo, no UI, no watermark."
+    },
+    "C": {
+      "name": "Thumbnail_Game_04_Botin_Epico_R15",
+      "references": [
+        "1: imagen C v1 del diseñador (base)",
+        "2: Assets/Icons/Items/Armor/Paladin/Blue/Icon_Item_paladin_helmet_blue.png",
+        "3: Assets/Icons/Items/Armor/Paladin/Blue/Icon_Item_paladin_chest_blue.png",
+        "4: Assets/Icons/Items/Armor/Paladin/Blue/Icon_Item_paladin_shoulders_blue.png",
+        "5: Assets/Icons/Items/Armor/Paladin/Blue/Icon_Item_paladin_gloves_blue.png",
+        "6: Assets/Icons/Items/Weapons/Unique/Icon_Item_unique_frost_greatsword.png",
+        "7: Assets/Icons/Items/Weapons/Shield/Icon_Item_shield_frost.png",
+        "8: Assets/Icons/Items/Accessories/Icon_Item_ring_frost.png",
+        "9: Assets/Icons/Items/Weapons/Unique/Icon_Item_unique_frost_edge.png",
+        "10: Assets/Icons/Items/Weapons/Unique/Icon_Item_unique_frostbow.png"
+      ],
+      "prompt": "Use case: ads-marketing. Edit the attached image (Reference 1). Keep everything else identical: composition, camera, framing, the icy dungeon with the stone arch and glowing blue runes, the open runic chest with the vertical golden light beam, the gold coins, the paladin's position and body angle, lighting and colors. Change only the following. 1. Pose: the paladin raises the frost greatsword above his head in triumph, holding it with both hands. 2. Paladin helmet: replace the current helmet with the exact helmet from Reference 2: a fully closed great helm, polished silver steel, gold trim on every edge, a vertical gold ridge down the center of the visor, a narrow horizontal eye slit and vertical breathing slits, one blue diamond gem on the forehead, a round gold rivet on each side, dark navy-blue side panels. The face is completely hidden behind the visor. Nothing on top of the helmet: no horns, no wings, no crest, no plume. 3. Paladin armor: match References 3, 4 and 5 exactly: navy-blue undersuit; silver chest plate with gold trim, a gold vertical spine and a single blue diamond gem at the collar; layered silver shoulder pauldrons with gold edges and navy inlays; silver plate gauntlets with gold knuckle plates. Same armor colors and gem placement as the references, no extra ornaments. 4. Sword: keep the frost greatsword exactly as Reference 6: long crystalline ice-blue blade, dark silver spiked guard, violet diamond gems, long black wrapped grip, spiked pommel with a violet gem. It is a two-handed weapon: both block hands grip the long black handle, one above the other. 5. Keep the blocky Roblox R15 avatar body: square torso, rectangular arms and legs, block hands. 6. Floating loot: remove the gold rings, the gold-and-blue shield and the small copy of the greatsword. Replace them with exactly these four items, floating out of the chest with a pale ice-blue glow (#8FB7D6): (a) the frost shield from Reference 7: tall kite shield of dark gunmetal steel with engraved runes, a raised ice-crystal cross and a violet diamond gem at the center, silver rim; (b) the frost ring from Reference 8: a band of translucent ice with a crown of ice-blue crystal shards; (c) the Frost Edge one-handed sword from Reference 9: shorter straight crystalline ice blade, angular dark silver guard, black wrapped grip, clearly smaller and different from the greatsword; (d) the frostbow from Reference 10: curved silver-and-ice bow with crystal spikes at both tips, black grip and a glowing string. Keep the gold coins. No other items. Output: horizontal 16:9, exactly 1920x1080. Keep the bottom-left corner dark and free of important details for a logo and a caption. No text, no letters, no logo, no UI, no watermark."
+    }
+  }
+}
