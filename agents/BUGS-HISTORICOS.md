@@ -105,3 +105,27 @@ Este archivo es la memoria del proyecto. Cada entrada es una falla que **llegó 
 - **Cómo se habría detectado:** recorrer el flujo real completo de UI de extremo a extremo (`CREAR SALA` -> elegir modo -> crear -> navegar por todas las pestañas en `TU SALA`) y medir solapes de HUD después de que `UILayoutClient` aplique `UILayoutDefaults` / layout persistido del personaje.
 - **Cómo buscarla:** contrastar cada campo accedido en UI (`cfg.displayName`, `cfg.label`, etc.) contra las claves reales definidas en su módulo `Config` (`table.freeze`) y anclar todo banner adyacente a elementos gestionados por `UILayoutClient` respecto a `AbsolutePosition`/`AbsoluteSize`.
 
+
+### BH-012 — Campo de payload perdido al ampliar un serializador compartido (`quantity` ausente, etiquetas de stack invisibles)
+- **Origen:** Vandrheim RPG, noviembre de 2026 (`rc156`, `InventoryService.serializeItem`).
+- **Qué pasó:** en el juego publicado, las pociones y demás ítems apilables dejaron de mostrar la etiqueta de cantidad en la mochila (y en subasta y avisos de botín), porque el cliente recibía todos los ítems sin `quantity` y asumía 1.
+- **Causa raíz:** al agregar `questItem` y `commerceBlocked` al serializador de `InventoryService`, el campo `quantity` quedó fuera del payload (el serializador de `VendorService` sí lo conserva). La auditoría verificó los campos nuevos pero no comparó el payload completo ni probó una mochila con stacks.
+- **Revisor responsable:** CR y UX.
+- **Cómo se habría detectado:** abrir en Play una mochila con ítems apilables (por ejemplo, 5 pociones) después del cambio y comprobar la etiqueta de cantidad; comparar las claves del payload antes y después de editar un serializador.
+- **Cómo buscarla:** al modificar una función que arma payloads para el cliente, listar las claves previas y posteriores y confirmar que ninguna se perdió; buscar en el cliente los campos que lee (`item.quantity`, `item.stackable`) y verificar que cada serializador los emite.
+
+### BH-013 — Condición de exclusión demasiado amplia en el reparto de loot (los mini-jefes no soltaban nada)
+- **Origen:** Vandrheim RPG, noviembre de 2026 (`InventoryService.onDummyDied`).
+- **Qué pasó:** el mini-jefe Señor de la escarcha (`miniboss_frost_lord`, tabla `floor_4_boss`) y los otros tres mini-jefes de los pisos 1 a 4 dejaron de soltar ítems y oro, en solitario y en grupo, durante un tiempo largo hasta que el PO lo notó probando varias dungeons.
+- **Causa raíz:** `onDummyDied` salía antes de tirar la tabla cuando el enemigo tenía `IsBoss == true`. Los cuatro mini-jefes tienen `isBoss = true` en `EnemyConfig`, así que se excluían junto con el jefe final, que ya se excluye por `SkipAutoLoot`. La tabla de loot estaba bien; nunca se tiraba.
+- **Revisor responsable:** CR y UX.
+- **Cómo se habría detectado:** matar a cada mini-jefe en Play y verificar que cae ítem y oro, o ejecutar el hook de muerte sobre un mini-jefe y comprobar que se llama a `rollLootTable`; contrastar las tablas `floor_N_boss` con quién las consume.
+- **Cómo buscarla:** ante cualquier `return` temprano por una bandera de tipo (`IsBoss`, `IsMiniboss`, `IsEndlessEnemy`), listar todas las plantillas que la cumplen y confirmar que ninguna debía quedar dentro del alcance; preferir banderas específicas (`SkipAutoLoot`) a banderas de categoría.
+
+### BH-014 — Requerimiento marcado COMPLETO sin que su código exista en Studio (rc145, rechazo de misiones)
+- **Origen:** Vandrheim RPG, noviembre de 2026 (`rc145`, `QuestService` y `QuestClient`).
+- **Qué pasó:** el PO notó que no podía rechazar misiones desde el Cuaderno aunque el rc145 figuraba COMPLETO (verificado el 2026-11-05). En Studio, `RequestAbandonQuest` existía sin ningún receptor en el servidor, `QuestService.AbandonQuest` solo contemplaba la diaria y el botón "Rechazar misión" no existía en `QuestClient` (solo quedaban variables declaradas sin uso).
+- **Causa raíz:** no se pudo establecer con certeza (pérdida del cambio al publicar o sincronizar el place, o entrega parcial dada por completa). La verificación del RC no contrastó cada punto del alcance contra el DataModel vigente.
+- **Revisor responsable:** CR y UX.
+- **Cómo se habría detectado:** buscar en el DataModel cada símbolo que el RC dice haber agregado (`RequestAbandonQuest.OnServerEvent`, el botón "Rechazar misión", el modal) y ejecutar el flujo completo de punta a punta en Play antes de cerrar.
+- **Cómo buscarla:** para cada RC cerrado, comprobar con una búsqueda en scripts que sus handlers, botones y remotes existen y están conectados; tratar variables declaradas sin uso como señal de implementación incompleta.

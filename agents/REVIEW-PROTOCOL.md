@@ -25,8 +25,8 @@ Sos un **juez hostil**. Partís de la presunción de que el código entregado es
 | R5 | **Leer todo** | Cada archivo creado o modificado, completo. Declarar en el dictamen qué leíste. Aprobar sin haber leído una línea es un anti-patrón grave. |
 | R6 | **No confiar en las pruebas del Builder** | Que sus tests pasen no prueba nada. Escribí tus propios casos, especialmente hostiles. Verificá también que no haya debilitado, borrado o saltado tests existentes. |
 | R7 | **Evidencia o no cuenta** | Un hallazgo `[BLOQUEANTE]` o `[MAYOR]` exige pasos de reproducción y resultado observado. Sin reproducción es `[SOSPECHA]`. |
-| R8 | **Registro de ataques obligatorio** | Ver sección 5. Un dictamen sin registro de ataques es inválido, incluso si dice `APROBADO`. |
-| R9 | **Cada ronda es una revisión completa** | En rondas posteriores revisás el diff completo del fix y **reejecutás todas las reproducciones anteriores**. Un fix puede romper otra cosa. Solo el revisor que halló una falla puede darla por cerrada, reejecutando su reproducción. |
+| R8 | **Registro de ataques obligatorio** | Ver sección 5. Un dictamen sin registro de ataques es inválido, incluso si dice `APROBADO`. Los mínimos dependen del nivel de revisión (sección 9.1). |
+| R9 | **Rondas proporcionales** | Ronda v1: revisión completa. Rondas v2 en adelante: el revisor (a) revisa el diff del fix, (b) reejecuta las reproducciones de sus propios hallazgos abiertos y (c) ejecuta una muestra de regresión de 3 ataques de su registro previo que toquen las áreas modificadas. La revisión completa se repite solo si el fix tocó archivos o funciones fuera de los `FIX-XX`, si el nivel es L con un hallazgo de seguridad o confiabilidad bloqueante, o si el Approver la pide. Solo el revisor que halló una falla puede darla por cerrada, reejecutando su reproducción. |
 | R10 | **Memoria del proyecto** | Antes de empezar leé [`BUGS-HISTORICOS.md`](./BUGS-HISTORICOS.md) y buscá activamente cada clase de falla registrada que sea de tu área. |
 | R11 | **Hallazgos cruzados** | Si ves algo grave fuera de tu área, lo reportás como `[CRUZADO]` con lo que observaste y no lo investigás más. No lo dejes pasar por "no es mi área". |
 | R12 | **Sin ablandamientos** | Prohibido: "podría considerarse", "tal vez", "sería deseable", "mejorable". Cada hallazgo dice qué falla, dónde, cómo reproducirlo, qué se esperaba, qué ocurrió y qué debe cambiar. |
@@ -70,9 +70,15 @@ Todo dictamen incluye una tabla con **cada intento de ruptura**, haya fallado o 
 | 1 | [categoría] | [qué intentaste romper] | [reproducible] | [qué pasó] | [FALLÓ EL SISTEMA | AGUANTÓ | NO EJECUTADO] |
 ```
 
-**Mínimos para que un dictamen sea válido:**
-- Al menos **10 intentos** de ruptura distintos, de **al menos 4 categorías** del catálogo de tu área.
-- Al menos **6 ejecutados de verdad** (los marcados `NO EJECUTADO` no cuentan para este mínimo).
+**Mínimos para que un dictamen sea válido (según el nivel de revisión, sección 9.1):**
+
+| Nivel | Intentos distintos | Categorías del catálogo | Ejecutados de verdad |
+| :-: | :-: | :-: | :-: |
+| S | 4 | 2 | 3 |
+| M | 6 | 3 | 4 |
+| L | 10 | 4 | 6 |
+
+Los marcados `NO EJECUTADO` no cuentan para el mínimo de ejecutados.
 - El registro debe ser específico del cambio revisado. Un registro genérico copiable a otro cambio se considera inválido.
 
 Estos mínimos miden esfuerzo, no cuota de hallazgos: nunca inventes una falla para cumplirlos.
@@ -90,7 +96,7 @@ Estos mínimos miden esfuerzo, no cuota de hallazgos: nunca inventes una falla p
 | **`[NO VERIFICADO]`** | No se pudo ejecutar o comprobar. | Bloquea la aprobación de esa parte (equivale a `[MAYOR]`) |
 | **`[CRUZADO]`** | Observación grave fuera del área del revisor. | Se deriva al revisor del área o al Approver |
 
-**Regla del veredicto:** solo se puede emitir `APROBADO` si hay **0** `[BLOQUEANTE]`, **0** `[MAYOR]`, **0** `[NO VERIFICADO]` en el alcance y el registro de ataques cumple los mínimos. En cualquier otro caso: `CAMBIOS REQUERIDOS`.
+**Regla del veredicto:** solo se puede emitir `APROBADO` si hay **0** `[BLOQUEANTE]`, **0** `[MAYOR]`, **0** `[NO VERIFICADO]` en el alcance y el registro de ataques cumple los mínimos de su nivel. En cualquier otro caso: `CAMBIOS REQUERIDOS`.
 
 ---
 
@@ -155,9 +161,29 @@ En caso de duda, se activa. El Approver puede ampliar la lista y nunca reducirla
 
 ---
 
+## 9.1 Niveles de revisión (S / M / L)
+
+El nivel mide el tamaño y el riesgo del cambio y fija cuánta revisión corresponde. Su objetivo es no pagar el ciclo completo en cambios acotados.
+
+| Nivel | Cuándo aplica | Revisores | Mínimos de ataques | Approver |
+| :-: | :--- | :--- | :--- | :--- |
+| **S** | Se cumplen **todas**: (a) toca como máximo 3 archivos y no crea módulos nuevos; (b) sin fronteras de confianza (sin remotes nuevos o modificados, entradas del cliente, permisos, economía ni pagos); (c) sin estado persistente, concurrencia ni asincronía nuevos; (d) sin interfaz nueva ni cambio de layout (se permite quitar o ajustar valores, textos o propiedades de una interfaz existente); (e) fácil de revertir. | Solo `CodeReviewAgent`, que además ejecuta los `CA-XX` en la misma pasada y emite un solo dictamen. | 4 / 2 / 3 | Verificación ligera |
+| **M** | No cumple S ni L. | `CodeReviewAgent` y `UXReviewAgent` más los que exija la tabla de la sección 9. | 6 / 3 / 4 | Verificación por muestreo |
+| **L** | Cualquiera: remotes nuevos o modificados; perfil, DataStore o persistencia; economía, pagos o saldos; permisos o seguridad; grupo, multijugador o concurrencia crítica; migración de datos; más de 10 archivos; o lo pide el usuario. | Toda la tabla de la sección 9. | 10 / 4 / 6 | Verificación completa |
+
+**Asignación del nivel:**
+- El `SpecAgent` propone el nivel en la Spec o RC. El `BuilderAgent` lo confirma o lo ajusta en el Manifiesto, con el motivo.
+- El `ApproverAgent`, un revisor o el usuario pueden **subirlo**. Nunca se baja una vez abierta una ronda con hallazgos bloqueantes. Ante la duda, se usa el nivel superior.
+- En nivel S, la verificación del usuario en el entorno real de ejecución (por ejemplo, Play) puede cerrar los `CA-XX` que dependan de ver la interfaz real, y se registra en el dictamen.
+- El nivel no reduce la regla R2: lo que no se ejecutó sigue siendo `[NO VERIFICADO]` y bloquea.
+
+---
+
 ## 10. Modelo
 
-Los revisores corren con **Potencia Máxima**, al menos al nivel del Builder (`sonnet` / `sol` / `high`-Hydrogen High). Un revisor más débil que el autor aprueba lo que no entiende. Si es posible, conviene que revise una **familia de modelos distinta** a la que construyó, para no compartir puntos ciegos.
+Los revisores usan un perfil de costo reducido: Claude `haiku` esfuerzo `xhigh` (Extra), Codex `luna` esfuerzo `max`, Antigravity Flash Medium. El aprobador usa Claude `haiku` esfuerzo `xhigh`, Codex `luna` esfuerzo `max`, Antigravity Flash High. La fiabilidad de la revisión descansa en la **ejecución real y la evidencia** exigidas por este protocolo, no en la potencia del modelo: un dictamen sin ataques ejecutados es inválido sea cual sea el modelo. Si es posible, conviene que revise una **familia de modelos distinta** a la que construyó, para no compartir puntos ciegos.
+
+**Escalamiento por riesgo:** en cambios que toquen perfil o DataStore, pagos, saldos, permisos o concurrencia crítica, el usuario puede subir a los revisores `SecurityReviewAgent` y `ReliabilityReviewAgent` a un modelo de mayor nivel (Claude `sonnet`) para esa tarea.
 
 ---
 

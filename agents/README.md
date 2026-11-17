@@ -9,15 +9,15 @@ Los agentes del flujo SDD **no están atados a ninguna tecnología**: descubren 
 ## 1. Los Agentes del Flujo SDD (Núcleo Conectado)
 
 El ciclo de desarrollo se divide en 4 etapas:
-1. **Especificación (Potencia Máxima):** `SpecAgent`
-2. **Construcción (Potencia Máxima):** `BuilderAgent`
-3. **Revisión adversarial en paralelo, según riesgo (Potencia Máxima):** `CodeReviewAgent`, `UXReviewAgent`, `SecurityReviewAgent`, `ReliabilityReviewAgent`, `UIReviewAgent`
-4. **Juicio final (Potencia Máxima):** `ApproverAgent`
+1. **Especificación (Opus low / GPT Sol low / Hydrogen High):** `SpecAgent`
+2. **Construcción (Sonnet medium / GPT Terra medium / Hydrogen Medium):** `BuilderAgent`
+3. **Revisión adversarial en paralelo, según riesgo (Haiku Extra / GPT Luna Max / Flash Medium):** `CodeReviewAgent`, `UXReviewAgent`, `SecurityReviewAgent`, `ReliabilityReviewAgent`, `UIReviewAgent`
+4. **Juicio final (Haiku Extra / GPT Luna Max / Flash High):** `ApproverAgent`
 
 | # | Agente | Archivo | Rol en el Flujo SDD | Permisos | Claude | Codex | Antigravity |
 | :-: | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **1** | **Spec Agent** | [`SpecAgent.md`](./SpecAgent.md) | Redacta la **Spec cerrada ("Zero-Guesswork")** con mapa de archivos, contratos técnicos, matriz UX, reglas UI fluidas y criterios Gherkin. | Lectura repo + Escritura Specs (`.md` / `RC`) | `sonnet` | `sol` | `high` (Hydrogen High) |
-| **2** | **Builder Agent** | [`BuilderAgent.md`](./BuilderAgent.md) | Implementa el **100 % del código**, emite el **Manifiesto de Entrega** (archivos tocados, cómo probar, efectos colaterales) y ejecuta las correcciones del `ApproverAgent`. | Lectura/Escritura de código y docs técnicos | `sonnet` | `sol` | `high` (Hydrogen High) |
+| **2** | **Builder Agent** | [`BuilderAgent.md`](./BuilderAgent.md) | Implementa el **100 % del código**, emite el **Manifiesto de Entrega** (archivos tocados, cómo probar, efectos colaterales) y ejecuta las correcciones del `ApproverAgent`. | Lectura/Escritura de código y docs técnicos | `haiku` (esfuerzo `xhigh`, Extra) | `luna` (GPT Luna, `max`) | `high` (Flash High) |
 | **3a** | **Code Review Agent** | [`CodeReviewAgent.md`](./CodeReviewAgent.md) | **Corrección lógica, contratos de la Spec y regresiones.** Compila, ejecuta tests, escribe los suyos y llama a cada función con entradas hostiles. **Siempre se activa.** | Read-only en producción; ejecuta | `sonnet` | `sol` | `high` (Hydrogen High) |
 | **3b** | **Security Review Agent** | [`SecurityReviewAgent.md`](./SecurityReviewAgent.md) | **Atacante interno:** validación de entradas, autorización, abuso, duplicación de valor, inyección, secretos. Construye un cliente malicioso. Se activa con **fronteras de confianza**. | Read-only en producción; ataca | `sonnet` | `sol` | `high` (Hydrogen High) |
 | **3c** | **Reliability Review Agent** | [`ReliabilityReviewAgent.md`](./ReliabilityReviewAgent.md) | **Lo que pasa cuando algo sale mal:** interrupciones a mitad de operación, datos antiguos, concurrencia, fugas, relojes, fallos de dependencias, escala. Se activa con **estado, asincronía o recursos**. | Read-only en producción; fuerza fallos | `sonnet` | `sol` | `high` (Hydrogen High) |
@@ -60,11 +60,11 @@ flowchart TD
 
 ### Reglas del Ciclo SDD
 1. **Ningún desarrollo arranca a ciegas:** `SpecAgent` inspecciona el repositorio real y genera la Spec con identificadores trazables (`TECH-XX`, `UX-XX`, `UI-XX`, `CA-XX`).
-2. **Construcción integral:** `BuilderAgent` implementa lógica, estados de UX y layout en una misma entrega, y cierra con el **Manifiesto de Entrega**. Si el Manifiesto no trae archivos tocados completos y cómo probar, se devuelve.
-3. **Revisión adversarial:** cada revisor asume que el código está roto, lee los archivos reales **antes** del Manifiesto, **ejecuta** y registra al menos 10 ataques (6 ejecutados, 4 categorías). Lo que no se pueda ejecutar queda como `[NO VERIFICADO]` y bloquea la aprobación.
+2. **Construcción integral:** `BuilderAgent` implementa lógica, estados de UX y layout en una misma entrega, y cierra con el **Manifiesto de Entrega**, que incluye el **nivel de revisión** propuesto (S / M / L, ver `REVIEW-PROTOCOL.md` sección 9.1). Si el Manifiesto no trae archivos tocados completos y cómo probar, se devuelve.
+3. **Revisión adversarial:** cada revisor asume que el código está roto, lee los archivos reales **antes** del Manifiesto, **ejecuta** y registra ataques según el nivel de revisión S / M / L (mínimos: S 4/2/3, M 6/3/4, L 10/4/6 en intentos, categorías y ejecutados). Lo que no se pueda ejecutar queda como `[NO VERIFICADO]` y bloquea la aprobación.
 4. **Evidencia o no cuenta:** todo `[BLOQUEANTE]` o `[MAYOR]` trae pasos de reproducción. Sin reproducción es `[SOSPECHA]`.
-5. **Rondas:** cada ronda revisa el diff completo del fix y reejecuta todas las reproducciones anteriores. El Builder no cierra sus propios hallazgos: solo el revisor que los halló.
-6. **Decisión del `ApproverAgent`:** audita a los revisores, reejecuta pruebas y aprueba solo con 0 bloqueantes, 0 mayores y 0 no verificados, informando el **riesgo residual**. Tras 3 rondas con bloqueantes, escala al usuario.
+5. **Rondas proporcionales:** v1 es completa; desde v2 cada revisor revisa el diff del fix, reejecuta sus reproducciones abiertas y una muestra de regresión de 3 ataques (revisión completa solo si el fix tocó código fuera de los `FIX-XX` o es nivel L con bloqueante de seguridad o confiabilidad). El Builder no cierra sus propios hallazgos: solo el revisor que los halló.
+6. **Decisión del `ApproverAgent`:** audita a los revisores, reejecuta pruebas por muestreo según el nivel y aprueba solo con 0 bloqueantes, 0 mayores y 0 no verificados, informando el **riesgo residual**. Tras 3 rondas con bloqueantes, escala al usuario.
 7. **Memoria:** toda falla que el usuario encuentre después de una aprobación se registra en `BUGS-HISTORICOS.md`.
 
 ---

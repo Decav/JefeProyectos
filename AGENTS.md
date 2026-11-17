@@ -10,18 +10,18 @@ Este workspace opera bajo una arquitectura estricta **SDD (Spec-Driven Developme
 
 ## 1. Matriz Oficial de Agentes y Modelos por Plataforma
 
-Cada rol del ciclo SDD DEBE ejecutarse con el modelo correspondiente a su nivel de potencia según el entorno activo (**Claude**, **Codex** o **Antigravity**). **Los revisores y el aprobador corren con Potencia Máxima**, igual que el Builder: un juez más débil que el autor aprueba lo que no entiende.
+Cada rol del ciclo SDD DEBE ejecutarse con el modelo y el nivel de esfuerzo de esta tabla según el entorno activo (**Claude**, **Codex** o **Antigravity**). El perfil está optimizado para reducir tiempo y cuota por tarea: el Spec y el Builder usan modelos de razonamiento medio o bajo, y los revisores y el aprobador usan modelos más livianos con esfuerzo alto, porque su fiabilidad depende de **ejecutar y registrar evidencia** (`agents/REVIEW-PROTOCOL.md`), no del tamaño del modelo.
 
-| Etapa  | Agente                     | Definición                                                               | Nivel      | Claude   | Codex | Antigravity            | Permisos sobre Código                               |
+| Etapa  | Agente                     | Definición                                                               | Perfil     | Claude   | Codex | Antigravity            | Permisos sobre Código                               |
 | :----: | :------------------------- | :----------------------------------------------------------------------- | :--------- | :------- | :---- | :--------------------- | :-------------------------------------------------- |
-| **1**  | **SpecAgent**              | [`agents/SpecAgent.md`](./agents/SpecAgent.md)                           | **Máxima** | `sonnet` | `sol` | `high` (Hydrogen High) | **Prohibido tocar código** (Solo redacta Spec / RC) |
-| **2**  | **BuilderAgent**           | [`agents/BuilderAgent.md`](./agents/BuilderAgent.md)                     | **Máxima** | `sonnet` | `sol` | `high` (Hydrogen High) | **Lectura y Escritura** de código de producción     |
-| **3a** | **CodeReviewAgent**        | [`agents/CodeReviewAgent.md`](./agents/CodeReviewAgent.md)               | **Máxima** | `sonnet` | `sol` | `high` (Hydrogen High) | **Read-only** en producción; ejecuta y prueba       |
-| **3b** | **SecurityReviewAgent**    | [`agents/SecurityReviewAgent.md`](./agents/SecurityReviewAgent.md)       | **Máxima** | `sonnet` | `sol` | `high` (Hydrogen High) | **Read-only** en producción; ataca el sistema       |
-| **3c** | **ReliabilityReviewAgent** | [`agents/ReliabilityReviewAgent.md`](./agents/ReliabilityReviewAgent.md) | **Máxima** | `sonnet` | `sol` | `high` (Hydrogen High) | **Read-only** en producción; fuerza fallos          |
-| **3d** | **UXReviewAgent**          | [`agents/UXReviewAgent.md`](./agents/UXReviewAgent.md)                   | **Máxima** | `sonnet` | `sol` | `high` (Hydrogen High) | **Read-only** en producción; ejecuta cada `CA-XX`   |
-| **3e** | **UIReviewAgent**          | [`agents/UIReviewAgent.md`](./agents/UIReviewAgent.md)                   | **Máxima** | `sonnet` | `sol` | `high` (Hydrogen High) | **Read-only** en producción; renderiza y mide       |
-| **4**  | **ApproverAgent**          | [`agents/ApproverAgent.md`](./agents/ApproverAgent.md)                   | **Máxima** | `sonnet` | `sol` | `high` (Hydrogen High) | **Read-only** en producción; audita a los revisores |
+| **1**  | **SpecAgent**              | [`agents/SpecAgent.md`](./agents/SpecAgent.md)                           | **Costo reducido** | `opus` (esfuerzo `low`) | `sol` (GPT Sol, `low`) | `high` (Hydrogen High) | **Prohibido tocar código** (Solo redacta Spec / RC) |
+| **2**  | **BuilderAgent**           | [`agents/BuilderAgent.md`](./agents/BuilderAgent.md)                     | **Costo reducido** | `sonnet` (esfuerzo `medium`) | `terra` (GPT Terra, `medium`) | `medium` (Hydrogen Medium) | **Lectura y Escritura** de código de producción     |
+| **3a** | **CodeReviewAgent**        | [`agents/CodeReviewAgent.md`](./agents/CodeReviewAgent.md)               | **Costo reducido** | `haiku` (esfuerzo `xhigh`, Extra) | `luna` (GPT Luna, `max`) | `medium` (Flash Medium) | **Read-only** en producción; ejecuta y prueba       |
+| **3b** | **SecurityReviewAgent**    | [`agents/SecurityReviewAgent.md`](./agents/SecurityReviewAgent.md)       | **Costo reducido** | `haiku` (esfuerzo `xhigh`, Extra) | `luna` (GPT Luna, `max`) | `medium` (Flash Medium) | **Read-only** en producción; ataca el sistema       |
+| **3c** | **ReliabilityReviewAgent** | [`agents/ReliabilityReviewAgent.md`](./agents/ReliabilityReviewAgent.md) | **Costo reducido** | `haiku` (esfuerzo `xhigh`, Extra) | `luna` (GPT Luna, `max`) | `medium` (Flash Medium) | **Read-only** en producción; fuerza fallos          |
+| **3d** | **UXReviewAgent**          | [`agents/UXReviewAgent.md`](./agents/UXReviewAgent.md)                   | **Costo reducido** | `haiku` (esfuerzo `xhigh`, Extra) | `luna` (GPT Luna, `max`) | `medium` (Flash Medium) | **Read-only** en producción; ejecuta cada `CA-XX`   |
+| **3e** | **UIReviewAgent**          | [`agents/UIReviewAgent.md`](./agents/UIReviewAgent.md)                   | **Costo reducido** | `haiku` (esfuerzo `xhigh`, Extra) | `luna` (GPT Luna, `max`) | `medium` (Flash Medium) | **Read-only** en producción; renderiza y mide       |
+| **4**  | **ApproverAgent**          | [`agents/ApproverAgent.md`](./agents/ApproverAgent.md)                   | **Costo reducido** | `haiku` (esfuerzo `xhigh`, Extra) | `luna` (GPT Luna, `max`) | `high` (Flash High) | **Read-only** en producción; audita a los revisores |
 
 **Recomendación de diversidad:** si el Builder usó una familia de modelos, conviene que los revisores sean de otra familia (por ejemplo, construye Claude y revisan Codex o Antigravity), para no compartir los mismos puntos ciegos.
 
@@ -32,7 +32,7 @@ Cada rol del ciclo SDD DEBE ejecutarse con el modelo correspondiente a su nivel 
 ## 2. Reglas de Activación Automática según el Pedido del Usuario
 
 ### A. Cuando el usuario pide redactar una Spec, RC o analizar una HU ("Escribe el spec de...", "Prepara el RC de...")
-1. Activar **`SpecAgent`** leyendo [`agents/SpecAgent.md`](./agents/SpecAgent.md) con el modelo de **Potencia Máxima** (`sonnet` / `sol` / `high` Hydrogen High).
+1. Activar **`SpecAgent`** leyendo [`agents/SpecAgent.md`](./agents/SpecAgent.md) con su modelo asignado (`opus` low / `sol` low / `high` Hydrogen High).
 2. Inspeccionar primero el repositorio real, la arquitectura y las plantillas del proyecto (`HU-TEMPLATE.md`, `RC-TEMPLATE.md`).
 3. Generar la Spec / RC completa con contratos técnicos (`TECH-XX`), estados de experiencia de usuario (`UX-XX`), reglas de interfaz fluida sin tamaños fijos (`UI-XX`) y criterios Gherkin (`CA-XX`).
 4. **Detenerse y esperar aprobación del usuario** antes de pasar al `BuilderAgent`.
@@ -40,19 +40,20 @@ Cada rol del ciclo SDD DEBE ejecutarse con el modelo correspondiente a su nivel 
 ### B. Cuando el usuario aprueba la Spec / RC o pide implementar ("Implementa el spec...", "Ejecuta el ciclo SDD de...")
 Ejecutar el pipeline completo hasta obtener la aprobación del `ApproverAgent`:
 
-1. **Construcción (`BuilderAgent`, Potencia Máxima):**
+1. **Construcción (`BuilderAgent`, `sonnet` medium / `terra` medium / Hydrogen Medium):**
    - Leer [`agents/BuilderAgent.md`](./agents/BuilderAgent.md) y la Spec/RC aprobada.
    - Implementar el 100 % y emitir el **`MANIFIESTO DE ENTREGA — BUILDER AGENT`**, que debe incluir: lista completa de archivos tocados, cómo ejecutar y probar el cambio, pruebas corridas con su resultado, datos de prueba y efectos colaterales. Sin eso, los revisores devuelven la entrega.
-2. **Revisión adversarial en paralelo (read-only, Potencia Máxima):**
+2. **Revisión adversarial en paralelo (read-only, `haiku` Extra / `luna` Max / Flash Medium):**
+   - Fijar el **nivel de revisión** (S / M / L, [`agents/REVIEW-PROTOCOL.md`](./agents/REVIEW-PROTOCOL.md), sección 9.1): el `SpecAgent` lo propone y el `BuilderAgent` lo confirma en el Manifiesto. En nivel **S** basta `CodeReviewAgent` (que también ejecuta los `CA-XX`); en **M** y **L** se activan los revisores según el riesgo.
    - Activar a los revisores **según el riesgo** del cambio (tabla de activación en [`agents/REVIEW-PROTOCOL.md`](./agents/REVIEW-PROTOCOL.md), sección 9):
      - **`CodeReviewAgent`** y **`UXReviewAgent`**: siempre.
      - **`SecurityReviewAgent`**: si el cambio toca fronteras de confianza (red, cliente-servidor, entradas de usuario, pagos, saldos, permisos, secretos).
      - **`ReliabilityReviewAgent`**: si toca estado persistente, concurrencia, asincronía, ciclo de vida de recursos, tareas en segundo plano o dependencias externas.
      - **`UIReviewAgent`**: si hay interfaz visual.
-   - Cada revisor **asume que el código está roto, lo ejecuta, intenta romperlo** y entrega un dictamen con **registro de ataques**. Un dictamen sin evidencia de ejecución es inválido. En caso de duda, se activa el revisor.
-3. **Juicio final (`ApproverAgent`, Potencia Máxima):**
-   - Verifica la cobertura de revisores, audita la calidad de cada dictamen, reejecuta reproducciones y pruebas propias.
-   - **Si hay `[BLOQUEANTE]`, `[MAYOR]` o `[NO VERIFICADO]` abiertos:** emite `CAMBIOS REQUERIDOS` con la **orden de corrección consolidada (`[FIX-01..N]`)**. El Builder corrige; los revisores revisan de nuevo el diff completo y reejecutan las reproducciones anteriores. Solo el revisor que halló una falla puede cerrarla.
+   - Cada revisor **asume que el código está roto, lo ejecuta, intenta romperlo** y entrega un dictamen con **registro de ataques** (mínimos por nivel: S 4, M 6, L 10). Un dictamen sin evidencia de ejecución es inválido. En caso de duda, se activa el revisor.
+3. **Juicio final (`ApproverAgent`, `haiku` Extra / `luna` Max / Flash High):**
+   - Verifica la cobertura de revisores, audita la calidad de cada dictamen y reejecuta reproducciones por muestreo según el nivel (S: 1 ataque, M: 2 más uno propio, L: uno por dictamen más uno propio).
+   - **Si hay `[BLOQUEANTE]`, `[MAYOR]` o `[NO VERIFICADO]` abiertos:** emite `CAMBIOS REQUERIDOS` con la **orden de corrección consolidada (`[FIX-01..N]`)**. El Builder corrige; en las rondas v2 en adelante cada revisor revisa el diff del fix, reejecuta las reproducciones de sus hallazgos abiertos y una muestra de regresión de 3 ataques (revisión completa solo si el fix tocó código fuera de los `[FIX-XX]` o si es nivel L con un bloqueante de seguridad o confiabilidad). Solo el revisor que halló una falla puede cerrarla.
    - **Si todo está limpio de verdad:** emite `DESARROLLO APROBADO` con el historial de hallazgos y el **riesgo residual**.
    - Tras 3 rondas con bloqueantes abiertos, escala al usuario.
 

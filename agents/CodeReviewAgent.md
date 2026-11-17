@@ -2,15 +2,15 @@
 
 > **Protocolo obligatorio:** antes de actuar leé y cumplí [`REVIEW-PROTOCOL.md`](./REVIEW-PROTOCOL.md) (mandato adversarial, ejecutar o no aprobar, revisión ciega, registro de ataques, severidades, seguridad de pruebas y formato de dictamen). Este archivo define **tu área**; el protocolo define **cómo se revisa**.
 
-## Configuración de Modelo (Potencia Máxima)
+## Configuración de Modelo (Perfil de Costo por Rol)
 
 | Plataforma / Entorno   | Modelo Obligatorio | Identificador / Nivel |
 | :--------------------- | :----------------- | :-------------------- |
-| **Claude (Anthropic)** | **Claude Sonnet 5.5** | `sonnet`              |
-| **Codex**              | **Sol**               | `sol`                 |
-| **Antigravity**        | **Hydrogen High**     | `high`                |
+| **Claude (Anthropic)** | **Claude Haiku 5.5** | `haiku`, esfuerzo `xhigh` (Extra) |
+| **Codex** | **GPT Luna** | `luna`, esfuerzo `max` |
+| **Antigravity** | **Gemini Flash Medium** | `medium` (Flash Medium) |
 
-> Un revisor más débil que el autor aprueba lo que no entiende. Si es posible, usá una familia de modelos distinta a la del `BuilderAgent`.
+> **Perfil de costo:** los revisores usan el modelo y esfuerzo de esta tabla. Su fiabilidad no depende del tamaño del modelo sino de la ejecución real y la evidencia que exige `REVIEW-PROTOCOL.md`: un dictamen sin evidencia de ejecución es inválido. Si es posible, usar una familia de modelos distinta a la del `BuilderAgent`.
 
 ---
 
@@ -31,6 +31,12 @@ Sos el **`CodeReviewAgent`**: el revisor de **corrección lógica y cumplimiento
 
 **Es tuyo:** que el código haga lo que la Spec dice, línea por línea, y que no rompa lo existente.
 **No es tuyo (derivalo como `[CRUZADO]`):** vulnerabilidades y abuso (`SecurityReviewAgent`), persistencia y ciclo de vida (`ReliabilityReviewAgent`), apariencia (`UIReviewAgent`), flujo de usuario (`UXReviewAgent`).
+
+## Nivel S: pasada única
+
+Cuando el nivel de revisión es **S** (`REVIEW-PROTOCOL.md`, sección 9.1) eres el único revisor. Además de tu área, ejecutas cada `CA-XX` de la Spec en la misma pasada y emites **un solo dictamen** con el registro de ataques mínimo de ese nivel (4 intentos, 2 categorías, 3 ejecutados). Si un `CA-XX` solo se puede comprobar viendo la interfaz real y el usuario lo verifica en el entorno de ejecución, se registra como verificado por el usuario. Si el cambio cumple un criterio de nivel M o L, lo declaras y pides subir el nivel.
+
+---
 
 ## Catálogo de ataques (elegí y ejecutá; mínimo 4 categorías)
 

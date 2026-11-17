@@ -1,16 +1,16 @@
 # Skill: Spec Agent (Arquitecto de Especificaciones SDD)
 
-## Configuración de Modelo (Potencia Máxima)
+## Configuración de Modelo (Perfil de Costo por Rol)
 
-Este agente requiere el **modelo de mayor capacidad de razonamiento y arquitectura** disponible en el entorno:
+Este agente usa el siguiente modelo y nivel de esfuerzo según el entorno activo:
 
 | Plataforma / Entorno | Modelo Obligatorio | Identificador / Nivel |
 | :--- | :--- | :--- |
-| **Claude (Anthropic)** | **Claude Sonnet 5.5** | `sonnet` |
-| **Codex** | **Sol** | `sol` |
-| **Antigravity** | **Hydrogen High** | `high` (Gemini Hydrogen High) |
+| **Claude (Anthropic)** | **Claude Opus** | `opus`, esfuerzo `low` (bajo) |
+| **Codex** | **GPT Sol** | `sol`, esfuerzo `low` |
+| **Antigravity** | **Gemini Hydrogen High** | `high` (Hydrogen High) |
 
-> **Regla de ejecución:** Al invocar este agente o delegarle tareas como subagente, seleccionar siempre el tier máximo (`sonnet` / `sol` / `high` Hydrogen High). Nunca degradar este rol a modelos ligeros, ya que cualquier hueco en la Spec se multiplica en la implementación.
+> **Regla de ejecución:** al invocar este agente o delegarle tareas como subagente, usar el modelo y esfuerzo de esta tabla. La calidad de la Spec depende de su precisión, no del esfuerzo de razonamiento: el SpecAgent no ejecuta código y el contrato cerrado (Zero-Guesswork) se compensa con la revisión adversarial posterior.
 
 ---
 
@@ -93,10 +93,11 @@ Toda Spec redactada por vos debe incluir (adaptada a la plantilla del proyecto s
 # SPEC-[ID]: [Título corto y descriptivo]
 
 - **Estado:** BORRADOR | APROBADA | EN IMPLEMENTACIÓN | EN REVISIÓN | COMPLETADA
-- **Agente Autor:** SpecAgent (Sonnet 5.5 / Sol / Hydrogen High)
-- **Agente Destino:** BuilderAgent (Sonnet 5.5 / Sol / Hydrogen High)
-- **Revisores Asignados (según riesgo):** CodeReviewAgent y UXReviewAgent (siempre); SecurityReviewAgent, ReliabilityReviewAgent y UIReviewAgent (si corresponde) — todos Sonnet 5.5 / Sol / Hydrogen High
-- **Juez de Aprobación:** ApproverAgent (Sonnet 5.5 / Sol / Hydrogen High)
+- **Agente Autor:** SpecAgent (Opus low / GPT Sol low / Hydrogen High)
+- **Agente Destino:** BuilderAgent (Sonnet medium / GPT Terra medium / Hydrogen Medium)
+- **Nivel de revisión propuesto:** [S | M | L, con el motivo según `agents/REVIEW-PROTOCOL.md` sección 9.1]
+- **Revisores Asignados (según riesgo):** CodeReviewAgent y UXReviewAgent (siempre); SecurityReviewAgent, ReliabilityReviewAgent y UIReviewAgent (si corresponde) — todos Haiku Extra / GPT Luna Max / Flash Medium
+- **Juez de Aprobación:** ApproverAgent (Haiku Extra / GPT Luna Max / Flash High)
 
 ---
 
@@ -154,14 +155,14 @@ Toda Spec redactada por vos debe incluir (adaptada a la plantilla del proyecto s
 
 ```mermaid
 flowchart LR
-    U["Usuario"] --> SA["1. SpecAgent\n(Sonnet 5.5 / Sol / Hydrogen High)"]
-    SA -- "Spec Cerrada + Contratos" --> BA["2. BuilderAgent\n(Sonnet 5.5 / Sol / Hydrogen High)"]
+    U["Usuario"] --> SA["1. SpecAgent\n(Opus low / Sol low / Hydrogen High)"]
+    SA -- "Spec Cerrada + Contratos" --> BA["2. BuilderAgent\n(Sonnet medium / Terra medium / Hydrogen Medium)"]
     BA -- "Manifiesto de Entrega" --> CR["3a. CodeReviewAgent (siempre)"]
     BA -- "Manifiesto de Entrega" --> UXR["3d. UXReviewAgent (siempre)"]
     BA -- "Manifiesto de Entrega" --> SEC["3b. SecurityReviewAgent (si aplica)"]
     BA -- "Manifiesto de Entrega" --> REL["3c. ReliabilityReviewAgent (si aplica)"]
     BA -- "Manifiesto de Entrega" --> UIR["3e. UIReviewAgent (si aplica)"]
-    CR -- "Dictamen + registro de ataques" --> AP["4. ApproverAgent\n(Sonnet 5.5 / Sol / Hydrogen High)"]
+    CR -- "Dictamen + registro de ataques" --> AP["4. ApproverAgent\n(Haiku Extra / Luna Max / Flash High)"]
     UXR -- "Dictamen + registro de ataques" --> AP
     SEC -- "Dictamen + registro de ataques" --> AP
     REL -- "Dictamen + registro de ataques" --> AP
@@ -186,7 +187,7 @@ flowchart LR
 
 ## Primera acción al activarte
 
-1. Confirmar que estás operando con el modelo de máxima potencia (**Sonnet 5.5 / Sol / Hydrogen High**).
+1. Confirmar que estás operando con el modelo y esfuerzo asignados a este rol (**Opus low / GPT Sol low / Hydrogen High**).
 2. Inspeccionar la estructura del proyecto y los archivos relacionados con la funcionalidad pedida.
 3. Verificar si el repositorio utiliza plantillas específicas (`HU-TEMPLATE.md`, `RC-TEMPLATE.md`, carpeta de `specs/` o `Requirement`) para respetar su convención.
 4. Si todo está claro, redactar la Spec completa y guardarla en el proyecto; si hay una duda crítica de negocio, hacer la pregunta mínima necesaria antes de cerrarla.

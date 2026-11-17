@@ -1,6 +1,6 @@
 # Protocolo SDD para Vandrheim-Roblox (Integrado con `Workspace.DevelopmentStandard` en Studio)
 
-Este proyecto opera bajo el ecosistema **SDD con revisión adversarial** (especificador, constructor, cinco revisores y aprobador) definido en [`../AGENTS.md`](../AGENTS.md) y regido por [`../agents/REVIEW-PROTOCOL.md`](../agents/REVIEW-PROTOCOL.md), conectado de forma estricta con la arquitectura documental vigente dentro de **Roblox Studio (`Workspace.DevelopmentStandard`, establecida en `rc120`)** y gobernada por la skill [`skills/project-docs/SKILL.md`](./skills/project-docs/SKILL.md).
+Este proyecto opera bajo el ecosistema **SDD con revisión adversarial** (especificador, constructor, dos revisores —`CodeReviewAgent` y `UIReviewAgent`— y aprobador) definido en [`../AGENTS.md`](../AGENTS.md) y regido por [`../agents/REVIEW-PROTOCOL.md`](../agents/REVIEW-PROTOCOL.md), conectado de forma estricta con la arquitectura documental vigente dentro de **Roblox Studio (`Workspace.DevelopmentStandard`, establecida en `rc120`)** y gobernada por la skill [`skills/project-docs/SKILL.md`](./skills/project-docs/SKILL.md).
 
 **Regla de formato:** Prohibido usar emojis o íconos decorativos en cualquier documento, RC, comentario Luau o dictamen.
 
@@ -36,19 +36,16 @@ Este proyecto opera bajo el ecosistema **SDD con revisión adversarial** (especi
 
 ## 2. Cómo operan los Agentes SDD sobre `Vandrheim-Roblox`
 
-**Todos los roles (incluidos revisores y aprobador) usan Potencia Máxima:** Claude `Sonnet 5.5` | Codex `Sol` | Antigravity `Hydrogen High` (`high`). Se recomienda que revise una familia de modelos distinta a la que construyó.
+**Perfil de modelos por rol (definido en [`../AGENTS.md`](../AGENTS.md)):** SpecAgent: Claude `Opus` low | Codex `GPT Sol` low | Antigravity `Hydrogen High`. BuilderAgent: Claude `Sonnet` medium | Codex `GPT Terra` medium | Antigravity `Hydrogen Medium`. Revisores: Claude `Haiku` Extra | Codex `GPT Luna` Max | Antigravity `Flash Medium`. ApproverAgent: Claude `Haiku` Extra | Codex `GPT Luna` Max | Antigravity `Flash High`. Se recomienda que revise una familia de modelos distinta a la que construyó.
 
 ### Etapa 1 — `SpecAgent` ([`../agents/SpecAgent.md`](../agents/SpecAgent.md))
-- **Modelo:** Claude `Sonnet 5.5` | Codex `Sol` | Antigravity `Hydrogen High` (`high`)
+- **Modelo:** Claude `Opus` low | Codex `GPT Sol` low | Antigravity `Hydrogen High`
 - **Procedimiento obligatorio:**
   1. Leer en Studio `Workspace.DevelopmentStandard.DEV_PROMPT`, `PROJECT_ARCHITECTURE` y `DEVELOPER_GUIDE`, y en el proyecto local la HU asignada (`HU/`) y [`GDD_ROBLOX_MVP.md`](./GDD_ROBLOX_MVP.md) / [`SKILLS_CATALOG.md`](./SKILLS_CATALOG.md) cuando corresponda.
   2. Abrir y leer en Studio únicamente las páginas `Architecture.<Dominio>` y `Schemas.<Dominio>` relacionadas con la tarea, más los scripts reales involucrados en el DataModel (`ServerScriptService`, `ReplicatedStorage`, `StarterPlayerScripts`, `StarterGui`).
   3. Revisar `Workspace.DevelopmentStandard.Requirement.INDEX` y los atributos `RCId` del árbol `Requirement` para obtener el siguiente ID correlativo sin repetir (ej. después de `rc131` sigue `rc132`).
   4. Crear el RC directamente en Roblox Studio como instancia `Script` con `Disabled = true`, atributo `RCId = "rcNNN"`, `Name = "rc-titulo-descriptivo"` bajo la carpeta funcional estable `Workspace.DevelopmentStandard.Requirement.<Categoria>`, con `Source` compuesto únicamente por un comentario Luau válido (`--[[ ... ]]`) que respete las **10 secciones obligatorias de `RC-TEMPLATE`** e incorpore dentro de ellas los contratos verificables para:
-     - **`CodeReviewAgent`** (en §5 Implementación técnica, §6 Integración, §7 Optimización).
-     - **`SecurityReviewAgent`** (en §5: **superficie de ataque** con cada remote o punto de entrada nuevo o modificado, qué valida el servidor, quién puede usarlo y qué valor mueve: monedas, ítems, daño, perfil, party).
-     - **`ReliabilityReviewAgent`** (en §5 y §7: **modos de falla** ante interrupción a mitad de operación, perfiles con esquema anterior, salida del jugador o del grupo, respawn, liberación de conexiones y supuestos de tiempo).
-     - **`UXReviewAgent`** (en §4 Criterios de aceptación ejecutables y §5 estados de interacción, cierres y paridad PC/Mobile; indicar qué cifras o textos visibles deben coincidir con lo que aplica el servidor).
+     - **`CodeReviewAgent`** (en §4 Criterios de aceptación ejecutables y estados de interacción, §5 Implementación técnica, §6 Integración, §7 Optimización; incluir los datos de prueba y los textos o cifras visibles que deben coincidir con lo que aplica el servidor).
      - **`UIReviewAgent`** (en §4 y §5: uso de `Scale`, `UIAspectRatioConstraint`, `UISizeConstraint`, `UIScale`, `ZIndex`, prohibición de `Offset` impropio y resoluciones objetivo concretas).
      - Incluir en §4 el **plan de verificación**: cómo ejecutar, datos de prueba (incluido jugador nuevo con estado vacío y jugador con estado máximo), resultado esperado por criterio, revisores a activar y entradas aplicables de [`../agents/BUGS-HISTORICOS.md`](../agents/BUGS-HISTORICOS.md). Todo `CA-XX` debe poder ejecutarse y tener un resultado observable.
   5. Registrar la nueva entrada en `Workspace.DevelopmentStandard.Requirement.INDEX` (`| rcNNN | Seccion | titulo-corto | rc-titulo-descriptivo | Ruta |`).
@@ -57,7 +54,7 @@ Este proyecto opera bajo el ecosistema **SDD con revisión adversarial** (especi
 ---
 
 ### Etapa 2 — `BuilderAgent` ([`../agents/BuilderAgent.md`](../agents/BuilderAgent.md))
-- **Modelo:** Claude `Sonnet 5.5` | Codex `Sol` | Antigravity `Hydrogen High` (`high`)
+- **Modelo:** Claude `Sonnet` medium | Codex `GPT Terra` medium | Antigravity `Hydrogen Medium`
 - **Procedimiento obligatorio en Studio (vía MCP):**
   1. Leer el `rcNNN` aprobado en `Workspace.DevelopmentStandard.Requirement.<Categoria>`, junto con `PROJECT_STANDARD` y las páginas `Architecture.<Dominio>` y `Schemas.<Dominio>` involucradas.
   2. Cambiar el estado del `rcNNN` a `EN IMPLEMENTACIÓN`.
@@ -72,39 +69,28 @@ Este proyecto opera bajo el ecosistema **SDD con revisión adversarial** (especi
 ---
 
 ### Etapa 3 — Revisión Adversarial en Studio (Informan a `ApproverAgent`)
-- **Modelo de los revisores:** Potencia Máxima (Claude `Sonnet 5.5` | Codex `Sol` | Antigravity `Hydrogen High` `high`).
+- **Modelo de los revisores:** Claude `Haiku` Extra | Codex `GPT Luna` Max | Antigravity `Flash Medium`.
 - **Mandato:** cada revisor sigue [`../agents/REVIEW-PROTOCOL.md`](../agents/REVIEW-PROTOCOL.md): asume que el código está roto, **lo ejecuta** y entrega un dictamen con **registro de ataques** y evidencia de reproducción. Lo que no pueda ejecutar queda `[NO VERIFICADO]` y bloquea la aprobación. Leen [`../agents/BUGS-HISTORICOS.md`](../agents/BUGS-HISTORICOS.md) antes de empezar.
-- **Activación por riesgo:** `CodeReviewAgent` y `UXReviewAgent` siempre; `SecurityReviewAgent` si el cambio toca remotes, combate, inventario, economía, perfil, party o cualquier entrada del cliente; `ReliabilityReviewAgent` si toca persistencia, estado de sesión o grupo, tareas asíncronas, conexiones o tiempos; `UIReviewAgent` si hay interfaz. En caso de duda se activa.
+- **Revisores activos en Vandrheim:** En Vandrheim solo se usan **dos revisores**: `CodeReviewAgent` (siempre; además ejecuta los `CA-XX` y recorre los flujos y estados de la funcionalidad) y `UIReviewAgent` (solo si el cambio toca interfaz visual). `SecurityReviewAgent`, `ReliabilityReviewAgent` y `UXReviewAgent` no se activan en este proyecto; el PO puede pedirlos puntualmente para una tarea concreta.
+- **Nivel de revisión (S / M / L):** el `SpecAgent` lo propone en el RC y el `BuilderAgent` lo confirma en el Manifiesto (ver [`../agents/REVIEW-PROTOCOL.md`](../agents/REVIEW-PROTOCOL.md), sección 9.1). En nivel **S** (como quitar un elemento de HUD o ajustar un valor de config) basta `CodeReviewAgent` y la verificación del PO en Play puede cerrar los `CA-XX` que dependan de ver la interfaz real. En **M** y **L** se suma `UIReviewAgent` si hay interfaz. Mínimos de ataques: S 4, M 6, L 10.
 - **Cómo ejecutan en Studio (compatible con `rc120`):** pueden iniciar Play, ejecutar código de prueba en los contextos de servidor y cliente, capturar pantalla, emular dispositivos y resoluciones y usar varios clientes. **No crean instancias ni carpetas `Reports/` en el DataModel, no modifican scripts ni instancias y no guardan nada.** El código de prueba vive solo en la sesión de Play. Los dictámenes se entregan en el chat. Si el Play usa un perfil o datos reales, lo declaran antes de probar y revierten cualquier cambio.
 
-1. **`CodeReviewAgent`** ([`../agents/CodeReviewAgent.md`](../agents/CodeReviewAgent.md)): corrección lógica y contratos del `rcNNN`, `PROJECT_STANDARD`, `Architecture.<Dominio>` y `Schemas.<Dominio>`.
+1. **`CodeReviewAgent`** ([`../agents/CodeReviewAgent.md`](../agents/CodeReviewAgent.md)): corrección lógica y contratos del `rcNNN`, `PROJECT_STANDARD`, `Architecture.<Dominio>` y `Schemas.<Dominio>`. Además ejecuta cada `CA-XX` y recorre los flujos y estados (`idle`, `loading/cooldown`, `empty`, `error`, `success`), jugador nuevo, doble clic y cierre limpio de paneles.
    - Contexto Vandrheim: uso estricto de `task.wait`/`task.spawn`/`task.defer` (prohibido `wait()`), señales en lugar de `while true do`, limpieza de conexiones, 0 errores en consola **desde el arranque del juego completo**, actualización correcta de `Architecture`/`Schemas` si cambió el contrato, y que el `rcNNN` sea un `Script` con `Disabled = true` y comentario Luau válido.
    - Dictamen: `DICTAMEN DE AUDITORÍA DE CÓDIGO` (prefijo `CR`).
 
-2. **`SecurityReviewAgent`** ([`../agents/SecurityReviewAgent.md`](../agents/SecurityReviewAgent.md)): atacan cada remote y punto de entrada nuevo o modificado.
-   - Contexto Vandrheim: autoridad del servidor en combate, inventario, economía, perfil y party (`Schemas.RemotesYEstadoSesion`, `Schemas.EconomiaYTransacciones`); remotes con argumentos hostiles (tipos, `nil`, `NaN`, negativos, enormes), ráfagas, replay, ejecución sin permiso o sin cumplir precondiciones, duplicación de ítems o monedas, y confianza en valores del cliente.
-   - Dictamen: `DICTAMEN DE AUDITORÍA DE SEGURIDAD` (prefijo `SEC`).
-
-3. **`ReliabilityReviewAgent`** ([`../agents/ReliabilityReviewAgent.md`](../agents/ReliabilityReviewAgent.md)): fuerzan fallos y estados límite.
-   - Contexto Vandrheim: persistencia y migración de perfil (`Schemas.PerfilPersistencia`), interrupciones a mitad de una operación, salida del jugador o del grupo durante una mazmorra (`Schemas.DungeonYGrupo`), respawn, conexiones que no se liberan tras repetir una operación, y supuestos de tiempo.
-   - Dictamen: `DICTAMEN DE AUDITORÍA DE CONFIABILIDAD` (prefijo `REL`).
-
-4. **`UXReviewAgent`** ([`../agents/UXReviewAgent.md`](../agents/UXReviewAgent.md)): ejecutan cada `CA-XX` del `rcNNN` y recorren los flujos de forma adversarial.
-   - Contexto Vandrheim: estados completos (`idle`, `loading/cooldown`, `empty`, `error`, `success`), bloqueo de doble clic/tap, cierre limpio de paneles y diálogos (`DialogView`, `WindowLayoutClient`, `UIWindowOpen`, rueda del mouse en `CameraController`), paridad PC y Mobile (`TouchEnabled`), jugador nuevo con estado vacío y que lo mostrado en la interfaz coincida con lo que aplica el servidor. Invariantes de `Architecture.Interfaz`.
-   - Dictamen: `DICTAMEN DE AUDITORÍA DE UX` (prefijo `UX`).
-
-5. **`UIReviewAgent`** ([`../agents/UIReviewAgent.md`](../agents/UIReviewAgent.md)): renderizan, miden y exigen capturas.
+2. **`UIReviewAgent`** ([`../agents/UIReviewAgent.md`](../agents/UIReviewAgent.md)): renderizan, miden y exigen capturas.
    - Contexto Vandrheim: `Scale` (`UDim2.fromScale`), `UIAspectRatioConstraint`, `UISizeConstraint`, `UIScale` y `UITextSizeConstraint` (cero `Offset` rígido indebido), respeto a `UITheme`, `GlobalUIConfig` y `UILayoutDefaults` (ramas `pc` y `mobile`), herencia de `ZIndex` (`applyZIndexTree` cuando corresponda), texto largo y glifos que la fuente no soporte, y solapes o desbordes medidos en las resoluciones de PC y móvil.
    - Dictamen: `DICTAMEN DE AUDITORÍA DE UI` (prefijo `UI`).
 
 ---
 
 ### Etapa 4 — `ApproverAgent` ([`../agents/ApproverAgent.md`](../agents/ApproverAgent.md))
-- **Modelo:** Potencia Máxima (Claude `Sonnet 5.5` | Codex `Sol` | Antigravity `Hydrogen High` `high`).
+- **Modelo:** Claude `Haiku` Extra | Codex `GPT Luna` Max | Antigravity `Flash High`.
 - **Acción:**
-  - Verifica que corrieron todos los revisores que el riesgo exige, **audita la calidad de cada dictamen** (rechaza los que no tengan registro de ataques o evidencia de ejecución) y reejecuta reproducciones y pruebas propias.
+  - Verifica que corrieron los revisores activos (`CodeReviewAgent` y, si hay interfaz, `UIReviewAgent`), **audita la calidad de cada dictamen** (rechaza los que no tengan registro de ataques o evidencia de ejecución) y reejecuta reproducciones por muestreo según el nivel (S: 1 ataque; M: 2 más uno propio; L: uno por dictamen más uno propio).
   - Deduplica hallazgos y resuelve conflictos contra el `rcNNN` y `Workspace.DevelopmentStandard`. **No puede descartar un hallazgo con evidencia.**
-  - **Si hay `[BLOQUEANTE]`, `[MAYOR]` o `[NO VERIFICADO]` abiertos:** emite `RESOLUCIÓN DEL APPROVER AGENT — CAMBIOS REQUERIDOS` con la **`ORDEN DE CORRECCIÓN CONSOLIDADA ([FIX-01..N])`** hacia `BuilderAgent`. En cada ronda los revisores revisan el diff completo y reejecutan las reproducciones anteriores; solo el revisor que halló una falla la cierra.
+  - **Si hay `[BLOQUEANTE]`, `[MAYOR]` o `[NO VERIFICADO]` abiertos:** emite `RESOLUCIÓN DEL APPROVER AGENT — CAMBIOS REQUERIDOS` con la **`ORDEN DE CORRECCIÓN CONSOLIDADA ([FIX-01..N])`** hacia `BuilderAgent`. Desde la ronda v2 cada revisor revisa el diff del fix, reejecuta las reproducciones de sus hallazgos abiertos y una muestra de regresión de 3 ataques (revisión completa solo si el fix tocó scripts fuera de los `[FIX-XX]` o es nivel L con bloqueante de seguridad o confiabilidad); solo el revisor que halló una falla la cierra.
   - **Si todo está limpio de verdad:** emite `RESOLUCIÓN DEL APPROVER AGENT — DESARROLLO APROBADO` con el historial de hallazgos y el **riesgo residual**, e informa qué criterios quedaron verificados en Studio (recordando que guardar, derivar a `Dungeon_Helada`/`Prólogo` según `rc048` y publicar corresponde al PO).
   - Tras 3 rondas con bloqueantes abiertos, escala al PO.
 - **Memoria:** toda falla que el PO encuentre después de una aprobación se registra en [`../agents/BUGS-HISTORICOS.md`](../agents/BUGS-HISTORICOS.md).

@@ -2,15 +2,15 @@
 
 > **Protocolo obligatorio:** leé y cumplí [`REVIEW-PROTOCOL.md`](./REVIEW-PROTOCOL.md). Sos quien lo hace cumplir.
 
-## Configuración de Modelo (Potencia Máxima)
+## Configuración de Modelo (Perfil de Costo por Rol)
 
 | Plataforma / Entorno | Modelo Obligatorio | Identificador / Nivel |
 | :--- | :--- | :--- |
-| **Claude (Anthropic)** | **Claude Sonnet 5.5** | `sonnet` |
-| **Codex** | **Sol** | `sol` |
-| **Antigravity** | **Hydrogen High** | `high` |
+| **Claude (Anthropic)** | **Claude Haiku 5.5** | `haiku`, esfuerzo `xhigh` (Extra) |
+| **Codex** | **GPT Luna** | `luna`, esfuerzo `max` |
+| **Antigravity** | **Gemini Flash High** | `high` (Flash High) |
 
-> Quien juzga a los revisores no puede ser más débil que ellos ni que el Builder.
+> **Perfil de costo:** el aprobador usa el modelo y esfuerzo de esta tabla. Su control principal es auditar la evidencia de los dictámenes y reejecutar reproducciones, no razonar sobre el código desde cero.
 
 ---
 
@@ -41,7 +41,7 @@ Español. Tono de autoridad técnica, imparcial y exigente. Sin emojis ni ícono
 
 ### 2. Auditar la calidad de cada dictamen
 Rechazás y devolvés al revisor (indicando qué atacar) cualquier dictamen que:
-- no tenga **registro de ataques** o no cumpla los mínimos (10 intentos, 4 categorías, 6 ejecutados);
+- no tenga **registro de ataques** o no cumpla los mínimos de su nivel de revisión (S: 4/2/3, M: 6/3/4, L: 10/4/6 en intentos, categorías y ejecutados);
 - tenga un registro **genérico**, copiable a otro cambio;
 - apruebe con `[NO VERIFICADO]` abiertos;
 - no declare discrepancias con el Manifiesto (si las hay, tú mismo las buscás);
@@ -51,7 +51,11 @@ Un dictamen limpio con poco esfuerzo registrado es **más sospechoso** que uno c
 
 ### 3. Verificar los hallazgos
 - Reejecutá las reproducciones de todos los `[BLOQUEANTE]` antes de ordenar la corrección. Si no reproducen, **devolvés el hallazgo al revisor**; no lo descartás vos.
-- Para cada dictamen aprobatorio, reejecutá por tu cuenta al menos **un ataque** de su registro y, además, **uno propio** que el revisor no haya cubierto.
+- Verificación por muestreo según el nivel de revisión (`REVIEW-PROTOCOL.md`, sección 9.1):
+  - **S:** reejecutá **un ataque** del dictamen. El ataque propio es opcional.
+  - **M:** reejecutá **dos ataques** de dictámenes distintos y **uno propio** que los revisores no hayan cubierto.
+  - **L:** reejecutá **al menos un ataque por cada dictamen aprobatorio** y **uno propio**.
+- Confirmá que el nivel asignado es correcto. Si el cambio cumple un criterio de un nivel superior, súbelo y activa los revisores que falten.
 - Resolvé si un `[CRUZADO]` o `[SOSPECHA]` se eleva a hallazgo o se asigna a otro revisor.
 
 ### 4. Consolidar sin ablandar
@@ -62,7 +66,7 @@ Un dictamen limpio con poco esfuerzo registrado es **más sospechoso** que uno c
 ### 5. Gestionar las rondas
 - Mantené una **tabla de hallazgos con estado**: `ABIERTO`, `CORREGIDO-VERIFICADO`, `REABIERTO`.
 - El Builder **no puede marcar un hallazgo como cerrado**. Solo el revisor que lo halló lo cierra, reejecutando su reproducción sobre la nueva versión.
-- Cada ronda: los revisores revisan el diff completo del fix y reejecutan todas las reproducciones previas (regla R9). Un fix que rompe otra cosa **reabre** o crea hallazgos nuevos.
+- Rondas v2 en adelante (regla R9): cada revisor revisa el diff del fix, reejecuta las reproducciones de sus hallazgos abiertos y una muestra de regresión de 3 ataques. Exigí la revisión completa solo si el fix tocó código fuera de los `FIX-XX` o si el nivel es L con un hallazgo bloqueante de seguridad o confiabilidad. Un fix que rompe otra cosa **reabre** o crea hallazgos nuevos.
 - Si tras **3 rondas** persisten hallazgos `[BLOQUEANTE]`, escalá al usuario con un resumen: puede indicar un problema de diseño en la Spec y no solo de implementación.
 
 ### 6. Condiciones de aprobación (todas, sin excepción)
@@ -148,7 +152,7 @@ Un dictamen limpio con poco esfuerzo registrado es **más sospechoso** que uno c
 ## Primera acción al activarte
 
 1. Leer `REVIEW-PROTOCOL.md` y `BUGS-HISTORICOS.md`.
-2. Obtener la lista completa de archivos tocados y comprobar la cobertura de revisores.
+2. Obtener la lista completa de archivos tocados, confirmar el nivel de revisión (S / M / L) y comprobar la cobertura de revisores.
 3. Auditar la calidad de cada dictamen contra los mínimos del protocolo.
 4. Reejecutar reproducciones y tus propias pruebas.
 5. Emitir la resolución (Caso A o Caso B).

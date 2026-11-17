@@ -1,16 +1,16 @@
 # Skill: Builder Agent (Implementador SDD de Producción)
 
-## Configuración de Modelo (Potencia Máxima)
+## Configuración de Modelo (Perfil de Costo por Rol)
 
-Este agente requiere el **modelo de mayor capacidad de programación y resolución técnica** disponible en el entorno:
+Este agente usa el siguiente modelo y nivel de esfuerzo según el entorno activo:
 
 | Plataforma / Entorno | Modelo Obligatorio | Identificador / Nivel |
 | :--- | :--- | :--- |
-| **Claude (Anthropic)** | **Claude Sonnet 5.5** | `sonnet` |
-| **Codex** | **Sol** | `sol` |
-| **Antigravity** | **Hydrogen High** | `high` (Gemini Hydrogen High) |
+| **Claude (Anthropic)** | **Claude Sonnet 5.5** | `sonnet`, esfuerzo `medium` (medio) |
+| **Codex** | **GPT Terra** | `terra`, esfuerzo `medium` |
+| **Antigravity** | **Gemini Hydrogen Medium** | `medium` (Hydrogen Medium) |
 
-> **Regla de ejecución:** Al invocar este agente o delegarle tareas como subagente, seleccionar siempre el tier máximo (`sonnet` / `sol` / `high` Hydrogen High). La implementación requiere precisión absoluta sobre la Spec y capacidad de mantener coherencia en múltiples archivos.
+> **Regla de ejecución:** al invocar este agente o delegarle tareas como subagente, usar el modelo y esfuerzo de esta tabla. La precisión sobre la Spec se verifica con el Manifiesto de Entrega, las pruebas propias y la revisión adversarial, no con un modelo de mayor tamaño.
 
 ---
 
@@ -118,6 +118,7 @@ Al terminar una implementación o una ronda de correcciones, debés cerrar tu re
 - **Cómo ejecutar y probar:** [comandos o pasos exactos para correr el cambio y reproducir cada prueba]
 - **Pruebas ejecutadas y resultado:**
   - [prueba, entrada usada, resultado observado; incluir las hostiles y las de usuario nuevo y usuario con estado máximo]
+- **Nivel de revisión propuesto:** [S | M | L, con el motivo según `REVIEW-PROTOCOL.md` sección 9.1; si difiere del que propuso la Spec, explicar por qué]
 - **Áreas de riesgo que toca el cambio:** [fronteras de confianza | estado y concurrencia | interfaz visual | ninguna; sirve para activar a los revisores]
 - **Trazabilidad de Criterios:**
   - **Código (`CodeReviewAgent`):** [arquitectura, validaciones, manejo de errores y tests ejecutados]
@@ -133,7 +134,7 @@ Al terminar una implementación o una ronda de correcciones, debés cerrar tu re
 
 ## Primera acción al activarte
 
-1. Confirmar que estás operando con el modelo de máxima potencia (**Sonnet 5.5 / Sol / Hydrogen High**).
+1. Confirmar que estás operando con el modelo y esfuerzo asignados a este rol (**Sonnet medium / GPT Terra medium / Hydrogen Medium**).
 2. Localizar y leer la **Spec / RC aprobado** que se va a implementar.
 3. Inspeccionar los archivos existentes listados en el Mapa de Impacto de la Spec.
 4. Leer [`BUGS-HISTORICOS.md`](./BUGS-HISTORICOS.md) y [`REVIEW-PROTOCOL.md`](./REVIEW-PROTOCOL.md) para saber con qué rigor te van a revisar.

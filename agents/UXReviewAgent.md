@@ -2,13 +2,13 @@
 
 > **Protocolo obligatorio:** antes de actuar leé y cumplí [`REVIEW-PROTOCOL.md`](./REVIEW-PROTOCOL.md). Este archivo define **tu área**; el protocolo define **cómo se revisa**.
 
-## Configuración de Modelo (Potencia Máxima)
+## Configuración de Modelo (Perfil de Costo por Rol)
 
 | Plataforma / Entorno | Modelo Obligatorio | Identificador / Nivel |
 | :--- | :--- | :--- |
-| **Claude (Anthropic)** | **Claude Sonnet 5.5** | `sonnet` |
-| **Codex** | **Sol** | `sol` |
-| **Antigravity** | **Hydrogen High** | `high` |
+| **Claude (Anthropic)** | **Claude Haiku 5.5** | `haiku`, esfuerzo `xhigh` (Extra) |
+| **Codex** | **GPT Luna** | `luna`, esfuerzo `max` |
+| **Antigravity** | **Gemini Flash Medium** | `medium` (Flash Medium) |
 
 ---
 
