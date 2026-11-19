@@ -153,12 +153,12 @@
 | 8 | **R6.61** | Caravanas atacadas y campamentos enemigos | Creada — lista para RC |
 | 9 | **R6.62** | Senda del Jotunn: orbes, XP automática, recompensas endgame y respawn seguro | Creada — lista para RC |
 | 10 | **R6.63** | Cazador a 45 studs, aggro con persecución y rango enemigo máximo 40 | Creada — lista para RC |
-| 11 | **R6.64** | Cooldowns separados de pociones de recuperación y buff | Creada — lista para RC |
+| 11 | **R6.64** | Cooldowns separados de pociones de recuperación y buff, más fusión de stacks | Creada — lista para RC |
 | — | **EST-53** | Revisión de modelos de mina, runas, naufragio, eventos y maestría | Creada — lista para revisión |
 
 **Secuencia:** R6.53 (POIs/coleccionables) y R6.54 primero; R6.55/R6.56 en paralelo; R6.57/R6.58 después; R6.59/R6.60 y R6.61 al final. R6.63 y R6.64 pueden ir en paralelo con R6.62. R6.53 es dependencia de R6.55/R6.56/R6.59/R6.61. EST-53 corre en paralelo y no bloquea la lógica.
 
-**Reglas:** sin pay-to-win; leaderboard con recompensas cosméticas; Senda del Jotunn reemplaza la Cámara semanal; el teleport va a la entrada de la dungeon, nunca dentro de una run; los minerales de la mina no se acumulan fuera de la diaria; Puntería/arco del Cazador a 45 studs y enemigos ranged máximo 40; pociones de recuperación y buff con cooldowns separados.
+**Reglas:** sin pay-to-win; leaderboard con recompensas cosméticas; Senda del Jotunn reemplaza la Cámara semanal; el teleport va a la entrada de la dungeon, nunca dentro de una run; los minerales de la mina no se acumulan fuera de la diaria; Puntería/arco del Cazador a 45 studs y enemigos ranged máximo 40; pociones de recuperación y buff con cooldowns separados; fusión de stacks compatibles hasta `maxStack`.
 
 ### 3.3 v2.0 — Fuego/Lava (primera expansión gratuita)
 
@@ -247,5 +247,5 @@
 | 2026-11-06 | **R6.49–R6.52 implementadas (reporte PO 2026-11-06):** mapa/Hub integrado, diaria, tienda rotativa y NPCs ambientales; decisión de mapa resuelta. QA de las cuatro pendiente; R6.47 con fix reportado y QA de audio pendiente. |
 | 2026-11-06 | **HU-R6.53 y HU-ESTETICA-52 creadas:** Valgard vivo (NPCs con rutinas, microescenas, props/audio, POIs y coleccionables) y compuerta de revisión de modelos nuevos para integrar arte final. |
 | 2026-11-12 | **Programa Dopamina y mundo aprobado:** HUs R6.54–R6.61 + EST-53 creadas. Incluye juice, mina/diaria, piedras rúnicas, Endless semanal, logros/títulos, Codex, maestría cosmética y eventos de caravana/campamento. Maestría sin stats por decisión PO. |
-| 2026-11-12 | **Senda del Jotunn implementada (ex Endless) y ajustes creados:** R6.62 (orbes, XP automática, recompensas endgame y respawn seguro), R6.63 (Puntería 45, aggro/chase y ranged enemigo máximo 40) y R6.64 (cooldowns separados de pociones). |
+| 2026-11-12 | **Senda del Jotunn implementada (ex Endless) y ajustes creados:** R6.62 (orbes, XP automática, recompensas endgame y respawn seguro), R6.63 (Puntería 45, aggro/chase y ranged enemigo máximo 40) y R6.64 (cooldowns separados de pociones + fusión de stacks). |
 | 2026-11-06 | **HU-ESTETICA-52 aprobada y entregada:** staging completo en Studio (6 NPCs R15, 14 props, 6 POIs); niños y perro descartados por PO; fauna diferida a P1; arte listo para HU-R6.53. |

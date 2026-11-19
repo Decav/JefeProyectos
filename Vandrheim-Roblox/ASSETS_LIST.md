@@ -336,3 +336,9 @@ Miniatura oficial 16:9 (`1920×1080`, RGB opaco) con avatar estilizado Roblox R1
 
 | `Thumbnail_Game_04_Jefe_Jotunn_logo` | Miniatura 16:9 | Versión final Variante A con logotipo oficial abajo a la izquierda (1920×1080). Miniatura principal recomendada | `Assets/Images/Marketing/Thumbnails/Candidates/Thumbnail_Game_04_Jefe_Jotunn_logo_1920x1080.jpg` | Edición asistida con IA + logotipo oficial; `Tools/Export_Thumbnails_A_C.py` | Lista para carga |
 | `Thumbnail_Game_05_Botin_Epico_logo` | Miniatura 16:9 | Versión final Variante C con texto "EPIC LOOT" y logotipo oficial abajo a la izquierda (1920×1080). Segunda miniatura | `Assets/Images/Marketing/Thumbnails/Candidates/Thumbnail_Game_05_Botin_Epico_logo_1920x1080.jpg` | Edición asistida con IA + logotipo oficial; `Tools/Export_Thumbnails_A_C.py` | Lista para carga |
+
+## MATERIALES Y MINERÍA · HU-R6.55 · 2026-11-16
+
+| assetId | Tipo | Uso | Archivo local | Creador | rbxassetid |
+|---|---|---|---|---|---|
+| `Icon_Item_iron_ore` | Icono | Mineral de hierro (`iron_ore`, ítem de misión diaria en Mina Helada) | `Assets/Icons/Items/Materials/Icon_Item_iron_ore.png` | Decavii | `rbxassetid://80940376202397` |
