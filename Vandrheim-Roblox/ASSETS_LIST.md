@@ -295,6 +295,7 @@ Iconos reutilizables aprobados para paneles y ventanas, con la familia visual de
 | `Icon_UI_settings` | Icono | Abrir configuración | `Assets/Icons/UI/Common/Icon_UI_settings.png` | ImageGen + referencias propias; interno Vandrheim | Aprobado; carga pendiente |
 | `Icon_UI_sell_all` | Icono | Vender todos los objetos elegibles | `Assets/Icons/UI/Common/Icon_UI_sell_all.png` | ImageGen + referencias propias; interno Vandrheim | Aprobado; carga pendiente |
 | `Icon_UI_trash` | Icono | Eliminar basura del inventario | `Assets/Icons/UI/Common/Icon_UI_trash.png` | ImageGen + referencias propias; interno Vandrheim | Aprobado; carga pendiente |
+| `Icon_UI_compact` | Icono | Compactar / Colapsar paneles de inventario | `Assets/Icons/UI/Common/Icon_UI_compact.png` | ImageGen + referencias propias; interno Vandrheim | Entregado; carga pendiente |
 
 ## ICONO DE TIENDA · 2026-10-22
 
