@@ -21,7 +21,7 @@
 
 ### **Descripción del Requerimiento / Contexto**
 
-El diseñador retrabajó completo el frame `D69Fdc — Grimorio · Tomo abierto simplificado` (verificado por diff contra HEAD). El dev lo implementa sobre el grimorio vivo (EST-42), **conservando nombres de instancias y lógica** (contrato EST-13) y usando **datos reales del SKILLS_CATALOG** (regla EST-42: nunca quemados).
+El diseñador retrabajó completo el frame `D69Fdc — Grimorio · Tomo abierto simplificado` (rediseño registrado en el commit `9b63d3d`). El dev lo implementa sobre el grimorio vivo (EST-42), **conservando nombres de instancias y lógica** (contrato EST-13) y usando **datos reales del SKILLS_CATALOG** (regla EST-42: nunca quemados).
 
 Cambios del rediseño (HEAD → nuevo):
 
@@ -35,7 +35,7 @@ Cambios del rediseño (HEAD → nuevo):
 | 6 | Hint de arrastre | "ARRASTRA UN ICONO DIRECTAMENTE A TU BARRA DE HABILIDADES" | "ARRASTRA UN ICONO A TU BARRA" fs=7.5 |
 | 7 | Decoración | 4 bordes folio outer + top edge | **eliminados**; nuevos: costura central, encuadernación y hojas de folio (se mantienen los 6 divisores) |
 | 8 | Paginación | no existía | **nodo `QhMEl`: "PÁGINA 1" fs=7 + ‹ › fs=14** |
-| 9 | Tarjeta 4 (mockup) | "Sentencia" / "20 MP · CD 8s" | "Bendición sagrada" / "20 maná · CD 12 s" (**⚠️ contradice el catálogo — ver pendiente**) |
+| 9 | Tarjeta 4 (mockup) | "Sentencia" / "20 MP · CD 8s" | "Bendición sagrada" / "20 maná · CD 12 s" (mockup ilustrativo; manda el catálogo) |
 | 10 | Tarjeta 5 (mockup) | "Anillo de luz sagrada" | "Anillo de luz" (coste/CD iguales: 25 · 10 s) |
 
 **Criterio de hecho global:** el grimorio se ve como el frame `D69Fdc` rediseñado (título, filtros, contador, tarjetas con formato nuevo, decoración, paginación) — con datos reales y sin romper asignación, filtros ni tooltips.
@@ -105,7 +105,7 @@ Cambios del rediseño (HEAD → nuevo):
 
 * **GIVEN** las tarjetas y el contador
 * **WHEN** se revisan
-* **THEN** nombre/coste/CD/rango/fuente/escalado/asignación y el "N CONOCIDAS" salen del SKILLS_CATALOG/config (sin datos quemados; tarjeta 4 según el default del pendiente)
+* **THEN** nombre/coste/CD/rango/fuente/escalado/asignación y el "N CONOCIDAS" salen del SKILLS_CATALOG/config (sin datos quemados; manda el catálogo de la clase + spec activa)
 
 #### **Escenario 3: Filtros por asignación**
 
@@ -143,7 +143,7 @@ Cambios del rediseño (HEAD → nuevo):
 #### No incluye
 
 * Lógica de skills/asignación/filtros server (R5.1 intactos); ni iconos nuevos.
-* Crear la skill "Bendición sagrada" ni cambiar el catálogo (pendiente aparte si aplica).
+* Crear skills nuevas ni cambiar el catálogo (fuera de alcance; el mockup es solo diseño).
 * Tooltips nuevos (TooltipSystem existente).
 
 ---

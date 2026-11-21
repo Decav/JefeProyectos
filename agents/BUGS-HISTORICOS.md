@@ -106,6 +106,14 @@ Este archivo es la memoria del proyecto. Cada entrada es una falla que **llegó 
 - **Cómo buscarla:** contrastar cada campo accedido en UI (`cfg.displayName`, `cfg.label`, etc.) contra las claves reales definidas en su módulo `Config` (`table.freeze`) y anclar todo banner adyacente a elementos gestionados por `UILayoutClient` respecto a `AbsolutePosition`/`AbsoluteSize`.
 
 
+### BH-011 — Posición de origen cacheada antes de reubicar un contenedor padre (`SpawnOrigin` desfasado tras `PivotTo`)
+- **Origen:** Vandrheim RPG, noviembre de 2026 (`rc155`, `DungeonService`, `FloorService` y `EnemyService`).
+- **Qué pasó:** al entrar a una dungeon en Studio Play (`DebugStartDungeonPreview`), el 100 % de los enemigos generados en el piso caminaban en línea recta contra los muros intentando regresar al origen `(0, Y, 0)` y rechazaban todo ataque del jugador con `"El objetivo está regresando."`.
+- **Causa raíz:** `FloorService.GenerateFloor` spawneaba packs y miniboss en coordenadas locales cercanas al origen `(0, 0, 0..218)` fijando `SpawnOrigin` en ese instante, y inmediatamente después `DungeonService` movía todo el modelo del piso con `floorModel:PivotTo(floorModel:GetPivot() + STUDIO_PREVIEW_OFFSET)` (`+6000` Z) sin desplazar `SpawnOrigin`. Además, `EnemyService.createLeashController` cacheaba `SpawnOrigin` una sola vez al crearse, ignorando reubicaciones posteriores. Por otro lado, ninguna prueba de Fase 2 ni Fase 3 ejecutó el flujo real de entrada a dungeon (`DebugStartDungeonPreview`), probando únicamente en Hub/Prólogo.
+- **Revisor responsable:** REL, UX y CR (radio de impacto de `PivotTo` / entornos declarados en la Spec).
+- **Cómo se habría detectado:** buscar todos los `PivotTo` de contenedores padres que alojan entidades con coordenadas mundiales cacheadas (`SpawnOrigin`, `ArenaBounds`, checkpoints) y ejecutar el arranque real de cada modo afectado por la Spec (Hub, Dungeon normal, Endless y Prólogo) en Play.
+- **Cómo buscarla:** auditar todo atributo o caché de posición mundial guardado en entidades recién creadas y comprobar si un padre (`floorModel`, zona, arena) o rutina de reset ejecuta `PivotTo` después del spawn; exigir relectura dinámica o sincronización atómica del atributo tras trasladar el contenedor.
+
 ### BH-012 — Campo de payload perdido al ampliar un serializador compartido (`quantity` ausente, etiquetas de stack invisibles)
 - **Origen:** Vandrheim RPG, noviembre de 2026 (`rc156`, `InventoryService.serializeItem`).
 - **Qué pasó:** en el juego publicado, las pociones y demás ítems apilables dejaron de mostrar la etiqueta de cantidad en la mochila (y en subasta y avisos de botín), porque el cliente recibía todos los ítems sin `quantity` y asumía 1.
@@ -129,3 +137,4 @@ Este archivo es la memoria del proyecto. Cada entrada es una falla que **llegó 
 - **Revisor responsable:** CR y UX.
 - **Cómo se habría detectado:** buscar en el DataModel cada símbolo que el RC dice haber agregado (`RequestAbandonQuest.OnServerEvent`, el botón "Rechazar misión", el modal) y ejecutar el flujo completo de punta a punta en Play antes de cerrar.
 - **Cómo buscarla:** para cada RC cerrado, comprobar con una búsqueda en scripts que sus handlers, botones y remotes existen y están conectados; tratar variables declaradas sin uso como señal de implementación incompleta.
+
