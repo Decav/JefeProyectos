@@ -104,3 +104,4 @@ Este proyecto opera bajo el ecosistema **SDD con revisión adversarial** (especi
 - [`skills/roblox-r15-body-skins/SKILL.md`](./skills/roblox-r15-body-skins/SKILL.md): Texturas UV (`585×559`) de ropa clásica R15.
 - [`skills/vandrheim-weapon-assets/SKILL.md`](./skills/vandrheim-weapon-assets/SKILL.md): Modelos segmentados e íconos de armas en `Workspace.ESTWeaponPlace.Armas`.
 - [`skills/studio-simulation-review/SKILL.md`](./skills/studio-simulation-review/SKILL.md): Revisión adversarial por simulación en el DataModel Edit, sin iniciar Play; opción por defecto de los revisores.
+- [`skills/vandrheim-vfx/SKILL.md`](./skills/vandrheim-vfx/SKILL.md): Autoría y validación de VFX de habilidades e impactos en Studio usando capas, curvas, beams curvos y presupuestos por perfil.

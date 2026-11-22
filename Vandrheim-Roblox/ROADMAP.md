@@ -2,7 +2,7 @@
 
 **Proyecto:** Vandrheim (Roblox)
 **Dueño:** PM / PO
-**Última actualización:** 2026-10-27
+**Última actualización:** 2026-11-21
 **Fuente de alcance:** `GDD_ROBLOX_MVP.md` §3, §14 y §20
 **Estado:** preparación de beta abierta (decisión PO 2026-10-27)
 
@@ -154,6 +154,7 @@
 | 9 | **R6.62** | Senda del Jotunn: orbes, XP automática, recompensas endgame y respawn seguro | Creada — lista para RC |
 | 10 | **R6.63** | Cazador a 45 studs, aggro con persecución y rango enemigo máximo 40 | Creada — lista para RC |
 | 11 | **R6.64** | Cooldowns separados de pociones de recuperación y buff, más fusión de stacks | Creada — lista para RC |
+| 12 | **R6.65** | Paladín Castigo: Fe ardiente, alas de valquiria y conversión ATK→MATK | Creada — lista para RC |
 | — | **EST-53** | Revisión de modelos de mina, runas, naufragio, eventos y maestría | Creada — lista para revisión |
 
 **Secuencia:** R6.53 (POIs/coleccionables) y R6.54 primero; R6.55/R6.56 en paralelo; R6.57/R6.58 después; R6.59/R6.60 y R6.61 al final. R6.63 y R6.64 pueden ir en paralelo con R6.62. R6.53 es dependencia de R6.55/R6.56/R6.59/R6.61. EST-53 corre en paralelo y no bloquea la lógica.

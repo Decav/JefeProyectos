@@ -1,7 +1,7 @@
 # Vandrheim — GDD MVP (Roblox Studio)
 
 > Documento vivo. **Fuente de verdad** para desarrollo en Roblox Studio.
-> Última actualización: 2026-10-23
+> Última actualización: 2026-11-21
 > Decisiones del cuestionario de arquitectura/diseño **integradas y cerradas**.
 
 ---
@@ -757,6 +757,7 @@ Ver `HU/fases/HU-R2-Creacion-Personaje-Slots.md`. Resumen: 2 slots gratis; 3.º 
 | 2026-11-06 | **HU-R6.53 y HU-ESTETICA-52 creadas:** Valgard vivo (NPCs con rutinas, microescenas, props/audio, POIs y coleccionables) y revisión de modelos nuevos para integrar arte final. |
 | 2026-11-12 | **Programa Dopamina y mundo aprobado:** HUs R6.54–R6.61 + EST-53 creadas. Incluye juice, mina/diaria, piedras rúnicas, Endless semanal, logros/títulos, Codex, maestría cosmética y eventos de caravana/campamento. Maestría de clase solo cosmética, sin stats. |
 | 2026-11-12 | **Senda del Jotunn implementada (ex Endless) y ajustes creados:** R6.62 (orbes de vida/maná, XP automática por oleada, cash-out azul/morado con pociones grandes y respawn seguro), R6.63 (Puntería/arco 45 studs, aggro con persecución y ranged enemigo máximo 40) y R6.64 (cooldowns separados de pociones + fusión de stacks). |
+| 2026-11-21 | **HU-R6.65 creada — balance de Paladín Castigo:** con especialización activa, Golpe sagrado acumula 3 cargas; la tercera activa **Fe ardiente** durante **15 s** renovables con cada impacto. La conversión es **25% del ATK por carga en Castigo** (75% con 3) y **5% en Protector** (15% con 3), calibrada con la build real de **192 ATK / 50 MATK**. El estado muestra **alas de luz de valquiria** y se pierde al expirar o cambiar de contexto; sin spec no se acumula. |
 
 ---
 
