@@ -1,2 +1,5 @@
 # Obsidian (configuracion local del editor)
 .obsidian/
+
+# macOS
+.DS_Store
