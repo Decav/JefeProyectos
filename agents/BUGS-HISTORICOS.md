@@ -138,3 +138,13 @@ Este archivo es la memoria del proyecto. Cada entrada es una falla que **llegó 
 - **Cómo se habría detectado:** buscar en el DataModel cada símbolo que el RC dice haber agregado (`RequestAbandonQuest.OnServerEvent`, el botón "Rechazar misión", el modal) y ejecutar el flujo completo de punta a punta en Play antes de cerrar.
 - **Cómo buscarla:** para cada RC cerrado, comprobar con una búsqueda en scripts que sus handlers, botones y remotes existen y están conectados; tratar variables declaradas sin uso como señal de implementación incompleta.
 
+
+### BH-015 — Escala de MicroMenu y SocialMenu en móvil aprobada (rc168) pero sin poder reducirse (piso de escala igual al valor por defecto)
+- **Origen:** Vandrheim RPG, noviembre de 2026 (`rc168`, `UILayoutClient`, `MenuClient`, `UILayoutDefaults`; reportado por el PO el 2026-11-23, tras el cierre del 2026-11-22).
+- **Qué pasó:** en OrdenUI en móvil el PO no puede disminuir el tamaño de MicroMenu ni de SocialMenu, aunque rc168 figura COMPLETO con criterios de escala entre 0,60 y 2,00 verificados en simulación de Edit y Device Simulator. En PC funciona.
+- **Causa raíz (probable, por lectura; se confirma en Play al corregir):** el valor por defecto móvil de ambos elementos en `UILayoutDefaults` ya es 0,60, que es el piso del sistema (`MIN_SCALE` del cliente, `MIN_LAYOUT_SCALE` de `MenuClient` y rango del servidor), así que el control solo puede subir. Los criterios de rc168 probaron que el grip "llega a 0,60" partiendo de 0,60 y no que el jugador pudiera ir por debajo del valor por defecto.
+- **Revisor responsable:** UI y UX.
+- **Cómo se habría detectado:** partir del valor por defecto real de la plataforma y comprobar que la escala se puede mover en ambas direcciones desde ahí; preguntar al PO qué tamaño mínimo espera.
+- **Cómo buscarla:** cuando un control permite ajustar un valor entre un mínimo y un máximo, comparar cada valor por defecto con los límites y exigir margen en ambos sentidos; no dar por cumplido un criterio de rango que parte de un extremo.
+
+- **Corrección de la causa (2026-11-23, revisión de código de rc176):** el valor por defecto móvil de MicroMenu y SocialMenu en `UILayoutDefaults` es 1,00 (PC 0,85), no 0,60. El primer obstáculo real es que el grip de escala (`ResizeGrip`) se oculta cuando el objetivo mide menos de 76 x 68 px (`isCompactHandle` en `UILayoutClient`), lo que ocurre bajo 0,74 en MicroMenu y siempre en SocialMenu móvil. Además `MenuClient` fijaba `MinSize` en 1,0 del tamaño base y el piso general era 0,6. Lección: al diagnosticar por lectura, verificar el valor por defecto real y la visibilidad del control, no suponer.
