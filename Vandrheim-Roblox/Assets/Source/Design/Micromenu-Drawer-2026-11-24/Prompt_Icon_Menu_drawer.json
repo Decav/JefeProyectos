@@ -1,0 +1,41 @@
+{
+  "asset": "Icon_Menu_drawer",
+  "date": "2026-11-24",
+  "author": "DesignerAgent",
+  "role": "Producción de assets visuales",
+  "project": "Vandrheim RPG",
+  "style_references": [
+    "Assets/Icons/UI/Menu/Icon_Menu_dungeon.png",
+    "Assets/Icons/UI/Menu/Icon_Menu_quest.png",
+    "Assets/Icons/UI/Menu/Icon_Menu_run.png",
+    "Assets/Icons/UI/Menu/Icon_Menu_party.png"
+  ],
+  "palette": {
+    "brass_gold": "#C89445",
+    "parchment_cream": "#F4EDE0",
+    "dark_charcoal_outline": "#292A2E"
+  },
+  "candidates": [
+    {
+      "id": "drawer_grid",
+      "canonical_file": "Assets/Icons/UI/Menu/Icon_Menu_drawer.png",
+      "master": "Assets/Source/Design/Micromenu-Drawer-2026-11-24/Masters/Icon_Menu_drawer_grid_master.jpg",
+      "concept": "Cuadrícula 2x2 de cuatro placas biseladas en latón dorado con centro en pergamino.",
+      "status": "Oficial (canónica)"
+    },
+    {
+      "id": "drawer_bars",
+      "canonical_file": "Assets/Source/Design/Micromenu-Drawer-2026-11-24/Icon_Menu_drawer_variant_bars.png",
+      "master": "Assets/Source/Design/Micromenu-Drawer-2026-11-24/Masters/Icon_Menu_drawer_bars_master.jpg",
+      "concept": "Tres barras horizontales biseladas de latón nórdico con remaches y bisel superior en pergamino.",
+      "status": "Variante alternativa archivada"
+    }
+  ],
+  "export": {
+    "size_px": [512, 512],
+    "format": "PNG",
+    "color_mode": "RGBA",
+    "corner_alpha": 0,
+    "artwork_max_px": [420, 420]
+  }
+}

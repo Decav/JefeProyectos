@@ -343,3 +343,11 @@ Miniatura oficial 16:9 (`1920×1080`, RGB opaco) con avatar estilizado Roblox R1
 | assetId | Tipo | Uso | Archivo local | Creador | rbxassetid |
 |---|---|---|---|---|---|
 | `Icon_Item_iron_ore` | Icono | Mineral de hierro (`iron_ore`, ítem de misión diaria en Mina Helada) | `Assets/Icons/Items/Materials/Icon_Item_iron_ore.png` | Decavii | `rbxassetid://80940376202397` |
+
+## MICROMENÚ · BOTÓN DRAWER · 2026-11-24
+
+Icono para el botón desplegable/drawer del micromenú (`Icon_Menu_drawer.png`, cuadrícula 2×2 de cuatro placas biseladas de latón y pergamino; variante alternativa de 3 barras archivada en `Assets/Source/Design/Micromenu-Drawer-2026-11-24/`). PNG 512×512 RGBA transparente.
+
+| assetId | Tipo | Uso | Archivo local | Fuente / licencia | Estado / rbxassetid |
+|---|---|---|---|---|---|
+| `Icon_Menu_drawer` | Icono | Botón drawer / menú desplegable del micromenú | `Assets/Icons/UI/Menu/Icon_Menu_drawer.png` | Producción propia asistida con IA; interno Vandrheim | `rbxassetid://133130147824614` |
