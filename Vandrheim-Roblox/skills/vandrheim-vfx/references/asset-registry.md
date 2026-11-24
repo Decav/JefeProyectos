@@ -4,7 +4,7 @@ Fecha de la auditoría: 2026-11-22. Fuente de los datos: `VFXConfig.classVFX.pac
 
 ## Estado de licencia
 
-- Las 41 texturas distintas de producción son **imágenes de terceros** (23 creadores distintos, uno de ellos un grupo). Ninguna es de Roblox ni nuestra, y ninguna figura como dominio público.
+- Las 42 texturas distintas de producción son **imágenes de terceros** (23 creadores distintos, uno de ellos un grupo). Ninguna es de Roblox ni nuestra, y ninguna figura como dominio público.
 - Roblox crea las imágenes y decals como **Open Use** por defecto: "cualquier creador o juego puede usarlas" salvo que su dueño active Asset Privacy (documentación de privacidad de assets). Por eso cargan hoy en el juego.
 - Eso es un permiso técnico de la plataforma. **No hay una licencia verificada** para uso comercial ni créditos en el pack. El dueño puede eliminar o moderar el asset y la textura dejaría de cargar.
 - Política: estas texturas son **transitorias**. Cada una debe tener un reemplazo propio planificado (ver `texture-guide.md`) y un respaldo del motor mientras tanto.
@@ -49,6 +49,7 @@ Columna Reemplazo: `pendiente` = aún sin textura propia. Cuando exista, anota e
 | projTrail | 16698745611 | Portal de rutas | Abso_Delete | estela | pendiente |
 | projSpikeyFire | 13136714025 | Volteo de Llama Estilizado | PrimeVoxel | llama con puntas | pendiente |
 | sigFlames | 11499447365 | flipbook1 | jxydnnnn_alt2 | llamas (flipbook) | pendiente |
+| groundMark | 11396737930 | Images/6e42bdf5-813a-437f-8594-06b2fa63c948 (1) | Korwiaa | marca oscura de suelo (Ground de GroundSlamEffect) | pendiente |
 | sigShard | 10111094276 | chispa | coolestfloppa | chispa | pendiente |
 | smoke | 10034873151 | smoke1024 (1) | cathorolokochup | humo | pendiente |
 | sparks | 15316530495 | Chispa gruesa | MuG3ED | chispas | pendiente |

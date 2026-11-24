@@ -1,6 +1,51 @@
 # Laboratorio de validación de VFX
 
-Dos niveles: captura en Edit (rápido, sin Play, no toca perfiles) y comprobación en Play (confirmación final). Itera en Edit y confirma en Play.
+Dos niveles: captura en Edit (rápido, sin Play, no toca perfiles) y comprobación en Play (confirmación final).
+
+## Limitación importante de Edit (verificada el 2026-11-22)
+
+El avance de las partículas en el viewport de Edit **no es fiable**. En una sesión las partículas no envejecían entre capturas: partículas de 8 a 12 s que debían subir 3 studs por segundo seguían apiladas en el punto de emisión varios segundos después, y `screen_capture` mostraba el instante de emisión (edad 0). Más tarde, en la misma jornada y tras una sesión de Play, las capturas sí mostraban el movimiento y los flipbooks en curso. Parece depender de que Studio esté renderizando de forma activa (ventana al frente).
+
+Antes de fiarte de una captura, haz una prueba de control: emite un emisor simple con partículas largas y lentas y comprueba en dos capturas separadas que se desplazan. Si no se mueven, trata la captura como fotograma inicial.
+
+Consecuencias cuando las partículas no avanzan:
+- La captura sirve para ver el **fotograma inicial**, la geometría de los anillos de suelo y beams animados por `TweenService`, la escala, los colores y el posicionamiento.
+- **No sirve** para validar tiempos, estelas, humo que se disipa ni animaciones por cuadros (flipbook).
+- Lo que dependa del tiempo se valida en Play y lo prueba el PO.
+
+Vistas útiles: una captura desde arriba (cámara a 30 studs por encima, mirando hacia abajo) muestra cómo se reparte un efecto radial dentro del radio.
+
+## Cargar la versión nueva de un módulo en Edit
+
+En Edit, `require` devuelve la versión en caché de un ModuleScript, sin los cambios recientes. Para probar el código editado, carga el `Source` con `loadstring` y redirige los `require` de los módulos propios:
+
+```lua
+local shared = game.ReplicatedStorage.Shared
+local fresh = {}
+local function loadFresh(inst)
+	if fresh[inst] then return fresh[inst] end
+	local f = assert(loadstring(inst.Source))
+	local env = setmetatable({ script = inst, require = function(m)
+		if typeof(m) == "Instance" and (m == shared.SkillVFXRuntime or m == game.ReplicatedStorage.Config.VFXConfig or m == shared.PaladinSkillVFX) then
+			return loadFresh(m)
+		end
+		return require(m)
+	end }, { __index = getfenv() })
+	setfenv(f, env)
+	fresh[inst] = f()
+	return fresh[inst]
+end
+local Runtime, Paladin = loadFresh(shared.SkillVFXRuntime), loadFresh(shared.PaladinSkillVFX)
+```
+
+Usa el `Runtime` fresco para `Get`, `ClearAll` y para leer los contadores del `record` (`emitters`, `beams`, `particles`, `components`) frente a los topes de `record.profile`. Al terminar, `Runtime.ClearAll()`, destruye los hijos de `VFXClientRuntime` y pon `_G` de laboratorio en `nil`.
+
+## Qué sí se puede validar en Edit
+
+- Presupuesto del efecto (contadores del `record`) y que respeta los topes de desktop.
+- Radios extremos y entradas hostiles: `radius = 999`, negativo, `NaN`, `math.huge`, `duration` extrema, posición ausente, payload `nil` o `{}`.
+- Que `tick` y `end` sin zona activa no fallan y que `end` cierra la zona.
+- Geometría estática: anillos de suelo, beams (columnas y pilares con su curva y textura) y posiciones de nacimiento de partículas.
 
 ## Regla de seguridad del laboratorio
 

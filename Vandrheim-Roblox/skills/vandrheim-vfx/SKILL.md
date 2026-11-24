@@ -64,7 +64,8 @@ Detalle y cifras en `references/pack-technique-analysis.md`. Resumen:
 
 Verificado el 2026-11-22 en `SkillVFXRuntime`:
 
-- `Runtime.BurstEx` no soporta flipbook (`FlipbookLayout`, `FlipbookMode`) ni `ZOffset` ni `TimeScale`. Los módulos de Paladín y Cazador no los usan.
+- Desde el piloto de la Consagración (2026-11-22), `Runtime.BurstEx` acepta `flipbook` (layout, modo `OneShot` por defecto), `flipbookMode`, `zOffset` y `timeScale`, y existe `Runtime.StreamEx(record, position, opts)` para emisores continuos con presupuesto (`rate`, `duration`). El Cazador sigue usando su ayudante local `customBurst`; conviene migrarlo al runtime.
+- Hay texturas del registro que ya funcionan como flipbook en el Cazador: `acidRing` y `acidCloud` (4x4), `electroBolt` (4x4), `windRing` (4x4), `meteorSwirl` (4x4) y `lightRay` (8x8).
 - `Runtime.SpawnTemplate` existe pero busca plantillas fijas en `ReplicatedStorage.Assets.VFXTemplates.Paladin`, esa carpeta no existe y ningún módulo lo llama.
 - Antes de rehacer una skill con la técnica de esta skill conviene extender `BurstEx` con esas opciones y generalizar `SpawnTemplate` por clase (ver `references/template-system.md`).
 
@@ -95,5 +96,6 @@ Verificado el 2026-11-22 en `SkillVFXRuntime`:
 
 - Paladín (`PaladinSkillVFX`): rehecho (rc164 y rc165), sin flipbooks, composición por `BurstEx` y `CurvedBeam` con 69 usos de texturas del registro.
 - Cazador (`HunterSkillVFX`): rehecho (rc167), usa flipbooks en 20 sitios.
+- Piloto: Consagración V3 en `PaladinSkillVFX` (`consecrationZoneV3`, `consecrationTickV3`, `consecrationEndV3`) detrás de `VFXConfig.classVFX.consecrationV3` (con `false` vuelve a la V2 de rc165). Añade altura (columna y pilares con brasas), sellos que giran en sentidos opuestos durante toda la zona, polvo oscuro con flipbook, motas ascendentes continuas, luz que late y un cierre con liberación. Pendiente de validación en Play por el PO.
 - Clérigo (`ClericSkillVFX`): sin rehacer.
 - Referencia aprobada: `ServerStorage.VFXReference.HolyRingVFX_rc164_Approved` y `ReplicatedStorage.Shared.HolyRingVFX` (Anillo sagrado).
