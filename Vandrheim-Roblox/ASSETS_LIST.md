@@ -351,3 +351,4 @@ Icono para el botón desplegable/drawer del micromenú (`Icon_Menu_drawer.png`, 
 | assetId | Tipo | Uso | Archivo local | Fuente / licencia | Estado / rbxassetid |
 |---|---|---|---|---|---|
 | `Icon_Menu_drawer` | Icono | Botón drawer / menú desplegable del micromenú | `Assets/Icons/UI/Menu/Icon_Menu_drawer.png` | Producción propia asistida con IA; interno Vandrheim | `rbxassetid://133130147824614` |
+| `Icon_Menu_camera_lock` | Icono | Botón de mira / fijar cámara (camera lock) | `Assets/Icons/UI/Menu/Icon_Menu_camera_lock.png` | Producción propia asistida con IA; interno Vandrheim | `rbxassetid://109768051296013` |
