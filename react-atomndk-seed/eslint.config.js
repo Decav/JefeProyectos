@@ -38,6 +38,9 @@ export default [
       '@typescript-eslint/no-explicit-any': 'error',
       // TS enums emiten valor+tipo con el mismo id — tsc ya valida redeclaraciones reales.
       'no-redeclare': 'off',
+      // En TypeScript tsc valida identificadores y globales del DOM (File, Blob, URL...);
+      // no-undef da falsos positivos (recomendación de typescript-eslint).
+      'no-undef': 'off',
     },
   },
   {

@@ -1,4 +1,42 @@
-@layer theme, base, components, utilities, primereact;
+/*
+ * Orden de capas. PrimeReact se importa en src/app/main.tsx ANTES que este
+ * archivo y define su capa `primereact` primero: queda con la MENOR prioridad.
+ * Esta declaración documenta el orden real (no se puede reordenar una capa ya
+ * definida): las utilidades de Tailwind pueden ajustar componentes PrimeReact,
+ * y theme.css (sin capa) sobrescribe a todos.
+ */
+@layer primereact, theme, base, components, utilities;
 
 @import "tailwindcss/theme" layer(theme);
 @import "tailwindcss/utilities";
+
+/*
+ * Reset mínimo de elementos nativos. La semilla no importa el preflight de
+ * Tailwind (para no alterar PrimeReact), así que <button>, listas y <dl>
+ * nativos quedarían con estilos del navegador.
+ * Se excluyen los elementos de PrimeReact (.p-component / .p-link / clases "p-"):
+ * su capa tiene menor prioridad que `base` y un reset genérico pisaría su estilo.
+ */
+@layer base {
+  button:not(.p-component):not(.p-link) {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
+  button:not(.p-component):not(.p-link):disabled {
+    cursor: not-allowed;
+  }
+  ol:not([class^='p-']):not([class*=' p-']),
+  ul:not([class^='p-']):not([class*=' p-']) {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  dl,
+  dd {
+    margin: 0;
+  }
+}

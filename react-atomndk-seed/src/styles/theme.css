@@ -1154,14 +1154,14 @@ input, select, textarea {
 
 /* Button primary override */
 .p-button.p-button-primary,
-.p-button:not(.p-button-outlined):not(.p-button-text):not(.p-button-link):not(.p-button-secondary):not(.p-button-success):not(.p-button-info):not(.p-button-warning):not(.p-button-help):not(.p-button-danger) {
+.p-button:not(.p-button-outlined):not(.p-button-text):not(.p-button-link):not(.p-button-secondary):not(.p-button-success):not(.p-button-info):not(.p-button-warning):not(.p-button-help):not(.p-button-danger):not(:disabled):not(.p-datepicker-trigger) {
   background: var(--acl-brand-gradient) !important;
   border-color: transparent !important;
   color: #ffffff !important;
 }
 
 .p-button.p-button-primary:hover,
-.p-button:not(.p-button-outlined):not(.p-button-text):not(.p-button-link):not(.p-button-secondary):not(.p-button-success):not(.p-button-info):not(.p-button-warning):not(.p-button-help):not(.p-button-danger):hover {
+.p-button:not(.p-button-outlined):not(.p-button-text):not(.p-button-link):not(.p-button-secondary):not(.p-button-success):not(.p-button-info):not(.p-button-warning):not(.p-button-help):not(.p-button-danger):not(:disabled):not(.p-datepicker-trigger):hover {
   opacity: 0.88;
   box-shadow: var(--acl-shadow-brand) !important;
 }
@@ -1515,3 +1515,43 @@ input, select, textarea {
   background-color: var(--acl-pink-bg);
   color: var(--acl-brand-primary);
 }
+
+/* ============================================================
+   ESTADOS DE BOTÓN Y CALENDARIO
+   El gradiente primario (arriba) excluye :disabled y el trigger del calendario.
+   ============================================================ */
+
+/* Botón deshabilitado neutro (no gradiente atenuado). */
+.p-button:disabled,
+.p-button.p-disabled {
+  background: var(--acl-neutral-300);
+  border-color: var(--acl-neutral-300);
+  color: var(--acl-text-secondary);
+  opacity: 1;
+}
+
+/* Botón outline primario con color de marca (el tema base lara-light-indigo deja índigo). */
+.p-button.p-button-outlined:not(.p-button-secondary):not(.p-button-success):not(.p-button-info):not(.p-button-warning):not(.p-button-help):not(.p-button-danger):not(:disabled) {
+  background: var(--acl-card);
+  border: 1px solid var(--acl-brand-primary);
+  color: var(--acl-brand-primary);
+}
+.p-button.p-button-outlined:not(.p-button-secondary):not(.p-button-success):not(.p-button-info):not(.p-button-warning):not(.p-button-help):not(.p-button-danger):not(:disabled):hover {
+  background: rgba(var(--acl-brand-primary-rgb), 0.06);
+  border-color: var(--acl-brand-primary);
+  color: var(--acl-brand-primary);
+}
+
+/* Calendar con ícono integrado al campo (sin botón con gradiente). */
+.p-calendar-w-btn .p-datepicker-trigger {
+  background: var(--acl-card);
+  border: 1px solid var(--acl-border-strong);
+  border-left: 0;
+  color: var(--acl-text-secondary);
+}
+.p-calendar-w-btn .p-datepicker-trigger:enabled:hover {
+  background: var(--acl-surface-alt);
+  border-color: var(--acl-border-strong);
+  color: var(--acl-text-primary);
+}
+

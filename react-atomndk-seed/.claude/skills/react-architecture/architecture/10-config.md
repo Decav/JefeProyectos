@@ -267,10 +267,10 @@ Los repositorios importan siempre `backendApi` desde `@library/api`; nunca crean
 | `dev` | `vite` | Servidor de desarrollo con HMR en el puerto 5151 |
 | `build` | `tsc -b && vite build` | Verifica tipos con TypeScript y genera bundle de produccion |
 | `preview` | `vite preview` | Sirve el build de produccion localmente para verificar |
-| `lint` | `eslint src` | Lint de `src/` con ESLint 9 (flat config) |
+| `lint` | `eslint src` | Lint de `src/` con ESLint 9 (flat config). `no-undef` está desactivado para `*.ts(x)`: `tsc` valida identificadores y globales del DOM |
 | `test` | `vitest` | Ejecuta tests en modo watch (re-ejecuta al guardar) |
 | `test:ui` | `vitest --ui` | Vitest con interfaz grafica en el navegador |
-| `test:coverage` | `vitest run --coverage` | Ejecuta todos los tests y genera reporte de cobertura en `coverage/` |
+| `test:coverage` | `vitest run --coverage` | Ejecuta todos los tests y genera reporte de cobertura en `coverage/` (proveedor `@vitest/coverage-v8`, misma versión que `vitest`) |
 | `test:e2e` | `playwright test` | Ejecuta tests e2e con Playwright (levanta `npm run dev` si no está activo) |
 | `test:e2e:ui` | `playwright test --ui` | Playwright con interfaz grafica de Playwright |
 | `storybook` | `storybook dev -p 6006` | Servidor de desarrollo de Storybook en puerto 6006 |

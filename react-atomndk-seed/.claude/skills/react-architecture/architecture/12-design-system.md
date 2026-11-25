@@ -491,6 +491,15 @@ import { Button } from 'primereact/button';
 </button>
 ```
 
+### 6.2.1 Estados de Button y Calendar (overrides en `theme.css`)
+
+- **Primario:** gradiente de marca con `!important`, **excluyendo** `:disabled` y `.p-datepicker-trigger`. Si no se excluyen, el botón deshabilitado se ve como un gradiente atenuado y el calendario muestra un botón de color.
+- **Deshabilitado:** fondo `--acl-neutral-300` y texto `--acl-text-secondary` (`opacity: 1`), como los diseños que muestran la acción bloqueada en gris.
+- **Outlined primario:** borde y texto `--acl-brand-primary`. El tema base `lara-light-indigo` deja índigo si no se sobrescribe.
+- **Calendar (`showIcon`):** el trigger se ve integrado al campo (fondo `--acl-card`, borde `--acl-border-strong`, ícono `--acl-text-secondary`).
+
+Cualquier botón nativo (`<button>` sin clases PrimeReact) parte del reset de `main.css` (sin borde ni fondo): darle estilo solo con Tailwind y tokens `--acl-*`.
+
 ### 6.3 InputText
 
 ```tsx

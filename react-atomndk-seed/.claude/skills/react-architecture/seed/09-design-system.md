@@ -79,12 +79,20 @@ Al personalizar el proyecto, reemplazar los valores de marca (por defecto `#E31D
 ### 2.2 `src/styles/main.css`
 
 ```css
-/* src/styles/main.css */
-@layer theme, base, components, utilities, primereact;
+/* src/styles/main.css (extracto; ver el archivo completo) */
+@layer primereact, theme, base, components, utilities;
 
 @import "tailwindcss/theme" layer(theme);
 @import "tailwindcss/utilities";
+
+@layer base {
+  /* reset mínimo de <button>, <ol>/<ul>, <dl>/<dd> nativos, excluyendo PrimeReact */
+}
 ```
+
+> **Orden real de capas:** PrimeReact se importa en `main.tsx` antes que `main.css` y define su capa primero, así que `primereact` queda con la **menor** prioridad (una capa ya definida no se puede reordenar). La declaración solo documenta ese orden. Consecuencias: las utilidades de Tailwind pueden ajustar componentes PrimeReact y `theme.css` (sin capa) sobrescribe a todos.
+>
+> **Sin preflight de Tailwind:** la semilla no lo importa para no alterar PrimeReact. Por eso `main.css` incluye un reset mínimo en `@layer base` para `<button>`, `<ol>`/`<ul>` y `<dl>`/`<dd>` nativos, que excluye los elementos de PrimeReact (`.p-component`, `.p-link`, clases `p-*`). Sin ese reset, los botones nativos usados como enlaces se ven con el borde y el fondo del navegador.
 
 `theme.css` no se importa aquí: lo importa `main.tsx`, después del tema base de PrimeReact.
 
