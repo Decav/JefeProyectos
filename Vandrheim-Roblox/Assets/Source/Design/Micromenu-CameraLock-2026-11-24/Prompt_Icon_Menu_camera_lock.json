@@ -1,0 +1,29 @@
+{
+  "asset": "Icon_Menu_camera_lock",
+  "date": "2026-11-24",
+  "author": "DesignerAgent",
+  "role": "Producción de assets visuales",
+  "project": "Vandrheim RPG",
+  "style_references": [
+    "Assets/Icons/UI/Menu/Icon_Menu_dungeon.png",
+    "Assets/Icons/UI/Menu/Icon_Menu_target_cycle.png",
+    "Assets/Icons/UI/Menu/Icon_Menu_run.png",
+    "Assets/Icons/UI/Menu/Icon_Menu_drawer.png"
+  ],
+  "palette": {
+    "brass_gold": "#C89445",
+    "parchment_cream": "#F4EDE0",
+    "dark_charcoal_outline": "#292A2E"
+  },
+  "canonical_file": "Assets/Icons/UI/Menu/Icon_Menu_camera_lock.png",
+  "master": "Assets/Source/Design/Micromenu-CameraLock-2026-11-24/Masters/Icon_Menu_camera_lock_master.jpg",
+  "concept": "Anillo circular nórdico de latón biselado con cuatro marcas cardinales de mira y retícula romboidal central en pergamino.",
+  "export": {
+    "size_px": [512, 512],
+    "format": "PNG",
+    "color_mode": "RGBA",
+    "corner_alpha": 0,
+    "inner_ring_alpha": 0,
+    "artwork_max_px": [420, 420]
+  }
+}
