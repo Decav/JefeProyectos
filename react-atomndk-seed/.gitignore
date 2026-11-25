@@ -1,0 +1,42 @@
+# IDE
+.idea
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build
+dist/
+dist-ssr/
+*.local
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Coverage
+coverage/
+
+# Playwright
+playwright-report/
+test-results/
+
+# Storybook
+storybook-static/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vite
+vite.config.ts.timestamp-*
+
+.atl
+
+# Documento de conexiones con credenciales (local-only, nunca commitear)
+docs/connections.yml
+
+# Build info de TypeScript
+*.tsbuildinfo

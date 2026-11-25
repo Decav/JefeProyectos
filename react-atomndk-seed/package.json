@@ -1,0 +1,68 @@
+{
+  "name": "react-atomndk-seed",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "msw:init": "msw init public/ --save"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  },
+  "dependencies": {
+    "@hookform/resolvers": "5.2.2",
+    "@sentry/react": "10.44.0",
+    "@tanstack/react-query": "5.91.2",
+    "@testing-library/dom": "^10.4.1",
+    "axios": "1.13.6",
+    "oidc-spa": "^10.2.1",
+    "primeicons": "7.0.0",
+    "primereact": "10.9.7",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-hook-form": "7.71.2",
+    "react-router-dom": "7.13.1",
+    "zod": "4.3.6",
+    "zustand": "5.0.12"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@playwright/test": "1.58.2",
+    "@storybook/react-vite": "10.3.0",
+    "@tailwindcss/vite": "4.2.2",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "16.3.2",
+    "@testing-library/user-event": "14.6.1",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "@vitejs/plugin-react": "6.0.1",
+    "eslint": "^9.0.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.0",
+    "jsdom": "29.0.0",
+    "msw": "2.12.13",
+    "storybook": "10.3.0",
+    "tailwindcss": "4.2.2",
+    "typescript": "5.9.3",
+    "vite": "8.0.1",
+    "vitest": "4.1.0"
+  }
+}

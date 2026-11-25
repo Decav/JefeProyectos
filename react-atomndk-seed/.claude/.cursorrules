@@ -1,0 +1,10 @@
+# Cursor — puntero a AGENTS.md
+
+La fuente de verdad de reglas para este frontend está en `AGENTS.md` (raíz del repo), que Cursor carga de forma nativa.
+
+- Arquitectura obligatoria: React Atomic NDK (skill `.claude/skills/react-architecture/SKILL.md`).
+- Ficha del proyecto: `PROJECT.md`.
+- Flujo SDD con Requirement Contracts: `.claude/requirements/README.md`.
+- Verificación de cierre: `.claude/skills/sdd-verify/SKILL.md`.
+
+No duplicar reglas aquí para evitar drift.
